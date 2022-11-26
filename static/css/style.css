@@ -1,0 +1,15 @@
+/* Color Theme Swatches in Hex */
+.XMAS-FIGURE-LIMITED-EDITION-1-hex { color: #F2F2F2; }
+.XMAS-FIGURE-LIMITED-EDITION-2-hex { color: #5D7362; }
+.XMAS-FIGURE-LIMITED-EDITION-3-hex { color: #593B34; }
+.XMAS-FIGURE-LIMITED-EDITION-4-hex { color: #A62424; }
+.XMAS-FIGURE-LIMITED-EDITION-5-hex { color: #D94343; }
+
+:root {
+  --color-1: var(#F2F2F2);
+  --color-2: var(#5D7362);
+  --color-3: var(#593B34);
+  --color-4: var(#A62424);
+  --color-5: var(#D94343);
+}
+
