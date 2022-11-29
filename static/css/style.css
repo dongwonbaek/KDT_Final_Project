@@ -1,9 +1,23 @@
 /* Color Theme Swatches in Hex */
-.color-theme-1 { color: #003B41; }
-.color-theme-2 { color: #FB5957; }
-.color-theme-3 { color: #FEEAEB; }
-.color-theme-4 { color: #F28080; }
-.color-theme-5 { color: #297372; }
+.color-theme-1 {
+  color: #003B41;
+}
+
+.color-theme-2 {
+  color: #FB5957;
+}
+
+.color-theme-3 {
+  color: #FEEAEB;
+}
+
+.color-theme-4 {
+  color: #F28080;
+}
+
+.color-theme-5 {
+  color: #297372;
+}
 
 :root {
   --color-1: var(#003B41);
@@ -13,6 +27,7 @@
   --color-5: var(#297372);
 }
 
+.MyNav {
+  background-color: #FB5957;
 .MyFloat {
-  
 }
