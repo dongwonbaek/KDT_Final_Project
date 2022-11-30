@@ -91,6 +91,21 @@ footer {
   top: 0px;
 }
 
+header .menu ul>li {
+  padding: 0 auto;
+  float: left;
+}
+
+#submenu {
+  position: absolute;
+  display: none;
+}
+
+
+header .menu ul li:hover #submenu {
+  display: inline;
+  width: 100vw;
+}
 /* ---------- index ---------- */
 .MyFloat {
   position: absolute;
@@ -111,4 +126,4 @@ footer {
   text-align: center;
   border-radius: 3px;
   background-color: var(--theme-4);
-  
+
