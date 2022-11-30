@@ -8,6 +8,17 @@
 {% block title %}{% endblock title %}
 {% block style %}{% endblock style %}
 {% block content %}
+
+<!--
+  <h1>index 페이지</h1>
+  {% for product in products %}
+    <a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a>
+    <p>{{ product.content}}</p>
+    <p>{{ product.category }}</p>
+    <p>{{ product.created_at }} | {{ product.updated_at }}</p>
+    <a href="{% url 'articles:product_delete' product.pk %}">글 삭제</a>
+  {% endfor %} -->
+
   <main class="container">
     <section class="index-first-box">
       {% if request.user.is_authenticated %}
@@ -35,5 +46,6 @@
       <img src="" alt="">
     </section>
   </main>
+
 {% endblock content %}
 {% block script %}{% endblock script %}
