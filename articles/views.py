@@ -9,6 +9,9 @@ from django.http import JsonResponse
 def index(request):
     return render(request, "articles/index.html")
 
+def product_list(request):
+    return render(request, "articles/product_list.html")
+
 def product_create(request):
     if request.method == "POST":
         product_form = ProductForm(request.POST, request.FILES)
