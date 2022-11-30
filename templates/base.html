@@ -4,22 +4,36 @@
 {% load imagekit %}
 
 <!doctype html>
-<html lang="en">
+<html lang="ko" data-useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36">
 
 <head>
 
-  <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/base/gift.ico' %}">
-  <title>오다주웠다{% block title %}{% endblock title %}
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/base/logo.ico' %}">
+  <title>ODJ | 오다주웠다{% block title %}{% endblock title %}
   </title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-title" content="ODJ">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="ODJ가 당신을 센스 만점으로 만들어 드립니다">
+  <meta property="og:title" content="네이버">
+  <!--<meta property="og:url" content="배포하면 주소 추가하고 주석 지우기">-->
+  <meta property="og:image" content="{% static 'img/base/logo.png' %}">
+  <meta property="og:description" content="ODJ가 당신을 센스 만점으로 만들어 드립니다">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="">
+  <!--<meta name="twitter:url" content="배포하면 주소 추가하고 주석 지우기">-->
+  <meta name="twitter:image" content="{% static 'img/base/logo.png' %}">
+  <meta name="twitter:description" content="ODJ가 당신을 센스 만점으로 만들어 드립니다.">
+  <link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/base/logo.png' %}">
+  <link rel="apple-touch-icon" href="{% static 'img/base/logo.png' %}">
+  <!-- Bootstrap CSS v5.2.2 --> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!-- Bootstrap Icon v1.10.2 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"> 
   <!-- reset style-->
   <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
-  <!-- Bootstrap CSS v5.2.2 -->
-  {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   {% block style %}{% endblock style %}
 
@@ -27,10 +41,9 @@
 
   <body>
     {% include "nav.html" %}
-    {% include "floating.html" %}
-    <div style="min-height: 100vh;">
-      {% block content %}{% endblock content %}
-    </div>
+
+    {% block content %}{% endblock content %}
+
     <!-- footer -->
     {% include "footer.html" %}
     <!-- JavaScript Bundle with Popper -->
@@ -39,5 +52,4 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     {% block script %}{% endblock script %}
   </body>
-
 </html>
