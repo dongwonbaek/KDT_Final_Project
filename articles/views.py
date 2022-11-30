@@ -5,9 +5,14 @@ from .forms import ProductForm, ProductImagesForm, ReviewForm, ReviewCommentForm
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.http import JsonResponse
+from django.db.models import Q, Avg, Count, Subquery, OuterRef
 
 def index(request):
-    return render(request, "articles/index.html")
+    products = Product.objects.order_by('-pk')
+    context = {
+        'products': products
+    }
+    return render(request, "articles/index.html", context)
 
 def product_create(request):
     if request.method == "POST":
@@ -63,7 +68,7 @@ def product_update(request, product_pk):
         'product_form': product_form,
         'product_images_form': product_images_form
     }
-    return render(request, 'articles/product_create.html', context)
+    return render(request, 'articles/review_update.html', context)
 
 def product_delete(request, product_pk):
     product = get_object_or_404(Product, pk=product_pk)
@@ -153,3 +158,48 @@ def review_comment_delete(request, comment_pk):
         comment.delete()
     # 비동기 처리 구현전까지 임의로 redirect 사용
     return redirect('articles:product_detail', comment.review.product.pk)
+
+
+def product_rank(request):
+    # gender = 'all'
+    # if request.GET.get('gender'):
+    #     gender = request.GET.get('gender')
+    # if gender == 'all':
+    #     products = Product.objects.all()
+    # elif gender == 'woman':
+    #     products = Product.objects.all()
+    #     woman_products = products.annotate(rate_avg=Avg(Review.objects.filter()))
+    # sort_by = 'rating'
+    # if request.GET.get('sort_by'):
+    #     sort_by = request.GET.get('sort_by')
+    # if sort_by == 'rating':
+    #     products = Product.objects.annotate(rate_avg=Avg('review__rating')).order_by('-rate_avg')
+    # elif sort_by == 'like':
+    #     products = Product.objects.annotate(like_cnt=Count('like_user')).order_by('-like_cnt')
+    # context = {
+    #     'products': products,
+    # }
+    return render(request, 'articles/product_rank.html')
+
+
+
+def search(request):
+    products = None
+    # query = 검색값
+    query = None
+
+    if "q" in request.GET:
+        query = request.GET.get("q")
+        if query == "":
+            return redirect("articles:index")
+        query = query.split("&")[0]
+        products = Product.objects.order_by("-pk").filter(
+            Q(title__contains=query)
+            | Q(category__contains=query)
+        ) # title, category 로 검색
+    
+    context = {
+        "products": products,
+        "query": query,
+    }
+    return render(request, "articles/search.html", context)
