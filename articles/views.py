@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import *
-from .forms import ProductForm, ProductImagesForm
+from .forms import ProductForm, ProductImagesForm, ReviewForm, ReviewCommentForm
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.http import JsonResponse
@@ -17,7 +17,7 @@ def product_create(request):
         if product_form.is_valid() and product_images_form.is_valid():
             product = product_form.save(commit=False)
             product.user = request.user
-            if images:
+            if images: # 다중이미지를 저장하기 위한 로직.
                 for image in images:
                     image_instance = ProductImages(product=product, image=image)
                     image_instance.save()
@@ -49,7 +49,7 @@ def product_update(request, product_pk):
         if product_form.is_valid() and product_images_form.is_valid():
             product = product_form.save(commit=False)
             product.user = request.user
-            if images:
+            if images: # 다중이미지를 저장하기 위한 로직.
                 for image in images:
                     image_instance = ProductImages(product=product, image=image)
                     image_instance.save()
@@ -69,3 +69,87 @@ def product_delete(request, product_pk):
     product = get_object_or_404(Product, pk=product_pk)
     product.delete()
     return redirect('articles:index')
+
+def review_index(request):
+    reviews = Review.objects.order_by('-pk')
+    context = {
+        'reviews': reviews,
+    }
+    return render(request, 'articles/review_index.html', context)
+
+@login_required
+def review_create(request, product_pk):
+    product = get_object_or_404(Product, pk=product_pk)
+    if request.method == "POST":
+        review_form = ReviewForm(request.POST, request.FILES)
+        if review_form.is_valid():
+            review = review_form.save(commit=False)
+            review.user = request.user
+            review.product = product
+            review.save()
+            messages.success(request, '리뷰가 상공적으로 작성되었습니다.')
+            return redirect('articles:product_detail', product_pk)
+
+@login_required
+def review_update(request, review_pk):
+    review = get_object_or_404(Review, pk=review_pk)
+    
+    if request.user != review.user:
+        messages.warning(request, '본인 글만 수정할 수 있습니다.')
+        return redirect('articles:product_detail', review.product.pk)
+    
+    if request.method == "POST":
+        review_form = ReviewForm(request.POST, request.FILES, instance=review)
+        if review_form.is_valid():
+            review_form.save()
+            return redirect('articles:product_detail', review.product.pk)
+    else:
+        review_form = ReviewForm(instance=review)
+        context = {
+            'review_form': review_form,
+        }
+    return render(request, 'articles/review_update.html', context)
+
+@login_required
+def review_delete(request, product_pk, review_pk):
+    review = get_object_or_404(Review, pk=review_pk)
+    if request.method == "POST":
+        if request.user == review.user:
+            review.delete()
+            messages.success(request, '리뷰가 성공적으로 삭제되었습니다.')
+            return redirect('articles:product_detail', product_pk)
+    else:
+        return redirect('articles:product_detail', product_pk)
+
+@login_required
+def review_like(request, review_pk):
+    review = get_object_or_404(Review, pk=review_pk)
+    if review.like_user.filter(pk=request.user.pk).exists():
+        review.like_user.remove(request.user)
+    else:
+        review.like_user.add(request.user)
+
+    # review_detail 페이지가 모달로 구현되기 위해서는 좋아요 기능이 반드시 비동기처리가 필요함. 
+    # 비동기 처리를 구현하기 전까지 임의로 redirect 사용.
+    return redirect('articles:product_detail', review.product.pk)
+
+@login_required
+def review_comment_create(request, review_pk):
+    if request.method == "POST":
+        review = get_object_or_404(Review, pk=review_pk)
+        review_comment_form = ReviewCommentForm(request.POST)
+        if review_comment_form.is_valid():
+            comment = review_comment_form.save(commit=False)
+            comment.review = review
+            comment.user = request.user
+            comment.save()
+    # 비동기 처리 구현전까지 임의로 redirect 사용
+    return redirect('articles:product_detail', review.product.pk)
+
+@login_required
+def review_comment_delete(request, comment_pk):
+    comment = get_object_or_404(ReviewComment, pk=comment_pk)
+    if request.user == comment.user:
+        comment.delete()
+    # 비동기 처리 구현전까지 임의로 redirect 사용
+    return redirect('articles:product_detail', comment.review.product.pk)
