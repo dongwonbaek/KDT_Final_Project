@@ -63,3 +63,19 @@ body {
 .topon {
   top: 0px;
 }
+
+header .menu ul>li {
+  padding: 0 auto;
+  float: left;
+}
+
+#submenu {
+  position: absolute;
+  display: none;
+}
+
+
+header .menu ul li:hover #submenu {
+  display: inline;
+  width: 100vw;
+}
