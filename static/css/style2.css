@@ -1,0 +1,24 @@
+/* product_list */
+
+/* 상단 배너 */
+.banner {
+  color: white;
+  background-color: #297372;
+  font-size: 1.5rem;
+  height: 19rem;
+  padding: 3rem 8rem;
+}
+
+/* 상품 (카드) */
+.card {
+  width: 20rem;
+  border: 0;
+}
+
+.card-img {
+  height: 20rem;
+}
+
+.brand {
+  color: #999;
+}
