@@ -12,7 +12,9 @@ def signup(request):
     if request.method == "POST":
         form = SignupForm(request.POST, request.FILES)
         if form.is_valid():
-            user = form.save()
+            user = form.save(commit=False)
+            user.birth_date = request.POST.get('birth_date')
+            user.save()
             auth_login(request, user)
             return redirect('articles:index')
     else:
