@@ -1,40 +1,67 @@
-/* Color Theme Swatches in Hex */
-body {
-  padding-top: 211px;
+@font-face {
+  font-family: 'YiSunShinDotumM';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YiSunShinDotumM.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.color-theme-1 {
-  color: #003B41;
-}
-
-.color-theme-2 {
-  color: #FB5957;
-}
-
-.color-theme-3 {
-  color: #FEEAEB;
-}
-
-.color-theme-4 {
-  color: #F28080;
-}
-
-.color-theme-5 {
-  color: #297372;
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+.jejugothic * { 
+  font-family: 'Jeju Gothic', sans-serif;
 }
 
 :root {
-  --color-1: var(#003B41);
-  --color-2: var(#FB5957);
-  --color-3: var(#FEEAEB);
-  --color-4: var(#F28080);
-  --color-5: var(#297372);
+  --main-bluegreen: #003B41;
+  --main-scarlet: #FB5957;
+  --main-lightpink: #FEEAEB;
+  --main-salmon: #F28080;
+  --main-mintygreen: #297372;
+  --main-white: #FFF;
+  --main-black: #000;
+  --header-font: 'Jeju Gothic', sans-serif;
+  --body-font: 'YiSunShinDotumM';
+
+body {
+  position: relative;
+  font-family: 'YiSunShinDotumM';
+  min-height: 100vh;
 }
 
+/* ---------- base.html ---------- */
+.MyNav {
+  background-color: var(--main-white);
+}
 
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  height: auto;
+  padding: 10px 0;
+  background-color: #297372;
+}
 
+.ToTop {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  border-radius: 50%;
+  box-shadow: 0px 8px 15px var(--main-bluegreen);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none
+}
 
+.ToTop:hover {
+  background-color: var(--theme-5);
+  box-shadow: 0px 15px 20px var(--theme-1);
+  color: #fff;
+  transform: translateY(-7px);
+}
 
+/* ---------- nav ---------- */
 .fnav {
   background-color: white;
   position: fixed;
@@ -63,3 +90,25 @@ body {
 .topon {
   top: 0px;
 }
+
+/* ---------- index ---------- */
+.MyFloat {
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  width: 14.5rem;
+  height: 21.875rem;
+  backdrop-filter: blur(5px) saturate(200%);
+  -webkit-backdrop-filter: blur(5px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.79);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+.index-first-box {
+  height: 37.5rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 3px;
+  background-color: var(--theme-4);
+  

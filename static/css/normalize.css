@@ -41,6 +41,7 @@ html {
 
 body {
   margin: 0;
+  height: 100%;
 }
 
 /* 기본 셋업 */
@@ -68,7 +69,7 @@ a:hover {
 }
 
 abbr[title] {
-  text-decoration              : underline dotted;
+  text-decoration-style        : underline dotted;
   /* Safari에서는 '밑줄 점선'이 지원되지 않음. */
   -webkit-text-decoration-style: dotted;
 }
@@ -463,3 +464,5 @@ table {
         text-rendering: optimizeLegibility;
     }
 }
+
+/* ------------------------ 여기서부터 코드 작성 ----------------------------- */
