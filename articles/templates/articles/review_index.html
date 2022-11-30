@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load widget_tweaks %}
+{% load django_bootstrap5 %}
+{% load imagekit %}
+
+{% block title %}{% endblock title %}
+{% block style %}{% endblock style %}
+{% block content %}
+
+    {% for review in reviews %}
+        <p>{{ review.title }}</p>
+        <p>{{ review.content }}</p>
+        <p>{{ review.image }}</p>
+        <p>{{ review.created_at }}</p>
+        <p>{{ review.updated_at }}</p>
+        <p>{{ review.rating }}</p>
+        <p>{{ review.user }}</p>
+        <p>{{ review.product }}</p>
+        <p>{{ review.like_user }}</p>
+    {% endfor %}
+
+{% endblock content %}
+{% block script %}{% endblock script %}
