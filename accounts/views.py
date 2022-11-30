@@ -91,7 +91,7 @@ def follow(request, user_pk):
             user.followers.add(request.user)
     else:
         messages.warning(request, '다른 유저만 가능합니다.')
-    return request('account:detail', user_pk)
+    return redirect('account:detail', user_pk)
 
 def block(request, user_pk):
     user = get_object_or_404(get_user_model(), pk=user_pk)
@@ -102,4 +102,4 @@ def block(request, user_pk):
             user.blockers.add(request.user)
     else:
         messages.warning(request, '다른 유저만 가능합니다.')
-    return request('account:detail', user_pk)
+    return redirect('account:detail', user_pk)
