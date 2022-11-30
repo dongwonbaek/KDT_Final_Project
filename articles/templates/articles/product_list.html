@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  
+<!-- 상단 배너 -->
+<section class="banner">
+  <div>크리스마스</div>
+  <div class="fs-1 fw-bold my-3">공기마저 설레는 12월이야🎄</div>
+  <div>기억에 남을 소중한 순간을 위해<br>
+    #홀리데이에디션 #홈파티 #선물추천</div>
+</section>
+
+<!-- 상품 목록 (한줄 4개씩) -->
+<section class="container">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 my-5" >
+    {% for i in "x"|rjust:"10" %}
+    <div class="col d-flex justify-content-center mb-5">
+      <div class="card">
+        <div class="card-img">
+          <img class="w-100 h-100 rounded" src="https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211111144147_2fe5f5a528b44f0986479d18ff04e9a5.jpg" alt="">
+        </div>
+        <div>
+          <div class="brand mt-2">논픽션</div>
+          <div> 오르골 무드등 </div>
+          <div class="fs-5 mt-2">
+            <span class="fw-bold">39,000</span><span>원</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock content %}
