@@ -9,9 +9,9 @@ class SignupForm(UserCreationForm):
         model = get_user_model()
         fields = (
                 "email",
+                'username',
                 "image",
                 "gender",
-                "birth_date",
             )
 
 class UpdateForm(UserChangeForm):
