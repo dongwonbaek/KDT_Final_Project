@@ -99,6 +99,14 @@ footer {
 }
 
 /* ---------- nav ---------- */
+.MyNav {
+  background-color: white;
+  position: fixed;
+  top: 211px;
+  border-style: solid none;
+  border-color: #FFB6C1;
+}
+
 .fnav {
   background-color: white;
   position: fixed;
@@ -111,19 +119,18 @@ footer {
   transition: top 0.2s ease-in-out;
 }
 
-.MyNav {
-  background-color: white;
-  position: fixed;
-  border-style: solid none;
-  border-color: #FFB6C1;
-}
-
 .affix {
+
   top: -211px;
+
 }
 
 .topon {
   top: 0px;
+}
+
+.menu {
+  height: 40px;
 }
 
 header .menu ul>li {
@@ -323,4 +330,54 @@ header .menu ul li:hover #submenu {
   bottom: 40px;
   height: 150px;
   width: auto;
+
+  
+/*------로그인, 회원가입------*/
+.login-button {
+  width: 200px;
+  height: 35px;
+  margin-top: 1rem;
+  border-style: none;
+  border-radius: 90px;
+  background-color: #ece6cc;
+}
+
+.signup-style1 {
+  width: 300px;
+  height: 35px;
+  border-style: none;
+  border-radius: 5px;
+  background-color: #c4c4c4;
+}
+
+.signup-style2 {
+  width: 300px;
+  height: 30px;
+  border-style: none;
+  border-radius: 5px;
+  background-color: #c4c4c4;
+}
+
+.wrapper1 {
+  text-align: center;
+  margin: auto;
+  margin-top: 50px;
+  width: 420px;
+  height: 250px;
+  border: solid 3px;
+  border-color: #FFB6C1;
+  border-radius: 10%;
+  background: white 20%;
+}
+
+.wrapper2 {
+  text-align: center;
+  margin: auto;
+  margin-top: 50px;
+  width: 420px;
+  height: 500px;
+  border: solid 3px;
+  border-color: #FFB6C1;
+  border-radius: 10%;
+  background: white 20%;
 }
