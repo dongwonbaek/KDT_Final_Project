@@ -14,8 +14,11 @@ def index(request):
     }
     return render(request, "articles/index.html", context)
 
-def product_list(request):
-    return render(request, "articles/product_list.html")
+def product_list(request, category_pk):
+    context = {
+        'products': Product.objects.filter(category=category_pk).annotate(review_avg=Avg('review__rating')).order_by('-review_avg')
+    }
+    return render(request, "articles/product_list.html", context)
 
 def product_create(request):
     if request.method == "POST":
@@ -27,7 +30,7 @@ def product_create(request):
             product.user = request.user
             if images: # 다중이미지를 저장하기 위한 로직.
                 for image in images:
-                    image_instance = ProductImages(product=product, image=image)
+                    image_instance = ProductImages(product=product, images=image)
                     image_instance.save()
             product.save()
             messages.success(request, '글 생성 완료')
@@ -84,6 +87,7 @@ def review_index(request):
         'reviews': reviews,
     }
     return render(request, 'articles/review_index.html', context)
+
 
 @login_required
 def review_create(request, product_pk):
