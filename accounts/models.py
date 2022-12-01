@@ -26,6 +26,6 @@ class User(AbstractUser):
     # user image 없을 시 오류 방지
     @property
     def get_photo_url(self):
-        if self.profile_pic:
-            return self.profile_pic.url
+        if self.image:
+            return self.image.url
         return None
