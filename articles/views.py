@@ -14,22 +14,26 @@ def index(request):
     }
     return render(request, "articles/index.html", context)
 
-def product_list(request):
-    return render(request, "articles/product_list.html")
+def product_list(request, category_pk):
+    context = {
+        'products': Product.objects.filter(category=category_pk).annotate(review_avg=Avg('review__rating')).order_by('-review_avg')
+    }
+    return render(request, "articles/product_list.html", context)
 
 def product_create(request):
     if request.method == "POST":
         product_form = ProductForm(request.POST, request.FILES)
         product_images_form = ProductImagesForm(request.POST, request.FILES)
-        images = request.FILES.getlist('image')
+        images = request.FILES.getlist('images')
+        print(images)
         if product_form.is_valid() and product_images_form.is_valid():
             product = product_form.save(commit=False)
             product.user = request.user
+            product.save()
             if images: # 다중이미지를 저장하기 위한 로직.
                 for image in images:
-                    image_instance = ProductImages(product=product, image=image)
+                    image_instance = ProductImages(product=product, images=image)
                     image_instance.save()
-            product.save()
             messages.success(request, '글 생성 완료')
             return redirect('articles:index')
     else:
@@ -85,6 +89,7 @@ def review_index(request):
     }
     return render(request, 'articles/review_index.html', context)
 
+
 @login_required
 def review_create(request, product_pk):
     product = get_object_or_404(Product, pk=product_pk)
@@ -97,6 +102,12 @@ def review_create(request, product_pk):
             review.save()
             messages.success(request, '리뷰가 상공적으로 작성되었습니다.')
             return redirect('articles:product_detail', product_pk)
+    else:
+        review_form = ReviewForm()
+    context = {
+        'review_form': review_form,
+    }
+    return render(request, 'articles/review_create.html', context)
 
 @login_required
 def review_update(request, review_pk):

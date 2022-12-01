@@ -10,6 +10,16 @@
     <div id="navbar-example2" class="container-fluid MyNav px-0 mb-3 d-flex justify-content-between menu">
         <ul class="nav nav-pills ">
             <li class="nav-item">
+
+                <!-- <a class="nav-link text-black" href="{% url 'articles:product_rank' %}">랭킹</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-black" href="">카테고리</a>
+                <ul id="submenu">
+                    {% for category in categories %}
+                    <li><a class="nav-link text-black" href="{% url 'articles:product_list' category.0 %}">{{ category.1 }}</a></li>
+                    {% endfor %} -->
+
                 <a class="nav-link" href="{% url 'articles:product_rank' %}">랭킹</a>
             </li>
             <li class="nav-item">
@@ -28,6 +38,7 @@
                     <li><a class="nav-link" href="#">생필품</a></li>
                     <li><a class="nav-link" href="#">유아,아동</a></li>
                     <li><a class="nav-link" href="#">반려동물</a></li>
+
                 </ul>
             </li>
             <li class="nav-item">
@@ -39,7 +50,22 @@
             <li class="nav-item">
                 <a class="nav-link" href="#scrollspyHeading2">Q&A</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link text-black" href="{% url 'articles:product_create' %}">상품등록</a>
+            </li> 
         </ul>
+        {% if request.user.is_authenticated %}
+        <ul class="d-flex text-black">
+            <a href="{% url 'accounts:logout' %}">로그아웃</a>
+        </ul>
+
+        <!-- {% else %}
+        <ul class="d-flex text-black">
+            <a href="{% url 'accounts:login' %}">로그인/</a>
+            <a href="{% url 'accounts:signup' %}">회원가입</a>
+        </ul>
+        {% endif %} -->
+
 
         <ul class="d-flex text-black m-0 p-2">
             <li><a href="{% url 'articles:search' %}" class="me-3"><i class="bi bi-search"></i></a></li>
@@ -47,6 +73,7 @@
             <span class="mx-3">/</span>
             <li><a href="{% url 'accounts:signup' %}">회원가입</a></li>
         </ul>
+
 
     </div>
 </header>
