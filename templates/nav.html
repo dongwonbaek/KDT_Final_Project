@@ -1,45 +1,55 @@
+{% load static %}
 <header>
-  <!-- place navbar here -->
-  <div id="navbar" class="fnav d-flex justify-content-center px-0">
-      <img class="text-center" src="{% static 'img/ojd_1.png' %}">
-  </div>
-  <div id="navbar-example2" class="container-fluid MyNav px-0 mb-3 d-flex justify-content-between menu">
-      <ul class="nav nav-pills ">
-          <li class="nav-item">
-              <a class="nav-link" href="{% url 'articles:product_rank' %}">랭킹</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="">카테고리</a>
-              <ul id="submenu">
-                  {% for category in categories %}
-                  <li><a class="nav-link" href="{% url 'articles:product_list' category.0 %}">{{ category.1 }}</a></li>
-                  {% endfor %}
-              </ul>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#scrollspyHeading2">커뮤니티</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="{% url 'articles:review_index' %}">리뷰</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#scrollspyHeading2">Q&A</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link text-black" href="{% url 'articles:product_create' %}">상품등록</a>
-          </li> 
-      </ul>
-
-      <ul class="d-flex m-0 p-2">
-        <li><a href="{% url 'articles:search' %}" class="me-3"><i class="bi bi-search"></i></a></li>
-        {% if request.user.is_authenticated %} 
-        <li><a href="{% url 'accounts:logout' %}">로그아웃</a></li>
-        {% else %}
-       <li><a href="{% url 'accounts:login' %}">로그인</a></li>
-        <span class="mx-3">/</span>
-        <li><a href="{% url 'accounts:signup' %}">회원가입</a></li>
-       {% endif %} -->
-      </ul>
+    <!-- place navbar here -->
+    <div id="navbar" class="fnav d-flex justify-content-center px-0">
+        <img class="text-center" src="{% static 'img/ojd_1.png' %}">
+    </div>
+    <div id="navbar-example2" class="container-fluid MyNav px-0 mb-3 d-flex justify-content-between menu">
+        <ul class="nav nav-pills ">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'articles:product_rank' %}">랭킹</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">카테고리</a>
+                <ul id="submenu">
+                    {% for category in categories %}
+                    <li>
+                        <a class="nav-link" href="{% url 'articles:product_list' category.0 %}">{{ category.1 }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#scrollspyHeading2">커뮤니티</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'articles:review_index' %}">리뷰</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#scrollspyHeading2">Q&A</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-black" href="{% url 'articles:product_create' %}">상품등록</a>
+            </li> 
+        </ul>
+        <ul class="d-flex m-0 p-2">
+            <li>
+                <a href="{% url 'articles:search' %}" class="me-3"><i class="bi bi-search"></i></a>
+            </li>
+            {% if request.user.is_authenticated %} 
+            <li>
+                <a href="{% url 'accounts:logout' %}">로그아웃</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{% url 'accounts:login' %}">로그인</a>
+            </li>
+            <span class="mx-3">/</span>
+            <li>
+                <a href="{% url 'accounts:signup' %}">회원가입</a>
+            </li>
+        {% endif %}
+        </ul>
     </div>
 </header>
 <script>
