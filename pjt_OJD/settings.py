@@ -58,6 +58,9 @@ INSTALLED_APPS = [
     "corsheaders",
     "widget_tweaks",
     "imagekit",
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     # django default
     "django.contrib.admin",
     "django.contrib.auth",
@@ -65,7 +68,23 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.humanize",
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_SIGNUP_REDIRECT_URL = 'articles.index'
+LOGIN_REDIRECT_URL = 'articles.index'
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -90,6 +109,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "context_processors.variable_to_base",
             ],
         },
     },
@@ -174,6 +194,4 @@ MESSAGE_TAGS = {
     messages.ERROR: "alert-danger",
 }
 
-ACCOUNT_AUTHENTICATION_METHOD = "email"
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
+

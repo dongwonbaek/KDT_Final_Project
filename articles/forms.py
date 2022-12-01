@@ -14,10 +14,10 @@ class ProductImagesForm(forms.ModelForm):
         model = ProductImages
         fields = ("images",)
         widgets = {
-            "image": ClearableFileInput(attrs={"multiple": True}),
+            "images": ClearableFileInput(attrs={"multiple": True}),
         }
         labels = {
-            "image": "이미지 업로드",
+            "images": "이미지 업로드",
         }
 
 

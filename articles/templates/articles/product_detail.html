@@ -4,15 +4,52 @@
 {% load widget_tweaks %}
 {% load django_bootstrap5 %}
 {% load imagekit %}
+{% load humanize %}
 
 {% block title %}{% endblock title %}
 {% block style %}{% endblock style %}
 {% block content %}
 <h2>{{ product.pk }}번</h2>
+<img src="{{ product.productimages_set.all.0.images.url }}" alt="product.productimages_set.all.0.image">
 <p>{{ product.content }}</p>
-<p>{{ product.category }}</p>
-<p>{{ product.price }}</p>
-<p>{{ product.created_at }} | {{product.updated_at}}</p>
+<p>{{ product.get_category_display }}</p>
+<p>{{ product.price|intcomma }}</p>
+<p>{{ product.created_at }} | {{ product.updated_at }}</p>
 <a href="{% url 'articles:product_update' product.pk %}">수정하기</a>
+<a href="{% url 'articles:review_create' product.pk %}">리뷰작성하기</a>
+<h5>리뷰</h5>
+{% for review in product.review_set.all %}
+<!-- 모달 버튼 -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{ review.pk }}">
+  {{ review.title }}
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal{{ review.pk }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{ review.title }}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="{{ review.image.url }}" alt="review.image">
+        <div>
+          평점
+          {{ review.rating }}
+        </div>
+        <div>
+          내용
+          {{ review.content }}
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
 {% endblock content %}
 {% block script %}{% endblock script %}
