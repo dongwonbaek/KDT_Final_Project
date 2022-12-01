@@ -18,11 +18,11 @@
     <div class="col d-flex justify-content-center mb-5">
       <div class="card">
         <div class="card-img">
-          <img class="w-100 h-100 rounded" src="{{ product.product_images_set.all.0.url }}" alt="product.product_images_set.all">
+          <img class="w-100 h-100 rounded" src="{{ product.productimages_set.all.0.images.url }}" alt="product.productimages_set.all.0.images">
         </div>
         <div>
           <div class="brand mt-2"></div>
-          <div> {{ product.title }} </div>
+          <div> <a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a> </div>
           <div class="fs-5 mt-2">
             <span class="fw-bold">{{ product.price|intcomma }}</span><span>원</span>
           </div>
