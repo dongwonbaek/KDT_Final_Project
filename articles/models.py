@@ -50,3 +50,8 @@ class ReviewComment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     review = models.ForeignKey('Review', on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+class ReviewReaction(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    review = models.ForeignKey(Review, on_delete=models.CASCADE)
+    emotions = models.CharField(max_length=1)
