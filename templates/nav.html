@@ -3,48 +3,44 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <!-- place navbar here -->
 
-    <nav id="image" class="fnav px-0">
-        <div class="d-flex justify-content-center">
-            <img src="{% static 'img/ojd_1.png' %}">
+    <nav id="navbar navbar-expand-lg" class="fnav px-0">
+        <div class="fnav px-0">
+            <img clas="text-center" src="{% static 'img/ojd_1.png' %}">
+        </div>
+        <div id="navbar-example2" class="container-fluid MyNav px-0 mb-3 d-flex justify-content-between">
+            <ul class="nav nav-pills ">
+                <li class="nav-item">
+                    <a class="nav-link text-black" href="#scrollspyHeading1">랭킹</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black" href="#scrollspyHeading2">카테고리</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black" href="#scrollspyHeading2">커뮤니티</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black" href="#scrollspyHeading2">리뷰</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black" href="#scrollspyHeading2">Q&A</a>
+                </li>
+            </ul>
+            <ul class="d-flex text-black">
+                <a>로그인</a>/
+                <a>회원가입</a>
+            </ul>
         </div>
     </nav>
-
-    <div id="navbar-example2" class="container-fluid MyNav px-0 mb-3 d-flex justify-content-between">
-        <ul class="nav nav-pills ">
-            <li class="nav-item">
-                <a class="nav-link text-black" href="#scrollspyHeading1">랭킹</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-black" href="#scrollspyHeading2">카테고리</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-black" href="#scrollspyHeading2">커뮤니티</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-black" href="#scrollspyHeading2">리뷰</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-black" href="#scrollspyHeading2">Q&A</a>
-            </li>
-        </ul>
-        <ul class="d-flex text-black">
-            <a>로그인/</a>
-            <a>회원가입</a>
-        </ul>
-    </div>
 </header>
-
-<body>
-    <script>
-        $(window).scroll(function () {
-            if ($(document).scrollTop() > 50) {
-                $('#image').addClass('affix');
-                $('#navbar-example2').addClass('topon');
-                console.log("OK");
-            } else {
-                $('#image').removeClass('affix');
-                $('#navbar-example2').removeClass('topon');
-            }
-        });
-    </script>
-</body>
+<script>
+    $(window).scroll(function () {
+        if ($(document).scrollTop() > 50) {
+            $('#image').addClass('affix');
+            $('#navbar-example2').addClass('topon');
+            console.log("OK");
+        } else {
+            $('#image').removeClass('affix');
+            $('#navbar-example2').removeClass('topon');
+        }
+    });
+</script>

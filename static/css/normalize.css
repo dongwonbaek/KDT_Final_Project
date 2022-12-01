@@ -1,4 +1,11 @@
 @charset "utf-8";
+:root {
+  --main-bluegreen: #003B41;
+  --main-scarlet: #FB5957;
+  --main-lightpink: #FEEAEB;
+  --main-salmon: #F28080;
+  --main-mintygreen: #297372;
+}
 
 *,
 *::before,
@@ -10,7 +17,7 @@
 /* 텍스트 마우스 드래그시 색상 변경방법 */
 ::selection,
 ::-moz-selection {
-  background : #39f;
+  background : var(--main-mintygreen);
   color      : #fff;
   text-shadow: none;
 }
@@ -58,13 +65,13 @@ a:hover {
 }
 
 a {
-  color          : #1e87f0;
+  color          : var(--main-mintygreen);
   text-decoration: none;
   cursor         : pointer;
 }
 
 a:hover {
-  color          : #0f6ecd;
+  color          : var(--main-mintygreen);
   text-decoration: underline;
 }
 
