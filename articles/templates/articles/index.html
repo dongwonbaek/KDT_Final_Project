@@ -7,48 +7,205 @@
 
 {% block title %}{% endblock title %}
 {% block style %}{% endblock style %}
-{% block content %}
-  <main >
-    <!--
-  <h1>index 페이지</h1>
-  {% for product in products %}
-    <a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a>
-    <p>{{ product.content}}</p>
-    <p>{{ product.category }}</p>
-    <p>{{ product.created_at }} | {{ product.updated_at }}</p>
-    <a href="{% url 'articles:product_delete' product.pk %}">글 삭제</a>
-  {% endfor %} -->
-    <!-- 네브 아래 width100% 영역 -->
-    <section id="index-banner" class="recobox">
-      <div class="container">
-        {% if request.user.is_authenticated %}
-        <div class="recobox-user">
-          <p>{{ user }}님<br>누구를 위한 선물인가요 ?</p>
-          <img src="{{ user.get_photo_url }}" alt="user-profile-pic">
-        </div>
-        {% else %}
-        <div class="recobox-anonymous">
-          <p>누구를 위한 선물인가요?</p>
-          <img src="{% static 'img/index/question.png' %}" alt="anonymous-user">
-        </div>
-        {% endif %}
-        </div>
-        <div class="recobox-ai">
-          <p>누구를 위한 선물인가요?</p>
-          <img src="{% static 'img/index/question.png' %}" alt="anonymous-user">
-        </div>
-      </div>
-    </section>
-    {% comment %} <section id="ad-box" class="card MyFloat">
-      <div class="card-body">
-        <h4 class="card-title">이벤트</h4>
-        <h6 class="card-subtitle mb-2 text-muted">뭐시기뭐시기</h6>
-        <p class="card-text">첫</p>
-        <a href="#" class="card-link btn"></a>
-        <button type="button" class="btn-close" aria-label="Close"></button>
-      </div>
-    </section> {% endcomment %}
-  </main>
 
+{% block content %}
+  <!-- 친구 목록 Modal -->
+  <div class="modal fade select-friend-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header d-flex ">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">친구 선택</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <p>선물할 친구를 선택하세요
+            <i class="bi bi-info-circle select-info" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="새로 추가한 친구는 바로 나타나지 않을 수 있으며, 선물을 받을 수 없는 친구들은 목록에 표시되지 않습니다."></i>
+          </p>
+        </div>
+        <div class="modal-body">
+          <div>
+            나
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                <img src="{{ user.get_photo_url }}" class="select-friend-img">
+                {{ user }}
+              </label>
+            </div>
+          </div>
+          <!--나-->
+          <div>
+            친구목록
+            {{ user.following.all|length }}
+            {% if user.followers.all %}
+              {% for follower in user.followers.all %}
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    <img src="{{ follower.get_photo_url }}" alt="">
+                    {{ follower.username }}
+                  </label>
+                </div>
+              {% endfor %}
+            {% else %}
+              <p>등록된 친구가 없습니다.<br>먼저 친구를 등록해주세요.</p>
+            {% endif %}
+          </div>
+          <!--친구목록-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="neg-btn" data-bs-dismiss="modal">취소</button>
+          <button type="button" class="pos-btn">선택</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 네브 아래 width100% 영역 -->
+  <section id="index-banner" class="recobox">
+    <p>
+      {% if request.user.is_authenticated %}{{ user }}
+        <span>님</span><br>{% endif %}누구를 위한 선물인가요?</p>
+    <!-- 친구 목록 trigger modal -->
+    <div class="recobox-pic-area" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <img src="{% static 'img/index/question-mark.png' %}" alt="anonymous-user" class="recobox-pic">
+      <img src="{% static 'img/index/add-red.png' %}" alt="select-friend" class="select-friend">
+    </div>
+  </section>
+  <section class="container category-wrapper">
+    <img src="{% static 'img/index/snow.png' %}" class="snow-piledup">
+    <div class="index-category row row-cols-5">
+      <div>
+        <a href="{% url 'articles:product_list' %}">
+          <img src="{% static 'img/index/gift1.jpg' %}">
+          <p>크리스마스</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="{% url 'articles:product_list' %}">
+          <img src="{% static 'img/index/gift2.jpg' %}">
+          <p>따뜻한 선물</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="{% url 'articles:product_list' %}">
+          <img src="{% static 'img/index/gift3.jpg' %}">
+          <p>생일</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="{% url 'articles:product_list' %}">
+          <img src="{% static 'img/index/gift4.jpg' %}">
+          <p>가벼운 선물</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="{% url 'articles:product_list' %}">
+          <img src="{% static 'img/index/gift5.jpg' %}">
+          <p>건강/회복</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="{% url 'articles:product_list' %}">
+          <img src="{% static 'img/index/gift6.jpg' %}">
+          <p>스몰럭셔리</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="{% url 'articles:product_list' %}">
+          <img src="{% static 'img/index/gift7.jpg' %}">
+          <p>어른선물</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="{% url 'articles:product_list' %}">
+          <img src="{% static 'img/index/gift8.jpg' %}">
+          <p>명품선물</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="{% url 'articles:product_list' %}">
+          <img src="{% static 'img/index/gift9.jpg' %}">
+          <p>출산/키즈</p>
+        </a>
+      </div>
+      <div class="col">
+        <a href="{% url 'articles:product_list' %}">
+          <img src="{% static 'img/index/gift10.jpg' %}">
+          <p>김치선물</p>
+        </a>
+      </div>
+    </div>
+    <!--index-category-->
+    <div class="personalized-category text-center">
+      <h2>
+        <span>ODJ AI</span>의 추천</h2>
+      <ul>
+        {% if request.user.is_authenticated %}
+          {% for i in "x"|rjust:"15" %}
+            <li>
+              <a href="{% url 'articles:product_list' %}">유저 선호순</a>
+            </li>
+          {% endfor %}
+        {% else %}
+          {% for i in "x"|rjust:"15" %}
+            <li>
+              <a href="{% url 'articles:product_list' %}">걍 카테고리나열</a>
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
+    <!--personalized-category-->
+    <div class="multiple-items">
+      <div><img src="{% static 'img/index/ad-multiit.png' %}"></div>
+      <div><img src="https://picsum.photos/300/200?random=2"></div>
+      <div><img src="https://picsum.photos/300/200?random=3"></div>
+      <div><img src="https://picsum.photos/300/200?random=4"></div>
+      <div><img src="https://picsum.photos/300/200?random=5"></div>
+      <div><img src="https://picsum.photos/300/200?random=6"></div>
+    </div>
+    <!--MyCarousel-->
+    <div id="exTab3" class="index-ranking">	
+      <ul  class="nav nav-pills">
+            <li class="active">
+              <a  href="#1b" data-toggle="tab">Overview</a>
+            </li>
+            <li><a href="#2b" data-toggle="tab">Using nav-pills</a>
+            </li>
+            <li><a href="#3b" data-toggle="tab">Applying clearfix</a>
+            </li>
+            <li><a href="#4a" data-toggle="tab">Background color</a>
+            </li>
+          </ul>
+      
+            <div class="tab-content clearfix">
+              <div class="tab-pane active" id="1b">
+                <h3>Same as example 1 but we have now styled the tab's corner</h3>
+              </div>
+              <div class="tab-pane" id="2b">
+                <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color for the tab</h3>
+              </div>
+              <div class="tab-pane" id="3b">
+                <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
+              </div>
+                <div class="tab-pane" id="4b">
+                <h3>We use css to change the background color of the content to be equal to the tab</h3>
+              </div>
+            </div>
+        </div>
+  </section>
+  <section id="ad-box" class="card alert FloatingAd">
+    <div class="card-body">
+      <h4 class="card-title">🎊오픈 기념🎊</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <h6 class="card-subtitle mb-2 text-muted">스탬프 2배 이벤트</h6>
+      <p class="card-text">단 이틀, 오다주 가입하면 스탬프 2개가 바로 쏙!😉 지금 바로 가입하세요🎉 </p>
+      <img src="{% static 'img/index/santa.png' %}">
+      <a href="{% url 'accounts:signup' %}" class="card-link pos-btn">가입하러 가기</a>
+    </div>
+  </section>
 {% endblock content %}
-{% block script %}{% endblock script %}
+
+{% block script %}
+  <script>
+    $('.multiple-items').slick({infinite: true, slidesToShow: 2, slidesToScroll: 2, dots: true});
+  </script>
+{% endblock script %}
