@@ -8,8 +8,8 @@
 {% block title %}{% endblock title %}
 {% block style %}{% endblock style %}
 {% block content %}
-
-<!--
+  <main >
+    <!--
   <h1>index 페이지</h1>
   {% for product in products %}
     <a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a>
@@ -18,20 +18,28 @@
     <p>{{ product.created_at }} | {{ product.updated_at }}</p>
     <a href="{% url 'articles:product_delete' product.pk %}">글 삭제</a>
   {% endfor %} -->
-
-  <main class="container">
-    <section class="index-first-box">
-      {% if request.user.is_authenticated %}
-      <p>{{ user }}님</p>
-      <p>누구를 위한 선물인가요 ?</p>
-      <div>
-        <img src="{{ user.get_photo_url }}" alt="user-profile-pic">
+    <!-- 네브 아래 width100% 영역 -->
+    <section id="index-banner" class="recobox">
+      <div class="container">
+        {% if request.user.is_authenticated %}
+        <div class="recobox-user">
+          <p>{{ user }}님<br>누구를 위한 선물인가요 ?</p>
+          <img src="{{ user.get_photo_url }}" alt="user-profile-pic">
+        </div>
+        {% else %}
+        <div class="recobox-anonymous">
+          <p>누구를 위한 선물인가요?</p>
+          <img src="{% static 'img/index/question.png' %}" alt="anonymous-user">
+        </div>
+        {% endif %}
+        </div>
+        <div class="recobox-ai">
+          <p>누구를 위한 선물인가요?</p>
+          <img src="{% static 'img/index/question.png' %}" alt="anonymous-user">
+        </div>
       </div>
-      {% else %}
-      <p>누구를 위한 선물인가요?</p>
-      {% endif %}
     </section>
-    <section id="ad-box" class="card MyFloat">
+    {% comment %} <section id="ad-box" class="card MyFloat">
       <div class="card-body">
         <h4 class="card-title">이벤트</h4>
         <h6 class="card-subtitle mb-2 text-muted">뭐시기뭐시기</h6>
@@ -39,12 +47,7 @@
         <a href="#" class="card-link btn"></a>
         <button type="button" class="btn-close" aria-label="Close"></button>
       </div>
-    </section>
-    <section>
-      <img src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F280920221110_YHLOE.jpeg" alt="생일">
-      <img src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F280920221110_YHLOE.jpeg" alt="가벼운선물">
-      <img src="" alt="">
-    </section>
+    </section> {% endcomment %}
   </main>
 
 {% endblock content %}

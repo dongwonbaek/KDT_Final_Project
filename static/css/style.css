@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: 'YiSunShinDotumM';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YiSunShinDotumM.woff') format('woff');
@@ -138,3 +139,164 @@ header .menu ul li:hover #submenu {
   display: inline;
   width: 100vw;
 }
+
+@font-face {
+  font-family: 'YiSunShinDotumM';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YiSunShinDotumM.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+.jejugothic * { 
+  font-family: 'Jeju Gothic', sans-serif;
+}
+
+:root {
+  --main-bluegreen: #003B41;
+  --main-scarlet: #FB5957;
+  --main-lightpink: #FEEAEB;
+  --main-salmon: #F28080;
+  --main-mintygreen: #297372;
+  --main-white: #FFF;
+  --main-black: #000;
+  --header-font: 'Jeju Gothic', sans-serif;
+  --body-font: 'YiSunShinDotumM';
+}
+
+body {
+  position: relative;
+  font-family: 'YiSunShinDotumM';
+  min-height: 100vh;
+  padding-top: 211px;
+}
+
+
+/* ---------- base.html ---------- */
+.MyNav {
+  background-color: var(--main-white);
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  height: auto;
+  padding: 10px 0;
+  background-color: var(--main-mintygreen);
+  color: var(--main-white);
+}
+
+.ToTop {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 30px;
+  position: fixed;
+  right: 20px;
+  z-index: 2147483647;
+  color: var(--main-bluegreen);
+  background-color: var(--main-white);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 5px 5px var(--main-bluegreen);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none
+}
+
+.ToTop:hover {
+  background-color: var(--main-bluegreen);
+  box-shadow: 0px 15px 20px var(--main-mintygreen);
+  color: var(--main-white);
+  transform: translateY(-3px);
+}
+
+/* ---------- nav ---------- */
+.fnav {
+  background-color: white;
+  position: fixed;
+  border-style: solid none;
+  border-color: #FFC0CB;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 211px;
+  transition: top 0.2s ease-in-out;
+}
+
+.MyNav {
+  background-color: white;
+  position: fixed;
+  border-style: solid none;
+  border-color: #FFB6C1;
+}
+
+.affix {
+  top: -211px;
+}
+
+.topon {
+  top: 0px;
+}
+
+header .menu ul>li {
+  padding: 0 auto;
+  float: left;
+}
+
+#submenu {
+  position: absolute;
+  display: none;
+}
+
+
+header .menu ul li:hover #submenu {
+  display: inline;
+  width: 100vw;
+}
+
+/* ---------- index ---------- */
+.MyFloat {
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  width: 14.5rem;
+  height: 21.875rem;
+  backdrop-filter: blur(5px) saturate(200%);
+  -webkit-backdrop-filter: blur(5px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.79);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+.recobox {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 27.5rem;
+  width: 100%;
+  text-align: center;
+  background-color: var(--main-lightpink);
+}
+
+.recobox-user, .recobox-user-anonymous {
+  font-size: 30px;
+}
+
+.recobox-user-anonymous {
+
+}
+
+.recobox-ai {
+  backdrop-filter: blur(5px) saturate(200%);
+  -webkit-backdrop-filter: blur(5px) saturate(200%);
+  background-color: var(--main-white);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3)
+  }
+
