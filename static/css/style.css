@@ -165,7 +165,7 @@ header .menu ul li:hover #submenu {
   border: 1px solid rgba(209, 213, 219, 0.3)
 }
 
-/*------유저 로그인------*/
+/*------로그인, 회원가입------*/
 
 .login-button {
   width: 200px;
@@ -176,7 +176,7 @@ header .menu ul li:hover #submenu {
   background-color: #ece6cc;
 }
 
-#id_username {
+.signup-style1 {
   width: 300px;
   height: 35px;
   border-style: none;
@@ -184,9 +184,9 @@ header .menu ul li:hover #submenu {
   background-color: #c4c4c4;
 }
 
-#id_password {
+.signup-style2 {
   width: 300px;
-  height: 35px;
+  height: 30px;
   border-style: none;
   border-radius: 5px;
   background-color: #c4c4c4;
@@ -202,47 +202,6 @@ header .menu ul li:hover #submenu {
   border-color: #FFB6C1;
   border-radius: 10%;
   background: white 20%;
-}
-
-/*------유저 가입------*/
-#id_email {
-  width: 300px;
-  height: 35px;
-  border-style: none;
-  border-radius: 5px;
-  background-color: #c4c4c4;
-}
-
-#id_password1 {
-  width: 300px;
-  height: 35px;
-  border-style: none;
-  border-radius: 5px;
-  background-color: #c4c4c4;
-}
-
-#id_password2 {
-  width: 300px;
-  height: 35px;
-  border-style: none;
-  border-radius: 5px;
-  background-color: #c4c4c4;
-}
-
-#id_image {
-  width: 300px;
-  height: 30px;
-  border-style: none;
-  border-radius: 5px;
-  background-color: #c4c4c4;
-}
-
-#id_birth {
-  width: 300px;
-  height: 30px;
-  border-style: none;
-  border-radius: 5px;
-  background-color: #c4c4c4;
 }
 
 .wrapper2 {
