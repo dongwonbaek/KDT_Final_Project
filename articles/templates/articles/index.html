@@ -22,7 +22,8 @@
   <main class="container">
     <section class="index-first-box">
       {% if request.user.is_authenticated %}
-      <p>{{ user }}님</p>
+      <a href="{% url 'accounts:detail' user.pk %}"><p>{{ user }}님</p></a>
+        
       <p>누구를 위한 선물인가요 ?</p>
       <div>
         <img src="{{ user.get_photo_url }}" alt="user-profile-pic">

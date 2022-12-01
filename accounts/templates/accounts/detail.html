@@ -9,8 +9,7 @@
 {% block style %}{% endblock style %}
 {% block content %}
     {% comment %} <h3>{{ user.email }}</h3>
-    <p>팔로우: {{ user.following.count }}</p>
-    <p>팔로워: {{ user.followers.count }}</p>
+    <p>팔로우: {{ user.following.count }} | 팔로워: {{ user.followers.count }}</p>
 {% if request.user != user %}
 <a href="{% url 'accounts:follow' user.pk %}">
     {% if request.user in user.followers.all %}
