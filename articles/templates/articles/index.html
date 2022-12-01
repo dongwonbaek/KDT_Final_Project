@@ -9,6 +9,15 @@
 {% block style %}{% endblock style %}
 {% block content %}
   <main >
+    <!--
+  <h1>index 페이지</h1>
+  {% for product in products %}
+    <a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a>
+    <p>{{ product.content}}</p>
+    <p>{{ product.category }}</p>
+    <p>{{ product.created_at }} | {{ product.updated_at }}</p>
+    <a href="{% url 'articles:product_delete' product.pk %}">글 삭제</a>
+  {% endfor %} -->
     <!-- 네브 아래 width100% 영역 -->
     <section id="index-banner" class="recobox">
       <div class="container">
@@ -23,12 +32,12 @@
           <img src="{% static 'img/index/question.png' %}" alt="anonymous-user">
         </div>
         {% endif %}
+        </div>
+        <div class="recobox-ai">
+          <p>누구를 위한 선물인가요?</p>
+          <img src="{% static 'img/index/question.png' %}" alt="anonymous-user">
+        </div>
       </div>
-      <div class="recobox-ai">
-        <p>누구를 위한 선물인가요?</p>
-        <img src="{% static 'img/index/question.png' %}" alt="anonymous-user">
-      </div>
-    </div>
     </section>
     {% comment %} <section id="ad-box" class="card MyFloat">
       <div class="card-body">
@@ -40,5 +49,6 @@
       </div>
     </section> {% endcomment %}
   </main>
+
 {% endblock content %}
 {% block script %}{% endblock script %}
