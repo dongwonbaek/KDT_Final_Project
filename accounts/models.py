@@ -7,6 +7,7 @@ from imagekit.processors import Thumbnail
 
 
 class User(AbstractUser):
+    nickname = models.CharField(max_length=20, unique=True)
     image = ProcessedImageField(
         upload_to="images/",
         blank=True,
