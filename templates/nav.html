@@ -42,14 +42,11 @@
         </ul>
 
         <ul class="d-flex text-black m-0 p-2">
-            <a>로그인/</a>
-            <a>회원가입</a>
-            <ul class="d-flex text-black">
-                <li><a href="{% url 'articles:search' %}" class="me-3"><i class="bi bi-search"></i></a></li>
-                <li><a href="{% url 'accounts:login' %}">로그인</a></li>
-                <span class="mx-3">/</span>
-                <li><a href="{% url 'accounts:signup' %}">회원가입</a></li>
-            </ul>
+            <li><a href="{% url 'articles:search' %}" class="me-3"><i class="bi bi-search"></i></a></li>
+            <li><a href="{% url 'accounts:login' %}">로그인</a></li>
+            <span class="mx-3">/</span>
+            <li><a href="{% url 'accounts:signup' %}">회원가입</a></li>
+        </ul>
 
     </div>
 </header>

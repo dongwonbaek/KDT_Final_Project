@@ -8,19 +8,21 @@
 {% block title %}{% endblock title %}
 {% block style %}{% endblock style %}
 {% block content %}
+
+<body class="">
     {% comment %} <h3>{{ user.email }}</h3>
     <p>팔로우: {{ user.following.count }}</p>
     <p>팔로워: {{ user.followers.count }}</p>
-{% if request.user != user %}
-<a href="{% url 'accounts:follow' user.pk %}">
-    {% if request.user in user.followers.all %}
+    {% if request.user != user %}
+    <a href="{% url 'accounts:follow' user.pk %}">
+        {% if request.user in user.followers.all %}
         팔로우 취소
-    {% else %}
+        {% else %}
         팔로우
-    {% endif %}
-</a>
-{% endif %} {% endcomment %}
-<img src="{{ user.image.url }}" alt="abc">
-
+        {% endif %}
+    </a>
+    {% endif %} {% endcomment %}
+    <img src="{{ user.image.url }}" alt="abc">
+</body>
 {% endblock content %}
 {% block script %}{% endblock script %}
