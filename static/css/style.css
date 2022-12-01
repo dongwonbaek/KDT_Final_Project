@@ -63,51 +63,6 @@ footer {
   transform: translateY(-7px);
 }
 
-/* ---------- nav ---------- */
-.fnav {
-  background-color: white;
-  position: fixed;
-  border-style: solid none;
-  border-color: #FFC0CB;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 211px;
-  transition: top 0.2s ease-in-out;
-}
-
-.MyNav {
-  background-color: white;
-  position: fixed;
-  border-style: solid none;
-  border-color: #FFB6C1;
-}
-
-.affix {
-
-  top: -211px;
-
-}
-
-.topon {
-  top: 0px;
-}
-
-header .menu ul>li {
-  padding: 0 auto;
-  float: left;
-}
-
-#submenu {
-  position: absolute;
-  display: none;
-}
-
-
-header .menu ul li:hover #submenu {
-  display: inline;
-  width: 100vw;
-}
 
 /* ---------- index ---------- */
 .MyFloat {
@@ -129,4 +84,57 @@ header .menu ul li:hover #submenu {
   text-align: center;
   border-radius: 3px;
   background-color: var(--theme-4);
+}
+
+/* ---------- nav ---------- */
+
+
+.MyNav {
+  background-color: white;
+  position: fixed;
+  top: 211px;
+  border-style: solid none;
+  border-color: #FFB6C1;
+}
+
+.fnav {
+  background-color: white;
+  position: fixed;
+  border-style: solid none;
+  border-color: #FFC0CB;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 211px;
+  transition: top 0.2s ease-in-out;
+}
+
+.affix {
+
+  top: -211px;
+
+}
+
+.topon {
+  top: 0px;
+}
+
+.menu {
+  height: 40px;
+}
+
+header .menu ul>li {
+  padding: 0 auto;
+  float: left;
+}
+
+#submenu {
+  position: absolute;
+  display: none;
+}
+
+
+header .menu ul li:hover #submenu {
+  display: inline;
+  width: 100vw;
 }
