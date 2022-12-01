@@ -12,24 +12,14 @@
     <div id="navbar-example2" class="container-fluid MyNav px-0 mb-3 d-flex justify-content-between menu">
         <ul class="nav nav-pills ">
             <li class="nav-item">
-                <a class="nav-link text-black" href="#scrollspyHeading1">랭킹</a>
+                <a class="nav-link text-black" href="{% url 'articles:product_rank' %}">랭킹</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-black" href="#scrollspyHeading2">카테고리</a>
+                <a class="nav-link text-black" href="">카테고리</a>
                 <ul id="submenu">
-                    <li><a class="nav-link text-black" href="#">크리스마스</a></li>
-                    <li><a class="nav-link text-black" href="#">가구</a></li>
-                    <li><a class="nav-link text-black" href="#">패브릭</a></li>
-                    <li><a class="nav-link text-black" href="#">가전,디지털</a></li>
-                    <li><a class="nav-link text-black" href="#">주방용품</a></li>
-                    <li><a class="nav-link text-black" href="#">식품</a></li>
-                    <li><a class="nav-link text-black" href="#">데코,식물</a></li>
-                    <li><a class="nav-link text-black" href="#">조명</a></li>
-                    <li><a class="nav-link text-black" href="#">수납,정리</a></li>
-                    <li><a class="nav-link text-black" href="#">생활용품</a></li>
-                    <li><a class="nav-link text-black" href="#">생필품</a></li>
-                    <li><a class="nav-link text-black" href="#">유아,아동</a></li>
-                    <li><a class="nav-link text-black" href="#">반려동물</a></li>
+                    {% for category in categories %}
+                    <li><a class="nav-link text-black" href="{% url 'articles:product_list' category.0 %}">{{ category.1 }}</a></li>
+                    {% endfor %}
                 </ul>
             </li>
             <li class="nav-item">
@@ -41,11 +31,20 @@
             <li class="nav-item">
                 <a class="nav-link text-black" href="#scrollspyHeading2">Q&A</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link text-black" href="{% url 'articles:product_create' %}">상품등록</a>
+            </li> 
         </ul>
+        {% if request.user.is_authenticated %}
         <ul class="d-flex text-black">
-            <a>로그인/</a>
-            <a>회원가입</a>
+            <a href="{% url 'accounts:logout' %}">로그아웃</a>
         </ul>
+        {% else %}
+        <ul class="d-flex text-black">
+            <a href="{% url 'accounts:login' %}">로그인/</a>
+            <a href="{% url 'accounts:signup' %}">회원가입</a>
+        </ul>
+        {% endif %}
 
     </div>
 </header>
