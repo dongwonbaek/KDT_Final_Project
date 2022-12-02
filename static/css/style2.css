@@ -110,6 +110,7 @@
 /* 탭 이동 */
 #tap-move {
   border: solid 1px #ddd;
+  margin-top: 8rem;
 }
 
 .tap-nav {
@@ -129,4 +130,10 @@
 
 #tab-section-1 {
   padding: 3rem 2rem;
+}
+
+.small-img {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 0.2rem;
 }
