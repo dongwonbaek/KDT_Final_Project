@@ -73,61 +73,61 @@
     <img src="{% static 'img/index/snow.png' %}" class="snow-piledup">
     <div class="index-category row row-cols-5">
       <div>
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 1 %}">
           <img src="{% static 'img/index/gift1.jpg' %}">
           <p>크리스마스</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 1 %}">
           <img src="{% static 'img/index/gift2.jpg' %}">
           <p>따뜻한 선물</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 1 %}">
           <img src="{% static 'img/index/gift3.jpg' %}">
           <p>생일</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 1 %}">
           <img src="{% static 'img/index/gift4.jpg' %}">
           <p>가벼운 선물</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 1 %}">
           <img src="{% static 'img/index/gift5.jpg' %}">
           <p>건강/회복</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 1 %}">
           <img src="{% static 'img/index/gift6.jpg' %}">
           <p>스몰럭셔리</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 1 %}">
           <img src="{% static 'img/index/gift7.jpg' %}">
           <p>어른선물</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 1 %}">
           <img src="{% static 'img/index/gift8.jpg' %}">
           <p>명품선물</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 1 %}">
           <img src="{% static 'img/index/gift9.jpg' %}">
           <p>출산/키즈</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 1 %}">
           <img src="{% static 'img/index/gift10.jpg' %}">
           <p>김치선물</p>
         </a>
@@ -137,21 +137,6 @@
     <div class="personalized-category text-center">
       <h2>
         <span>ODJ AI</span>의 추천</h2>
-      <ul>
-        {% if request.user.is_authenticated %}
-          {% for i in "x"|rjust:"15" %}
-            <li>
-              <a href="{% url 'articles:product_list' %}">유저 선호순</a>
-            </li>
-          {% endfor %}
-        {% else %}
-          {% for i in "x"|rjust:"15" %}
-            <li>
-              <a href="{% url 'articles:product_list' %}">걍 카테고리나열</a>
-            </li>
-          {% endfor %}
-        {% endif %}
-      </ul>
     </div>
     <!--personalized-category-->
     <div class="multiple-items">

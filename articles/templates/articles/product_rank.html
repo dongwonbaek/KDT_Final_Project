@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block content %}
+  
+<section class="container">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 my-5" >
+    <a href="?gender=all">모두</a>
+    <a href="?gender=woman">여성</a>
+    <a href="?gender=man">남성</a>
+    <a href="?sort_by=rating">평점높은순</a>
+    <a href="?sort_by=like">많은 위시순</a>
+    {% for product in products %}
+    <div class="col d-flex justify-content-center mb-5">
+      <div class="card">
+        <div class="card-img">
+          <img class="w-100 h-100 rounded" src="{{ product.productimages_set.all.0.images.url }}" alt="product.productimages_set.all.0.images">
+        </div>
+        <div>
+          <div class="brand mt-2"></div>
+          <div> <a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a> </div>
+          <div class="fs-5 mt-2">
+            <span class="fw-bold">{{ product.price|intcomma }}</span><span>원</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock content %}
