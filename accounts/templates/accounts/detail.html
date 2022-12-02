@@ -9,20 +9,92 @@
 {% block style %}{% endblock style %}
 {% block content %}
 
-<body class="">
-    {% comment %} <h3>{{ user.email }}</h3>
-
-    <p>팔로우: {{ user.following.count }} | 팔로워: {{ user.followers.count }}</p>
-{% if request.user != user %}
-<a href="{% url 'accounts:follow' user.pk %}">
-    {% if request.user in user.followers.all %}
-        팔로우 취소
+<div class="detail_body d-flex flex-column align-items-center">
+    <div class="d-flex">
+        <img src="{{ user.image.url }}" class="profile" alt="abc">
+        <div class="d-flex flex-column align-items-center profile-username">
+            <h3>{{ user.nickname }}</h3>
+            {% if user.gender == True %}
+            <p>성별: 남자</p>
+            {% else %}
+            <p>여자</p>
+            {% endif %}
+        </div>
+    </div>
+    <p>팔로우: {{ user.following.count }}명 | 팔로워: {{ user.followers.count }}명</p>
+    {% if request.user == user %}
+    <div class="d-flex justify-content-center"><button class="login-button"><a
+                href="{% url 'accounts:update' %}">유저정보수정</a></button>
+        <button class="delete-button"><a href="{% url 'accounts:delete' %}">탈퇴</a></button>
+    </div>
+    {% endif %}
+    {% if request.user != user %}
+    <div class="d-flex justify-content-center">
+        {% if request.user in user.blockers.all %}
+        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#block"><a
+                href="{% url 'accounts:block' user.pk %}">차단 취소</a></button>
         {% else %}
-        팔로우
+        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#block"><a
+                href="{% url 'accounts:block' user.pk %}">차단하기</a></button>
         {% endif %}
-    </a>
-    {% endif %} {% endcomment %}
-    <img src="{{ user.image.url }}" alt="abc">
-</body>
+
+        {% if request.user in user.followers.all %}
+        <button class="follow-button" data-bs-toggle="modal" data-bs-target="#follow"><a
+                href="{% url 'accounts:follow' user.pk %}">팔로우 취소</a></button>
+        {% else %}
+        <button class="follow-button" data-bs-toggle="modal" data-bs-target="#follow"><a
+                href="{% url 'accounts:follow' user.pk %}">팔로우</a></button>
+        {% endif %}
+
+    </div>
+    {% endif %}
+</div>
+<button>작성한 후기</button>
+<button>위시리스트</button>
+
+
+
+<!--모달창-->
+<div class="modal fade" id="block" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="block">차단 목록</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {% for f in request.user.blocking.all %}
+                <img src="{{f.image.url}}" class="user-image">
+                {{f.nickname}}
+                {% endfor %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="follow-button " data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="follow" tabindex="-1" aria-labelledby="follow" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="follow">팔로우 목록</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {% for f in request.user.following.all %}
+                <img src="{{f.image.url}}" class="user-image">
+                {{f.nickname}}
+                {% endfor %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="follow-button " data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
-{% block script %}{% endblock script %}
+{% block script %}
+
+{% endblock script %}
