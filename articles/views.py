@@ -176,25 +176,27 @@ def review_comment_delete(request, comment_pk):
 
 
 def product_rank(request):
-    # gender = 'all'
-    # if request.GET.get('gender'):
-    #     gender = request.GET.get('gender')
-    # if gender == 'all':
-    #     products = Product.objects.all()
-    # elif gender == 'woman':
-    #     products = Product.objects.all()
-    #     woman_products = products.annotate(rate_avg=Avg(Review.objects.filter()))
-    # sort_by = 'rating'
-    # if request.GET.get('sort_by'):
-    #     sort_by = request.GET.get('sort_by')
-    # if sort_by == 'rating':
-    #     products = Product.objects.annotate(rate_avg=Avg('review__rating')).order_by('-rate_avg')
-    # elif sort_by == 'like':
-    #     products = Product.objects.annotate(like_cnt=Count('like_user')).order_by('-like_cnt')
-    # context = {
-    #     'products': products,
-    # }
-    return render(request, 'articles/product_rank.html')
+    gender = 'all'
+    if request.GET.get('gender'):
+        gender = request.GET.get('gender')
+    if gender == 'all':
+        products = Product.objects.all()
+    elif gender == 'woman':
+        products = Product.objects.all()
+        # woman_products = products.annotate(rate_avg=Avg(Review.objects.filter()))
+    elif gender == 'man':
+        products = Product.objects.all()
+    sort_by = 'rating'
+    if request.GET.get('sort_by'):
+        sort_by = request.GET.get('sort_by')
+    if sort_by == 'rating':
+        products = Product.objects.annotate(rate_avg=Avg('review__rating')).order_by('-rate_avg')
+    elif sort_by == 'like':
+        products = Product.objects.annotate(like_cnt=Count('like_user')).order_by('-like_cnt')
+    context = {
+        'products': products,
+    }
+    return render(request, 'articles/product_rank.html', context)
 
 
 
