@@ -9,11 +9,12 @@
 {% block title %}{% endblock title %}
 {% block style %}{% endblock style %}
 {% block content %}
-<div class="detail_container">
+<div class="detail_container mt-5">
   <section class="d-flex justify-content-between">
     <!-- 상품 title -->
     <div class="d-flex flex-column justify-content-end fs-3">
-      트윙클 램프 스노우볼 크리스마스 오르골 무드등 장식 소품 4type
+      {{ product.title }}
+      <!-- 트윙클 램프 스노우볼 크리스마스 오르골 무드등 장식 소품 4type -->
     </div>
     <div class="d-flex">
       <div class="circle me-2 d-flex justify-content-center align-items-center">
@@ -27,20 +28,27 @@
       </div>
     </div>  
   </section>
+
   <!-- title 수평선 -->
   <hr class="detail_hr"/>
 
   <section class="row d-flex mt-5">
     <!-- 상품 이미지 -->
     <div class="detail_img col-6">
-      <img class="w-100 h-100 rounded" src="https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211111144147_2fe5f5a528b44f0986479d18ff04e9a5.jpg" alt="">
+      <img id="big-img" class="w-100 h-100 rounded" src="{{ product.productimages_set.all.0.images.url }}" alt="product.productimages_set.all.0.image">
+      <!-- 작은 사진들 (이미지 바꾸기) -->
+      <div class="d-flex justify-content-center mt-3">
+        <img class="small-img" src="{{ product.productimages_set.all.0.images.url }}" alt="">
+        <img class="small-img" src="https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211111144222_b541aa8be72c4b7f8e4fc3996fca6d5d.jpg" alt="">
+        <img class="small-img" src="https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211111144219_4917ff2d045a424b8af47210f332a5ec.jpg" alt="">
+      </div>
     </div>
     <div class="col-6 d-flex justify-content-between ms-5">
       <div>
         <!-- 최저가 -->
         <div class="d-flex justify-content-between fs-2">
           <div>최저가</div>
-          <div>23,900원</div>
+          <div>{{ product.price|intcomma }}원</div>
         </div>
         <div class="d-flex justify-content-between">
           <!-- 별 평점 -->
@@ -59,7 +67,7 @@
           </div>
         </div>
         <!-- 카테고리 -->
-        <div class="category my-3 py-3">크리스마스</div>
+        <div class="category my-3 py-3">{{ product.get_category_display }}</div>
         <!-- 비교 사이트들 -->
         <div class="d-flex justify-content-between">
           <div>
@@ -70,10 +78,8 @@
             <div>인터파크</div>
             <div>롯데ON</div>
             <div>TMON</div>
-            <div>SSG.COM</div>
           </div>
           <div>
-            <div>30,000원</div>
             <div>30,000원</div>
             <div>30,000원</div>
             <div>30,000원</div>
@@ -88,6 +94,25 @@
       <div class="my-3">
         <a href="https://www.google.com" class="buy">구매하기</a>
       </div>
+    </div>
+  </section>
+
+  <!-- 탭 이동 -->
+  <section id="tap-move" class="d-flex flex-column align-items-center">
+    <div class="tap-nav w-100">
+      <button class="tab-button" data-tab-section="tab-section-1">상품설명</button>
+      <button class="tab-button" data-tab-section="tab-section-2">선물후기 ({{ product.review_set.all.count }})</button>
+    </div>
+    <div id="tab-section-1" class="tab-section">
+      <img src="https://st.kakaocdn.net/product/gift/editor/GE9npJp40gjy0AXfoEEiCA/rNHKB8eNAErn5vVFdAkGA4DVXYsilLuZuGpJ5GG3kV8.jpg" alt="">
+    </div>
+    <div id="tab-section-2" class="tab-section" hidden>
+      {% for review in product.review_set.all %}
+      <!-- 모달 버튼 -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{ review.pk }}">
+        {{ review.title }}
+      </button>
+      {% endfor %}
     </div>
   </section>
 </div>
@@ -170,5 +195,39 @@
       likeCount.innerText = response.data.likeCount
     })
   })
+</script>
+
+<script>
+  const $nav = document.querySelector('#tap-move')
+    const $sections = document.querySelectorAll('.tab-section');
+
+    $nav.addEventListener('click', (e) => {
+      if (!e.target.classList.contains('tab-button')) {
+        return;
+      }
+      
+      const focusedTabId = e.target.dataset.tabSection;
+
+      $sections.forEach(($section) => {
+        if ($section.id === focusedTabId) {
+          $section.removeAttribute('hidden');
+        } else {
+          $section.setAttribute('hidden', true);
+        }
+      });
+    });
+</script>
+<script>
+  var bigPic = document.querySelector('#big-img');
+  var smallPics = document.querySelectorAll('.small-img');
+
+  for(var i=0; i<smallPics.length; i++){
+    smallPics[i].onclick = changePic;
+  }
+
+  function changePic(){
+    var smallPicAttribute = this.getAttribute('src');
+    bigPic.setAttribute('src', smallPicAttribute);
+  }
 </script>
 {% endblock script %}

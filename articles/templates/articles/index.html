@@ -137,6 +137,21 @@
     <div class="personalized-category text-center">
       <h2>
         <span>ODJ AI</span>의 추천</h2>
+      <ul>
+        {% if request.user.is_authenticated %}
+          {% for i in "x"|rjust:"15" %}
+            <li>
+              <a href="{% url 'articles:product_list' 1 %}">유저 선호순</a>
+            </li>
+          {% endfor %}
+        {% else %}
+          {% for i in "x"|rjust:"15" %}
+            <li>
+              <a href="{% url 'articles:product_list' 1 %}">걍 카테고리나열</a>
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
     </div>
     <!--personalized-category-->
     <div class="multiple-items">

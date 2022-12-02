@@ -41,6 +41,10 @@
   height: 30rem;
 }
 
+.detail_img img {
+  object-fit: cover;
+}
+
 .circle {
   color: #bbb;
   cursor: pointer;
@@ -65,6 +69,7 @@
   border-bottom: solid 1px #ddd;
 }
 
+/* 구매하기 버튼 */
 .buy {
   color: white;
   background-color: #FB5957;
@@ -100,4 +105,35 @@
   to {
     background-position: 20vw;
   }
+}
+
+/* 탭 이동 */
+#tap-move {
+  border: solid 1px #ddd;
+  margin-top: 8rem;
+}
+
+.tap-nav {
+  border-bottom: solid 1px #ddd;
+  padding-left: 3rem;
+}
+
+.tab-button {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  border: 0;
+  width: 10rem;
+  height: 5rem;
+  padding-top: 1rem;
+}
+
+#tab-section-1 {
+  padding: 3rem 2rem;
+}
+
+.small-img {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 0.2rem;
 }
