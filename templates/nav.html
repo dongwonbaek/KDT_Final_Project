@@ -4,7 +4,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <!-- place navbar here -->
     <div id="navbar" class="fnav d-flex justify-content-center px-0">
-        <img class="text-center" src="{% static 'img/ojd_1.png' %}">
+        <a href="{% url 'articles:index' %}"><img class="text-center" src="{% static 'img/ojd_1.png' %}"></a>
     </div>
     <div id="navbar-example2" class="container-fluid MyNav px-0 mb-3 d-flex justify-content-between menu">
         <ul class="nav nav-pills ">
@@ -39,6 +39,11 @@
                 <a href="{% url 'articles:search' %}" class="me-3"><i class="bi bi-search"></i></a>
             </li>
             {% if request.user.is_authenticated %}
+
+            <li>
+                <a class='mx-3' href="{% url 'accounts:detail' request.user.pk %}">마이페이지</a>
+            </li> 
+
             <li>
                 <a href="{% url 'accounts:logout' %}">로그아웃</a>
             </li>

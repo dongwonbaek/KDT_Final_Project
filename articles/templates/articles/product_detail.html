@@ -160,9 +160,43 @@
   </div>
 </div>
 {% endfor %}
+
+{% if request.user.is_authenticated %}
+  {% if request.user in product.like_user.all %}
+    <i id='like-btn' data-product-id="{{ product.pk }}" class="bi bi-heart-fill"></i>
+  {% else %}
+    <i id='like-btn' data-product-id="{{ product.pk }}" class="bi bi-heart"></i>
+  {% endif %}
+{% endif %}
+<span id="like-count">{{ product.like_user.count }}</span>
+
 {% endblock content %}
 
 {% block script %}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  const likeBtn = document.querySelector('#like-btn')
+  likeBtn.addEventListener('click', function (event) {
+    console.log(event.target.dataset)
+    axios({
+      url: `/${event.target.dataset.productId}/like/`
+    })
+    .then(response => {
+      console.log(response)
+      console.log(response.data)
+      if (response.data.isLiked === true) {
+        event.target.classList.add('bi-heart-fill')
+        event.target.classList.remove('bi-heart')
+      } else {
+        event.target.classList.add('bi-heart')
+        event.target.classList.remove('bi-heart-fill')
+      }
+      const likeCount = document.querySelector('#like-count')
+      likeCount.innerText = response.data.likeCount
+    })
+  })
+</script>
+
 <script>
   const $nav = document.querySelector('#tap-move')
     const $sections = document.querySelectorAll('.tab-section');
@@ -188,7 +222,6 @@
   var smallPics = document.querySelectorAll('.small-img');
 
   for(var i=0; i<smallPics.length; i++){
-    // smallPics[i].addEventListener('click', changePic);
     smallPics[i].onclick = changePic;
   }
 
