@@ -43,10 +43,14 @@ class Review(models.Model):
     rating = models.IntegerField(default=3, validators=[MinValueValidator(1), MaxValueValidator(5)])
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
-    like_user = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_review')
 
 class ReviewComment(models.Model):
     content = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     review = models.ForeignKey('Review', on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+class ReviewReaction(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    review = models.ForeignKey(Review, on_delete=models.CASCADE)
+    emotions = models.CharField(max_length=1)

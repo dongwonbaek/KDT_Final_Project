@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from accounts.forms import SignupForm, UpdateForm
-from django.contrib.auth import login as auth_login, logout as auth_logout
+from django.contrib.auth import login as auth_login, logout as auth_logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import update_session_auth_hash
@@ -13,10 +13,11 @@ def signup(request):
         form = SignupForm(request.POST, request.FILES)
         if form.is_valid():
             user = form.save(commit=False)
+            user.username = request.POST.get('username')
             user.birth_date = request.POST.get('birth_date')
             user.save()
-            auth_login(request, user)
-            return redirect('articles:index')
+            auth_login(request, user, backend='django.contrib.auth.backends.ModelBackend')            
+        return redirect('articles:index')
     else:
         form = SignupForm()
     context = {
@@ -29,13 +30,10 @@ def login(request):
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
             auth_login(request, form.get_user())
-            return redirect(request.GET.get('next') or 'articles:index')
-    else:
-        form = AuthenticationForm()
-    context = {
-        'form': form,
-    }
-    return render(request, 'accounts/login.html', context)
+        else:
+            messages.warning(request, '아이디 혹은 비밀번호가 틀렸습니다.')
+        return redirect(request.GET.get('next') or 'articles:index')
+    return render(request, 'accounts/login.html')
 
 @login_required
 def logout(request):

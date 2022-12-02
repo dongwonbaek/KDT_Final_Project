@@ -1,66 +1,68 @@
 {% load static %}
 <header>
+    <!---제이쿼리 없으면 작동이 안되니 지우지 말기 혹시 해결법 알면 지워도 ok-->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <!-- place navbar here -->
-
-    <nav id="image" class="fnav px-0">
-        <div class="d-flex justify-content-center">
-            <img src="{% static 'img/ojd_1.png' %}">
-        </div>
-    </nav>
-
+    <div id="navbar" class="fnav d-flex justify-content-center px-0">
+        <img class="text-center" src="{% static 'img/ojd_1.png' %}">
+    </div>
     <div id="navbar-example2" class="container-fluid MyNav px-0 mb-3 d-flex justify-content-between menu">
         <ul class="nav nav-pills ">
             <li class="nav-item">
-                <a class="nav-link text-black" href="#scrollspyHeading1">랭킹</a>
+                <a class="nav-link" href="{% url 'articles:product_rank' %}">랭킹</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-black" href="#scrollspyHeading2">카테고리</a>
+                <a class="nav-link" href="">카테고리</a>
                 <ul id="submenu">
-                    <li><a class="nav-link text-black" href="#">크리스마스</a></li>
-                    <li><a class="nav-link text-black" href="#">가구</a></li>
-                    <li><a class="nav-link text-black" href="#">패브릭</a></li>
-                    <li><a class="nav-link text-black" href="#">가전,디지털</a></li>
-                    <li><a class="nav-link text-black" href="#">주방용품</a></li>
-                    <li><a class="nav-link text-black" href="#">식품</a></li>
-                    <li><a class="nav-link text-black" href="#">데코,식물</a></li>
-                    <li><a class="nav-link text-black" href="#">조명</a></li>
-                    <li><a class="nav-link text-black" href="#">수납,정리</a></li>
-                    <li><a class="nav-link text-black" href="#">생활용품</a></li>
-                    <li><a class="nav-link text-black" href="#">생필품</a></li>
-                    <li><a class="nav-link text-black" href="#">유아,아동</a></li>
-                    <li><a class="nav-link text-black" href="#">반려동물</a></li>
+                    {% for category in categories %}
+                    <li>
+                        <a class="nav-link" href="{% url 'articles:product_list' category.0 %}">{{ category.1 }}</a>
+                    </li>
+                    {% endfor %}
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-black" href="#scrollspyHeading2">커뮤니티</a>
+                <a class="nav-link" href="#scrollspyHeading2">커뮤니티</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-black" href="#scrollspyHeading2">리뷰</a>
+                <a class="nav-link" href="{% url 'articles:review_index' %}">리뷰</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-black" href="#scrollspyHeading2">Q&A</a>
+                <a class="nav-link" href="#scrollspyHeading2">Q&A</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-black" href="{% url 'articles:product_create' %}">상품등록</a>
             </li>
         </ul>
-        <ul class="d-flex text-black">
-            <a>로그인/</a>
-            <a>회원가입</a>
+        <ul class="d-flex m-0 p-2">
+            <li>
+                <a href="{% url 'articles:search' %}" class="me-3"><i class="bi bi-search"></i></a>
+            </li>
+            {% if request.user.is_authenticated %}
+            <li>
+                <a href="{% url 'accounts:logout' %}">로그아웃</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{% url 'accounts:login' %}">로그인</a>
+            </li>
+            <span class="mx-3">/</span>
+            <li>
+                <a href="{% url 'accounts:signup' %}">회원가입</a>
+            </li>
+            {% endif %}
         </ul>
-
     </div>
 </header>
-
-<body>
-    <script>
-        $(window).scroll(function () {
-            if ($(document).scrollTop() > 50) {
-                $('#image').addClass('affix');
-                $('#navbar-example2').addClass('topon');
-                console.log("OK");
-            } else {
-                $('#image').removeClass('affix');
-                $('#navbar-example2').removeClass('topon');
-            }
-        });
-    </script>
-</body>
+<script>
+    $(window).scroll(function () {
+        if ($(document).scrollTop() > 50) {
+            $('#navbar').addClass('affix');
+            $('#navbar-example2').addClass('topon');
+            console.log("OK");
+        } else {
+            $('#navbar').removeClass('affix');
+            $('#navbar-example2').removeClass('topon');
+        }
+    });
+</script>
