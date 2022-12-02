@@ -1,5 +1,7 @@
 {% load static %}
 <header>
+    <!---제이쿼리 없으면 작동이 안되니 지우지 말기 혹시 해결법 알면 지워도 ok-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <!-- place navbar here -->
     <div id="navbar" class="fnav d-flex justify-content-center px-0">
         <img class="text-center" src="{% static 'img/ojd_1.png' %}">
@@ -30,13 +32,13 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link text-black" href="{% url 'articles:product_create' %}">상품등록</a>
-            </li> 
+            </li>
         </ul>
         <ul class="d-flex m-0 p-2">
             <li>
                 <a href="{% url 'articles:search' %}" class="me-3"><i class="bi bi-search"></i></a>
             </li>
-            {% if request.user.is_authenticated %} 
+            {% if request.user.is_authenticated %}
             <li>
                 <a href="{% url 'accounts:logout' %}">로그아웃</a>
             </li>
@@ -48,7 +50,7 @@
             <li>
                 <a href="{% url 'accounts:signup' %}">회원가입</a>
             </li>
-        {% endif %}
+            {% endif %}
         </ul>
     </div>
 </header>
