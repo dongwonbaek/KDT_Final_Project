@@ -54,6 +54,14 @@
 
 <body>
   {% include "nav.html" %}
+  
+    {% if messages %}
+      {% for message in messages %}
+        <div class='alert alert-{{message.tags}}'>
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
 
   <main>
     {% block content %}{% endblock content %}
@@ -71,5 +79,6 @@
   {% block script %}{% endblock script %}
 
 </body>
+
 
 </html>

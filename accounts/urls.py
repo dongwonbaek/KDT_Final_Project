@@ -10,7 +10,7 @@ urlpatterns = [
     path('update/', views.update, name='update'),
     path('delete/', views.delete, name='delete'),
     path('password/', views.password, name='password'),
-    path('<int:user_pk>/detail', views.detail, name='detail'),
+    path('<int:user_pk>/detail /', views.detail, name='detail'),
     path('<int:user_pk>/follow/', views.follow, name='follow'),
     path('<int:user_pk>/block/', views.block, name='block'),
 ]
