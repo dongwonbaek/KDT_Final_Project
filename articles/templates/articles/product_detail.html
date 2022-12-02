@@ -9,6 +9,90 @@
 {% block title %}{% endblock title %}
 {% block style %}{% endblock style %}
 {% block content %}
+<div class="detail_container">
+  <section class="d-flex justify-content-between">
+    <!-- 상품 title -->
+    <div class="d-flex flex-column justify-content-end fs-3">
+      트윙클 램프 스노우볼 크리스마스 오르골 무드등 장식 소품 4type
+    </div>
+    <div class="d-flex">
+      <div class="circle me-2 d-flex justify-content-center align-items-center">
+        <i class="fas fa-arrow-up-from-bracket fs-4"></i>
+      </div>
+      <div class="d-flex justify-content-end">
+        <div class="heart text-center">
+          <i class="far fa-heart fs-4"></i> 
+          <div>999</div>
+        </div>
+      </div>
+    </div>  
+  </section>
+  <!-- title 수평선 -->
+  <hr class="detail_hr"/>
+
+  <section class="row d-flex mt-5">
+    <!-- 상품 이미지 -->
+    <div class="detail_img col-6">
+      <img class="w-100 h-100 rounded" src="https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211111144147_2fe5f5a528b44f0986479d18ff04e9a5.jpg" alt="">
+    </div>
+    <div class="col-6 d-flex justify-content-between ms-5">
+      <div>
+        <!-- 최저가 -->
+        <div class="d-flex justify-content-between fs-2">
+          <div>최저가</div>
+          <div>23,900원</div>
+        </div>
+        <div class="d-flex justify-content-between">
+          <!-- 별 평점 -->
+          <div class="mt-2">⭐⭐⭐⭐⭐ (평점 5.0)</div>
+          <!-- 공유 / 하트(위시) 버튼 -->
+          <div class="mt-5 pt-4 d-flex">  
+            <div class="circle me-2 d-flex justify-content-center align-items-center">
+              <i class="fas fa-arrow-up-from-bracket fs-4"></i>
+            </div>
+            <div class="heart text-center">
+              <div>
+                <i class="far fa-heart fs-4"></i>
+              </div>
+              <div>999</div>
+            </div>
+          </div>
+        </div>
+        <!-- 카테고리 -->
+        <div class="category my-3 py-3">크리스마스</div>
+        <!-- 비교 사이트들 -->
+        <div class="d-flex justify-content-between">
+          <div>
+            <div>쿠팡</div>
+            <div>위메프</div>
+            <div>11번가</div>
+            <div>G마켓</div>
+            <div>인터파크</div>
+            <div>롯데ON</div>
+            <div>TMON</div>
+            <div>SSG.COM</div>
+          </div>
+          <div>
+            <div>30,000원</div>
+            <div>30,000원</div>
+            <div>30,000원</div>
+            <div>30,000원</div>
+            <div>30,000원</div>
+            <div>30,000원</div>
+            <div>30,000원</div>
+            <div>30,000원</div>
+          </div>
+        </div>
+      </div>
+      <!-- 구매하기 버튼 -->
+      <div class="my-3">
+        <a href="https://www.google.com" class="buy">구매하기</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 기존 -->
 <h2>{{ product.pk }}번</h2>
 <img src="{{ product.productimages_set.all.0.images.url }}" alt="product.productimages_set.all.0.image">
 <p>{{ product.content }}</p>

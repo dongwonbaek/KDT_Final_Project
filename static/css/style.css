@@ -6,7 +6,8 @@
 }
 
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
-.jejugothic * { 
+
+.jejugothic * {
   font-family: 'Jeju Gothic', sans-serif;
 }
 
@@ -31,24 +32,24 @@ body {
 }
 
 .pos-btn {
-display: block;
-width: 50%;
-height: auto;
-text-align: center;
-border-radius: 4px;
-border: none;
-font-weight: 700;
-font-size: 16px;
-line-height: 57px;
-color: var(--main-white);
-background-color: var(--main-mintygreen);
+  display: block;
+  width: 50%;
+  height: auto;
+  text-align: center;
+  border-radius: 4px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 57px;
+  color: var(--main-white);
+  background-color: var(--main-mintygreen);
 }
 
 .neg-btn {
   display: block;
   width: 50%;
   height: auto;
-  text-align: center; 
+  text-align: center;
   border-radius: 4px;
   border: none;
   font-weight: 700;
@@ -56,7 +57,7 @@ background-color: var(--main-mintygreen);
   line-height: 57px;
   color: var(--main-white);
   background-color: var(--main-scarlet);
-  }
+}
 
 
 /* ---------- base.html ---------- */
@@ -189,6 +190,7 @@ header .menu ul li:hover #submenu {
   width: 50px;
   border-radius: 3px;
 }
+
 .select-friend-modal .modal-header p {
   position: absolute;
   top: 25px;
@@ -204,7 +206,7 @@ header .menu ul li:hover #submenu {
   width: 100%;
   top: -122px;
   left: 0%;
-  right:0%;
+  right: 0%;
 }
 
 .index-category {
@@ -250,22 +252,26 @@ header .menu ul li:hover #submenu {
 }
 
 .multiple-items {
-  width:100%;
-  margin:50px auto;
-}
-.slick-slide{
-  margin:10px;
-}
-.slick-slide img{
-  width:100%;
-  height: 120px;
-}
-.slick-dots li button:before {
-  font-size:20px;
-  color:var(--main-mintygreen);
+  width: 100%;
+  margin: 50px auto;
 }
 
-.slick-prev:before, .slick-next:before {
+.slick-slide {
+  margin: 10px;
+}
+
+.slick-slide img {
+  width: 100%;
+  height: 120px;
+}
+
+.slick-dots li button:before {
+  font-size: 20px;
+  color: var(--main-mintygreen);
+}
+
+.slick-prev:before,
+.slick-next:before {
   color: var(--main-bluegreen);
 }
 
@@ -273,33 +279,33 @@ header .menu ul li:hover #submenu {
 
 } */
 #exTab1 .tab-content {
-  color : white;
+  color: white;
   background-color: #428bca;
-  padding : 5px 15px;
+  padding: 5px 15px;
 }
 
 #exTab2 h3 {
-  color : white;
+  color: white;
   background-color: #428bca;
-  padding : 5px 15px;
+  padding: 5px 15px;
 }
 
 /* remove border radius for the tab */
 
-#exTab1 .nav-pills > li > a {
+#exTab1 .nav-pills>li>a {
   border-radius: 0;
 }
 
 /* change border radius for the tab , apply corners on top*/
 
-#exTab3 .nav-pills > li > a {
-  border-radius: 4px 4px 0 0 ;
+#exTab3 .nav-pills>li>a {
+  border-radius: 4px 4px 0 0;
 }
 
 #exTab3 .tab-content {
-  color : white;
+  color: white;
   background-color: #428bca;
-  padding : 5px 15px;
+  padding: 5px 15px;
 }
 
 .FloatingAd {
@@ -331,7 +337,7 @@ header .menu ul li:hover #submenu {
   height: 150px;
   width: auto;
 }
-  
+
 /*------로그인, 회원가입------*/
 .login-button {
   width: 200px;
