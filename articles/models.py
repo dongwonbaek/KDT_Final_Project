@@ -13,21 +13,21 @@ class Product(models.Model):
             ("2", "가벼운 선물"),
             ("3", "건강/회복"),
             ("4", "스몰럭셔리"),
-            ("5", "응원/시험"),
-            ("6", "따뜻한 선물"),
-            ("7", "쓸모없는 선물"),
-            ("8", "결혼/집들이"),
-            ("9", "크리스마스"),
-            ("10", "명절"),
-            ("11", "전자기기"),
+            ("5", "어른선물"),
+            ("6", "크리스마스"),
+            ("7", "명품선물"),
+            ("8", "출산/키즈"),
+            ("9", "따뜻한선물"),
+            ("11", "배달선물"),
+            ("12", "응원/시험"),
         )
     title = models.CharField(max_length=100)
-    content = models.TextField()
+    content = models.TextField(null=True)
     category = models.CharField(max_length=2, choices=category_choice)
     price = models.IntegerField(default=0, validators=[MinValueValidator(0)])
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
     like_user = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_product')
 
 class ProductImages(models.Model):
