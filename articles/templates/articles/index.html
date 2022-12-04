@@ -192,6 +192,7 @@
             </div>
         </div>
   </section>
+  {% if request.user.is_authenticated == False %}
   <section id="ad-box" class="card alert FloatingAd">
     <div class="card-body">
       <h4 class="card-title">🎊오픈 기념🎊</h4>
@@ -202,6 +203,7 @@
       <a href="{% url 'accounts:signup' %}" class="card-link pos-btn">가입하러 가기</a>
     </div>
   </section>
+  {% endif %}
 {% endblock content %}
 
 {% block script %}
