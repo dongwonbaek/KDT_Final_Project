@@ -50,6 +50,7 @@ def product_detail(request, product_pk):
     product = get_object_or_404(Product, pk=product_pk)
     context = {
         'product': product,
+        'review_comment_form': ReviewCommentForm(),
     }
     return render(request, 'articles/product_detail.html', context)
 
@@ -163,8 +164,28 @@ def review_comment_create(request, review_pk):
             comment.review = review
             comment.user = request.user
             comment.save()
-    # 비동기 처리 구현전까지 임의로 redirect 사용
-    return redirect('articles:product_detail', review.product.pk)
+            comments = []
+            for a in review.reviewcomment_set.all():
+                if request.user:
+                    islogin = True
+                else:
+                    islogin = False
+                comments.append([
+                    a.content, #0
+                    a.user.nickname, #1
+                    a.created_at, #2
+                    a.user.pk, #3
+                    request.user.pk, #4
+                    a.id, #5
+                    a.review.pk, #6
+                    islogin, #7
+                    ])
+            print(comments)
+            context = {
+                'comments':comments,    
+                # 'commentCount':review.reviewcomment_set.count()
+            }
+            return JsonResponse(context)
 
 @login_required
 def review_comment_delete(request, comment_pk):
