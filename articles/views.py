@@ -50,6 +50,7 @@ def product_detail(request, product_pk):
     product = get_object_or_404(Product, pk=product_pk)
     context = {
         'product': product,
+        'rating_avg': product.review_set.aggregate(rating_avg=Avg('rating'))['rating_avg'],
         'review_comment_form': ReviewCommentForm(),
     }
     return render(request, 'articles/product_detail.html', context)
