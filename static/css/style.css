@@ -136,16 +136,6 @@ footer {
   }
 }
 
-.sf-snow-flake {
-  position: fixed;
-  top: -20px;
-  z-index: 99999;
-}
-  
-  .sf-snow-anim {
-  top: 110%;
-}
-
 .ToTop {
   width: 35px;
   height: 35px;
@@ -181,6 +171,11 @@ footer {
   border-style: solid none;
   border-color: #FFB6C1;
 }
+
+.nav-link {
+  color: #000;
+}
+
 
 .fnav {
   background-color: white;
@@ -269,18 +264,22 @@ header .menu ul li:hover #submenu {
 }
 
 /* ----------------------눈----------------------------- */
-.snow-flake {
-  top: -15%;
+#snowflakeContainer {
   position: absolute;
-  color: #FFF;
-  animation: fall 10s linear infinite;
-  z-index: 10;
+  left: 0px;
+  top: 0px;
+  display: none;
 }
 
-@keyframes fall {
-  from { top: -15%; transform: rotate(0deg); }
-  50% { transform: rotate(360deg); }
-  to { top: 110%; }
+.snowflake {
+  position: fixed;
+  background-color: #FFFFFF;
+  user-select: none;
+  z-index: 1000;
+  pointer-events: none;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
 }
 
 .category-wrapper {
@@ -408,6 +407,10 @@ header .menu ul li:hover #submenu {
   margin: 200px 0;
 }
 
+.div.slick-slide.slick-current.slick-active {
+  width: 560px;
+  margin: auto;
+}
 
 .FloatingAd {
   display: flex;
@@ -439,6 +442,9 @@ header .menu ul li:hover #submenu {
   width: auto;
 }
 
+.FloatingAd a {
+  display: block;
+}
 
 /*------로그인, 회원가입------*/
 .login-button {

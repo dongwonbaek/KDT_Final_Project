@@ -60,6 +60,9 @@
   </div>
   <!-- 네브 아래 width100% 영역 -->
   <section id="index-banner" class="recobox">
+    <div id="snowflakeContainer">
+      <span class="snowflake"></span>
+    </div>
     <p>
       {% if request.user.is_authenticated %}{{ user }}
         <span>님</span><br>{% endif %}누구를 위한 선물인가요?</p>
@@ -210,48 +213,35 @@
         <p>주제 설명</p>
       </div>
     </div>
-    <div class="slider slider-for slick-initialized slick-slider">
-      <div aria-live="polite" class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 2800px;" role="listbox"><div class="slick-slide" data-slick-index="0" aria-hidden="true" style="transition: opacity 500ms ease 0s; width: 560px; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 0;" tabindex="-1" role="option" aria-describedby="slick-slide120">
-        <h3>1</h3>
-      </div><div class="slick-slide" data-slick-index="1" aria-hidden="true" style="transition: opacity 500ms ease 0s; width: 560px; position: relative; left: -560px; top: 0px; z-index: 998; opacity: 0;" tabindex="-1" role="option" aria-describedby="slick-slide121">
-        <h3>2</h3>
-      </div><div class="slick-slide slick-current slick-active" data-slick-index="2" aria-hidden="false" style="width: 560px; position: relative; left: -1120px; top: 0px; z-index: 999; opacity: 1;" tabindex="-1" role="option" aria-describedby="slick-slide122">
-        <h3>3</h3>
-      </div><div class="slick-slide" data-slick-index="3" aria-hidden="true" style="transition: opacity 500ms ease 0s; width: 560px; position: relative; left: -1680px; top: 0px; z-index: 998; opacity: 0;" tabindex="-1" role="option" aria-describedby="slick-slide123">
-        <h3>4</h3>
-      </div><div class="slick-slide" data-slick-index="4" aria-hidden="true" style="transition: opacity 500ms ease 0s; width: 560px; position: relative; left: -2240px; top: 0px; z-index: 998; opacity: 0;" tabindex="-1" role="option" aria-describedby="slick-slide124">
-        <h3>5</h3>
-      </div></div></div>   
+    <div id="page" class="youtube-list row">
+      <div class="small-11 small-centered">
+        <h2>추천 유튜브<i class="bi-youtube"></i></h2>
+        <div class="slider slider-single">
+          <div><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7Y3N_FJxbP4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/VJvfPBCnpsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/6Eb-60MSTQc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/NrHddzciiWg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/Jxt_kr20iyk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/YzWfw4aPpAI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/D9_PWsoMXXI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/aC8J983AJOM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/uNKRtj_3JiA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/14FUVWUnk0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        </div>
+        <div class="slider slider-nav">
+          <img src="{% static 'img/index/thumbnail1.jpg' %}">
+          <img src="{% static 'img/index/thumbnail2.jpg' %}">
+          <img src="{% static 'img/index/thumbnail3.jpg' %}">
+          <img src="{% static 'img/index/thumbnail4.jpg' %}">
+          <img src="{% static 'img/index/thumbnail5.jpg' %}">
+          <img src="{% static 'img/index/thumbnail6.jpg' %}">
+          <img src="{% static 'img/index/thumbnail7.jpg' %}">
+          <img src="{% static 'img/index/thumbnail8.jpg' %}">
+          <img src="{% static 'img/index/thumbnail9.jpg' %}">
+          <img src="{% static 'img/index/thumbnail10.jpg' %}">
+        </div>
+      </div>
     </div>
-    <div class="slider slider-nav slick-initialized slick-slider slick-dotted" role="toolbar"><button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button" style="display: block;">Previous</button>
-      <div aria-live="polite" class="slick-list draggable" style="padding: 0px 50px;"><div class="slick-track" style="opacity: 1; width: 2002px; transform: translate3d(-770px, 0px, 0px);" role="listbox"><div class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" style="width: 154px;" tabindex="-1">
-        <h3>2</h3>
-      </div><div class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" style="width: 154px;" tabindex="-1">
-        <h3>3</h3>
-      </div><div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" style="width: 154px;" tabindex="-1">
-        <h3>4</h3>
-      </div><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 154px;" tabindex="-1">
-        <h3>5</h3>
-      </div><div class="slick-slide" data-slick-index="0" aria-hidden="true" style="width: 154px;" tabindex="-1" role="option" aria-describedby="slick-slide130">
-        <h3>1</h3>
-      </div><div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 154px;" tabindex="-1" role="option" aria-describedby="slick-slide131">
-        <h3>2</h3>
-      </div><div class="slick-slide slick-current slick-active slick-center" data-slick-index="2" aria-hidden="false" style="width: 154px;" tabindex="-1" role="option" aria-describedby="slick-slide132">
-        <h3>3</h3>
-      </div><div class="slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 154px;" tabindex="-1" role="option" aria-describedby="slick-slide133">
-        <h3>4</h3>
-      </div><div class="slick-slide" data-slick-index="4" aria-hidden="true" style="width: 154px;" tabindex="-1" role="option" aria-describedby="slick-slide134">
-        <h3>5</h3>
-      </div><div class="slick-slide slick-cloned" data-slick-index="5" aria-hidden="true" style="width: 154px;" tabindex="-1">
-        <h3>1</h3>
-      </div><div class="slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" style="width: 154px;" tabindex="-1">
-        <h3>2</h3>
-      </div><div class="slick-slide slick-cloned" data-slick-index="7" aria-hidden="true" style="width: 154px;" tabindex="-1">
-        <h3>3</h3>
-      </div><div class="slick-slide slick-cloned" data-slick-index="8" aria-hidden="true" style="width: 154px;" tabindex="-1">
-        <h3>4</h3>
-      </div></div></div>
-    <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next" role="button" style="display: block;">Next</button><ul class="slick-dots" style="display: block;" role="tablist"><li class="" aria-hidden="true" role="presentation" aria-selected="true" aria-controls="navigation130" id="slick-slide130"><button type="button" data-role="none" role="button" tabindex="0">1</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation131" id="slick-slide131" class=""><button type="button" data-role="none" role="button" tabindex="0">2</button></li><li aria-hidden="false" role="presentation" aria-selected="false" aria-controls="navigation132" id="slick-slide132" class="slick-active"><button type="button" data-role="none" role="button" tabindex="0">3</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation133" id="slick-slide133" class=""><button type="button" data-role="none" role="button" tabindex="0">4</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation134" id="slick-slide134" class=""><button type="button" data-role="none" role="button" tabindex="0">5</button></li></ul></div>
   </section>
   {% if request.user.is_authenticated == False %}
   <section id="ad-box" class="card alert FloatingAd">
@@ -289,67 +279,72 @@
                   $lis.toggle();
               }));
       }
-  });
+    });
   </script>
-  {% comment %} <script>
-    var SNOW_FLAKES = 30;
-    var MIN_SIZE = 10;
-    var MAX_SIZE = 50;
-
-    var c = document.getElementsByClassName("recobox")[0];
-    var w = window.innerWidth;
-    var k = 0;
-
-    function snow() {
-      for(i = 0; i < SNOW_FLAKES; i++) {
-        let s = document.createElement("div");
-        let r = Math.round((Math.random() * w) + 1);
-        let z = Math.round((Math.random() * MAX_SIZE) + MIN_SIZE);
-        let t = Math.round((Math.random() * 20) + 5);
-
-        s.className = "snow";
-        s.id = "snow-flake-" + i;
-        s.style.left = r + "px";
-        s.style.fontSize = z + "px";
-        s.style.animationDuration = t + "s";
-        s.style.animationDelay = i + "s";
-        s.textContent = "❄";
-        c.appendChild(s);
-      }
-    }
-
-    function changeAxisX() {
-      for(i = 0; i < SNOW_FLAKES; i++) {
-        let s = document.getElementById("snow-flake-" + i);
-        let x = Math.round((Math.random() * w) + 1);
-        if(s.offsetTop > window.innerHeight) {
-          s.style.left = x + "px";
-        }
-      }
-    }
-
-    snow();
-    setInterval(changeAxisX, 2000);
-  </script> {% endcomment %}
+  <script src="{% static 'js/snowflake.js' %}"></script>
   <script>
-    $('.slider-for').slick({
+    $('.slider-single').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
       fade: true,
-      asNavFor: '.slider-nav'
+      adaptiveHeight: true,
+      infinite: true,
+      useTransform: true,
+      speed: 400,
     });
-    $('.slider-nav').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      asNavFor: '.slider-for',
-      dots: true,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      centerMode: true,
-      focusOnSelect: true
+
+    $('.slider-nav')
+      .on('init', function(event, slick) {
+        $('.slider-nav .slick-slide.slick-current').addClass('is-active');
+      })
+      .slick({
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        dots: false,
+        focusOnSelect: false,
+        infinite: true,
+        responsive: [{
+          breakpoint: 1024,
+          settings: {
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 5,
+            slidesToScroll: 5,
+          }
+        }, {
+          breakpoint: 640,
+          settings: {
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 4,
+            slidesToScroll: 4,
+          }
+        }, {
+          breakpoint: 420,
+          settings: {
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 3,
+            slidesToScroll: 3,
+          }
+        }]
+      });
+
+    $('.slider-single').on('afterChange', function(event, slick, currentSlide) {
+      $('.slider-nav').slick('slickGoTo', currentSlide);
+      var currrentNavSlideElem = '.slider-nav .slick-slide[data-slick-index="' + currentSlide + '"]';
+      $('.slider-nav .slick-slide.is-active').removeClass('is-active');
+      $(currrentNavSlideElem).addClass('is-active');
+    });
+
+    $('.slider-nav').on('click', '.slick-slide', function(event) {
+      event.preventDefault();
+      var goToSingleSlide = $(this).data('slick-index');
+
+      $('.slider-single').slick('slickGoTo', goToSingleSlide);
     });
   </script>
-
-  
 {% endblock script %}
