@@ -107,6 +107,13 @@
   }
 }
 
+/* 작은 사진들 */
+.small-img {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 0.2rem;
+}
+
 /* 탭 이동 */
 #tap-move {
   border: solid 1px #ddd;
@@ -132,8 +139,31 @@
   padding: 3rem 2rem;
 }
 
-.small-img {
-  width: 4rem;
-  height: 4rem;
-  margin: 0 0.2rem;
+/* 후기(댓글) */
+.com {
+  border-top: solid 1px #ddd;
+}
+
+.user_img {
+  overflow: hidden;
+  border-radius: 30%;
+  width: 5rem;
+  height: 5rem;
+}
+
+.user_img img {
+  object-fit: cover;
+}
+
+.com_width {
+  width: 50rem;
+}
+
+.com_img {
+  width: 7rem;
+  height: 7rem;
+}
+
+.com_img img {
+  object-fit: cover;
 }
