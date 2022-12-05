@@ -150,6 +150,28 @@ header .menu ul li:hover #submenu {
   width: 100vw;
 }
 
+.modal-backdrop {
+  display: none;
+}
+
+.login-button2 {
+  width: 130px;
+  height: 25px;
+  border-style: none;
+  border-radius: 10px;
+  background-color: #ece6cc;
+}
+
+.delete-button2 {
+  top: 0;
+  width: 130px;
+  height: 25px;
+  margin-top: 1rem;
+  border-style: none;
+  border-radius: 10px;
+  background-color: var(--main-scarlet);
+}
+
 /* ---------- index ---------- */
 .recobox {
   display: flex;
@@ -367,9 +389,10 @@ header .menu ul li:hover #submenu {
 .wrapper1 {
   text-align: center;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 420px;
-  height: 250px;
+  height: 300px;
   border: solid 3px;
   border-color: #FFB6C1;
   border-radius: 10%;
@@ -379,7 +402,8 @@ header .menu ul li:hover #submenu {
 .wrapper2 {
   text-align: center;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 420px;
   height: 550px;
   border: solid 3px;
@@ -430,4 +454,14 @@ header .menu ul li:hover #submenu {
   width: 50px;
   height: 50px;
   border-radius: 20px;
+}
+
+.block-button {
+  width: 200px;
+  height: 35px;
+  margin-top: 1rem;
+  border-style: none;
+  border-radius: 90px;
+  background-color: black;
+  color: white;
 }
