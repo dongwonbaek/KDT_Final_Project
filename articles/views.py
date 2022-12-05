@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.http import JsonResponse
 from django.db.models import Q, Avg, Count, Subquery, OuterRef
+from django.http import JsonResponse
 
 def index(request):
     products = Product.objects.order_by('-pk')
@@ -175,25 +176,27 @@ def review_comment_delete(request, comment_pk):
 
 
 def product_rank(request):
-    # gender = 'all'
-    # if request.GET.get('gender'):
-    #     gender = request.GET.get('gender')
-    # if gender == 'all':
-    #     products = Product.objects.all()
-    # elif gender == 'woman':
-    #     products = Product.objects.all()
-    #     woman_products = products.annotate(rate_avg=Avg(Review.objects.filter()))
-    # sort_by = 'rating'
-    # if request.GET.get('sort_by'):
-    #     sort_by = request.GET.get('sort_by')
-    # if sort_by == 'rating':
-    #     products = Product.objects.annotate(rate_avg=Avg('review__rating')).order_by('-rate_avg')
-    # elif sort_by == 'like':
-    #     products = Product.objects.annotate(like_cnt=Count('like_user')).order_by('-like_cnt')
-    # context = {
-    #     'products': products,
-    # }
-    return render(request, 'articles/product_rank.html')
+    gender = 'all'
+    if request.GET.get('gender'):
+        gender = request.GET.get('gender')
+    if gender == 'all':
+        products = Product.objects.all()
+    elif gender == 'woman':
+        products = Product.objects.all()
+        # woman_products = products.annotate(rate_avg=Avg(Review.objects.filter()))
+    elif gender == 'man':
+        products = Product.objects.all()
+    sort_by = 'rating'
+    if request.GET.get('sort_by'):
+        sort_by = request.GET.get('sort_by')
+    if sort_by == 'rating':
+        products = Product.objects.annotate(rate_avg=Avg('review__rating')).order_by('-rate_avg')
+    elif sort_by == 'like':
+        products = Product.objects.annotate(like_cnt=Count('like_user')).order_by('-like_cnt')
+    context = {
+        'products': products,
+    }
+    return render(request, 'articles/product_rank.html', context)
 
 
 
@@ -201,19 +204,34 @@ def search(request):
     products = None
     # query = 검색값
     query = None
+    if request.GET.get('field') != 'all':
+        field = request.GET.get('field')
+        sort_products = Product.objects.filter(category=field)
+    else:
+        sort_products = Product.objects.all()
 
     if "q" in request.GET:
         query = request.GET.get("q")
         if query == "":
-            return redirect("articles:index")
+            return redirect("articles:search")
         query = query.split("&")[0]
-        products = Product.objects.order_by("-pk").filter(
-            Q(title__contains=query)
-            | Q(category__contains=query)
-        ) # title, category 로 검색
+        products = sort_products.order_by("-pk").filter(
+            Q(title__contains=query)) # title 로 검색
     
     context = {
         "products": products,
         "query": query,
     }
     return render(request, "articles/search.html", context)
+
+@login_required
+def like(request, product_pk):
+    product = get_object_or_404(Product, pk=product_pk)
+    if request.user in product.like_user.all():
+        product.like_user.remove(request.user)
+        is_liked = False
+    else:
+        product.like_user.add(request.user)
+        is_liked = True
+    context = {'isLiked': is_liked, 'likeCount': product.like_user.count()}
+    return JsonResponse(context)

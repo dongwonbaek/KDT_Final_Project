@@ -22,3 +22,118 @@
 .brand {
   color: #999;
 }
+
+/* product_detail */
+
+.detail_container {
+  margin-left: 15rem;
+  margin-right: 15rem;
+}
+
+/* title 수평선 */
+.detail_hr {
+  background-color: #aaa;
+  height: 0.1rem;
+}
+
+.detail_img {
+  width: 30rem;
+  height: 30rem;
+}
+
+.detail_img img {
+  object-fit: cover;
+}
+
+.circle {
+  color: #bbb;
+  cursor: pointer;
+  border: solid 1px #ddd;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.heart {
+  color: white;
+  background-color: #F28080;
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 16px;
+  width: 4rem;
+}
+
+.category {
+  border-top: solid 1px #ddd;
+  border-bottom: solid 1px #ddd;
+}
+
+/* 구매하기 버튼 */
+.buy {
+  color: white;
+  background-color: #FB5957;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 8px 20px;
+}
+
+.buy:hover {
+  color: white;
+  text-decoration: none;
+  background-image: linear-gradient(
+    to right,
+    #e7484f,
+    #e7484f 16.65%,
+    #f68b1d 16.65%,
+    #f68b1d 33.3%,
+    #fced00 33.3%,
+    #fced00 49.95%,
+    #009e4f 49.95%,
+    #009e4f 66.6%,
+    #00aac3 66.6%,
+    #00aac3 83.25%,
+    #732982 83.25%,
+    #732982 100%,
+    #e7484f 100%
+  );
+  animation: slidebg 2s linear infinite;
+}
+
+@keyframes slidebg {
+  to {
+    background-position: 20vw;
+  }
+}
+
+/* 탭 이동 */
+#tap-move {
+  border: solid 1px #ddd;
+  margin-top: 8rem;
+}
+
+.tap-nav {
+  border-bottom: solid 1px #ddd;
+  padding-left: 3rem;
+}
+
+.tab-button {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  border: 0;
+  width: 10rem;
+  height: 5rem;
+  padding-top: 1rem;
+}
+
+#tab-section-1 {
+  padding: 3rem 2rem;
+}
+
+.small-img {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 0.2rem;
+}

@@ -8,7 +8,26 @@
 {% block title %}{% endblock title %}
 {% block style %}{% endblock style %}
 {% block content %}
+<br><br><br><br><br>
+    <form role="search" class="d-flex" action="{% url 'articles:search' %}" method='GET'>
+        <select name="field" class="select border rounded-2" aria-label="default select example">
+            <option value="all">모두</option>
+            {% for i in categories %}
+            <option value="{{ i.0 }}">{{ i.1 }}</option>
+            {% endfor %}
+        </select>
+        <input class="search" name="q" type="search" placehlder="검색" aria-label="Search">
+        <button type="submit">
+            <p>검색</p>
+        </button>
+    </form>
     <p>{{ query }}검색결과</p>
+
+    {% for product in products %}
+        <a href="{% url "articles:product_detail" product.pk %}">
+            <p>{{ product.title }}</p>
+        </a>
+    {% endfor %}
 
 {% endblock content %}
 {% block script %}{% endblock script %}

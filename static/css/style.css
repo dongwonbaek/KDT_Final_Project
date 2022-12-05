@@ -6,7 +6,8 @@
 }
 
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
-.jejugothic * { 
+
+.jejugothic * {
   font-family: 'Jeju Gothic', sans-serif;
 }
 
@@ -44,7 +45,6 @@ background-color: var(--main-mintygreen);
 }
 
 .neg-btn {
-  display: block;
   width: 50%;
   height: 100%;
   text-align: center; 
@@ -55,8 +55,7 @@ background-color: var(--main-mintygreen);
   line-height: 57px;
   color: var(--main-white);
   background-color: var(--main-scarlet);
-  }
-
+}
 
 /* ---------- base.html ---------- */
 footer {
@@ -196,9 +195,7 @@ footer {
 }
 
 .affix {
-
   top: -211px;
-
 }
 
 .topon {
@@ -265,6 +262,7 @@ header .menu ul li:hover #submenu {
   width: 50px;
   border-radius: 3px;
 }
+
 .select-friend-modal .modal-header p {
   position: absolute;
   top: 25px;
@@ -295,7 +293,7 @@ header .menu ul li:hover #submenu {
   width: 100%;
   top: -122px;
   left: 0%;
-  right:0%;
+  right: 0%;
 }
 
 .index-category {
@@ -345,19 +343,25 @@ header .menu ul li:hover #submenu {
   width:100%;
   margin:150px auto;
 }
-.slick-slide{
-  margin:10px;
-}
-.slick-slide img{
-  width:100%;
-  height: 120px;
-}
-.slick-dots li button:before {
-  font-size:20px;
-  color:var(--main-mintygreen);
+
+.slick-slide {
+  margin: 10px;
 }
 
-.slick-prev:before, .slick-next:before {
+.slick-slide img {
+  width: 100%;
+  height: 120px;
+}
+
+.slick-dots li button:before {
+  font-size: 20px;
+  color: var(--main-mintygreen);
+  width: 100%;
+  margin: 50px auto;
+}
+
+.slick-prev:before,
+.slick-next:before {
   color: var(--main-bluegreen);
 }
 
@@ -434,7 +438,8 @@ header .menu ul li:hover #submenu {
   height: 150px;
   width: auto;
 }
-  
+
+
 /*------로그인, 회원가입------*/
 .login-button {
   width: 200px;
@@ -478,9 +483,53 @@ header .menu ul li:hover #submenu {
   margin: auto;
   margin-top: 50px;
   width: 420px;
+  height: 550px;
+  border: solid 3px;
+  border-color: #FFB6C1;
+  border-radius: 10%;
+  background: white 20%;
+}
+
+/*------어카운츠 디테일------*/
+.detail_body {
+  margin: 50px auto;
+  width: 500px;
   height: 500px;
   border: solid 3px;
   border-color: #FFB6C1;
   border-radius: 10%;
   background: white 20%;
+}
+
+.profile {
+  width: 200px;
+  border-radius: 80%;
+}
+
+.delete-button {
+  width: 200px;
+  height: 35px;
+  margin-top: 1rem;
+  border-style: none;
+  border-radius: 90px;
+  background-color: var(--main-scarlet);
+}
+
+.follow-button {
+  width: 200px;
+  height: 35px;
+  margin-top: 1rem;
+  border-style: none;
+  border-radius: 90px;
+  background-color: #82a5d9;
+}
+
+.profile-username {
+  margin-top: 50px;
+}
+
+.user-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
 }

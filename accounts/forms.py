@@ -14,7 +14,7 @@ class SignupForm(UserCreationForm):
             )
 
 class UpdateForm(UserChangeForm):
-    
+    password = None #profile_update에서 password를 없애기 위함. exclude로는 안됨.
     class Meta:
         model = get_user_model()
         fields = (
