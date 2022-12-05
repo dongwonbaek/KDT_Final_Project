@@ -142,6 +142,7 @@
 /* 후기(댓글) */
 .com {
   border-top: solid 1px #ddd;
+  cursor: pointer;
 }
 
 .user_img {
@@ -166,4 +167,20 @@
 
 .com_img img {
   object-fit: cover;
+}
+
+.stars {
+  color: #FFE15D;
+}
+
+.eee {
+  color: #eee;
+}
+
+.modal_btn {
+  color: white;
+  background-color: #F28080;
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 20px;
 }
