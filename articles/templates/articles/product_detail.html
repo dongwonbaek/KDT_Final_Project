@@ -22,8 +22,14 @@
       </div>
       <div class="d-flex justify-content-end">
         <div class="heart text-center">
-          <i class="far fa-heart fs-4"></i> 
-          <div>999</div>
+          {% if request.user.is_authenticated %}
+            {% if request.user in product.like_user.all %}
+              <i id='like-btn' data-product-id="{{ product.pk }}" class="bi bi-heart-fill"></i>
+            {% else %}
+              <i id='like-btn' data-product-id="{{ product.pk }}" class="bi bi-heart"></i>
+            {% endif %}
+          {% endif %}
+          <span id="like-count">{{ product.like_user.count }}</span>
         </div>
       </div>
     </div>  
@@ -275,14 +281,24 @@
 </div>
 {% endfor %}
 
-{% if request.user.is_authenticated %}
-  {% if request.user in product.like_user.all %}
-    <i id='like-btn' data-product-id="{{ product.pk }}" class="bi bi-heart-fill"></i>
-  {% else %}
-    <i id='like-btn' data-product-id="{{ product.pk }}" class="bi bi-heart"></i>
-  {% endif %}
-{% endif %}
-<span id="like-count">{{ product.like_user.count }}</span>
+
+{% comment %} action="{% url 'articles:review_comment_create' review.pk %}"  {% endcomment %}
+<form id="comment-form" data-review-id="{{ review.pk }}">
+  {% csrf_token %}
+  {% bootstrap_form review_comment_form %}
+  <input type="submit">
+</form>
+<div id="comment-box{{ review.pk }}">
+  {% for comment in review.reviewcomment_set.all %}
+  <div>
+    {{ comment.content }} / <a href="{% url 'accounts:detail' comment.user.pk %}">{{ comment.user.nickname }}</a>
+    {% if request.user == comment.user %}
+    <a class='btn btn-sm btn-outline-danger' href="{% url 'articles:review_comment_delete' comment.pk %}">삭제</a>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
 
 {% endblock content %}
 
@@ -309,6 +325,44 @@
       likeCount.innerText = response.data.likeCount
     })
   })
+</script>
+
+<script>
+const commentForms = document.querySelectorAll('#comment-form')
+for (commentForm of commentForms) {
+  commentForm.addEventListener('submit', function(event) {
+    const csrftoken = event.target.querySelector('[name=csrfmiddlewaretoken]').value
+    event.preventDefault();
+    axios({
+      method: 'post',
+      url: `/${event.target.dataset.reviewId}/review_comment_create/`,
+      headers: {
+        'X-CSRFToken': csrftoken
+      },
+      data: new FormData(commentForm)
+    }).then(response => {
+      const commentBox = document.querySelector(`#comment-box${event.target.dataset.reviewId}`)
+      commentBox.replaceChildren()
+      for (comment of response.data.comments) {
+        const div1 = document.createElement('div')
+        const a1 = document.createElement('a')
+        a1.setAttribute('href', `/accounts/${comment[3]}/detail/`)
+        a1.innerText = comment[1]
+        div1.innerText = `${comment[0]} / `
+        div1.append(a1)
+        if (comment[3] === comment[4]) {
+          const a2 = document.createElement('a')
+          a2.setAttribute('href', `/${comment[5]}/review_comment_delete/`)
+          a2.classList.add('btn', 'btn-sm', 'btn-outline-danger')
+          a2.innerText = '삭제'
+          div1.append(a2)
+        }
+        commentBox.append(div1)
+      }
+      commentForm.reset()
+    })
+  })
+}
 </script>
 
 <script>

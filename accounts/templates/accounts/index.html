@@ -8,9 +8,12 @@
 {% block title %}{% endblock title %}
 {% block style %}{% endblock style %}
 {% block content %}
-  <main class="container">
-    <h1>base</h1>
-    <p>컨텐츠 하나당 &lt;section&gt;&lt;/section&gt;</p>
-  </main>
+<main class="container">
+  <h1>base</h1>
+  <p>컨텐츠 하나당 &lt;section&gt;&lt;/section&gt;</p>
+</main>
 {% endblock content %}
-{% block script %}{% endblock script %}
+{% block script %}
+const body = document
+body.removeClass('modal-open')
+{% endblock script %}

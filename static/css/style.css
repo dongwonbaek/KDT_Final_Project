@@ -32,24 +32,22 @@ body {
 }
 
 .pos-btn {
-  display: block;
-  width: 50%;
-  height: auto;
-  text-align: center;
-  border-radius: 4px;
-  border: none;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 57px;
-  color: var(--main-white);
-  background-color: var(--main-mintygreen);
+width: 50%;
+height: 100%;
+text-align: center;
+border-radius: 4px;
+border: none;
+font-weight: 700;
+font-size: 16px;
+line-height: 57px;
+color: var(--main-white);
+background-color: var(--main-mintygreen);
 }
 
 .neg-btn {
-  display: block;
   width: 50%;
-  height: auto;
-  text-align: center;
+  height: 100%;
+  text-align: center; 
   border-radius: 4px;
   border: none;
   font-weight: 700;
@@ -59,17 +57,83 @@ body {
   background-color: var(--main-scarlet);
 }
 
-
 /* ---------- base.html ---------- */
 footer {
   position: absolute;
   right: 0;
   left: 0;
-  padding: 1rem;
+  padding-top: 80px;
+  margin-top: 300px;
   text-align: center;
-  height: auto;
+  height: 150px;
   background-color: var(--main-mintygreen);
   color: var(--main-white);
+}
+
+#wire{
+  text-align: center;
+  white-space: nowrap;
+  position: absolute;
+  padding: 0;
+  width: 100%;
+  top: -80px;
+  border-bottom: 3px solid #222;
+  height: 100px;
+}
+
+#wire li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 15px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0px 15px;
+  top: 102px;
+  display: inline-block;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count:infinite;
+  animation-name: even-flash;
+}
+
+#wire li:nth-child(odd){
+  animation-name: odd-flash;
+}
+
+#wire li:before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 10px;
+  border-radius: 4px;
+  top: -5px;
+  left: 0px;
+  background: #444;
+}
+
+@keyframes even-flash {
+  0%, 100% {
+      background: rgb(10, 78, 40);
+      box-shadow: 0px 2px 20px 4px rgb(84, 172, 80);
+  }
+  50% {
+      background: rgba(12, 131, 61, 0.5);
+      box-shadow: 0px 2px 20px 4px rgba(42, 126, 56, 0.226);
+  }
+}
+
+@keyframes odd-flash {
+  50% {
+      background: rgb(129, 17, 9);
+      box-shadow: 0px 2px 20px 4px rgb(172, 80, 80);
+  }
+  0%,100% {
+      background: rgba(102, 19, 4, 0.5);
+      box-shadow: 0px 2px 20px 4px rgba(92, 20, 20, 0.226);
+  }
 }
 
 .ToTop {
@@ -108,6 +172,11 @@ footer {
   border-color: #FFB6C1;
 }
 
+.nav-link {
+  color: #000;
+}
+
+
 .fnav {
   background-color: white;
   position: fixed;
@@ -121,9 +190,7 @@ footer {
 }
 
 .affix {
-
   top: -211px;
-
 }
 
 .topon {
@@ -148,6 +215,28 @@ header .menu ul>li {
 header .menu ul li:hover #submenu {
   display: inline;
   width: 100vw;
+}
+
+.modal-backdrop {
+  display: none;
+}
+
+.login-button2 {
+  width: 130px;
+  height: 25px;
+  border-style: none;
+  border-radius: 10px;
+  background-color: #ece6cc;
+}
+
+.delete-button2 {
+  top: 0;
+  width: 130px;
+  height: 25px;
+  margin-top: 1rem;
+  border-style: none;
+  border-radius: 10px;
+  background-color: var(--main-scarlet);
 }
 
 /* ---------- index ---------- */
@@ -196,6 +285,25 @@ header .menu ul li:hover #submenu {
   top: 25px;
 }
 
+/* ----------------------눈----------------------------- */
+#snowflakeContainer {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: none;
+}
+
+.snowflake {
+  position: fixed;
+  background-color: #FFFFFF;
+  user-select: none;
+  z-index: 1000;
+  pointer-events: none;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
 .category-wrapper {
   position: relative;
 }
@@ -218,6 +326,7 @@ header .menu ul li:hover #submenu {
   border: 1px solid rgba(209, 213, 219, 0.3);
   position: relative;
   top: -40px;
+  margin-bottom: 150px;
 }
 
 .index-category div a {
@@ -252,8 +361,8 @@ header .menu ul li:hover #submenu {
 }
 
 .multiple-items {
-  width: 100%;
-  margin: 50px auto;
+  width:100%;
+  margin:150px auto;
 }
 
 .slick-slide {
@@ -268,6 +377,8 @@ header .menu ul li:hover #submenu {
 .slick-dots li button:before {
   font-size: 20px;
   color: var(--main-mintygreen);
+  width: 100%;
+  margin: 50px auto;
 }
 
 .slick-prev:before,
@@ -275,37 +386,52 @@ header .menu ul li:hover #submenu {
   color: var(--main-bluegreen);
 }
 
-/* .index-ranking {
-
-} */
-#exTab1 .tab-content {
-  color: white;
-  background-color: #428bca;
-  padding: 5px 15px;
+.index-ranking.index-ranking {
+  margin: 150px 0 !important;
 }
 
-#exTab2 h3 {
-  color: white;
-  background-color: #428bca;
-  padding: 5px 15px;
+.ranking-item {
+  position: relative;
 }
 
-/* remove border radius for the tab */
-
-#exTab1 .nav-pills>li>a {
-  border-radius: 0;
+.ranking-more {
+  display: flex;
+  justify-content: center;
 }
 
-/* change border radius for the tab , apply corners on top*/
-
-#exTab3 .nav-pills>li>a {
-  border-radius: 4px 4px 0 0;
+.bookmark {
+  width: 0;
+  border: 20px solid var(--main-salmon);
+  border-bottom-color: transparent;
+  position: absolute;
+  height: 10px;
+  left: 10px;
+  top: 0px;
+  text-align: start;
 }
 
-#exTab3 .tab-content {
-  color: white;
-  background-color: #428bca;
-  padding: 5px 15px;
+.showmore {
+  width: auto;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 57px;
+  color: var(--main-white);
+  background-color: var(--main-mintygreen);
+}
+
+.reco-per-member {
+  display: flex;
+  justify-content: center;
+  margin: 200px 0;
+}
+
+.div.slick-slide.slick-current.slick-active {
+  width: 560px;
+  margin: auto;
 }
 
 .FloatingAd {
@@ -338,6 +464,10 @@ header .menu ul li:hover #submenu {
   width: auto;
 }
 
+.FloatingAd a {
+  display: block;
+}
+
 /*------로그인, 회원가입------*/
 .login-button {
   width: 200px;
@@ -367,9 +497,10 @@ header .menu ul li:hover #submenu {
 .wrapper1 {
   text-align: center;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 420px;
-  height: 250px;
+  height: 300px;
   border: solid 3px;
   border-color: #FFB6C1;
   border-radius: 10%;
@@ -379,7 +510,8 @@ header .menu ul li:hover #submenu {
 .wrapper2 {
   text-align: center;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 420px;
   height: 550px;
   border: solid 3px;
@@ -430,4 +562,14 @@ header .menu ul li:hover #submenu {
   width: 50px;
   height: 50px;
   border-radius: 20px;
+}
+
+.block-button {
+  width: 200px;
+  height: 35px;
+  margin-top: 1rem;
+  border-style: none;
+  border-radius: 90px;
+  background-color: black;
+  color: white;
 }

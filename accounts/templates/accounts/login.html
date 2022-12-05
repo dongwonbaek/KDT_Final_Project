@@ -4,6 +4,8 @@
 {% load widget_tweaks %}
 {% load django_bootstrap5 %}
 {% load imagekit %}
+{% load socialaccount %}
+{% providers_media_js %}
 
 {% block title %}{% endblock title %}
 {% block style %}{% endblock style %}
@@ -21,5 +23,32 @@
         <button class="login-button" button_type='submit' content='로그인'>로그인</button>
     </form>
 </div>
+
+<div>
+    <a href="{% provider_login_url 'google' %}">구글 로그인</a>
+    <a href="{% provider_login_url 'kakao' %}">카카오 로그인</a>
+    <a href="{% provider_login_url 'naver' %}">네이버 로그인</a>
+    <!-- <a href="javascript:kakaoLogin();">카카오 로그인</a> -->
+</div>
 {% endblock content %}
-{% block script %}{% endblock script %}
+{% block script %}
+{% comment %} <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+    window.Kakao.init("be23e14ee579ab482cf380ba3d48ebfc");
+    function kakaoLogin() {
+        window.Kakao.Auth.login({
+            scope:'profile_nickname, account_email, gender, birthday',
+            success: function(authObj) {
+                console.log(authObj);
+                window.Kakao.API.request({
+                    url:'/v2/user/me',
+                    success: res => {
+                        const kakao_account = res.kakao_account;
+                        console.log(kakao_account);
+                    }
+                });
+            }
+        });
+    }
+</script> {% endcomment %}
+{% endblock script %}

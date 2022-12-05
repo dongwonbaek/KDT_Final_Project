@@ -7,16 +7,17 @@ from imagekit.processors import Thumbnail
 
 
 class User(AbstractUser):
-    nickname = models.CharField(max_length=20, unique=True)
+    nickname = models.CharField(max_length=20, unique=False)
     image = ProcessedImageField(
         upload_to="images/",
+        null=True,
         blank=True,
         processors=[Thumbnail(400, 400)],
         format="JPEG",
         options={"quality": 80},
     )
     gender = models.BooleanField(default=False)
-    birth_date = models.DateField(null=False)
+    birth_date = models.DateField(null=True)
     following = models.ManyToManyField(
         "self", symmetrical=False, related_name="followers"
     )

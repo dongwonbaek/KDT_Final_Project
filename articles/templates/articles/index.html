@@ -60,6 +60,9 @@
   </div>
   <!-- 네브 아래 width100% 영역 -->
   <section id="index-banner" class="recobox">
+    <div id="snowflakeContainer">
+      <span class="snowflake"></span>
+    </div>
     <p>
       {% if request.user.is_authenticated %}{{ user }}
         <span>님</span><br>{% endif %}누구를 위한 선물인가요?</p>
@@ -72,14 +75,14 @@
   <section class="container category-wrapper">
     <img src="{% static 'img/index/snow.png' %}" class="snow-piledup">
     <div class="index-category row row-cols-5">
-      <div>
-        <a href="{% url 'articles:product_list' 1 %}">
+      <div class="col">
+        <a href="{% url 'articles:product_list' 9 %}">
           <img src="{% static 'img/index/gift1.jpg' %}">
           <p>크리스마스</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' 1 %}">
+        <a href="{% url 'articles:product_list' 6 %}">
           <img src="{% static 'img/index/gift2.jpg' %}">
           <p>따뜻한 선물</p>
         </a>
@@ -91,43 +94,43 @@
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' 1 %}">
+        <a href="{% url 'articles:product_list' 2 %}">
           <img src="{% static 'img/index/gift4.jpg' %}">
           <p>가벼운 선물</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' 1 %}">
+        <a href="{% url 'articles:product_list' 3 %}">
           <img src="{% static 'img/index/gift5.jpg' %}">
           <p>건강/회복</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' 1 %}">
+        <a href="{% url 'articles:product_list' 4 %}">
           <img src="{% static 'img/index/gift6.jpg' %}">
           <p>스몰럭셔리</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' 1 %}">
+        <a href="{% url 'articles:product_list' 10 %}">
           <img src="{% static 'img/index/gift7.jpg' %}">
           <p>어른선물</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' 1 %}">
+        <a href="{% url 'articles:product_list' 11 %}">
           <img src="{% static 'img/index/gift8.jpg' %}">
           <p>명품선물</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' 1 %}">
+        <a href="{% url 'articles:product_list' 8 %}">
           <img src="{% static 'img/index/gift9.jpg' %}">
           <p>출산/키즈</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' 1 %}">
+        <a href="{% url 'articles:product_list' 10 %}">
           <img src="{% static 'img/index/gift10.jpg' %}">
           <p>김치선물</p>
         </a>
@@ -163,35 +166,84 @@
       <div><img src="https://picsum.photos/300/200?random=6"></div>
     </div>
     <!--MyCarousel-->
-    <div id="exTab3" class="index-ranking">	
-      <ul  class="nav nav-pills">
-            <li class="active">
-              <a  href="#1b" data-toggle="tab">Overview</a>
-            </li>
-            <li><a href="#2b" data-toggle="tab">Using nav-pills</a>
-            </li>
-            <li><a href="#3b" data-toggle="tab">Applying clearfix</a>
-            </li>
-            <li><a href="#4a" data-toggle="tab">Background color</a>
-            </li>
-          </ul>
-      
-            <div class="tab-content clearfix">
-              <div class="tab-pane active" id="1b">
-                <h3>Same as example 1 but we have now styled the tab's corner</h3>
-              </div>
-              <div class="tab-pane" id="2b">
-                <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color for the tab</h3>
-              </div>
-              <div class="tab-pane" id="3b">
-                <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
-              </div>
-                <div class="tab-pane" id="4b">
-                <h3>We use css to change the background color of the content to be equal to the tab</h3>
-              </div>
-            </div>
+    <div class="index-ranking my-5">
+      <h2 class="text-center">실시간 선물 랭킹</h2>
+      <ul class="ranking-more row row-cols-4 expandible">
+        {% for i in "x"|rjust:"20" %}
+        <li class="col ranking-item">
+          <div class="bookmark">{{ forloop.counter }}</div>
+          <img src="https://picsum.photos/400">
+          <p>브랜드</p>
+          <p>상품명</p>
+          <p><span>가격</span>원</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div><!--index-ranking-->
+    <hr>
+    <div class="reco-per-member row row-cols-3">
+      <div class="card col">
+        <img src="https://picsum.photos/400/200">
+        <h3>건희</h3>
+        <p>주제 설명</p>
+      </div>
+      <div class="card col">
+        <img src="https://picsum.photos/400/200">
+        <h3>다솔</h3>
+        <p>주제 설명</p>
+      </div>
+      <div class="card col">
+        <img src="https://picsum.photos/400/200">
+        <h3>병우</h3>
+        <p>주제 설명</p>
+      </div>
+      <div class="card col">
+        <img src="https://picsum.photos/400/200">
+        <h3>희동</h3>
+        <p>주제 설명</p>
+      </div>
+      <div class="card col">
+        <img src="https://picsum.photos/400/200">
+        <h3>동원</h3>
+        <p>주제 설명</p>
+      </div>
+      <div class="card col">
+        <img src="https://picsum.photos/400/200">
+        <h3>성민</h3>
+        <p>주제 설명</p>
+      </div>
+    </div>
+    <div id="page" class="youtube-list row">
+      <div class="small-11 small-centered">
+        <h2>추천 유튜브<i class="bi-youtube"></i></h2>
+        <div class="slider slider-single">
+          <div><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7Y3N_FJxbP4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/VJvfPBCnpsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/6Eb-60MSTQc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/NrHddzciiWg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/Jxt_kr20iyk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/YzWfw4aPpAI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/D9_PWsoMXXI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/aC8J983AJOM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/uNKRtj_3JiA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div><iframe width="560" height="315" src="https://www.youtube.com/embed/14FUVWUnk0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         </div>
+        <div class="slider slider-nav">
+          <img src="{% static 'img/index/thumbnail1.jpg' %}">
+          <img src="{% static 'img/index/thumbnail2.jpg' %}">
+          <img src="{% static 'img/index/thumbnail3.jpg' %}">
+          <img src="{% static 'img/index/thumbnail4.jpg' %}">
+          <img src="{% static 'img/index/thumbnail5.jpg' %}">
+          <img src="{% static 'img/index/thumbnail6.jpg' %}">
+          <img src="{% static 'img/index/thumbnail7.jpg' %}">
+          <img src="{% static 'img/index/thumbnail8.jpg' %}">
+          <img src="{% static 'img/index/thumbnail9.jpg' %}">
+          <img src="{% static 'img/index/thumbnail10.jpg' %}">
+        </div>
+      </div>
+    </div>
   </section>
+  {% if request.user.is_authenticated == False %}
   <section id="ad-box" class="card alert FloatingAd">
     <div class="card-body">
       <h4 class="card-title">🎊오픈 기념🎊</h4>
@@ -202,10 +254,97 @@
       <a href="{% url 'accounts:signup' %}" class="card-link pos-btn">가입하러 가기</a>
     </div>
   </section>
+  {% endif %}
 {% endblock content %}
 
 {% block script %}
   <script>
     $('.multiple-items').slick({infinite: true, slidesToShow: 2, slidesToScroll: 2, dots: true});
+  </script>
+  <script>
+    $('ul.expandible').each(function(){
+      var $ul = $(this),
+          $lis = $ul.find('li:gt(7)'),
+          isExpanded = $ul.hasClass('expanded');
+      $lis[isExpanded ? 'show' : 'hide']();
+      
+      if($lis.length > 0){
+          $ul
+              .append($('<span class="showmore"><li class="expand">' + (isExpanded ? '접기' : '더보기') + '</li></span>')
+              .click(function(event){
+                  var isExpanded = $ul.hasClass('expanded');
+                  event.preventDefault();
+                  $(this).html(isExpanded ? '더보기' : '접기');
+                  $ul.toggleClass('expanded');
+                  $lis.toggle();
+              }));
+      }
+    });
+  </script>
+  <script src="{% static 'js/snowflake.js' %}"></script>
+  <script>
+    $('.slider-single').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      adaptiveHeight: true,
+      infinite: true,
+      useTransform: true,
+      speed: 400,
+    });
+
+    $('.slider-nav')
+      .on('init', function(event, slick) {
+        $('.slider-nav .slick-slide.slick-current').addClass('is-active');
+      })
+      .slick({
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        dots: false,
+        focusOnSelect: false,
+        infinite: true,
+        responsive: [{
+          breakpoint: 1024,
+          settings: {
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 5,
+            slidesToScroll: 5,
+          }
+        }, {
+          breakpoint: 640,
+          settings: {
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 4,
+            slidesToScroll: 4,
+          }
+        }, {
+          breakpoint: 420,
+          settings: {
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 3,
+            slidesToScroll: 3,
+          }
+        }]
+      });
+
+    $('.slider-single').on('afterChange', function(event, slick, currentSlide) {
+      $('.slider-nav').slick('slickGoTo', currentSlide);
+      var currrentNavSlideElem = '.slider-nav .slick-slide[data-slick-index="' + currentSlide + '"]';
+      $('.slider-nav .slick-slide.is-active').removeClass('is-active');
+      $(currrentNavSlideElem).addClass('is-active');
+    });
+
+    $('.slider-nav').on('click', '.slick-slide', function(event) {
+      event.preventDefault();
+      var goToSingleSlide = $(this).data('slick-index');
+
+      $('.slider-single').slick('slickGoTo', goToSingleSlide);
+    });
   </script>
 {% endblock script %}
