@@ -41,10 +41,10 @@
   <section class="row d-flex mt-5">
     <!-- 상품 이미지 -->
     <div class="detail_img col-6">
-      <img id="big-img" class="w-100 h-100 rounded" src="{{ product.productimages_set.all.0.images.url }}" alt="product.productimages_set.all.0.image">
+      <img id="big-img" class="w-100 h-100 rounded" src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.image">
       <!-- 작은 사진들 (이미지 바꾸기) -->
       <div class="d-flex justify-content-center mt-3">
-        <img class="small-img" src="{{ product.productimages_set.all.0.images.url }}" alt="">
+        <img class="small-img" src="{{ product.productimages_set.all.0.images }}" alt="">
         <img class="small-img" src="https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211111144222_b541aa8be72c4b7f8e4fc3996fca6d5d.jpg" alt="">
         <img class="small-img" src="https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211111144219_4917ff2d045a424b8af47210f332a5ec.jpg" alt="">
       </div>
@@ -60,7 +60,7 @@
           <!-- 별 평점 -->
           <div class="mt-2">⭐⭐⭐⭐⭐ (평점 5.0)</div>
           <!-- 공유 / 하트(위시) 버튼 -->
-          <div class="mt-5 pt-4 d-flex">  
+          <div class="mt-5 pt-4 d-flex">
             <div class="circle me-2 d-flex justify-content-center align-items-center">
               <i class="fas fa-arrow-up-from-bracket fs-4"></i>
             </div>
@@ -112,12 +112,78 @@
     <div id="tab-section-1" class="tab-section">
       <img src="https://st.kakaocdn.net/product/gift/editor/GE9npJp40gjy0AXfoEEiCA/rNHKB8eNAErn5vVFdAkGA4DVXYsilLuZuGpJ5GG3kV8.jpg" alt="">
     </div>
-    <div id="tab-section-2" class="tab-section" hidden>
+    <div id="tab-section-2" class="tab-section w-100" hidden>
+      <div class="d-flex justify-content-between p-4">
+        <div class="fs-2">선물후기 {{ product.review_set.all.count }}</div>
+        <div>최신순 | 추천순</div>
+      </div>
       {% for review in product.review_set.all %}
-      <!-- 모달 버튼 -->
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{ review.pk }}">
-        {{ review.title }}
-      </button>
+      <div class="com p-4" data-bs-toggle="modal" data-bs-target="#exampleModal{{ review.pk }}">
+        <div class="d-flex">
+          <div class="user_img me-3">
+            <img class="w-100 h-100" src="{{ review.user.image.url }}" alt="">
+          </div>
+          <div class="pt-2">
+            <div>{{ review.user.nickname }}</div>
+            <div class="d-flex mt-1">
+              <!-- 후기 평점 -->
+              {% if review.rating == 1 %}
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star eee"></i>
+                <i class="fas fa-star eee"></i>
+                <i class="fas fa-star eee"></i>
+                <i class="fas fa-star eee"></i>
+              </div>
+              {% elif review.rating == 2 %}
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star eee"></i>
+                <i class="fas fa-star eee"></i>
+                <i class="fas fa-star eee"></i>
+              </div>
+              {% elif review.rating == 3 %}
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star eee"></i>
+                <i class="fas fa-star eee"></i>
+              </div>
+              {% elif review.rating == 4 %}
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star eee"></i>
+              </div>
+              {% elif review.rating == 5 %}
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              {% endif %}
+              &nbsp;| {{ review.created_at.date }}        
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mt-2">
+          <div class="com_width">
+            {{ review.content }}
+          </div>
+          <div class="com_img">
+            <img class="w-100 h-100" src="{{ review.image.url }}" alt="">
+          </div>
+        </div>
+        <div>
+          이모지 4개
+        </div>
+      </div>
       {% endfor %}
     </div>
   </section>
@@ -145,45 +211,93 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">{{ review.title }}</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <img src="{{ review.image.url }}" alt="review.image">
-        <div>
-          평점
-          {{ review.rating }}
+        <div class="d-flex">
+          <div class="user_img me-3">
+            <img src="{{ review.user.image.url }}" alt="">
+          </div>
+          <div class="pt-2">
+            <div>{{ review.user.nickname }}</div>
+            <!-- 후기 평점 (modal) -->
+            <div class="d-flex mt-1">
+              {% if review.rating == 1 %}
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star eee"></i>
+                <i class="fas fa-star eee"></i>
+                <i class="fas fa-star eee"></i>
+                <i class="fas fa-star eee"></i>
+              </div>
+              {% elif review.rating == 2 %}
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star eee"></i>
+                <i class="fas fa-star eee"></i>
+                <i class="fas fa-star eee"></i>
+              </div>
+              {% elif review.rating == 3 %}
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star eee"></i>
+                <i class="fas fa-star eee"></i>
+              </div>
+              {% elif review.rating == 4 %}
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star eee"></i>
+              </div>
+              {% elif review.rating == 5 %}
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              {% endif %}
+              &nbsp;| {{ review.created_at.date }}
+            </div>
+          </div>
         </div>
-        <div>
-          내용
+        <div class="my-3">
           {{ review.content }}
         </div>
-
-
-          
-
-
-
-        {% comment %} action="{% url 'articles:review_comment_create' review.pk %}"  {% endcomment %}
-        <form id="comment-form" data-review-id="{{ review.pk }}">
-          {% csrf_token %}
-          {% bootstrap_form review_comment_form %}
-          <input type="submit">
-        </form>
-        <div id="comment-box{{ review.pk }}">
-          {% for comment in review.reviewcomment_set.all %}
-          <div>
-            {{ comment.content }} / <a href="{% url 'accounts:detail' comment.user.pk %}">{{ comment.user.nickname }}</a>
-            {% if request.user == comment.user %}
-            <a class='btn btn-sm btn-outline-danger' href="{% url 'articles:review_comment_delete' comment.pk %}">삭제</a>
-            {% endif %}
-          </div>
-          {% endfor %}
+        <div style="width: 15rem; height: 15rem;">
+          <img class="w-100 h-100" src="{{ review.image.url }}" alt="review.image">
         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="modal_btn" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
 {% endfor %}
+
+
+{% comment %} action="{% url 'articles:review_comment_create' review.pk %}"  {% endcomment %}
+<form id="comment-form" data-review-id="{{ review.pk }}">
+  {% csrf_token %}
+  {% bootstrap_form review_comment_form %}
+  <input type="submit">
+</form>
+<div id="comment-box{{ review.pk }}">
+  {% for comment in review.reviewcomment_set.all %}
+  <div>
+    {{ comment.content }} / <a href="{% url 'accounts:detail' comment.user.pk %}">{{ comment.user.nickname }}</a>
+    {% if request.user == comment.user %}
+    <a class='btn btn-sm btn-outline-danger' href="{% url 'articles:review_comment_delete' comment.pk %}">삭제</a>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
 
 
 {% endblock content %}
