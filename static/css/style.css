@@ -31,9 +31,8 @@ body {
 }
 
 .pos-btn {
-display: block;
 width: 50%;
-height: auto;
+height: 100%;
 text-align: center;
 border-radius: 4px;
 border: none;
@@ -47,7 +46,7 @@ background-color: var(--main-mintygreen);
 .neg-btn {
   display: block;
   width: 50%;
-  height: auto;
+  height: 100%;
   text-align: center; 
   border-radius: 4px;
   border: none;
@@ -64,11 +63,88 @@ footer {
   position: absolute;
   right: 0;
   left: 0;
-  padding: 1rem;
+  padding-top: 80px;
+  margin-top: 300px;
   text-align: center;
-  height: auto;
+  height: 150px;
   background-color: var(--main-mintygreen);
   color: var(--main-white);
+}
+
+#wire{
+  text-align: center;
+  white-space: nowrap;
+  position: absolute;
+  padding: 0;
+  width: 100%;
+  top: -80px;
+  border-bottom: 3px solid #222;
+  height: 100px;
+}
+
+#wire li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 15px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0px 15px;
+  top: 102px;
+  display: inline-block;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count:infinite;
+  animation-name: even-flash;
+}
+
+#wire li:nth-child(odd){
+  animation-name: odd-flash;
+}
+
+#wire li:before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 10px;
+  border-radius: 4px;
+  top: -5px;
+  left: 0px;
+  background: #444;
+}
+
+@keyframes even-flash {
+  0%, 100% {
+      background: rgb(10, 78, 40);
+      box-shadow: 0px 2px 20px 4px rgb(84, 172, 80);
+  }
+  50% {
+      background: rgba(12, 131, 61, 0.5);
+      box-shadow: 0px 2px 20px 4px rgba(42, 126, 56, 0.226);
+  }
+}
+
+@keyframes odd-flash {
+  50% {
+      background: rgb(129, 17, 9);
+      box-shadow: 0px 2px 20px 4px rgb(172, 80, 80);
+  }
+  0%,100% {
+      background: rgba(102, 19, 4, 0.5);
+      box-shadow: 0px 2px 20px 4px rgba(92, 20, 20, 0.226);
+  }
+}
+
+.sf-snow-flake {
+  position: fixed;
+  top: -20px;
+  z-index: 99999;
+}
+  
+  .sf-snow-anim {
+  top: 110%;
 }
 
 .ToTop {
@@ -194,6 +270,21 @@ header .menu ul li:hover #submenu {
   top: 25px;
 }
 
+/* ----------------------눈----------------------------- */
+.snow-flake {
+  top: -15%;
+  position: absolute;
+  color: #FFF;
+  animation: fall 10s linear infinite;
+  z-index: 10;
+}
+
+@keyframes fall {
+  from { top: -15%; transform: rotate(0deg); }
+  50% { transform: rotate(360deg); }
+  to { top: 110%; }
+}
+
 .category-wrapper {
   position: relative;
 }
@@ -216,6 +307,7 @@ header .menu ul li:hover #submenu {
   border: 1px solid rgba(209, 213, 219, 0.3);
   position: relative;
   top: -40px;
+  margin-bottom: 150px;
 }
 
 .index-category div a {
@@ -251,7 +343,7 @@ header .menu ul li:hover #submenu {
 
 .multiple-items {
   width:100%;
-  margin:50px auto;
+  margin:150px auto;
 }
 .slick-slide{
   margin:10px;
@@ -269,38 +361,49 @@ header .menu ul li:hover #submenu {
   color: var(--main-bluegreen);
 }
 
-/* .index-ranking {
-
-} */
-#exTab1 .tab-content {
-  color : white;
-  background-color: #428bca;
-  padding : 5px 15px;
+.index-ranking.index-ranking {
+  margin: 150px 0 !important;
 }
 
-#exTab2 h3 {
-  color : white;
-  background-color: #428bca;
-  padding : 5px 15px;
+.ranking-item {
+  position: relative;
 }
 
-/* remove border radius for the tab */
-
-#exTab1 .nav-pills > li > a {
-  border-radius: 0;
+.ranking-more {
+  display: flex;
+  justify-content: center;
 }
 
-/* change border radius for the tab , apply corners on top*/
-
-#exTab3 .nav-pills > li > a {
-  border-radius: 4px 4px 0 0 ;
+.bookmark {
+  width: 0;
+  border: 20px solid var(--main-salmon);
+  border-bottom-color: transparent;
+  position: absolute;
+  height: 10px;
+  left: 10px;
+  top: 0px;
+  text-align: start;
 }
 
-#exTab3 .tab-content {
-  color : white;
-  background-color: #428bca;
-  padding : 5px 15px;
+.showmore {
+  width: auto;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 57px;
+  color: var(--main-white);
+  background-color: var(--main-mintygreen);
 }
+
+.reco-per-member {
+  display: flex;
+  justify-content: center;
+  margin: 200px 0;
+}
+
 
 .FloatingAd {
   display: flex;
@@ -330,7 +433,7 @@ header .menu ul li:hover #submenu {
   bottom: 40px;
   height: 150px;
   width: auto;
-
+}
   
 /*------로그인, 회원가입------*/
 .login-button {

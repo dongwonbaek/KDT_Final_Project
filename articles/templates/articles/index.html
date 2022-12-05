@@ -72,62 +72,62 @@
   <section class="container category-wrapper">
     <img src="{% static 'img/index/snow.png' %}" class="snow-piledup">
     <div class="index-category row row-cols-5">
-      <div>
-        <a href="{% url 'articles:product_list' %}">
+      <div class="col">
+        <a href="{% url 'articles:product_list' 9 %}">
           <img src="{% static 'img/index/gift1.jpg' %}">
           <p>크리스마스</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 6 %}">
           <img src="{% static 'img/index/gift2.jpg' %}">
           <p>따뜻한 선물</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 1 %}">
           <img src="{% static 'img/index/gift3.jpg' %}">
           <p>생일</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 2 %}">
           <img src="{% static 'img/index/gift4.jpg' %}">
           <p>가벼운 선물</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 3 %}">
           <img src="{% static 'img/index/gift5.jpg' %}">
           <p>건강/회복</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 4 %}">
           <img src="{% static 'img/index/gift6.jpg' %}">
           <p>스몰럭셔리</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 10 %}">
           <img src="{% static 'img/index/gift7.jpg' %}">
           <p>어른선물</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 11 %}">
           <img src="{% static 'img/index/gift8.jpg' %}">
           <p>명품선물</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 8 %}">
           <img src="{% static 'img/index/gift9.jpg' %}">
           <p>출산/키즈</p>
         </a>
       </div>
       <div class="col">
-        <a href="{% url 'articles:product_list' %}">
+        <a href="{% url 'articles:product_list' 10 %}">
           <img src="{% static 'img/index/gift10.jpg' %}">
           <p>김치선물</p>
         </a>
@@ -141,13 +141,13 @@
         {% if request.user.is_authenticated %}
           {% for i in "x"|rjust:"15" %}
             <li>
-              <a href="{% url 'articles:product_list' %}">유저 선호순</a>
+              <a href="{% url 'articles:product_list' 1 %}">유저 선호순</a>
             </li>
           {% endfor %}
         {% else %}
           {% for i in "x"|rjust:"15" %}
             <li>
-              <a href="{% url 'articles:product_list' %}">걍 카테고리나열</a>
+              <a href="{% url 'articles:product_list' 1 %}">걍 카테고리나열</a>
             </li>
           {% endfor %}
         {% endif %}
@@ -163,34 +163,95 @@
       <div><img src="https://picsum.photos/300/200?random=6"></div>
     </div>
     <!--MyCarousel-->
-    <div id="exTab3" class="index-ranking">	
-      <ul  class="nav nav-pills">
-            <li class="active">
-              <a  href="#1b" data-toggle="tab">Overview</a>
-            </li>
-            <li><a href="#2b" data-toggle="tab">Using nav-pills</a>
-            </li>
-            <li><a href="#3b" data-toggle="tab">Applying clearfix</a>
-            </li>
-            <li><a href="#4a" data-toggle="tab">Background color</a>
-            </li>
-          </ul>
-      
-            <div class="tab-content clearfix">
-              <div class="tab-pane active" id="1b">
-                <h3>Same as example 1 but we have now styled the tab's corner</h3>
-              </div>
-              <div class="tab-pane" id="2b">
-                <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color for the tab</h3>
-              </div>
-              <div class="tab-pane" id="3b">
-                <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
-              </div>
-                <div class="tab-pane" id="4b">
-                <h3>We use css to change the background color of the content to be equal to the tab</h3>
-              </div>
-            </div>
-        </div>
+    <div class="index-ranking my-5">
+      <h2 class="text-center">실시간 선물 랭킹</h2>
+      <ul class="ranking-more row row-cols-4 expandible">
+        {% for i in "x"|rjust:"20" %}
+        <li class="col ranking-item">
+          <div class="bookmark">{{ forloop.counter }}</div>
+          <img src="https://picsum.photos/400">
+          <p>브랜드</p>
+          <p>상품명</p>
+          <p><span>가격</span>원</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div><!--index-ranking-->
+    <hr>
+    <div class="reco-per-member row row-cols-3">
+      <div class="card col">
+        <img src="https://picsum.photos/400/200">
+        <h3>건희</h3>
+        <p>주제 설명</p>
+      </div>
+      <div class="card col">
+        <img src="https://picsum.photos/400/200">
+        <h3>다솔</h3>
+        <p>주제 설명</p>
+      </div>
+      <div class="card col">
+        <img src="https://picsum.photos/400/200">
+        <h3>병우</h3>
+        <p>주제 설명</p>
+      </div>
+      <div class="card col">
+        <img src="https://picsum.photos/400/200">
+        <h3>희동</h3>
+        <p>주제 설명</p>
+      </div>
+      <div class="card col">
+        <img src="https://picsum.photos/400/200">
+        <h3>동원</h3>
+        <p>주제 설명</p>
+      </div>
+      <div class="card col">
+        <img src="https://picsum.photos/400/200">
+        <h3>성민</h3>
+        <p>주제 설명</p>
+      </div>
+    </div>
+    <div class="slider slider-for slick-initialized slick-slider">
+      <div aria-live="polite" class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 2800px;" role="listbox"><div class="slick-slide" data-slick-index="0" aria-hidden="true" style="transition: opacity 500ms ease 0s; width: 560px; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 0;" tabindex="-1" role="option" aria-describedby="slick-slide120">
+        <h3>1</h3>
+      </div><div class="slick-slide" data-slick-index="1" aria-hidden="true" style="transition: opacity 500ms ease 0s; width: 560px; position: relative; left: -560px; top: 0px; z-index: 998; opacity: 0;" tabindex="-1" role="option" aria-describedby="slick-slide121">
+        <h3>2</h3>
+      </div><div class="slick-slide slick-current slick-active" data-slick-index="2" aria-hidden="false" style="width: 560px; position: relative; left: -1120px; top: 0px; z-index: 999; opacity: 1;" tabindex="-1" role="option" aria-describedby="slick-slide122">
+        <h3>3</h3>
+      </div><div class="slick-slide" data-slick-index="3" aria-hidden="true" style="transition: opacity 500ms ease 0s; width: 560px; position: relative; left: -1680px; top: 0px; z-index: 998; opacity: 0;" tabindex="-1" role="option" aria-describedby="slick-slide123">
+        <h3>4</h3>
+      </div><div class="slick-slide" data-slick-index="4" aria-hidden="true" style="transition: opacity 500ms ease 0s; width: 560px; position: relative; left: -2240px; top: 0px; z-index: 998; opacity: 0;" tabindex="-1" role="option" aria-describedby="slick-slide124">
+        <h3>5</h3>
+      </div></div></div>   
+    </div>
+    <div class="slider slider-nav slick-initialized slick-slider slick-dotted" role="toolbar"><button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button" style="display: block;">Previous</button>
+      <div aria-live="polite" class="slick-list draggable" style="padding: 0px 50px;"><div class="slick-track" style="opacity: 1; width: 2002px; transform: translate3d(-770px, 0px, 0px);" role="listbox"><div class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" style="width: 154px;" tabindex="-1">
+        <h3>2</h3>
+      </div><div class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" style="width: 154px;" tabindex="-1">
+        <h3>3</h3>
+      </div><div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" style="width: 154px;" tabindex="-1">
+        <h3>4</h3>
+      </div><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 154px;" tabindex="-1">
+        <h3>5</h3>
+      </div><div class="slick-slide" data-slick-index="0" aria-hidden="true" style="width: 154px;" tabindex="-1" role="option" aria-describedby="slick-slide130">
+        <h3>1</h3>
+      </div><div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 154px;" tabindex="-1" role="option" aria-describedby="slick-slide131">
+        <h3>2</h3>
+      </div><div class="slick-slide slick-current slick-active slick-center" data-slick-index="2" aria-hidden="false" style="width: 154px;" tabindex="-1" role="option" aria-describedby="slick-slide132">
+        <h3>3</h3>
+      </div><div class="slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 154px;" tabindex="-1" role="option" aria-describedby="slick-slide133">
+        <h3>4</h3>
+      </div><div class="slick-slide" data-slick-index="4" aria-hidden="true" style="width: 154px;" tabindex="-1" role="option" aria-describedby="slick-slide134">
+        <h3>5</h3>
+      </div><div class="slick-slide slick-cloned" data-slick-index="5" aria-hidden="true" style="width: 154px;" tabindex="-1">
+        <h3>1</h3>
+      </div><div class="slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" style="width: 154px;" tabindex="-1">
+        <h3>2</h3>
+      </div><div class="slick-slide slick-cloned" data-slick-index="7" aria-hidden="true" style="width: 154px;" tabindex="-1">
+        <h3>3</h3>
+      </div><div class="slick-slide slick-cloned" data-slick-index="8" aria-hidden="true" style="width: 154px;" tabindex="-1">
+        <h3>4</h3>
+      </div></div></div>
+    <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next" role="button" style="display: block;">Next</button><ul class="slick-dots" style="display: block;" role="tablist"><li class="" aria-hidden="true" role="presentation" aria-selected="true" aria-controls="navigation130" id="slick-slide130"><button type="button" data-role="none" role="button" tabindex="0">1</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation131" id="slick-slide131" class=""><button type="button" data-role="none" role="button" tabindex="0">2</button></li><li aria-hidden="false" role="presentation" aria-selected="false" aria-controls="navigation132" id="slick-slide132" class="slick-active"><button type="button" data-role="none" role="button" tabindex="0">3</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation133" id="slick-slide133" class=""><button type="button" data-role="none" role="button" tabindex="0">4</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation134" id="slick-slide134" class=""><button type="button" data-role="none" role="button" tabindex="0">5</button></li></ul></div>
   </section>
   <section id="ad-box" class="card alert FloatingAd">
     <div class="card-body">
@@ -208,4 +269,85 @@
   <script>
     $('.multiple-items').slick({infinite: true, slidesToShow: 2, slidesToScroll: 2, dots: true});
   </script>
+  <script>
+    $('ul.expandible').each(function(){
+      var $ul = $(this),
+          $lis = $ul.find('li:gt(7)'),
+          isExpanded = $ul.hasClass('expanded');
+      $lis[isExpanded ? 'show' : 'hide']();
+      
+      if($lis.length > 0){
+          $ul
+              .append($('<span class="showmore"><li class="expand">' + (isExpanded ? '접기' : '더보기') + '</li></span>')
+              .click(function(event){
+                  var isExpanded = $ul.hasClass('expanded');
+                  event.preventDefault();
+                  $(this).html(isExpanded ? '더보기' : '접기');
+                  $ul.toggleClass('expanded');
+                  $lis.toggle();
+              }));
+      }
+  });
+  </script>
+  {% comment %} <script>
+    var SNOW_FLAKES = 30;
+    var MIN_SIZE = 10;
+    var MAX_SIZE = 50;
+
+    var c = document.getElementsByClassName("recobox")[0];
+    var w = window.innerWidth;
+    var k = 0;
+
+    function snow() {
+      for(i = 0; i < SNOW_FLAKES; i++) {
+        let s = document.createElement("div");
+        let r = Math.round((Math.random() * w) + 1);
+        let z = Math.round((Math.random() * MAX_SIZE) + MIN_SIZE);
+        let t = Math.round((Math.random() * 20) + 5);
+
+        s.className = "snow";
+        s.id = "snow-flake-" + i;
+        s.style.left = r + "px";
+        s.style.fontSize = z + "px";
+        s.style.animationDuration = t + "s";
+        s.style.animationDelay = i + "s";
+        s.textContent = "❄";
+        c.appendChild(s);
+      }
+    }
+
+    function changeAxisX() {
+      for(i = 0; i < SNOW_FLAKES; i++) {
+        let s = document.getElementById("snow-flake-" + i);
+        let x = Math.round((Math.random() * w) + 1);
+        if(s.offsetTop > window.innerHeight) {
+          s.style.left = x + "px";
+        }
+      }
+    }
+
+    snow();
+    setInterval(changeAxisX, 2000);
+  </script> {% endcomment %}
+  <script>
+    $('.slider-for').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      asNavFor: '.slider-nav'
+    });
+    $('.slider-nav').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      asNavFor: '.slider-for',
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      centerMode: true,
+      focusOnSelect: true
+    });
+  </script>
+
+  
 {% endblock script %}
