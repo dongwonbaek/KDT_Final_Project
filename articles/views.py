@@ -181,7 +181,6 @@ def review_comment_create(request, review_pk):
                     a.review.pk, #6
                     islogin, #7
                     ])
-            print(comments)
             context = {
                 'comments':comments,    
                 # 'commentCount':review.reviewcomment_set.count()
