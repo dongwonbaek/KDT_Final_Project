@@ -20,18 +20,6 @@
       <div class="circle me-2 d-flex justify-content-center align-items-center">
         <i class="fas fa-arrow-up-from-bracket fs-4"></i>
       </div>
-      <div class="d-flex justify-content-end">
-        <div class="heart text-center">
-          {% if request.user.is_authenticated %}
-            {% if request.user in product.like_user.all %}
-              <i id='like-btn' data-product-id="{{ product.pk }}" class="bi bi-heart-fill"></i>
-            {% else %}
-              <i id='like-btn' data-product-id="{{ product.pk }}" class="bi bi-heart"></i>
-            {% endif %}
-          {% endif %}
-          <span id="like-count">{{ product.like_user.count }}</span>
-        </div>
-      </div>
     </div>  
   </section>
 
@@ -58,17 +46,21 @@
         </div>
         <div class="d-flex justify-content-between">
           <!-- 별 평점 -->
-          <div class="mt-2">⭐⭐⭐⭐⭐ (평점 5.0)</div>
+          <div class="mt-2">⭐⭐⭐⭐⭐ (평점 {{ rating_avg }})</div>
           <!-- 공유 / 하트(위시) 버튼 -->
           <div class="mt-5 pt-4 d-flex">
             <div class="circle me-2 d-flex justify-content-center align-items-center">
               <i class="fas fa-arrow-up-from-bracket fs-4"></i>
             </div>
             <div class="heart text-center">
-              <div>
-                <i class="far fa-heart fs-4"></i>
-              </div>
-              <div>999</div>
+              {% if request.user.is_authenticated %}
+              {% if request.user in product.like_user.all %}
+                <i id='like-btn' data-product-id="{{ product.pk }}" class="bi bi-heart-fill"></i>
+              {% else %}
+                <i id='like-btn' data-product-id="{{ product.pk }}" class="bi bi-heart"></i>
+              {% endif %}
+              {% endif %}
+              <span id="like-count">{{ product.like_user.count }}</span>
             </div>
           </div>
         </div>
@@ -118,6 +110,46 @@
         <div>최신순 | 추천순</div>
       </div>
       {% for review in product.review_set.all %}
+dongwon
+      <!-- 리뷰 모달 버튼 -->
+      <div>
+        <a data-bs-toggle="modal" data-bs-target="#exampleModal{{ review.pk }}">
+          {{ review.title }}
+        </a>
+      </div>
+      <!-- 리뷰 모달 -->
+      <div class="modal fade" id="exampleModal{{ review.pk }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">{{ review.title }}</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="{{ review.image.url }}" alt="review.image">
+              <p>평점{{ review.rating }}</p>
+              <p>내용{{ review.content }}</p>
+              <form id="comment-form" data-review-id="{{ review.pk }}">
+                {% csrf_token %}
+                {% bootstrap_form review_comment_form %}
+                <input type="submit">
+              </form>
+              <div id="comment-box{{ review.pk }}">
+                {% for comment in review.reviewcomment_set.all %}
+                <div>
+                  {{ comment.content }} / <a href="{% url 'accounts:detail' comment.user.pk %}">{{ comment.user.nickname }}</a>
+                  {% if request.user == comment.user %}
+                  <a class='btn btn-sm btn-outline-danger' href="{% url 'articles:review_comment_delete' comment.pk %}">삭제</a>
+                  {% endif %}
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+dongwon
       <div class="com p-4" data-bs-toggle="modal" data-bs-target="#exampleModal{{ review.pk }}">
         <div class="d-flex">
           <div class="user_img me-3">
@@ -277,33 +309,15 @@
         <button type="button" class="modal_btn" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
-  </div>
+  </section>
 </div>
-{% endfor %}
-
-
-{% comment %} action="{% url 'articles:review_comment_create' review.pk %}"  {% endcomment %}
-<form id="comment-form" data-review-id="{{ review.pk }}">
-  {% csrf_token %}
-  {% bootstrap_form review_comment_form %}
-  <input type="submit">
-</form>
-<div id="comment-box{{ review.pk }}">
-  {% for comment in review.reviewcomment_set.all %}
-  <div>
-    {{ comment.content }} / <a href="{% url 'accounts:detail' comment.user.pk %}">{{ comment.user.nickname }}</a>
-    {% if request.user == comment.user %}
-    <a class='btn btn-sm btn-outline-danger' href="{% url 'articles:review_comment_delete' comment.pk %}">삭제</a>
-    {% endif %}
-  </div>
-  {% endfor %}
-</div>
-
-
+<a href="{% url 'articles:review_create' product.pk %}">리뷰작성하기</a>
 {% endblock content %}
 
 {% block script %}
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<!-- 위시리스트 비동기 -->
 <script>
   const likeBtn = document.querySelector('#like-btn')
   likeBtn.addEventListener('click', function (event) {
@@ -327,11 +341,12 @@
   })
 </script>
 
+<!-- 댓글작성 비동기 -->
 <script>
 const commentForms = document.querySelectorAll('#comment-form')
-for (commentForm of commentForms) {
+for (let commentForm of commentForms) {
   commentForm.addEventListener('submit', function(event) {
-    const csrftoken = event.target.querySelector('[name=csrfmiddlewaretoken]').value
+    let csrftoken = event.target.querySelector('[name=csrfmiddlewaretoken]').value
     event.preventDefault();
     axios({
       method: 'post',
@@ -341,17 +356,17 @@ for (commentForm of commentForms) {
       },
       data: new FormData(commentForm)
     }).then(response => {
-      const commentBox = document.querySelector(`#comment-box${event.target.dataset.reviewId}`)
+      let commentBox = document.querySelector(`#comment-box${event.target.dataset.reviewId}`)
       commentBox.replaceChildren()
       for (comment of response.data.comments) {
-        const div1 = document.createElement('div')
-        const a1 = document.createElement('a')
+        let div1 = document.createElement('div')
+        let a1 = document.createElement('a')
         a1.setAttribute('href', `/accounts/${comment[3]}/detail/`)
         a1.innerText = comment[1]
         div1.innerText = `${comment[0]} / `
         div1.append(a1)
         if (comment[3] === comment[4]) {
-          const a2 = document.createElement('a')
+          let a2 = document.createElement('a')
           a2.setAttribute('href', `/${comment[5]}/review_comment_delete/`)
           a2.classList.add('btn', 'btn-sm', 'btn-outline-danger')
           a2.innerText = '삭제'
