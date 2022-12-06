@@ -179,9 +179,35 @@
               {% endif %}
             </div>
           </div>
-          <div>
-            이모지 4개
-          </div>
+
+        </div>
+        <div>
+        {% if request.user.is_authenticated %}
+          {% if request.user in review.good_user.all %}
+            <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/grinning-face_1f600.png" id='good-btn' data-review-id="{{ review.pk }}" class="bi bi-emoji-smile-fill"></i>
+          {% else %}
+            <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/grinning-face_1f600.png" id='good-btn' data-review-id="{{ review.pk }}" class="bi bi-emoji-smile"></i>
+          {% endif %}
+          <span class="emoji-count" id="good-count">{{ review.good_user.count }}</span> 
+          {% if request.user in review.cool_user.all %}
+            <i id='cool-btn' data-review-id="{{ review.pk }}" class="bi bi-emoji-sunglasses-fill"></i>
+          {% else %}
+            <i id='cool-btn' data-review-id="{{ review.pk }}" class="bi bi-emoji-sunglasses"></i>
+          {% endif %}
+          <span id="cool-count">{{ review.cool_user.count }}</span> 
+          {% if request.user in review.fun_user.all %}
+            <i id='fun-btn' data-review-id="{{ review.pk }}" class="bi bi-emoji-laughing-fill"></i>
+          {% else %}
+            <i id='fun-btn' data-review-id="{{ review.pk }}" class="bi bi-emoji-laughing"></i>
+          {% endif %}
+          <span id="fun-count">{{ review.fun_user.count }}</span> 
+          {% if request.user in review.sad_user.all %}
+            <i id='sad-btn' data-review-id="{{ review.pk }}" class="bi bi-emoji-frown-fill"></i>
+          {% else %}
+            <i id='sad-btn' data-review-id="{{ review.pk }}" class="bi bi-emoji-frown"></i>
+          {% endif %}
+          <span id="sad-count">{{ review.sad_user.count }}</span> 
+        {% endif %}
         </div>
       {% endfor %}
     </div>
@@ -382,4 +408,34 @@ for (let commentForm of commentForms) {
     bigPic.setAttribute('src', smallPicAttribute);
   }
 </script>
+
+
+
+
+<script>
+  const goodBtn = document.querySelector('#good-btn')
+  goodBtn.addEventListener('click', function (event) {
+    console.log(event.target.dataset)
+    axios({
+      url: `/${event.target.dataset.reviewId}/review_good/`
+    })
+    .then(response => {
+      console.log(response)
+      console.log(response.data)
+      if (response.data.isGooded === true) {
+        event.target.classList.add('bi', 'bi-emoji-smile-fill', 'emoji-count')
+        event.target.classList.remove('bi', 'bi-emoji-smile')
+      } else {
+        event.target.classList.add('bi', 'bi-emoji-smile')
+        event.target.classList.remove('bi', 'bi-emoji-smile-fill')
+      }
+      const goodCount = document.querySelector('#good-count')
+      goodCount.innerText = response.data.goodCount
+    })
+  })
+</script>
+
+
+
+
 {% endblock script %}

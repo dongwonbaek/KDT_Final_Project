@@ -184,3 +184,7 @@
   border-radius: 4px;
   padding: 8px 20px;
 }
+
+.emoji-count{
+  color: red;
+}
