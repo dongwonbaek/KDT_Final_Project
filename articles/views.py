@@ -48,9 +48,31 @@ def product_create(request):
 
 def product_detail(request, product_pk):
     product = get_object_or_404(Product, pk=product_pk)
+    reviews = product.review_set.annotate(like_cnt=Count('good_user') + Count('cool_user') + Count('fun_user') + Count('sad_user')).order_by('-like_cnt')
+    rating_avg = product.review_set.aggregate(rating_avg=Avg('rating'))['rating_avg']
+    quotient_list = []
+    rest_list = []
+    half_list = []
+    if rating_avg:
+        quotient = int(rating_avg // 1)
+        rest = round(rating_avg % 1, 1)
+        if 0.7 >= rest >= 0.3:
+            half_list.append(1)
+        elif rest > 0.7:
+            quotient_list.append(1)
+        for a in range(quotient):
+            quotient_list.append(a)
+        for a in range(5 - (len(quotient_list) + len(half_list))):
+            rest_list.append(1)
+    else:
+        rating_avg = 0
     context = {
         'product': product,
-        'rating_avg': product.review_set.aggregate(rating_avg=Avg('rating'))['rating_avg'],
+        'rating_avg': rating_avg,
+        'quotient_list': quotient_list,
+        'rest_list': rest_list,
+        'half_list': half_list,
+        'reviews': reviews,
         'review_comment_form': ReviewCommentForm(),
     }
     return render(request, 'articles/product_detail.html', context)
@@ -192,7 +214,6 @@ def review_comment_delete(request, comment_pk):
     comment = get_object_or_404(ReviewComment, pk=comment_pk)
     if request.user == comment.user:
         comment.delete()
-    # 비동기 처리 구현전까지 임의로 redirect 사용
     return redirect('articles:product_detail', comment.review.product.pk)
 
 

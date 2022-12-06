@@ -10,8 +10,7 @@
 {% block content %}
 <div class="wrapper1">
     <h1>프로필 업데이트</h1>
-
-    <form action="" method="POST">
+    <form action="" method="POST" enctype='multipart/form-data'>
         {% csrf_token %}
         <label for="image">프로필</label>
         <input class='signup-style1' id='image' type="file" name='image'>
