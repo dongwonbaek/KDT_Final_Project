@@ -4,17 +4,36 @@
 {% block content %}
   
 <section class="container">
+  <div style="margin-top: 4rem;">
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class="d-flex">
+        <select class="form-select" aria-label="Default select example" name="gender">
+          <option value="none" selected>모두</option>
+          <option value="True">남성</option>
+          <option value="False">여성</option>
+        </select>
+        <select class="form-select mx-2" aria-label="Default select example" name='sort_type'>
+          <option value="rating" selected>평점 순</option>
+          <option value="like">위시리스트 순</option>
+          <option value="review_cnt">리뷰 개수 순</option>
+        </select>
+        <select class="form-select" aria-label="Default select example" name='sort_price'>
+          <option value="none" selected>가격 범위</option>
+          <option value="20000">2만원 이하</option>
+          <option value="50000">2만원 이상 5만원 이하</option>
+          <option value="1000000">5만원 이상</option>
+        </select>
+        <button type="submit" class='btn btn-dark'>검색</button>
+      </div>
+    </form>
+  </div>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 my-5" >
-    <a href="?gender=all">모두</a>
-    <a href="?gender=woman">여성</a>
-    <a href="?gender=man">남성</a>
-    <a href="?sort_by=rating">평점높은순</a>
-    <a href="?sort_by=like">많은 위시순</a>
     {% for product in products %}
     <div class="col d-flex justify-content-center mb-5">
       <div class="card">
         <div class="card-img">
-          <img class="w-100 h-100 rounded" src="{{ product.productimages_set.all.0.images.url }}" alt="product.productimages_set.all.0.images">
+          <img class="w-100 h-100 rounded" src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
         </div>
         <div>
           <div class="brand mt-2"></div>
@@ -30,3 +49,10 @@
 </section>
 
 {% endblock content %}
+
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  
+</script>
+{% endblock script %}
