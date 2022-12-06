@@ -165,17 +165,17 @@ def review_delete(request, product_pk, review_pk):
     else:
         return redirect('articles:product_detail', product_pk)
 
-@login_required
-def review_like(request, review_pk):
-    review = get_object_or_404(Review, pk=review_pk)
-    if review.like_user.filter(pk=request.user.pk).exists():
-        review.like_user.remove(request.user)
-    else:
-        review.like_user.add(request.user)
+# @login_required
+# def review_like(request, review_pk):
+#     review = get_object_or_404(Review, pk=review_pk)
+#     if review.like_user.filter(pk=request.user.pk).exists():
+#         review.like_user.remove(request.user)
+#     else:
+#         review.like_user.add(request.user)
 
-    # review_detail 페이지가 모달로 구현되기 위해서는 좋아요 기능이 반드시 비동기처리가 필요함. 
-    # 비동기 처리를 구현하기 전까지 임의로 redirect 사용.
-    return redirect('articles:product_detail', review.product.pk)
+#     # review_detail 페이지가 모달로 구현되기 위해서는 좋아요 기능이 반드시 비동기처리가 필요함. 
+#     # 비동기 처리를 구현하기 전까지 임의로 redirect 사용.
+#     return redirect('articles:product_detail', review.product.pk)
 
 @login_required
 def review_comment_create(request, review_pk):
@@ -218,27 +218,54 @@ def review_comment_delete(request, comment_pk):
 
 
 def product_rank(request):
-    gender = 'all'
-    if request.GET.get('gender'):
-        gender = request.GET.get('gender')
-    if gender == 'all':
+    if request.method == "POST":
         products = Product.objects.all()
-    elif gender == 'woman':
-        products = Product.objects.all()
-        # woman_products = products.annotate(rate_avg=Avg(Review.objects.filter()))
-    elif gender == 'man':
-        products = Product.objects.all()
-    sort_by = 'rating'
-    if request.GET.get('sort_by'):
-        sort_by = request.GET.get('sort_by')
-    if sort_by == 'rating':
-        products = Product.objects.annotate(rate_avg=Avg('review__rating')).order_by('-rate_avg')
-    elif sort_by == 'like':
-        products = Product.objects.annotate(like_cnt=Count('like_user')).order_by('-like_cnt')
-    context = {
-        'products': products,
-    }
-    return render(request, 'articles/product_rank.html', context)
+        products_rating = Product.objects.all()
+        products_like = Product.objects.all()
+        products_review = Product.objects.all()
+        gender = request.POST.get('gender')
+        sort_type = request.POST.get('sort_type')
+        sort_price = request.POST.get('sort_price')
+        if sort_price != "none":
+            products = products.filter(price__lte=int(sort_price))
+            products_rating = products.filter(price__lte=int(sort_price))
+            products_like = products.filter(price__lte=int(sort_price))
+            products_review = products.filter(price__lte=int(sort_price))
+        if gender == "True":
+            # products = products.annotate(review_men=)
+            products_rating = products.annotate(rating_avg=Avg('review__rating', filter=Q(review__user__gender=True))).order_by('-rating_avg')
+            products_like = products.annotate(like_cnt=Count('like_user', filter=Q(like_user__gender=True))).order_by('-like_cnt')
+            products_review = products.annotate(review_cnt=Count('review', filter=Q(review__user__gender=True))).order_by('-review_cnt')
+        elif gender == "False":
+            products_rating = products.annotate(rating_avg=Avg('review__rating', filter=Q(review__user__gender=False))).order_by('-rating_avg')
+            products_like = products.annotate(like_cnt=Count('like_user', filter=Q(like_user__gender=False))).order_by('-like_cnt')
+            products_review = products.annotate(review_cnt=Count('review', filter=Q(review__user__gender=False))).order_by('-review_cnt')
+        if sort_type == "rating":
+            products = products_rating.annotate(rating_avg=Avg('review__rating')).order_by('-rating_avg')
+        elif sort_type == "like":
+            products = products_like.annotate(like_cnt=Count('like_user')).order_by('-like_cnt')
+        elif sort_type == "review_cnt":
+            products = products_review.annotate(review_cnt=Count('review')).order_by('-review_cnt')
+        product_list = []
+        # for a in products[:20]:
+        #     product_list.append([
+        #         a.productimages_set.all.0.images,
+        #         a.title,
+        #         a.price,
+        #         a.pk,
+        #     ])
+        #미완성
+
+        context = {
+            'products':products[:20],
+        }
+        JsonResponse(context)
+    else:
+        context = {
+            'products': Product.objects.annotate(like_cnt=Count('like_user')).order_by('-like_cnt')[:20],
+            'reviews': Review.objects.filter(user__gender=True)
+        }
+        return render(request, 'articles/product_rank.html', context)
 
 
 
@@ -277,3 +304,60 @@ def like(request, product_pk):
         is_liked = True
     context = {'isLiked': is_liked, 'likeCount': product.like_user.count()}
     return JsonResponse(context)
+
+
+
+@login_required
+def review_good(request, review_pk):
+    review = get_object_or_404(Review, pk=review_pk)
+    if request.user in review.good_user.all():
+        review.good_user.remove(request.user)
+        is_gooded = False
+    else:
+        review.good_user.add(request.user)
+        is_gooded = True
+    context = {'isGooded': is_gooded, 'goodCount': review.good_user.count()}
+    return JsonResponse(context)
+    # return redirect('articles:product_detail', review.product.pk, context)
+
+
+@login_required
+def review_cool(request, review_pk):
+    review = get_object_or_404(Review, pk=review_pk)
+    if request.user in review.cool_user.all():
+        review.cool_user.remove(request.user)
+        is_cooled = False
+    else:
+        review.cool_user.add(request.user)
+        is_cooled = True
+    context = {'isCooled': is_cooled, 'coolCount': review.cool_user.count()}
+    # return JsonResponse(context)
+    return redirect('articles:product_detail', review.product.pk, context)
+
+
+@login_required
+def review_fun(request, review_pk):
+    review = get_object_or_404(Review, pk=review_pk)
+    if request.user in review.fun_user.all():
+        review.fun_user.remove(request.user)
+        is_funed = False
+    else:
+        review.fun_user.add(request.user)
+        is_funed = True
+    context = {'isFuned': is_funed, 'funCount': review.fun_user.count()}
+    # return JsonResponse(context)
+    return redirect('articles:product_detail', review.product.pk, context)
+
+
+@login_required
+def review_sad(request, review_pk):
+    review = get_object_or_404(Review, pk=review_pk)
+    if request.user in review.sad_user.all():
+        review.sad_user.remove(request.user)
+        is_saded = False
+    else:
+        review.sad_user.add(request.user)
+        is_saded = True
+    context = {'isSaded': is_saded, 'sadCount': review.sad_user.count()}
+    # return JsonResponse(context)
+    return redirect('articles:product_detail', review.product.pk, context)
