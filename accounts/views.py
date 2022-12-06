@@ -7,6 +7,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth import get_user_model
 from django.contrib import messages
 from django.http import JsonResponse
+
 # Create your views here.
 
 
@@ -36,10 +37,11 @@ def login(request):
         if form.is_valid():
             auth_login(request, form.get_user())
         else:
-            messages.warning(request, '아이디 혹은 비밀번호가 틀렸습니다.')
-            return redirect('accounts:login')
-        return redirect(request.GET.get('next') or 'articles:index')
-    return render(request, 'accounts/login.html')
+            messages.warning(request, "아이디 혹은 비밀번호가 틀렸습니다.")
+            return redirect("accounts:login")
+        return redirect(request.GET.get("next") or "articles:index")
+    return render(request, "accounts/login.html")
+
 
 @login_required
 def logout(request):
@@ -103,9 +105,9 @@ def follow(request, user_pk):
             user.followers.add(request.user)
             is_followed = True
         context = {
-            'is_followed': is_followed,
-            'followings_count': user.following.count(),
-            'followers_count': user.followers.count(),
+            "is_followed": is_followed,
+            "followings_count": user.following.count(),
+            "followers_count": user.followers.count(),
         }
         return JsonResponse(context)
     else:
@@ -123,9 +125,16 @@ def block(request, user_pk):
             user.blockers.add(request.user)
             is_blocked = True
         context = {
-            'is_blocked': is_blocked,
+            "is_blocked": is_blocked,
         }
         return JsonResponse(context)
     else:
         messages.warning(request, "다른 유저만 가능합니다.")
     return redirect("accounts:detail", user_pk)
+
+
+def wishlist(request, user_pk):
+    context = {
+        "user": get_object_or_404(get_user_model(), pk=user_pk),
+    }
+    return render(request, "accounts/wishlist.html", context)

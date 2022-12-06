@@ -124,7 +124,7 @@
         {% endif %}
     </div>
 </div>
-<h5>위시리스트</h5>
+<a href="{% url 'accounts:wishlist' user.pk %}"><h5>위시리스트</h5></a>
 {% for product in user.like_product.all %}
 <a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a>
 {% endfor %}
