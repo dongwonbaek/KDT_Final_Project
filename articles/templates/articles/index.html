@@ -16,16 +16,17 @@
         <div class="modal-header d-flex ">
           <h1 class="modal-title fs-5" id="exampleModalLabel">친구 선택</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          <p>선물할 친구를 선택하세요
+          <p class="select-friend-sf">선물할 친구를 선택하세요
             <i class="bi bi-info-circle select-info" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="새로 추가한 친구는 바로 나타나지 않을 수 있으며, 선물을 받을 수 없는 친구들은 목록에 표시되지 않습니다."></i>
           </p>
+          <div id='result'></div>
         </div>
         <div class="modal-body">
-          <div>
+          <div class="mb-5">
             나
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
+              <input id='select-mine' data-user-id="{{ request.user.pk }}" class="form-check-input" type="radio" id="flexCheckDefault" value="{{ user }}" name="towhom[1][]" onclick='getFriend(event)'>
+              <label class="form-check-label" for="flexCheckDefault"></label>
                 <img src="{{ user.get_photo_url }}" class="select-friend-img">
                 {{ user }}
               </label>
@@ -35,12 +36,12 @@
           <div>
             친구목록
             {{ user.following.all|length }}
-            {% if user.followers.all %}
-              {% for follower in user.followers.all %}
+            {% if request.user.following.all %}
+              {% for follower in request.user.following.all %}
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <input id="select-follower" data-follower-id="{{ follower.pk }}"class="form-check-input" type="radio" value="{{ follower.username }}" name="towhom[1][]" onclick='getFriend(event)'>
                   <label class="form-check-label" for="flexCheckDefault">
-                    <img src="{{ follower.get_photo_url }}" alt="">
+                    <img src="{{ follower.get_photo_url }}" class="select-friend-img">
                     {{ follower.username }}
                   </label>
                 </div>
@@ -51,9 +52,9 @@
           </div>
           <!--친구목록-->
         </div>
-        <div class="modal-footer">
+        <div class="modal-btn-group">
+          <a id='select-btn' type="button" class="pos-btn" href="">선택</a>
           <button type="button" class="neg-btn" data-bs-dismiss="modal">취소</button>
-          <button type="button" class="pos-btn">선택</button>
         </div>
       </div>
     </div>
@@ -66,11 +67,18 @@
     <p>
       {% if request.user.is_authenticated %}{{ user }}
         <span>님</span><br>{% endif %}누구를 위한 선물인가요?</p>
-    <!-- 친구 목록 trigger modal -->
+        {% if request.user.is_authenticated %}
+    <!-- 로그인 되어 있으면 친구 목록 trigger modal -->
     <div class="recobox-pic-area" data-bs-toggle="modal" data-bs-target="#exampleModal">
       <img src="{% static 'img/index/question-mark.png' %}" alt="anonymous-user" class="recobox-pic">
       <img src="{% static 'img/index/add-red.png' %}" alt="select-friend" class="select-friend">
     </div>
+    {% else %}
+    <a class="recobox-pic-area" href="{% url 'accounts:login' %}">
+      <img src="{% static 'img/index/question-mark.png' %}" alt="anonymous-user" class="recobox-pic">
+      <img src="{% static 'img/index/add-red.png' %}" alt="select-friend" class="select-friend">
+    </a>
+    {% endif %}
   </section>
   <section class="container category-wrapper">
     <img src="{% static 'img/index/snow.png' %}" class="snow-piledup">
@@ -258,7 +266,14 @@
 {% endblock content %}
 
 {% block script %}
+<script>
+  function getFriend(event) {
+    document.getElementById('result').innerText = 
+      event.target.value;
+  }
+</script>
   <script>
+    // AD carousel
     $('.multiple-items').slick({infinite: true, slidesToShow: 2, slidesToScroll: 2, dots: true});
   </script>
   <script>
@@ -283,6 +298,7 @@
   </script>
   <script src="{% static 'js/snowflake.js' %}"></script>
   <script>
+    // 유튜브 sync carousel
     $('.slider-single').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -346,5 +362,18 @@
 
       $('.slider-single').slick('slickGoTo', goToSingleSlide);
     });
+  </script>
+  <script>
+    const selectMine = document.querySelector('#select-mine')
+    const selectFollowers = document.querySelectorAll('#select-follower')
+    const selectBtn = document.querySelector('#select-btn')
+    selectMine.addEventListener('click', function(event) {
+      selectBtn.setAttribute('href', `/accounts/${event.target.dataset.userId}/wishlist/`)
+    })
+    for (let selectFollower of selectFollowers) {
+    selectFollower.addEventListener('click', function(event){
+      selectBtn.setAttribute('href', `/accounts/${event.target.dataset.followerId}/wishlist/`)
+      })
+    }
   </script>
 {% endblock script %}

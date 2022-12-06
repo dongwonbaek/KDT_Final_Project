@@ -28,7 +28,7 @@ body {
   font-family: 'YiSunShinDotumM';
   min-height: 100%;
   padding-top: 211px;
-  font-size: 120%;
+  font-size: 130%;
 }
 
 .pos-btn {
@@ -294,6 +294,32 @@ header .menu ul>li>a {
 .select-friend-modal .modal-header p {
   position: absolute;
   top: 25px;
+  font-size: small;
+  color: #444;
+}
+
+.select-friend-modal .modal-body p {
+  font-size: small;
+  color: #444;
+}
+
+.select-friend-modal .form-check {
+  display: flex;
+  align-items: center;
+}
+
+.select-friend-modal .form-check > * {
+  margin-left: 30px;
+}
+
+.select-friend-modal .modal-body > * {
+  margin-bottom: 50px;
+}
+
+.modal-btn-group {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
 }
 
 /* ----------------------눈----------------------------- */
