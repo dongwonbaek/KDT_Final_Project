@@ -19,7 +19,6 @@ class Product(models.Model):
             ("8", "출산/키즈"),
             ("9", "따뜻한선물"),
             ("11", "배달선물"),
-            ("12", "응원/시험"),
         )
     title = models.CharField(max_length=100)
     content = models.TextField(null=True)
