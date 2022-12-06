@@ -5,14 +5,52 @@
   
 <!-- 상단 배너 -->
 <section class="banner">
-  <div>크리스마스</div>
-  <div class="fs-1 fw-bold my-3">공기마저 설레는 12월이야🎄</div>
-  <div>기억에 남을 소중한 순간을 위해<br>
-    #홀리데이에디션 #홈파티 #선물추천</div>
+  {% if request.get_full_path == "/product_list/1/" %}
+  <div class="opa">생일테마</div>
+  <div class="fs-1 my-1">감동을 높여줄 생일 선물 리스트</div>
+  <div class="opa fs-4">#생일선물하기 #감동선사 #HAPPYBIRTHDAY</div>  
+  {% elif request.get_full_path == "/product_list/2/" %}
+  <div class="opa">가벼운선물</div>
+  <div class="fs-1 my-1">예산은 가볍게, 감동은 무겁게❤️</div>
+  <div class="opa fs-4">당신의 센스를 뽐내줄 부담 없는 선물</div>  
+  {% elif request.get_full_path == "/product_list/3/" %}
+  <div class="opa">건강/회복</div>
+  <div class="fs-1 my-1">당신이 언제나 건강하길 기원합니다</div>
+  <div class="opa fs-4">언제, 어디서든 아프지 마세요😷</div>
+  {% elif request.get_full_path == "/product_list/4/" %}
+  <div class="opa">스몰럭셔리</div>
+  <div class="fs-1 my-1">당신을 위한 작은 사치</div>
+  <div class="opa fs-4">스몰 럭셔리 아이템</div>
+  {% elif request.get_full_path == "/product_list/5/" %}
+  <div class="opa">어른선물</div>
+  <div class="fs-1 my-1">언제나 고민되는 어른 선물</div>
+  <div class="opa fs-4">진심이 전달될 선물로 추천 드려요🛍</div>
+  {% elif request.get_full_path == "/product_list/6/" %}
+  <div class="opa">크리스마스</div>
+  <div class="fs-1 my-1">공기마저 설레는 12월이야🎄</div>
+  <div class="opa fs-3">#홀리데이에디션 #홈파티 #선물추천</div>
+  {% elif request.get_full_path == "/product_list/7/" %}
+  <div class="opa">명품선물</div>
+  <div class="fs-1 my-1">품격있는 브랜드 명품 선물제안</div>
+  <div class="opa fs-4">#읍넬 #누이비퉁 #머찌 #프라닭</div>
+  {% elif request.get_full_path == "/product_list/8/" %}
+  <div class="opa">출산/키즈</div>
+  <div class="fs-1 my-1">벅찬 감동의 마음을 전할</div>
+  <div class="opa fs-4">엄마와 아이를 위한 세심한 선물👼🏻</div>
+  {% elif request.get_full_path == "/product_list/9/" %}
+  <div class="opa">따뜻한선물</div>
+  <div class="fs-1 my-1">오늘 하루 따뜻하게 보내요</div>
+  <div class="opa fs-3">다가오는 겨울에 미리 준비하면 좋은 선물</div>
+  <!-- 김치선물 => 배달선물 -->
+  {% elif request.get_full_path == "/product_list/11/" %}
+  <div class="opa">배달선물</div>
+  <div class="fs-1 my-1">인기있는 배달 선물 추천</div>
+  <div class="opa fs-3">사람들이 많이 찾는 브랜드 & 상품</div>
+  {% endif %}
 </section>
 
 <!-- 상품 목록 (한줄 4개씩) -->
-<section class="container">
+<section class="container container_z">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 my-5" >
     {% for product in products %}
     <div class="col d-flex justify-content-center mb-5">
