@@ -66,11 +66,18 @@
     <p>
       {% if request.user.is_authenticated %}{{ user }}
         <span>님</span><br>{% endif %}누구를 위한 선물인가요?</p>
-    <!-- 친구 목록 trigger modal -->
+        {% if request.user.is_authenticated %}
+    <!-- 로그인 되어 있으면 친구 목록 trigger modal -->
     <div class="recobox-pic-area" data-bs-toggle="modal" data-bs-target="#exampleModal">
       <img src="{% static 'img/index/question-mark.png' %}" alt="anonymous-user" class="recobox-pic">
       <img src="{% static 'img/index/add-red.png' %}" alt="select-friend" class="select-friend">
     </div>
+    {% else %}
+    <a class="recobox-pic-area" href="{% url 'accounts:login' %}">
+      <img src="{% static 'img/index/question-mark.png' %}" alt="anonymous-user" class="recobox-pic">
+      <img src="{% static 'img/index/add-red.png' %}" alt="select-friend" class="select-friend">
+    </a>
+    {% endif %}
   </section>
   <section class="container category-wrapper">
     <img src="{% static 'img/index/snow.png' %}" class="snow-piledup">
