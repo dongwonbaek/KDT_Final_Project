@@ -11,7 +11,9 @@
 {% block content %}
 <div class="detail_body d-flex flex-column align-items-center">
     <div class="d-flex">
-        <img src="{{ user.image.url }}" class="profile" alt="abc">
+        {% if user.image %}
+            <img src="{{ user.image.url }}" class="profile" alt="abc">
+        {% endif %}
         <div class="d-flex flex-column align-items-center profile-username">
             <h3>{{ user.nickname }}</h3>
             <p>성별:
