@@ -7,7 +7,7 @@ django.setup()
 import json
 from articles.models import Product, ProductImages
 
-for idx in range(1, 13):
+for idx in range(1, 12):
     with open(f'crawling_data/category{idx}.json', encoding='utf-8') as f:
         json_objects = json.load(f)
 
