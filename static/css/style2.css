@@ -5,8 +5,17 @@
   color: white;
   background-color: #297372;
   font-size: 1.5rem;
-  height: 19rem;
-  padding: 3rem 8rem;
+  height: 18rem;
+  padding: 5rem 8rem 3rem 8rem;
+}
+
+.opa {
+  opacity: 0.5;
+}
+
+.container_z {
+  position: relative;
+  z-index: 1;
 }
 
 /* 상품 (카드) */
