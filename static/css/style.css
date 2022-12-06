@@ -32,22 +32,22 @@ body {
 }
 
 .pos-btn {
-width: 50%;
-height: 100%;
-text-align: center;
-border-radius: 4px;
-border: none;
-font-weight: 700;
-font-size: 16px;
-line-height: 57px;
-color: var(--main-white);
-background-color: var(--main-mintygreen);
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  border-radius: 4px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 57px;
+  color: var(--main-white);
+  background-color: var(--main-mintygreen);
 }
 
 .neg-btn {
   width: 50%;
   height: 100%;
-  text-align: center; 
+  text-align: center;
   border-radius: 4px;
   border: none;
   font-weight: 700;
@@ -70,7 +70,7 @@ footer {
   color: var(--main-white);
 }
 
-#wire{
+#wire {
   text-align: center;
   white-space: nowrap;
   position: absolute;
@@ -95,11 +95,11 @@ footer {
   display: inline-block;
   animation-duration: 1s;
   animation-fill-mode: both;
-  animation-iteration-count:infinite;
+  animation-iteration-count: infinite;
   animation-name: even-flash;
 }
 
-#wire li:nth-child(odd){
+#wire li:nth-child(odd) {
   animation-name: odd-flash;
 }
 
@@ -115,24 +115,29 @@ footer {
 }
 
 @keyframes even-flash {
-  0%, 100% {
-      background: rgb(10, 78, 40);
-      box-shadow: 0px 2px 20px 4px rgb(84, 172, 80);
+
+  0%,
+  100% {
+    background: rgb(10, 78, 40);
+    box-shadow: 0px 2px 20px 4px rgb(84, 172, 80);
   }
+
   50% {
-      background: rgba(12, 131, 61, 0.5);
-      box-shadow: 0px 2px 20px 4px rgba(42, 126, 56, 0.226);
+    background: rgba(12, 131, 61, 0.5);
+    box-shadow: 0px 2px 20px 4px rgba(42, 126, 56, 0.226);
   }
 }
 
 @keyframes odd-flash {
   50% {
-      background: rgb(129, 17, 9);
-      box-shadow: 0px 2px 20px 4px rgb(172, 80, 80);
+    background: rgb(129, 17, 9);
+    box-shadow: 0px 2px 20px 4px rgb(172, 80, 80);
   }
-  0%,100% {
-      background: rgba(102, 19, 4, 0.5);
-      box-shadow: 0px 2px 20px 4px rgba(92, 20, 20, 0.226);
+
+  0%,
+  100% {
+    background: rgba(102, 19, 4, 0.5);
+    box-shadow: 0px 2px 20px 4px rgba(92, 20, 20, 0.226);
   }
 }
 
@@ -164,6 +169,7 @@ footer {
 }
 
 /* ---------- nav ---------- */
+
 .MyNav {
   background-color: white;
   position: fixed;
@@ -213,8 +219,9 @@ header .menu ul>li {
 
 
 header .menu ul li:hover #submenu {
+  background-color: #ffc0cb;
   display: inline;
-  width: 100vw;
+  width: 1150px;
 }
 
 .modal-backdrop {
@@ -237,6 +244,10 @@ header .menu ul li:hover #submenu {
   border-style: none;
   border-radius: 10px;
   background-color: var(--main-scarlet);
+}
+
+header .menu ul>li>a {
+  padding: 8px 16px 0 16px;
 }
 
 /* ---------- index ---------- */
@@ -387,8 +398,8 @@ header .menu ul li:hover #submenu {
 }
 
 .multiple-items {
-  width:100%;
-  margin:150px auto;
+  width: 100%;
+  margin: 150px auto;
 }
 
 .slick-slide {
@@ -582,6 +593,10 @@ header .menu ul li:hover #submenu {
 
 .profile-username {
   margin-top: 50px;
+}
+
+.profile-margin {
+  margin-left: 50px;
 }
 
 .user-image {
