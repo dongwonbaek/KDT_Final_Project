@@ -280,19 +280,18 @@ def product_rank(request):
                 "-review_cnt"
             )
         product_list = []
-        # for a in products[:20]:
-        #     product_list.append([
-        #         a.productimages_set.all.0.images,
-        #         a.title,
-        #         a.price,
-        #         a.pk,
-        #     ])
-        # 미완성
-
+        for a in products[:20]:
+            image = str(a.productimages_set.all()[0].images)
+            product_list.append([
+                image,
+                a.title,
+                a.price,
+                a.pk
+                ])
         context = {
-            "products": products[:20],
+            'products':product_list,
         }
-        JsonResponse(context)
+        return JsonResponse(context)
     else:
         context = {
             "products": Product.objects.annotate(like_cnt=Count("like_user")).order_by(

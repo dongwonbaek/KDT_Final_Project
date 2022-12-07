@@ -9,19 +9,18 @@ from datetime import datetime
 
 
 class Product(models.Model):
-    category_choice = (
-        ("1", "생일"),
-        ("2", "가벼운 선물"),
-        ("3", "건강/회복"),
-        ("4", "스몰럭셔리"),
-        ("5", "어른선물"),
-        ("6", "크리스마스"),
-        ("7", "명품선물"),
-        ("8", "출산/키즈"),
-        ("9", "따뜻한선물"),
-        ("11", "배달선물"),
-        ("12", "응원/시험"),
-    )
+    category_choice = ( 
+            ("1", "생일"),
+            ("2", "가벼운 선물"),
+            ("3", "건강/회복"),
+            ("4", "스몰럭셔리"),
+            ("5", "어른선물"),
+            ("6", "크리스마스"),
+            ("7", "명품선물"),
+            ("8", "출산/키즈"),
+            ("9", "따뜻한선물"),
+            ("11", "배달선물"),
+        )
     title = models.CharField(max_length=100)
     content = models.TextField(null=True)
     category = models.CharField(max_length=2, choices=category_choice)
