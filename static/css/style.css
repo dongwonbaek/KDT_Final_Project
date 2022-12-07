@@ -169,30 +169,29 @@ footer {
 }
 
 /* ---------- nav ---------- */
-
-.MyNav {
+.nav-upper {
+  display: flex;
+  justify-content: center;
   background-color: white;
   position: fixed;
-  top: 211px;
-  border-style: solid none;
-  border-color: #FFB6C1;
-}
-
-.nav-link {
-  color: #000;
-}
-
-
-.fnav {
-  background-color: white;
-  position: fixed;
-  border-style: solid none;
-  border-color: #FFC0CB;
   top: 0;
   left: 0;
   width: 100%;
   height: 211px;
-  transition: top 0.2s ease-in-out;
+  padding: 0;
+  /* transition: top 0.2s ease-in-out; */
+}
+
+.nav-lower {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  position: fixed;
+  top: 211px;
+  border: solid var(--main-salmon);
+  border-width: 1px 0;
+  height: 90px;
 }
 
 .affix {
@@ -203,8 +202,17 @@ footer {
   top: 0px;
 }
 
-.menu {
-  height: 40px;
+.nav-link, .nav-item {
+  color: #000;
+}
+
+.fadeInLogo {
+  float: left;
+  display: none;
+}
+
+.fadeInLogo img {
+  height: 90px;
 }
 
 header .menu ul>li {

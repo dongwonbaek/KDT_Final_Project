@@ -2,177 +2,202 @@
 {% load socialaccount %}
 {% providers_media_js %}
 <header style="z-index: 10; position: relative;">
-
-
-    <!-- place navbar here -->
-    <div id="navbar" class="fnav d-flex justify-content-center px-0">
-        <a href="{% url 'articles:index' %}"><img class="text-center" src="{% static 'img/ojd_1.png' %}"></a>
+  <!--로그인 모달 -->
+  <div class="modal fade" id="로그인" tabindex="-1" aria-labelledby="로그인Label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="wrapper1">
+          <h1 class="text-center">로그인</h1>
+          <form action="{% url 'accounts:login' %}" method="POST" class="d-flex flex-column align-items-center">
+            {% csrf_token %}
+            <label for="email">이메일</label>
+            <input class='signup-style1' id='email' type="email" name='username'>
+            <label for="password">비밀번호</label>
+            <input class='signup-style1' id='password' type="password" name='password'>
+            <button class="login-button my-2" button_type='submit' content='로그인'>로그인</button>
+          </form>
+          <!--소셜 로그인 그룹-->
+          <div class="d-flex justify-content-center my-0">
+            <form action="/accounts/google/login/" method="post">
+              {% csrf_token %}
+              <button class="btn btn-link my-0 my-sm-0 py-0" style="color : #FFFFFF" type="submit" onclick="document.getElementById('test').submit();"><img src="{% static 'img/google.png' %}" alt="구글" style="height:35px;"></button>
+            </form>
+            <form class="mx-1" action="/accounts/kakao/login/" method="post">
+              {% csrf_token %}
+              <button class="btn btn-link my-0 my-sm-0 py-0" style="color : #FFFFFF" type="submit" onclick="document.getElementById('test').submit();"><img src="{% static 'img/kakao.png' %}" alt="카카오" style="height:35px;"></button>
+            </form>
+            <form action="/accounts/naver/login/" method="post">
+              {% csrf_token %}
+              <button class="btn btn-link my-0 my-sm-0 py-0" style="color : #FFFFFF" type="submit" onclick="document.getElementById('test').submit();"><img src="{% static 'img/naver.png' %}" alt="네이버" style="height:35px;"></button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="navbar-example2" class="container-fluid MyNav px-0 mb-3 d-flex justify-content-between menu">
-        <ul class="nav nav-pills ">
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'articles:product_rank' %}">랭킹</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="">카테고리</a>
-                <ul id="submenu">
-                    {% for category in categories %}
-                    <li>
-                        <a class="nav-link" href="{% url 'articles:product_list' category.0 %}">{{ category.1 }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#scrollspyHeading2">커뮤니티</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'articles:review_index' %}">리뷰</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#scrollspyHeading2">Q&A</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-black" href="{% url 'articles:product_create' %}">상품등록</a>
-            </li>
-        </ul>
-        <ul class="d-flex m-0 p-2">
-            <li>
-                <a href="{% url 'articles:search' %}" class="me-3"><i class="bi bi-search"></i></a>
-            </li>
-            {% if request.user.is_authenticated %}
-
-            <li>
-                <button class="login-button2 mt-0"><a class='mx-3'
-                        href="{% url 'accounts:detail' request.user.pk %}">마이페이지</a>
-                </button>
-            </li>
-            <span class="mx-3">/</span>
-            <button class="delete-button2 mt-0"><a href="{% url 'accounts:logout' %}">로그아웃</a></button>
-            </li>
-            {% else %}
-            <button type="button" class="login-button2" data-bs-toggle="modal" data-bs-whatever="로그인"
-                data-bs-target="#로그인">로그인</button>
-            <div class="modal fade" id="로그인" tabindex="-1" aria-labelledby="로그인Label" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="wrapper1">
-                            <h1 class="text-center">로그인</h1>
-                            <form action="{% url 'accounts:login' %}" method="POST"
-                                class="d-flex flex-column align-items-center">
-                                {% csrf_token %}
-                                <label for="email">아이디(이메일)</label>
-                                <input class='signup-style1' id='email' type="email" name='username'>
-                                <label for="password">비밀번호</label>
-                                <input class='signup-style1' id='password' type="password" name='password'>
-                                <button class="login-button my-2" button_type='submit' content='로그인'>로그인</button>
-                            </form>
-                            <div class="d-flex justify-content-center my-0">
-                                <form action="/accounts/google/login/" method="post">
-                                    {% csrf_token %}
-                                    <button class="btn btn-link my-0 my-sm-0 py-0" style="color : #FFFFFF" type="submit" onclick="document.getElementById('test').submit();"><img src="{% static 'img/google.png' %}" alt="구글" style="height:35px;"></button>
-                                </form>
-                                <form class="mx-1" action="/accounts/kakao/login/" method="post">
-                                    {% csrf_token %}
-                                    <button class="btn btn-link my-0 my-sm-0 py-0" style="color : #FFFFFF" type="submit" onclick="document.getElementById('test').submit();"><img src="{% static 'img/kakao.png' %}" alt="카카오" style="height:35px;"></button>
-                                </form>
-                                <form action="/accounts/naver/login/" method="post">
-                                    {% csrf_token %}
-                                    <button class="btn btn-link my-0 my-sm-0 py-0" style="color : #FFFFFF" type="submit" onclick="document.getElementById('test').submit();"><img src="{% static 'img/naver.png' %}" alt="네이버" style="height:35px;"></button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  </div>
+  <!--회원가입 모달-->
+  <div class="modal fade" id="회원가입" tabindex="-1" aria-labelledby="회원가입Label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="wrapper2">
+          <h1 class="text-center">회원가입</h1>
+          <form action="{% url 'accounts:signup' %}" method="POST" enctype='multipart/form-data'>
+            {% csrf_token %}
+            <div class="d-flex flex-column align-items-center">
+              <label for="username">이메일</label>
+              <input class='signup-style1' type="email" name='username' id='username'>
             </div>
-            <span class="mx-3">/</span>
-            <button type="button" class="login-button2" data-bs-toggle="modal" data-bs-whatever="회원가입"
-                data-bs-target="#회원가입">회원가입</button>
-            <div class="modal fade" id="회원가입" tabindex="-1" aria-labelledby="회원가입Label" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="wrapper2">
-                            <h1 class="text-center">회원가입</h1>
-                            <form action="{% url 'accounts:signup' %}" method="POST" enctype='multipart/form-data'>
-                                {% csrf_token %}
-                                <div class="d-flex flex-column align-items-center">
-                                    <label for="username">이메일</label>
-                                    <input class='signup-style1' type="email" name='username' id='username'>
-                                </div>
-                                <div class="d-flex flex-column align-items-center">
-                                    <label for="nickname">닉네임</label>
-                                    <input class='signup-style1' type="text" name='nickname' id='nickname'>
-                                </div>
-                                <div class="d-flex flex-column align-items-center">
-                                    <label for="password1">비밀번호</label>
-                                    <input class='signup-style1' type="password" name='password1' id='password1'>
-                                </div>
-                                <div class="d-flex flex-column align-items-center">
-                                    <label for="password2">비밀번호 확인</label>
-                                    <input class='signup-style1' type="password" name='password2' id='password2'>
-                                </div>
-                                <div class="d-flex flex-column align-items-center">
-                                    <label for="image">프로필 사진</label>
-                                    <input class='signup-style2' type="file" name='image' id='image'>
-                                </div>
-                                <label>남</label><input type="radio" name='gender' value='true'>
-                                <label>여</label><input type="radio" name='gender' value='false'>
-                                <div class='d-flex flex-column align-items-center'>
-                                    <label for="birth_date">생년월일</label>
-                                    <input class='form-control signup-style2' type="date" name='birth_date' id='birth_date'>
-                                </div>
-                                <button class="login-button" button_type='submit' content='회원가입'>회원 가입</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+            <div class="d-flex flex-column align-items-center">
+              <label for="nickname">닉네임</label>
+              <input class='signup-style1' type="text" name='nickname' id='nickname'>
             </div>
-            {% endif %}
+            <div class="d-flex flex-column align-items-center">
+              <label for="password1">비밀번호</label>
+              <input class='signup-style1' type="password" name='password1' id='password1'>
+            </div>
+            <div class="d-flex flex-column align-items-center">
+              <label for="password2">비밀번호 확인</label>
+              <input class='signup-style1' type="password" name='password2' id='password2'>
+            </div>
+            <div class="d-flex flex-column align-items-center">
+              <label for="image">프로필 사진</label>
+              <input class='signup-style2' type="file" name='image' id='image'>
+            </div>
+            <label>남</label><input type="radio" name='gender' value='true'>
+            <label>여</label><input type="radio" name='gender' value='false'>
+            <div class='d-flex flex-column align-items-center'>
+              <label for="birth_date">생년월일</label>
+              <input class='form-control signup-style2' type="date" name='birth_date' id='birth_date'>
+            </div>
+            <button class="login-button" button_type='submit' content='회원가입'>회원 가입</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 네브바 상단 로고 -->
+  <div id="navbar" class="nav-upper">
+    <a href="{% url 'articles:index' %}"><img class="text-center" src="{% static 'img/ojd_1.png' %}"></a>
+  </div>
+  <!-- 네브바 하단 메뉴 -->
+  <div id="navbar-example2" class="nav-lower container-fluid">
+    <a href="{% url 'articles:index' %}" class="fadeInLogo brand-logo animated slideInUp">
+      <img src="{% static 'img/base/fadeinlogo.png' %}">
+    </a>
+    <ul class="nav nav-pills ">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'articles:product_rank' %}">랭킹</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">카테고리</a>
+        <ul id="submenu">
+          {% for category in categories %}
+          <li>
+            <a class="nav-link" href="{% url 'articles:product_list' category.0 %}">{{ category.1 }}</a>
+          </li>
+          {% endfor %}
         </ul>
-    </div>
-    </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#scrollspyHeading2">커뮤니티</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'articles:review_index' %}">리뷰</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#scrollspyHeading2">Q&A</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-black" href="{% url 'articles:product_create' %}">상품등록</a>
+      </li>
+    </ul>
+    <ul class="d-flex m-0 p-2">
+      <li>
+        <a href="{% url 'articles:search' %}" class="me-3"><i class="bi bi-search"></i></a>
+      </li>
+      {% if request.user.is_authenticated %}
+      <li>
+        <button class="login-button2 mt-0">
+          <a class='nav-link mx-3' href="{% url 'accounts:detail' request.user.pk %}">마이페이지</a>
+        </button>
+      </li>
+      <span class="mx-3">/</span>
+      <li>
+        <button class="nav-link delete-button2 mt-0">
+        <a href="{% url 'accounts:logout' %}">로그아웃</a>
+        </button>
+      </li>
+      {% else %}
+      <li>
+      <!--로그인 모달 트리거-->
+      <button type="button" class="login-button2" data-bs-toggle="modal" data-bs-whatever="로그인" data-bs-target="#로그인">로그인</button>
+      </li>
+      <span class="mx-3">/</span>
+      <li>
+      <!--회원가입 모달 트리거-->
+      <button type="button" class="login-button2" data-bs-toggle="modal" data-bs-whatever="회원가입" data-bs-target="#회원가입">회원가입</button>
+      {% endif %}
+      </li>
+    </ul>
+  </div>
 </header>
-<!---제이쿼리 없으면 작동이 안되니 지우지 말기 혹시 해결법 알면 지워도 ok-->
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script>
-    $(window).scroll(function () {
-        if ($(document).scrollTop() > 50) {
-            $('#navbar').addClass('affix');
-            $('#navbar-example2').addClass('topon');
-            console.log("OK");
-        } else {
-            $('#navbar').removeClass('affix');
-            $('#navbar-example2').removeClass('topon');
-        }
-    });
+  //scrollpy
+  $(window).scroll(function () {
+    if ($(document).scrollTop() >= 211) {
+      $('#navbar').addClass('affix');
+      $('#navbar-example2').addClass('topon');
+      console.log("OK");
+    } else {
+      $('#navbar').removeClass('affix');
+      $('#navbar-example2').removeClass('topon');
+    }
+  });
 
-    var 로그인 = document.getElementById('로그인')
-    로그인.addEventListener('show.bs.modal', event => {
-        var button = event.relatedTarget
-        var recipient = button.getAttribute('data-bs-whatever')
-        var modalTitle = 로그인.querySelector('.modal-title')
-        var modalBodyInput = 로그인.querySelector('.modal-body input')
-        modalTitle.textContent = `New message to ${recipient}`
-        modalBodyInput.value = recipient
+  // FADE IN SMALL LOGO AND FAB ON SCROLL
+  $(window).scroll(function() {
+    var scrollPosition = $(this).scrollTop();
+    var $fadeInLogo = $('.fadeInLogo');
+    var $growInFab = $('.halfway-fab');
+    if (scrollPosition > 128) {
+    // Fade in logo & bring in FAB
+    $fadeInLogo.fadeIn(200);
+    $growInFab.removeClass("scale-out");
+    } else {
+    // Fade out logo & remove FAB
+    $fadeInLogo.fadeOut(200);
+    $growInFab.addClass("scale-out");
+    }
+  });
+</script>
+<script>
+  // 로그인 회원가입 모달 
+  var 로그인 = document.getElementById('로그인')
+  로그인.addEventListener('show.bs.modal', event => {
+    var button = event.relatedTarget
+    var recipient = button.getAttribute('data-bs-whatever')
+    var modalTitle = 로그인.querySelector('.modal-title')
+    var modalBodyInput = 로그인.querySelector('.modal-body input')
+    modalTitle.textContent = `New message to ${recipient}`
+    modalBodyInput.value = recipient
 
-    })
+  })
 
-    var 회원가입 = document.getElementById('회원가입')
-    회원가입.addEventListener('show.bs.modal', event => {
-        var button = event.relatedTarget
-        var recipient = button.getAttribute('data-bs-whatever')
-        var modalTitle = 회원가입.querySelector('.modal-title')
-        var modalBodyInput = 회원가입.querySelector('.modal-body input')
-        modalTitle.textContent = `New message to ${recipient}`
-        modalBodyInput.value = recipient
-    })
-
+  var 회원가입 = document.getElementById('회원가입')
+  회원가입.addEventListener('show.bs.modal', event => {
+    var button = event.relatedTarget
+    var recipient = button.getAttribute('data-bs-whatever')
+    var modalTitle = 회원가입.querySelector('.modal-title')
+    var modalBodyInput = 회원가입.querySelector('.modal-body input')
+    modalTitle.textContent = `New message to ${recipient}`
+    modalBodyInput.value = recipient
+  })
 </script>
