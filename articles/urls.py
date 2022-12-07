@@ -23,4 +23,10 @@ urlpatterns = [
     path("<int:review_pk>/review_cool/", views.review_cool, name='review_cool'),
     path("<int:review_pk>/review_fun/", views.review_fun, name='review_fun'),
     path("<int:review_pk>/review_sad/", views.review_sad, name='review_sad'),
+
+    path("community_index/", views.community_index, name='community_index'),
+    path("community_create/", views.community_create, name='community_create'),
+    path("<int:community_pk>/community_update/", views.community_update, name='community_update'),
+    path("<int:community_pk>/community_delete/", views.community_delete, name='community_delete'),
+    path("<int:community_pk>/community_detail/", views.community_detail, name='community_detail'),
 ]

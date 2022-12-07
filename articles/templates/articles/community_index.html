@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load widget_tweaks %}
+{% load django_bootstrap5 %}
+{% load imagekit %}
+
+{% block title %}{% endblock title %}
+{% block style %}{% endblock style %}
+{% block content %}
+<a href="{% url 'articles:community_create' %}">글 작성</a>
+{% for community in communities %}
+  <h3><a href="{% url 'articles:community_detail' community.pk %}">{{ community.title }}</a></h3>
+  <p>{{ community.content|safe }}</p>
+  <a href="{% url 'articles:community_delete' community.pk %}">글 삭제</a>
+{% endfor%}
+<a href="{% url 'articles:community_index' %}">커뮤니티 메인</a>
+
+{% endblock content %}
+{% block script %}{% endblock script %}
