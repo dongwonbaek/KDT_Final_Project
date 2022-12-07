@@ -82,7 +82,7 @@
     {% endif %}
   </section>
   <section class="container category-wrapper">
-    <div class="index-category row row-cols-6">
+    <div class="index-category row row-cols-5">
       {% for category in categories %}
       <div class="col">
         <a href="{% url 'articles:product_list' category.0 %}">
@@ -91,12 +91,12 @@
         </a>
       </div>
       {% endfor %}
-      <div class="col">
+      {% comment %} <div class="col">
         <a href="https://event.multicampus.com/multicampusmain" target="_blank">
           <img src="{% static 'img/index/ad-multiit1.png' %}">
           멀티잇
         </a>
-      </div>
+      </div> {% endcomment %}
     </div>
     <!--index-category-->
     {% comment %} <div class="personalized-category text-center">
@@ -131,13 +131,13 @@
     <div class="index-ranking my-5">
       <h2 class="text-center">지금 인기있는 선물이에요🎈</h2>
       <ul class="ranking-more row row-cols-4 expandible">
-      {% for product in products %}
-        <li class="col ranking-item">
-          <div class="bookmark">{{ forloop.counter }}</div>
-          <img src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
-          <a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a>
-          <p><span>{{ product.price|intcomma }}</span>원</p>
-        </li>
+        {% for product in products %}
+          <li class="col ranking-item">
+            <div class="bookmark">{{ forloop.counter }}</div>
+            <img src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
+            <a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a>
+            <p><span>{{ product.price|intcomma }}</span>원</p>
+          </li>
         {% endfor %}
       </ul>
     </div><!--index-ranking-->
