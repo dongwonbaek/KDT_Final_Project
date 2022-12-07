@@ -4,9 +4,8 @@
 {% block content %}
 
 <section class="container">
-
   <div style="margin-top: 4rem;">
-    <form action="" method="POST">
+    <form id='sort-form'>
       {% csrf_token %}
       <div class="d-flex">
         <select class="form-select" aria-label="Default select example" name="gender">
@@ -25,19 +24,16 @@
           <option value="50000">2만원 이상 5만원 이하</option>
           <option value="1000000">5만원 이상</option>
         </select>
-        <button type="submit" class='btn btn-dark'>검색</button>
+        <input type="submit" class='btn btn-dark' value='검색'>
       </div>
     </form>
   </div>
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 my-5" >
-
+  <div id='result-box' class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 my-5" >
     {% for product in products %}
     <div class="col d-flex justify-content-center mb-5">
       <div class="card">
         <div class="card-img">
-
           <img class="w-100 h-100 rounded" src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
-
         </div>
         <div>
           <div class="brand mt-2"></div>
@@ -57,6 +53,55 @@
 {% block script %}
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
-  
+  const sortForm = document.querySelector('#sort-form')
+  sortForm.addEventListener('submit', function(event) {
+    const resultBox = document.querySelector('#result-box')
+    let csrftoken = event.target.querySelector('[name=csrfmiddlewaretoken]').value
+    event.preventDefault()
+    axios({
+      method: 'post',
+      url: '/product_rank/',
+      headers: {
+        'X-CSRFToken': csrftoken
+      },
+      data: new FormData(sortForm)
+    }).then(response => {
+      resultBox.replaceChildren()
+      for (product of response.data.products) {
+        let div1 = document.createElement('div')
+        div1.classList.add('col', 'd-flex', 'justify-content-center', 'mb-5')
+        let div2 = document.createElement('div')
+        div2.classList.add('card')
+        let div3 = document.createElement('div')
+        div3.classList.add('card-img')
+        let img1 = document.createElement('img')
+        img1.setAttribute('src', product[0])
+        img1.setAttribute('alt', product[0])
+        img1.classList.add('w-100', 'h-100', 'rounded')
+        div3.append(img1)
+        let div4 = document.createElement('div')
+        let div5 = document.createElement('div')
+        div5.classList.add('brand', 'mt-2')
+        let div6 = document.createElement('div')
+        let a1 = document.createElement('a')
+        a1.setAttribute('href', `/${product[3]}/product_detail/`)
+        a1.innerText = product[1]
+        div6.append(a1)
+        let div7 = document.createElement('div')
+        div7.classList.add('fs-5', 'mt-2')
+        let span1 = document.createElement('span')
+        span1.classList.add('fw-bold')
+        let price = product[2].toLocaleString('ko-KR')
+        span1.innerText = price
+        let span2 = document.createElement('span')
+        span2.innerText = '원'
+        div7.append(span1, span2)
+        div4.append(div5, div6, div7)
+        div2.append(div3, div4)
+        div1.append(div2)
+        resultBox.append(div1)
+      }
+    })
+  })
 </script>
 {% endblock script %}

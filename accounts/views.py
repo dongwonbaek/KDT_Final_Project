@@ -8,7 +8,6 @@ from django.contrib.auth import get_user_model
 from django.contrib import messages
 from django.http import JsonResponse
 from django.core.paginator import Paginator
-
 # Create your views here.
 
 
@@ -140,3 +139,10 @@ def block(request, user_pk):
     else:
         messages.warning(request, "다른 유저만 가능합니다.")
     return redirect("accounts:detail", user_pk)
+
+
+def wishlist(request, user_pk):
+    context = {
+        "user": get_object_or_404(get_user_model(), pk=user_pk),
+    }
+    return render(request, "accounts/wishlist.html", context)

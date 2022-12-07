@@ -28,7 +28,7 @@ body {
   font-family: 'YiSunShinDotumM';
   min-height: 100%;
   padding-top: 211px;
-  font-size: 120%;
+  font-size: 130%;
 }
 
 .pos-btn {
@@ -169,30 +169,29 @@ footer {
 }
 
 /* ---------- nav ---------- */
-
-.MyNav {
+.nav-upper {
+  display: flex;
+  justify-content: center;
   background-color: white;
   position: fixed;
-  top: 211px;
-  border-style: solid none;
-  border-color: #FFB6C1;
-}
-
-.nav-link {
-  color: #000;
-}
-
-
-.fnav {
-  background-color: white;
-  position: fixed;
-  border-style: solid none;
-  border-color: #FFC0CB;
   top: 0;
   left: 0;
   width: 100%;
   height: 211px;
-  transition: top 0.2s ease-in-out;
+  padding: 0;
+  /* transition: top 0.2s ease-in-out; */
+}
+
+.nav-lower {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  position: fixed;
+  top: 211px;
+  border: solid var(--main-salmon);
+  border-width: 1px 0;
+  height: 90px;
 }
 
 .affix {
@@ -203,8 +202,17 @@ footer {
   top: 0px;
 }
 
-.menu {
-  height: 40px;
+.nav-link, .nav-item {
+  color: #000;
+}
+
+.fadeInLogo {
+  float: left;
+  display: none;
+}
+
+.fadeInLogo img {
+  height: 90px;
 }
 
 header .menu ul>li {
@@ -213,15 +221,32 @@ header .menu ul>li {
 }
 
 #submenu {
-  position: absolute;
   display: none;
+  position: absolute;
+  background-color: var(--main-salmon);
+  width: 100%;
 }
 
+.category-submenu {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
 
-header .menu ul li:hover #submenu {
-  background-color: #ffc0cb;
+.category-submenu li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* .category-submenu img {
+  height: 100px;
+
+} */
+
+header ul li:hover #submenu {
   display: inline;
-  width: 1150px;
 }
 
 .modal-backdrop {
@@ -294,6 +319,32 @@ header .menu ul>li>a {
 .select-friend-modal .modal-header p {
   position: absolute;
   top: 25px;
+  font-size: small;
+  color: #444;
+}
+
+.select-friend-modal .modal-body p {
+  font-size: small;
+  color: #444;
+}
+
+.select-friend-modal .form-check {
+  display: flex;
+  align-items: center;
+}
+
+.select-friend-modal .form-check > * {
+  margin-left: 30px;
+}
+
+.select-friend-modal .modal-body > * {
+  margin-bottom: 50px;
+}
+
+.modal-btn-group {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
 }
 
 /* ----------------------눈----------------------------- */
@@ -319,16 +370,10 @@ header .menu ul>li>a {
   position: relative;
 }
 
-.snow-piledup {
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  top: -122px;
-  left: 0%;
-  right: 0%;
-}
-
 .index-category {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   padding: 50px;
   backdrop-filter: blur(5px) saturate(200%);
   -webkit-backdrop-filter: blur(5px) saturate(200%);
@@ -336,8 +381,11 @@ header .menu ul>li>a {
   border-radius: 12px;
   border: 1px solid rgba(209, 213, 219, 0.3);
   position: relative;
-  top: -40px;
+  top: -50px;
   margin-bottom: 150px;
+  /* column-gap: 20px; */
+  row-gap: 80px;
+
 }
 
 .index-category div a {

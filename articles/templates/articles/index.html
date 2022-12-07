@@ -3,6 +3,7 @@
 {% load static %}
 {% load widget_tweaks %}
 {% load django_bootstrap5 %}
+{% load humanize %}
 {% load imagekit %}
 
 {% block title %}{% endblock title %}
@@ -16,16 +17,17 @@
         <div class="modal-header d-flex ">
           <h1 class="modal-title fs-5" id="exampleModalLabel">친구 선택</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          <p>선물할 친구를 선택하세요
+          <p class="select-friend-sf">선물할 친구를 선택하세요
             <i class="bi bi-info-circle select-info" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="새로 추가한 친구는 바로 나타나지 않을 수 있으며, 선물을 받을 수 없는 친구들은 목록에 표시되지 않습니다."></i>
           </p>
+          <div id='result'></div>
         </div>
         <div class="modal-body">
-          <div>
+          <div class="mb-5">
             나
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
+              <input id='select-mine' data-user-id="{{ request.user.pk }}" class="form-check-input" type="radio" id="flexCheckDefault" value="{{ user }}" name="towhom[1][]" onclick='getFriend(event)'>
+              <label class="form-check-label" for="flexCheckDefault"></label>
                 <img src="{{ user.get_photo_url }}" class="select-friend-img">
                 {{ user }}
               </label>
@@ -35,12 +37,12 @@
           <div>
             친구목록
             {{ user.following.all|length }}
-            {% if user.followers.all %}
-              {% for follower in user.followers.all %}
+            {% if request.user.following.all %}
+              {% for follower in request.user.following.all %}
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <input id="select-follower" data-follower-id="{{ follower.pk }}"class="form-check-input" type="radio" value="{{ follower.username }}" name="towhom[1][]" onclick='getFriend(event)'>
                   <label class="form-check-label" for="flexCheckDefault">
-                    <img src="{{ follower.get_photo_url }}" alt="">
+                    <img src="{{ follower.get_photo_url }}" class="select-friend-img">
                     {{ follower.username }}
                   </label>
                 </div>
@@ -51,9 +53,9 @@
           </div>
           <!--친구목록-->
         </div>
-        <div class="modal-footer">
+        <div class="modal-btn-group">
+          <a id='select-btn' type="button" class="pos-btn" href="">선택</a>
           <button type="button" class="neg-btn" data-bs-dismiss="modal">취소</button>
-          <button type="button" class="pos-btn">선택</button>
         </div>
       </div>
     </div>
@@ -66,78 +68,38 @@
     <p>
       {% if request.user.is_authenticated %}{{ user }}
         <span>님</span><br>{% endif %}누구를 위한 선물인가요?</p>
-    <!-- 친구 목록 trigger modal -->
+        {% if request.user.is_authenticated %}
+    <!-- 로그인 되어 있으면 친구 목록 trigger modal -->
     <div class="recobox-pic-area" data-bs-toggle="modal" data-bs-target="#exampleModal">
       <img src="{% static 'img/index/question-mark.png' %}" alt="anonymous-user" class="recobox-pic">
       <img src="{% static 'img/index/add-red.png' %}" alt="select-friend" class="select-friend">
     </div>
+    {% else %}
+    <a class="recobox-pic-area" href="{% url 'accounts:login' %}">
+      <img src="{% static 'img/index/question-mark.png' %}" alt="anonymous-user" class="recobox-pic">
+      <img src="{% static 'img/index/add-red.png' %}" alt="select-friend" class="select-friend">
+    </a>
+    {% endif %}
   </section>
   <section class="container category-wrapper">
-    <img src="{% static 'img/index/snow.png' %}" class="snow-piledup">
-    <div class="index-category row row-cols-5">
+    <div class="index-category row row-cols-6">
+      {% for category in categories %}
       <div class="col">
-        <a href="{% url 'articles:product_list' 6 %}">
-          <img src="{% static 'img/index/gift1.jpg' %}">
-          <p>크리스마스</p>
+        <a href="{% url 'articles:product_list' category.0 %}">
+          <img src="../../../static/img/index/gift{{ category.0 }}.jpg">
+          {{ category.1 }}
         </a>
       </div>
+      {% endfor %}
       <div class="col">
-        <a href="{% url 'articles:product_list' 9 %}">
-          <img src="{% static 'img/index/gift2.jpg' %}">
-          <p>따뜻한 선물</p>
-        </a>
-      </div>
-      <div class="col">
-        <a href="{% url 'articles:product_list' 1 %}">
-          <img src="{% static 'img/index/gift3.jpg' %}">
-          <p>생일</p>
-        </a>
-      </div>
-      <div class="col">
-        <a href="{% url 'articles:product_list' 2 %}">
-          <img src="{% static 'img/index/gift4.jpg' %}">
-          <p>가벼운 선물</p>
-        </a>
-      </div>
-      <div class="col">
-        <a href="{% url 'articles:product_list' 3 %}">
-          <img src="{% static 'img/index/gift5.jpg' %}">
-          <p>건강/회복</p>
-        </a>
-      </div>
-      <div class="col">
-        <a href="{% url 'articles:product_list' 4 %}">
-          <img src="{% static 'img/index/gift6.jpg' %}">
-          <p>스몰럭셔리</p>
-        </a>
-      </div>
-      <div class="col">
-        <a href="{% url 'articles:product_list' 5 %}">
-          <img src="{% static 'img/index/gift7.jpg' %}">
-          <p>어른선물</p>
-        </a>
-      </div>
-      <div class="col">
-        <a href="{% url 'articles:product_list' 7 %}">
-          <img src="{% static 'img/index/gift8.jpg' %}">
-          <p>명품선물</p>
-        </a>
-      </div>
-      <div class="col">
-        <a href="{% url 'articles:product_list' 8 %}">
-          <img src="{% static 'img/index/gift9.jpg' %}">
-          <p>출산/키즈</p>
-        </a>
-      </div>
-      <div class="col">
-        <a href="{% url 'articles:product_list' 11 %}">
-          <img src="{% static 'img/index/gift11.jpg' %}">
-          <p>배달선물</p>
+        <a href="https://event.multicampus.com/multicampusmain" target="_blank">
+          <img src="{% static 'img/index/ad-multiit1.png' %}">
+          멀티잇
         </a>
       </div>
     </div>
     <!--index-category-->
-    <div class="personalized-category text-center">
+    {% comment %} <div class="personalized-category text-center">
       <h2>
         <span>ODJ AI</span>의 추천</h2>
       <ul>
@@ -156,9 +118,9 @@
         {% endif %}
       </ul>
     </div>
-    <!--personalized-category-->
+    <!--personalized-category--> {% endcomment %}
     <div class="multiple-items">
-      <div><img src="{% static 'img/index/ad-multiit.png' %}"></div>
+      <div><a href="https://event.multicampus.com/multicampusmain" target="_blank"><img src="{% static 'img/index/ad-multiit2.png' %}"></a></div>
       <div><img src="https://picsum.photos/300/200?random=2"></div>
       <div><img src="https://picsum.photos/300/200?random=3"></div>
       <div><img src="https://picsum.photos/300/200?random=4"></div>
@@ -167,15 +129,14 @@
     </div>
     <!--MyCarousel-->
     <div class="index-ranking my-5">
-      <h2 class="text-center">실시간 선물 랭킹</h2>
+      <h2 class="text-center">지금 인기있는 선물이에요🎈</h2>
       <ul class="ranking-more row row-cols-4 expandible">
-        {% for i in "x"|rjust:"20" %}
+      {% for product in products %}
         <li class="col ranking-item">
           <div class="bookmark">{{ forloop.counter }}</div>
-          <img src="https://picsum.photos/400">
-          <p>브랜드</p>
-          <p>상품명</p>
-          <p><span>가격</span>원</p>
+          <img src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
+          <a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a>
+          <p><span>{{ product.price|intcomma }}</span>원</p>
         </li>
         {% endfor %}
       </ul>
@@ -249,7 +210,7 @@
       <h4 class="card-title">🎊오픈 기념🎊</h4>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       <h6 class="card-subtitle mb-2 text-muted">스탬프 2배 이벤트</h6>
-      <p class="card-text">단 이틀, 오다주 가입하면 스탬프 2개가 바로 쏙!😉 지금 바로 가입하세요🎉 </p>
+      <p class="card-text">단 이틀만 오다주 가입 가능!😉 지금 바로 가입하세요🎉 </p>
       <img src="{% static 'img/index/santa.png' %}">
       <a href="{% url 'accounts:signup' %}" class="card-link pos-btn">가입하러 가기</a>
     </div>
@@ -258,7 +219,14 @@
 {% endblock content %}
 
 {% block script %}
+<script>
+  function getFriend(event) {
+    document.getElementById('result').innerText = 
+      event.target.value;
+  }
+</script>
   <script>
+    // AD carousel
     $('.multiple-items').slick({infinite: true, slidesToShow: 2, slidesToScroll: 2, dots: true});
   </script>
   <script>
@@ -283,6 +251,7 @@
   </script>
   <script src="{% static 'js/snowflake.js' %}"></script>
   <script>
+    // 유튜브 sync carousel
     $('.slider-single').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -346,5 +315,18 @@
 
       $('.slider-single').slick('slickGoTo', goToSingleSlide);
     });
+  </script>
+  <script>
+    const selectMine = document.querySelector('#select-mine')
+    const selectFollowers = document.querySelectorAll('#select-follower')
+    const selectBtn = document.querySelector('#select-btn')
+    selectMine.addEventListener('click', function(event) {
+      selectBtn.setAttribute('href', `/accounts/${event.target.dataset.userId}/wishlist/`)
+    })
+    for (let selectFollower of selectFollowers) {
+    selectFollower.addEventListener('click', function(event){
+      selectBtn.setAttribute('href', `/accounts/${event.target.dataset.followerId}/wishlist/`)
+      })
+    }
   </script>
 {% endblock script %}
