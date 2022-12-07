@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import *
-from .forms import ProductForm, ProductImagesForm, ReviewForm, ReviewCommentForm
+from .forms import ProductForm, ProductImagesForm, ReviewForm, ReviewCommentForm, CommunityForm
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.http import JsonResponse
@@ -360,3 +360,54 @@ def review_sad(request, review_pk):
     context = {'isSaded': is_saded, 'sadCount': review.sad_user.count()}
     # return JsonResponse(context)
     return redirect('articles:product_detail', review.product.pk, context)
+
+
+def community_index(request):
+    communities = Community.objects.order_by('-pk')
+    context = {
+        'communities': communities
+    }
+    return render(request, 'articles/community_index.html', context)
+
+
+def community_create(request):
+    if request.method == 'POST':
+        community_form = CommunityForm(request.POST)
+        if community_form.is_valid():
+            community_form.save()
+            return redirect('articles:community_index')
+    else:
+            community_form = CommunityForm()
+    context = {
+        'community_form': community_form
+    }
+    return render(request, "articles/community_form.html", context)
+
+
+def community_update(request, community_pk):
+    community = Community.objects.get(pk=community_pk)
+    if request.method == 'POST':
+        community_form = CommunityForm(request.POST, instance=community)
+        if community_form.is_valid():
+            community_form.save()
+            return redirect('articles:community_detail', community.pk)
+    else:
+        community_form = CommunityForm(instance=community)
+    context = {
+        'community_form': community_form
+    }
+    return render(request, 'articles/community_form.html', context)
+
+
+def community_detail(request, community_pk):
+    community = Community.objects.get(pk=community_pk)
+    context = {
+        'community': community
+    }
+    return render(request, 'articles/community_detail.html', context)
+
+
+def community_delete(request, community_pk):
+    community = Community.objects.get(pk=community_pk)
+    community.delete()
+    return redirect('articles:community_index')
