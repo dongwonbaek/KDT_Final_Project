@@ -5,8 +5,9 @@ from .forms import ProductForm, ProductImagesForm, ReviewForm, ReviewCommentForm
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.http import JsonResponse
-from django.db.models import Q, Avg, Count, Subquery, OuterRef
+from django.db.models import Q, F, Avg, Count, Subquery, OuterRef, Sum
 from django.http import JsonResponse
+import random
 
 
 def index(request):
@@ -51,13 +52,11 @@ def product_create(request):
 
 def product_detail(request, product_pk):
     product = get_object_or_404(Product, pk=product_pk)
-    reviews = product.review_set.annotate(
-        like_cnt=Count("good_user")
-        + Count("cool_user")
-        + Count("fun_user")
-        + Count("sad_user")
-    ).order_by("-like_cnt")
-    rating_avg = product.review_set.aggregate(rating_avg=Avg("rating"))["rating_avg"]
+    reviews = product.review_set.annotate(like_cnt=Count('good_user', distinct=True)+Count('cool_user', distinct=True)+Count('fun_user', distinct=True)+Count('sad_user', distinct=True))
+    like_reviews = reviews.order_by('-like_cnt')
+    recent_reviews = reviews.order_by('-created_at')
+    rating_avg = product.review_set.aggregate(rating_avg=Avg('rating'))['rating_avg']
+    random_products = Product.objects.filter(category=product.category).order_by("?")[:10]
     quotient_list = []
     rest_list = []
     half_list = []
@@ -75,13 +74,15 @@ def product_detail(request, product_pk):
     else:
         rating_avg = 0
     context = {
-        "product": product,
-        "rating_avg": rating_avg,
-        "quotient_list": quotient_list,
-        "rest_list": rest_list,
-        "half_list": half_list,
-        "reviews": reviews,
-        "review_comment_form": ReviewCommentForm(),
+        'product': product,
+        'rating_avg': rating_avg,
+        'quotient_list': quotient_list,
+        'rest_list': rest_list,
+        'half_list': half_list,
+        'like_reviews': like_reviews,
+        'recent_reviews': recent_reviews,
+        'random_products': random_products,
+        'review_comment_form': ReviewCommentForm(),
     }
     return render(request, "articles/product_detail.html", context)
 
@@ -174,19 +175,6 @@ def review_delete(request, product_pk, review_pk):
             return redirect("articles:product_detail", product_pk)
     else:
         return redirect("articles:product_detail", product_pk)
-
-
-# @login_required
-# def review_like(request, review_pk):
-#     review = get_object_or_404(Review, pk=review_pk)
-#     if review.like_user.filter(pk=request.user.pk).exists():
-#         review.like_user.remove(request.user)
-#     else:
-#         review.like_user.add(request.user)
-
-#     # review_detail 페이지가 모달로 구현되기 위해서는 좋아요 기능이 반드시 비동기처리가 필요함.
-#     # 비동기 처리를 구현하기 전까지 임의로 redirect 사용.
-#     return redirect('articles:product_detail', review.product.pk)
 
 
 @login_required
@@ -364,9 +352,8 @@ def review_cool(request, review_pk):
     else:
         review.cool_user.add(request.user)
         is_cooled = True
-    context = {"isCooled": is_cooled, "coolCount": review.cool_user.count()}
-    # return JsonResponse(context)
-    return redirect("articles:product_detail", review.product.pk, context)
+    context = {'isCooled': is_cooled, 'coolCount': review.cool_user.count()}
+    return JsonResponse(context)
 
 
 @login_required
@@ -378,9 +365,8 @@ def review_fun(request, review_pk):
     else:
         review.fun_user.add(request.user)
         is_funed = True
-    context = {"isFuned": is_funed, "funCount": review.fun_user.count()}
-    # return JsonResponse(context)
-    return redirect("articles:product_detail", review.product.pk, context)
+    context = {'isFuned': is_funed, 'funCount': review.fun_user.count()}
+    return JsonResponse(context)
 
 
 @login_required
@@ -392,9 +378,9 @@ def review_sad(request, review_pk):
     else:
         review.sad_user.add(request.user)
         is_saded = True
-    context = {"isSaded": is_saded, "sadCount": review.sad_user.count()}
-    # return JsonResponse(context)
-    return redirect('articles:product_detail', review.product.pk, context)
+
+    context = {'isSaded': is_saded, 'sadCount': review.sad_user.count()}
+    return JsonResponse(context)
 
 
 def community_index(request):

@@ -37,6 +37,7 @@
 .detail_container {
   margin-left: 15rem;
   margin-right: 15rem;
+  margin-top: 10rem;
 }
 
 /* title 수평선 */
@@ -86,6 +87,7 @@
   cursor: pointer;
   border-radius: 4px;
   padding: 8px 20px;
+  width: 100%;
 }
 
 .buy:hover {
@@ -112,7 +114,7 @@
 
 @keyframes slidebg {
   to {
-    background-position: 20vw;
+    background-position: 40vw;
   }
 }
 
@@ -126,7 +128,7 @@
 /* 탭 이동 */
 #tap-move {
   border: solid 1px #ddd;
-  margin-top: 8rem;
+  margin-top: 5rem;
 }
 
 .tap-nav {
