@@ -7,7 +7,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth import get_user_model
 from django.contrib import messages
 from django.http import JsonResponse
-
+from django.core.paginator import Paginator
 # Create your views here.
 
 
@@ -90,8 +90,15 @@ def password(request):
 
 
 def detail(request, user_pk):
+    user = get_object_or_404(get_user_model(), pk=user_pk)
+    review_list = user.review_set.all().order_by("-id")  # 데이터 역순 정렬
+    page = request.GET.get("page", "1")  # GET 방식으로 정보를 받아오는 데이터
+    paginator = Paginator(review_list, "2")  # Paginator(분할될 객체, 페이지 당 담길 객체수)
+    paginated_review_list = paginator.get_page(page)  # 페이지 번호를 받아 해당 페이지를 리턴
+
     context = {
-        "user": get_object_or_404(get_user_model(), pk=user_pk),
+        "user": user,
+        "paginated_review_list": paginated_review_list,
     }
     return render(request, "accounts/detail.html", context)
 

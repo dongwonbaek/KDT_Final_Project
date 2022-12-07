@@ -3,6 +3,7 @@
 {% load static %}
 {% load widget_tweaks %}
 {% load django_bootstrap5 %}
+{% load humanize %}
 {% load imagekit %}
 
 {% block title %}{% endblock title %}
@@ -81,71 +82,24 @@
     {% endif %}
   </section>
   <section class="container category-wrapper">
-    <img src="{% static 'img/index/snow.png' %}" class="snow-piledup">
-    <div class="index-category row row-cols-5">
+    <div class="index-category row row-cols-6">
+      {% for category in categories %}
       <div class="col">
-        <a href="{% url 'articles:product_list' 6 %}">
-          <img src="{% static 'img/index/gift1.jpg' %}">
-          <p>크리스마스</p>
+        <a href="{% url 'articles:product_list' category.0 %}">
+          <img src="../../../static/img/index/gift{{ category.0 }}.jpg">
+          {{ category.1 }}
         </a>
       </div>
+      {% endfor %}
       <div class="col">
-        <a href="{% url 'articles:product_list' 9 %}">
-          <img src="{% static 'img/index/gift2.jpg' %}">
-          <p>따뜻한 선물</p>
-        </a>
-      </div>
-      <div class="col">
-        <a href="{% url 'articles:product_list' 1 %}">
-          <img src="{% static 'img/index/gift3.jpg' %}">
-          <p>생일</p>
-        </a>
-      </div>
-      <div class="col">
-        <a href="{% url 'articles:product_list' 2 %}">
-          <img src="{% static 'img/index/gift4.jpg' %}">
-          <p>가벼운 선물</p>
-        </a>
-      </div>
-      <div class="col">
-        <a href="{% url 'articles:product_list' 3 %}">
-          <img src="{% static 'img/index/gift5.jpg' %}">
-          <p>건강/회복</p>
-        </a>
-      </div>
-      <div class="col">
-        <a href="{% url 'articles:product_list' 4 %}">
-          <img src="{% static 'img/index/gift6.jpg' %}">
-          <p>스몰럭셔리</p>
-        </a>
-      </div>
-      <div class="col">
-        <a href="{% url 'articles:product_list' 5 %}">
-          <img src="{% static 'img/index/gift7.jpg' %}">
-          <p>어른선물</p>
-        </a>
-      </div>
-      <div class="col">
-        <a href="{% url 'articles:product_list' 7 %}">
-          <img src="{% static 'img/index/gift8.jpg' %}">
-          <p>명품선물</p>
-        </a>
-      </div>
-      <div class="col">
-        <a href="{% url 'articles:product_list' 8 %}">
-          <img src="{% static 'img/index/gift9.jpg' %}">
-          <p>출산/키즈</p>
-        </a>
-      </div>
-      <div class="col">
-        <a href="{% url 'articles:product_list' 11 %}">
-          <img src="{% static 'img/index/gift11.jpg' %}">
-          <p>배달선물</p>
+        <a href="https://event.multicampus.com/multicampusmain" target="_blank">
+          <img src="{% static 'img/index/ad-multiit1.png' %}">
+          멀티잇
         </a>
       </div>
     </div>
     <!--index-category-->
-    <div class="personalized-category text-center">
+    {% comment %} <div class="personalized-category text-center">
       <h2>
         <span>ODJ AI</span>의 추천</h2>
       <ul>
@@ -164,9 +118,9 @@
         {% endif %}
       </ul>
     </div>
-    <!--personalized-category-->
+    <!--personalized-category--> {% endcomment %}
     <div class="multiple-items">
-      <div><img src="{% static 'img/index/ad-multiit.png' %}"></div>
+      <div><a href="https://event.multicampus.com/multicampusmain" target="_blank"><img src="{% static 'img/index/ad-multiit2.png' %}"></a></div>
       <div><img src="https://picsum.photos/300/200?random=2"></div>
       <div><img src="https://picsum.photos/300/200?random=3"></div>
       <div><img src="https://picsum.photos/300/200?random=4"></div>
@@ -175,15 +129,14 @@
     </div>
     <!--MyCarousel-->
     <div class="index-ranking my-5">
-      <h2 class="text-center">실시간 선물 랭킹</h2>
+      <h2 class="text-center">지금 인기있는 선물이에요🎈</h2>
       <ul class="ranking-more row row-cols-4 expandible">
-        {% for i in "x"|rjust:"20" %}
+      {% for product in products %}
         <li class="col ranking-item">
           <div class="bookmark">{{ forloop.counter }}</div>
-          <img src="https://picsum.photos/400">
-          <p>브랜드</p>
-          <p>상품명</p>
-          <p><span>가격</span>원</p>
+          <img src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
+          <a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a>
+          <p><span>{{ product.price|intcomma }}</span>원</p>
         </li>
         {% endfor %}
       </ul>
@@ -257,7 +210,7 @@
       <h4 class="card-title">🎊오픈 기념🎊</h4>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       <h6 class="card-subtitle mb-2 text-muted">스탬프 2배 이벤트</h6>
-      <p class="card-text">단 이틀, 오다주 가입하면 스탬프 2개가 바로 쏙!😉 지금 바로 가입하세요🎉 </p>
+      <p class="card-text">단 이틀만 오다주 가입 가능!😉 지금 바로 가입하세요🎉 </p>
       <img src="{% static 'img/index/santa.png' %}">
       <a href="{% url 'accounts:signup' %}" class="card-link pos-btn">가입하러 가기</a>
     </div>

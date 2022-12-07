@@ -199,3 +199,57 @@
 .emoji-count{
   color: red;
 }
+
+/* product_rank */
+
+.s_form {
+  display: flex;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+.search {
+  position: relative;
+  width: 40rem;
+  height: 3rem;
+}
+
+.s_input {
+  background-color: #f8f9fa;
+  border: 0;
+  padding-left: 1rem;
+}
+
+.s_input::placeholder {
+  color: #adb5bd;
+}
+
+.s_input:focus {
+  outline: none;
+}
+
+.btnSearch {
+  all: unset;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btnClear {
+  all: unset;
+  position: absolute;
+  right: 3rem;
+  top: 35%;
+  transform: translateY(-50%);
+  width: 1.2rem; 
+  height: 1.2rem;
+}
+
+/* input 기본 x버튼 안보이게 */
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display:none;
+}

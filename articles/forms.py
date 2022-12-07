@@ -31,3 +31,12 @@ class ReviewCommentForm(forms.ModelForm):
     class Meta:
         model = ReviewComment
         fields = ("content",)
+
+
+
+
+class CommunityForm(forms.ModelForm):
+    
+    class Meta:
+        model = Community
+        fields = ("title", "content")
