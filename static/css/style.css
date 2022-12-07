@@ -493,6 +493,11 @@ header .menu ul>li>a {
   margin: auto;
 }
 
+.youtube-list iframe {
+  position: absolute;
+  left: 28%;
+}
+
 .FloatingAd {
   display: flex;
   align-items: center;
