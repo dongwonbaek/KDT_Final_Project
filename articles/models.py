@@ -4,7 +4,7 @@ from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill, Thumbnail
 from django.core.validators import MinValueValidator, MaxValueValidator
 from datetime import datetime
-
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 class Product(models.Model):
@@ -52,3 +52,9 @@ class ReviewComment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     review = models.ForeignKey('Review', on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+class Community(models.Model):
+    title = models.CharField(max_length=20)
+    content = RichTextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

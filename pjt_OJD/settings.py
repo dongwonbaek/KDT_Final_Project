@@ -58,12 +58,14 @@ INSTALLED_APPS = [
     "corsheaders",
     "widget_tweaks",
     "imagekit",
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.kakao',
-    'allauth.socialaccount.providers.naver',
+    "ckeditor",
+    "ckeditor_uploader",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
+    "allauth.socialaccount.providers.kakao",
+    "allauth.socialaccount.providers.naver",
     # django default
     "django.contrib.admin",
     "django.contrib.auth",
@@ -83,7 +85,8 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_IMAGE_BACKEND = "pillow"
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
