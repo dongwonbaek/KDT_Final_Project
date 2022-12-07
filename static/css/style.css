@@ -202,7 +202,8 @@ footer {
   top: 0px;
 }
 
-.nav-link, .nav-item {
+.nav-link,
+.nav-item {
   color: #000;
 }
 
@@ -333,11 +334,11 @@ header .menu ul>li>a {
   align-items: center;
 }
 
-.select-friend-modal .form-check > * {
+.select-friend-modal .form-check>* {
   margin-left: 30px;
 }
 
-.select-friend-modal .modal-body > * {
+.select-friend-modal .modal-body>* {
   margin-bottom: 50px;
 }
 
@@ -586,7 +587,7 @@ header .menu ul>li>a {
 
 /*------어카운츠 디테일------*/
 .detail_body {
-  margin: 40px auto;
+  margin: 211px auto 0;
   width: 500px;
   height: 400px;
   border: solid 3px;
@@ -643,11 +644,11 @@ header .menu ul>li>a {
 }
 
 @media (max-width: 767px) {
-  .carousel-inner .carousel-item > div {
+  .carousel-inner .carousel-item>div {
     display: none;
   }
 
-  .carousel-inner .carousel-item > div:first-child {
+  .carousel-inner .carousel-item>div:first-child {
     display: block;
   }
 }
@@ -715,4 +716,36 @@ header .menu ul>li>a {
 
 .page-link:hover {
   background-color: #ffe7e8;
+}
+
+/*패스워드 */
+.detail_body2 {
+  margin: 211px auto 0;
+  width: 500px;
+  height: 500px;
+  border: solid 3px;
+  border-color: #FFB6C1;
+  border-radius: 10%;
+  background: white 20%;
+}
+
+.wrapper3 {
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 450px;
+  height: 460px;
+  border: solid 3px;
+  border-color: #FFB6C1;
+  border-radius: 10%;
+  background: white 20%;
+}
+
+.password-style1 {
+  width: 300px;
+  height: 35px;
+  border-style: none;
+  border-radius: 5px;
+  background-color: #c4c4c4;
 }
