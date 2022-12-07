@@ -96,13 +96,16 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="">카테고리</a>
-        <ul id="submenu">
-          {% for category in categories %}
-          <li>
-            <a class="nav-link" href="{% url 'articles:product_list' category.0 %}">{{ category.1 }}</a>
-          </li>
-          {% endfor %}
-        </ul>
+					<div id="submenu">
+						<ul class="category-submenu">
+							{% for category in categories %}
+							<li>
+								<a class="nav-link" href="{% url 'articles:product_list' category.0 %}">
+									<img src="../../../static/img/base/category{{ category.0 }}.png">{{ category.1 }}</a>
+							</li>
+							{% endfor %}
+						</ul>
+				</div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#scrollspyHeading2">커뮤니티</a>
