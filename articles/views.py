@@ -213,16 +213,24 @@ def review_comment_create(request, review_pk):
                     islogin = True
                 else:
                     islogin = False
+                if a.user.image:
+                    isimage = True
+                else:
+                    isimage = False
                 comments.append(
                     [
                         a.content,  # 0
                         a.user.nickname,  # 1
-                        a.created_at,  # 2
+                        a.created_at.year,  # 2
                         a.user.pk,  # 3
                         request.user.pk,  # 4
                         a.id,  # 5
                         a.review.pk,  # 6
                         islogin,  # 7
+                        a.user.image.url, #8
+                        a.created_at.month, #9
+                        a.created_at.day, #10
+                        isimage,
                     ]
                 )
             context = {
