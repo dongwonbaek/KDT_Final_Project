@@ -13,7 +13,7 @@
   <section class="d-flex justify-content-between">
     <!-- 상품 title -->
     <h1>
-      {{ product.title }}
+      {{ product.title }} <span style='background-color: #003B41;' class='badge fs-6'>{{ product.get_category_display }}</span>
     </h1>
   </section>
 
@@ -26,9 +26,9 @@
       <img id="big-img" class="w-100 rounded" src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
       <!-- 작은 사진들 (이미지 바꾸기) -->
       <div class="d-flex justify-content-center mt-3">
-        <img class="small-img" src="{{ product.productimages_set.all.0.images }}" alt="">
-        <img class="small-img" src="https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211111144222_b541aa8be72c4b7f8e4fc3996fca6d5d.jpg" alt="">
-        <img class="small-img" src="https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211111144219_4917ff2d045a424b8af47210f332a5ec.jpg" alt="">
+        {% for image in product.productimages_set.all %}
+          <img class="small-img" src="{{ image.images }}" alt="썸네일 사진">
+        {% endfor %}
       </div>
     </div>
     <div class="col-6">
@@ -41,75 +41,121 @@
               <div class="d-flex justify-content-between">
                 <!-- 별 평점 -->
                 <div class="stars d-flex">
-                  {% for a in quotient_list %}<i class="bi bi-star-fill"></i>{% endfor %}
-                  {% for a in half_list %}<i class="bi bi-star-half"></i>{% endfor %}
-                  {% for a in rest_list %}<i class="bi bi-star"></i>{% endfor %}
-                  <span class='text-dark'>(평점 {{ rating_avg|floatformat:1 }})</span>
+                  {% if quotient_list %}
+                    {% for a in quotient_list %}<i class="bi bi-star-fill"></i>{% endfor %}
+                    {% for a in half_list %}<i class="bi bi-star-half"></i>{% endfor %}
+                    {% for a in rest_list %}<i class="bi bi-star"></i>{% endfor %}
+                    <span class='text-dark'> (평점 {{ rating_avg|floatformat:1 }})</span>
+                    {% else %}
+                    <span class='text-dark'>후기가 없어요..</span>
+                  {% endif %}
                 </div>
-              </div>    
+              </div>
+              <span class='text-secondary'>{{ product.brand }}</span>    
             </div>
             <!-- 공유 / 하트(위시) 버튼 -->
             <div class="my-2 d-flex">
               <div class="circle me-2 d-flex justify-content-center align-items-center">
                 <i class="fas fa-arrow-up-from-bracket fs-4"></i>
               </div>
-              <div class="heart text-center">
-                {% if request.user.is_authenticated %}
+              {% if request.user.is_authenticated %}
+                <div class="heart text-center">
                   {% if request.user in product.like_user.all %}
                     <i id='like-btn' data-product-id="{{ product.pk }}" class="bi bi-heart-fill"></i>
                   {% else %}
                     <i id='like-btn' data-product-id="{{ product.pk }}" class="bi bi-heart"></i>
                   {% endif %}
-                {% endif %}
-                <span id="like-count">{{ product.like_user.count }}</span>
-              </div>
-            </div>
-          </div>
-          <div class='d-flex my-5'>
-            <a href="https://www.google.com" class="buy text-center p-1">보러가기</a>
-          </div>
-        </div>
-        <!-- 비교 사이트들 -->
-        <div class="d-flex flex-column justify-content-between">
-          <h2 class='m-0'>베스트 댓글👍 <span class='fs-5 text-secondary'>{{ like_reviews.0.like_cnt }}명의 공감을 받았습니다!</span></h2>
-          <div class="com p-4 bg-light border rounded" data-bs-toggle="modal" data-bs-target="#exampleModal{{ like_reviews.0.pk }}">
-            <div class="d-flex">
-              {% if like_reviews.0.user.image %}
-                <div class="user_img me-3">
-                  <img class="w-100 h-100" src="{{ like_reviews.0.user.image.url }}" alt="">
+                  <span id="like-count">{{ product.like_user.count }}</span>
                 </div>
               {% endif %}
-              <div class="pt-2">
-                <div>{{ like_reviews.0.user.nickname }}</div>
-                <div class="d-flex mt-1">
-                  <!-- 후기 평점 -->
-                  <div class="stars">
-                    {% for i in "x"|rjust:"5" %}
-                      {% if like_reviews.0.rating >= forloop.counter %}
-                        <i class="fas fa-star"></i>
-                      {% else %}
-                        <i class="fas fa-star eee"></i>
-                      {% endif %}
-                    {% endfor %}
-                  </div>
-                  &nbsp;| {{ like_reviews.0.created_at.date }}        
-                </div>
-              </div>
-            </div>
-            <div class="d-flex justify-content-between mt-2">
-              <div class="">
-                {{ like_reviews.0.content }}
-              </div>
-              <div class="com_img">
-                {% if like_reviews.0.image %}
-                  <img class="w-100 h-100 rounded" src="{{ like_reviews.0.image.url }}" alt="">
-                {% endif %}
-              </div>
             </div>
           </div>
         </div>
+        <!--Progress Bar Title-->
+        {% if rating_list %}
+          <h3 class='m-0 bg-white'>
+            {% if rating_list.0|add:rating_list.1 == 0 %}
+              이 선물을 만족한 사람이 없네요..
+            {% else %}
+              이 선물을 <span class='text-danger'>{{ rating_list.0|add:rating_list.1 }}%</span>의 사람들이 만족했어요!
+            {% endif %}
+          </h3>
+        {% endif %}
+        <!--Progress Bar-->
+        <div class="d-flex flex-column justify-content-center container bg-light rounded">
+          {% if rating_list %}
+            {% for rating in rating_list %}
+              <div class="row pe-3" >
+                <div style='font-size:0.6rem;' class="col-2 d-flex justify-content-end align-items-center">
+                  {% if forloop.counter == 1 %}
+                    <i class="bi bi-star-fill d-flex align-itmes-center"></i><i class="bi bi-star-fill d-flex align-itmes-center"></i><i class="bi bi-star-fill d-flex align-itmes-center"></i><i class="bi bi-star-fill d-flex align-itmes-center"></i><i class="bi bi-star-fill d-flex align-itmes-center"></i>
+                  {% elif forloop.counter == 2 %}
+                    <i class="bi bi-star-fill d-flex align-itmes-center"></i><i class="bi bi-star-fill d-flex align-itmes-center"></i><i class="bi bi-star-fill d-flex align-itmes-center"></i><i class="bi bi-star-fill d-flex align-itmes-center"></i>
+                  {% elif forloop.counter == 3 %}
+                    <i class="bi bi-star-fill d-flex align-itmes-center"></i><i class="bi bi-star-fill d-flex align-itmes-center"></i><i class="bi bi-star-fill d-flex align-itmes-center"></i>
+                  {% elif forloop.counter == 4 %}
+                    <i class="bi bi-star-fill d-flex align-itmes-center"></i><i class="bi bi-star-fill d-flex align-itmes-center"></i>
+                  {% elif forloop.counter == 5 %}
+                    <i class="bi bi-star-fill d-flex align-itmes-center"></i>
+                  {% endif %}  
+                </div>
+                <div class="progress my-2 col-10 p-0" style="height: 12px;">
+                  <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: {{ rating }}%; background-color: #003B41;" aria-valuenow="{{ rating }}" aria-valuemin="0" aria-valuemax="100"><span style='font-size:.5rem;'>{{ rating }}%</span></div>
+                </div>
+              </div>
+            {% endfor %}
+          {% else %}
+            <div style='height:5rem;' class="d-lg-flex d-none justify-content-center align-items-center rounded">
+              <h3 class='m-0'>평점이 없습니다.</h3>
+            </div>
+          {% endif %}
+        </div>
+
+        {% if like_reviews %}
+          <div class="d-flex flex-column justify-content-between">
+            <h2 class='m-0'>베스트 후기👍 <span class='fs-5 text-secondary'>{{ like_reviews.0.like_cnt }}명의 공감을 받았습니다!</span></h2>
+            <div class="com p-4 bg-light border rounded" data-bs-toggle="modal" data-bs-target="#exampleModal{{ like_reviews.0.pk }}">
+              <div class="d-flex">
+                {% if like_reviews.0.user.image %}
+                  <div class="user_img me-3">
+                    <img class="w-100 h-100" src="{{ like_reviews.0.user.image.url }}" alt="">
+                  </div>
+                {% endif %}
+                <div class="pt-2">
+                  <div>{{ like_reviews.0.user.nickname }}</div>
+                  <div class="d-flex mt-1">
+                    <!-- 후기 평점 -->
+                    <div class="stars">
+                      {% for i in "x"|rjust:"5" %}
+                        {% if like_reviews.0.rating >= forloop.counter %}
+                          <i class="fas fa-star"></i>
+                        {% else %}
+                          <i class="fas fa-star eee"></i>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                    &nbsp;| {{ like_reviews.0.created_at.date }}        
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between mt-2">
+                <div class="card-ellipsis">
+                  {{ like_reviews.0.content }}
+                </div>
+                <div class="com_img">
+                  {% if like_reviews.0.image %}
+                    <img class="w-100 h-100 rounded" src="{{ like_reviews.0.image.url }}" alt="">
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 카카오선물하기 이동버튼 -->
+          <div class='d-flex'>
+            <a href="{{ product.product_url }}" class="buy text-center p-1">보러가기</a>
+          </div>
+        {% endif %}
       </div>
-      <!-- 구매하기 버튼 -->
     </div>
   </section>
   <div class="row my-5">
@@ -148,17 +194,25 @@
       <button class="tab-button" data-tab-section="tab-section-1">상품설명</button>
       <button class="tab-button" data-tab-section="tab-section-2">선물후기 ({{ product.review_set.all.count }})</button>
     </div>
-    <div id="tab-section-1" class="tab-section">
-      <img src="https://st.kakaocdn.net/product/gift/editor/GE9npJp40gjy0AXfoEEiCA/rNHKB8eNAErn5vVFdAkGA4DVXYsilLuZuGpJ5GG3kV8.jpg" alt="">
+    <div id="tab-section-1" class="tab-section text-center">
+      {% if product.productcontentimages_set.all.0 %}
+        {% for images in product.productcontentimages_set.all %}
+          <img src="{{ images.images }}" alt="{{ images.images }}">
+        {% endfor %}
+      {% else %}
+        <img class='w-100' src="{{ product.productimages_set.all.0.images }}" alt="{{ product.productimages_set.all.0.images }}">
+      {% endif %}
     </div>
     <div id="tab-section-2" class="tab-section w-100" hidden>
       <div class="d-flex justify-content-between p-4">
-        <div class="fs-2">선물후기 {{ product.review_set.all.count }}</div>
+        <div class="fs-3">{{ product.review_set.all.count }}개의 후기가 있어요</div>
+        <div class='d-flex align-items-center'>
+          <a id='recent-tab-btn'>최신순</a>  <a class='mx-3 text-decoration-none text-dark' id='like-tab-btn'>추천순</a>
           {% if request.user.is_authenticated %}
-            <a href="{% url 'articles:review_create' product.pk %}">후기작성하기</a>
+          <div class="d-flex align-items-center ms-3">
+            <a class='btn btn-outline-dark btn-sm text-decoration-none fs-5' href="{% url 'articles:review_create' product.pk %}">후기작성하기</a>
+          </div>
           {% endif %}
-        <div>
-          <a id='recent-tab-btn'>최신순</a> | <a id='like-tab-btn'>추천순</a>
         </div>
       </div>
       <div id='recent-tab'>
@@ -189,7 +243,7 @@
             </div>
             <div class="d-flex justify-content-between mt-2">
               <div class="com_width d-flex flex-column justify-content-between">
-                <span>{{ review.content }}</span>
+                <span class='card-ellipsis'>{{ review.content }}</span>
                 <span style="font-size: .9rem;" class='text-secondary'>{{ review.like_cnt }}명이 공감했습니다.</span>
               </div>
               <div class="com_img">
@@ -228,8 +282,9 @@
               </div>
             </div>
             <div class="d-flex justify-content-between mt-2">
-              <div class="com_width">
-                {{ review.content }} / {{ review.like_cnt }}명이 공감했습니다.
+              <div class="com_width d-flex flex-column justify-content-between">
+                <span class='card-ellipsis'>{{ review.content }}</span>
+                <span style="font-size: .9rem;" class='text-secondary'>{{ review.like_cnt }}명이 공감했습니다.</span>
               </div>
               <div class="com_img">
                 {% if review.image %}
