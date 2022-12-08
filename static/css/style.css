@@ -579,6 +579,10 @@ header .menu ul>li>a {
   margin: auto;
 }
 
+.youtube-list .draggable {
+  height: 315px !important;
+}
+
 .youtube-list iframe {
   position: absolute;
   left: 28%;
