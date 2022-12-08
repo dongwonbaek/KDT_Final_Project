@@ -716,3 +716,10 @@ header .menu ul>li>a {
 .page-link:hover {
   background-color: #ffe7e8;
 }
+
+.card-ellipsis {
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 75%;
+}
