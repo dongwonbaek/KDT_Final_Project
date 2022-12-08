@@ -66,7 +66,7 @@
       <span class="snowflake"></span>
     </div>
     <p>
-      {% if request.user.is_authenticated %}{{ user }}
+      {% if request.user.is_authenticated %}{{ user.nickname }}
         <span>님</span><br>{% endif %}누구를 위한 선물인가요?</p>
         {% if request.user.is_authenticated %}
     <!-- 로그인 되어 있으면 친구 목록 trigger modal -->

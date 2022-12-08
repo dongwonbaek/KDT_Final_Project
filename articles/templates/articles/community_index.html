@@ -8,6 +8,7 @@
 {% block title %}{% endblock title %}
 {% block style %}{% endblock style %}
 {% block content %}
+<br><br><br><br><br>
 <a href="{% url 'articles:community_create' %}">글 작성</a>
 {% for community in communities %}
   <h3><a href="{% url 'articles:community_detail' community.pk %}">{{ community.title }}</a></h3>

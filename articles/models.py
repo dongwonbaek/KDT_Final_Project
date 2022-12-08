@@ -96,9 +96,21 @@ class ReviewComment(models.Model):
     review = models.ForeignKey('Review', on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
+
 class Community(models.Model):
     title = models.CharField(max_length=20)
     content = RichTextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+
+class CommunityImages(models.Model):
+    community = models.ForeignKey("Community", on_delete=models.CASCADE)
+    images = ProcessedImageField(
+        upload_to="images/",
+        blank=True,
+        processors=[Thumbnail(400, 300)],
+        format="JPEG",
+        options={"quality": 80},
+    )
 

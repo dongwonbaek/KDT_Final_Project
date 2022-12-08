@@ -33,10 +33,20 @@ class ReviewCommentForm(forms.ModelForm):
         fields = ("content",)
 
 
-
-
 class CommunityForm(forms.ModelForm):
     
     class Meta:
         model = Community
         fields = ("title", "content")
+
+
+class CommunityImagesForm(forms.ModelForm):
+    class Meta:
+        model = CommunityImages
+        fields = ("images",)
+        widgets = {
+            "images": ClearableFileInput(attrs={"multiple": True}),
+        }
+        labels = {
+            "images": "이미지 업로드",
+        }
