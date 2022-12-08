@@ -52,6 +52,7 @@
   <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style3.css' %}">
   {% block style %}{% endblock style %}
 
 </head>
@@ -69,6 +70,8 @@
   {% endif %}
 
   <main>
+    <!-- 가로 스크롤바 없애기 -->
+    <style>body{overflow-x: hidden;}</style>
     {% block content %}{% endblock content %}
   </main>
 

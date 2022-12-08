@@ -1,0 +1,46 @@
+/* community_index */
+
+.commu {
+  margin-top: 10rem;
+}
+
+.pen {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  padding: 0 10px 0 12px;
+}
+
+.pen:hover {
+  color: white;
+  background-color: #297372;
+  text-decoration: none;
+}
+
+.commu_table {
+  table-layout: fixed;
+  word-break: break-all;
+  height: auto;
+  border-collapse: separate;
+  border-spacing: 0 1rem;
+}
+
+.commu_num {
+  width: 10rem;
+}
+
+.commu_title {
+  width: 28rem;
+}
+
+.commu_name {
+  width: 13rem;
+}
+
+.commu_date {
+  width: 13rem;
+}
+
+.commu_view {
+  width: 10rem;
+}
