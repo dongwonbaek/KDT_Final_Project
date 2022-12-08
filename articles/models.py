@@ -22,6 +22,8 @@ class Product(models.Model):
             ("11", "배달선물"),
         )
     title = models.CharField(max_length=100)
+    brand= models.CharField(max_length=50, null=True)
+    product_url = models.CharField(max_length=100, null=True)
     content = models.TextField(null=True)
     category = models.CharField(max_length=2, choices=category_choice)
     price = models.IntegerField(default=0, validators=[MinValueValidator(0)])
@@ -36,6 +38,17 @@ class Product(models.Model):
 
 
 class ProductImages(models.Model):
+    product = models.ForeignKey("Product", on_delete=models.CASCADE)
+    images = ProcessedImageField(
+        upload_to="images/",
+        blank=True,
+        processors=[Thumbnail(400, 300)],
+        format="JPEG",
+        options={"quality": 80},
+    )
+
+
+class ProductContentImages(models.Model):
     product = models.ForeignKey("Product", on_delete=models.CASCADE)
     images = ProcessedImageField(
         upload_to="images/",

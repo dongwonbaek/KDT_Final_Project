@@ -131,7 +131,7 @@
     <div class="index-ranking my-5">
       <h2 class="text-center">지금 인기있는 선물이에요🎈</h2>
       <ul class="ranking-more row row-cols-4 expandible">
-        {% for product in products %}
+        {% for product in gender_products %}
           <li class="col ranking-item">
             <div class="bookmark">{{ forloop.counter }}</div>
             <img src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
@@ -238,7 +238,7 @@
       
       if($lis.length > 0){
           $ul
-              .append($('<span class="showmore"><li class="expand">' + (isExpanded ? '접기' : '더보기') + '</li></span>')
+              .append($('<a class="showmore text-white text-decoration-none"><li class="expand">' + (isExpanded ? '접기' : '더보기') + '</li></a>')
               .click(function(event){
                   var isExpanded = $ul.hasClass('expanded');
                   event.preventDefault();

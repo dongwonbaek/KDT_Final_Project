@@ -718,6 +718,14 @@ header .menu ul>li>a {
   background-color: #ffe7e8;
 }
 
+
+.card-ellipsis {
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 75%;
+}
+
 /*패스워드 */
 .detail_body2 {
   margin: 211px auto 0;
