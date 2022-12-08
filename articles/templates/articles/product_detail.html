@@ -51,7 +51,7 @@
                   {% endif %}
                 </div>
               </div>
-              <span class='text-secondary'>{{ product.brand }}</span>    
+              <span style='font-size:1rem;' class='text-secondary'>{{ product.brand }}</span>    
             </div>
             <!-- 공유 / 하트(위시) 버튼 -->
             <div class="my-2 d-flex">
@@ -158,9 +158,9 @@
       </div>
     </div>
   </section>
-  <div class="row my-5">
+  <div style='margin-top:10rem;' class="row">
     <h2 class="fw-bold">이런 선물은 어때요?</h2>
-    <div class="row justify-content-center">
+    <div class="justify-content-center">
       <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner" role="listbox">
           {% for product in random_products %}
@@ -178,10 +178,10 @@
           {% endfor %}
         </div>
         <a class="carousel-control-prev bg-transparent" href="#recipeCarousel" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span style="width:1.5rem;" class="carousel-control-prev-icon bg-dark rounded" aria-hidden="true"></span>
         </a>
         <a class="carousel-control-next bg-transparent" href="#recipeCarousel" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span style="width:1.5rem;" class="carousel-control-next-icon bg-dark rounded" aria-hidden="true"></span>
         </a>
       </div>
     </div>
