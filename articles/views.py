@@ -11,8 +11,18 @@ import random
 
 
 def index(request):
+    gender_products = Product.objects.annotate(wish_men_cnt=Count('like_user',filter=Q(like_user__gender=True)), wish_women_cnt=Count('like_user', filter=Q(like_user__gender=False)), wish_cnt=Count('like_user'))
+
+    if request.user.is_authenticated:
+        if request.user:
+            gender_products = gender_products.order_by("-wish_men_cnt")[:20]
+        else:
+            gender_products = gender_products.order_by("-wish_women_cnt")[:20]
+    else:
+        gender_products = gender_products.order_by("-wish_cnt")[:20],
+
     context = {
-        "products": Product.objects.order_by("-pk")[:20],
+        "gender_products": gender_products,
         "categories": Product.category_choice,
     }
     return render(request, "articles/index.html", context)
@@ -73,6 +83,15 @@ def product_detail(request, product_pk):
             rest_list.append(1)
     else:
         rating_avg = 0
+    rating_list = []
+    total = product.review_set.all().count()
+    if total:
+      for cnt in range(5, 0, -1):
+        rating_count = product.review_set.filter(rating=cnt).count()
+        if rating_count:
+          rating_list.append(round((rating_count / total) * 100))
+        else:
+          rating_list.append(0)
     context = {
         'product': product,
         'rating_avg': rating_avg,
@@ -82,6 +101,7 @@ def product_detail(request, product_pk):
         'like_reviews': like_reviews,
         'recent_reviews': recent_reviews,
         'random_products': random_products,
+        'rating_list': rating_list,
         'review_comment_form': ReviewCommentForm(),
     }
     return render(request, "articles/product_detail.html", context)
