@@ -553,6 +553,9 @@ header .menu ul>li>a {
   left: 0px;
   top: 0px;
   text-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .showmore {
