@@ -11,11 +11,11 @@
 {% block style %}{% endblock style %}
 {% block content %}
 
-<div class="wrapper1">
+<section class="container signup-wrapper">
   <h1 class="text-center">로그인</h1>
   <form action="" method="POST" class="d-flex flex-column align-items-center">
     {% csrf_token %}
-    <label for="email">아이디(이메일)</label>
+    <label for="email">이메일</label>
     <input class='signup-style1' id='email' type="email" name='username'>
     <label for="password">비밀번호</label>
     <input class='signup-style1' id='password' type="password" name='password'>
@@ -41,7 +41,7 @@
           style="height:35px;"></button>
     </form>
   </div>
-</div>
+</section>
 {% endblock content %}
 {% block script %}
 {% endblock script %}
