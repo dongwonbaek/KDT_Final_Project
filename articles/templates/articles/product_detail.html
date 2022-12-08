@@ -305,20 +305,21 @@
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">{{ review.title }}</h1>
+          <h1 class="modal-title fs-4" id="exampleModalLabel">{{ product.title }}</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body p-4">
+          <h1>{{ review.title }}</h1>
           <div class="d-flex">
-            <div class="user_img me-3">
+            <div>
               {% if review.user.image %}
-                <img src="{{ review.user.image.url }}" alt="">
+                <img style='width: 5rem;' class='rounded' src="{{ review.user.image.url }}" alt="profile image">
               {% endif %}
             </div>
-            <div class="pt-2">
+            <div class="w-100 ms-2">
               <div><a href="{% url 'accounts:detail' review.user.pk %}">{{ review.user.nickname }}</a></div>
               <!-- 후기 평점 (modal) -->
-              <div class="d-flex mt-1">
+              <div class="d-flex justify-content-between mt-1">
                 <div class="stars">
                   {% for i in "x"|rjust:"5" %}
                     {% if review.rating >= forloop.counter %}
@@ -328,17 +329,19 @@
                     {% endif %}
                   {% endfor %}
                 </div>
-                &nbsp;| {{ review.created_at.date }}
+                <div>
+                  {{ review.created_at.date }}
+                </div>
               </div>
             </div>
           </div>
-          <div class="my-3">
+          <div>
+            <img class="w-100 rounded my-5" src="{{ review.image.url }}" alt="review.image">
+          </div>
+          <div style="min-height: 10rem;" class="my-3">
             {{ review.content }}
           </div>
-          <div style="width: 15rem; height: 15rem;">
-            <img class="w-100" src="{{ review.image.url }}" alt="review.image">
-          </div>
-          <div>
+          <span class='rounded-pill review-emoji'>
             {% if request.user.is_authenticated %}
             
               <!-- GOOD 이모지 -->
@@ -374,19 +377,32 @@
               {% endif %}
               
             {% endif %}
-          </div>
-          <form id="comment-form" data-review-id="{{ review.pk }}">
+          </span>
+          <form class='my-3' id="comment-form" data-review-id="{{ review.pk }}">
             {% csrf_token %}
-            {% bootstrap_form review_comment_form %}
-            <input type="submit">
+            <div class="input-group">
+              <input type="text" name='content' class="form-control" placeholder="댓글" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <button class="btn btn-outline-secondary" type="submit" id="button-addon2">등록</button>
+            </div>
           </form>
           <div id="comment-box{{ review.pk }}">
             {% for comment in review.reviewcomment_set.all %}
-              <div>
-                {{ comment.content }} / <a href="{% url 'accounts:detail' comment.user.pk %}">{{ comment.user.nickname }}</a>
-                {% if request.user == comment.user %}
-                  <a href="{% url 'articles:review_comment_delete' comment.pk %}" class='btn btn-sm btn-outline-danger'>삭제</a>
-                {% endif %}
+              <div class='border rounded-4 my-2 px-3 py-2'>
+                <div class="d-flex align-items-end justify-content-between">
+                  <a class='text-decoration-none fw-bold' href="{% url 'accounts:detail' comment.user.pk %}">
+                    {% if comment.user.image %}
+                      <img style="width:1.5rem;" class='rounded-circle border' src="{{ comment.user.image.url }}" alt="">
+                    {% endif %}
+                    <span class='mx-1'>{{ comment.user.nickname }}</span>
+                    <span style='font-size: .8rem;' class='text-dark'>{{ comment.created_at.date }}</span>
+                  </a>
+                  {% if request.user == comment.user %}
+                    <a href="{% url 'articles:review_comment_delete' comment.pk %}" class='btn btn-sm btn-outline-danger'>삭제</a>
+                  {% endif %}
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class='my-2'>{{ comment.content }}</p>
+                </div>
               </div>
             {% endfor %}
           </div>
@@ -442,19 +458,46 @@ for (let commentForm of commentForms) {
       let commentBox = document.querySelector(`#comment-box${event.target.dataset.reviewId}`)
       commentBox.replaceChildren()
       for (comment of response.data.comments) {
+        console.log(comment[8])
         let div1 = document.createElement('div')
+        div1.classList.add('border', 'rounded-4', 'my-2', 'px-3', 'py-2')
+        let div2 = document.createElement('div')
+        div2.classList.add('d-flex', 'align-items-end', 'justify-content-between')
         let a1 = document.createElement('a')
         a1.setAttribute('href', `/accounts/${comment[3]}/detail/`)
-        a1.innerText = comment[1]
-        div1.innerText = `${comment[0]} / `
-        div1.append(a1)
+        a1.classList.add('text-decoration-none', 'fw-bold')
+        if (comment[11] === true) {
+          let img1 = document.createElement('img')
+          img1.setAttribute('src', `${comment[8]}`)
+          img1.setAttribute('style', 'width:1.5rem;')
+          img1.setAttribute('alt', `${comment[8]}`)
+          img1.classList.add('rounded-circle', 'border')
+          a1.append(img1)
+        }
+        let span2 = document.createElement('span')
+        span2.setAttribute('style', 'margin: 0 9px;')
+        span2.innerText = comment[1]
+        a1.append(span2)
+        let span1 = document.createElement('span')
+        span1.setAttribute('style', 'font-size:.8rem;')
+        span1.classList.add('text-dark')
+        span1.innerText = `${comment[2]}년 ${comment[9]}월 ${comment[10]}일`
+        a1.append(span1)
+        div2.append(a1)
         if (comment[3] === comment[4]) {
           let a2 = document.createElement('a')
           a2.setAttribute('href', `/${comment[5]}/review_comment_delete/`)
           a2.classList.add('btn', 'btn-sm', 'btn-outline-danger')
           a2.innerText = '삭제'
-          div1.append(a2)
+          div2.append(a2)
         }
+        let div3 = document.createElement('div')
+        div3.classList.add('d-flex', 'justify-content-between')
+        let p1 = document.createElement('p')
+        p1.classList.add('my-2')
+        p1.innerText = comment[0]
+        div3.append(p1)
+        div1.append(div2, div3)
         commentBox.append(div1)
       }
       commentForm.reset()
