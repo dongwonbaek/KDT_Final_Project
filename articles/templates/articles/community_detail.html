@@ -13,6 +13,13 @@
 <p>{{ community.pk }}</p>
 <a href="{% url 'articles:community_update' community.pk %}">글 수정</a>
 <p>{{ community.content|safe }}</p>
+<img src="{{ product.productimages_set.all.0.images }}" alt="">
+<img src="{{ community.communityimages_set.all.0.images }}" alt="">
+{% for i in community.communityimages_set.all %}
+<img class="small-img" src="{{ i.images.url }}" alt="">
+{% endfor %}
+
+
 <a href="{% url 'articles:community_index' %}">커뮤니티 메인</a>
 
 
