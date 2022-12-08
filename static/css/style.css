@@ -472,13 +472,15 @@ header .menu ul>li>a {
 
 .showmore {
   width: auto;
-  height: 50px;
-  text-align: center;
+  height: 2rem;
   border-radius: 4px;
   border: none;
   font-weight: 700;
   font-size: 16px;
-  line-height: 57px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
   color: var(--main-white);
   background-color: var(--main-mintygreen);
 }
