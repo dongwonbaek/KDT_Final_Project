@@ -464,8 +464,8 @@ header .menu ul>li>a {
   border: 20px solid var(--main-salmon);
   border-bottom-color: transparent;
   position: absolute;
-  height: 10px;
-  left: 10px;
+  height: 20%;
+  left: 0px;
   top: 0px;
   text-align: start;
 }

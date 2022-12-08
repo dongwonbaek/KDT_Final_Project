@@ -113,7 +113,7 @@
 
         {% if like_reviews %}
           <div class="d-flex flex-column justify-content-between">
-            <h2 class='m-0'>베스트 후기👍 <span class='fs-5 text-secondary'>{{ like_reviews.0.like_cnt }}명의 공감을 받았습니다!</span></h2>
+            <h2 class='m-0'>베스트 후기👍 <span class='fs-5 text-secondary'>{{ like_reviews.0.like_cnt }}번의 공감을 받았습니다!</span></h2>
             <div class="com p-4 bg-light border rounded" data-bs-toggle="modal" data-bs-target="#exampleModal{{ like_reviews.0.pk }}">
               <div class="d-flex">
                 {% if like_reviews.0.user.image %}
@@ -244,7 +244,7 @@
             <div class="d-flex justify-content-between mt-2">
               <div class="com_width d-flex flex-column justify-content-between">
                 <span class='card-ellipsis'>{{ review.content }}</span>
-                <span style="font-size: .9rem;" class='text-secondary'>{{ review.like_cnt }}명이 공감했습니다.</span>
+                <span style="font-size: .9rem;" class='text-secondary'>{{ review.like_cnt }}번 공감되었습니다.</span>
               </div>
               <div class="com_img">
                 {% if review.image %}
@@ -284,7 +284,7 @@
             <div class="d-flex justify-content-between mt-2">
               <div class="com_width d-flex flex-column justify-content-between">
                 <span class='card-ellipsis'>{{ review.content }}</span>
-                <span style="font-size: .9rem;" class='text-secondary'>{{ review.like_cnt }}명이 공감했습니다.</span>
+                <span style="font-size: .9rem;" class='text-secondary'>{{ review.like_cnt }}번이 공감되었습니다.</span>
               </div>
               <div class="com_img">
                 {% if review.image %}

@@ -53,20 +53,22 @@
 <section class="container container_z">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 my-5" >
     {% for product in products %}
-    <div class="col d-flex justify-content-center mb-5">
-      <div class="card">
-        <div class="card-img">
-          <img class="w-100 h-100 rounded" src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
-        </div>
-        <div>
-          <div class="brand mt-2"></div>
-          <div> <a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a> </div>
-          <div class="fs-5 mt-2">
-            <span class="fw-bold">{{ product.price|intcomma }}</span><span>원</span>
+      <a href="{% url 'articles:product_detail' product.pk %}">
+        <div class="col d-flex justify-content-center mb-5">
+          <div class="card">
+            <div class="card-img">
+              <img class="w-100 h-100 rounded" src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
+            </div>
+            <div>
+              <div class="brand mt-2"></div>
+              <div>{{ product.title }}</div>
+              <div class="fs-5 mt-2">
+                <span class="fw-bold">{{ product.price|intcomma }}</span><span>원</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </a>
     {% endfor %}
   </div>
 </section>

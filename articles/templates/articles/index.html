@@ -132,11 +132,18 @@
       <h2 class="text-center">지금 인기있는 선물이에요🎈</h2>
       <ul class="ranking-more row row-cols-4 expandible">
         {% for product in gender_products %}
-          <li class="col ranking-item">
-            <div class="bookmark">{{ forloop.counter }}</div>
-            <img src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
-            <a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a>
-            <p><span>{{ product.price|intcomma }}</span>원</p>
+          <li class="col my-1 px-1">
+            <a class='text-decoration-none' href="{% url 'articles:product_detail' product.pk %}">
+              <div class="ranking-item">
+                <img class='rounded' src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
+                <div class="bookmark text-white d-flex justify-content-center align-items-center rounded-start">
+                  <span class='mb-3 fs-4 fw-bold'>{{ forloop.counter }}</span>
+                </div>
+              </div>
+              <div>{{ product.title }}</div>
+              <p class='text-secondary m-0' style='font-size:.8rem;'>{{ product.brand }}</p>
+              <p class='text-dark m-0'>{{ product.price|intcomma }}원</p>
+            </a>
           </li>
         {% endfor %}
       </ul>
