@@ -98,10 +98,10 @@
     </a>
     <ul class="nav nav-pills ">
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'articles:product_rank' %}">랭킹</a>
+        <a class="nav-link nav-link-fade" href="{% url 'articles:product_rank' %}">랭킹</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">카테고리</a>
+        <a class="nav-link nav-link-fade" href="">카테고리</a>
         <div id="submenu">
           <ul class="category-submenu">
             {% for category in categories %}
@@ -114,44 +114,43 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'articles:community_index' %}">커뮤니티</a>
+        <a class="nav-link nav-link-fade" href="{% url 'articles:community_index' %}">커뮤니티</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'articles:review_index' %}">리뷰</a>
+        <a class="nav-link nav-link-fade" href="{% url 'articles:review_index' %}">리뷰</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#scrollspyHeading2">Q&A</a>
+        <a class="nav-link nav-link-fade" href="#scrollspyHeading2">Q&A</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-black" href="{% url 'articles:product_create' %}">상품등록</a>
+          <a class="nav-link nav-link-fade" href="{% url 'articles:search' %}"><i class="bi bi-search"></i></a>
       </li>
     </ul>
     <ul class="d-flex m-0 p-2">
-      <li>
-        <a href="{% url 'articles:search' %}" class="me-3"><i class="bi bi-search"></i></a>
-      </li>
       {% if request.user.is_authenticated %}
-      <li>
-        <button class="login-button2 mt-0">
-          <a class='nav-link mx-3' href="{% url 'accounts:detail' request.user.pk %}">마이페이지</a>
+      <li class="nav-item mx-4"><i class="bi bi-bell"></i></li>
+      <li class="nav-pf">
+        <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="{{ user.image.url }}" class="nav-pf-img">
         </button>
-      </li>
-      <span class="mx-3">/</span>
-      <li>
-        <button class="nav-link delete-button2 mt-0">
-          <a href="{% url 'accounts:logout' %}">로그아웃</a>
-        </button>
-      </li>
+        <ul class="dropdown-menu">
+          <li><img src="{{ user.image.url }}"><span class="nav-pf-nick">{{ user.nickname }}</span> 님</li>
+          <li><a class="dropdown-item" href="{% url 'accounts:detail' user.pk %}"><i class="bi bi-person-lines-fill me-3"></i>마이페이지</a></li>
+          <li><a class="dropdown-item" href="{% url 'accounts:wishlist' user.pk %}"><i class="bi bi-bag-heart me-3"></i>위시리스트</a></li>
+          <li><a class="dropdown-item" href="{% url 'accounts:update' %}"><i class="bi bi-pencil-fill me-3"></i>프로필 수정</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="{% url 'accounts:logout' %}"><i class="bi bi-box-arrow-right me-3"></i>로그아웃</a></li>
+        </ul>
+      </li>      
       {% else %}
-      <li>
+      <li class="nav-item">
         <!--로그인 모달 트리거-->
-        <button type="button" class="login-button2" data-bs-toggle="modal" data-bs-whatever="로그인"
+        <button type="button" class="pos-btn nav-login-btn" data-bs-toggle="modal" data-bs-whatever="로그인"
           data-bs-target="#로그인">로그인</button>
       </li>
-      <span class="mx-3">/</span>
       <li>
         <!--회원가입 모달 트리거-->
-        <button type="button" class="login-button2" data-bs-toggle="modal" data-bs-whatever="회원가입"
+        <button type="button" class="pos-btn nav-login-btn" data-bs-toggle="modal" data-bs-whatever="회원가입"
           data-bs-target="#회원가입">회원가입</button>
         {% endif %}
       </li>
