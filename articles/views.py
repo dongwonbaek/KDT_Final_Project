@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import *
-from .forms import ProductForm, ProductImagesForm, ReviewForm, ReviewCommentForm, CommunityForm
+from .forms import ProductForm, ProductImagesForm, ReviewForm, ReviewCommentForm, CommunityForm, CommunityImagesForm
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.http import JsonResponse
@@ -393,14 +393,23 @@ def community_index(request):
 
 def community_create(request):
     if request.method == 'POST':
-        community_form = CommunityForm(request.POST)
-        if community_form.is_valid():
-            community_form.save()
+        community_form = CommunityForm(request.POST, request.FILES)
+        community_images_form = CommunityImagesForm(request.POST, request.FILES)
+        images = request.FILES.getlist("images")
+        if community_form.is_valid() and community_images_form.is_valid():
+            community = community_form.save(commit=False)
+            community.save()
+            if images:
+                for image in images:
+                    image_instance = CommunityImages(community=community, images=image)
+                    image_instance.save()
             return redirect('articles:community_index')
     else:
-            community_form = CommunityForm()
+        community_form = CommunityForm()
+        community_images_form = CommunityImagesForm()
     context = {
-        'community_form': community_form
+        'community_form': community_form,
+        'community_images_form': community_images_form,
     }
     return render(request, "articles/community_form.html", context)
 
@@ -408,16 +417,25 @@ def community_create(request):
 def community_update(request, community_pk):
     community = Community.objects.get(pk=community_pk)
     if request.method == 'POST':
-        community_form = CommunityForm(request.POST, instance=community)
-        if community_form.is_valid():
-            community_form.save()
-            return redirect('articles:community_detail', community.pk)
+        community_form = CommunityForm(request.POST, request.FILES, instance=community)
+        community_images_form = CommunityImagesForm(request.POST, request.FILES)
+        images = request.FILES.getlist("images")
+        if community_form.is_valid() and community_images_form.is_valid():
+            community = community_form.save(commit=False)
+            if images:
+                for image in images:
+                    image_instance = CommunityImages(community=community, images=image)
+                    image_instance.save()
+            community.save()
+            return redirect('articles:community_detail', community_pk)
     else:
         community_form = CommunityForm(instance=community)
+        community_images_form = CommunityImagesForm()
     context = {
-        'community_form': community_form
+        'community_form': community_form,
+        'community_images_form': community_images_form,
     }
-    return render(request, 'articles/community_form.html', context)
+    return render(request, "articles/community_form.html", context)
 
 
 def community_detail(request, community_pk):
