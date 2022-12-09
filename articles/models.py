@@ -113,6 +113,13 @@ class CommunityImages(models.Model):
         format="JPEG",
         options={"quality": 80},
     )
+    
+class CommunityComment(models.Model):
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    community = models.ForeignKey('Community', on_delete=models.CASCADE)
+
+
 
 # class CommunityComment(models.Model):
 #     content = models.TextField()
