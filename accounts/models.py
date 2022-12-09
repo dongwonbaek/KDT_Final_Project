@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from imagekit.models import ProcessedImageField
 from imagekit.processors import Thumbnail
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 
@@ -24,6 +25,7 @@ class User(AbstractUser):
     blocking = models.ManyToManyField(
         "self", symmetrical=False, related_name="blockers"
     )
+    age = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(15)])
 
     # user image 없을 시 오류 방지
     @property
