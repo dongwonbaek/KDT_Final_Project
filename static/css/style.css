@@ -327,7 +327,7 @@ header ul li:hover #submenu,
 .delete-button2 {
   top: 0;
   width: 130px;
-  height: 25px;
+  height: 30px;
   margin-top: 1rem;
   border-style: none;
   border-radius: 10px;
@@ -707,6 +707,18 @@ header .menu ul>li>a {
 
 
 /*------어카운츠 디테일------*/
+.follow-title {
+  background-color: var(--main-mintygreen);
+  height: fit-content;
+  color: white;
+}
+
+.follower-title {
+  background-color: var(--main-bluegreen);
+  height: fit-content;
+  color: white;
+}
+
 .detail_body {
   margin: 211px auto 0;
   width: 500px;
@@ -740,8 +752,8 @@ header .menu ul>li>a {
   background-color: #82a5d9;
 }
 
-.profile-username {
-  margin-top: 50px;
+.profile-text {
+  color: var(--main-mintygreen)
 }
 
 .profile-margin {
@@ -819,7 +831,6 @@ header .menu ul>li>a {
 
 .detail-rw {
   width: 500px;
-  background-color: #fff6f6;
 }
 
 .detail-sub {
