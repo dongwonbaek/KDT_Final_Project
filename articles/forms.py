@@ -58,7 +58,7 @@ class CommunityImagesForm(forms.ModelForm):
             "images": ClearableFileInput(attrs={"multiple": True}),
         }
         labels = {
-            "images": "",
+            "images": "이미지",
         }
 
 
