@@ -2,10 +2,11 @@
 
 .commu {
   margin-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 .pen {
-  border: 1px solid #ccc;
+  border: 1px solid #297372;
   border-radius: 10px;
   font-size: 1.5rem;
   padding: 0 10px 0 12px;
@@ -15,6 +16,11 @@
   color: white;
   background-color: #297372;
   text-decoration: none;
+}
+
+.commu_hr {
+  background-color: #FB5957;
+  height: 0.1rem;
 }
 
 .commu_table {
