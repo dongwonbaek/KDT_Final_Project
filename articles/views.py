@@ -11,16 +11,14 @@ import random
 
 
 def index(request):
-    gender_products = Product.objects.annotate(wish_men_cnt=Count('like_user',filter=Q(like_user__gender=True)), wish_women_cnt=Count('like_user', filter=Q(like_user__gender=False)), wish_cnt=Count('like_user'))
-
+    gender_products = Product.objects.annotate(wish_men_cnt=Count('like_user', filter=Q(like_user__gender=True) & Q(like_user__age=2)), wish_women_cnt=Count('like_user', filter=Q(like_user__gender=False)), wish_cnt=Count('like_user'))
     if request.user.is_authenticated:
-        if request.user:
-            gender_products = gender_products.order_by("-wish_men_cnt")[:20]
+        if request.user.gender:
+            gender_products = Product.objects.annotate(wish_men_cnt=Count('like_user', filter=Q(like_user__gender=True) & Q(like_user__age=request.user.age))).order_by("-wish_men_cnt")[:20]
         else:
-            gender_products = gender_products.order_by("-wish_women_cnt")[:20]
+            gender_products = Product.objects.annotate(wish_women_cnt=Count('like_user', filter=Q(like_user__gender=False) & Q(like_user__age=request.user.age))).order_by("-wish_women_cnt")[:20]
     else:
-        gender_products = gender_products.order_by("-wish_cnt")[:20],
-
+        gender_products = gender_products.order_by("-wish_cnt")[:20]
     context = {
         "gender_products": gender_products,
         "categories": Product.category_choice,
@@ -249,73 +247,51 @@ def review_comment_delete(request, comment_pk):
 
 
 def product_rank(request):
-    if request.method == "POST":
-        products = Product.objects.all()
-        products_rating = Product.objects.all()
-        products_like = Product.objects.all()
-        products_review = Product.objects.all()
-        gender = request.POST.get("gender")
-        sort_type = request.POST.get("sort_type")
-        sort_price = request.POST.get("sort_price")
-        if sort_price != "none":
-            products = products.filter(price__lte=int(sort_price))
-            products_rating = products.filter(price__lte=int(sort_price))
-            products_like = products.filter(price__lte=int(sort_price))
-            products_review = products.filter(price__lte=int(sort_price))
-        if gender == "True":
-            # products = products.annotate(review_men=)
-            products_rating = products.annotate(
-                rating_avg=Avg("review__rating", filter=Q(review__user__gender=True))
-            ).order_by("-rating_avg")
-            products_like = products.annotate(
-                like_cnt=Count("like_user", filter=Q(like_user__gender=True))
-            ).order_by("-like_cnt")
-            products_review = products.annotate(
-                review_cnt=Count("review", filter=Q(review__user__gender=True))
-            ).order_by("-review_cnt")
-        elif gender == "False":
-            products_rating = products.annotate(
-                rating_avg=Avg("review__rating", filter=Q(review__user__gender=False))
-            ).order_by("-rating_avg")
-            products_like = products.annotate(
-                like_cnt=Count("like_user", filter=Q(like_user__gender=False))
-            ).order_by("-like_cnt")
-            products_review = products.annotate(
-                review_cnt=Count("review", filter=Q(review__user__gender=False))
-            ).order_by("-review_cnt")
-        if sort_type == "rating":
-            products = products_rating.annotate(
-                rating_avg=Avg("review__rating")
-            ).order_by("-rating_avg")
-        elif sort_type == "like":
-            products = products_like.annotate(like_cnt=Count("like_user")).order_by(
-                "-like_cnt"
-            )
-        elif sort_type == "review_cnt":
-            products = products_review.annotate(review_cnt=Count("review")).order_by(
-                "-review_cnt"
-            )
-        product_list = []
-        for a in products[:20]:
-            image = str(a.productimages_set.all()[0].images)
-            product_list.append([
-                image,
-                a.title,
-                a.price,
-                a.pk
-                ])
-        context = {
-            'products':product_list,
-        }
-        return JsonResponse(context)
-    else:
-        context = {
-            "products": Product.objects.annotate(like_cnt=Count("like_user")).order_by(
-                "-like_cnt"
-            )[:20],
-            "reviews": Review.objects.filter(user__gender=True),
-        }
-        return render(request, "articles/product_rank.html", context)
+    products = Product.objects.filter(Q(price__gte=0)&Q(price__lte=20000)).annotate(wish_cnt=Count("like_user", filter=Q(like_user__age__in=[0, 1]))).order_by('-wish_cnt')[:20]
+    context = {
+        "products": products,
+    }
+    return render(request, "articles/product_rank.html", context)
+
+def product_rank_redirect(request):
+    query_dict = {
+        '1': [0, 1],
+        '2': [2, 3],
+        '3': [4, 5, 6],
+        '4': list(range(7, 16)),
+        'max20000': [0, 20000],
+        'max50000': [20000, 50000],
+        'max10000000': [50000, 10000000],
+        'all': [True, False],
+        'True': [True],
+        'False': [False],
+    }
+    age = request.GET.get("age")
+    gender = request.GET.get("gender")
+    typeof = request.GET.get("sort")
+    price = request.GET.get("price")
+    products = Product.objects.filter(Q(price__gte=query_dict[price][0])&Q(price__lte=query_dict[price][1]))
+    if typeof == 'wish':
+        products = products.annotate(wish_cnt=Count("like_user", filter=Q(like_user__gender__in=query_dict[gender]) & Q(like_user__age__in=query_dict[age]))).order_by('-wish_cnt')[:20]
+    elif typeof == 'rating':
+        products = products.annotate(rating_avg=Avg("review__rating", filter=Q(review__user__gender__in=query_dict[gender]) & Q(review__user__age__in=query_dict[age]))).order_by('-rating_avg')[:20]
+    elif typeof == 'review':
+        products = products.annotate(review_cnt=Count("review", filter=Q(review__user__gender__in=query_dict[gender]) & Q(review__user__age__in=query_dict[age]))).order_by('-review_cnt')[:20]
+    product_list = []
+    for a in range(len(products)):
+        image = str(products[a].productimages_set.all()[0].images)
+        forloop = a + 1
+        product_list.append([
+            image,
+            products[a].title,
+            products[a].price,
+            products[a].pk,
+            forloop,
+            ])
+    context = {
+        'products':product_list,
+    }
+    return JsonResponse(context)
 
 
 def search(request):
