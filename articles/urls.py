@@ -18,12 +18,12 @@ urlpatterns = [
     path("<int:review_pk>/review_comment_create/", views.review_comment_create, name='review_comment_create'),
     path("<int:comment_pk>/review_comment_delete/", views.review_comment_delete, name='review_comment_delete'),
     path('product_rank/', views.product_rank, name='product_rank'),
+    path('product_rank_redirect/', views.product_rank_redirect, name='product_rank_redirect'),
     path('search/', views.search, name='search'),
     path("<int:review_pk>/review_good/", views.review_good, name='review_good'),
     path("<int:review_pk>/review_cool/", views.review_cool, name='review_cool'),
     path("<int:review_pk>/review_fun/", views.review_fun, name='review_fun'),
     path("<int:review_pk>/review_sad/", views.review_sad, name='review_sad'),
-
     path("community_index/", views.community_index, name='community_index'),
     path("community_create/", views.community_create, name='community_create'),
     path("<int:community_pk>/community_update/", views.community_update, name='community_update'),
