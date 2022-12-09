@@ -23,7 +23,11 @@ def signup(request):
             datetime_string = request.POST.get("birth_date")
             datetime_format = "%Y-%m-%d"
             birth_date = datetime.strptime(datetime_string, datetime_format)
-            user.age = (datetime.today().year - birth_date.year) // 10
+            age_range = (datetime.today().year - birth_date.year) // 10
+            if age_range < 0 or age_range > 15:
+                messages.warning(request, '유효한 생년월일이 아닙니다.')
+                return redirect('articles:index')
+            user.age = age_range
             user.save()
             auth_login(
                 request, user, backend="django.contrib.auth.backends.ModelBackend"
