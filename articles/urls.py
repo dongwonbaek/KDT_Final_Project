@@ -29,4 +29,5 @@ urlpatterns = [
     path("<int:community_pk>/community_update/", views.community_update, name='community_update'),
     path("<int:community_pk>/community_delete/", views.community_delete, name='community_delete'),
     path("<int:community_pk>/community_detail/", views.community_detail, name='community_detail'),
+    # path("<int:community_pk>/community_comment_create/", views.community_comment_create, name='community_comment_create'),
 ]

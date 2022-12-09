@@ -26,9 +26,26 @@
 body {
   position: relative;
   font-family: 'YiSunShinDotumM';
-  min-height: 100%;
-  padding-top: 211px;
+  padding-top: 180px;
   font-size: 130%;
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 80px;
+  margin-top: 300px;
+  text-align: center;
+  height: 150px;
+  width: 100%;
+  background-color: var(--main-mintygreen);
+  color: var(--main-white);
+}
+
+main {
+  height: calc(100% - 80px - 150px);
 }
 
 .pos-btn {
@@ -46,9 +63,9 @@ body {
 }
 
 .neg-btn {
-  width: calc(100% + 20px);
-  height: auto;
-  padding: 0 5px;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
   text-align: center;
   border-radius: 4px;
   border: none;
@@ -60,18 +77,6 @@ body {
 }
 
 /* ---------- base.html ---------- */
-footer {
-  position: absolute;
-  right: 0;
-  left: 0;
-  padding-top: 80px;
-  margin-top: 300px;
-  text-align: center;
-  height: 150px;
-  background-color: var(--main-mintygreen);
-  color: var(--main-white);
-}
-
 #wire {
   text-align: center;
   white-space: nowrap;
@@ -143,31 +148,21 @@ footer {
   }
 }
 
-.ToTop {
-  width: 35px;
-  height: 35px;
+#pagescroll {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   bottom: 30px;
   position: fixed;
   right: 20px;
   z-index: 2147483647;
-  color: var(--main-bluegreen);
-  background-color: var(--main-white);
-  border: none;
-  border-radius: 50%;
-  box-shadow: 0px 5px 5px var(--main-bluegreen);
-  transition: all 0.3s ease 0s;
   cursor: pointer;
-  outline: none
 }
 
-.ToTop:hover {
-  background-color: var(--main-bluegreen);
-  box-shadow: 0px 15px 20px var(--main-mintygreen);
-  color: var(--main-white);
-  transform: translateY(-3px);
+#pagescroll p {
+  margin: 0;
+  padding: 0;
 }
 
 /* ---------- nav ---------- */
@@ -181,7 +176,11 @@ footer {
   width: 100%;
   height: 211px;
   padding: 0;
-  /* transition: top 0.2s ease-in-out; */
+}
+
+.nav-upper img {
+  height: 211px;
+  width: auto;
 }
 
 .nav-lower {
@@ -194,6 +193,13 @@ footer {
   border: solid var(--main-salmon);
   border-width: 1px 0;
   height: 80px;
+}
+
+.nav-end {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .affix {
@@ -259,10 +265,11 @@ footer {
   background-color: var(--main-white);
   border: solid var(--main-salmon);
   border-width: 1px 0;
+  /* overflow-x: scroll; */
 }
 
-#submenu::-webkit-scrollbar {
-  width: 10px;
+/* #submenu::-webkit-scrollbar {
+  width: 5px;
 }
 #submenu::-webkit-scrollbar-thumb {
   background-color: var(--main-salmon);
@@ -272,14 +279,13 @@ footer {
   background-color: var(--main-lightpink);
   border-radius: 10px;
   box-shadow: inset 0px 0px 5px white;
-}
+} */
 
 .category-submenu {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  overflow-x: scroll;
 }
 
 .category-submenu li a {
@@ -296,7 +302,8 @@ footer {
   width: 50px;
 }
 
-header ul li:hover #submenu, #submenu:hover {
+header ul li:hover #submenu,
+#submenu:hover {
   display: inline;
 }
 
@@ -315,7 +322,7 @@ header ul li:hover #submenu, #submenu:hover {
 .delete-button2 {
   top: 0;
   width: 130px;
-  height: 25px;
+  height: 30px;
   margin-top: 1rem;
   border-style: none;
   border-radius: 10px;
@@ -347,6 +354,10 @@ header ul li:hover #submenu, #submenu:hover {
   font-weight: 700;
   text-align: end;
   margin: 0 20px;
+}
+
+.nav-pf li {
+  color: #404040;
 }
 
 .nav-pf ul li img {
@@ -396,15 +407,27 @@ header .menu ul>li>a {
   right: -8px;
 }
 
+.select-friend-modal .modal-content {
+  border: none;
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+}
+
+.select-friend-modal .modal-header {
+  height: 100px;
+  padding-bottom: 50px;
+  border: none;
+  background-color: var(--main-lightpink);
+}
+
 .select-friend-modal .select-friend-img {
   height: 50px;
   width: 50px;
   border-radius: 3px;
 }
 
-.select-friend-modal .modal-header p {
+.select-friend-modal .modal-header #result {
   position: absolute;
-  top: 25px;
+  top: 50px;
   font-size: small;
   color: #444;
 }
@@ -417,10 +440,16 @@ header .menu ul>li>a {
 .select-friend-modal .form-check {
   display: flex;
   align-items: center;
+  margin: 0;
+}
+
+.select-friend-modal .to-friend {
+  min-height: 200px;
+  overflow-y: scroll;
 }
 
 .select-friend-modal .form-check>* {
-  margin-left: 30px;
+  padding: 0;
 }
 
 .select-friend-modal .modal-body>* {
@@ -429,8 +458,15 @@ header .menu ul>li>a {
 
 .modal-btn-group {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: nowrap;
+}
+
+.modal-btn-group a,
+.modal-btn-group button {
+  width: 49%;
+  margin-bottom: 5px;
+
 }
 
 /* ----------------------눈----------------------------- */
@@ -584,13 +620,13 @@ header .menu ul>li>a {
   margin: auto;
 }
 
-.youtube-list .draggable {
+.youtube-list .slider-single .draggable {
   height: 315px !important;
 }
 
 .youtube-list iframe {
   position: absolute;
-  left: 28%;
+  left: 27%;
 }
 
 .FloatingAd {
@@ -653,33 +689,31 @@ header .menu ul>li>a {
   background-color: #c4c4c4;
 }
 
-.wrapper1 {
+.signup-wrapper {
   text-align: center;
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 110px auto;
+  padding: 30px 10px;
   width: 420px;
-  height: 300px;
-  border: solid 3px;
-  border-color: #FFB6C1;
-  border-radius: 10%;
+  height: fit-content;
+  border: solid 3px var(--main-salmon);
+  border-radius: 5px;
   background: white 20%;
 }
 
-.wrapper2 {
-  text-align: center;
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 420px;
-  height: 550px;
-  border: solid 3px;
-  border-color: #FFB6C1;
-  border-radius: 10%;
-  background: white 20%;
-}
 
 /*------어카운츠 디테일------*/
+.follow-title {
+  background-color: var(--main-mintygreen);
+  height: fit-content;
+  color: white;
+}
+
+.follower-title {
+  background-color: var(--main-bluegreen);
+  height: fit-content;
+  color: white;
+}
+
 .detail_body {
   margin: 211px auto 0;
   width: 500px;
@@ -697,7 +731,7 @@ header .menu ul>li>a {
 
 .delete-button {
   width: 200px;
-  height: 35px;
+  height: 50px;
   margin-top: 1rem;
   border-style: none;
   border-radius: 90px;
@@ -706,15 +740,15 @@ header .menu ul>li>a {
 
 .follow-button {
   width: 200px;
-  height: 35px;
+  height: 50px;
   margin-top: 1rem;
   border-style: none;
   border-radius: 90px;
   background-color: #82a5d9;
 }
 
-.profile-username {
-  margin-top: 50px;
+.profile-text {
+  color: var(--main-mintygreen)
 }
 
 .profile-margin {
@@ -729,7 +763,7 @@ header .menu ul>li>a {
 
 .block-button {
   width: 200px;
-  height: 35px;
+  height: 50px;
   margin-top: 1rem;
   border-style: none;
   border-radius: 90px;
@@ -776,12 +810,12 @@ header .menu ul>li>a {
   width: 500px;
   height: 100px;
   border: solid 3px;
-  border-color: #FFB6C1;
+  border-color: var(--main-salmon);
   background: white 20%;
 }
 
 .wish-review>h3 {
-  color: #FFB6C1;
+  color: var(--main-salmon);
 }
 
 .review-image {
@@ -792,7 +826,6 @@ header .menu ul>li>a {
 
 .detail-rw {
   width: 500px;
-  background-color: #fff6f6;
 }
 
 .detail-sub {
@@ -800,16 +833,16 @@ header .menu ul>li>a {
 }
 
 .detail-sub>h4 {
-  color: #FFB6C1;
+  color: var(--main-salmon);
 }
 
 .page-item>.page-link {
-  color: #FFB6C1;
+  color: var(--main-bluegreen);
   background-color: white;
 }
 
 .page-link:hover {
-  background-color: #ffe7e8;
+  background-color: var(--main-mintygreen);
 }
 
 .card-ellipsis {
@@ -858,13 +891,13 @@ header .menu ul>li>a {
   background-color: #c4c4c4;
 }
 
-.review-emoji{
+.review-emoji {
   border: 1px solid;
   border-color: rgb(218, 218, 218);
   padding: 6px;
 }
 
-.review-emoji:hover{
+.review-emoji:hover {
   border: 1px solid;
   background-color: rgb(245, 245, 245);
   border-color: rgb(175, 175, 175);

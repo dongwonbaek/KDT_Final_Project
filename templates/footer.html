@@ -1,9 +1,6 @@
-<a href="#" class="ToTop">
-  <i class="bi bi-caret-up-fill"></i>
-</a>
-{% comment %} <div id="pagescroll">
+<div id="pagescroll">
   <p>
-    <a id="scrollup" href="#">
+    <a id="scrollup" href="#" >
       <img src="//www.luvreparis.co.kr/design/luvre/img/up.png">
     </a>
   </p>
@@ -12,8 +9,8 @@
       <img src="//www.luvreparis.co.kr/design/luvre/img/btn_down.png">
     </a>
   </p>
-</div> {% endcomment %}
-<footer><!--버튼 그림자 수정 하기-->
+</div>
+<footer id="findparent">
   <ul id="wire">
     <li></li>
     <li></li>
@@ -55,16 +52,20 @@
   🎁 © {% now 'Y' %} 오다주웠다. 희동 & 건희 & 동원 & 병우 & 다솔 & 성민 🎁
 </footer>
 <script>
-  jQuery(document).ready(function($){
+  var tagName = $(findparent).parent().prop('tagName');
+  console.log(tagName);
+</script>
+<script>
+  // 맨아래로
+  var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
+  $(function()
+  {
+    $('#scrolldown').show();
+    $('#scrolldown').click(function()
+    {
+      $('html, body').animate({ scrollTop: $(document).height() } , 400);
+      return false;
 
-    $(document).snowFlurry({
-          maxSize: 5,
-          numberOfFlakes: 1005,
-          minSpeed: 10,
-          maxSpeed: 15,
-          color: '#fff',
-          timeout: 0
-      });
-    
-  });
+    });
+  }); 
 </script>

@@ -253,3 +253,144 @@ input::-webkit-search-results-button,
 input::-webkit-search-results-decoration {
   display:none;
 }
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+.fade2 {
+  animation-name: fade;
+  animation-duration: 10000s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/* review_create */
+
+.review_c {
+  margin-top: 13rem;
+  padding-bottom: 20rem;
+}
+
+.review_form {
+  background-color: white;
+  border-radius: 5px;
+  width: 40rem;
+  padding: 3rem;
+}
+
+.review_write {
+  text-align: center;
+  font-weight: bold;
+  color: #FB5957;
+  width: 10rem;
+}
+
+.review_btn {
+  color: white;
+  background-color: #FB5957;
+  border: 0;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.review_btn:hover, .commu_btn:hover {
+  background-image: linear-gradient(
+    to right,
+    #e7484f,
+    #e7484f 16.65%,
+    #f68b1d 16.65%,
+    #f68b1d 33.3%,
+    #fced00 33.3%,
+    #fced00 49.95%,
+    #009e4f 49.95%,
+    #009e4f 66.6%,
+    #00aac3 66.6%,
+    #00aac3 83.25%,
+    #732982 83.25%,
+    #732982 100%,
+    #e7484f 100%
+  );
+  animation: slidebg2 2s linear infinite;
+}
+
+@keyframes slidebg2 {
+  to {
+    background-position: 20vw;
+  }
+}
