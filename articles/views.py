@@ -101,7 +101,7 @@ def product_update(request, product_pk):
                     image_instance = ProductImages(product=product, image=image)
                     image_instance.save()
             product.save()
-            messages.success(request, "글 생성 완료")
+            messages.success(request, "글 수정 완료")
             return redirect("articles:product_detail", product_pk)
     else:
         product_form = ProductForm(instance=product)
@@ -403,6 +403,7 @@ def community_create(request):
                 for image in images:
                     image_instance = CommunityImages(community=community, images=image)
                     image_instance.save()
+            messages.success(request, "글 생성 완료")
             return redirect('articles:community_index')
     else:
         community_form = CommunityForm()
@@ -427,6 +428,7 @@ def community_update(request, community_pk):
                     image_instance = CommunityImages(community=community, images=image)
                     image_instance.save()
             community.save()
+            messages.success(request, "글 수정 완료")
             return redirect('articles:community_detail', community_pk)
     else:
         community_form = CommunityForm(instance=community)
