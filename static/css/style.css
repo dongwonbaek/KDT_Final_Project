@@ -302,7 +302,8 @@ main {
   width: 50px;
 }
 
-header ul li:hover #submenu, #submenu:hover {
+header ul li:hover #submenu,
+#submenu:hover {
   display: inline;
 }
 
@@ -408,7 +409,7 @@ header .menu ul>li>a {
 
 .select-friend-modal .modal-content {
   border: none;
-  box-shadow: 0 16px 28px 0 rgba(0,0,0,0.22),0 25px 55px 0 rgba(0,0,0,0.21);
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
 }
 
 .select-friend-modal .modal-header {
@@ -461,7 +462,8 @@ header .menu ul>li>a {
   flex-wrap: nowrap;
 }
 
-.modal-btn-group a, .modal-btn-group button {
+.modal-btn-group a,
+.modal-btn-group button {
   width: 49%;
   margin-bottom: 5px;
 
@@ -717,7 +719,7 @@ header .menu ul>li>a {
 
 .delete-button {
   width: 200px;
-  height: 35px;
+  height: 50px;
   margin-top: 1rem;
   border-style: none;
   border-radius: 90px;
@@ -726,7 +728,7 @@ header .menu ul>li>a {
 
 .follow-button {
   width: 200px;
-  height: 35px;
+  height: 50px;
   margin-top: 1rem;
   border-style: none;
   border-radius: 90px;
@@ -749,7 +751,7 @@ header .menu ul>li>a {
 
 .block-button {
   width: 200px;
-  height: 35px;
+  height: 50px;
   margin-top: 1rem;
   border-style: none;
   border-radius: 90px;
@@ -796,12 +798,12 @@ header .menu ul>li>a {
   width: 500px;
   height: 100px;
   border: solid 3px;
-  border-color: #FFB6C1;
+  border-color: var(--main-salmon);
   background: white 20%;
 }
 
 .wish-review>h3 {
-  color: #FFB6C1;
+  color: var(--main-salmon);
 }
 
 .review-image {
@@ -820,16 +822,16 @@ header .menu ul>li>a {
 }
 
 .detail-sub>h4 {
-  color: #FFB6C1;
+  color: var(--main-salmon);
 }
 
 .page-item>.page-link {
-  color: #FFB6C1;
+  color: var(--main-bluegreen);
   background-color: white;
 }
 
 .page-link:hover {
-  background-color: #ffe7e8;
+  background-color: var(--main-mintygreen);
 }
 
 .card-ellipsis {
@@ -878,13 +880,13 @@ header .menu ul>li>a {
   background-color: #c4c4c4;
 }
 
-.review-emoji{
+.review-emoji {
   border: 1px solid;
   border-color: rgb(218, 218, 218);
   padding: 6px;
 }
 
-.review-emoji:hover{
+.review-emoji:hover {
   border: 1px solid;
   background-color: rgb(245, 245, 245);
   border-color: rgb(175, 175, 175);

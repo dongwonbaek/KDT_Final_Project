@@ -109,8 +109,13 @@ class CommunityImages(models.Model):
     images = ProcessedImageField(
         upload_to="images/",
         blank=True,
-        processors=[Thumbnail(400, 300)],
+        processors=[ResizeToFill(400, 300)],
         format="JPEG",
         options={"quality": 80},
     )
 
+# class CommunityComment(models.Model):
+#     content = models.TextField()
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     community = models.ForeignKey('Community', on_delete=models.CASCADE)
+    # user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

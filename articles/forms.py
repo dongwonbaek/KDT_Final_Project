@@ -38,6 +38,10 @@ class CommunityForm(forms.ModelForm):
     class Meta:
         model = Community
         fields = ("title", "content")
+        labels = {
+            "title": "",
+            "content": "",
+        }
 
 
 class CommunityImagesForm(forms.ModelForm):
@@ -48,5 +52,11 @@ class CommunityImagesForm(forms.ModelForm):
             "images": ClearableFileInput(attrs={"multiple": True}),
         }
         labels = {
-            "images": "이미지 업로드",
+            "images": "",
         }
+
+
+# class CommunityCommentForm(forms.ModelForm):
+#     class Meta:
+#         model = CommunityComment
+#         fields = ("content",)
