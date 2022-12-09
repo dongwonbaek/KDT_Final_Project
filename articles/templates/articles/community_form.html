@@ -11,13 +11,6 @@
 <br><br><br><br>
 <div class='container'>
   <form action="" method="POST" enctype="multipart/form-data">
-    <div class="container text-center" style="width: 800px;">
-      {% if request.resolver_match.url_name == 'community_update' %}
-        <h1 class="btn btn-block fs-3">&nbsp&nbsp 커뮤니티 글 수정</h1>
-      {% else %}
-        <h1 class="btn btn-block fs-3">&nbsp&nbsp 커뮤니티 글 생성</h1>
-      {% endif %}
-    </div>
 
     {% csrf_token %}
     <div class="container my-1" style="width: 860px;">

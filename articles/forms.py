@@ -54,3 +54,9 @@ class CommunityImagesForm(forms.ModelForm):
         labels = {
             "images": "",
         }
+
+
+# class CommunityCommentForm(forms.ModelForm):
+#     class Meta:
+#         model = CommunityComment
+#         fields = ("content",)
