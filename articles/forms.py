@@ -25,6 +25,12 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ("title", "content", "image", "rating")
+        labels = {
+            "title": '제목',
+            "content": '내용',
+            "image": '이미지',
+            "rating": '평점',
+        }
 
 
 class ReviewCommentForm(forms.ModelForm):
