@@ -9,19 +9,91 @@
 {% block style %}{% endblock style %}
 {% block content %}
 
-<a href="{% url 'articles:index' %}">메인화면</a>
-<p>{{ community.pk }}</p>
-<a href="{% url 'articles:community_update' community.pk %}">글 수정</a>
-<p>{{ community.content|safe }}</p>
-<img src="{{ product.productimages_set.all.0.images }}" alt="">
-<img src="{{ community.communityimages_set.all.0.images }}" alt="">
-{% for i in community.communityimages_set.all %}
-<img class="small-img" src="{{ i.images.url }}" alt="">
-{% endfor %}
+<br><br><br><br><br>
 
+
+{% comment %} <main class="container w-50">
+  <div class="d-flex justify-content-between my-1 mt-5">
+      <div class="d-flex my-3" onclick='location.href=""' style='cursor: pointer;'>
+          <div class='me-2'>
+          </div>
+          <div class='d-flex flex-column'>
+              <p class='p-0 mb-0 text-start fw-bold'></p>
+              <p class='p-0 mb-0 fw-light'></p>
+          </div>
+      </div>
+      <div class="d-flex align-content-center">
+
+      </div>
+  </div> {% endcomment %}
+
+<h1 class="text-center">작성한 글</h1>
+<div class="container text-center">
+  <p>{{ community.content|safe }}</p>
+  {% comment %} <div>
+    {% for i in community.communityimages_set.all %}
+      <img src="{{ i.images.url }}" alt="작성한 글">
+    {% endfor %}
+  </div> {% endcomment %}
+</div>
+  
+
+<div class="slideshow-container">
+  {% for i in community.communityimages_set.all %}
+  <div class="mySlides">
+    <div class="numbertext">{{ forloop.counter }} / {{ community.communityimages.count }}</div>
+    <img src="{{ i.images.url }}" style="width:100%">
+  </div>
+  {% endfor %}
+
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+
+<div style="text-align:center">
+  {% for i in community.communityimages_set.all %}
+  <span class="dot" onclick="currentSlide({{ forloop.counter }})"></span>
+  {% endfor %}
+</div>
+
+</main>
+
+
+  
+<a href="{% url 'articles:community_update' community.pk %}">글 수정</a>
 
 <a href="{% url 'articles:community_index' %}">커뮤니티 메인</a>
-
-
 {% endblock content %}
-{% block script %}{% endblock script %}
+{% block script %}
+<script>
+  let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+let i;
+let slides = document.getElementsByClassName("mySlides");
+let dots = document.getElementsByClassName("dot");
+if (n > slides.length) {slideIndex = 1}
+if (n < 1) {slideIndex = slides.length}
+for (i = 0; i < slides.length; i++) {
+  slides[i].style.display = "none";
+}
+for (i = 0; i < dots.length; i++) {
+  dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className += " active";
+}
+</script>
+{% endblock script %}
