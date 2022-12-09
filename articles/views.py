@@ -139,7 +139,7 @@ def product_update(request, product_pk):
                     image_instance = ProductImages(product=product, image=image)
                     image_instance.save()
             product.save()
-            messages.success(request, "글 생성 완료")
+            messages.success(request, "글 수정 완료")
             return redirect("articles:product_detail", product_pk)
     else:
         product_form = ProductForm(instance=product)
@@ -442,7 +442,10 @@ def community_create(request):
                 for image in images:
                     image_instance = CommunityImages(community=community, images=image)
                     image_instance.save()
-            return redirect("articles:community_index")
+
+            messages.success(request, "글 생성 완료")
+            return redirect('articles:community_index')
+
     else:
         community_form = CommunityForm()
         community_images_form = CommunityImagesForm()
@@ -466,7 +469,10 @@ def community_update(request, community_pk):
                     image_instance = CommunityImages(community=community, images=image)
                     image_instance.save()
             community.save()
-            return redirect("articles:community_detail", community_pk)
+
+            messages.success(request, "글 수정 완료")
+            return redirect('articles:community_detail', community_pk)
+
     else:
         community_form = CommunityForm(instance=community)
         community_images_form = CommunityImagesForm()
@@ -477,13 +483,37 @@ def community_update(request, community_pk):
     return render(request, "articles/community_form.html", context)
 
 
-def community_detail(request, community_pk):
-    community = Community.objects.get(pk=community_pk)
-    context = {"community": community}
-    return render(request, "articles/community_detail.html", context)
-
-
 def community_delete(request, community_pk):
     community = Community.objects.get(pk=community_pk)
     community.delete()
-    return redirect("articles:community_index")
+    return redirect('articles:community_index')
+
+
+def community_detail(request, community_pk):
+    community = Community.objects.get(pk=community_pk)
+
+    # community_comment_form = CommunityCommentForm()
+    context = {
+         'community': community,
+    #    'comments': community.comment_set.all(),
+    #    'community_comment_form': community_comment_form,
+    }
+    return render(request, 'articles/community_detail.html', context)
+
+
+# @login_required
+# def community_comment_create(request, community_pk):
+#     community = get_object_or_404(Community, pk=community_pk)
+#     community_comment_form = CommunityCommentForm(request.POST)
+
+#     if community_comment_form.is_valid():
+#         comment = community_comment_form.save(commit=False)
+#         comment.community = community
+#         comment.user = request.user
+#         comment.save()
+#         context = {
+#             'content': comment.content,
+#             'userName': comment.user.username
+#         }
+#         return JsonResponse(context)
+
