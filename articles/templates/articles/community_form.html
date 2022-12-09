@@ -8,23 +8,44 @@
 {% block title %}{% endblock title %}
 {% block style %}{% endblock style %}
 {% block content %}
-
+<br><br><br><br>
 <div class='container'>
   <form action="" method="POST" enctype="multipart/form-data">
-    {% if request.resolver_match.url_name == 'community_update' %}
-      <h1> 수정 </h1>
-    {% else %}
-      <h1> 생성 </h1>
-    {% endif %}
+    <div class="container text-center" style="width: 800px;">
+      {% if request.resolver_match.url_name == 'community_update' %}
+        <h1 class="btn btn-block fs-3">&nbsp&nbsp 커뮤니티 글 수정</h1>
+      {% else %}
+        <h1 class="btn btn-block fs-3">&nbsp&nbsp 커뮤니티 글 생성</h1>
+      {% endif %}
+    </div>
 
     {% csrf_token %}
-    {{ community_form.media }}
-    {% bootstrap_form community_form %}
-    {% bootstrap_form community_images_form %}
-    {% bootstrap_button button_type='submit' content='생성' %}
-    {% bootstrap_button button_type='reset' content='초기화' %}
+    <div class="container my-1" style="width: 860px;">
+      {{ community_form.media }}
+      {% render_field community_form.title class="btn btn-block my-3" style="width: 860px;" placeholder="제목을 입력해주세요" %}
+      {% render_field community_form.content class="btn btn-block" style="width: 1000px;" placeholder="" %}
+    </div>
+    
+    
+    <div class="container my-3" style="width: 860px;">    
+      {% bootstrap_form community_images_form %}
+    </div>
+    
+    <div class="container d-flex justify-content-between" style="width: 860px;">
+      <div>
+        <a href="{% url 'articles:community_index' %}" class="text-end">커뮤니티 메인</a>
+      </div>
+      <div>
+        {% if request.resolver_match.url_name == 'community_update' %}
+          <input type="submit" value="글 수정" class="btn btn-primary">
+        {% else %}
+          <input type="submit" value="글 생성" class="btn btn-primary">
+        {% endif %}
+      <input type="reset" value="초기화" class="btn btn-dark">
+      </div>
   </form>
-  <a href="{% url 'articles:index' %}">메인화면</a>
+
+  
 </div>
 
 
