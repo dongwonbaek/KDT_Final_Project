@@ -8,17 +8,15 @@
 {% block title %}{% endblock title %}
 {% block style %}{% endblock style %}
 {% block content %}
-<div class="detail_body">
-  <div class="wrapper1">
-    <h1>프로필 업데이트</h1>
-    <form action="" method="POST" enctype='multipart/form-data'>
-      {% csrf_token %}
-      <label for="image">프로필</label>
-      <input class='signup-style1' id='image' type="file" name='image'>
-      <button class="login-button" type='submit' content='수정'>수정</button>
-    </form>
-    <a href="{% url 'accounts:password' %}"><button class="login-button" type='submit' content='수정'>비밀번호 변경</button></a>
-  </div>
+<div class="signup-wrapper">
+  <h1>프로필 업데이트</h1>
+  <form action="" method="POST" enctype='multipart/form-data'>
+    {% csrf_token %}
+    <label for="image">프로필</label>
+    <input class='signup-style1' id='image' type="file" name='image'>
+    <button class="login-button" type='submit' content='수정'>수정</button>
+  </form>
+  <a href="{% url 'accounts:password' %}"><button class="login-button" type='submit' content='수정'>비밀번호 변경</button></a>
 </div>
 {% endblock content %}
 {% block script %}{% endblock script %}

@@ -9,7 +9,7 @@
         <div class="modal-header">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="wrapper1">
+        <div class="signup-wrapper">
           <h1 class="text-center">로그인</h1>
           <form action="{% url 'accounts:login' %}" method="POST" class="d-flex flex-column align-items-center">
             {% csrf_token %}
@@ -51,7 +51,7 @@
         <div class="modal-header">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="wrapper2">
+        <div class="signup-wrapper">
           <h1 class="text-center">회원가입</h1>
           <form action="{% url 'accounts:signup' %}" method="POST" enctype='multipart/form-data'>
             {% csrf_token %}
@@ -123,7 +123,7 @@
         <a class="nav-link nav-link-fade" href="#scrollspyHeading2">Q&A</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link nav-link-fade" href="{% url 'articles:search' %}"><i class="bi bi-search"></i></a>
+        <a class="nav-link nav-link-fade" href="{% url 'articles:search' %}"><i class="bi bi-search"></i></a>
       </li>
     </ul>
     <ul class="nav-end">
@@ -135,13 +135,19 @@
         </button>
         <ul class="dropdown-menu">
           <li><img src="{{ user.image.url }}"><span class="nav-pf-nick">{{ user.nickname }}</span> 님</li>
-          <li><a class="dropdown-item" href="{% url 'accounts:detail' user.pk %}"><i class="bi bi-person-lines-fill me-3"></i>마이페이지</a></li>
-          <li><a class="dropdown-item" href="{% url 'accounts:wishlist' user.pk %}"><i class="bi bi-bag-heart me-3"></i>위시리스트</a></li>
-          <li><a class="dropdown-item" href="{% url 'accounts:update' %}"><i class="bi bi-pencil-fill me-3"></i>프로필 수정</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="{% url 'accounts:logout' %}"><i class="bi bi-box-arrow-right me-3"></i>로그아웃</a></li>
+          <li><a class="dropdown-item" href="{% url 'accounts:detail' user.pk %}"><i
+                class="bi bi-person-lines-fill me-3"></i>마이페이지</a></li>
+          <li><a class="dropdown-item" href="{% url 'accounts:wishlist' user.pk %}"><i
+                class="bi bi-bag-heart me-3"></i>위시리스트</a></li>
+          <li><a class="dropdown-item" href="{% url 'accounts:update' %}"><i class="bi bi-pencil-fill me-3"></i>프로필
+              수정</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="{% url 'accounts:logout' %}"><i
+                class="bi bi-box-arrow-right me-3"></i>로그아웃</a></li>
         </ul>
-      </li>      
+      </li>
       {% else %}
       <li class="nav-item">
         <!--로그인 모달 트리거-->
