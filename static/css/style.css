@@ -26,9 +26,26 @@
 body {
   position: relative;
   font-family: 'YiSunShinDotumM';
-  min-height: 100%;
   padding-top: 180px;
   font-size: 130%;
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 80px;
+  margin-top: 300px;
+  text-align: center;
+  height: 150px;
+  width: 100%;
+  background-color: var(--main-mintygreen);
+  color: var(--main-white);
+}
+
+main {
+  height: calc(100% - 80px - 150px);
 }
 
 .pos-btn {
@@ -60,18 +77,6 @@ body {
 }
 
 /* ---------- base.html ---------- */
-footer {
-  position: absolute;
-  right: 0;
-  left: 0;
-  padding-top: 80px;
-  margin-top: 300px;
-  text-align: center;
-  height: 150px;
-  background-color: var(--main-mintygreen);
-  color: var(--main-white);
-}
-
 #wire {
   text-align: center;
   white-space: nowrap;
@@ -143,31 +148,21 @@ footer {
   }
 }
 
-.ToTop {
-  width: 35px;
-  height: 35px;
+#pagescroll {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   bottom: 30px;
   position: fixed;
   right: 20px;
   z-index: 2147483647;
-  color: var(--main-bluegreen);
-  background-color: var(--main-white);
-  border: none;
-  border-radius: 50%;
-  box-shadow: 0px 5px 5px var(--main-bluegreen);
-  transition: all 0.3s ease 0s;
   cursor: pointer;
-  outline: none
 }
 
-.ToTop:hover {
-  background-color: var(--main-bluegreen);
-  box-shadow: 0px 15px 20px var(--main-mintygreen);
-  color: var(--main-white);
-  transform: translateY(-3px);
+#pagescroll p {
+  margin: 0;
+  padding: 0;
 }
 
 /* ---------- nav ---------- */

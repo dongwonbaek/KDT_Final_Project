@@ -72,7 +72,7 @@ a {
 
 a:hover {
   color          : var(--main-mintygreen);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 abbr[title] {
