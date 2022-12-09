@@ -12,7 +12,7 @@
   <h1>프로필 업데이트</h1>
   <form action="" method="POST" enctype='multipart/form-data'>
     {% csrf_token %}
-    <label for="image">프로필</label>
+    <div><label for="image">프로필</label></div>
     <input class='signup-style1' id='image' type="file" name='image'>
     <button class="login-button" type='submit' content='수정'>수정</button>
   </form>

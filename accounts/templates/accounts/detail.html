@@ -14,8 +14,8 @@
     {% if user.image %}
     <img src="{{ user.image.url }}" class="profile" alt="abc">
     {% endif %}
-    <div class="d-flex flex-column align-items-center profile-username">
-      <h3>{{ user.nickname }}</h3>
+    <div class="d-flex flex-column align-items-center profile-text pt-5">
+      <p>{{ user.nickname }}</p>
       <p>성별:
         {% if user.gender == True %}
         남자
@@ -26,8 +26,9 @@
     </div>
   </div>
   <!-- 팔로우 모달 버튼 -->
-  <a data-bs-toggle="modal" data-bs-target="#exampleModal">팔로우:<span id='followings'>{{ user.following.count }}</span>
-    | 팔로워:<span id='followers'>{{ user.followers.count }}</span></a>
+  <div class="profile-text"><a data-bs-toggle="modal" data-bs-target="#exampleModal">팔로우:<span id='followings'>
+        {{user.following.count}}</span>
+      | 팔로워:<span id='followers'>{{ user.followers.count }}</span></a></div>
   <!-- 팔로우 모달 -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -39,15 +40,19 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-6">
-                <h5>팔로우</h5>
+                <h5 class="follow-title">팔로우</h5>
                 {% for followinguser in request.user.following.all %}
-                <a href="{% url 'accounts:detail' followinguser.pk %}">{{ followinguser.nickname }}</a>
+                <div><a href="{% url 'accounts:detail' followinguser.pk %}"><img class="user-image"
+                      src="{{ followinguser.image.url }}">
+                    {{followinguser.nickname }}</a></div>
                 {% endfor %}
               </div>
               <div class="col-6">
-                <h5>팔로워</h5>
-                {% for followeruser in request.user.follower.all %}
-                <a href="{% url 'accounts:detail' followeruser.pk %}">{{ followinguser.nickname }}</a>
+                <h5 class="follower-title">팔로워</h5>
+                {% for followeruser in request.user.followers.all %}
+                <div><a href="{% url 'accounts:detail' followeruser.pk %}"><img class="user-image"
+                      src="{{ followeruser.image.url }}">
+                    {{followeruser.nickname }}</a></div>
                 {% endfor %}
               </div>
             </div>
@@ -61,7 +66,7 @@
     <button class="login-button">
       <a href="{% url 'accounts:update' %}">유저정보수정</a>
     </button>
-    <button type="button" class="delete-button" data-bs-toggle="modal" data-bs-target="#deleteUser">
+    <button type="button" class="delete-button profile-text" data-bs-toggle="modal" data-bs-target="#deleteUser">
       회원탈퇴
     </button>
 
@@ -239,6 +244,26 @@
   <!--위시리스트-->
   <div id="tab-section-2" class="tab-section w-100 tab-section w-100 d-flex flex-column align-items-center" hidden>
     <div class="wish-review">
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+      </div>
       <h3 class="text-center">위시 리스트</h3>
     </div>
     <div class="d-flex mt-1">
@@ -319,5 +344,28 @@
       });
     });
   </script>
+  <!--스와이프-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js">const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      direction: 'vertical',
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });</script>
 
   {% endblock script %}
