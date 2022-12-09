@@ -8,6 +8,7 @@ from django.contrib.auth import get_user_model
 from django.contrib import messages
 from django.http import JsonResponse
 from django.core.paginator import Paginator
+import datetime
 # Create your views here.
 
 
@@ -19,6 +20,7 @@ def signup(request):
             user.username = request.POST.get("username")
             user.email = request.POST.get("username")
             user.birth_date = request.POST.get("birth_date")
+            user.age = (datetime.today().year - request.POST.get("birth_date").year) // 10
             user.save()
             auth_login(
                 request, user, backend="django.contrib.auth.backends.ModelBackend"
