@@ -1,1052 +1,808 @@
 {
   "no_1": {
     "category": "7",
-    "name": "[구찌 플로라] 골저스 가드니아 기프트 세트",
-    "brand": "구찌(향수)",
-    "price": "169,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221123050830_c4aea62d02b74e4f8177c2b3e4a1ad9e.jpg"
+    "name": "레 베쥬 립 밤",
+    "brand": "샤넬\n바로가기",
+    "price": "46,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221126161649_bbfa3de934fe43e7a30d4bc75bf6c89b.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221126161646_d6181e333dd043069de813e0e2525f8d.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220316102901_10d8bddc20504805ba311bc685b77c05.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220316102905_be6972a5b7ae4c53be132ac4e3ce993f.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221203234220_0de27b7185f64238af44659eb39c4d4f.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20211103101455_e4240beaf00e46f496b481a3cad1e55a.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220316102935_da0b8770e16149d99b3239a1388ef015.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/6218884"
   },
   "no_2": {
     "category": "7",
-    "name": "[홀리데이 패키지/각인] '미니쿠션증정' 센슈얼 쉬어스테인틴트(톡별)",
-    "brand": "헤라",
-    "price": "33,300원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110132006_9309db01d2174fa38e34d682cbab81e6.jpg"
+    "name": "[구찌 플로라] 골저스 가드니아 기프트 세트",
+    "brand": "구찌(향수)\n바로가기",
+    "price": "169,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221123050832_94e6abb8b0de40489bc52aa8d2281d68.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221123050830_c4aea62d02b74e4f8177c2b3e4a1ad9e.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130050801_cb900b051a404d00b5f0df5061b14abb.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221123050831_8c46f3f2925d4ee184f3ddf0fff48c4a.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/partner/gucci/giftBox/gucci_beauty_20221116.jpg",
+      "https://st.kakaocdn.net/product/gift/product/20221123050830_c4aea62d02b74e4f8177c2b3e4a1ad9e.jpg",
+      "https://st.kakaocdn.net/product/gift/product/20221130050801_cb900b051a404d00b5f0df5061b14abb.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/6193293"
   },
   "no_3": {
     "category": "7",
-    "name": "[홀리데이/선물포장] 레이지 선데이 모닝 세트(EDT 100ML+바디로션 200ML)",
-    "brand": "메종마르지엘라(향수)",
-    "price": "245,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221129154619_150e3948977b41d09c57bd9e4fe7f203.jpg"
+    "name": "[홀리데이 패키지/각인] '미니쿠션증정' 센슈얼 쉬어스테인틴트(톡별)",
+    "brand": "헤라\n바로가기",
+    "price": "33,300\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220329103533_6ebefaf5adc84ed486d4fb743551c21b.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110132006_9309db01d2174fa38e34d682cbab81e6.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220329103530_3258651847f0459db4dd48f078b46b99.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221110133422_988b582aaab144f1940f5156b5754f13.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/2467388"
   },
   "no_4": {
     "category": "7",
-    "name": "\"숙면선물\" 록시땅 릴랙싱 필로우미스트 패키지 (특별한선물 '톡별')",
-    "brand": "록시땅",
-    "price": "36,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221129151147_651c48842d2d47cda2c234df5272d7c4.jpg"
+    "name": "코코 마드모아젤 오 드 빠르펭 35ml",
+    "brand": "샤넬(향수)\n바로가기",
+    "price": "109,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221126152705_6adfa3b71c794482bb0a2d623dec48c1.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221126151648_dd271c07d5f74c02a11bbfc7ac3051f9.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220706173104_06eaf97ce0494ec0a14a85b5a2998861.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221203231543_dfc9829b0f61433ab15fb4833cf40104.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20210930165222_89980648b9da41dfa6ac9c79c219f44a.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/6218774"
   },
   "no_5": {
     "category": "7",
-    "name": "NEW 루쥬 코코 밤(+샤넬 기프트 카드)",
-    "brand": "샤넬",
-    "price": "46,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220111185052_b92447cb764d470ead70b2d0fe75fe5c.jpg"
+    "name": "샹스 오 땅드르 헤어 미스트 35ml",
+    "brand": "샤넬(향수)\n바로가기",
+    "price": "69,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221126152804_89663128fd034d1c8be07d143e4a736a.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221126152058_c60e37c448404c929ee4246b89d7e7ad.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220706173900_97a3ad3614f1466fb1d6b6cc774759b5.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221203231455_ffcd7969c06b4c7dab156b0ede8d9580.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20200611221529_3a78387800dc4dd38940a1e8dcd939c9.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220530163126_f5c6cf6fdd0b4d61bbc1ccbaae34ae9d.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/6218799"
   },
   "no_6": {
     "category": "7",
-    "name": "[각인/선물포장] 립 글로우 ( +미스 디올 오 드 퍼퓸 1ML 증정)",
-    "brand": "디올",
-    "price": "47,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108134631_b318c23d47814d57a4790e4eee6fab79.jpg"
+    "name": "[홀리데이/쇼핑백] 레이지 선데이 모닝 세트(EDT 100ML+바디로션 200ML)",
+    "brand": "메종마르지엘라(향수)\n바로가기",
+    "price": "245,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221129154619_150e3948977b41d09c57bd9e4fe7f203.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221202183653_94b2dfcb805d4159b40773958552ceab.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221208121404_dd7733cf07c041b4921989c4df04c7b7.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221129154739_b32fb78769ab4066a18bed05bf5d1224.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/6202086"
   },
   "no_7": {
     "category": "7",
-    "name": "[선물포장] 엉크르 드 뽀 쿠션&틴트 세트(+쿠션 미니어처) '톡별'",
-    "brand": "입생로랑",
-    "price": "147,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221124143057_17dac59f314c4fe7a021b6c2fb09929d.jpg"
+    "name": "\"숙면선물\" 록시땅 릴랙싱 필로우미스트 패키지 (특별한선물 '톡별')",
+    "brand": "록시땅\n바로가기",
+    "price": "36,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221129151209_9cbf161b2f7d465fb0d1f57459636640.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221129151147_651c48842d2d47cda2c234df5272d7c4.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221129151157_3b16d8e32a09480fa811d3173831d900.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221129151204_f97f2e715aac4c7db546ffa03a3d15b6.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221028153220_3e5f7425d54347bbae78dc156ee73651.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/2257522"
   },
   "no_8": {
     "category": "7",
-    "name": "[무료각인&선물포장] 입생로랑 1위 벨벳 틴트 세트(+리브르 1.2ml 향수) '톡별'",
-    "brand": "입생로랑",
-    "price": "49,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221124142936_6fe032a655c34b0d86cd293d905990dc.jpg"
+    "name": "N1 DE CHANEL 레드 까멜리아 립 앤 치크 밤",
+    "brand": "샤넬\n바로가기",
+    "price": "59,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221126162803_10f67a9cb02b477781a524d401c876cf.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221126162715_0ecd6afd9d624b0287279e292a29e4b2.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221126162751_d7906028cfd34cb785f1d478435e9c79.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221126162754_7f9c1504d07746ad98a255fcda2474b0.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221203233958_b9c0e416e10d409c8310027b5f69c346.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221114143725_673cad551e6e4e30a43de1055dcaa8f1.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/6218926"
   },
   "no_9": {
     "category": "7",
-    "name": "N5 헤어 미스트 35ml",
-    "brand": "샤넬(향수)",
-    "price": "69,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20201027203101_0ed13b31d8eb4bcd975ee5e39fb58a9e.jpg"
+    "name": "[각인/선물포장] 립 글로우 ( +미스 디올 오 드 퍼퓸 1ML 증정)",
+    "brand": "디올\n바로가기",
+    "price": "47,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221205100002_14d7646bf44545e3995b601caeb3a4bb.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108134631_b318c23d47814d57a4790e4eee6fab79.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221205100444_2f74614f9af440258ef1381f250834c2.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221205095957_928951a3c5704e82b4e36f4706daf5d9.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221205095104_d2561600144047739f396d8fda877b97.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221202144749_10ee7b5671834011b0bdfc33b9a06013.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221108134804_0f3c7b69376743b2bfdd0e2fd8730173.png"
+    ],
+    "url": "https://gift.kakao.com/product/2259144"
   },
   "no_10": {
     "category": "7",
-    "name": "록시땅 핸드 크림 트리오 (6종 중 택1)",
-    "brand": "록시땅",
-    "price": "45,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130171147_d01d3e9246ba4826940e51784009dd53.jpg"
+    "name": "[선물포장] 엉크르 드 뽀 쿠션&틴트 세트(+쿠션 미니어처) '톡별'",
+    "brand": "입생로랑\n바로가기",
+    "price": "147,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221124143057_17dac59f314c4fe7a021b6c2fb09929d.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221124170501_5ebf231ef35d4f60987fcb6efbbc5122.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/2035224"
   },
   "no_11": {
     "category": "7",
-    "name": "레 베쥬 립 밤",
-    "brand": "샤넬",
-    "price": "46,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220316102858_5380e2c951fc4661a0ec7b08a0bc96ee.jpg"
+    "name": "[무료각인&선물포장] 입생로랑 1위 벨벳 틴트 세트(+리브르 1.2ml 향수) '톡별'",
+    "brand": "입생로랑\n바로가기",
+    "price": "49,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221205163422_5f061d2f8ea14c46a9a8045e7e6035a8.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221205163420_339c295e4fa04ef59e6f11642d5ab49d.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221125100721_6644a923b3b44fbbb170b7fdf894dccf.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/2035221"
   },
   "no_12": {
     "category": "7",
-    "name": "[각인/선물포장] 디올 어딕트 립스틱",
-    "brand": "디올",
-    "price": "51,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108142814_7a396cdefc604b42876af3e81bd137a0.jpg"
+    "name": "록시땅 핸드 크림 트리오 (6종 중 택1)",
+    "brand": "록시땅\n바로가기",
+    "price": "45,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221026105150_74ee9018055447058b36af4e95ce984d.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130171147_d01d3e9246ba4826940e51784009dd53.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221026105145_f71cdc9c77dc471ea487b6aa222022ab.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221103171404_6c4e800d96854973acf3e35e2ebc0ceb.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/1251571"
   },
   "no_13": {
     "category": "7",
-    "name": "[선물포장 / 무료각인] \"맥 베스트\" 텐더토크 립 밤 (3G)",
-    "brand": "맥(MAC)",
-    "price": "34,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221103163725_5486e21137e843a2bc8f921ecef0a7b0.jpg"
+    "name": "N5 헤어 미스트 35ml",
+    "brand": "샤넬(향수)\n바로가기",
+    "price": "69,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221126152636_d671cb646a404748bf6fc4695758b06d.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221126151857_6ffad2ac0b6d4adaae067df833609ad8.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220706171614_fcad204020024b32a92198617a761110.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221203231433_7a973165308548188a76b613d5a110ae.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20211021105314_c2991eae59fd46cfb46e73ed0b43e163.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220530161937_b82977e5fa674987abe06b2a05841269.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/6218785"
   },
   "no_14": {
     "category": "7",
-    "name": "[리미티드/선물포장] 미스 디올 뷰티 리추얼",
-    "brand": "디올",
-    "price": "134,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221026104820_f79c5646773a4bd499122ffc0a4e5d51.jpg"
+    "name": "[각인/선물포장] 디올 어딕트 립스틱",
+    "brand": "디올\n바로가기",
+    "price": "51,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220901115207_d30f1ae6e70f4e4faef7e4bb19f13ab1.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108142814_7a396cdefc604b42876af3e81bd137a0.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108142818_7f6445991b2a4d17a2d9ab8c4c20e5c5.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221202144626_a6e6532d32f744efb4ea6b240f82d806.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221108142830_e6b4f01bf7b3475e9e3e2c0794b4bed9.png",
+      "https://st.kakaocdn.net/product/gift/editor/20220408102019_7d969702a92a4d7ebaaf526ae842341f.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/4418907"
   },
   "no_15": {
     "category": "7",
-    "name": "[NEW센트/선물포장] 핸드 크림 50ML",
-    "brand": "조말론런던",
-    "price": "43,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220805125025_8181880ce79f4deeb9d3b02a26e16e74.jpg"
+    "name": "NEW 루쥬 코코 밤(+샤넬 기프트 카드)",
+    "brand": "샤넬\n바로가기",
+    "price": "46,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221126161243_61f7ee78cb87485f8af55f5683222dee.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221126161239_5038b9a02a4545918505695f3aa5061d.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220111185048_bb1322bf174446aa90ebb1d1d7899483.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220111185043_ff1399dbd788457882ff5e3c42e018e9.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221203234139_47c532533e84455cb5eb5929abd5d45b.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220308101008_a5c72ed1b4a84b9bb283b55bae8dba09.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220307130631_3d418bf491f343c19bad861592637e17.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/6218881"
   },
   "no_16": {
     "category": "7",
-    "name": "코코 마드모아젤 오 드 빠르펭 35ml",
-    "brand": "샤넬(향수)",
-    "price": "109,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200611225042_c822f37651c04f2182e5d4e5be1cf474.jpg"
+    "name": "[선물포장 / 무료각인] \"맥 베스트\" 텐더토크 립 밤 (3G)",
+    "brand": "맥(MAC)\n바로가기",
+    "price": "34,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221103163725_5486e21137e843a2bc8f921ecef0a7b0.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221103163756_9602d748cc314f4eaa8b5db935970e6b.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221104145040_287f79e739554d538725a82c459cd7f8.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/832235"
   },
   "no_17": {
     "category": "7",
-    "name": "N5 로 오 드 뚜왈렛 35ml",
-    "brand": "샤넬(향수)",
-    "price": "109,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200729202358_5e57d8caa9fd45f2821efc3ae30d48fb.jpg"
+    "name": "라 크렘 망 핸드 크림",
+    "brand": "샤넬\n바로가기",
+    "price": "80,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221126161438_f1b3f676fc8b43648d8b77ded36db865.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221126161414_3b93d75d325f4cc88535674b681a7c8b.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220706174709_f47662d41c6b49f68d091042ab3f379e.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220706174726_4c5693667d7448678fc6402733e0099f.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221203233239_d14e517561244fc6aba6984502165804.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20200611220739_a2425b93e4164361a2af2c82c336d96d.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220530163158_2193ceda84414274b35ba7e267fc0e7c.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/6218882"
   },
   "no_18": {
     "category": "7",
-    "name": "[각인/선물포장] 루즈 디올",
-    "brand": "디올",
-    "price": "51,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109113854_023b039871a14795a65bc9924ae3aa1f.jpg"
+    "name": "[리미티드/선물포장] 미스 디올 뷰티 리추얼",
+    "brand": "디올\n바로가기",
+    "price": "134,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221026104820_f79c5646773a4bd499122ffc0a4e5d51.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221202145925_1a88a4e7ad284ecd9dd591c9e5494679.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221108133524_6bc7b2cccb074e3386f69898d7f3aaa8.png",
+      "https://st.kakaocdn.net/product/gift/editor/20221028161042_2da79442a6ae4b9dbbd96019c1a95b76.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/5831422"
   },
   "no_19": {
     "category": "7",
-    "name": "[각인/선물포장] 미스 디올 블루밍 부케 오 드 뚜왈렛 30ML",
-    "brand": "디올",
-    "price": "87,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108140008_8dffb8dadbf642f598958e47fc6aa841.jpg"
+    "name": "[NEW센트/선물포장] 핸드 크림 50ML",
+    "brand": "조말론런던\n바로가기",
+    "price": "43,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220805125025_8181880ce79f4deeb9d3b02a26e16e74.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221124170152_d7d78be0f7524599b738a1d7db7a5dcf.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/1233593"
   },
   "no_20": {
     "category": "7",
-    "name": "[무료각인&선물포장] 엉크르 드 뽀 쿠션",
-    "brand": "입생로랑",
-    "price": "98,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114170643_e9c374c3ef914f248c335ef84d500edc.jpg"
+    "name": "[각인/선물포장] 루즈 디올",
+    "brand": "디올\n바로가기",
+    "price": "51,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108134350_cdda858d770746998c9f61a10d43b59b.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109113854_023b039871a14795a65bc9924ae3aa1f.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108134326_92bdba12ce30408aa4960974f66c558b.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108134340_2962516e9b224073abbef2dc767bf13c.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221202144700_f126d6a761bf4e6ea845e56cc634d419.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221108134419_6657872653614140abfc57ff2c693f4b.png",
+      "https://st.kakaocdn.net/product/gift/editor/20220125122311_94c99ccf63b241b5a2fecc9aafa72570.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/2302061"
   },
   "no_21": {
     "category": "7",
-    "name": "코코 마드모아젤 바디 모이스처 미스트 100ml",
-    "brand": "샤넬(향수)",
-    "price": "64,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200611224630_d5e7e84054af4d26a766d946f63e5cdd.jpg"
+    "name": "[각인/선물포장] 미스 디올 블루밍 부케 오 드 뚜왈렛 30ML",
+    "brand": "디올\n바로가기",
+    "price": "87,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108140031_d5058300ebe1468d965f7e625fb11e86.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108140008_8dffb8dadbf642f598958e47fc6aa841.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108140022_ef59f8ebe4af4c01a62e9114f8f3602c.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221202145010_dd07921bc5734e97a6de48331124c67c.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221108140054_88a45d8af0cb4276b5c140ab7d6665c2.png",
+      "https://st.kakaocdn.net/product/gift/editor/20220125161523_c3b634cafb62400a92c28e7dd9bd32a8.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/1181763"
   },
   "no_22": {
     "category": "7",
-    "name": "[선물세트] 베르사체 브라이트 크리스탈 EDT 30ML + 베르사체 미니어처 (톡별)",
-    "brand": "여성향수",
-    "price": "35,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221118100343_fd1a1dc6d1d44e65a65bd6ef423c0879.png"
+    "name": "[무료각인&선물포장] 엉크르 드 뽀 쿠션",
+    "brand": "입생로랑\n바로가기",
+    "price": "98,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114170643_e9c374c3ef914f248c335ef84d500edc.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221114170651_cdbb9bb7e6ed487091fc1ac17d6f7866.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221102172534_3a11c4b1b5114b3994c2efee11c1ae06.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/2122524"
   },
   "no_23": {
     "category": "7",
-    "name": "[무료각인&선물포장] 고보습 샤인 립스틱",
-    "brand": "입생로랑",
-    "price": "51,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114165420_2f43f7ad2ca94eaf96fa6bd32bc566bc.jpg"
+    "name": "[선물세트] 베르사체 브라이트 크리스탈 EDT 30ML + 베르사체 미니어처 (톡별)",
+    "brand": "여성향수\n바로가기",
+    "price": "35,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221118100343_fd1a1dc6d1d44e65a65bd6ef423c0879.png"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221107091121_90688280e3794b138b10e49bc6f82c26.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20211112172943_297714743da94cdc94b0b2fd6db5dcfa.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/1360982"
   },
   "no_24": {
     "category": "7",
-    "name": "[각인/선물포장] 미스 디올 블루밍 부케 헤어 미스트",
-    "brand": "디올",
-    "price": "68,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108134930_358adaed85254a528d1b1cb47929f984.jpg"
+    "name": "[무료각인&선물포장] 고보습 샤인 립스틱",
+    "brand": "입생로랑\n바로가기",
+    "price": "51,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114165420_2f43f7ad2ca94eaf96fa6bd32bc566bc.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221114165436_33ec6d57c8cf454094b9a9d084002a07.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220510184553_6a69d16ea2e24eda91da54c16f0d4d68.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220510184618_98951bf92ad14697a05d755d80f20704.gif"
+    ],
+    "url": "https://gift.kakao.com/product/807213"
   },
   "no_25": {
     "category": "7",
-    "name": "[홀리데이 패키지/각인] 'NEW 벨벳립스틱' 센슈얼파우더매트립스틱",
-    "brand": "헤라",
-    "price": "34,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110132401_59ffab6874a2468493e16d44e12dcc89.jpg"
+    "name": "[각인/선물포장] 미스 디올 블루밍 부케 헤어 미스트",
+    "brand": "디올\n바로가기",
+    "price": "68,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108135010_59adf5f4305c4f97a4b0abbfbc6106ba.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108134930_358adaed85254a528d1b1cb47929f984.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108134959_3f93435596ec4df4a0cac60b34b2e08b.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221202145030_d691066d255b494e96aec6e418f01b85.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221108135108_494ee882821d4a54b90dbccbe251dd2c.png",
+      "https://st.kakaocdn.net/product/gift/editor/20220125122412_ced630cc9bfe4a16a51f72c196ce7ced.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/1181766"
   },
   "no_26": {
     "category": "7",
-    "name": "[선물포장/무료각인] 맥 립스틱 (3G)",
-    "brand": "맥(MAC)",
-    "price": "33,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221103163951_1f5cd94b4c2b4763b5f7a790fffccdd2.jpg"
+    "name": "[홀리데이 패키지/각인] 'NEW 벨벳립스틱' 센슈얼파우더매트립스틱",
+    "brand": "헤라\n바로가기",
+    "price": "34,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110132419_ba6621ffa97f4f74baa4dc4932332d9f.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110132401_59ffab6874a2468493e16d44e12dcc89.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110132409_5429889cfab14b5b8ac24b7572f61c34.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110132414_17716210457647cfa1981c3c59d8bc14.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221205105600_0792fb4dc9004db38869fffce28efdfe.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/5674227"
   },
   "no_27": {
     "category": "7",
-    "name": "가브리엘 샤넬 헤어 미스트",
-    "brand": "샤넬(향수)",
-    "price": "73,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210103193410_4478d83469684e2fb7ed1f23f5b1a564.jpg"
+    "name": "[선물포장/무료각인] 맥 립스틱 (3G)",
+    "brand": "맥(MAC)\n바로가기",
+    "price": "33,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221103163951_1f5cd94b4c2b4763b5f7a790fffccdd2.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221103164030_c287fb6022f2426f8cdb5ac52a28cb3f.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220425144831_c00e7efd319b47749231b60131b54367.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/370753"
   },
   "no_28": {
     "category": "7",
     "name": "[각인/선물포장] 포에버 스킨 글로우 쿠션",
-    "brand": "디올",
-    "price": "89,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109120740_0384d36ec4ee462084959ce1a903c034.jpg"
+    "brand": "디올\n바로가기",
+    "price": "89,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109120750_6a97cde394e340dd8775b0f0ca602993.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109120740_0384d36ec4ee462084959ce1a903c034.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221202145331_aff02625f6c44e629bc18ac0d512bb15.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221108135534_5d9969815120404385e1b552c8a242e4.png",
+      "https://st.kakaocdn.net/product/gift/editor/20220209100221_54cfb1a4be0441658deb7bb16079a390.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/2273402"
   },
   "no_29": {
     "category": "7",
-    "name": "루쥬 코코 플래쉬",
-    "brand": "샤넬",
-    "price": "49,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20201027203858_5ce590d6c8994cdea7979406ea0cea79.jpg"
+    "name": "[무료각인&선물포장] NEW 캔디 글레이즈 컬러밤",
+    "brand": "입생로랑\n바로가기",
+    "price": "49,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220729100159_e69dca748490476586075183fcdfc655.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114165611_f0330125d00b4af187f1524c67080a8c.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221114165620_db00480bf5624329b0b9a484e168c08f.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20211223182200_cd5b5c38fd7d42a699728bd49bc51103.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20211223183426_07478d7d6b4e4fe688123f9869502e94.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/3765305"
   },
   "no_30": {
     "category": "7",
-    "name": "[무료각인&선물포장] NEW 캔디 글레이즈 컬러밤",
-    "brand": "입생로랑",
-    "price": "49,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114165611_f0330125d00b4af187f1524c67080a8c.jpg"
+    "name": "[홀리데이 패키지/각인] '품절벨벳틴트' 센슈얼파우더매트리퀴드",
+    "brand": "헤라\n바로가기",
+    "price": "31,500\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220805095729_6a38379ca0c24a02ac021b7c45418020.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110131829_2a9dcd48bfed4af59e869b3bb6d7cd03.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220805095721_0ed4261fc53742cd88091415a852dd4c.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220805095725_bb63b3a1224b4e4495c62962b63f4738.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221110132825_1bafe96f9a1746e6a222212c3d00121f.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/3992204"
   },
   "no_31": {
     "category": "7",
-    "name": "[홀리데이 패키지/각인] '품절벨벳틴트' 센슈얼파우더매트리퀴드",
-    "brand": "헤라",
-    "price": "31,500원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110131829_2a9dcd48bfed4af59e869b3bb6d7cd03.jpg"
+    "name": "[각인/선물포장] \"헤라 1위\" 블랙 쿠션 (+파우치 증정)",
+    "brand": "헤라\n바로가기",
+    "price": "56,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220712133947_9fd3a05f65f7435082e266d1778e9cec.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221125100142_7e24ee3e8b4a4dbcb7ef12b791c4cff0.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220728164025_83beaaf5d14e4d0cbbde5449f8b47a6e.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20220712134013_b4fa21a65357407287b47e4ab52f4be3.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220712134022_7dfe4b9c3001464ca66114a8705a913a.gif",
+      "https://st.kakaocdn.net/product/gift/editor/20221125100229_44c62a5a51b34e079aec02c66efd68d9.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/5392710"
   },
   "no_32": {
     "category": "7",
-    "name": "[각인/선물포장] \"헤라 1위\" 블랙 쿠션 (+파우치 증정)",
-    "brand": "헤라",
-    "price": "56,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221125100142_7e24ee3e8b4a4dbcb7ef12b791c4cff0.jpg"
+    "name": "로즈 에르메스 로지 립 인핸서",
+    "brand": "에르메스(뷰티)\n바로가기",
+    "price": "90,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211201131857_81b35706c01f4aaebb4224159c6ee24b.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211129170145_ebe101da5ea949f58b37b3e5ede223f9.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211129170147_f297e00efb5c4259b3fc7e05e914b884.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211129170149_aa79321daaf2492b9ef9cf9b85e44701.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20220614122553_e58c40d81ecb432aa528caaa359d2faa.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20211129170257_c8ba32f8ffc44596983f42d93e7b73cc.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/3615495"
   },
   "no_33": {
     "category": "7",
-    "name": "로즈 에르메스 로지 립 인핸서",
-    "brand": "에르메스(뷰티)",
-    "price": "90,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211129170145_ebe101da5ea949f58b37b3e5ede223f9.jpg"
+    "name": "[토트백포장/각인] 고-쿠션 (+V로고 파우치 증정)",
+    "brand": "발렌티노(뷰티)\n바로가기",
+    "price": "103,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109133541_2f20b9a0afbb40169586c462debdea3c.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221124122140_5fbd8226077a4f86879ebdd209020ac0.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220901175813_3308e6642c6e4e79b76df9fd3d4d9e8e.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220901175908_c46ed13b0433461d99b6365520fe06be.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221130171131_234de9d4e4a949109f7824a568e15047.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221109133552_dd501a4375214c43ad50e4da234c6143.gif",
+      "https://st.kakaocdn.net/product/gift/editor/20221130171158_660536104f0a421ba36c34437d5f9231.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/4127239"
   },
   "no_34": {
     "category": "7",
-    "name": "코코 마드모아젤 바디 로션 200ml",
-    "brand": "샤넬(향수)",
-    "price": "84,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200611224139_6ac6fab6ab404f03aa1761fc7f82394d.jpg"
+    "name": "[선물포장] 디올 어딕트 립 틴트",
+    "brand": "디올\n바로가기",
+    "price": "48,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109100914_25965d0082c04c9e9831ac5728fe1fcf.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109100902_26d7f1b1d5404cb189b188ac836ebb2d.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221202150036_ebb19c9016544702ad0577db7d8f6c25.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221108143315_a62a58f6985942c39c5a35c820233031.png",
+      "https://st.kakaocdn.net/product/gift/editor/20221104150249_18d8af899da442a0a06c4f19c9e15e6e.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/4555244"
   },
   "no_35": {
     "category": "7",
-    "name": "[토트백포장/각인] 고-쿠션 (+V로고 파우치 증정)",
-    "brand": "발렌티노(뷰티)",
-    "price": "103,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221124122140_5fbd8226077a4f86879ebdd209020ac0.jpg"
+    "name": "[무료각인&선물포장] 리브르 헤어미스트 30ml",
+    "brand": "입생로랑(향수)\n바로가기",
+    "price": "68,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114170456_0dc62a96a1ea461aa5a8fc2a0a7c7b16.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220906162818_bad99b1e385e4e62b1711a00f975da38.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221114170409_42519dfbcf114058b7dbfd151bc5f395.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20210823221617_f0dde9bca1a446169ea599c4378bdac2.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20210823221617_432ea39fedd4410daf103954e0cce0b5.gif"
+    ],
+    "url": "https://gift.kakao.com/product/2897933"
   },
   "no_36": {
     "category": "7",
-    "name": "[선물포장] 디올 어딕트 립 틴트",
-    "brand": "디올",
-    "price": "48,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109100902_26d7f1b1d5404cb189b188ac836ebb2d.jpg"
+    "name": "[5%할인/단독] 맥 BEST 립밤 핸드크림 듀오 (선물포장 & 무료각인)",
+    "brand": "맥(MAC)\n바로가기",
+    "price": "38,950\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221024100615_671494da3ccc4bc6a4f6512879bd8480.png",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221103164535_fabae6f718a84ed3ada8ba6c05f668b5.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221024100409_40eae34e05f749129b6b93201e69ff59.png",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221024100447_7f57354fa9164856aad1d8522e32110f.png"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221026093542_34ad3509471649c8bd129e8cded0b1cd.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221207105432_370dce0cccd8460db93bfef1206f5009.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221026093554_b2f9a5c9da3342e4b96aacf49d33d77f.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/5660382"
   },
   "no_37": {
     "category": "7",
-    "name": "샹스 오 땅드르 오 드 빠르펭 35ml",
-    "brand": "샤넬(향수)",
-    "price": "109,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210103194216_c7f07e85d7bd412ab3c20450401c0051.jpg"
+    "name": "[무료각인&선물포장] NEW 뚜쉬 에끌라 글로우-팩트 쿠션",
+    "brand": "입생로랑\n바로가기",
+    "price": "99,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220221180737_4a69caf932a64ab7a341a6603535e24b.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114170703_413b397527e84166b74561a165d12d4d.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220221180725_2b6b96be5f494c26ad4205c634403dfd.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220221180730_68e0862337bd49318b07ef3ed5ce77ad.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221114170714_67a007dcb26e4ab49084015c373adbda.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220929151147_f0730665eeba45cd9ae902264d1ee106.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/4014117"
   },
   "no_38": {
     "category": "7",
-    "name": "[무료각인&선물포장] 리브르 헤어미스트 30ml",
-    "brand": "입생로랑(향수)",
-    "price": "68,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220906162818_bad99b1e385e4e62b1711a00f975da38.jpg"
+    "name": "[10% 할인/홀리데이/기프트카드] 에스티 로더 블록버스터 시그니처 베스트 셀러 세트",
+    "brand": "에스티로더\n바로가기",
+    "price": "143,100\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221201112809_980cbb08e0cc4393b953fea2acd03729.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221101195932_62ff839183de47e583c2501eb4f80436.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221201112906_0552ed76bab348ad8a63cd0e1b4b3390.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/6080546"
   },
   "no_39": {
     "category": "7",
-    "name": "[선물포장/무료각인] 맥 BEST 립밤 핸드크림 듀오 (카카오톡 단독 선물세트) (3G)",
-    "brand": "맥(MAC)",
-    "price": "41,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221103164535_fabae6f718a84ed3ada8ba6c05f668b5.jpg"
+    "name": "루즈 아 레브르 브왈 립스틱",
+    "brand": "구찌(뷰티)\n바로가기",
+    "price": "59,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210326120732_6ddce06dd08241069b1ce9d4f7c74ff6.png",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210326120720_e57410b893f94c579653ea07b7110fa7.png",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210326120725_fbe91839cd2746988a013dbc12254666.png",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210326120727_36e49a5f9c044db89ad9f78af1858632.png"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221115143610_2973d942087b4607b836df1773b95951.png"
+    ],
+    "url": "https://gift.kakao.com/product/2375268"
   },
   "no_40": {
     "category": "7",
-    "name": "[무료각인&선물포장] NEW 뚜쉬 에끌라 글로우-팩트 쿠션",
-    "brand": "입생로랑",
-    "price": "99,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114170703_413b397527e84166b74561a165d12d4d.jpg"
+    "name": "[무료각인&선물포장] 메쉬 핑크 쿠션 NEW 오버 핑크 에디션(+미니 핑크 쿠션)",
+    "brand": "입생로랑\n바로가기",
+    "price": "99,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221102164435_4b1d48c0550e4e9e98db47d45a5c07a1.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221129175842_603a240b03b842ab9ca2035ad0a62117.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221102164433_e9e718cc6ba34c4bb9b534d9d5973fdf.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221114171537_d7b757634515493dbaf2cae31516d302.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221129175856_9070cd9d2dbf43c89d853e49e9fe6a2f.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221102165434_ed3a96a2d86c43a29ec87297172c1750.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/6086017"
   },
   "no_41": {
     "category": "7",
-    "name": "[10% 할인/홀리데이/기프트카드] 에스티 로더 블록버스터 시그니처 베스트 셀러 세트",
-    "brand": "에스티로더",
-    "price": "143,100원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221201112809_980cbb08e0cc4393b953fea2acd03729.jpg"
+    "name": "[선물포장] NEW 디올 포에버 꾸뛰르 쿠션 - 디올리비에라 리미티드 에디션",
+    "brand": "디올\n바로가기",
+    "price": "98,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108143945_f5da357a1c1942d6803fa8f471ba3e9a.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221202150055_7bfd1b88cf9b4dd6bd9086e31def8686.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221108143951_ca8490a699e34a3d87ac5c6715e54590.png",
+      "https://st.kakaocdn.net/product/gift/editor/20220526121118_1a6c97f6c6e444cba1a4c17f10a169e2.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/4722425"
   },
   "no_42": {
     "category": "7",
-    "name": "루즈 아 레브르 브왈 립스틱",
-    "brand": "구찌(뷰티)",
-    "price": "59,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210326120720_e57410b893f94c579653ea07b7110fa7.png"
+    "name": "[단독/선물포장] 센트 페어링 코롱 듀오",
+    "brand": "조말론런던\n바로가기",
+    "price": "58,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220704154202_492028e6f25f4ba4ae282a769a57c0a6.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221201113414_b969a5e5df1e46daa0a0103173d493b8.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/2977555"
   },
   "no_43": {
     "category": "7",
-    "name": "[무료각인&선물포장] 메쉬 핑크 쿠션 NEW 오버 핑크 에디션(+미니 핑크 쿠션)",
-    "brand": "입생로랑",
-    "price": "99,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221129175842_603a240b03b842ab9ca2035ad0a62117.jpg"
+    "name": "[각인/선물포장] 신민아 PICK! 로즈 퍼펙토 립 밤",
+    "brand": "지방시(뷰티)\n바로가기",
+    "price": "48,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128144419_2a5b3d5723444a22a770f660547fa7bc.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128144545_abb641734d024471ae7f9a974678fe03.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128144529_dd613f4a43c74a98bea0bc99d10812ab.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128144512_65b2f772a5aa4d72be36abf13fbb5401.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221111091229_144302b8136d4b8c8079547cf674b821.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220630151747_6235115c9f4c49a497da9860a2231710.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220908095404_3cd125e5dea34ecbb56e0ef7df210684.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/2463842"
   },
   "no_44": {
     "category": "7",
-    "name": "루쥬 알뤼르 루미너스 인텐스 립컬러",
-    "brand": "샤넬",
-    "price": "49,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200611212612_d2a4c8c04b86438ab3fbd4f227cd2054.jpg"
+    "name": "[감사메시지카드증정] '품격있는 선물' AHC 리뉴에이지 스페셜세트 (톡별)",
+    "brand": "AHC\n바로가기",
+    "price": "49,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220915141623_252d83c695ee47798553872c32338de4.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20220412164512_2c0de4f3efd2476ba040028c1f1e6367.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220915141701_d338be70d1834cad881b9fe5d2f0626c.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220412164802_946a0b5cb31f4cd2b8b294b54dbde49d.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/2160541"
   },
   "no_45": {
     "category": "7",
-    "name": "[선물포장] NEW 디올 포에버 꾸뛰르 쿠션 - 디올리비에라 리미티드 에디션",
-    "brand": "디올",
-    "price": "98,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108143945_f5da357a1c1942d6803fa8f471ba3e9a.jpg"
+    "name": "[선물세트] '팍팍 뿌려' 존바바토스 아티산 75ML 세트 (+향수샘플&공병) (톡별)",
+    "brand": "남성향수\n바로가기",
+    "price": "46,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221118101808_fc7d0eb927334ff6b39e33114fb2f0f1.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221107091043_b91e91a882d040bb9e6a0f7ff7a810da.jpg",
+      "https://st.kakaocdn.net/product/gift/product/20200404100858_e6e45d25e6e14f039d27f7669bdfc96d"
+    ],
+    "url": "https://gift.kakao.com/product/2512319"
   },
   "no_46": {
     "category": "7",
-    "name": "울트라 르 뗑 쿠션",
-    "brand": "샤넬",
-    "price": "86,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210617123455_5ce0f2f22ffb46439657033becdfa0f3.jpg"
+    "name": "[단독/선물포장] 립 글로우 & 포에버 쿠션 세트 (+레드 사각 파우치 증정)",
+    "brand": "디올\n바로가기",
+    "price": "136,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220826153959_4e0c7ab4a2a5445384a6077953d0b3b8.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221208151157_cb533269caf5425396f52517ecbe3b3d.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221208151201_f5665ec9c08b4e6496c4a5e6f2e91749.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221202145433_40e4f45e068349158f8110986ce5d8e4.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221108141503_2937fcfbc42f4f45820474181da4cfbc.png",
+      "https://st.kakaocdn.net/product/gift/editor/20221020113501_9dd942f7cf1e4edd83b4c5e3f59b2408.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/2324189"
   },
   "no_47": {
     "category": "7",
-    "name": "[단독/선물포장] 센트 페어링 코롱 듀오",
-    "brand": "조말론런던",
-    "price": "58,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220704154202_492028e6f25f4ba4ae282a769a57c0a6.jpg"
+    "name": "[선물포장] 쟈도르 롤러-펄 오 드 뚜왈렛",
+    "brand": "디올\n바로가기",
+    "price": "68,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108144302_9adb1fda8735470b9772b8c501241fbc.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221202164137_74e9f6297189426a871ebcc9c0b5d637.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221108144308_c369e5755ecd417187974e06684de8a7.png",
+      "https://st.kakaocdn.net/product/gift/editor/20220808173204_673d9b294dbe45e5ae498caf3e0ed737.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/2017515"
   },
   "no_48": {
     "category": "7",
-    "name": "[각인/선물포장] 신민아 PICK! 로즈 퍼펙토 립 밤",
-    "brand": "지방시(뷰티)",
-    "price": "48,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128144545_abb641734d024471ae7f9a974678fe03.jpg"
+    "name": "루즈 드 보떼 브리앙 글로우 & 케어",
+    "brand": "구찌(뷰티)\n바로가기",
+    "price": "59,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210730120612_3e10947e461d4348aa1e2297b61b1167.png",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210730113002_71d70caef5754b5baf9c5fe39aff685c.png",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210730120540_c0a4dbe2559e437eb70e82b1336bce20.png",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210730120556_7352deeb0a6f4415ba05d4bf653a2a72.png"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221115143033_3b3bb7198ac24d70b975aa4031337ff4.png"
+    ],
+    "url": "https://gift.kakao.com/product/2542743"
   },
   "no_49": {
     "category": "7",
-    "name": "[감사메시지카드증정] '품격있는 선물' AHC 리뉴에이지 스페셜세트 (톡별)",
-    "brand": "AHC",
-    "price": "49,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220915141623_252d83c695ee47798553872c32338de4.jpg"
+    "name": "[각인/선물포장] 립 마에스트로 세트(+레드 포켓 미러)",
+    "brand": "아르마니\n바로가기",
+    "price": "54,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110172627_232e181bd9b14f0c8eb795df8013dca6.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221110172639_c84f5c3a9f0743419a3ad96f111c7534.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221110172648_11c416f628394fcaa91cbe642fb34cd3.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221110181341_c499db5d5a84404daa4fbd06478a0bed.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/2346408"
   },
   "no_50": {
     "category": "7",
-    "name": "[선물세트] '팍팍 뿌려' 존바바토스 아티산 75ML 세트 (+향수샘플&공병) (톡별)",
-    "brand": "남성향수",
-    "price": "46,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221118101808_fc7d0eb927334ff6b39e33114fb2f0f1.jpg"
-  },
-  "no_51": {
-    "category": "7",
-    "name": "[단독/선물포장] 립 글로우 & 포에버 쿠션 세트 (+레드 사각 파우치 증정)",
-    "brand": "디올",
-    "price": "136,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220718120145_352a199e3b024ef39732de59ee8fd809.jpg"
-  },
-  "no_52": {
-    "category": "7",
-    "name": "[선물포장] 쟈도르 롤러-펄 오 드 뚜왈렛",
-    "brand": "디올",
-    "price": "68,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108144302_9adb1fda8735470b9772b8c501241fbc.jpg"
-  },
-  "no_53": {
-    "category": "7",
-    "name": "루즈 드 보떼 브리앙 글로우 & 케어",
-    "brand": "구찌(뷰티)",
-    "price": "59,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210730113002_71d70caef5754b5baf9c5fe39aff685c.png"
-  },
-  "no_54": {
-    "category": "7",
-    "name": "[각인/선물포장] 립 마에스트로 세트(+레드 포켓 미러)",
-    "brand": "아르마니",
-    "price": "54,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110172627_232e181bd9b14f0c8eb795df8013dca6.jpg"
-  },
-  "no_55": {
-    "category": "7",
     "name": "[각인/선물포장] 미스 디올 블루밍 부케 롤러-펄 오 드 뚜왈렛",
-    "brand": "디올",
-    "price": "68,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108143221_691041c29fb24d6a9fbaae95fde3be34.jpg"
-  },
-  "no_56": {
-    "category": "7",
-    "name": "UV 에쌍씨엘 자외선 차단제",
-    "brand": "샤넬",
-    "price": "76,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200830214400_c076fc5b9e5844fd92fb98af3eb687a1.jpg"
-  },
-  "no_57": {
-    "category": "7",
-    "name": "[친구맺고 3%적립] [단독/선물포장] \"향기로운 일상\" 바디로션&미니 핸드크림 패키지 세트(톡별)",
-    "brand": "불리",
-    "price": "85,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221122160652_6374dca0c6c74bafa9b4151af936d70b.jpg"
-  },
-  "no_58": {
-    "category": "7",
-    "name": "[각인/선물포장] 코롱 50ML",
-    "brand": "조말론런던",
-    "price": "146,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220915175845_96b31d593f714d9da437586c40540b2b.jpg"
-  },
-  "no_59": {
-    "category": "7",
-    "name": "N5 오 드 빠르펭 35ml",
-    "brand": "샤넬(향수)",
-    "price": "109,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20201005201042_a011766c700146a88fcb9b5e6170a977.jpg"
-  },
-  "no_60": {
-    "category": "7",
-    "name": "[홀리데이 선물포장 / 홀리데이 카드] 울트라 훼이셜 크림 50ml",
-    "brand": "키엘",
-    "price": "45,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221107101524_1594c4f4da854f1ab0371b6ddb23d8dd.jpg"
-  },
-  "no_61": {
-    "category": "7",
-    "name": "바움 에쌍씨엘 글로우 스틱",
-    "brand": "샤넬",
-    "price": "59,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210524134000_e0f1788fed64472ca82af01095e89d89.jpg"
-  },
-  "no_62": {
-    "category": "7",
-    "name": "[생일축하/감사선물] 록시땅 핸드 & 솝 메시지 기프트*",
-    "brand": "록시땅",
-    "price": "31,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220818113741_2fa8b373e6b74fd798db95f475103eac.png"
-  },
-  "no_63": {
-    "category": "7",
-    "name": "[선물포장] \"장미수토너\" 아쿠아 디 로즈 250ml 선물세트 (+토너스프레이)",
-    "brand": "산타마리아노벨라",
-    "price": "38,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221021164647_cfc9319bd7cd47779736bfccec767a07.png"
-  },
-  "no_64": {
-    "category": "7",
-    "name": "[무료각인&선물포장] 엉크르 드 뽀 쿠션 NEW 오버 느와르 에디션(+미니 핑크 쿠션)",
-    "brand": "입생로랑",
-    "price": "98,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221129175937_a7a4d4073dc94b469aa22037d721b2b8.jpg"
-  },
-  "no_65": {
-    "category": "7",
-    "name": "[무료각인&선물포장] 리브르 헤어미스트 30ml",
-    "brand": "입생로랑",
-    "price": "68,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220906162922_d8fc82d32b8545b2bad97a22125af2ca.jpg"
-  },
-  "no_66": {
-    "category": "7",
-    "name": "[선물포장]버버리 브릿 쉬어 EDT 30ML",
-    "brand": "여성향수",
-    "price": "50,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220822084535_e450635537f04b56a876700a9d332e2f.jpg"
-  },
-  "no_67": {
-    "category": "7",
-    "name": "[선물포장] 디퓨저 165ML",
-    "brand": "조말론런던",
-    "price": "134,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220913095328_fe555dc797dd4e9ca375e019e2f42b5e.jpg"
-  },
-  "no_68": {
-    "category": "7",
-    "name": "[선물포장] 홈 캔들 200g",
-    "brand": "조말론런던",
-    "price": "99,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221121162247_25efa1501e75475a8bff934c57822a49.jpg"
-  },
-  "no_69": {
-    "category": "7",
-    "name": "운 자르뎅 수 르 닐 오드뚜왈렛 50ml",
-    "brand": "에르메스(향수)",
-    "price": "121,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220901165203_0697edcb5e5d48c7aac4ce5387b35731.jpg"
-  },
-  "no_70": {
-    "category": "7",
-    "name": "[선물포장] 립 글로우 & 블루밍 부케 헤어 미스트 세트 (+디올 골드 그립톡 증정)",
-    "brand": "디올",
-    "price": "115,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220718120231_f7e3811045e445d09d2a118ba1a55f31.jpg"
-  },
-  "no_71": {
-    "category": "7",
-    "name": "[리미티드/선물포장] 디올 홀리데이 캡춰 토탈 크림 리추얼",
-    "brand": "디올",
-    "price": "159,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221026103944_2eadeb33f49f47ee9c77273262edd971.jpg"
-  },
-  "no_72": {
-    "category": "7",
-    "name": "[착한선물] 키엘 수분크림 에코 패키지",
-    "brand": "키엘",
-    "price": "45,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220120190941_7519cc3ab3464b41941d573fb7a3985f.jpg"
-  },
-  "no_73": {
-    "category": "7",
-    "name": "[무료 각인/케이크박스 포장] \"생일축하해\" 키엘 수분크림 세트",
-    "brand": "키엘",
-    "price": "45,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221122172313_21aa5f002c664489be4ba0401918379b.jpg"
-  },
-  "no_74": {
-    "category": "7",
-    "name": "봄 아 레브르 립 밤",
-    "brand": "구찌(뷰티)",
-    "price": "59,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210326120419_05eeed4f2000407c9a653812076875c1.png"
-  },
-  "no_75": {
-    "category": "7",
-    "name": "[토트백포장/각인] 로쏘 발렌티노 립스틱 (+도나 본 인 로마 코랄판타지 1.2ml 증정)",
-    "brand": "발렌티노(뷰티)",
-    "price": "59,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221124121834_768442203905439d970f89487b28aca9.jpg"
-  },
-  "no_76": {
-    "category": "7",
-    "name": "[토트백포장] 발렌티노 고-스프레이 (보체 비바 오 드 퍼퓸)",
-    "brand": "발렌티노(뷰티)",
-    "price": "40,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109134340_6651d40843ae4050bc088734443da916.jpg"
-  },
-  "no_77": {
-    "category": "7",
-    "name": "[각인/선물포장] 버버리 위크엔드 포 우먼 EDP 30ML(쇼핑백증정)",
-    "brand": "여성향수",
-    "price": "45,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220819175923_21572c64aaba4d93bbac73e1d36145ed.jpg"
-  },
-  "no_78": {
-    "category": "7",
-    "name": "[선물포장] \"국민 선크림\" 헤라 UV 톤업 50ml",
-    "brand": "헤라",
-    "price": "34,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220513093358_fb8e6af1c80f41d1815aa4abbb5e865d.jpg"
-  },
-  "no_79": {
-    "category": "7",
-    "name": "사봉 바디 스크럽 600g (11종 택1)",
-    "brand": "사봉",
-    "price": "65,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220425082752_d2264d98d45843d6b520c52434253607.jpg"
-  },
-  "no_80": {
-    "category": "7",
-    "name": "레 맹 에르메스 컴플리트 핸드 케어 100ml",
-    "brand": "에르메스(뷰티)",
-    "price": "120,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220602151117_5849d9cb36df4702a738e4da188728be.jpg"
-  },
-  "no_81": {
-    "category": "7",
-    "name": "[선물포장] \"향기가득 생일선물\" 샴퓨어 헤어 케어 세트",
-    "brand": "아베다",
-    "price": "59,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211220173920_5fbf478d6849401f9d999284f8a63d23.jpg"
-  },
-  "no_82": {
-    "category": "7",
-    "name": "[선물포장] 립 블러시 - 틴티드 립밤 (+립 케이스 증정)",
-    "brand": "톰포드(뷰티)",
-    "price": "76,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221125093037_0d88c10af3c540ab9d2d911f2ff6f011.jpg"
-  },
-  "no_83": {
-    "category": "7",
-    "name": "[선물포장] 룸 스프레이 100ML",
-    "brand": "조말론런던",
-    "price": "74,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220805113751_68d8abbc9f1543d4a376e7c368f1cfc1.jpg"
-  },
-  "no_84": {
-    "category": "7",
-    "name": "[단독/선물세트] 잉글리쉬 페어 앤 프리지아 트래블 컬렉션",
-    "brand": "조말론런던",
-    "price": "107,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220920173437_f23af6ee88eb4389a78caccf11f798b1.jpg"
-  },
-  "no_85": {
-    "category": "7",
-    "name": "[선물포장] 백스테이지 글로우 페이스 팔레트",
-    "brand": "디올",
-    "price": "69,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108143419_ed2a0683f3414a3f84aaf76363caed78.jpg"
-  },
-  "no_86": {
-    "category": "7",
-    "name": "에르메지스티블 인퓨즈드 립 케어 오일",
-    "brand": "에르메스(뷰티)",
-    "price": "68,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220616151736_2b9e5003d11a45b6b48f9a191fba70d4.jpg"
-  },
-  "no_87": {
-    "category": "7",
-    "name": "[각인/선물포장] 르 루즈 딥 벨벳",
-    "brand": "지방시(뷰티)",
-    "price": "49,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221115095345_7bf6f30620384d0ab3ab34993337719b.jpg"
-  },
-  "no_88": {
-    "category": "7",
-    "name": "[선물포장] 리미티드 에디션 까루셀 & 캔들 베이 190g 세트",
-    "brand": "딥티크",
-    "price": "182,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221104122352_dd9262e54ec246678ea1752126be775e.jpg"
-  },
-  "no_89": {
-    "category": "7",
-    "name": "[선물포장 / 무료각인] 맥 파우더 키스 립스틱 (3G)",
-    "brand": "맥(MAC)",
-    "price": "36,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221103164756_e8aab018b0144334870bee011c412ce6.jpg"
-  },
-  "no_90": {
-    "category": "7",
-    "name": "루즈 에르메스 새틴 립스틱",
-    "brand": "에르메스(뷰티)",
-    "price": "90,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210708151154_d16be1ea7afd4f5a919837c5d6128685.jpg"
-  },
-  "no_91": {
-    "category": "7",
-    "name": "\"굿바이 스트레스\" 스트레스 픽스 오일 세트 (톡별)",
-    "brand": "아베다",
-    "price": "36,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211220170656_bbb2a8de26724316955b78146c088625.jpg"
-  },
-  "no_92": {
-    "category": "7",
-    "name": "[선물포장] 리미티드 에디션 오드퍼퓸 디스커버리 세트",
-    "brand": "딥티크",
-    "price": "179,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221116162805_d7d0b8c903f440ccba2a4a8b6deba99a.jpg"
-  },
-  "no_93": {
-    "category": "7",
-    "name": "[선물포장] 맨즈 코롱 컬렉션",
-    "brand": "조말론런던",
-    "price": "179,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221121162443_fe41529557db485c838badcc96824aea.jpg"
-  },
-  "no_94": {
-    "category": "7",
-    "name": "[무료각인&선물포장] 더 슬림 벨벳 래디컬",
-    "brand": "입생로랑",
-    "price": "57,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114165148_c3a8884279834ba681e9bb5ad4ad3a58.jpg"
-  },
-  "no_95": {
-    "category": "7",
-    "name": "[쇼핑백] 메종마르지엘라 레이지 선데이 모닝 핸드크림 30ml",
-    "brand": "메종마르지엘라(향수)",
-    "price": "42,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220816112156_37045295f41341d5a77a6ced7119c71d.jpg"
-  },
-  "no_96": {
-    "category": "7",
-    "name": "[토트백포장] 발렌티노 고-스프레이 (택 1)",
-    "brand": "발렌티노(뷰티)",
-    "price": "40,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221124122256_3d76c24217d74b29adc9e9a0e8fb736f.jpg"
-  },
-  "no_97": {
-    "category": "7",
-    "name": "[NEW센트/선물포장] 여행용 캔들 65G",
-    "brand": "조말론런던",
-    "price": "52,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221121162515_ef97619174aa4bb3b9341b7025b35e8a.jpg"
-  },
-  "no_98": {
-    "category": "7",
-    "name": "[크리스마스 컬렉션] 펜할리곤스 루나 에어리얼 디스플레이 (향수30ml+로션30ml)",
-    "brand": "펜할리곤스",
-    "price": "150,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221111141959_bf475f15950d47e8a43dc751e9c35170.jpg"
-  },
-  "no_99": {
-    "category": "7",
-    "name": "[선물포장] NEW 미스 디올 헤어 오일",
-    "brand": "디올",
-    "price": "73,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108141257_52ae70a508b7408cb0941588fac67a0d.jpg"
-  },
-  "no_100": {
-    "category": "7",
-    "name": "[리미티드/선물포장] 루즈 블러쉬 - 홀리데이 컬렉션",
-    "brand": "디올",
-    "price": "70,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108134132_d3a74c62f12940ac96a49f2b268f76ff.jpg"
-  },
-  "no_101": {
-    "category": "7",
-    "name": "[단독/선물세트] 미니 럭셔리즈",
-    "brand": "조말론런던",
-    "price": "69,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221021141909_37283f03fa584512a0a2d85094f8a332.jpg"
-  },
-  "no_102": {
-    "category": "7",
-    "name": "[15%할인][홀리데이][선물포장] 향기보습 핸드크림 & 립밤 기프트 세트",
-    "brand": "프레쉬(fresh)",
-    "price": "17,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109171114_5815eae2a5264d2996dd086602fe5153.jpg"
-  },
-  "no_103": {
-    "category": "7",
-    "name": "[선물포장&무료각인] 제니피끄 세럼 30ml세트 (+21ml 용량 추가 증정)",
-    "brand": "랑콤",
-    "price": "119,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130180349_7284f75b32294bba9a9a31aa0d290eb4.jpg"
-  },
-  "no_104": {
-    "category": "7",
-    "name": "[한정/선물포장] 오렌지 비터스 코롱 30ML",
-    "brand": "조말론런던",
-    "price": "110,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221122090058_bf1d421520d742f9af8eb34a6c948f6f.jpg"
-  },
-  "no_105": {
-    "category": "7",
-    "name": "[리미티드/선물포장] 루즈 디올 - 홀리데이 컬렉션",
-    "brand": "디올",
-    "price": "54,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108133746_2f6f911c047e4f7a9e8629da92101b5b.jpg"
-  },
-  "no_106": {
-    "category": "7",
-    "name": "[리미티드/선물포장] 루즈 디올 - 밀레피오리 컬렉션",
-    "brand": "디올",
-    "price": "54,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108135648_cc4b2207448c4f5bb2a9474dfef8fbcc.jpg"
-  },
-  "no_107": {
-    "category": "7",
-    "name": "[각인/선물포장] 코롱 30ML",
-    "brand": "조말론런던",
-    "price": "107,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220915175906_bda252413233479bbf3b09c2223b5c56.jpg"
-  },
-  "no_108": {
-    "category": "7",
-    "name": "[선물포장] 버버리 위크엔드 포 맨 EDT 50ML",
-    "brand": "남성향수",
-    "price": "50,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220916145520_a241bc31b66c45e0b64b87bd105f149b.jpg"
-  },
-  "no_109": {
-    "category": "7",
-    "name": "[선물포장] NEW 홀리데이 엉크르 드 뽀 쿠션",
-    "brand": "입생로랑",
-    "price": "98,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221107214955_9fcbc734d15a49bfb64fdda702cdfae7.jpg"
-  },
-  "no_110": {
-    "category": "7",
-    "name": "[리미티드/선물포장] 아이 메이크업 팔레트 - 홀리데이 컬렉션",
-    "brand": "디올",
-    "price": "94,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108134544_11135b41849a45a9992c6b55089561d1.jpg"
-  },
-  "no_111": {
-    "category": "7",
-    "name": "[선물포장] 리브르 오 드 뚜왈렛 30ml",
-    "brand": "입생로랑",
-    "price": "89,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114173726_8f22b0151baf40efb97709204013fa29.jpg"
-  },
-  "no_112": {
-    "category": "7",
-    "name": "[10% 할인/홀리데이] 립 케어 2종 세트 (립 오일+립 밤)",
-    "brand": "에스티로더",
-    "price": "39,600원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221206085258_c6002bf5ac604052a458b1736e0d895a.jpg"
-  },
-  "no_113": {
-    "category": "7",
-    "name": "[홀리데이 선물포장/홀리데이 카드] 립밤 트리오 홀리데이 에디션 2022",
-    "brand": "키엘",
-    "price": "35,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221111180021_2fc3b37b83cd4b258d8cb24aa317c360.jpg"
-  },
-  "no_114": {
-    "category": "7",
-    "name": "[리미티드/선물포장] 미스 디올 센티드 캔들 - 밀레피오리 컬렉션",
-    "brand": "디올",
-    "price": "70,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108134746_920216c8c0314458abb9b5d9962c8455.jpg"
-  },
-  "no_115": {
-    "category": "7",
-    "name": "[남자선물]\"하나로 끝\" 아쿠아파워 올인원200ml 비오템옴므 홀리데이 세트 (+팝업카드)",
-    "brand": "비오템",
-    "price": "59,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221202150706_631f0cfd48ed480d93feb3ae70327687.jpg"
-  },
-  "no_116": {
-    "category": "7",
-    "name": "[리미티드/선물포장] 디올 어딕트 립스틱 - 홀리데이 컬렉션",
-    "brand": "디올",
-    "price": "51,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108134045_c2fb1e38953745aa9e6ebe852c7cde61.jpg"
-  },
-  "no_117": {
-    "category": "7",
-    "name": "[각인/선물포장] 버버리 위크엔드 포 맨 EDT 30ML",
-    "brand": "남성향수",
-    "price": "35,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220819175813_d0c8a582be4f4cdd9457364af6617bd1.jpg"
-  },
-  "no_118": {
-    "category": "7",
-    "name": "[홀리데이 한정판][36% OFF] 프리티 핑크 포스티지",
-    "brand": "베네피트",
-    "price": "35,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221031173235_4662f103dedc4eb798bc04965382b310.jpg"
-  },
-  "no_119": {
-    "category": "7",
-    "name": "[단독/선물포장] 핸드 솝 & 핸드 로션 듀오",
-    "brand": "르라보",
-    "price": "77,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220829095035_27df5417e5d248ada64f37a1b0b1f311.jpg"
-  },
-  "no_120": {
-    "category": "7",
-    "name": "\"기분전환 힐링\" 오 비타미네 바디 미스트 50ml 세트 (+샤워젤75ml)",
-    "brand": "비오템",
-    "price": "34,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221117142033_568d15fc69fb4a4ea511c14bab8211e7.jpg"
-  },
-  "no_121": {
-    "category": "7",
-    "name": "[15%할인][홀리데이][선물포장] 슈가 립 트리트먼트 세트 (립케이스증정)",
-    "brand": "프레쉬(fresh)",
-    "price": "32,300원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221124111218_ec32962f689e4560bd10ce0d40ef7919.jpg"
-  },
-  "no_122": {
-    "category": "7",
-    "name": "[각인/선물포장] 투 고 쿠션(+플리세 쿠션 파우치)",
-    "brand": "아르마니",
-    "price": "94,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110173427_58d1fbc8db5a4b119239530f7835ab5e.jpg"
-  },
-  "no_123": {
-    "category": "7",
-    "name": "[남자선물] 아쿠아파워 수분충전 5종 비오템옴므 홀리데이 세트 (스킨&로션)",
-    "brand": "비오템",
-    "price": "136,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221118094823_dd3e0a993c1c43cabf73b3d70f5879a9.jpg"
-  },
-  "no_124": {
-    "category": "7",
-    "name": "리미티드 에디션 쿠션 드 보떼",
-    "brand": "구찌(뷰티)",
-    "price": "98,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221027202817_3f3680621bb547909a51be56719aaab4.jpg"
-  },
-  "no_125": {
-    "category": "7",
-    "name": "[구찌 블룸] 기프트 세트",
-    "brand": "구찌(향수)",
-    "price": "243,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221123050805_d82a0f673fea4c01ada7a7f3d7ce3dec.jpg"
-  },
-  "no_126": {
-    "category": "7",
-    "name": "[선물포장] 리브르 르 퍼퓸 30ml(+리브르 폰 링)",
-    "brand": "입생로랑",
-    "price": "127,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114181201_f51d791e0e3e43e8909f36492660cf05.jpg"
-  },
-  "no_127": {
-    "category": "7",
-    "name": "[단독/선물포장] 핸드크림 세트 (바디로션 15ml+홀리데이 양문형 선물상자)",
-    "brand": "아틀리에코롱",
-    "price": "37,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110154026_e402fa4fcf04472b9e8ab9b837d24010.jpg"
-  },
-  "no_128": {
-    "category": "7",
-    "name": "[설화수] 탄력 3종 세트 화이트 지함보 포장(+베스트셀링 8종 샘플팩 증정)",
-    "brand": "설화수",
-    "price": "171,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220818170044_98da5b8ee8fa472097b2f8ced8b76b5e.jpg"
-  },
-  "no_129": {
-    "category": "7",
-    "name": "[온라인단독] 홀리데이 디스커버리 세트 (2ml*10)",
-    "brand": "아틀리에코롱",
-    "price": "45,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110171102_7b6c58a5806546ffa9bf348c55603042.jpg"
-  },
-  "no_130": {
-    "category": "7",
-    "name": "[선물포장] NEW 네오 누드 립밤",
-    "brand": "아르마니",
-    "price": "49,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110172714_5ad08e029f73414192f48617ae2d468f.jpg"
-  },
-  "no_131": {
-    "category": "7",
-    "name": "구찌 블러시 드 보떼 치크 & 아이 파우더",
-    "brand": "구찌(뷰티)",
-    "price": "80,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221027203007_d7af0c148e80453b9062c9f78e1b9137.jpg"
-  },
-  "no_132": {
-    "category": "7",
-    "name": "[구찌 플로라] 골저스 가드니아, 100ml, 오 드 퍼퓸",
-    "brand": "구찌(향수)",
-    "price": "225,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211206165851_3ef5504610f64e30b313d8e904d20669.jpg"
-  },
-  "no_133": {
-    "category": "7",
-    "name": "[구찌 블룸] 100ml, 오 드 뚜왈렛",
-    "brand": "구찌(향수)",
-    "price": "206,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220503185127_6368fa0c541f4e88bad4309dee5a0e85.jpg"
-  },
-  "no_134": {
-    "category": "7",
-    "name": "[단독/선물포장] 샴푸 & 컨디셔너 듀오",
-    "brand": "르라보",
-    "price": "80,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220829095535_36b05509f1044305ae04cf3d4b941103.jpg"
-  },
-  "no_135": {
-    "category": "7",
-    "name": "[단독/선물포장] 홀리데이 캔들 70g 세트 (+성냥+카드+양문형 선물상자)",
-    "brand": "아틀리에코롱",
-    "price": "45,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114160416_27b128e98785468b8eef834603253c78.jpg"
-  },
-  "no_136": {
-    "category": "7",
-    "name": "[선물포장]\"시슬리 베스트셀링 에센스로션\" 에뮐씨옹 에꼴로지끄 기획세트",
-    "brand": "시슬리 화장품",
-    "price": "310,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220202153736_1263536afd38479a86cb2eb994d1d6f4.jpg"
-  },
-  "no_137": {
-    "category": "7",
-    "name": "[친구맺고 3%적립] [가을선물] 리셋 세럼 30ml & 스톤 괄사(홈 스파 마사지 바) 세트",
-    "brand": "록시땅",
-    "price": "87,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220829105126_5b7ceb3097b3420d855baa4b935a5e75.jpg"
-  },
-  "no_138": {
-    "category": "7",
-    "name": "\"향기로운 감사선물\" [에코백포장] 로즈 바디 로션 & 워시 세트 [+샤워볼,헤어밴드]",
-    "brand": "안나수이",
-    "price": "49,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220526111256_5a16e5b64b9849788ffbffe9673fd64a.jpg"
-  },
-  "no_139": {
-    "category": "7",
-    "name": "[20%할인/선물포장] 아이섀도우 럭셔리 팔레트 (+DIY스티커 증정)",
-    "brand": "샬롯 틸버리",
-    "price": "60,800원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221031210211_bcf61d7cdb8e4f9ba7d22bf265319e98.jpg"
-  },
-  "no_140": {
-    "category": "7",
-    "name": "[홀리데이 한정판][57% OFF] 치크 파티 패키지",
-    "brand": "베네피트",
-    "price": "56,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221031173351_3afd81452d2d4c0f9a222fd9a35bf6ff.jpg"
-  },
-  "no_141": {
-    "category": "7",
-    "name": "[럭셔리 스킨케어 쿠션] 퓨처 스킨 쿠션 세트",
-    "brand": "샹테카이",
-    "price": "158,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220929165530_84a27c757c7a42ef8f15879f9edd9d57.jpg"
-  },
-  "no_142": {
-    "category": "7",
-    "name": "[홀리데이/선물포장] 바이 더 파이어 플레이스 EDT 100ML",
-    "brand": "메종마르지엘라(향수)",
-    "price": "208,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221129154435_f9b35411965845609c86ff31e5a1093d.jpg"
-  },
-  "no_143": {
-    "category": "7",
-    "name": "[홀리데이 한정판][46% OFF] 더 포어펙트 파셀",
-    "brand": "베네피트",
-    "price": "23,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221031173406_dde9e6fbaa364dc4a50746991a3e7e5a.jpg"
-  },
-  "no_144": {
-    "category": "7",
-    "name": "[선물포장] 오 드 깡빠뉴 바디 로션 기획세트",
-    "brand": "시슬리 화장품",
-    "price": "105,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220825134855_1874ed3826794ac0a97a5b487acb37f5.jpg"
-  },
-  "no_145": {
-    "category": "7",
-    "name": "[20%할인/선물포장] NEW 샬롯 틸버리스 아이코닉 미니 립 트리오 키트",
-    "brand": "샬롯 틸버리",
-    "price": "40,800원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109153357_4e83a58b9b2e4af88063a23217258aa1.jpg"
-  },
-  "no_146": {
-    "category": "7",
-    "name": "[단독/선물포장] \"손상모 집중솔루션\" NO.3 헤어 퍼펙터 100ml (헤어빗+20ml)",
-    "brand": "올라플렉스",
-    "price": "43,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221118135319_6013c97a4bb64ce1bb30fbcd11342eff.jpg"
-  },
-  "no_147": {
-    "category": "7",
-    "name": "[단독/선물포장] \"부스스 헤어에 영양충전\" NO.9 헤어세럼 (헤어빗+손거울)",
-    "brand": "올라플렉스",
-    "price": "43,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221115110531_0887730200f440b188f74731df072e51.jpg"
-  },
-  "no_148": {
-    "category": "7",
-    "name": "[선물포장/메시지카드] 더 리틀즈 6.0",
-    "brand": "드렁크 엘리펀트",
-    "price": "99,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221101192518_1f1f9022797343e5b46d0f185c77af2f.jpg"
-  },
-  "no_149": {
-    "category": "7",
-    "name": "[선물포장/메시지카드] 멀티 보습 듀오 세트",
-    "brand": "드렁크 엘리펀트",
-    "price": "50,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221025114758_bb2c20ec150a40899339fcca9531a190.jpg"
-  },
-  "no_150": {
-    "category": "7",
-    "name": "[홀리데이/선물포장] 레이지 선데이 모닝 EDT 100ML",
-    "brand": "메종마르지엘라(향수)",
-    "price": "208,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C610x610.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221129153405_a0a3acf8ca4c4656adf93d1dfc3ea83c.jpg"
+    "brand": "디올\n바로가기",
+    "price": "68,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108143226_4e4555af6ee74216b998694d828a32ed.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108143221_691041c29fb24d6a9fbaae95fde3be34.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221202144916_ba6f1e95f0804040adcb390d02066881.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221108143233_c9806dbb6c084cbfa518c77ae61dd72e.png",
+      "https://st.kakaocdn.net/product/gift/editor/20220125161648_1efa9b8a29934e9aa4455d325ec14401.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/1181755"
   }
 }

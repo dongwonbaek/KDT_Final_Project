@@ -14,28 +14,25 @@
   <div class="modal fade select-friend-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header d-flex ">
+        <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">친구 선택</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          <p class="select-friend-sf">선물할 친구를 선택하세요
-            <i class="bi bi-info-circle select-info" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="새로 추가한 친구는 바로 나타나지 않을 수 있으며, 선물을 받을 수 없는 친구들은 목록에 표시되지 않습니다."></i>
-          </p>
-          <div id='result'></div>
+          <div class="select-friend-sf" id='result'>선물할 친구를 선택하세요</div>
         </div>
         <div class="modal-body">
           <div class="mb-5">
-            나
+            나에게
             <div class="form-check">
               <input id='select-mine' data-user-id="{{ request.user.pk }}" class="form-check-input" type="radio" id="flexCheckDefault" value="{{ user }}" name="towhom[1][]" onclick='getFriend(event)'>
               <label class="form-check-label" for="flexCheckDefault"></label>
                 <img src="{{ user.get_photo_url }}" class="select-friend-img">
-                {{ user }}
+                {{ user.nickname }}
               </label>
             </div>
           </div>
           <!--나-->
-          <div>
-            친구목록
+          <div class="to-friend">
+            친구에게
             {{ user.following.all|length }}
             {% if request.user.following.all %}
               {% for follower in request.user.following.all %}
@@ -43,7 +40,7 @@
                   <input id="select-follower" data-follower-id="{{ follower.pk }}"class="form-check-input" type="radio" value="{{ follower.username }}" name="towhom[1][]" onclick='getFriend(event)'>
                   <label class="form-check-label" for="flexCheckDefault">
                     <img src="{{ follower.get_photo_url }}" class="select-friend-img">
-                    {{ follower.username }}
+                    {{ follower.nickname }}
                   </label>
                 </div>
               {% endfor %}
@@ -66,19 +63,22 @@
       <span class="snowflake"></span>
     </div>
     <p>
-      {% if request.user.is_authenticated %}{{ user }}
-        <span>님</span><br>{% endif %}누구를 위한 선물인가요?</p>
-        {% if request.user.is_authenticated %}
-    <!-- 로그인 되어 있으면 친구 목록 trigger modal -->
-    <div class="recobox-pic-area" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <img src="{% static 'img/index/question-mark.png' %}" alt="anonymous-user" class="recobox-pic">
-      <img src="{% static 'img/index/add-red.png' %}" alt="select-friend" class="select-friend">
-    </div>
+      {% if request.user.is_authenticated %}
+        {{ user.nickname }}님
+        <br>
+      {% endif %}누구를 위한 선물인가요?
+    </p>
+    {% if request.user.is_authenticated %}
+      <!-- 로그인 되어 있으면 친구 목록 trigger modal -->
+      <div class="recobox-pic-area" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <img src="{% static 'img/index/question-mark.png' %}" alt="anonymous-user" class="recobox-pic">
+        <img src="{% static 'img/index/add-red.png' %}" alt="select-friend" class="select-friend">
+      </div>
     {% else %}
-    <a class="recobox-pic-area" href="{% url 'accounts:login' %}">
-      <img src="{% static 'img/index/question-mark.png' %}" alt="anonymous-user" class="recobox-pic">
-      <img src="{% static 'img/index/add-red.png' %}" alt="select-friend" class="select-friend">
-    </a>
+      <a class="recobox-pic-area" href="{% url 'accounts:login' %}">
+        <img src="{% static 'img/index/question-mark.png' %}" alt="anonymous-user" class="recobox-pic">
+        <img src="{% static 'img/index/add-red.png' %}" alt="select-friend" class="select-friend">
+      </a>
     {% endif %}
   </section>
   <section class="container category-wrapper">
@@ -119,6 +119,27 @@
       </ul>
     </div>
     <!--personalized-category--> {% endcomment %}
+    <div class="index-ranking my-5">
+      <h2 class="text-center">지금 인기있는 선물이에요🎈</h2>
+      <ul class="ranking-more row row-cols-4 expandible">
+        {% for product in gender_products %}
+          <li class="col my-1 px-1">
+            <a class='text-decoration-none' href="{% url 'articles:product_detail' product.pk %}">
+              <div class="ranking-item">
+                <img class='rounded' src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
+                <div class="bookmark rounded-start">
+                  <span class='mb-3 fs-4 fw-bold text-white'>{{ forloop.counter }}</span>
+                </div>
+              </div>
+              <div>{{ product.title }}</div>
+              <p class='text-secondary m-0' style='font-size:.8rem;'>{{ product.brand }}</p>
+              <p class='text-dark m-0'>{{ product.price|intcomma }}원</p>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <!--index-ranking 끝-->
     <div class="multiple-items">
       <div><a href="https://event.multicampus.com/multicampusmain" target="_blank"><img src="{% static 'img/index/ad-multiit2.png' %}"></a></div>
       <div><img src="https://picsum.photos/300/200?random=2"></div>
@@ -128,20 +149,7 @@
       <div><img src="https://picsum.photos/300/200?random=6"></div>
     </div>
     <!--MyCarousel-->
-    <div class="index-ranking my-5">
-      <h2 class="text-center">지금 인기있는 선물이에요🎈</h2>
-      <ul class="ranking-more row row-cols-4 expandible">
-        {% for product in products %}
-          <li class="col ranking-item">
-            <div class="bookmark">{{ forloop.counter }}</div>
-            <img src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
-            <a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a>
-            <p><span>{{ product.price|intcomma }}</span>원</p>
-          </li>
-        {% endfor %}
-      </ul>
-    </div><!--index-ranking-->
-    <hr>
+    
     <div class="reco-per-member row row-cols-3">
       <div class="card col">
         <img src="https://picsum.photos/400/200">
@@ -176,7 +184,7 @@
     </div>
     <div id="page" class="youtube-list row">
       <div class="small-11 small-centered">
-        <h2>추천 유튜브<i class="bi-youtube"></i></h2>
+        <h2 class="text-center">추천 유튜브<i class="bi-youtube text-danger"></i></h2>
         <div class="slider slider-single">
           <div><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7Y3N_FJxbP4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           <div><iframe width="560" height="315" src="https://www.youtube.com/embed/VJvfPBCnpsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
@@ -219,17 +227,12 @@
 {% endblock content %}
 
 {% block script %}
-<script>
-  function getFriend(event) {
-    document.getElementById('result').innerText = 
-      event.target.value;
-  }
-</script>
   <script>
     // AD carousel
     $('.multiple-items').slick({infinite: true, slidesToShow: 2, slidesToScroll: 2, dots: true});
   </script>
   <script>
+    //랭킹 더보기 접기
     $('ul.expandible').each(function(){
       var $ul = $(this),
           $lis = $ul.find('li:gt(7)'),
@@ -238,7 +241,7 @@
       
       if($lis.length > 0){
           $ul
-              .append($('<span class="showmore"><li class="expand">' + (isExpanded ? '접기' : '더보기') + '</li></span>')
+              .append($('<a class="showmore text-white text-decoration-none"><li class="expand">' + (isExpanded ? '접기' : '더보기') + '</li></a>')
               .click(function(event){
                   var isExpanded = $ul.hasClass('expanded');
                   event.preventDefault();
@@ -317,6 +320,7 @@
     });
   </script>
   <script>
+    // 선택한 친구 위시리스트로 이동
     const selectMine = document.querySelector('#select-mine')
     const selectFollowers = document.querySelectorAll('#select-follower')
     const selectBtn = document.querySelector('#select-btn')
@@ -327,6 +331,12 @@
     selectFollower.addEventListener('click', function(event){
       selectBtn.setAttribute('href', `/accounts/${event.target.dataset.followerId}/wishlist/`)
       })
+    }
+
+      //친구선택 모달. 현재 선택한 사람
+      function getFriend(event) {
+      document.getElementById('result').innerText = 
+        event.target.value;
     }
   </script>
 {% endblock script %}

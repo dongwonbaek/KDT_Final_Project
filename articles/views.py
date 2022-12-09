@@ -1,7 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import *
-from .forms import ProductForm, ProductImagesForm, ReviewForm, ReviewCommentForm, CommunityForm, CommunityImagesForm
+from .forms import (
+    ProductForm,
+    ProductImagesForm,
+    ReviewForm,
+    ReviewCommentForm,
+    CommunityForm,
+    CommunityImagesForm,
+)
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.http import JsonResponse
@@ -11,8 +18,22 @@ import random
 
 
 def index(request):
+    gender_products = Product.objects.annotate(
+        wish_men_cnt=Count("like_user", filter=Q(like_user__gender=True)),
+        wish_women_cnt=Count("like_user", filter=Q(like_user__gender=False)),
+        wish_cnt=Count("like_user"),
+    )
+
+    if request.user.is_authenticated:
+        if request.user:
+            gender_products = gender_products.order_by("-wish_men_cnt")[:20]
+        else:
+            gender_products = gender_products.order_by("-wish_women_cnt")[:20]
+    else:
+        gender_products = (gender_products.order_by("-wish_cnt")[:20],)
+
     context = {
-        "products": Product.objects.order_by("-pk")[:20],
+        "gender_products": gender_products,
         "categories": Product.category_choice,
     }
     return render(request, "articles/index.html", context)
@@ -52,11 +73,18 @@ def product_create(request):
 
 def product_detail(request, product_pk):
     product = get_object_or_404(Product, pk=product_pk)
-    reviews = product.review_set.annotate(like_cnt=Count('good_user', distinct=True)+Count('cool_user', distinct=True)+Count('fun_user', distinct=True)+Count('sad_user', distinct=True))
-    like_reviews = reviews.order_by('-like_cnt')
-    recent_reviews = reviews.order_by('-created_at')
-    rating_avg = product.review_set.aggregate(rating_avg=Avg('rating'))['rating_avg']
-    random_products = Product.objects.filter(category=product.category).order_by("?")[:10]
+    reviews = product.review_set.annotate(
+        like_cnt=Count("good_user", distinct=True)
+        + Count("cool_user", distinct=True)
+        + Count("fun_user", distinct=True)
+        + Count("sad_user", distinct=True)
+    )
+    like_reviews = reviews.order_by("-like_cnt")
+    recent_reviews = reviews.order_by("-created_at")
+    rating_avg = product.review_set.aggregate(rating_avg=Avg("rating"))["rating_avg"]
+    random_products = Product.objects.filter(category=product.category).order_by("?")[
+        :10
+    ]
     quotient_list = []
     rest_list = []
     half_list = []
@@ -73,16 +101,26 @@ def product_detail(request, product_pk):
             rest_list.append(1)
     else:
         rating_avg = 0
+    rating_list = []
+    total = product.review_set.all().count()
+    if total:
+        for cnt in range(5, 0, -1):
+            rating_count = product.review_set.filter(rating=cnt).count()
+            if rating_count:
+                rating_list.append(round((rating_count / total) * 100))
+            else:
+                rating_list.append(0)
     context = {
-        'product': product,
-        'rating_avg': rating_avg,
-        'quotient_list': quotient_list,
-        'rest_list': rest_list,
-        'half_list': half_list,
-        'like_reviews': like_reviews,
-        'recent_reviews': recent_reviews,
-        'random_products': random_products,
-        'review_comment_form': ReviewCommentForm(),
+        "product": product,
+        "rating_avg": rating_avg,
+        "quotient_list": quotient_list,
+        "rest_list": rest_list,
+        "half_list": half_list,
+        "like_reviews": like_reviews,
+        "recent_reviews": recent_reviews,
+        "random_products": random_products,
+        "rating_list": rating_list,
+        "review_comment_form": ReviewCommentForm(),
     }
     return render(request, "articles/product_detail.html", context)
 
@@ -193,16 +231,24 @@ def review_comment_create(request, review_pk):
                     islogin = True
                 else:
                     islogin = False
+                if a.user.image:
+                    isimage = True
+                else:
+                    isimage = False
                 comments.append(
                     [
                         a.content,  # 0
                         a.user.nickname,  # 1
-                        a.created_at,  # 2
+                        a.created_at.year,  # 2
                         a.user.pk,  # 3
                         request.user.pk,  # 4
                         a.id,  # 5
                         a.review.pk,  # 6
                         islogin,  # 7
+                        a.user.image.url, #8
+                        a.created_at.month, #9
+                        a.created_at.day, #10
+                        isimage,
                     ]
                 )
             context = {
@@ -270,14 +316,9 @@ def product_rank(request):
         product_list = []
         for a in products[:20]:
             image = str(a.productimages_set.all()[0].images)
-            product_list.append([
-                image,
-                a.title,
-                a.price,
-                a.pk
-                ])
+            product_list.append([image, a.title, a.price, a.pk])
         context = {
-            'products':product_list,
+            "products": product_list,
         }
         return JsonResponse(context)
     else:
@@ -352,7 +393,7 @@ def review_cool(request, review_pk):
     else:
         review.cool_user.add(request.user)
         is_cooled = True
-    context = {'isCooled': is_cooled, 'coolCount': review.cool_user.count()}
+    context = {"isCooled": is_cooled, "coolCount": review.cool_user.count()}
     return JsonResponse(context)
 
 
@@ -365,7 +406,7 @@ def review_fun(request, review_pk):
     else:
         review.fun_user.add(request.user)
         is_funed = True
-    context = {'isFuned': is_funed, 'funCount': review.fun_user.count()}
+    context = {"isFuned": is_funed, "funCount": review.fun_user.count()}
     return JsonResponse(context)
 
 
@@ -379,20 +420,18 @@ def review_sad(request, review_pk):
         review.sad_user.add(request.user)
         is_saded = True
 
-    context = {'isSaded': is_saded, 'sadCount': review.sad_user.count()}
+    context = {"isSaded": is_saded, "sadCount": review.sad_user.count()}
     return JsonResponse(context)
 
 
 def community_index(request):
-    communities = Community.objects.order_by('-pk')
-    context = {
-        'communities': communities
-    }
-    return render(request, 'articles/community_index.html', context)
+    communities = Community.objects.order_by("-pk")
+    context = {"communities": communities}
+    return render(request, "articles/community_index.html", context)
 
 
 def community_create(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         community_form = CommunityForm(request.POST, request.FILES)
         community_images_form = CommunityImagesForm(request.POST, request.FILES)
         images = request.FILES.getlist("images")
@@ -403,21 +442,23 @@ def community_create(request):
                 for image in images:
                     image_instance = CommunityImages(community=community, images=image)
                     image_instance.save()
+
             messages.success(request, "글 생성 완료")
             return redirect('articles:community_index')
+
     else:
         community_form = CommunityForm()
         community_images_form = CommunityImagesForm()
     context = {
-        'community_form': community_form,
-        'community_images_form': community_images_form,
+        "community_form": community_form,
+        "community_images_form": community_images_form,
     }
     return render(request, "articles/community_form.html", context)
 
 
 def community_update(request, community_pk):
     community = Community.objects.get(pk=community_pk)
-    if request.method == 'POST':
+    if request.method == "POST":
         community_form = CommunityForm(request.POST, request.FILES, instance=community)
         community_images_form = CommunityImagesForm(request.POST, request.FILES)
         images = request.FILES.getlist("images")
@@ -428,14 +469,16 @@ def community_update(request, community_pk):
                     image_instance = CommunityImages(community=community, images=image)
                     image_instance.save()
             community.save()
+
             messages.success(request, "글 수정 완료")
             return redirect('articles:community_detail', community_pk)
+
     else:
         community_form = CommunityForm(instance=community)
         community_images_form = CommunityImagesForm()
     context = {
-        'community_form': community_form,
-        'community_images_form': community_images_form,
+        "community_form": community_form,
+        "community_images_form": community_images_form,
     }
     return render(request, "articles/community_form.html", context)
 
@@ -448,6 +491,7 @@ def community_delete(request, community_pk):
 
 def community_detail(request, community_pk):
     community = Community.objects.get(pk=community_pk)
+
     # community_comment_form = CommunityCommentForm()
     context = {
          'community': community,
@@ -472,3 +516,4 @@ def community_detail(request, community_pk):
 #             'userName': comment.user.username
 #         }
 #         return JsonResponse(context)
+

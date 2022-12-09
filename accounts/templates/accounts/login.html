@@ -11,11 +11,11 @@
 {% block style %}{% endblock style %}
 {% block content %}
 
-<div class="wrapper1">
+<section class="container signup-wrapper">
   <h1 class="text-center">로그인</h1>
   <form action="" method="POST" class="d-flex flex-column align-items-center">
     {% csrf_token %}
-    <label for="email">아이디(이메일)</label>
+    <label for="email">이메일</label>
     <input class='signup-style1' id='email' type="email" name='username'>
     <label for="password">비밀번호</label>
     <input class='signup-style1' id='password' type="password" name='password'>
@@ -36,12 +36,12 @@
     </form>
     <form action="/accounts/naver/login/" method="post">
       {% csrf_token %}
-      <button class="btnink my-2 my-sm-0 btn-l py-1" style="color : #FFFFFF" type="submit"
+      <button class="btn my-2 my-sm-0 btn-l py-1" style="color : #FFFFFF" type="submit"
         onclick="document.getElementById('test').submit();"><img src="{% static 'img/naver.png' %}" alt="네이버"
           style="height:35px;"></button>
     </form>
   </div>
-</div>
+</section>
 {% endblock content %}
 {% block script %}
 {% endblock script %}

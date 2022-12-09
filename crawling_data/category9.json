@@ -1,1339 +1,805 @@
 {
+  "no_1": {
+    "category": "9",
+    "name": "\"고흥 유자를 선물합니다\" 자임 꿀유자차 580g x 2병",
+    "brand": "자임\n바로가기",
+    "price": "13,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211027171411_ee9576dea2b041e18c35918056985f1e.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221005200556_8644942586d24dccb9ad46c4c0a62eae.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211027171351_9e356f4e99964feeb67e42a74569fc57.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211027171404_8c8be2435f09419184c0ddb6b3978ab7.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20210914185004_a9d4b05053aa4cdba9cbb2352fc34c4c.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/5682550"
+  },
   "no_2": {
     "category": "9",
     "name": "마이크리스마스쿠키 춘식이 파자마 인형",
-    "brand": "프렌즈인형/피규어",
-    "price": "39,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114202223_5ff71bae6a8c4009a38ca77e27267864.jpg"
+    "brand": "프렌즈인형/피규어\n바로가기",
+    "price": "39,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114202223_5ff71bae6a8c4009a38ca77e27267864.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221114202246_476cf5259bdf4ad8a6f8bead7be5a890.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221114202338_604a3c26ebb546a4b24a7cb5e95e7824.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221114202338_6bb49369b98f4acfb62cddf5b7390cbb.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/6127860"
   },
   "no_3": {
     "category": "9",
     "name": "리틀퍼피클럽 핫팩&파우치 세트_라이언/어피치",
-    "brand": "프렌즈리빙",
-    "price": "29,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221020171204_7c1b5b6ba7aa4804a859d66c822bd939.jpg"
+    "brand": "프렌즈리빙\n바로가기",
+    "price": "29,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221020171209_a5ba8455d54d469bb07e53b04b94b89f.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221020171204_7c1b5b6ba7aa4804a859d66c822bd939.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221020171214_2f9c27f190c74ff1a32656ee6624444c.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221020171317_91337df95d6e45e48bad3ca02d099251.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221020171435_80d1001e9ec84f48badee035dd30f99d.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221020171329_ab27e6c05a2e411a98a131c8979c5227.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/5832302"
   },
   "no_4": {
     "category": "9",
     "name": "뤼미에르 캔들워머 + 무민 캔들 라지자 + 할로겐전구 2개 세트",
-    "brand": "무민캔들",
-    "price": "22,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200708140940_f1db1c7ec3dd4f77b54a0f6a4d2c375e.jpg"
+    "brand": "무민캔들\n바로가기",
+    "price": "22,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200702120429_ee76384ac223459eb607a0068000f913.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200708140940_f1db1c7ec3dd4f77b54a0f6a4d2c375e.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200702120421_0ba7c244c517412ebaf42e7c8569fe0b.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200708140944_6a7491ecaa3248f894dcc321c99bc87a.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20210616144120_754a0d8bf9c649fd92cc6cba8d4d5105",
+      "https://st.kakaocdn.net/product/gift/editor/20210618153813_cde472be156d41d894f410e33a3fb11b.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/2265999"
   },
   "no_5": {
     "category": "9",
     "name": "[MLB] 인기 비니 27종 택1",
-    "brand": "MLB",
-    "price": "39,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130093639_1341b878a5d24a75b37e24976248eda3.jpg"
+    "brand": "MLB\n바로가기",
+    "price": "39,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220930150202_d281aa037ae74e8ea4a830ae3f605fe1.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130093639_1341b878a5d24a75b37e24976248eda3.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220930150156_33cc4b251b4644268ef076026760f93d.jpg"
+    ],
+    "content_images": [
+      "https://static.mlb-korea.com/images/display/content/img_detail/2020/00M.gif",
+      "https://static.mlb-korea.com/images/display/content/img_detail/2020/01M_FW.jpg",
+      "https://prd-static-fnf-online-mall.s3.ap-northeast-2.amazonaws.com/webresource/mlb-korea/images/display/content/img_detail/2022/0.SABANGNET/1MLB/2MLBkr/MLBset/3ABNM0726-set.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/2900643"
   },
   "no_6": {
     "category": "9",
     "name": "'반짝반짝 빛나는 너에게' 크리스탈 메리고/애플 소이캔들 + 로고 성냥증정 [선물포장]",
-    "brand": "캔들브라운",
-    "price": "12,500원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220714224947_1a373fa095704a1f8d1b6497b543f568.jpg"
+    "brand": "캔들브라운\n바로가기",
+    "price": "12,500\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220714225142_58b75cba706349af8c07fcccee54756e.png",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220714224947_1a373fa095704a1f8d1b6497b543f568.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220714225058_2ea4a2ecea7b43a6a1b26ef874caeed6.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220714225111_5867f74090cb4dd9a3889d55675067b4.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20220714225359_a56fd5e14ba94a06ba69f4b128846050.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220311135901_132e99d368d64d7691dd34649b859a20.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220716055708_f3f63b94b7c04564b375a12937881d98.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/5483733"
   },
   "no_7": {
     "category": "9",
     "name": "오설록 오~땡큐 티박스 6종 선물세트(총30입)",
-    "brand": "오설록",
-    "price": "22,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221202153332_12d849bf06c64d219ba9c5d2e98e21ce.jpg"
+    "brand": "오설록\n바로가기",
+    "price": "22,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221202154911_66e383c4838f49dda2b9051d97961c72.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221202153332_12d849bf06c64d219ba9c5d2e98e21ce.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221202153339_a32183d5ff114f20a2d057461434b007.png",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221202153457_be03f950f77e445996fef7e9167ff015.png"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221202154706_7700b57044ac4558909c06d6ff9af6f0.png",
+      "https://st.kakaocdn.net/product/gift/editor/20221202154709_ab119e95f4f849009591d9b0ace176b2.png",
+      "https://st.kakaocdn.net/product/gift/editor/20221202154714_132e7771276d4373bf847b77656a3627.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/5257833"
   },
   "no_8": {
     "category": "9",
     "name": "ORGA 액상차 선물세트(꿀유자+꿀모과+꿀생강)",
-    "brand": "올가홀푸드",
-    "price": "28,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221019112206_8cd33722d27240859ed9f0259e6dc0bb.jpg"
+    "brand": "올가홀푸드\n바로가기",
+    "price": "28,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220617170658_dff86ff690284280980fb22a86224067.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221019112206_8cd33722d27240859ed9f0259e6dc0bb.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220617170653_1c4c4eeee0b34dca8f8a54f24a5e841e.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221024134459_804ffce2cf854b56a2f6bcb7c1b8654e.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221103155459_e35565a7347b4712ad53b61372ee1eeb.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/1342975"
   },
   "no_9": {
     "category": "9",
-    "name": "\"열렬히 응원할게요\" 떠먹는 스트로베리 초콜릿 생크림 + 떠먹는 아이스박스 + 아메리카노 (R) 2잔",
-    "brand": "투썸플레이스",
-    "price": "22,200원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130143315_0576045c3c8d41adbe6294417ec53e6d.jpg"
+    "name": "떠먹는 스트로베리 초콜릿 생크림 + 떠먹는 아이스박스 + 아메리카노 (R) 2잔",
+    "brand": "투썸플레이스\n바로가기",
+    "price": "22,200\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130143315_0576045c3c8d41adbe6294417ec53e6d.jpg"
+    ],
+    "content_images": [],
+    "url": "https://gift.kakao.com/product/5022414"
   },
   "no_10": {
     "category": "9",
     "name": "NEW \"겨울 핫템\" 카카오프렌즈 얼굴형 손난로 보조배터리 5000mAh",
-    "brand": "프렌즈가전LC",
-    "price": "34,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110102019_2bb6d89ed02b47d29123bce333ba4955.jpg"
+    "brand": "프렌즈가전LC\n바로가기",
+    "price": "34,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221018163354_06d92d7e02424060a53ccfde9b508038.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110102019_2bb6d89ed02b47d29123bce333ba4955.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221031121305_5e63c7f9804a4a2c87f139efb6be38dc.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221031121308_3a0ce7644cc343f6be7c4c09c8d005ee.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221104111942_3e9e088e314a43688c4136efb535d907.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/3504083"
   },
   "no_11": {
     "category": "9",
-    "name": "\"잘 될거에요\" 떠먹는 티라미수 + 아메리카노 (R) 2잔",
-    "brand": "투썸플레이스",
-    "price": "15,500원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130141052_e00139cb98b04a909be83aab48d39a65.jpg"
+    "name": "떠먹는 티라미수 + 아메리카노 (R) 2잔",
+    "brand": "투썸플레이스\n바로가기",
+    "price": "15,500\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130141052_e00139cb98b04a909be83aab48d39a65.jpg"
+    ],
+    "content_images": [],
+    "url": "https://gift.kakao.com/product/5022360"
   },
   "no_12": {
     "category": "9",
     "name": "[효돈농협] 효돈 제주감귤 에디션, 고당도 감귤 3kg이상(12brix/특품)",
-    "brand": "온브릭스",
-    "price": "22,800원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128153857_2ce6a949344248f98daa2ddc146474c1.png"
+    "brand": "온브릭스\n바로가기",
+    "price": "22,800\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128153857_2ce6a949344248f98daa2ddc146474c1.png"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20220916112806_745b521b28d642889f11022db3b51919.png",
+      "https://st.kakaocdn.net/product/gift/editor/20221128153818_55db000d6b1a4eb3a9c5a72a39f2f28d.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221114162948_ea23282f645f4a9d84088c54869f85fe.png"
+    ],
+    "url": "https://gift.kakao.com/product/5395325"
   },
   "no_13": {
     "category": "9",
     "name": "[선물추천]8가지 꽃과일향 차(TEA)선물세트 40입(8종x5입)",
-    "brand": "오설록",
-    "price": "25,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221205152637_8e1ea4d0b4a7438384b0bc72db255da8.jpg"
+    "brand": "오설록\n바로가기",
+    "price": "25,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221201131530_429cf17ee2e447609b1d33d43ea7d5df.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221205152637_8e1ea4d0b4a7438384b0bc72db255da8.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221201112229_1a692aac0f304a6ca521c2612e1663c9.png",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221201131525_ff14321b1ed94b3ab66258c4ded65234.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221201112340_10348b5f59fb46408b4f32ea0a4756b8.png",
+      "https://st.kakaocdn.net/product/gift/editor/20221201112349_e3dbf22f4ddc4bb4b408ec1471114a1d.png",
+      "https://st.kakaocdn.net/product/gift/editor/20221205152700_2c5f3a0fd00e4ad88d453466fec4adbf.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/885038"
   },
   "no_14": {
     "category": "9",
     "name": "\"오둥이 입니다만\" 오둥이 모찌 바디필로우 (톡별)",
-    "brand": "캐릭터침구",
-    "price": "29,800원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220922144214_b85fa83f424d49e9915a209a6d231d65.jpg"
+    "brand": "캐릭터침구\n바로가기",
+    "price": "29,800\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220922144225_bbf1b725eb904b828ee5747739936e4c.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220922144214_b85fa83f424d49e9915a209a6d231d65.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220922144218_8c7cbc697bfe4b6fba2ac2cc3515b3ba.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220922144221_c500db2e7fb444428d00cdbc66c63fcf.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20220323165552_50d418aa6dd3490fa171de07f2a52f6c.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220923132956_257650b54b354d59ba9086f184e3e483.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/5328353"
   },
   "no_15": {
     "category": "9",
     "name": "떠먹는 스트로베리 초콜릿 생크림 + 떠먹는 아이스박스 + 아메리카노 (R) 3잔",
-    "brand": "투썸플레이스",
-    "price": "26,700원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220907093441_8a91bab2fc6b4530a1da151034096d23.jpg"
+    "brand": "투썸플레이스\n바로가기",
+    "price": "26,700\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220907093441_8a91bab2fc6b4530a1da151034096d23.jpg"
+    ],
+    "content_images": [],
+    "url": "https://gift.kakao.com/product/5477331"
   },
   "no_16": {
     "category": "9",
     "name": "수제청 선물세트(레몬생강청x배도라지대추생강청) 과일청",
-    "brand": "엔게티",
-    "price": "36,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200324134508_798febe6931a48f0b91ee954ac020699"
+    "brand": "엔게티\n바로가기",
+    "price": "36,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200324134508_987503a9c09f47b8bcb295d409a285eb",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200324134508_798febe6931a48f0b91ee954ac020699",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200324134508_58b897c219e44d2aba5c9a3c6d7b2c94"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/product/20200324134509_7f22896afa3e4f5e9a60417453667a02",
+      "https://st.kakaocdn.net/product/gift/product/20200324134509_4a2fe255bd5a4d59b4420463c8fb16c3",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/1383837"
   },
   "no_17": {
     "category": "9",
     "name": "트윙클 램프 스노우볼 크리스마스 오르골 무드등 장식 소품 4type",
-    "brand": "젊은이마켓(조명)",
-    "price": "23,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211111144147_2fe5f5a528b44f0986479d18ff04e9a5.jpg"
+    "brand": "젊은이마켓(조명)\n바로가기",
+    "price": "23,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211111144219_4917ff2d045a424b8af47210f332a5ec.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211111144147_2fe5f5a528b44f0986479d18ff04e9a5.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211111144222_b541aa8be72c4b7f8e4fc3996fca6d5d.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/GE9npJp40gjy0AXfoEEiCA/rNHKB8eNAErn5vVFdAkGA4DVXYsilLuZuGpJ5GG3kV8.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/GE9npJp40gjy0AXfoEEiCA/Bnf2BGIb7vmSKBAbgWLF0tFUv2Xmzm3XibZFYzXWoR4.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/GE9npJp40gjy0AXfoEEiCA/_v1timhWbeh_FeLDaT1GctUuftTCt60c6JEy_Q7exn4.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/5641628"
   },
   "no_18": {
     "category": "9",
-    "name": "[겨울 선물 추천] \"추위는 이제 그만\" 3면 온열 넥워머 가머",
-    "brand": "판다지아",
-    "price": "49,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221205181737_d26a836105244ab68777c44a768d84fe.jpg"
+    "name": "\"추위는 이제 그만\" 3면 온열 넥워머 가머",
+    "brand": "판다지아\n바로가기",
+    "price": "49,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221205181759_1db694884f024ecebdd7094732f02000.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221205181737_d26a836105244ab68777c44a768d84fe.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221205181742_be1abb057774427d83f1954c50afb1cb.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221205181755_d8188fda6d9a47f8a535e90fed35e0b7.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/Iv3cG9tWf5sa9Rw_ISzpSQ/SsLuCm_MApib0d77jC6c6HFcErKXGo-KfOFi4Urus6s.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221202135735_31d7d9a04907407a9ea8369b53e55dac.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/Iv3cG9tWf5sa9Rw_ISzpSQ/gXaT6HIbIgeaEwOXwnopIlliaWRrvq9_vsSOQDz4w40.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/3571177"
   },
   "no_19": {
     "category": "9",
-    "name": "[친구 맺고 3%적립] \"따뜻한 선물추천\" 제이에스티나 BASIC 머플러 8종 택1",
-    "brand": "제이에스티나(가방)",
-    "price": "38,400원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221201161945_c66a4bd5c6f54212b17b4211c2a9d2e7.jpg"
+    "name": "\"따뜻한 선물추천\" 제이에스티나 BASIC 머플러 8종 택1",
+    "brand": "제이에스티나(가방)\n바로가기",
+    "price": "38,400\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221201161954_51c952e7d4fd43c2aa492a5a3ed16e60.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221201161945_c66a4bd5c6f54212b17b4211c2a9d2e7.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/hNqR8g_DNCyABT15Yr7NOQ/cxAYn50g8MPJiOt5sZC8Qez1dhRWxtfNq1LDGmDi6OQ.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/hNqR8g_DNCyABT15Yr7NOQ/0ObC4mTLpvNuBHpliXj0L3Ad6WV2f8kbAXSpxXxPyl0.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/5498795"
   },
   "no_20": {
     "category": "9",
     "name": "\"오늘도 따뜻할 거예요\" 히트템 핫팩 30매+메세지박스+손소독제 5개입 (톡별) (heattem)",
-    "brand": "핫팩/손난로",
-    "price": "11,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20201105111550_4f27d5f2f64a407987789969a6307068.jpg"
+    "brand": "핫팩/손난로\n바로가기",
+    "price": "11,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221121173128_959c44d875f743cfbf49e41b5e9b6e74.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20201105111550_4f27d5f2f64a407987789969a6307068.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221121172634_d4bb6b1215624719be55327e49125252.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221121173330_b658df4b0b0f409a8bbb38ba439f4872.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221121173415_e550611414fa486d80e4d383cb7931e8.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/1239314"
   },
   "no_21": {
     "category": "9",
-    "name": "[당일배송] [BEST] TANDY 탠디 베러캐시 캐시미어 머플러 5컬러 택1 (+선물포장)",
-    "brand": "탠디(스카프)",
-    "price": "24,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108182221_3eab3dcd074d4b0985ac523a062a4604.jpg"
+    "name": "[BEST] TANDY 탠디 베러캐시 캐시미어 머플러 5컬러 택1 (+선물포장)",
+    "brand": "탠디(스카프)\n바로가기",
+    "price": "24,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108182221_3eab3dcd074d4b0985ac523a062a4604.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221121152922_0b2828c788064a70b9d598c09f35df86.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/6105870"
   },
   "no_22": {
     "category": "9",
-    "name": "\"매일 예쁘고 포근해\" 수면 파자마 상하의 14종 택1/남녀커플 상품 추가",
-    "brand": "제이나나",
-    "price": "24,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221124111524_3ad1852d51634a119a5eb31481f4b15d.jpg"
+    "name": "\"매일 예쁘고 포근해\" 수면 파자마 상하의 16종 택1/남녀커플 상품 추가",
+    "brand": "제이나나\n바로가기",
+    "price": "24,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221207110949_9e6d1f40b485471ca179bc8f7f09ab59.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221207110941_c5bc96d3f5c04540bf5db376a0c1070a.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221207110953_74d6d52e35384c92a5e59e6d69197479.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221031164901_cb144b2b9a2c464b861b3e6151f08eab.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221031165447_b3d033adb97f48919dd2410203842188.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/3580752"
   },
   "no_23": {
     "category": "9",
     "name": "\"잘자요 꿀린이\" 꿀잠타는 기린이 모찌 바디필로우 (톡별)",
-    "brand": "캐릭터침구",
-    "price": "29,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114120109_92c4df65f35c431481f4c00e2801192f.jpg"
+    "brand": "캐릭터침구\n바로가기",
+    "price": "29,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20201028103349_d442785ed4d84dc4b87bc20ac5ba6d4a.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114120109_92c4df65f35c431481f4c00e2801192f.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20201028103347_e155bc7cbb9646e78541a9de915eacf3.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20210126133229_b3c4a2b8145f4b3f9172786619bee895",
+      "https://st.kakaocdn.net/product/gift/editor/20210126133230_ab77b222899c47cd8a46e2aec9c32143",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/5328905"
   },
   "no_24": {
     "category": "9",
-    "name": "[따뜻함을 담아] F/W 신상추가 제이로렌 남녀 머플러 (12종 택1)",
-    "brand": "제이로렌",
-    "price": "19,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130123740_ebf0d79efa04442699f165512353153d.jpg"
+    "name": "F/W 신상추가 제이로렌 남녀 머플러 (12종 택1)",
+    "brand": "제이로렌\n바로가기",
+    "price": "19,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130123751_1e7d1ba2fea444579f8db7fdffe0f5b1.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130123740_ebf0d79efa04442699f165512353153d.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130123744_b212c2ebc9be4b4993f263396ac61803.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130123748_9dcc96734f714fa596192a2feda9a5dc.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221130142213_4ada16366930441588dcc4db00122c07.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/1247953"
   },
   "no_25": {
     "category": "9",
-    "name": "\"달콤하게힘이나는하루\" 허니카라멜브레드+수플레치즈 케이크+아메리카노 2잔",
-    "brand": "이디야커피",
-    "price": "14,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20201228133256_8408d2a84d874481af82eba589d411a2.jpg"
+    "name": "허니카라멜브레드+수플레치즈 케이크+아메리카노 2잔",
+    "brand": "이디야커피\n바로가기",
+    "price": "14,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20201228133256_8408d2a84d874481af82eba589d411a2.jpg"
+    ],
+    "content_images": [],
+    "url": "https://gift.kakao.com/product/4964817"
   },
   "no_26": {
     "category": "9",
     "name": "[선물포장] 이터널유 Mano 울 장갑 24종 택1",
-    "brand": "이터널유",
-    "price": "33,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221129220846_8fdbf3b9e2024037852ba09e8d857efb.png"
+    "brand": "이터널유\n바로가기",
+    "price": "33,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221129220846_8fdbf3b9e2024037852ba09e8d857efb.png"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221018214452_e1a2cddb75934b50bd62b0ad30851070.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/5650595"
   },
   "no_27": {
     "category": "9",
     "name": "'건강하세요' 수제 쌍화청+호두정과+옻스푼 선물세트 (맛보기3종 증정)",
-    "brand": "반테이블",
-    "price": "34,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128111533_c4753e246dca4f8ea8910e22fc65c03f.jpg"
+    "brand": "반테이블\n바로가기",
+    "price": "34,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200906234921_c4dff79584dc44dc98c211a9e15b5336.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128111533_c4753e246dca4f8ea8910e22fc65c03f.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221117182040_b01f7c383dd74eeba16ea3387edf16f4.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221031154310_8329360fe2424d899e4bdcfec45e939e.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221128111822_996a2920a2bc4a929006dc5a26d4de6a.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221117155732_48e4250fa7194bc083a1e5688b45266e.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221202184521_e4ed4fcf255344d3bc13b74808f702fe.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/884752"
   },
   "no_28": {
     "category": "9",
-    "name": "'뭘 좋아할지 몰라서 다 준비했어' 털 실내화 슬리퍼 19종 택1 + 더스트백포장",
-    "brand": "자모닉(잡화)",
-    "price": "13,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221031022233_7b075bbca8114526ae7b433cc2675234.jpg"
+    "name": "'뭘 좋아할지 몰라서 다 준비했어' 털 실내화 슬리퍼 26종 택1 + 더스트백포장",
+    "brand": "자모닉(잡화)\n바로가기",
+    "price": "12,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221207042112_a8463d4f34554b1fbfcb709510df208a.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221208125507_9c13ced0cfd54106b66dd5edef0cdae9.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220919155119_e9733fcab4dd4b39b1467f43107a2869.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220919155121_c5da6fd4232c460eab4d9aec5a9cff1c.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20220919155150_be203ed1914641ae9f30dc3da3c054b4.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221207042457_71f2210a93904955926061e20a7f2e59.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221207042458_a73812f78ae043f39e18fe69d73f00f7.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/1020990"
   },
   "no_29": {
     "category": "9",
     "name": "F/W 보송보송 귀여운 동물 슬리퍼/실내화 세트 (10종 택1)",
-    "brand": "바나나빌딩",
-    "price": "12,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110134459_566eaeaf8dfe46ccb0bd6daa5b70e4a9.jpg"
+    "brand": "바나나빌딩\n바로가기",
+    "price": "12,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110135245_b510a6839d004ce48c0f9a00969becba.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110134459_566eaeaf8dfe46ccb0bd6daa5b70e4a9.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110135238_0f82f8bb9a8a4560b70b3bc93222a286.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110135241_f20afefae4a94207a2d49a1922817a8b.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221110134549_b03ad91f7b96415a9ad8b8ab868ea396.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/5558705"
   },
   "no_30": {
     "category": "9",
-    "name": "\"언제나 고마워요\" 떠먹는 바닐라 슈크림 + 아메리카노 (R) 2잔",
-    "brand": "투썸플레이스",
-    "price": "15,500원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130141244_6dbb19b5cab04497a7139d79ea445347.jpg"
+    "name": "떠먹는 바닐라 슈크림 + 아메리카노 (R) 2잔",
+    "brand": "투썸플레이스\n바로가기",
+    "price": "15,500\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130141244_6dbb19b5cab04497a7139d79ea445347.jpg"
+    ],
+    "content_images": [],
+    "url": "https://gift.kakao.com/product/5476892"
   },
   "no_31": {
     "category": "9",
     "name": "[본사공식정품] 고비 몽골 산양 금장 캐시미어100% 머플러 6종 택1 (+선물포장)",
-    "brand": "고비(GOBI)",
-    "price": "89,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220923144758_ef4e5d5f1b574cd8a02a82d1b8968779.jpg"
+    "brand": "고비(GOBI)\n바로가기",
+    "price": "89,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220913140957_a9846f9d411c4d448aacb39178f839a3.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220923144758_ef4e5d5f1b574cd8a02a82d1b8968779.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221122110627_227897b29e294c3f85d4976694d38d70.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221122110633_fdf5d7e4f14b4001abd3bd0a5ba98a38.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221021145504_1ae58cf9233b462c9a8a85932e4c893e.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220916145258_beb26062c69c43919c606b04390aaca7.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220916145255_75ce38535c7d4e9f99651a97409f4382.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/5535584"
   },
   "no_32": {
     "category": "9",
     "name": "그릭요거트 딸기 생크림 피스 + 아메리카노 (R)",
-    "brand": "투썸플레이스",
-    "price": "10,700원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220907093121_fc4e2ca73fd34833958a72bd85ef1566.jpg"
+    "brand": "투썸플레이스\n바로가기",
+    "price": "10,700\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220907093121_fc4e2ca73fd34833958a72bd85ef1566.jpg"
+    ],
+    "content_images": [],
+    "url": "https://gift.kakao.com/product/5543372"
   },
   "no_33": {
     "category": "9",
-    "name": "\"감사합니다\" 초코티라미수 케이크+아메리카노 2잔",
-    "brand": "이디야커피",
-    "price": "10,300원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20201228105755_098cbddd5b0e4067b9827ba12fab0519.jpg"
+    "name": "초코티라미수 케이크+아메리카노 2잔",
+    "brand": "이디야커피\n바로가기",
+    "price": "10,300\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20201228105755_098cbddd5b0e4067b9827ba12fab0519.jpg"
+    ],
+    "content_images": [],
+    "url": "https://gift.kakao.com/product/4965271"
   },
   "no_34": {
     "category": "9",
-    "name": "\"여유로운 하루\" 떠먹는 티라미수 + 아메리카노 (R)",
-    "brand": "투썸플레이스",
-    "price": "11,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130141519_bf72702808cf4cdc908be1d1b29af470.jpg"
+    "name": "떠먹는 티라미수 + 아메리카노 (R)",
+    "brand": "투썸플레이스\n바로가기",
+    "price": "11,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130141519_bf72702808cf4cdc908be1d1b29af470.jpg"
+    ],
+    "content_images": [],
+    "url": "https://gift.kakao.com/product/5022509"
   },
   "no_35": {
     "category": "9",
     "name": "\"손안에 작은 보일러\" 1+1 손난로 보조배터리 / 총 8,000mAh (톡별) (HW-JJAK)",
-    "brand": "로이체",
-    "price": "26,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110155554_12989c6b7fcd426c95eeb2fb3ab014cc.jpg"
+    "brand": "로이체\n바로가기",
+    "price": "26,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200404081850_c9a76038d1a042f7a608707bbccf3f30",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221207120854_241978c45d174ffaa37cdb5ac953102e.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20201126150031_3c16a3aa9215401fb1678e5e01828a7c.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200404081850_f0fdc43fffec4b498cdc5afed23a067f"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221207173121_eb40d5e725644a92abd0ab7e9f2d9291.jpg",
+      "https://st.kakaocdn.net/product/gift/product/20200404081850_62ef5a9f4f5849208ff7fa9c871f3173",
+      "https://st.kakaocdn.net/product/gift/product/20200404081851_799b97861aa34c1f8baeefcb64b54012"
+    ],
+    "url": "https://gift.kakao.com/product/1251715"
   },
   "no_36": {
     "category": "9",
     "name": "MMFD-2801 캐시믹스 캐시미어 머플러",
-    "brand": "메트로시티(잡화)",
-    "price": "30,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221102131604_5dd6973f07b0428e8178b359cf0c0988.jpg"
+    "brand": "메트로시티(잡화)\n바로가기",
+    "price": "30,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221102131604_5dd6973f07b0428e8178b359cf0c0988.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/C_82UIDjA9ASsBSU53YIpQ/ktLFmgJA9OiTpykUIZDhNtg37olAY8hTOpap6mLBxz8.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/C_82UIDjA9ASsBSU53YIpQ/JdC3fUtfJ3ewKYLn8LeQFA6UZCOncbqAayuyloL39jo.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/924682"
   },
   "no_37": {
     "category": "9",
-    "name": "[단독 선물포장🎁] \"너를 위한 따뜻한 선물\"얼모스트블루 인기 목도리 모음 21종/ 크리스마스 생일 선물 포장",
-    "brand": "얼모스트블루",
-    "price": "28,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221202163724_f67b01db04874cac95d521a782591430.jpg"
+    "name": "\"너를 위한 따뜻한 선물\"얼모스트블루 인기 목도리 모음 21종/ 크리스마스 생일 선물 포장",
+    "brand": "얼모스트블루\n바로가기",
+    "price": "28,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221006101307_ef7a56d978834cf6a68fa98ee7bd5f4a.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221202163724_f67b01db04874cac95d521a782591430.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221006101301_4891cf1dd30740b3b432f517bf1a7e07.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221006101303_cdc85d08e20c4f27b03de761491036fa.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221123163249_17fc2c94c5f44f628b91318d4a99fe05.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221006103204_6e381932f15042a08249dcc4db007e53.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221006103204_0e772fb185f941779d83b45afa89885d.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/5684966"
   },
   "no_38": {
     "category": "9",
-    "name": "\"따뜻한선물\" 불멍 캠핑 화로 난로 불무드 에탄올램프 (에탄올+캔들라이터 증정)",
-    "brand": "홈즈",
-    "price": "23,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221125113128_479b7cb74e064b6cb666c32e9685b16d.jpg"
+    "name": "불멍 캠핑 화로 난로 불무드 에탄올램프 (에탄올+캔들라이터 증정)",
+    "brand": "홈즈\n바로가기",
+    "price": "23,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211108162252_0f7a2f041a544086a6f0650c80812f9a.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221125113128_479b7cb74e064b6cb666c32e9685b16d.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211108162239_39ab4c7711d44a6eb5e4ca37f7e42e8d.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211108162249_400fdd178c434969ad5c2d5560456332.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221125113136_34f95690880a4302998799aa6daae335.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220209170026_ee9d5227cb0845569d9a9023694d500e.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220919151855_c4823628576346fc89ecb0dd495285a2.gif"
+    ],
+    "url": "https://gift.kakao.com/product/3655309"
   },
   "no_39": {
     "category": "9",
     "name": "\"스트레스 날려\" 시바스키 배치기 모찌 뚱쿠션 바디필로우 80cm 2종택1 (톡별)",
-    "brand": "캐릭터침구",
-    "price": "29,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220215123842_c596a556f9a54b379da57d863a525998.jpg"
+    "brand": "캐릭터침구\n바로가기",
+    "price": "29,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210401183409_da6462d80da848878410c2e70ba5bc69.jpeg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220215123842_c596a556f9a54b379da57d863a525998.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20200406151338_56b28bc46f6d48d6adb577e329b50503.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/1356109"
   },
   "no_40": {
     "category": "9",
     "name": "\"따뜻한 마음\" 캔들 워머 + 프리미엄자 향초 세트 (미세 빛조절)",
-    "brand": "코코도르",
-    "price": "25,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221122141042_5ea0b145edf744a18c65b008ca5758ad.jpg"
+    "brand": "코코도르\n바로가기",
+    "price": "25,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220906075010_ff75d7de839d48dfb32900bac8953376.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221207172937_1ba95730ea8e4475b0c390e2187ff9ed.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220906075006_8acd765f4c034af9a5f71c785d74a3d2.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20220429192814_d9cc671933404348b70da0855f3a60a8.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/2220351"
   },
   "no_41": {
     "category": "9",
     "name": "꿀잠친구_고슴도치 리틀라이언",
-    "brand": "프렌즈인형/피규어",
-    "price": "42,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221103133016_69da00afcfd44682968446d8caf0cd52.jpg"
+    "brand": "프렌즈인형/피규어\n바로가기",
+    "price": "42,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221103133016_69da00afcfd44682968446d8caf0cd52.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221103133147_ff4ff1fef8b84c5a915357e84df7e668.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221103133141_68d7ec4cb0584f7bbe772d250c9141fb.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221103133213_cd449aded9f54b3d80b023653697b4d8.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/6088538"
   },
   "no_42": {
     "category": "9",
-    "name": "\"내 손에 구름\" 단미 구름 양면발열 USB 충전식 휴대용 손난로 보조배터리 3600mAh (CLOUD)",
-    "brand": "단미(미니)",
-    "price": "21,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211125170155_7ad4b29648b04f9f8f9f58f1d83a8c83.jpg"
+    "name": "단미 구름 양면발열 USB 충전식 휴대용 손난로 보조배터리 3600mAh (CLOUD)",
+    "brand": "단미(미니)\n바로가기",
+    "price": "21,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211005172608_f17476f06775418586adedcd29b28d94.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211125170155_7ad4b29648b04f9f8f9f58f1d83a8c83.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211005172559_3028e7d7719747d49c2c3438a4553421.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211005172603_12860ba39773477fa88bc4b7b5968fb0.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20220829161727_1e43be0b957a45d1a5da672da5ceb5d2.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20211125170117_495da7655ea5478688c384da9557c45f.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/680011"
   },
   "no_43": {
     "category": "9",
     "name": "'아프지마요' 따뜻하게 레몬생강청 (맛보기3종 증정) (수제과일청)",
-    "brand": "반테이블",
-    "price": "15,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128111334_9d3f552bda224fe593cd3caed19f1ea6.jpg"
+    "brand": "반테이블\n바로가기",
+    "price": "15,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210512183417_633addf3b14e4d9ab70295f8037864aa.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128111334_9d3f552bda224fe593cd3caed19f1ea6.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221117145905_4e8b1e3b925841f8a17626415629b1fe.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210512183412_3be52384c58e4ae3ac0d4b44378aae1c.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221128111855_eb3348d298fb492f96a581cd52d51420.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221125105926_87893b3fec48416e8b2a6d9d4a4d9819.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221117145224_ec47498bb2444894ad07c708de98b401.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/337929"
   },
   "no_44": {
     "category": "9",
     "name": "'꾸덕꾸덕한 간식까지 담은' 오설록 오땡큐 티박스(차+간식세트)",
-    "brand": "오설록",
-    "price": "31,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220803094018_c3b8c62c3bb14c968f4b1853c3c0d3e2.jpg"
+    "brand": "오설록\n바로가기",
+    "price": "31,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220803094759_b3fbb20b8da840b193cf0052ff8b803b.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220803094018_c3b8c62c3bb14c968f4b1853c3c0d3e2.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220803094024_e4a0a884e4174def92910ce5fe7290ba.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220803094030_943aebef5fab48de8f9f4eed341c8302.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20220228135410_43f1ba4142a6496e83e8a26a0b066216.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220609212804_664e8bfdf24742d78b88c2c63f08ed50.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220803100713_443e24f23afb40af8a8dcac1a84f7c15.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/2362363"
   },
   "no_45": {
     "category": "9",
-    "name": "\"작지만 강력한가습기\" [인테코 에이티] 스누피 무드등 미니가습기",
-    "brand": "인테코에이티",
-    "price": "29,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128121523_5394190466bb4b52a6ad648dbed3cef0.jpg"
+    "name": "[인테코 에이티] 스누피 무드등 미니가습기",
+    "brand": "인테코에이티\n바로가기",
+    "price": "29,000\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211104114222_89658be8a1834e038d79b5424d432fbe.png",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128121523_5394190466bb4b52a6ad648dbed3cef0.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211122113235_e17a38dad34a4bb7a5b339126ab7e524.png",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211104114916_1e0d6bd672254b589484f429d8059eb8.png"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/6HJoaaa0e0tAYYWcYXh4dw/O-dp-WLwmiNbhuT1TGf2Z16pwTZG_4Lvosr_hyBqSnM.jpg",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png",
+      "https://st.kakaocdn.net/commerce_ui/static/gift/imgs/1px.png"
+    ],
+    "url": "https://gift.kakao.com/product/3541996"
   },
   "no_46": {
     "category": "9",
-    "name": "\"크리스마스엔 보르딘\" [선물제격] 보르딘 콜드브루 더치커피 알록달록 앰플 12종세트 (25ml*12개)",
-    "brand": "커피/차음료",
-    "price": "19,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128154422_ed0bf716d3f34e6886d0318c1c06f335.jpg"
+    "name": "[선물제격] 보르딘 콜드브루 더치커피 알록달록 앰플 12종세트 (25ml*12개)",
+    "brand": "커피/차음료\n바로가기",
+    "price": "19,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128154433_e488f7c4b18c4ca989d217e206d2d01b.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128154422_ed0bf716d3f34e6886d0318c1c06f335.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128154427_66bf3416e4c24d84ba3efc1cc3e1a38a.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128154430_b2263ef223d54a799bf15333970f1582.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221128161625_48bfc914e453444da4c16a30cdeabe9e.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221124101915_53e7e113c9bf4e579e0d443652902410.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221124101915_c68bbdf948bf42a19aefb25fb6bbb5c7.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/969295"
   },
   "no_47": {
     "category": "9",
     "name": "[VIPS] 빕스 패밀리 선물세트 2호(오리지널폭립 2개+스파이시폭립 1개+볶음밥5종)",
-    "brand": "CJ푸드빌",
-    "price": "49,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130161152_0bcd2017659448c1a0493ac1aeceb9ac.jpg"
+    "brand": "CJ푸드빌\n바로가기",
+    "price": "49,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130161152_0bcd2017659448c1a0493ac1aeceb9ac.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221130132451_ea531d356ea844d3a981e90e66f1d5a8.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/5043455"
   },
   "no_48": {
     "category": "9",
     "name": "미민 투홀 핑거 스마트폰 터치장갑 18color",
-    "brand": "미민",
-    "price": "19,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109111122_019fbca7e3924f92b740a1100bb9a3e1.jpg"
+    "brand": "미민\n바로가기",
+    "price": "19,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221123150706_a4b7c973ea3b47839ece61a3a77cb5ab.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109111122_019fbca7e3924f92b740a1100bb9a3e1.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221123150750_7b376e4677094641be77a9eb71843fd7.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221123150803_af6b0ff14c164c2b99d9414badbdca77.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221123145308_fac309796fa344ea8c2a6e1bcd13cddd.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221123145308_dd995c9c97534d278520130650c28e55.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221123145308_2beeaf1eb54949e4b11c75aad8d62c28.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/5720791"
   },
   "no_49": {
     "category": "9",
     "name": "집순이 빅후드담요 곰도리ver. (빅후드담요+양말+슬리퍼set) (톡별)",
-    "brand": "신박한 패션템",
-    "price": "34,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220915133542_a152672ec6114c3d9a8e3a5140722c75.jpg"
+    "brand": "신박한 패션템\n바로가기",
+    "price": "34,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220915133551_4a036eb5fde14f08b08784b5b6d0db76.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220915133542_a152672ec6114c3d9a8e3a5140722c75.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220915133545_a645a9a259134943a4682608f83d590c.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220915133548_45735a63bf84433683d63cc474064e3e.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20220915133455_236eb9d052e8430b8e0b153c9a318e64.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20220915133455_709bd279e3a844179159ce4323b8691a.gif",
+      "https://st.kakaocdn.net/product/gift/editor/20220915133456_713357cfb33846ebaf019804e9612279.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/3249637"
   },
   "no_50": {
     "category": "9",
-    "name": "\"물방울이 역행하는\" 808 거꾸로 물멍가습기 (+전용충전기 증정)",
-    "brand": "808",
-    "price": "54,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221113215615_db9eaaab607e44ba8995f037df0baa35.jpg"
-  },
-  "no_51": {
-    "category": "9",
-    "name": "국물의한수 온가족 10팩세트(육개장2+갈비탕2+뚝불2+우거지해장국2+황태해장국2)",
-    "brand": "국물의한수",
-    "price": "34,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220405111515_2a529ac9ca554337b84f76a45234c4ee.jpg"
-  },
-  "no_52": {
-    "category": "9",
-    "name": "\"생일에눈\" (만족도100%) 휴플러스 코드제로 눈마사지기 CORDZERO-EL1 온열안대 안마기 선물",
-    "brand": "휴플러스",
-    "price": "30,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220518094847_a531235b6f044aa3bccc73719c6cf91f.jpg"
-  },
-  "no_53": {
-    "category": "9",
-    "name": "\"포근함을 더한\" 울랄라 보아털 베스트 파자마 모음",
-    "brand": "ULLALA",
-    "price": "34,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114133915_a29294e7a91b4569adb756ac69ef49e0.jpg"
-  },
-  "no_54": {
-    "category": "9",
-    "name": "[선물추천] 러블리 티박스 Lovely Tea Box (4종x3입)",
-    "brand": "오설록",
-    "price": "20,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221202171355_e7993bd9b5cc4f939a0e4f8215a4f7ac.jpg"
-  },
-  "no_55": {
-    "category": "9",
-    "name": "[프리미어스] 티백 18종 에디션(차 선물세트)",
-    "brand": "수입차류",
-    "price": "35,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200403002438_757cef493ad745cab1ff170cddef8ac2.jpg"
-  },
-  "no_56": {
-    "category": "9",
-    "name": "\"선물추천\" TWG Tea 티백 베스트셀렉션 (5종택일)",
-    "brand": "TWG Tea",
-    "price": "36,500원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221112124208_72e0e257aeed4a16a9c05a28aa2705e0.png"
-  },
-  "no_57": {
-    "category": "9",
-    "name": "\"내가 밑에서 받쳐줄게\" 몽글방석 + 등쿠션 (톡별)",
-    "brand": "이젠돌스",
-    "price": "19,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200708115905_b27454ee61d24587ab2b82ad17c9cd74.jpg"
-  },
-  "no_58": {
-    "category": "9",
-    "name": "'따뜻한 귀요미' 모찌모찌 뽀글 핫팩인형 6종",
-    "brand": "모찌모찌",
-    "price": "8,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20200404080310_96b1c35140574819b1ca60e4e967a01b"
-  },
-  "no_59": {
-    "category": "9",
-    "name": "\"여자친구선물\" 현미온미 아기곰 허리 배 찜질팩 벨트형 (톡별)",
-    "brand": "현미온미",
-    "price": "39,800원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221111151242_44a23c71ef8d4e71b0655b75845e5755.jpg"
-  },
-  "no_60": {
-    "category": "9",
-    "name": "'따뜻한 마음처럼' 남녀공용 부드러운 체크 국산 목도리 머플러 40종 택1",
-    "brand": "장갑/머플러",
-    "price": "16,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221111103345_747ed719744945c49b2f6f82d4690de4.jpg"
-  },
-  "no_61": {
-    "category": "9",
-    "name": "\"크리스마스 선물제격\" [선물제격] 보르딘 콜드브루 더치커피 알록달록 앰플 24종세트 (25ml*24개) (보르딘F&B)",
-    "brand": "커피/차음료",
-    "price": "36,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128154123_c24fbde9c6bf488499e59e8169b0524b.jpg"
-  },
-  "no_62": {
-    "category": "9",
-    "name": "방콕 집순이 후드담요_2 (집순이담요)",
-    "brand": "수면잠옷",
-    "price": "17,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211020102859_89f07f8e8f264e05ac2ea37cd8bc54e1.png"
-  },
-  "no_63": {
-    "category": "9",
-    "name": "진짜 귀여운 곰돌이 퍼 머플러 6종 모음전",
-    "brand": "장갑/머플러",
-    "price": "7,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211108164509_54e5ac82a1be4aceb0043f6600185988.jpg"
-  },
-  "no_64": {
-    "category": "9",
-    "name": "집순이들을 위한 입는 거북이 등껍질 쿠션",
-    "brand": "신박한 패션템",
-    "price": "26,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220919151007_16cd36acf05742179360b80ea7c07484.jpg"
-  },
-  "no_65": {
-    "category": "9",
-    "name": "[누적판매 3만개/당일발송] 로그 어텀 무지 머플러 (23color)",
-    "brand": "심플리무드",
-    "price": "13,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221201105116_2f5d452110f04eac9fcac3b0399c10c1.jpg"
-  },
-  "no_66": {
-    "category": "9",
-    "name": "[1+1/총2개세트] 방콕 집순이 후드 담요 (집순이담요)",
-    "brand": "신박한 패션템",
-    "price": "29,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220114170920_3c7a23c6954f4932b29d9039c79a8e1c.jpg"
-  },
-  "no_67": {
-    "category": "9",
-    "name": "[질바이질스튜어트] 울캐시미어혼방 머플러 6종 택1",
-    "brand": "질바이질스튜어트(가방)",
-    "price": "51,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220927154759_0260be9be31249048b5238391937ecb7.jpg"
-  },
-  "no_68": {
-    "category": "9",
-    "name": "[헤지스] 멜란지 울캐시미어혼방 머플러 3종 택1",
-    "brand": "헤지스(가방/잡화)",
-    "price": "70,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114115710_4d163fac5e4b4e519c11bc350df4ee05.jpg"
-  },
-  "no_69": {
-    "category": "9",
-    "name": "\"따뜻한 선물\" 집순이 수족냉증러를 위한 선물 수면양말 실내화 양털 부츠 양말",
-    "brand": "프로젝트슬립",
-    "price": "18,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221028171112_8fcfbc0e48684ebfa28439f991752fa3.jpg"
-  },
-  "no_70": {
-    "category": "9",
-    "name": "\"불멍 감성\" 유니영 LED 사무실 미니 모닥불 가습기",
-    "brand": "가습기",
-    "price": "17,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221018091019_8e8f304db19e40848fd2e74c5a37f0dd.jpg"
-  },
-  "no_71": {
-    "category": "9",
-    "name": "[홈캠핑] \"불멍감성\" 타닥타닥 모닥불 장작 LED 원목 무드등",
-    "brand": "텐바이텐",
-    "price": "19,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114111414_a49b118c92754f4690afbf3801e17b5f.jpg"
-  },
-  "no_72": {
-    "category": "9",
-    "name": "아이보우 충전식 온수 찜질기 온열 찜질팩 IVB-D1000",
-    "brand": "아이보우",
-    "price": "27,800원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221101100957_540a750d877e4503b7f0d839bc4e0b4f.png"
-  },
-  "no_73": {
-    "category": "9",
-    "name": "\"따듯한 크리스마스\" 부들부들 오둥이 극세사 담요/수면바지+핫팩증정 (톡별)",
-    "brand": "캐릭터침구",
-    "price": "15,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221204113125_854bd19eea5f47c9a89f31c28627bf51.jpg"
-  },
-  "no_74": {
-    "category": "9",
-    "name": "\"따뜻함을 담아❤️\" [1+1/총2개] F/W 남녀 커플머플러 12종 택2",
-    "brand": "제이로렌",
-    "price": "32,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130124615_44c0a9bf6c5342c28b947edd1d52c62a.jpg"
-  },
-  "no_75": {
-    "category": "9",
-    "name": "\"양말선물\" 다채로운 구성의 양말선물세트 5P 15구성 선택1SET",
-    "brand": "라크삭스",
-    "price": "15,800원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211215155945_658a8d821c66435aa7e38d3dcd13285b.jpg"
-  },
-  "no_76": {
-    "category": "9",
-    "name": "국내 최초 갤럭시 / 애플 동시 충전 뮤란드 6in1 무선충전기",
-    "brand": "뮤란드",
-    "price": "39,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221201161803_7ca409c81a734baa9230f822fe1dafc2.jpg"
-  },
-  "no_77": {
-    "category": "9",
-    "name": "\"수고했어 오늘도\" 클래식 가토 쇼콜라 피스 + 아메리카노 (R)",
-    "brand": "투썸플레이스",
-    "price": "11,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220907100511_30d785aadf104491961357e88af06673.jpg"
-  },
-  "no_78": {
-    "category": "9",
-    "name": "[따뜻한 선물] [BEST] TANDY 캐솔드 캐시미어 100% 머플러 7종 택1 02BE23345",
-    "brand": "탠디(스카프)",
-    "price": "59,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221005133335_acb0c6a305c3479d9a25cb3c4b30ac47.jpg"
-  },
-  "no_79": {
-    "category": "9",
-    "name": "\"안아주라구스\"로라네 애착 구스 바디필로우 쿠션 130cm 2종택1+ 루돌프 밴드 (톡별)",
-    "brand": "캐릭터침구",
-    "price": "29,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130183204_a8de37029de84f99bda914c116f87a41.jpg"
-  },
-  "no_80": {
-    "category": "9",
-    "name": "\"춘식이와 힐링\" 춘식이 LED 디퓨저 무드등 (톡별)",
-    "brand": "프렌즈리빙",
-    "price": "42,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211208162402_27c4802c15934e119497bfdfcf5f3b47.jpg"
-  },
-  "no_81": {
-    "category": "9",
-    "name": "[감성/집들이선물] \"불멍 풀세트\" 수퍼블릭 실내용 애타는램프SET (램프+에탄올+점화기)",
-    "brand": "텐바이텐",
-    "price": "33,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221104165802_aa7b914dae6f4bb7a8305b76f639f0cb.jpg"
-  },
-  "no_82": {
-    "category": "9",
-    "name": "\"나를 위한 힐링 타임이 필요할때\" 불타는 무드등 A형 불멍 생일선물 집들이선물 인테리어",
-    "brand": "빛내는사람들",
-    "price": "19,800원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220719111929_aff4d5be8da146d78f11de78baafabee.jpg"
-  },
-  "no_83": {
-    "category": "9",
-    "name": "\"오둥이 입니다만\" 오둥이 미니 필로우 (톡별)",
-    "brand": "캐릭터침구",
-    "price": "12,800원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221122091545_5789853905674d9385881ff23bd86ae4.jpg"
-  },
-  "no_84": {
-    "category": "9",
-    "name": "리틀퍼피클럽 싱글이불담요",
-    "brand": "프렌즈리빙",
-    "price": "49,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221020172157_b9c14850576f4fc4b739f64358a0d60d.jpg"
-  },
-  "no_85": {
-    "category": "9",
-    "name": "\"진로 한 잠 어때?\" 진로 소주병 빅 바디필로우 100cm 쿠션 (톡별) 크리스마스 송년회 연말 선물",
-    "brand": "캐릭터침구",
-    "price": "39,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108112945_dc297c7c678a43a68fd3dcec8448568e.jpg"
-  },
-  "no_86": {
-    "category": "9",
-    "name": "[단독 선물포장🎁] \"따뜻한 마음을 담아\" 블러쉬 체크 머플러 / 여자친구 생일 선물 포장",
-    "brand": "얼모스트블루",
-    "price": "28,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221202165724_034ae44511f545809b26aca5d2ec4442.jpg"
-  },
-  "no_87": {
-    "category": "9",
-    "name": "아디다스 남녀공용 롱패딩 3ST 롱 다운 코트 점퍼 2종 택1",
-    "brand": "아디다스 의류",
-    "price": "189,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114154809_48764258e1f841be9bcd436642077586.jpg"
-  },
-  "no_88": {
-    "category": "9",
-    "name": "춘식이 멀티쿠커",
-    "brand": "프렌즈테크",
-    "price": "39,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220512142837_bceb86b768e24a98bf6c89edc2d3ec5e.jpg"
-  },
-  "no_89": {
-    "category": "9",
-    "name": "[추천선물] 페어리스트리 선물용 수제과일 2종 \"선물포장\" set(블루베리/레몬)",
-    "brand": "페어리스트리",
-    "price": "28,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114153128_900b051ed8624a69b757aab743f3c27e.jpg"
-  },
-  "no_90": {
-    "category": "9",
-    "name": "\"안아주라냥\" 고양이 몰캉몰캉 스트레스해소 모찌쿠션 (톡별)",
-    "brand": "캐릭터침구",
-    "price": "15,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114111246_b92ae00555ce44cda4e52796f780b10b.jpg"
-  },
-  "no_91": {
-    "category": "9",
-    "name": "양키캔들 향초 라지자 호른 캔들워머 세트 (국내산, 높이, 밝기조절)",
-    "brand": "양키캔들(리빙)",
-    "price": "39,800원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220331155825_dbb3599b2f3545e79b8ef159dc249306.jpg"
-  },
-  "no_92": {
-    "category": "9",
-    "name": "\"드립커피계의 명품\" 싱가포르 바샤커피 플레이버 드립백(8종택일)",
-    "brand": "BACHA COFFEE(바샤커피)",
-    "price": "35,500원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221118101320_d8984cf847cb4c07a684a353e0364185.jpg"
-  },
-  "no_93": {
-    "category": "9",
-    "name": "[48시간특가] \"연말/크리스마스선물\" 양키캔들 자캔들 소 모자이크 자쉐이드 선물세트 (쇼핑백)",
-    "brand": "양키캔들(리빙)",
-    "price": "14,800원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220304133355_a89a04d524f94169a415a30664cb78e0.jpg"
-  },
-  "no_94": {
-    "category": "9",
-    "name": "\"안사면후회 꿀템추천\" 알로코리아 충전식 휴대용 손난로 보조배터리 5000mAh 양면발열 전기핫팩 (WM501)",
-    "brand": "알로코리아(미니)",
-    "price": "20,700원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221031114520_2a1b24ad8bbe4898984b138147b4a813.jpg"
-  },
-  "no_95": {
-    "category": "9",
-    "name": "[경복궁] 한우사골 실속세트 (한우사골고기곰탕+사골고기도가니탕+한우사골곰탕)",
-    "brand": "경복궁",
-    "price": "25,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221101094951_ae97dedbaa264dd29b83905d904fdc56.jpg"
-  },
-  "no_96": {
-    "category": "9",
-    "name": "메리 스티치 장갑&캔들 선물세트",
-    "brand": "이터널어텀",
-    "price": "27,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221025164920_218bbf7cabe74526bdfc1653acddf26e.jpg"
-  },
-  "no_97": {
-    "category": "9",
-    "name": "\"핫팩증정 + \" \"신규컬러 출시\"[선물패키지] 오아듀얼미스트 무선 미니가습기 무드등 감성디자인 초음파사무실 (OA-HM048)",
-    "brand": "오아",
-    "price": "27,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221201104933_96d05be3f741475cb44fd8c723a889d2.jpg"
-  },
-  "no_98": {
-    "category": "9",
-    "name": "꿀잠친구_베어춘식이",
-    "brand": "프렌즈인형/피규어",
-    "price": "39,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221117174451_a33b73aa59214429a47d7266434f72ee.jpg"
-  },
-  "no_99": {
-    "category": "9",
-    "name": "\"집들이선물/출산선물\" 다룸 분화구 가습기 4L 대용량 간편세척 초음파 가습기",
-    "brand": "케이안",
-    "price": "34,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220919101726_64640936344c479fb05574a20393a208.jpg"
-  },
-  "no_100": {
-    "category": "9",
-    "name": "카카오프렌즈 로케트 무드등 가습기 400ml(춘식이,라이언,어피치)",
-    "brand": "프렌즈가전LC",
-    "price": "29,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221121143901_3f2bfc2bedb94015a0c4a866aa329898.jpg"
-  },
-  "no_101": {
-    "category": "9",
-    "name": "카카오프렌즈 라이언&춘식이 이글루 무드등 가습기 500ml",
-    "brand": "프렌즈가전LC",
-    "price": "29,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108142333_c742d771432d4a1b8e6fc4c3d3daacdd.jpg"
-  },
-  "no_102": {
-    "category": "9",
-    "name": "\"집들이선물추천\" [11종 택1] 따뜻하고 귀여운 겨울 캐릭터 털 층간소음 슬리퍼/실내화",
-    "brand": "홀리지",
-    "price": "15,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220928110034_5707661425f74dd29438b0f387b2283a.jpg"
-  },
-  "no_103": {
-    "category": "9",
-    "name": "\"따땃한 겨울선물!\" 카카오프렌즈 춘식이 수면 잠옷 세트 (톡별)",
-    "brand": "프렌즈리빙LC",
-    "price": "42,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F7HpnrW8_6inZORYBn5FdPQ%2F7LkOOmRvnM64EqiwE2tTPKdu24X4v2pVSpA-bfbyOpc.jpg"
-  },
-  "no_104": {
-    "category": "9",
-    "name": "리틀프렌즈 스윗 하트 밍크 소프트 담요(75x120)_부끄리틀어피치",
-    "brand": "프렌즈리빙LC",
-    "price": "17,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210806095655_4a4fbb16954f4860854d0989c39a49f4.jpg"
-  },
-  "no_105": {
-    "category": "9",
-    "name": "\"따뜻한 주머니속 펭하!\" 베이비 펭수 휴대용 손난로 충전식 8000mAh 보조배터리",
-    "brand": "손난로",
-    "price": "26,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109145020_516bbd52cb14406e84f590e1188dfef6.jpg"
-  },
-  "no_106": {
-    "category": "9",
-    "name": "\"출산선물,부모님선물\" 현미온미 손목무릎 찜질팩 기프트세트",
-    "brand": "현미온미",
-    "price": "29,800원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210916160335_6486e3bc277047f6aad0ab8b4729dbcd.jpg"
-  },
-  "no_107": {
-    "category": "9",
-    "name": "\"건강한 습도\" 듀얼미스트 무선 살균 H2O 무드등 미니 가습기 1L",
-    "brand": "가습기",
-    "price": "29,800원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221027145024_6e82f0f442e244b49097403eef7f9d87.jpg"
-  },
-  "no_108": {
-    "category": "9",
-    "name": "카카오프렌즈 쿠션 방석 인형 선물 핸드워머쿠션 등받이 캐릭터",
-    "brand": "프렌즈리빙LC",
-    "price": "18,500원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210407122102_4c3a0ecd47a443b6b3b36b3ecc39ef21.jpg"
-  },
-  "no_109": {
-    "category": "9",
-    "name": "\"따뜻해 지는 시간 따신바람\" 후아즘 미니 히터 온풍기 욕실 사무실 발난로 (따신바람 TH-1500)",
-    "brand": "온풍기(계절)",
-    "price": "36,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221013154736_f7b174d830c549d5b444dda873ef9e59.jpg"
-  },
-  "no_110": {
-    "category": "9",
-    "name": "[닥스] LONG 남녀공용 체크 울/캐시혼방 롱 라이트 머플러 3종 택1",
-    "brand": "닥스",
-    "price": "99,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220928161751_8fe342e5c0434e1aa7a14d6802a3723f.jpg"
-  },
-  "no_111": {
-    "category": "9",
-    "name": "리틀퍼피클럽 수면원피스파자마",
-    "brand": "프렌즈패션/뷰티",
-    "price": "49,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221020165833_15418916e96b493bb340cf33eb7e714d.jpg"
-  },
-  "no_112": {
-    "category": "9",
-    "name": "에어룸 자가발열 고밀도 극세사 데일리 꿀잠 침구세트 (2컬러)_균일가",
-    "brand": "에어룸",
-    "price": "62,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2FHz4W3yRictpLonJGKD7PZg%2FvR6n65d7Ku4CiauFu0o7XgDfGrWNbCpc65YirAnq004.jpg"
-  },
-  "no_113": {
-    "category": "9",
-    "name": "춘식이 수면잠옷 인형",
-    "brand": "프렌즈인형/피규어",
-    "price": "26,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109192523_62bd551476ce42aca05d803f915b9c8d.jpg"
-  },
-  "no_114": {
-    "category": "9",
-    "name": "\"집순이선물\" 슬리브 옥스포드 등받이 삼각쿠션 (대형) 8종택1",
-    "brand": "쉬즈홈",
-    "price": "25,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221104152808_4859783b8c4947d5804cba5e53c2d86b.jpg"
-  },
-  "no_115": {
-    "category": "9",
-    "name": "리틀퍼피클럽 메모리폼방석_라이언/어피치",
-    "brand": "프렌즈리빙",
-    "price": "29,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221020170620_6d564311a459406faff64fb7bad462ba.jpg"
-  },
-  "no_116": {
-    "category": "9",
-    "name": "\"뽀글뽀글 포근함\" New 춘식이 대형 양털 담요 (150x120cm) (톡별)",
-    "brand": "프렌즈리빙LC",
-    "price": "28,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211026092428_0902d118369e4479b171eec0bb573267.jpg"
-  },
-  "no_117": {
-    "category": "9",
-    "name": "라이언&춘식이 피규어 만년달력",
-    "brand": "프렌즈문구/팬시",
-    "price": "42,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221110183536_241553914ac14bbc9232cfc3650c968a.jpg"
-  },
-  "no_118": {
-    "category": "9",
-    "name": "카카오프렌즈 밍크 소프트 담요(100x150)_어피치",
-    "brand": "프렌즈리빙LC",
-    "price": "19,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210906132344_a2d5d2e48f7a4675adf1d173646c55eb.jpg"
-  },
-  "no_119": {
-    "category": "9",
-    "name": "\"메시지카드 증정\" 선물하기 단독 아몬드브리즈 24팩 버라이어티팩",
-    "brand": "매일유업",
-    "price": "19,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128103722_6b1b3de9134a4ff993f3b46a28770ace.jpg"
-  },
-  "no_120": {
-    "category": "9",
-    "name": "\"여자친구선물\" 현미온미 아기곰 눈 찜질팩 (톡별)",
-    "brand": "현미온미",
-    "price": "22,300원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221111150240_434cf046e4a5477185ec8901fc0a4dcf.jpg"
-  },
-  "no_121": {
-    "category": "9",
-    "name": "\"따뜻하게 겨울나기\" 퓨어코치 PTC 세라믹 온풍기 난로 친환경 히터",
-    "brand": "온풍기(계절)",
-    "price": "29,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220802105958_ed39fcddf173443585e840f4b93f1eb4.jpg"
-  },
-  "no_122": {
-    "category": "9",
-    "name": "디프로젝트 차량용방향제_블랙라이언",
-    "brand": "프렌즈리빙",
-    "price": "49,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220719162619_c16f89cfab294e1682c6eeed3f477e3d.jpg"
-  },
-  "no_123": {
-    "category": "9",
-    "name": "모모스커피 드립백 2 weeks (15개입)",
-    "brand": "모모스커피",
-    "price": "24,500원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220907173730_2c87f4c903d64c10b028310dfe979ea5.jpeg"
-  },
-  "no_124": {
-    "category": "9",
-    "name": "카카오프렌즈 춘식이 밍크 소프트 담요(75x120)_뚠뚠춘식",
-    "brand": "프렌즈리빙LC",
-    "price": "17,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220317152429_9971a6381df145319aab528cdeb44e14.jpg"
-  },
-  "no_125": {
-    "category": "9",
-    "name": "카카오프렌즈 수면바지+부직포 남여공용 파자마 홈웨어 잠옷",
-    "brand": "프렌즈리빙LC",
-    "price": "15,800원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221123153930_5e5ce7737d4d40edae49886d0af8c700.jpg"
-  },
-  "no_126": {
-    "category": "9",
-    "name": "\"따뜻한 선물\" 인어공주 니트담요 L size",
-    "brand": "캐릭터침구",
-    "price": "19,800원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210603100044_82f9e4870b934eb2842994ada334403d.jpg"
-  },
-  "no_127": {
-    "category": "9",
-    "name": "[친구 맺고 3%적립] \"고급스러운 따뜻한 선물\"제이에스티나 니트 머플러 2종 택1",
-    "brand": "제이에스티나(가방)",
-    "price": "66,600원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221201155702_d4d6959727204a4fbed8eb1a9a61b0f7.jpg"
-  },
-  "no_128": {
-    "category": "9",
-    "name": "\"수고했어 오늘도\" 스팀베이스 온열안대 아이마스크 5매입, 수면안대 눈찜질 생일선물",
-    "brand": "찜질팩",
-    "price": "6,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211116130222_1e198911a8b348caa9adb0b42e641cfb.jpg"
-  },
-  "no_129": {
-    "category": "9",
-    "name": "\"선물 BEST\" 쌍계명차 큐브우드 16P 선물세트",
-    "brand": "쌍계명차",
-    "price": "40,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221030105415_3f0287e1d4e14de7a4a47cb0e92a3e17.jpg"
-  },
-  "no_130": {
-    "category": "9",
-    "name": "\"집에서 만끽하는 제주의 향기\" 귤 요루면 파자마&세안밴드 세트(2type)(톡별)",
-    "brand": "쥬니쥬",
-    "price": "28,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211117111426_96a2e2f53f96426982d249d1679bdedf.jpg"
-  },
-  "no_131": {
-    "category": "9",
-    "name": "카카오프렌즈 밍크 소프트 담요(150x200)_레인보우춘식",
-    "brand": "프렌즈리빙LC",
-    "price": "27,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211001143634_834818a0415345efaa15801a3c8d9b14.jpg"
-  },
-  "no_132": {
-    "category": "9",
-    "name": "[경복궁] 마음을 전하는 선물세트 (한우불고기+궁중본갈비+궁중소갈비찜+양념불고기)",
-    "brand": "경복궁",
-    "price": "109,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220808152929_9cba25e875a1411e8d1be215d7291bf9.jpg"
-  },
-  "no_133": {
-    "category": "9",
-    "name": "리틀프렌즈 스윗 하트 밍크 소프트 담요(75x120)_부끄리틀라이언",
-    "brand": "프렌즈리빙LC",
-    "price": "17,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210806095933_e01f55fa0b4f44a8a5935f0295fe0646.jpg"
-  },
-  "no_134": {
-    "category": "9",
-    "name": "\"여자친구 선물\" \"따뜻하게 쓰담쓰담\" 마이디어 쓰담패치 30매입 온열패치/온찜질/붙이는핫팩",
-    "brand": "찜질팩",
-    "price": "25,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220929171541_fbf94789c76647ada67c73a3a90e8920.jpg"
-  },
-  "no_135": {
-    "category": "9",
-    "name": "\"교보문고 룸스프레이\" [교보문고][굿즈]룸스프레이 60ml: The Scent of PAGE",
-    "brand": "북아이템",
-    "price": "19,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210305150003_dc487cd5748f4c2fa7ab75c6078b5882.jpg"
-  },
-  "no_136": {
-    "category": "9",
-    "name": "[경복궁] 체력 보강 선물세트 (사골고기도가니탕+영양갈비탕+양곰탕)",
-    "brand": "경복궁",
-    "price": "35,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220805174512_77d0d69d21a3441c965dbe31b68910fd.jpg"
-  },
-  "no_137": {
-    "category": "9",
-    "name": "[연말선물추천] 프린지 버진 울 머플러 (9 color)",
-    "brand": "폴로 랄프 로렌(잡화)",
-    "price": "159,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221025230118_fbb1e1d99cd249d892ed151c81899394.jpg"
-  },
-  "no_138": {
-    "category": "9",
-    "name": "[누적판매 1만개/당일발송] 플랫 터치 울장갑 (5color)",
-    "brand": "심플리무드",
-    "price": "14,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20201222133823_55e5b3e846ce4c38b4c3458ef7563ea7.jpg"
-  },
-  "no_139": {
-    "category": "9",
-    "name": "[1+1]클래식체크머플러 하나사면 곱창한개더/겨울머플러",
-    "brand": "장갑/머플러",
-    "price": "8,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20201118162409_6bb1bb0f986d4e938d87fa92a0f3da5d.jpg"
-  },
-  "no_140": {
-    "category": "9",
-    "name": "[미식선물] [경복궁] 한우곰탕 선물세트 (한우사골 고기곰탕+사골고기 도가니탕+한우사골곰탕4팩)",
-    "brand": "경복궁",
-    "price": "48,600원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220727105222_2a10d2bad32c4bff8fb95e714f4f995e.jpg"
-  },
-  "no_141": {
-    "category": "9",
-    "name": "\"매일 입고 싶은\" 울랄라 겨울 신상 베스트 파자마 모음",
-    "brand": "ULLALA",
-    "price": "32,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221129153121_2d2584f3362d418db3b90699e96246af.jpg"
-  },
-  "no_142": {
-    "category": "9",
-    "name": "[연말선물추천] 케이블 폴로 베어 울블렌드 머플러 (3 color)",
-    "brand": "폴로 랄프 로렌(잡화)",
-    "price": "139,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221025235459_09e7e72f160b4d5693f0f1ba01348821.jpg"
-  },
-  "no_143": {
-    "category": "9",
-    "name": "[홈카페/집들이선물] \"귀엽게 완성되는 브런치 한상\" 스누피 레트로 토스터기",
-    "brand": "텐바이텐",
-    "price": "39,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220908121604_7a86956c03d14f23b8b9c904dabd6dca.jpg"
-  },
-  "no_144": {
-    "category": "9",
-    "name": "크리스마스트리 미니트리 45cm 내츄럴와인 풀세트",
-    "brand": "X-MAS용품",
-    "price": "13,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221021114729_06076abc33b3407b8041f2224f296db5.jpg"
-  },
-  "no_145": {
-    "category": "9",
-    "name": "\"🎄🎁✨\" Holiday Gift [코데즈컴바인] 최신상 베이직 브라 팬티 세트 12종 택1",
-    "brand": "코데즈컴바인(언더웨어)",
-    "price": "26,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221206095458_876667eb9ae543e693c582855aa906ff.jpg"
-  },
-  "no_146": {
-    "category": "9",
-    "name": "[경복궁] 정성 한그릇 선물세트 (영양갈비탕 2팩+사골육개장+한우사골곰탕 2팩)",
-    "brand": "경복궁",
-    "price": "52,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220805175130_27c1c488035b4489b124a158af8c0f22.jpg"
-  },
-  "no_147": {
-    "category": "9",
-    "name": "국산 대용량 흔드는 핫팩 100g 30매",
-    "brand": "핫팩/손난로",
-    "price": "12,700원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221013104727_71fc1a36b6f3477a9eb9a65377ecdb1b.jpg"
-  },
-  "no_148": {
-    "category": "9",
-    "name": "[당일발송] 사고르 터치 니트장갑 (9color)",
-    "brand": "심플리무드",
-    "price": "15,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211221165054_d8ecf48184654502b59ae5adbef7e2ee.jpg"
-  },
-  "no_149": {
-    "category": "9",
-    "name": "\"편안함을 함께하는\" 세븐데이즈 요루면 파자마세트 7color, couple",
-    "brand": "쥬니쥬",
-    "price": "28,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221103171729_0928929f4a8e400f9799fdce8afd68f0.jpg"
-  },
-  "no_150": {
-    "category": "9",
-    "name": "[루이까또즈] F/W BEST 스마트폰 터치 여성 장갑 20종 택1 (본사정품)",
-    "brand": "루이까또즈(잡화)",
-    "price": "20,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109165351_0f72da5ee9994dab87fd774822db6ca2.jpg"
-  },
-  "no_151": {
-    "category": "9",
-    "name": "[연말선물추천] 리버시블 울 블렌드 머플러 (5 color)",
-    "brand": "폴로 랄프 로렌(잡화)",
-    "price": "129,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221025213737_ec0600fe6b0c4706979cf87a91c1ff95.jpg"
-  },
-  "no_152": {
-    "category": "9",
-    "name": "[남녀공용] 블레르 니트 머플러",
-    "brand": "제이로썸",
-    "price": "9,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221011111448_ba662bd714584190b4a2756be749f3cd.jpg"
-  },
-  "no_153": {
-    "category": "9",
-    "name": "전복에 내 마음 가득 담아, 본죽 전복죽+쇠고기 장조림set",
-    "brand": "본죽식품",
-    "price": "35,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211025143852_f96bf60a6319423a8651ba9383910307.jpg"
-  },
-  "no_154": {
-    "category": "9",
-    "name": "\"겨울에는 함께\" 얼모스트블루x베니르 위클리 머플러 / 커플 크리스마스 연말 생일 선물",
-    "brand": "얼모스트블루",
-    "price": "28,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220204115454_ac4a58a6529d465096008cd9e53de73a.jpg"
-  },
-  "no_155": {
-    "category": "9",
-    "name": "[선물포장] 이터널유 Lo mano 울 장갑 10종 택1",
-    "brand": "이터널유",
-    "price": "38,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221129220940_d4c62e1e96354886af664eeddd7a8a65.png"
-  },
-  "no_156": {
-    "category": "9",
-    "name": "[본사공식정품] 고비 리버시블 캐시미어 100% 머플러 2종 택1 (+기프트포장)",
-    "brand": "고비(GOBI)",
-    "price": "109,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220923144901_165a42e3de15498aa3008438b16f171e.jpg"
-  },
-  "no_157": {
-    "category": "9",
-    "name": "\"앤의 감성이 그대로\" [울랄라X빨강머리앤] 크리스마스 선물 파자마",
-    "brand": "ULLALA",
-    "price": "32,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221125100642_bb408a43f9cf420f9290fd2c56433713.jpg"
-  },
-  "no_158": {
-    "category": "9",
-    "name": "[VIPS] 빕스 패밀리 선물세트 1호(오리지널폭립 1개+스파이시폭립 1개+볶음밥5종)",
-    "brand": "CJ푸드빌",
-    "price": "39,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130161236_8877f1a49ed94bd394b0e3e961d97efd.jpg"
-  },
-  "no_159": {
-    "category": "9",
-    "name": "울 퍼피로고 장식 스마트폰 터치 여성장갑 3종 택1",
-    "brand": "헤지스(가방/잡화)",
-    "price": "30,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221018134224_099d9dbce54147729c5c1f82104365f0.jpg"
-  },
-  "no_160": {
-    "category": "9",
-    "name": "[경복궁] 불고기 갈비 혼합 선물세트 (양념불고기600g+칼집LA갈비600g)",
-    "brand": "경복궁",
-    "price": "45,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220428161320_b2f9154a62f949b8ba6952c1fd3618d4.jpg"
-  },
-  "no_161": {
-    "category": "9",
-    "name": "[당일발송] 리온 귀도리 (3color)",
-    "brand": "심플리무드",
-    "price": "11,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20210107114724_f11c10cf5f124c0c9ca6825e5722306d.jpg"
-  },
-  "no_162": {
-    "category": "9",
-    "name": "\"힐링하는 오둥입이니다만\" 오둥이 극세사 담요+수면바지 꿀잠세트+핫팩증정 (톡별)",
-    "brand": "캐릭터침구",
-    "price": "29,800원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221204113229_9760006c5fdf4b0492d11f706b786b62.jpg"
-  },
-  "no_163": {
-    "category": "9",
-    "name": "[코데즈컴바인] 남성 베이직 신상 드로즈3팩 9종 택1",
-    "brand": "코데즈컴바인(언더웨어)",
-    "price": "36,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221124121955_d31115bcf8fc41719c2833fabec9de7d.jpg"
-  },
-  "no_164": {
-    "category": "9",
-    "name": "\"🎁선물추천🎁\" [게스언더웨어] 솔리드 베이직 브라 팬티 세트 12종 택1",
-    "brand": "게스(언더웨어)",
-    "price": "28,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220905093546_257854239c45495bbebb3c11a229c9a6.jpg"
-  },
-  "no_165": {
-    "category": "9",
-    "name": "[경복궁] 전통 한 상 세트(한우떡갈비+한우사골고기곰탕+칼집 LA갈비)",
-    "brand": "경복궁",
-    "price": "52,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220418171859_6a767c534435489dbe89a9eb1f0461a1.jpg"
-  },
-  "no_166": {
-    "category": "9",
-    "name": "[선물추천] 울100 머플러+장갑 세트+선물포장",
-    "brand": "장갑/머플러",
-    "price": "18,500원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211029092909_fea2b6ed676046c0a615a6ce6323f23e.jpg"
-  },
-  "no_167": {
-    "category": "9",
-    "name": "[경복궁] 한우곰탕 보양세트 (한우사골고기곰탕2팩+사골고기도가니탕2팩+한우사골곰탕2팩)",
-    "brand": "경복궁",
-    "price": "60,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220727110359_41b9c790af3d4e75aa9e065b6bc05e57.jpg"
-  },
-  "no_168": {
-    "category": "9",
-    "name": "\"귀여움은 덤\" 곰돌이 머플러 모자 장갑 크리스마스 연말 한파 귀도리 쓸데없는 신박한 선물",
-    "brand": "팬시용품",
-    "price": "10,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220304152102_ff5666bc5f2e4ff481aea149b3360ba7.jpg"
-  },
-  "no_169": {
-    "category": "9",
-    "name": "[1+1]데일리&트렌디 커플 파자마 10종",
-    "brand": "문즈",
-    "price": "49,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220929150659_d3066654c2d94c65ae87a81d026465fe.jpg"
-  },
-  "no_170": {
-    "category": "9",
-    "name": "\"따뜻한 선물추천\" 남녀공용 세티아 오버 사이즈 캐시미어 머플러 12종 택1",
-    "brand": "장갑/머플러",
-    "price": "8,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221107152451_dc0e4e6bb67843c7b588ff929fa73559.jpg"
-  },
-  "no_171": {
-    "category": "9",
-    "name": "빕스 홈레스토랑 선물세트 1호 오리지널 폭립 2개+핫 스노잉치즈 폭립 1개",
-    "brand": "CJ푸드빌",
-    "price": "39,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221130161215_5638880545af4902a54cf0d42cdbe3ed.jpg"
-  },
-  "no_172": {
-    "category": "9",
-    "name": "\"든든한 보양 한끼\" [워커힐호텔]프리미엄 곰탕 600gx2팩 한우사골",
-    "brand": "워커힐호텔(배송)",
-    "price": "30,500원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220217093418_ddac333fe5ab4e18817a40bc99bafb84.jpg"
-  },
-  "no_173": {
-    "category": "9",
-    "name": "\"22F/W NEW\" [게스언더웨어] 에어로쿨 아웃밴드 노와이어 브라팬티 세트 8종 택1",
-    "brand": "게스(언더웨어)",
-    "price": "32,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220928103348_b3a4f1961c0946c18db1fa18a337ffcb.jpg"
-  },
-  "no_174": {
-    "category": "9",
-    "name": "꿀잠~ 파자마 세트 12종 택1",
-    "brand": "쁘띠쁘띠",
-    "price": "19,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221116172407_4582046e94a84f148518f8ab89de7618.jpg"
-  },
-  "no_175": {
-    "category": "9",
-    "name": "\"하루종일 수분 촉촉\" [단독특가] 간편 세척 무드등 미니 무선가습기 (+필터 추가 증정) (무드 가습기 211)",
-    "brand": "디노보",
-    "price": "19,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221201141417_9d4ef791e4494d97b46beaf8c257f459.jpg"
-  },
-  "no_176": {
-    "category": "9",
-    "name": "\"쓸모없는 선물\" 엘리자베스 오리 잠옷 (사은품 증정) 집순이 크리스마스 연말 자취 생일선물 쓸데없는 선물",
-    "brand": "팬시용품",
-    "price": "38,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221205153025_02a5cc5840964ed3acdde02f0f308648.jpg"
-  },
-  "no_177": {
-    "category": "9",
-    "name": "\"꼭 필요한 양말\" 절대 벗겨지지 않는 양말 시리즈 13종 (모든종류) (매일양말)",
-    "brand": "양말선물",
-    "price": "13,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220822155946_3701eb3d6c3641bbb1ad15c66b2ee7ba.jpg"
-  },
-  "no_178": {
-    "category": "9",
-    "name": "[연말선물추천] 케이블 니트 울 블렌드 머플러 (5 color)",
-    "brand": "폴로 랄프 로렌(잡화)",
-    "price": "159,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221108181749_80656de2f9d1488ab8e47b3a38c6ec95.jpg"
-  },
-  "no_179": {
-    "category": "9",
-    "name": "[단독 선물포장🎁] \"포근한 날만 가득하길\" 시그니처 체크 머플러 / 홀리데이 생일 선물 포장",
-    "brand": "얼모스트블루",
-    "price": "28,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221021110258_1d5ab246cf064ecf978bc1092e469f9a.jpg"
-  },
-  "no_180": {
-    "category": "9",
-    "name": "Quokka Dumpling Pouch",
-    "brand": "다이노탱",
-    "price": "20,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220907180432_7703233d7b184a4bbd7b2df274be1eb5.jpg"
-  },
-  "no_181": {
-    "category": "9",
-    "name": "\"쓸모없는 선물\" 의기소침 강아지 인형 (48cm) 쿠션 베개 애착 바디필로우 생일선물 쓸데없는 신박한 선물",
-    "brand": "팬시용품",
-    "price": "13,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221102111336_67aa96447f654415ad8e16d806cd0424.jpg"
-  },
-  "no_182": {
-    "category": "9",
-    "name": "\"보들보들 부드러운\" 울랄라 피치기모 겨울 파자마 모음",
-    "brand": "ULLALA",
-    "price": "34,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221114140049_56a73547e6aa4019b560a7c51ad849ae.jpg"
-  },
-  "no_183": {
-    "category": "9",
-    "name": "\"집에서도 예쁜\" 꿀잠 파자마 상하의 세트 15종 택1",
-    "brand": "제이나나",
-    "price": "24,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221201095715_1197eae22855410eb78ca5d825364119.jpg"
-  },
-  "no_184": {
-    "category": "9",
-    "name": "\"앤 선물박스 증정\" [울랄라X빨강머리앤] X-MAS와 함께 하는 앤 파자마",
-    "brand": "ULLALA",
-    "price": "36,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221125102139_8ebd46a8aa4d455eae63dd82584f1bb2.jpg"
-  },
-  "no_185": {
-    "category": "9",
-    "name": "[누적판매량 7만장]'따뜻한 겨울 보내길' 보들포근 남녀공용 국산 목도리 머플러 40종택1",
-    "brand": "장갑/머플러",
-    "price": "16,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221121012007_73d4d4f7de0a454ab0b4b789b52d8eda.jpg"
-  },
-  "no_186": {
-    "category": "9",
-    "name": "\"커플/부부선물 추천\" 울랄라 크리스마스 커플 페어 파자마",
-    "brand": "ULLALA",
-    "price": "34,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221128155631_01484155d5b6420ebf8cfa5a4447506e.jpg"
-  },
-  "no_187": {
-    "category": "9",
-    "name": "[교보문고][굿즈]미니룸스프레이 15ml(개선판): The Scent of PAGE",
-    "brand": "북아이템",
-    "price": "9,500원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211028125108_c1d13523ac7446d3880d1ffed13c7744.jpg"
-  },
-  "no_188": {
-    "category": "9",
-    "name": "Quokka Fluffy Slipper",
-    "brand": "다이노탱",
-    "price": "26,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221202135519_df5666750a92428c9b43405176299622.jpg"
-  },
-  "no_189": {
-    "category": "9",
-    "name": "[연말선물추천] 프린지 울 머플러 (5 color)",
-    "brand": "폴로 랄프 로렌(잡화)",
-    "price": "139,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221109181204_4311b2d4c81240cda4f1fa7c6df88ea6.jpg"
-  },
-  "no_190": {
-    "category": "9",
-    "name": "\"쓸모없는 선물\" 거북이 등껍질 쿠션 등쿠션 애착 바디필로우 집순이 힐링 생일선물 쓸데없는 신박한 선물",
-    "brand": "팬시용품",
-    "price": "27,500원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221027172915_235d70aeed3d4b2cac2a13517ac821b5.jpg"
-  },
-  "no_191": {
-    "category": "9",
-    "name": "[경복궁 선물세트] 양념 불고기 선물세트 (600g*2팩)",
-    "brand": "경복궁",
-    "price": "36,000원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20220504140408_5e17997a812a4877b9acac36a1b3a0c5.jpg"
-  },
-  "no_192": {
-    "category": "9",
-    "name": "노란 곰돌이 뽀글이 수면잠옷",
-    "brand": "문즈",
-    "price": "27,900원",
-    "img": "https://img1.kakaocdn.net/thumb/C600x600.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20211110164231_9e194c71e3ff49b9a72b7ddf92898dc3.jpg"
+    "name": "808 거꾸로 물멍가습기 (+전용충전기 증정)",
+    "brand": "808\n바로가기",
+    "price": "54,900\n원",
+    "thumbnail_images": [
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221113215850_dab378ce174841f595726bf8cf994b76.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221113215615_db9eaaab607e44ba8995f037df0baa35.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221113215628_aefac013c7554e0fb12891b0f645f4c3.jpg",
+      "https://img1.kakaocdn.net/thumb/C320x320@2x.q82.fwebp/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20221113215847_01c846454aed4c4890f5ae83cfba4231.jpg"
+    ],
+    "content_images": [
+      "https://st.kakaocdn.net/product/gift/editor/20221115134304_73123eda8a784eedb79285010dc99233.jpg",
+      "https://st.kakaocdn.net/product/gift/editor/20221115215358_bd4b9db873234e2aab2000e5a8fb75a6.gif",
+      "https://st.kakaocdn.net/product/gift/editor/20221115132253_d5d5ebba2c68455f918b9aafa6bb4bb2.jpg"
+    ],
+    "url": "https://gift.kakao.com/product/5442107"
   }
 }

@@ -9,7 +9,7 @@
 {% block style %}{% endblock style %}
 
 {% block content %}
-<div class="detail_body d-flex flex-column align-items-center">
+<div class="signup-wrapper d-flex flex-column align-items-center">
   <div class="d-flex">
     {% if user.image %}
     <img src="{{ user.image.url }}" class="profile" alt="abc">
@@ -247,7 +247,7 @@
           {% for product in user.like_product.all %}
           <div class="col">
             <div class="d-flex flex-column align-items-center detail-sub">
-              <div><img class="review-image" src="{{product.productimages_set.get.images}}">
+              <div><img class="review-image" src="{{ product.productimages_set.all.0.images }}">
               </div>
               <div><a href="{% url 'articles:product_detail' product.pk %}">{{product.title}}</a></div>
               <h4>{{product.price}} 원</h4>

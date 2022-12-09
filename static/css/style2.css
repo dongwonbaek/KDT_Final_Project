@@ -168,7 +168,7 @@
 }
 
 .com_width {
-  width: 50rem;
+  width: 75%;
 }
 
 .com_img {
@@ -197,7 +197,7 @@
 }
 
 .emoji-count{
-  color: red;
+  color: #F28080;
 }
 
 /* product_rank */
