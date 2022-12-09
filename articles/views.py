@@ -261,7 +261,7 @@ def review_comment_delete(request, comment_pk):
 
 
 def product_rank(request):
-    products = Product.objects.filter(Q(price__gte=0)&Q(price__lte=20000)).annotate(wish_cnt=Count("like_user", filter=Q(like_user__age__in=[0, 1]))).order_by('-wish_cnt')[:20]
+    products = Product.objects.filter(Q(price__gte=0)&Q(price__lte=20000)).annotate(wish_cnt=Count("like_user", filter=Q(like_user__age__in=list(range(16))))).order_by('-wish_cnt')[:20]
     context = {
         "products": products,
     }
@@ -269,10 +269,11 @@ def product_rank(request):
 
 def product_rank_redirect(request):
     query_dict = {
-        '1': [0, 1],
-        '2': [2, 3],
-        '3': [4, 5, 6],
-        '4': list(range(7, 16)),
+        '1': list(range(16)),
+        '2': [0, 1],
+        '3': [2, 3],
+        '4': [4, 5, 6],
+        '5': list(range(7, 16)),
         'max20000': [0, 20000],
         'max50000': [20000, 50000],
         'max10000000': [50000, 10000000],
@@ -296,11 +297,12 @@ def product_rank_redirect(request):
         image = str(products[a].productimages_set.all()[0].images)
         forloop = a + 1
         product_list.append([
-            image,
-            products[a].title,
-            products[a].price,
-            products[a].pk,
-            forloop,
+            image, #0
+            products[a].title, #1
+            products[a].price, #2
+            products[a].pk, #3
+            forloop, #4
+            products[a].brand, #5
             ])
     context = {
         'products':product_list,
