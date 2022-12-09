@@ -44,3 +44,31 @@
 .commu_view {
   width: 10rem;
 }
+
+/* community_form(create) */
+
+.commu_c {
+  margin-top: 13rem;
+  padding-bottom: 20rem;
+}
+
+.commu_form {
+  background-color: white;
+  border-radius: 5px;
+  padding: 3rem;
+}
+
+.commu_write {
+  text-align: center;
+  font-weight: bold;
+  color: #FB5957;
+  width: 10rem;
+}
+
+.commu_btn {
+  color: white;
+  background-color: #FB5957;
+  border: 0;
+  border-radius: 5px;
+  padding: 8px;
+}
