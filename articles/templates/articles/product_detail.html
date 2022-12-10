@@ -118,7 +118,7 @@
               <div class="d-flex">
                 {% if like_reviews.0.user.image %}
                   <div class="user_img me-3">
-                    <img class="w-100 h-100" src="{{ like_reviews.0.user.image.url }}" alt="">
+                    <img class="w-100 h-100 rounded" src="{{ like_reviews.0.user.image.url }}" alt="">
                   </div>
                 {% endif %}
                 <div class="pt-2">
@@ -140,7 +140,10 @@
               </div>
               <div class="d-flex justify-content-between mt-2">
                 <div class="card-ellipsis">
-                  {{ like_reviews.0.content }}
+                  <p>{{ like_reviews.0.title }}</p>
+                  {% if like_reviews.0.user in request.user.blocking.all %}
+                    <p class='text-danger fs-6'>(차단한 유저의 게시물입니다.)</p>
+                  {% endif %}
                 </div>
                 <div class="com_img">
                   {% if like_reviews.0.image %}
@@ -164,7 +167,7 @@
       <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner" role="listbox">
           {% for product in random_products %}
-            <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %} ">
+            <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
               <div class='col-3'>
                 <div class='mx-2 border-0'>
                   <div class="d-flex align-items-center justify-content-center">
@@ -221,7 +224,7 @@
             <div class="d-flex">
               <div class="user_img me-3">
                 {% if review.user.image %}
-                  <img class="w-100 h-100" src="{{ review.user.image.url }}" alt="">
+                  <img class="w-100 h-100 rounded" src="{{ review.user.image.url }}" alt="">
                 {% endif %}
               </div>
               <div class="pt-2">
@@ -243,12 +246,15 @@
             </div>
             <div class="d-flex justify-content-between mt-2">
               <div class="com_width d-flex flex-column justify-content-between">
-                <span class='card-ellipsis'>{{ review.content }}</span>
+                <span class='card-ellipsis'>{{ review.title }}</span>
+                {% if review.user in request.user.blocking.all %}
+                  <em class='text-danger fs-6'>(차단한 유저의 게시물입니다.)</em>
+                {% endif %}
                 <span style="font-size: .9rem;" class='text-secondary'>{{ review.like_cnt }}번 공감되었습니다.</span>
               </div>
               <div class="com_img">
                 {% if review.image %}
-                  <img class="w-100 h-100" src="{{ review.image.url }}" alt="">
+                  <img class="w-100 h-100 rounded" src="{{ review.image.url }}" alt="">
                 {% endif %}
               </div>
             </div>
@@ -283,8 +289,11 @@
             </div>
             <div class="d-flex justify-content-between mt-2">
               <div class="com_width d-flex flex-column justify-content-between">
-                <span class='card-ellipsis'>{{ review.content }}</span>
-                <span style="font-size: .9rem;" class='text-secondary'>{{ review.like_cnt }}번이 공감되었습니다.</span>
+                <span class='card-ellipsis'>{{ review.title }}</span>
+                {% if review.user in request.user.blocking.all %}
+                  <em class='text-danger fs-6'>(차단한 유저의 게시물입니다.)</em>
+                {% endif %}                
+                <span style="font-size: .9rem;" class='text-secondary'>{{ review.like_cnt }}번 공감되었습니다.</span>
               </div>
               <div class="com_img">
                 {% if review.image %}
@@ -338,9 +347,9 @@
           <div>
             <img class="w-100 rounded my-5" src="{{ review.image.url }}" alt="review.image">
           </div>
-          <div style="min-height: 10rem;" class="my-3">
+          <p style="min-height: 10rem;" class="my-3 text-break">
             {{ review.content }}
-          </div>
+          </p>
           <span class='rounded-pill review-emoji'>
             {% if request.user.is_authenticated %}
             
