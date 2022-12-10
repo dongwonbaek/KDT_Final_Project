@@ -62,6 +62,23 @@
 </div>
 
 
+{% if request.user.is_authenticated %}
+  <form action="{% url 'articles:community_comment_create' community.pk %}" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form community_comment_form layout='inline' %}
+    {% bootstrap_button button_type="submit" content="댓글 작성"%}
+  </form>
+{% endif %}
+
+{% for comment in comments %}
+<p>{{ comment.user.username }} | {{ comment.content }}</p>
+{% empty %}
+  <p>댓글 없엉</p>
+<hr>
+{% endfor %}
+
+
+
 {% comment %}<h1>댓글</h1>
 {% if request.user.is_authenticated %}
 <form id='comment-form' action="{% url 'community:comment_create' community.pk %}" method="POST">

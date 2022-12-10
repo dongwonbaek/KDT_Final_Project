@@ -8,6 +8,7 @@ from .forms import (
     ReviewCommentForm,
     CommunityForm,
     CommunityImagesForm,
+    CommunityCommentForm,
 )
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
@@ -484,29 +485,24 @@ def community_delete(request, community_pk):
 
 def community_detail(request, community_pk):
     community = Community.objects.get(pk=community_pk)
-
-    # community_comment_form = CommunityCommentForm()
+    community_comment_form = CommunityCommentForm()
     context = {
          'community': community,
-    #    'comments': community.comment_set.all(),
-    #    'community_comment_form': community_comment_form,
+         'comments': community.communitycomment_set.all(),
+         'community_comment_form': community_comment_form,
+
     }
     return render(request, 'articles/community_detail.html', context)
 
 
-# @login_required
-# def community_comment_create(request, community_pk):
-#     community = get_object_or_404(Community, pk=community_pk)
-#     community_comment_form = CommunityCommentForm(request.POST)
-
-#     if community_comment_form.is_valid():
-#         comment = community_comment_form.save(commit=False)
-#         comment.community = community
-#         comment.user = request.user
-#         comment.save()
-#         context = {
-#             'content': comment.content,
-#             'userName': comment.user.username
-#         }
-#         return JsonResponse(context)
+@login_required
+def community_comment_create(request, community_pk):
+    community = get_object_or_404(Community, pk=community_pk)
+    community_comment_form = CommunityCommentForm(request.POST)
+    if community_comment_form.is_valid():
+        comment = community_comment_form.save(commit=False)
+        comment.community = community
+        comment.user = request.user
+        comment.save()
+    return redirect('articles:community_detail', community.pk)
 
