@@ -37,16 +37,7 @@
       <td>1</td>
     </tr>
     {% endfor %}
-  <table>
+  </table>
 </div>
-  
-<!-- <p>{{ community.content|safe }}</p>
-{% for community in communities %}
-<div>
-  <a href="{% url 'articles:community_delete' community.pk %}">{{ community.title }} 글 삭제</a>
-</div>
-{% endfor%}
-<a href="{% url 'articles:community_index' %}">커뮤니티 메인</a> -->
-  
 {% endblock content %}
 {% block script %}{% endblock script %}
