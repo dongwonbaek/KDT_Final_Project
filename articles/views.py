@@ -135,6 +135,9 @@ def product_update(request, product_pk):
             product.save()
             messages.success(request, "글 수정 완료")
             return redirect("articles:product_detail", product_pk)
+        else:
+            messages.error(request, '유효하지 않은 양식입니다.')
+            return redirect("articles:product_detail", product_pk)
     else:
         product_form = ProductForm(instance=product)
         product_images_form = ProductImagesForm()
@@ -166,8 +169,12 @@ def review_create(request, product_pk):
             review.user = request.user
             review.product = product
             review.save()
-            messages.success(request, "리뷰가 상공적으로 작성되었습니다.")
+            messages.success(request, "리뷰가 등록되었습니다.")
             return redirect("articles:product_detail", product_pk)
+        else:
+            messages.error(request, '유효하지 않은 양식입니다.')
+            return redirect("articles:product_detail", product_pk)
+
     else:
         review_form = ReviewForm()
     context = {
@@ -179,15 +186,16 @@ def review_create(request, product_pk):
 @login_required
 def review_update(request, review_pk):
     review = get_object_or_404(Review, pk=review_pk)
-
     if request.user != review.user:
-        messages.warning(request, "본인 글만 수정할 수 있습니다.")
+        messages.error(request, "본인 글만 수정할 수 있습니다.")
         return redirect("articles:product_detail", review.product.pk)
-
     if request.method == "POST":
         review_form = ReviewForm(request.POST, request.FILES, instance=review)
         if review_form.is_valid():
             review_form.save()
+            return redirect("articles:product_detail", review.product.pk)
+        else:
+            messages.error(request, '유효하지 않은 양식입니다.')
             return redirect("articles:product_detail", review.product.pk)
     else:
         review_form = ReviewForm(instance=review)
@@ -203,7 +211,7 @@ def review_delete(request, product_pk, review_pk):
     if request.method == "POST":
         if request.user == review.user:
             review.delete()
-            messages.success(request, "리뷰가 성공적으로 삭제되었습니다.")
+            messages.success(request, "성공적으로 삭제되었습니다.")
             return redirect("articles:product_detail", product_pk)
     else:
         return redirect("articles:product_detail", product_pk)
@@ -257,6 +265,8 @@ def review_comment_delete(request, comment_pk):
     comment = get_object_or_404(ReviewComment, pk=comment_pk)
     if request.user == comment.user:
         comment.delete()
+    else:
+        messages.error(request, '본인 댓글만 지울 수 있습니다.')
     return redirect("articles:product_detail", comment.review.product.pk)
 
 
@@ -339,14 +349,18 @@ def search(request):
 @login_required
 def like(request, product_pk):
     product = get_object_or_404(Product, pk=product_pk)
-    if request.user in product.like_user.all():
-        product.like_user.remove(request.user)
-        is_liked = False
+    if request.user.is_authenticated:
+        if request.user in product.like_user.all():
+            product.like_user.remove(request.user)
+            is_liked = False
+        else:
+            product.like_user.add(request.user)
+            is_liked = True
+        context = {"isLiked": is_liked, "likeCount": product.like_user.count()}
+        return JsonResponse(context)
     else:
-        product.like_user.add(request.user)
-        is_liked = True
-    context = {"isLiked": is_liked, "likeCount": product.like_user.count()}
-    return JsonResponse(context)
+        messages.error(request, '로그인 후 이용하실 수 있습니다.')
+        return redirect('articles:product_detail', product_pk)
 
 
 @login_required

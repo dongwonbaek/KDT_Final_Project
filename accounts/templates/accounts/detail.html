@@ -12,7 +12,7 @@
 <div class="signup-wrapper d-flex flex-column align-items-center">
   <div class="d-flex">
     {% if user.image %}
-    <img src="{{ user.image.url }}" class="profile" alt="abc">
+      <img src="{{ user.image.url }}" class="profile" alt="abc">
     {% endif %}
     <div class="d-flex flex-column align-items-center profile-text pt-5">
       <p>{{ user.nickname }}</p>
@@ -26,9 +26,11 @@
     </div>
   </div>
   <!-- 팔로우 모달 버튼 -->
-  <div class="profile-text"><a data-bs-toggle="modal" data-bs-target="#exampleModal">팔로우:<span id='followings'>
-        {{user.following.count}}</span>
-      | 팔로워:<span id='followers'>{{ user.followers.count }}</span></a></div>
+  <div class="profile-text">
+    <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+      팔로우:<span id='followings'>{{user.following.count}}</span>| 팔로워:<span id='followers'>{{ user.followers.count }}</span>
+    </a>
+  </div>
   <!-- 팔로우 모달 -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -42,17 +44,21 @@
               <div class="col-6">
                 <h5 class="follow-title">팔로우</h5>
                 {% for followinguser in request.user.following.all %}
-                <div><a href="{% url 'accounts:detail' followinguser.pk %}"><img class="user-image"
-                      src="{{ followinguser.image.url }}">
-                    {{followinguser.nickname }}</a></div>
+                  <div>
+                    <a href="{% url 'accounts:detail' followinguser.pk %}">
+                      <img class="user-image" src="{{ followinguser.image.url }}">{{ followinguser.nickname }}
+                    </a>
+                  </div>
                 {% endfor %}
               </div>
               <div class="col-6">
                 <h5 class="follower-title">팔로워</h5>
                 {% for followeruser in request.user.followers.all %}
-                <div><a href="{% url 'accounts:detail' followeruser.pk %}"><img class="user-image"
-                      src="{{ followeruser.image.url }}">
-                    {{followeruser.nickname }}</a></div>
+                <div>
+                  <a href="{% url 'accounts:detail' followeruser.pk %}">
+                    <img class="user-image" src="{{ followeruser.image.url }}">{{followeruser.nickname }}
+                  </a>
+                </div>
                 {% endfor %}
               </div>
             </div>
@@ -62,56 +68,55 @@
     </div>
   </div>
   {% if request.user == user %}
-  <div class="d-flex justify-content-center">
-    <button class="login-button">
-      <a href="{% url 'accounts:update' %}">유저정보수정</a>
-    </button>
-    <button type="button" class="delete-button profile-text" data-bs-toggle="modal" data-bs-target="#deleteUser">
-      회원탈퇴
-    </button>
+    <div class="d-flex justify-content-center">
+      <button class="login-button">
+        <a href="{% url 'accounts:update' %}">유저정보수정</a>
+      </button>
+      <button type="button" class="delete-button profile-text" data-bs-toggle="modal" data-bs-target="#deleteUser">
+        회원탈퇴
+      </button>
 
-    <!-- 회원탈퇴 모달 -->
-    <div class="modal fade" id="deleteUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            정말 탈퇴하시겠습니까? 관련된 모든 정보가 삭제됩니다.
-          </div>
-          <div class="modal-footer">
-            <form action="{% url 'accounts:delete' %}" method="POST">
-              {% csrf_token %}
-              <input class='delete-button2' type="submit" value='네'>
-            </form>
-
+      <!-- 회원탈퇴 모달 -->
+      <div class="modal fade" id="deleteUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              정말 탈퇴하시겠습니까? 관련된 모든 정보가 삭제됩니다.
+            </div>
+            <div class="modal-footer">
+              <form action="{% url 'accounts:delete' %}" method="POST">
+                {% csrf_token %}
+                <input class='delete-button2' type="submit" value='네'>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-  </div>
   {% endif %}
   {% if request.user != user %}
-  <div class="d-flex justify-content-center">
-    {% if request.user in user.followers.all %}
-    <button class='follow-button' id='follow-btn' data-user-id="{{ user.pk }}">팔로우 취소</button>
-    {% else %}
-    <button class='follow-button' id='follow-btn' data-user-id="{{ user.pk }}">팔로우</button>
-    {% endif %}
-    {% if request.user in user.blockers.all %}
-    <button class="delete-button" id='block-btn' data-user-id="{{ user.pk }}">차단 해제</button>
-    {% else %}
-    <button class="delete-button" id='block-btn' data-user-id="{{ user.pk }}">차단</button>
-    {% endif %}
-    {% else %}
-    <!-- 차단목록 모달버튼 -->
+    <div class="d-flex justify-content-center">
+      {% if request.user in user.followers.all %}
+        <button  ton class='follow-button' id='follow-btn' data-user-id="{{ user.pk }}">팔로우 취소</button>
+      {% else %}
+        <button class='follow-button' id='follow-btn' data-user-id="{{ user.pk }}">팔로우</button>
+      {% endif %}
+      {% if request.user in user.blockers.all %}
+        <button class="delete-button" id='block-btn' data-user-id="{{ user.pk }}">차단 해제</button>
+      {% else %}
+        <button class="delete-button" id='block-btn' data-user-id="{{ user.pk }}">차단</button>
+      {% endif %}
+    </div>
+  <!-- 차단목록 모달버튼 -->
+  {% else %}
     <button type="button" class="block-button" data-bs-toggle="modal" data-bs-target="#blockModal">
       차단 목록
     </button>
 
-    <!-- 차단목록 모달 -->
+      <!-- 차단목록 모달 -->
     <div class="modal fade" id="blockModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -119,21 +124,19 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           {% for user in request.user.blocking.all %}
-          <div class="modal-body">
-            {% if user.image %}
-            <img class="user-image" src="{{ user.image.url }}">
-            <a href="{% url 'accounts:detail' user.pk %}">{{user.nickname}}</a>
-            {% else %}
-            <a class="profile-margin" href="{% url 'accounts:detail' user.pk %}">{{user.nickname}}</a>
-            {% endif %}
-
-          </div>
+            <div class="modal-body">
+              {% if user.image %}
+                <img class="user-image" src="{{ user.image.url }}">
+                <a href="{% url 'accounts:detail' user.pk %}">{{user.nickname}}</a>
+              {% else %}
+                <a class="profile-margin" href="{% url 'accounts:detail' user.pk %}">{{user.nickname}}</a>
+              {% endif %}
+            </div>
           {% endfor %}
         </div>
       </div>
     </div>
-    {% endif %}
-  </div>
+  {% endif %}
 </div>
 <!--리뷰,위시리스트-->
 <section id="tap-move" class="d-flex flex-column align-items-center">
@@ -148,93 +151,93 @@
     </div>
     <div class="d-flex flex-column align-items-center mt-1">
       {% for review in paginated_review_list %}
-      <div class="d-flex justify-content-between detail-rw">
-        <div>
-          <h2><a href="{% url 'articles:product_detail' review.product.pk %}">{{ review.title }}</a></h2>
-          <div class="stars d-flex">
-            {% if review.rating == 0 %}
-            <i class="bi bi-star"></i>
-            <i class="bi bi-star"></i>
-            <i class="bi bi-star"></i>
-            <i class="bi bi-star"></i>
-            <i class="bi bi-star"></i>
-            {% endif %}
-            {% if review.rating == 1 %}
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star"></i>
-            <i class="bi bi-star"></i>
-            <i class="bi bi-star"></i>
-            <i class="bi bi-star"></i>
-            {% endif %}
-            {% if review.rating == 2 %}
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star"></i>
-            <i class="bi bi-star"></i>
-            <i class="bi bi-star"></i>
-            {% endif %}
-            {% if review.rating == 3 %}
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star"></i>
-            <i class="bi bi-star"></i>
-            {% endif %}
-            {% if review.rating == 4 %}
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star"></i>
-            {% endif %}
-            {% if review.rating == 5 %}
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i>
-            {% endif %}
+        <div class="d-flex justify-content-between detail-rw">
+          <div>
+            <h2><a href="{% url 'articles:product_detail' review.product.pk %}">{{ review.title }}</a></h2>
+            <div class="stars d-flex">
+              {% if review.rating == 0 %}
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+              {% endif %}
+              {% if review.rating == 1 %}
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+              {% endif %}
+              {% if review.rating == 2 %}
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+              {% endif %}
+              {% if review.rating == 3 %}
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+              {% endif %}
+              {% if review.rating == 4 %}
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+              {% endif %}
+              {% if review.rating == 5 %}
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              {% endif %}
+            </div>
+            <div>{{ review.content }}</div>
           </div>
-          <div>{{ review.content }}</div>
+          <div>
+            <img class="review-image" src="{{ review.image.url }}" alt="review.image">
+          </div>
         </div>
-        <div>
-          <img class="review-image" src="{{ review.image.url }}" alt="review.image">
-        </div>
-      </div>
       {% endfor %}
       <div class="board-pagination">
         <ul class="pagination">
           <!-- 이전페이지 -->
           {% if paginated_review_list.has_previous %}
-          <li class="page-item">
-            <a class="page-link" tabindex="-1" href="?page={{ paginated_review_list.previous_page_number }}">&laquo;</a>
-          </li>
+            <li class="page-item">
+              <a class="page-link" tabindex="-1" href="?page={{ paginated_review_list.previous_page_number }}">&laquo;</a>
+            </li>
           {% else %}
-          <li class="page-item disabled">
-            <a class="page-link" href="#">&laquo;</a>
-          </li>
+            <li class="page-item disabled">
+              <a class="page-link" href="#">&laquo;</a>
+            </li>
           {% endif %}
           <!-- 페이지리스트 -->
           {% for page_number in paginated_review_list.paginator.page_range %}
-          {% if page_number == paginated_review_list.number %}
-          <li class="page-item active" aria-current="page">
-            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
-          </li>
-          {% else %}
-          <li class="page-item">
-            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
-          </li>
-          {% endif %}
+            {% if page_number == paginated_review_list.number %}
+              <li class="page-item activate" aria-current="page">
+                <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+              </li>
+            {% else %}
+              <li class="page-item">
+                <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+              </li>
+            {% endif %}
           {% endfor %}
           <!-- 다음페이지 -->
           {% if paginated_review_list.has_next %}
-          <li class="page-item">
-            <a class="page-link" href="?page={{paginated_review_list.next_page_number }}">&raquo;</a>
-          </li>
+            <li class="page-item">
+              <a class="page-link" href="?page={{paginated_review_list.next_page_number }}">&raquo;</a>
+            </li>
           {% else %}
-          <li class="page-item disabled">
-            <a class="page-link" tabindex="-1" href="#">&raquo;</a>
-          </li>
+            <li class="page-item disabled">
+              <a class="page-link" tabindex="-1" href="#">&raquo;</a>
+            </li>
           {% endif %}
         </ul>
       </div>
@@ -270,14 +273,14 @@
       <div class="container">
         <div class="row">
           {% for product in user.like_product.all %}
-          <div class="col">
-            <div class="d-flex flex-column align-items-center detail-sub">
-              <div><img class="review-image" src="{{ product.productimages_set.all.0.images }}">
+            <div class="col">
+              <div class="d-flex flex-column align-items-center detail-sub">
+                <div><img class="review-image" src="{{ product.productimages_set.all.0.images }}">
+                </div>
+                <div><a href="{% url 'articles:product_detail' product.pk %}">{{product.title}}</a></div>
+                <h4>{{product.price}} 원</h4>
               </div>
-              <div><a href="{% url 'articles:product_detail' product.pk %}">{{product.title}}</a></div>
-              <h4>{{product.price}} 원</h4>
             </div>
-          </div>
           {% endfor %}
         </div>
       </div>
