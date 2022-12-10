@@ -31,7 +31,8 @@ body {
 }
 
 footer {
-  position: absolute;
+  position: relative;
+  transform: translateY(-100%);
   right: 0;
   bottom: 0;
   left: 0;
@@ -45,7 +46,7 @@ footer {
 }
 
 main {
-  height: calc(100% - 80px - 150px);
+  /* height: calc(100% - 80px - 150px); */
 }
 
 .pos-btn {
