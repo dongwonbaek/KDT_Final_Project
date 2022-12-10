@@ -479,13 +479,14 @@ def community_detail(request, community_pk):
     return render(request, 'articles/community_detail.html', context)
 
 
-# @login_required
+@login_required
 def community_comment_create(request, community_pk):
     community = get_object_or_404(Community, pk=community_pk)
     community_comment_form = CommunityCommentForm(request.POST)
     if community_comment_form.is_valid():
         comment = community_comment_form.save(commit=False)
         comment.community = community
+        comment.user = request.user
         comment.save()
     return redirect('articles:community_detail', community.pk)
 
