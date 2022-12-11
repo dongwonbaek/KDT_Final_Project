@@ -517,4 +517,44 @@ def community_comment_create(request, community_pk):
         }
         return JsonResponse(context)
 
-    
+
+def md_jsm(request):
+    context = {
+        "one": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "two": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "three": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "four": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "five": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "six": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "seven": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "eight": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+    }
+    return render(request, "articles/md_jsm.html", context)
+
+
+def md_kbw(request):
+    context = {
+        "one": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "two": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "three": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "four": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "five": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "six": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "seven": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "eight": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+    }
+    return render(request, "articles/md_kbw.html", context)
+
+
+def md_kkh(request):
+    context = {
+        "one": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "two": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "three": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "four": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "five": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "six": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "seven": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "eight": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+    }
+    return render(request, "articles/md_kkh.html", context)

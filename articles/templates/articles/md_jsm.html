@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block content %}
+
+<div class="container" style="margin-top: 10rem;">
+  <!-- 상단 제목 -->
+  <section class="d-flex justify-content-center">
+    <div class="text-center">
+      <div class="fs-1">크리스마스 분위기 가득한</div>
+      <div class="fw-bold" style="font-size: 3rem;">달콤한 선물을 준비했어요</div>
+    </div>
+  </section>
+  <!-- 큰 이미지 -->
+  <section class="d-flex justify-content-center mt-5" style="height: 40rem;">
+    <img class="w-100" style="object-fit: cover; object-position: center;" src="https://burst.shopifycdn.com/photos/christmas-baking-treats.jpg?width=925&format=pjpg&exif=1&iptc=1" alt="big-img">
+  </section>
+  <!-- 상품들 -->
+  <section style="margin-top: 8rem;">
+    <div class="fs-3 fw-bold">크리스마스 BEST🎁</div>
+
+    <div class="row row-cols-4 mt-5">
+      <!-- one -->
+      <a class='text-decoration-none' href="{% url 'articles:product_detail' one.pk %}">
+        <div class="col d-flex justify-content-center mb-5">
+          <div class="card">
+            <div class="card-img">
+              <img class="w-100 h-100 rounded" src="{{ one.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
+            </div>
+            <div>
+              <div class="brand mt-2"></div>
+              <div>{{ one.title }}</div>
+              <p class='text-secondary fs-6 m-0'>{{ one.brand }}</p>
+              <div class="fs-5 mt-2">
+                <span class="fw-bold text-dark">{{ one.price|intcomma }}원</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- two -->
+      <a class='text-decoration-none' href="{% url 'articles:product_detail' two.pk %}">
+        <div class="col d-flex justify-content-center mb-5">
+          <div class="card">
+            <div class="card-img">
+              <img class="w-100 h-100 rounded" src="{{ two.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
+            </div>
+            <div>
+              <div class="brand mt-2"></div>
+              <div>{{ two.title }}</div>
+              <p class='text-secondary fs-6 m-0'>{{ two.brand }}</p>
+              <div class="fs-5 mt-2">
+                <span class="fw-bold text-dark">{{ two.price|intcomma }}원</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- three -->
+      <a class='text-decoration-none' href="{% url 'articles:product_detail' three.pk %}">
+        <div class="col d-flex justify-content-center mb-5">
+          <div class="card">
+            <div class="card-img">
+              <img class="w-100 h-100 rounded" src="{{ three.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
+            </div>
+            <div>
+              <div class="brand mt-2"></div>
+              <div>{{ three.title }}</div>
+              <p class='text-secondary fs-6 m-0'>{{ three.brand }}</p>
+              <div class="fs-5 mt-2">
+                <span class="fw-bold text-dark">{{ three.price|intcomma }}원</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- four -->
+      <a class='text-decoration-none' href="{% url 'articles:product_detail' four.pk %}">
+        <div class="col d-flex justify-content-center mb-5">
+          <div class="card">
+            <div class="card-img">
+              <img class="w-100 h-100 rounded" src="{{ four.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
+            </div>
+            <div>
+              <div class="brand mt-2"></div>
+              <div>{{ four.title }}</div>
+              <p class='text-secondary fs-6 m-0'>{{ four.brand }}</p>
+              <div class="fs-5 mt-2">
+                <span class="fw-bold text-dark">{{ four.price|intcomma }}원</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- five -->
+      <a class='text-decoration-none' href="{% url 'articles:product_detail' five.pk %}">
+        <div class="col d-flex justify-content-center mb-5">
+          <div class="card">
+            <div class="card-img">
+              <img class="w-100 h-100 rounded" src="{{ five.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
+            </div>
+            <div>
+              <div class="brand mt-2"></div>
+              <div>{{ five.title }}</div>
+              <p class='text-secondary fs-6 m-0'>{{ five.brand }}</p>
+              <div class="fs-5 mt-2">
+                <span class="fw-bold text-dark">{{ five.price|intcomma }}원</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- six -->
+      <a class='text-decoration-none' href="{% url 'articles:product_detail' six.pk %}">
+        <div class="col d-flex justify-content-center mb-5">
+          <div class="card">
+            <div class="card-img">
+              <img class="w-100 h-100 rounded" src="{{ six.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
+            </div>
+            <div>
+              <div class="brand mt-2"></div>
+              <div>{{ six.title }}</div>
+              <p class='text-secondary fs-6 m-0'>{{ six.brand }}</p>
+              <div class="fs-5 mt-2">
+                <span class="fw-bold text-dark">{{ six.price|intcomma }}원</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- seven -->
+      <a class='text-decoration-none' href="{% url 'articles:product_detail' seven.pk %}">
+        <div class="col d-flex justify-content-center mb-5">
+          <div class="card">
+            <div class="card-img">
+              <img class="w-100 h-100 rounded" src="{{ seven.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
+            </div>
+            <div>
+              <div class="brand mt-2"></div>
+              <div>{{ seven.title }}</div>
+              <p class='text-secondary fs-6 m-0'>{{ seven.brand }}</p>
+              <div class="fs-5 mt-2">
+                <span class="fw-bold text-dark">{{ seven.price|intcomma }}원</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- eight -->
+      <a class='text-decoration-none' href="{% url 'articles:product_detail' eight.pk %}">
+        <div class="col d-flex justify-content-center mb-5">
+          <div class="card">
+            <div class="card-img">
+              <img class="w-100 h-100 rounded" src="{{ eight.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
+            </div>
+            <div>
+              <div class="brand mt-2"></div>
+              <div>{{ eight.title }}</div>
+              <p class='text-secondary fs-6 m-0'>{{ eight.brand }}</p>
+              <div class="fs-5 mt-2">
+                <span class="fw-bold text-dark">{{ eight.price|intcomma }}원</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+</div>
+  
+{% endblock content %} 
