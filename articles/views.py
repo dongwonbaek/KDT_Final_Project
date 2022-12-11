@@ -170,7 +170,7 @@ def review_create(request, product_pk):
             review.user = request.user
             review.product = product
             review.save()
-            messages.success(request, "리뷰가 등록되었습니다.")
+            messages.success(request, "등록되었습니다.")
             return redirect("articles:product_detail", product_pk)
         else:
             messages.error(request, '유효하지 않은 양식입니다.')
@@ -194,6 +194,7 @@ def review_update(request, review_pk):
         review_form = ReviewForm(request.POST, request.FILES, instance=review)
         if review_form.is_valid():
             review_form.save()
+            messages.success(request, '수정되었습니다.')
             return redirect("articles:product_detail", review.product.pk)
         else:
             messages.error(request, '유효하지 않은 양식입니다.')
@@ -201,6 +202,7 @@ def review_update(request, review_pk):
     else:
         review_form = ReviewForm(instance=review)
         context = {
+            'review': review,
             "review_form": review_form,
         }
     return render(request, "articles/review_update.html", context)
@@ -212,9 +214,10 @@ def review_delete(request, product_pk, review_pk):
     if request.method == "POST":
         if request.user == review.user:
             review.delete()
-            messages.success(request, "성공적으로 삭제되었습니다.")
+            messages.success(request, "삭제되었습니다.")
             return redirect("articles:product_detail", product_pk)
     else:
+        messages.error(request, '유효하지 않은 접근입니다.')
         return redirect("articles:product_detail", product_pk)
 
 
@@ -266,7 +269,7 @@ def review_comment_delete(request, comment_pk):
     if request.user == comment.user:
         comment.delete()
     else:
-        messages.error(request, '본인 댓글만 지울 수 있습니다.')
+        messages.error(request, '본인 댓글만 삭제할 수 있습니다.')
     return redirect("articles:product_detail", comment.review.product.pk)
 
 
@@ -436,7 +439,7 @@ def community_create(request):
                     image_instance = CommunityImages(community=community, images=image)
                     image_instance.save()
 
-            messages.success(request, "글 생성 완료")
+            messages.success(request, "등록되었습니다.")
             return redirect('articles:community_index')
 
     else:
@@ -462,9 +465,10 @@ def community_update(request, community_pk):
                     image_instance = CommunityImages(community=community, images=image)
                     image_instance.save()
             community.save()
-
-            messages.success(request, "글 수정 완료")
-            return redirect('articles:community_detail', community_pk)
+            messages.success(request, "수정되었습니다.")
+        else:
+            messages.error(request, '유효하지 않은 양식입니다.')
+        return redirect('articles:community_detail', community_pk)
 
     else:
         community_form = CommunityForm(instance=community)
@@ -479,6 +483,7 @@ def community_update(request, community_pk):
 def community_delete(request, community_pk):
     community = Community.objects.get(pk=community_pk)
     community.delete()
+    messages.success(request, '삭제되었습니다.')
     return redirect('articles:community_index')
 
 
