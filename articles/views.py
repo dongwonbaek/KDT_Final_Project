@@ -235,9 +235,9 @@ def review_comment_create(request, review_pk):
                 else:
                     islogin = False
                 if a.user.image:
-                    isimage = True
+                    isimage = a.user.image.url
                 else:
-                    isimage = False
+                    isimage = '/static/img/no-avatar.jpg'
                 comments.append(
                     [
                         a.content,  # 0
@@ -248,10 +248,9 @@ def review_comment_create(request, review_pk):
                         a.id,  # 5
                         a.review.pk,  # 6
                         islogin,  # 7
-                        a.user.image.url, #8
+                        isimage, #8
                         a.created_at.month, #9
                         a.created_at.day, #10
-                        isimage,
                     ]
                 )
             context = {
