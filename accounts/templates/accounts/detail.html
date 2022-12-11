@@ -13,6 +13,8 @@
   <div class="d-flex">
     {% if user.image %}
       <img src="{{ user.image.url }}" class="profile" alt="abc">
+    {% else %}
+      <img src="{% static 'img/no-avatar.jpg' %}" class="profile" alt="no-avatar">
     {% endif %}
     <div class="d-flex flex-column align-items-center profile-text pt-5">
       <p>{{ user.nickname }}</p>
@@ -28,7 +30,7 @@
   <!-- 팔로우 모달 버튼 -->
   <div class="profile-text">
     <a data-bs-toggle="modal" data-bs-target="#exampleModal">
-      팔로우:<span id='followings'>{{user.following.count}}</span>| 팔로워:<span id='followers'>{{ user.followers.count }}</span>
+      팔로우:<span id='followings'>{{user.following.count}}</span> 팔로워:<span id='followers'>{{ user.followers.count }}</span>
     </a>
   </div>
   <!-- 팔로우 모달 -->
@@ -201,7 +203,11 @@
             <div>{{ review.content }}</div>
           </div>
           <div>
-            <img class="review-image" src="{{ review.image.url }}" alt="review.image">
+            {% if review.image %}
+              <img class="review-image" src="{{ review.image.url }}" alt="review.image">
+            {% else %}
+              <img class="review-image" src="{% static 'img/dummy.jpg' %}" alt="dummy">
+            {% endif %}
           </div>
         </div>
       {% endfor %}
