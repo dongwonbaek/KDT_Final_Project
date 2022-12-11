@@ -32,7 +32,6 @@ body {
 
 footer {
   position: relative;
-  transform: translateY(-100%);
   right: 0;
   bottom: 0;
   left: 0;
@@ -45,9 +44,9 @@ footer {
   color: var(--main-white);
 }
 
-main {
-  /* height: calc(100% - 80px - 150px); */
-}
+/* main {
+  height: calc(100% - 80px - 150px);
+} */
 
 .pos-btn {
   width: fit-content;
@@ -610,10 +609,15 @@ header .menu ul>li>a {
   background-color: var(--main-mintygreen);
 }
 
+/* MD 추천 */
 .reco-per-member {
-  display: flex;
-  justify-content: center;
   margin: 200px 0;
+}
+
+.md p {
+  color: #bbb;
+  font-size: 18px;
+  margin: 0;
 }
 
 .div.slick-slide.slick-current.slick-active {
