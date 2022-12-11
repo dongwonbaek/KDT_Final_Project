@@ -510,5 +510,15 @@ def community_comment_create(request, community_pk):
             'userName': comment.user.username
         }
         return JsonResponse(context)
-    # else:
-    #     return 
+
+
+# @login_required
+# def community_comment_delete(request, community_pk):
+#     # comment = get_object_or_404(ReviewComment, pk=community_pk)
+#     comment = get_object_or_404(Community, pk=community_pk)
+#     if request.user == comment.user:
+#         comment.delete()
+#     else:
+#         messages.error(request, '본인 댓글만 지울 수 있습니다.')
+#     return redirect("articles:product_detail", comment.community.pk)
+    
