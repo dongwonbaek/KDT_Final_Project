@@ -66,3 +66,6 @@ class CommunityCommentForm(forms.ModelForm):
     class Meta:
         model = CommunityComment
         fields = ["content",]
+        labels = {
+            "content": "댓글을 작성해주세요",
+        }
