@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "accounts",
     "articles",
     # modules
+    "bootstrap_datepicker_plus",
     "django_bootstrap5",
     "django_cleanup.apps.CleanupConfig",
     "django_extensions",
@@ -69,18 +70,17 @@ INSTALLED_APPS = [
     # django default
     "django.contrib.admin",
     "django.contrib.auth",
-    "django.contrib.sites", # admin site 추가
+    "django.contrib.sites",  # admin site 추가
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.humanize",
-
 ]
 
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
 )
 
 SITE_ID = 1
@@ -88,10 +88,10 @@ SITE_ID = 1
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_IMAGE_BACKEND = "pillow"
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-ACCOUNT_SIGNUP_REDIRECT_URL = '/'
-LOGIN_REDIRECT_URL = '/'
+ACCOUNT_SIGNUP_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/"
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
@@ -203,5 +203,3 @@ MESSAGE_TAGS = {
     messages.WARNING: "warning",
     messages.ERROR: "danger",
 }
-
-

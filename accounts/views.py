@@ -44,21 +44,30 @@ def signup(request):
 
 
 def login(request):
-    if request.method == "POST":
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            auth_login(request, form.get_user())
+    if request.user.is_anonymous:
+        if request.method == "POST":
+            form = AuthenticationForm(request, data=request.POST)
+            if form.is_valid():
+                auth_login(request, form.get_user())
+                return redirect(request.GET.get("next") or "articles:index")
+            else:
+                messages.warning(request, "아이디 혹은 비밀번호가 틀렸습니다.")
+                return redirect("accounts:login")
         else:
-            messages.error(request, "아이디 혹은 비밀번호가 틀렸습니다.")
-            return redirect("accounts:login")
-        return redirect(request.GET.get("next") or "articles:index")
-    return render(request, "accounts/login.html")
+            form = AuthenticationForm()
+
+        context = {
+            "form": form,
+        }
+        return render(request, "accounts/login.html", context)
+    else:
+        return redirect("accounts:index")
 
 
 @login_required
 def logout(request):
     auth_logout(request)
-    return redirect("articles:index")
+    return redirect("accounts:login")
 
 
 @login_required
