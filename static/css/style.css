@@ -19,13 +19,13 @@
   --main-mintygreen: #297372;
   --main-white: #FFF;
   --main-black: #000;
-  --header-font: 'Jeju Gothic', sans-serif;
+  --header-font: 'NanumSquareExtraBold', sans-serif;
   --body-font: 'YiSunShinDotumM';
 }
 
 body {
   position: relative;
-  font-family: 'YiSunShinDotumM';
+  font-family: 'NanumSquareAcb';
   padding-top: 180px;
   font-size: 130%;
 }
@@ -728,6 +728,7 @@ header .menu ul>li>a {
 .profile {
   width: 200px;
   border-radius: 80%;
+  border: solid 1px;
 }
 
 .delete-button {
