@@ -433,12 +433,12 @@ def community_create(request):
         images = request.FILES.getlist("images")
         if community_form.is_valid() and community_images_form.is_valid():
             community = community_form.save(commit=False)
+            community.user = request.user
             community.save()
             if images:
                 for image in images:
                     image_instance = CommunityImages(community=community, images=image)
                     image_instance.save()
-
             messages.success(request, "등록되었습니다.")
             return redirect('articles:community_index')
 
@@ -460,6 +460,7 @@ def community_update(request, community_pk):
         images = request.FILES.getlist("images")
         if community_form.is_valid() and community_images_form.is_valid():
             community = community_form.save(commit=False)
+            community.user = request.user
             if images:
                 for image in images:
                     image_instance = CommunityImages(community=community, images=image)
@@ -510,19 +511,10 @@ def community_comment_create(request, community_pk):
         comment.user = request.user
         comment.save()
         context = {
+            'userImg': comment.user.image.url,
             'content': comment.content,
             'userName': comment.user.username
         }
         return JsonResponse(context)
 
-
-# @login_required
-# def community_comment_delete(request, community_pk):
-#     # comment = get_object_or_404(ReviewComment, pk=community_pk)
-#     comment = get_object_or_404(Community, pk=community_pk)
-#     if request.user == comment.user:
-#         comment.delete()
-#     else:
-#         messages.error(request, '본인 댓글만 지울 수 있습니다.')
-#     return redirect("articles:product_detail", comment.community.pk)
     
