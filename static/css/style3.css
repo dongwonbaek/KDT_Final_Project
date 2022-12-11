@@ -76,3 +76,19 @@
   border-radius: 5px;
   padding: 8px;
 }
+
+.commu_detail_main {
+  width: 1000px;
+  margin: auto;
+}
+
+.commu_detail_hr {
+  background-color: #297372;
+  height: 0.1rem;
+}
+
+.commu_pf_img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
