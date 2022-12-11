@@ -34,7 +34,6 @@
   <!-- If we need navigation buttons -->
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>
-
 </div>
 {% else %}
 <div class="text-center">관심상품 내역이 없습니다.</div>
@@ -42,7 +41,8 @@
 {% endblock content %}
 {% block script %}
 
-<script>const swiper = new Swiper('.swiper', {
+<script>
+  const swiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'horizontal',
     slidesPerView: 3,
