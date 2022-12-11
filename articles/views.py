@@ -497,6 +497,7 @@ def community_detail(request, community_pk):
 
 @login_required
 def community_comment_create(request, community_pk):
+    print(request.POST)
     community = get_object_or_404(Community, pk=community_pk)
     community_comment_form = CommunityCommentForm(request.POST)
     if community_comment_form.is_valid():
@@ -504,5 +505,10 @@ def community_comment_create(request, community_pk):
         comment.community = community
         comment.user = request.user
         comment.save()
-    return redirect('articles:community_detail', community.pk)
-
+        context = {
+            'content': comment.content,
+            'userName': comment.user.username
+        }
+        return JsonResponse(context)
+    # else:
+    #     return 
