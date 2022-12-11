@@ -117,7 +117,12 @@
 
         {% if like_reviews %}
           <div class="d-flex flex-column justify-content-between">
-            <h2 class='m-0'>베스트 후기👍 <span class='fs-5 text-secondary'>{{ like_reviews.0.like_cnt }}번의 공감을 받았습니다!</span></h2>
+            <h2 class='m-0'>
+              베스트 후기👍 
+              {% if like_reviews.0.like_cnt != 0 %}
+                <span class='fs-5 text-secondary'>{{ like_reviews.0.like_cnt }}번의 공감을 받았습니다!</span>
+              {% endif %}
+            </h2>
             <div class="com p-4 bg-light border rounded" data-bs-toggle="modal" data-bs-target="#exampleModal{{ like_reviews.0.pk }}">
               <div class="d-flex">
                 <div class="user_img me-3">
@@ -258,7 +263,11 @@
                 {% if review.user in request.user.blocking.all %}
                   <em class='text-danger fs-6'>(차단한 유저의 게시물입니다.)</em>
                 {% endif %}
-                <span style="font-size: .9rem;" class='text-secondary'>{{ review.like_cnt }}번 공감되었습니다.</span>
+                {% if review.like_cnt != 0 %}
+                  <span style="font-size: .9rem;" class='text-secondary'>
+                    {{ review.like_cnt }}번 공감되었습니다.
+                  </span>
+                {% endif %}
               </div>
               <div class="com_img">
                 {% if review.image %}
@@ -303,7 +312,11 @@
                 {% if review.user in request.user.blocking.all %}
                   <em class='text-danger fs-6'>(차단한 유저의 게시물입니다.)</em>
                 {% endif %}                
-                <span style="font-size: .9rem;" class='text-secondary'>{{ review.like_cnt }}번 공감되었습니다.</span>
+                {% if review.like_cnt != 0 %}
+                  <span style="font-size: .9rem;" class='text-secondary'>
+                    {{ review.like_cnt }}번 공감되었습니다.
+                  </span>
+                {% endif %}              
               </div>
               <div class="com_img">
                 {% if review.image %}
