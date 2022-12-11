@@ -63,42 +63,28 @@
 
 
 {% if request.user.is_authenticated %}
-  <form action="{% url 'articles:community_comment_create' community.pk %}" method="POST">
-    {% csrf_token %}
-    {% bootstrap_form community_comment_form layout='inline' %}
-    {% bootstrap_button button_type="submit" content="댓글 작성"%}
-  </form>
+<form id="comment-form" data-community-id="{{ community.pk }}">
+  {% csrf_token %}
+  {% bootstrap_form community_comment_form layout='inline' %}
+  {% bootstrap_button button_type="submit" content="댓글 작성"%}
+</form>
 {% endif %}
 
+
+
+
+<div id="comments">
 {% for comment in comments %}
 <p>{{ comment.user.username }} | {{ comment.content }}</p>
 {% empty %}
   <p>댓글 없엉</p>
 <hr>
 {% endfor %}
-
-
-
-{% comment %}<h1>댓글</h1>
-{% if request.user.is_authenticated %}
-<form id='comment-form' action="{% url 'community:comment_create' community.pk %}" method="POST">
-  <form id='comment-form' data-community-id='{{ community.pk }}'>
-  {% csrf_token %}
-  {% bootstrap_form community_comment_form layout='inline' %}
-  {% bootstrap_button button_type='submit' content='댓글 생성' %}
-</form>
-{% endif %}
-
-<div id="comments">
-  {% for comment in comments %}
-    <p>{{ comment.user.username }}</p>|<p>{{ comment.content }}</p>
-  {% empty %}
-    <p>댓글 없음</p>
-  {% endfor %}
-</div>{% endcomment %}
+</div>
 
 {% endblock content %}
 {% block script %}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
   let slideIndex = 1;
   showSlides(slideIndex);
@@ -112,49 +98,44 @@
   }
   
   function showSlides(n) {
-let i;
-let slides = document.getElementsByClassName("mySlides");
-let dots = document.getElementsByClassName("dot");
-if (n > slides.length) {slideIndex = 1}
-if (n < 1) {slideIndex = slides.length}
-for (i = 0; i < slides.length; i++) {
-  slides[i].style.display = "none";
-}
-for (i = 0; i < dots.length; i++) {
-  dots[i].className = dots[i].className.replace(" active", "");
-}
-slides[slideIndex-1].style.display = "block";
-dots[slideIndex-1].className += " active";
-}
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  }
 </script>
 
-{% comment %} <script>
+<script>
   // 댓글
   const commentForm = document.querySelector('#comment-form')
 
   const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
-  commentForm.addEventListner('submit', function(event) {
-    event.prevenDafault();
-    axious ({
+  commentForm.addEventListener('submit', function() {
+    event.preventDefault();
+    axios({
       method: 'post',
-      url: `/community/${event.target.dataset.communityId}/comment/`,
+      url: `/${event.target.dataset.communityId}/community_comment_create/`,
       headers: {'X-CSRFToken': csrftoken},
-      data: new FormData(community_comment_form)
+      data: new FormData(commentForm)
     })
     .then(response => {
       console.log(response.data)
-      const comments = document.querySelector('$comments')
-      // const p = document.createElement('p')
-      // p.innerText = `${response.data.userName} | ${response.data.content}`
-      // const hr = document.createElement('hr')
-      // comments.append(p, hr)
-      comments.insertAdjacentHTML('beforeend', `
-        <p> ${ response.data.userName } | ${ response.data.content } </p>
-        <hr>
-        `)
-      community_comment_form.reset()
+      const comments = document.querySelector('#comments')
+      const p = document.createElement('p')
+      p.innerText = `${response.data.userName} | ${response.data.content}`
+      const hr = document.createElement('hr')
+      comments.append(p, hr)
+      commentForm.reset()
     })
   })
-</script> {% endcomment %}
-
+</script>
 {% endblock script %}
