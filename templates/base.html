@@ -47,6 +47,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+
+
 
   <!-- reset style-->
   <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
@@ -63,12 +66,19 @@
 
   {% if messages %}
     {% for message in messages %}
-    <div class='alert alert-{{message.tags}}'>
-      {{ message }}
-    </div>
+      <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="liveToast" class="toast align-items-center text-bg-{{ message.tags }} border-0" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body fw-bold">
+              {{ message }}
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+        </div>
+      </div>    
     {% endfor %}
   {% endif %}
-  <main>
+  <main style="min-height: 100%;">
     {% block content %}{% endblock content %}
   </main>
 
@@ -81,7 +91,13 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <!--slick-carousel@1.8.1-->
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
+  <script>
+    const toastLiveExample = document.getElementById('liveToast')
+    if (toastLiveExample) {
+        const toast = new bootstrap.Toast(toastLiveExample)
+        toast.show()
+    }
+  </script>
   {% block script %}{% endblock script %}
 
 </body>

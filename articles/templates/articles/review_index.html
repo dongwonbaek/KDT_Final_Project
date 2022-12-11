@@ -10,20 +10,41 @@
 {% block content %}
 
 
-
-<h1> reviews </h1>
+<div class="text-center">
+    <h1>리뷰</h1>
+</div>
 
 {% for review in reviews %}
 
-<div class="d-flex">
+<div
+class="container d-flex justify-content-between my-5"
+style="border: 0.5rem outset lightcoral; outline: 0.5rem outset lightblue; border-radius: 12px; outline-offset: 0.5rem;">
 
-    <img class="" src="{{ review.image.url }}" alt="review.image">
-    <p>리뷰 제목 {{ review.title }}</p>
-    <p>리뷰 내용 {{ review.content }}</p>
-    <p>{{ review.rating }}점</p>
-    <p>작성자 {{ review.user }}</p>
-    <p>상품 {{ review.product }}</p>
-    
+    <img class="m-3" src="{{ review.image.url }}" alt="review.image" style="border: 0.5rem ridge ivory;">
+
+    <div class="m-5">
+        <div class="my-2">
+            <p>{{ review.title }}</p>
+        </div>
+        <div class="my-2">
+            <p>{{ review.content }}</p>
+        </div>
+        <div class="stars">
+            {% for i in "x"|rjust:"5" %}
+            {% if review.rating >= forloop.counter %}
+                <i class="fas fa-star"></i>
+            {% else %}
+                <i class="fas fa-star eee"></i>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div>
+            <a href="{% url 'accounts:detail' user.pk %}">{{ review.user.nickname }}</a>
+        </div>
+    </div>
+    <div class="my-5" style="display: flex; align-items: center;">
+        <a href="{% url 'articles:product_detail' review.product.pk %}">{{ review.product.title }}</a>
+    </div>
 </div>
 
 {% endfor %}

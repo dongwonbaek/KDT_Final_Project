@@ -13,9 +13,11 @@
   <div class="d-flex">
     {% if user.image %}
     <img src="{{ user.image.url }}" class="profile" alt="abc">
+    {% else %}
+    <img src="{% static 'img/no-avatar.jpg' %}" class="profile" alt="no-avatar">
     {% endif %}
-    <div class="d-flex flex-column align-items-center profile-username">
-      <h3>{{ user.nickname }}</h3>
+    <div class="d-flex flex-column align-items-center profile-text pt-5">
+      <p>{{ user.nickname }}</p>
       <p>성별:
         {% if user.gender == True %}
         남자
@@ -26,8 +28,12 @@
     </div>
   </div>
   <!-- 팔로우 모달 버튼 -->
-  <a data-bs-toggle="modal" data-bs-target="#exampleModal">팔로우:<span id='followings'>{{ user.following.count }}</span>
-    | 팔로워:<span id='followers'>{{ user.followers.count }}</span></a>
+  <div class="profile-text">
+    <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+      팔로우:<span id='followings'>{{user.following.count}}</span> 팔로워:<span id='followers'>
+        {{ user.followers.count}}</span>
+    </a>
+  </div>
   <!-- 팔로우 모달 -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -39,15 +45,23 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-6">
-                <h5>팔로우</h5>
+                <h5 class="follow-title">팔로우</h5>
                 {% for followinguser in request.user.following.all %}
-                <a href="{% url 'accounts:detail' followinguser.pk %}">{{ followinguser.nickname }}</a>
+                <div>
+                  <a href="{% url 'accounts:detail' followinguser.pk %}">
+                    <img class="user-image" src="{{ followinguser.image.url }}">{{ followinguser.nickname }}
+                  </a>
+                </div>
                 {% endfor %}
               </div>
               <div class="col-6">
-                <h5>팔로워</h5>
-                {% for followeruser in request.user.follower.all %}
-                <a href="{% url 'accounts:detail' followeruser.pk %}">{{ followinguser.nickname }}</a>
+                <h5 class="follower-title">팔로워</h5>
+                {% for followeruser in request.user.followers.all %}
+                <div>
+                  <a href="{% url 'accounts:detail' followeruser.pk %}">
+                    <img class="user-image" src="{{ followeruser.image.url }}">{{followeruser.nickname }}
+                  </a>
+                </div>
                 {% endfor %}
               </div>
             </div>
@@ -61,7 +75,7 @@
     <button class="login-button">
       <a href="{% url 'accounts:update' %}">유저정보수정</a>
     </button>
-    <button type="button" class="delete-button" data-bs-toggle="modal" data-bs-target="#deleteUser">
+    <button type="button" class="delete-button profile-text" data-bs-toggle="modal" data-bs-target="#deleteUser">
       회원탈퇴
     </button>
 
@@ -80,18 +94,16 @@
               {% csrf_token %}
               <input class='delete-button2' type="submit" value='네'>
             </form>
-
           </div>
         </div>
       </div>
     </div>
-
   </div>
   {% endif %}
   {% if request.user != user %}
   <div class="d-flex justify-content-center">
     {% if request.user in user.followers.all %}
-    <button class='follow-button' id='follow-btn' data-user-id="{{ user.pk }}">팔로우 취소</button>
+    <button ton class='follow-button' id='follow-btn' data-user-id="{{ user.pk }}">팔로우 취소</button>
     {% else %}
     <button class='follow-button' id='follow-btn' data-user-id="{{ user.pk }}">팔로우</button>
     {% endif %}
@@ -100,35 +112,34 @@
     {% else %}
     <button class="delete-button" id='block-btn' data-user-id="{{ user.pk }}">차단</button>
     {% endif %}
-    {% else %}
-    <!-- 차단목록 모달버튼 -->
-    <button type="button" class="block-button" data-bs-toggle="modal" data-bs-target="#blockModal">
-      차단 목록
-    </button>
+  </div>
+  <!-- 차단목록 모달버튼 -->
+  {% else %}
+  <button type="button" class="block-button" data-bs-toggle="modal" data-bs-target="#blockModal">
+    차단 목록
+  </button>
 
-    <!-- 차단목록 모달 -->
-    <div class="modal fade" id="blockModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          {% for user in request.user.blocking.all %}
-          <div class="modal-body">
-            {% if user.image %}
-            <img class="user-image" src="{{ user.image.url }}">
-            <a href="{% url 'accounts:detail' user.pk %}">{{user.nickname}}</a>
-            {% else %}
-            <a class="profile-margin" href="{% url 'accounts:detail' user.pk %}">{{user.nickname}}</a>
-            {% endif %}
-
-          </div>
-          {% endfor %}
+  <!-- 차단목록 모달 -->
+  <div class="modal fade" id="blockModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        {% for user in request.user.blocking.all %}
+        <div class="modal-body">
+          {% if user.image %}
+          <img class="user-image" src="{{ user.image.url }}">
+          <a href="{% url 'accounts:detail' user.pk %}">{{user.nickname}}</a>
+          {% else %}
+          <a class="profile-margin" href="{% url 'accounts:detail' user.pk %}">{{user.nickname}}</a>
+          {% endif %}
+        </div>
+        {% endfor %}
       </div>
     </div>
-    {% endif %}
   </div>
+  {% endif %}
 </div>
 <!--리뷰,위시리스트-->
 <section id="tap-move" class="d-flex flex-column align-items-center">
@@ -193,7 +204,11 @@
           <div>{{ review.content }}</div>
         </div>
         <div>
+          {% if review.image %}
           <img class="review-image" src="{{ review.image.url }}" alt="review.image">
+          {% else %}
+          <img class="review-image" src="{% static 'img/dummy.jpg' %}" alt="dummy">
+          {% endif %}
         </div>
       </div>
       {% endfor %}
@@ -212,7 +227,7 @@
           <!-- 페이지리스트 -->
           {% for page_number in paginated_review_list.paginator.page_range %}
           {% if page_number == paginated_review_list.number %}
-          <li class="page-item active" aria-current="page">
+          <li class="page-item activate" aria-current="page">
             <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
           </li>
           {% else %}
@@ -245,7 +260,7 @@
       <div class="container">
         <div class="row">
           {% for product in user.like_product.all %}
-          <div class="col">
+          <div class="col-4">
             <div class="d-flex flex-column align-items-center detail-sub">
               <div><img class="review-image" src="{{ product.productimages_set.all.0.images }}">
               </div>
@@ -257,67 +272,90 @@
         </div>
       </div>
     </div>
-  </div>
 
-  {% endblock content %}
-  <!--팔로우 비동기화-->
-  {% block script %}
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script>
-    const followBtn = document.querySelector('#follow-btn')
-    followBtn.addEventListener('click', function (event) {
-      const userId = event.target.dataset.userId
-      axios({
-        url: `/accounts/${userId}/follow/`,
-      }).then((response) => {
-        const isFollowed = response.data.is_followed
-        if (isFollowed == true) {
-          followBtn.innerText = '팔로우 취소'
-        } else {
-          followBtn.innerText = '팔로우'
-        }
-        const followings = document.querySelector('#followings')
-        const followers = document.querySelector('#followers')
-        followings.innerText = response.data.followings_count
-        followers.innerText = response.data.followers_count
-      })
-    })
-  </script>
-  <!--차단 비동기화-->
-  <script>
-    const blockBtn = document.querySelector('#block-btn')
-    blockBtn.addEventListener('click', function (event) {
-      const userId = event.target.dataset.userId
-      axios({
-        url: `/accounts/${userId}/block/`,
-      }).then((response) => {
-        const isBlocked = response.data.is_blocked
-        if (isBlocked == true) {
-          blockBtn.innerText = '차단 해제'
-        } else {
-          blockBtn.innerText = '차단'
-        }
-      })
-    })
-  </script>
 
-  <!-- 상품설명, 후기 탭 전환 스크립트 -->
-  <script>
-    const $nav = document.querySelector('#tap-move')
-    const $sections = document.querySelectorAll('.tab-section');
-    $nav.addEventListener('click', (e) => {
-      if (!e.target.classList.contains('tab-button')) {
-        return;
-      }
-      const focusedTabId = e.target.dataset.tabSection;
-      $sections.forEach(($section) => {
-        if ($section.id === focusedTabId) {
-          $section.removeAttribute('hidden');
-        } else {
-          $section.setAttribute('hidden', true);
+    {% endblock content %}
+    <!--팔로우 비동기화-->
+    {% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      const followBtn = document.querySelector('#follow-btn')
+      followBtn.addEventListener('click', function (event) {
+        const userId = event.target.dataset.userId
+        axios({
+          url: `/accounts/${userId}/follow/`,
+        }).then((response) => {
+          const isFollowed = response.data.is_followed
+          if (isFollowed == true) {
+            followBtn.innerText = '팔로우 취소'
+          } else {
+            followBtn.innerText = '팔로우'
+          }
+          const followings = document.querySelector('#followings')
+          const followers = document.querySelector('#followers')
+          followings.innerText = response.data.followings_count
+          followers.innerText = response.data.followers_count
+        })
+      })
+    </script>
+    <!--차단 비동기화-->
+    <script>
+      const blockBtn = document.querySelector('#block-btn')
+      blockBtn.addEventListener('click', function (event) {
+        const userId = event.target.dataset.userId
+        axios({
+          url: `/accounts/${userId}/block/`,
+        }).then((response) => {
+          const isBlocked = response.data.is_blocked
+          if (isBlocked == true) {
+            blockBtn.innerText = '차단 해제'
+          } else {
+            blockBtn.innerText = '차단'
+          }
+        })
+      })
+    </script>
+
+    <!-- 상품설명, 후기 탭 전환 스크립트 -->
+    <script>
+      const $nav = document.querySelector('#tap-move')
+      const $sections = document.querySelectorAll('.tab-section');
+      $nav.addEventListener('click', (e) => {
+        if (!e.target.classList.contains('tab-button')) {
+          return;
         }
+        const focusedTabId = e.target.dataset.tabSection;
+        $sections.forEach(($section) => {
+          if ($section.id === focusedTabId) {
+            $section.removeAttribute('hidden');
+          } else {
+            $section.setAttribute('hidden', true);
+          }
+        });
       });
-    });
-  </script>
+    </script>
+    <!--스와이프-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js">const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'vertical',
+        loop: true,
 
-  {% endblock script %}
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+          el: '.swiper-scrollbar',
+        },
+      });</script>
+
+    {% endblock script %}

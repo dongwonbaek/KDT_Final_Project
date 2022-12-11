@@ -25,6 +25,12 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ("title", "content", "image", "rating")
+        labels = {
+            "title": '제목',
+            "content": '내용',
+            "image": '이미지',
+            "rating": '평점',
+        }
 
 
 class ReviewCommentForm(forms.ModelForm):
@@ -52,11 +58,14 @@ class CommunityImagesForm(forms.ModelForm):
             "images": ClearableFileInput(attrs={"multiple": True}),
         }
         labels = {
-            "images": "",
+            "images": "이미지",
         }
 
 
-# class CommunityCommentForm(forms.ModelForm):
-#     class Meta:
-#         model = CommunityComment
-#         fields = ("content",)
+class CommunityCommentForm(forms.ModelForm):
+    class Meta:
+        model = CommunityComment
+        fields = ["content",]
+        labels = {
+            "content": "댓글을 작성해주세요",
+        }

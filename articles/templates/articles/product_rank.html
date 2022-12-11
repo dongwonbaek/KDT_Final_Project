@@ -1,49 +1,74 @@
 {% extends 'base.html' %}
+{% load django_bootstrap5 %}
 {% load humanize %}
 
 {% block content %}
 
 <section class="container">
-  <div style="margin-top: 4rem;">
-    <form id='sort-form'>
-      {% csrf_token %}
-      <div class="d-flex">
-        <select class="form-select" aria-label="Default select example" name="gender">
-          <option value="none" selected>모두</option>
-          <option value="True">남성</option>
-          <option value="False">여성</option>
-        </select>
-        <select class="form-select mx-2" aria-label="Default select example" name='sort_type'>
-          <option value="rating" selected>평점 순</option>
-          <option value="like">위시리스트 순</option>
-          <option value="review_cnt">리뷰 개수 순</option>
-        </select>
-        <select class="form-select" aria-label="Default select example" name='sort_price'>
-          <option value="none" selected>가격 범위</option>
-          <option value="20000">2만원 이하</option>
-          <option value="50000">2만원 이상 5만원 이하</option>
-          <option value="1000000">5만원 이상</option>
-        </select>
-        <input type="submit" class='btn btn-dark' value='검색'>
-      </div>
-    </form>
+  <div style="padding-top: 10rem;" class='d-flex align-items-center justify-content-between'>
+    <div id="age" class='p-2 border rounded-4'>
+      <div class='text-center fw-bold fs-4 mb-2'>연령대</div>
+      <input type="radio" class="btn-check checked" name="age" id="age1" autocomplete="off" checked value="1">
+      <label class="btn btn-outline-secondary btn-sm fs-5 rounded-4" for="age1">모두</label>
+      <input type="radio" class="btn-check checked" name="age" id="age2" autocomplete="off" value="2">
+      <label class="btn btn-outline-secondary btn-sm fs-5 rounded-4" for="age2">청소년</label>
+      <input type="radio" class="btn-check" name="age" id="age3" autocomplete="off" value="3">
+      <label class="btn btn-outline-secondary btn-sm fs-5 rounded-4" for="age3">청년</label>
+      <input type="radio" class="btn-check" name="age" id="age4" autocomplete="off" value="4">
+      <label class="btn btn-outline-secondary btn-sm fs-5 rounded-4" for="age4">중년</label>
+      <input type="radio" class="btn-check" name="age" id="age5" autocomplete="off" value="5">
+      <label class="btn btn-outline-secondary btn-sm fs-5 rounded-4" for="age5">어르신</label>
+    </div>
+
+    <div id="gender" class='p-2 border rounded-4'>
+      <div class='text-center fw-bold fs-4 mb-2'>성별</div>
+      <input type="radio" class="btn-check checked" name="gender" id="gender1" autocomplete="off" checked value='all'>
+      <label class="btn btn-outline-secondary btn-sm fs-5 rounded-4" for="gender1">모두</label>
+      <input type="radio" class="btn-check" name="gender" id="gender2" autocomplete="off" value='False'>
+      <label class="btn btn-outline-secondary btn-sm fs-5 rounded-4" for="gender2">여성</label>
+      <input type="radio" class="btn-check" name="gender" id="gender3" autocomplete="off" value='True'>
+      <label class="btn btn-outline-secondary btn-sm fs-5 rounded-4" for="gender3">남성</label>
+    </div>
+
+    <div id="sort" class='p-2 border rounded-4'>
+      <div class='text-center fw-bold fs-4 mb-2'>정렬기준</div>
+      <input type="radio" class="btn-check checked" name="sort" id="sort1" autocomplete="off" checked value='wish'>
+      <label class="btn btn-outline-secondary btn-sm fs-5 rounded-4" for="sort1">위시리스트 순</label>
+      <input type="radio" class="btn-check" name="sort" id="sort2" autocomplete="off" value='rating'>
+      <label class="btn btn-outline-secondary btn-sm fs-5 rounded-4" for="sort2">평점 순</label>
+      <input type="radio" class="btn-check" name="sort" id="sort3" autocomplete="off" value='review'>
+      <label class="btn btn-outline-secondary btn-sm fs-5 rounded-4" for="sort3">댓글 많은 순</label>
+    </div>
+
+    <div id="price" class='p-2 border rounded-4'>
+      <div class='text-center fw-bold fs-4 mb-2'>가격</div>
+      <input type="radio" class="btn-check checked" name="price" id="price1" autocomplete="off" checked value="max20000">
+      <label class="btn btn-outline-secondary btn-sm fs-5 rounded-4" for="price1">2만원 이하</label>
+      <input type="radio" class="btn-check" name="price" id="price2" autocomplete="off" value="max50000">
+      <label class="btn btn-outline-secondary btn-sm fs-5 rounded-4" for="price2">2만원 ~ 5만원</label>
+      <input type="radio" class="btn-check" name="price" id="price3" autocomplete="off" value="max10000000">
+      <label class="btn btn-outline-secondary btn-sm fs-5 rounded-4" for="price3">5만원 이상</label>
+    </div>
   </div>
   <div id='result-box' class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 my-5" >
     {% for product in products %}
-    <div class="col d-flex justify-content-center mb-5">
-      <div class="card">
-        <div class="card-img">
-          <img class="w-100 h-100 rounded" src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
-        </div>
-        <div>
-          <div class="brand mt-2"></div>
-          <div> <a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a> </div>
-          <div class="fs-5 mt-2">
-            <span class="fw-bold">{{ product.price|intcomma }}</span><span>원</span>
-          </div>
+      <div class="col d-flex justify-content-center mb-5">
+        <div class="card">
+          <a href="{% url 'articles:product_detail' product.pk %}">
+            <div class="card-img position-relative">
+              <img class="w-100 h-100 rounded" src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
+              <p class='position-absolute top-0 shadow-none shadow text-border'>{{ forloop.counter }}</p>
+            </div>
+            <div>
+              <div>{{ product.title }} </div>
+              <div class="text-secondary fs-6">{{ product.brand }}</div>
+              <div class="fs-5">
+                <span class="fw-bold text-dark">{{ product.price|intcomma }}원</span>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
-    </div>
     {% endfor %}
   </div>
 </section>
@@ -53,55 +78,137 @@
 {% block script %}
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
-  const sortForm = document.querySelector('#sort-form')
-  sortForm.addEventListener('submit', function(event) {
-    const resultBox = document.querySelector('#result-box')
-    let csrftoken = event.target.querySelector('[name=csrfmiddlewaretoken]').value
-    event.preventDefault()
-    axios({
-      method: 'post',
-      url: '/product_rank/',
-      headers: {
-        'X-CSRFToken': csrftoken
-      },
-      data: new FormData(sortForm)
-    }).then(response => {
-      resultBox.replaceChildren()
-      for (product of response.data.products) {
-        let div1 = document.createElement('div')
-        div1.classList.add('col', 'd-flex', 'justify-content-center', 'mb-5')
-        let div2 = document.createElement('div')
-        div2.classList.add('card')
-        let div3 = document.createElement('div')
-        div3.classList.add('card-img')
-        let img1 = document.createElement('img')
-        img1.setAttribute('src', product[0])
-        img1.setAttribute('alt', product[0])
-        img1.classList.add('w-100', 'h-100', 'rounded')
-        div3.append(img1)
-        let div4 = document.createElement('div')
-        let div5 = document.createElement('div')
-        div5.classList.add('brand', 'mt-2')
-        let div6 = document.createElement('div')
-        let a1 = document.createElement('a')
-        a1.setAttribute('href', `/${product[3]}/product_detail/`)
-        a1.innerText = product[1]
-        div6.append(a1)
-        let div7 = document.createElement('div')
-        div7.classList.add('fs-5', 'mt-2')
-        let span1 = document.createElement('span')
-        span1.classList.add('fw-bold')
-        let price = product[2].toLocaleString('ko-KR')
-        span1.innerText = price
-        let span2 = document.createElement('span')
-        span2.innerText = '원'
-        div7.append(span1, span2)
-        div4.append(div5, div6, div7)
-        div2.append(div3, div4)
-        div1.append(div2)
-        resultBox.append(div1)
+  const makeResult = function (response) {
+    let resultBox = document.querySelector('#result-box')
+    resultBox.replaceChildren()
+    for (let product of response.data.products) {
+      let div1 = document.createElement('div')
+      div1.classList.add('col', 'd-flex', 'justify-content-center', 'mb-5')
+      let div2 = document.createElement('div')
+      div2.classList.add('card')
+      let a1 = document.createElement('a')
+      a1.setAttribute('href', `/${product[3]}/product_detail/`)
+      let div3 = document.createElement('div')
+      div3.classList.add('card-img', 'position-relative')
+      let img1 = document.createElement('img')
+      img1.setAttribute('src', product[0])
+      img1.setAttribute('alt', product[0])
+      img1.classList.add('w-100', 'h-100', 'rounded')
+      let p1 = document.createElement('p')
+      p1.classList.add('position-absolute', 'top-0', 'shadow-none', 'shadow', 'text-border')
+      p1.innerText = product[4]
+      div3.append(img1, p1)
+      let div4 = document.createElement('div')
+      let div5 = document.createElement('div')
+      div5.innerText = product[1]
+      let div6 = document.createElement('div')
+      div6.classList.add('text-secondary', 'fs-6')
+      div6.innerText = product[5]
+      let div7 = document.createElement('div')
+      div7.classList.add('fs-5')
+      let span1 = document.createElement('span')
+      span1.classList.add('fw-bold', 'text-dark')
+      let price = product[2].toLocaleString('ko-KR')
+      span1.innerText = price+'원'
+      div7.append(span1)
+      div4.append(div5, div6, div7)
+      a1.append(div3, div4)
+      div2.append(a1)
+      div1.append(div2)
+      resultBox.append(div1)
+    }
+  }
+</script>
+
+<script>
+  const ageBtns = document.querySelectorAll("input[name='age']")
+  const genderBtns = document.querySelectorAll("input[name='gender']")
+  const sortBtns = document.querySelectorAll("input[name='sort']")
+  const priceBtns = document.querySelectorAll("input[name='price']")
+  const ageBox = document.querySelector("#age")
+  const genderBox = document.querySelector("#gender")
+  const sortBox = document.querySelector("#sort")
+  const priceBox = document.querySelector("#price")
+  for (let ageBtn of ageBtns) {
+    ageBtn.addEventListener('click', function(event) {
+      for (let ageBtn1 of ageBtns) {
+        ageBtn1.classList.remove('checked')
       }
+      event.target.classList.add('checked')
+      axios({
+        method: 'get',
+        url: '/product_rank_redirect/',
+        params: {
+          age: ageBox.querySelector(".checked").value,
+          gender: genderBox.querySelector(".checked").value,
+          sort: sortBox.querySelector(".checked").value,
+          price: priceBox.querySelector(".checked").value,
+        }
+      }).then(response => {
+        makeResult(response)
+      })
     })
-  })
+  }
+  for (let genderBtn of genderBtns) {
+    genderBtn.addEventListener('click', function(event) {
+      for (let genderBtn1 of genderBtns) {
+        genderBtn1.classList.remove('checked')
+      }
+      event.target.classList.add('checked')
+      axios({
+        method: 'get',
+        url: '/product_rank_redirect/',
+        params: {
+          age: ageBox.querySelector(".checked").value,
+          gender: genderBox.querySelector(".checked").value,
+          sort: sortBox.querySelector(".checked").value,
+          price: priceBox.querySelector(".checked").value,
+        }
+      }).then(response => {
+        makeResult(response)
+      })
+    })
+  }
+  for (let sortBtn of sortBtns) {
+    sortBtn.addEventListener('click', function(event) {
+      for (let sortBtn1 of sortBtns) {
+        sortBtn1.classList.remove('checked')
+      }
+      event.target.classList.add('checked')
+      axios({
+        method: 'get',
+        url: '/product_rank_redirect/',
+        params: {
+          age: ageBox.querySelector(".checked").value,
+          gender: genderBox.querySelector(".checked").value,
+          sort: sortBox.querySelector(".checked").value,
+          price: priceBox.querySelector(".checked").value,
+        }
+      }).then(response => {
+        makeResult(response)
+      })
+    })
+  }
+  for (let priceBtn of priceBtns) {
+    priceBtn.addEventListener('click', function(event) {
+      for (let priceBtn1 of priceBtns) {
+        priceBtn1.classList.remove('checked')
+      }
+      event.target.classList.add('checked')
+      axios({
+        method: 'get',
+        url: '/product_rank_redirect/',
+        params: {
+          age: ageBox.querySelector(".checked").value,
+          gender: genderBox.querySelector(".checked").value,
+          sort: sortBox.querySelector(".checked").value,
+          price: priceBox.querySelector(".checked").value,
+        }
+      }).then(response => {
+        makeResult(response)
+      })
+    })
+  }
+
 </script>
 {% endblock script %}

@@ -8,6 +8,7 @@ from .forms import (
     ReviewCommentForm,
     CommunityForm,
     CommunityImagesForm,
+    CommunityCommentForm,
 )
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
@@ -18,20 +19,14 @@ import random
 
 
 def index(request):
-    gender_products = Product.objects.annotate(
-        wish_men_cnt=Count("like_user", filter=Q(like_user__gender=True)),
-        wish_women_cnt=Count("like_user", filter=Q(like_user__gender=False)),
-        wish_cnt=Count("like_user"),
-    )
-
+    gender_products = Product.objects.annotate(wish_men_cnt=Count('like_user', filter=Q(like_user__gender=True) & Q(like_user__age=2)), wish_women_cnt=Count('like_user', filter=Q(like_user__gender=False)), wish_cnt=Count('like_user'))
     if request.user.is_authenticated:
-        if request.user:
-            gender_products = gender_products.order_by("-wish_men_cnt")[:20]
+        if request.user.gender:
+            gender_products = Product.objects.annotate(wish_men_cnt=Count('like_user', filter=Q(like_user__gender=True) & Q(like_user__age=request.user.age))).order_by("-wish_men_cnt")[:20]
         else:
-            gender_products = gender_products.order_by("-wish_women_cnt")[:20]
+            gender_products = Product.objects.annotate(wish_women_cnt=Count('like_user', filter=Q(like_user__gender=False) & Q(like_user__age=request.user.age))).order_by("-wish_women_cnt")[:20]
     else:
-        gender_products = (gender_products.order_by("-wish_cnt")[:20],)
-
+        gender_products = gender_products.order_by("-wish_cnt")[:20]
     context = {
         "gender_products": gender_products,
         "categories": Product.category_choice,
@@ -141,6 +136,9 @@ def product_update(request, product_pk):
             product.save()
             messages.success(request, "글 수정 완료")
             return redirect("articles:product_detail", product_pk)
+        else:
+            messages.error(request, '유효하지 않은 양식입니다.')
+            return redirect("articles:product_detail", product_pk)
     else:
         product_form = ProductForm(instance=product)
         product_images_form = ProductImagesForm()
@@ -172,8 +170,12 @@ def review_create(request, product_pk):
             review.user = request.user
             review.product = product
             review.save()
-            messages.success(request, "리뷰가 상공적으로 작성되었습니다.")
+            messages.success(request, "등록되었습니다.")
             return redirect("articles:product_detail", product_pk)
+        else:
+            messages.error(request, '유효하지 않은 양식입니다.')
+            return redirect("articles:product_detail", product_pk)
+
     else:
         review_form = ReviewForm()
     context = {
@@ -185,19 +187,22 @@ def review_create(request, product_pk):
 @login_required
 def review_update(request, review_pk):
     review = get_object_or_404(Review, pk=review_pk)
-
     if request.user != review.user:
-        messages.warning(request, "본인 글만 수정할 수 있습니다.")
+        messages.error(request, "본인 글만 수정할 수 있습니다.")
         return redirect("articles:product_detail", review.product.pk)
-
     if request.method == "POST":
         review_form = ReviewForm(request.POST, request.FILES, instance=review)
         if review_form.is_valid():
             review_form.save()
+            messages.success(request, '수정되었습니다.')
+            return redirect("articles:product_detail", review.product.pk)
+        else:
+            messages.error(request, '유효하지 않은 양식입니다.')
             return redirect("articles:product_detail", review.product.pk)
     else:
         review_form = ReviewForm(instance=review)
         context = {
+            'review': review,
             "review_form": review_form,
         }
     return render(request, "articles/review_update.html", context)
@@ -209,9 +214,10 @@ def review_delete(request, product_pk, review_pk):
     if request.method == "POST":
         if request.user == review.user:
             review.delete()
-            messages.success(request, "리뷰가 성공적으로 삭제되었습니다.")
+            messages.success(request, "삭제되었습니다.")
             return redirect("articles:product_detail", product_pk)
     else:
+        messages.error(request, '유효하지 않은 접근입니다.')
         return redirect("articles:product_detail", product_pk)
 
 
@@ -232,9 +238,9 @@ def review_comment_create(request, review_pk):
                 else:
                     islogin = False
                 if a.user.image:
-                    isimage = True
+                    isimage = a.user.image.url
                 else:
-                    isimage = False
+                    isimage = '/static/img/no-avatar.jpg'
                 comments.append(
                     [
                         a.content,  # 0
@@ -245,10 +251,9 @@ def review_comment_create(request, review_pk):
                         a.id,  # 5
                         a.review.pk,  # 6
                         islogin,  # 7
-                        a.user.image.url, #8
+                        isimage, #8
                         a.created_at.month, #9
                         a.created_at.day, #10
-                        isimage,
                     ]
                 )
             context = {
@@ -263,73 +268,60 @@ def review_comment_delete(request, comment_pk):
     comment = get_object_or_404(ReviewComment, pk=comment_pk)
     if request.user == comment.user:
         comment.delete()
+    else:
+        messages.error(request, '본인 댓글만 삭제할 수 있습니다.')
     return redirect("articles:product_detail", comment.review.product.pk)
 
 
 def product_rank(request):
-    if request.method == "POST":
-        products = Product.objects.all()
-        products_rating = Product.objects.all()
-        products_like = Product.objects.all()
-        products_review = Product.objects.all()
-        gender = request.POST.get("gender")
-        sort_type = request.POST.get("sort_type")
-        sort_price = request.POST.get("sort_price")
-        if sort_price != "none":
-            products = products.filter(price__lte=int(sort_price))
-            products_rating = products.filter(price__lte=int(sort_price))
-            products_like = products.filter(price__lte=int(sort_price))
-            products_review = products.filter(price__lte=int(sort_price))
-        if gender == "True":
-            # products = products.annotate(review_men=)
-            products_rating = products.annotate(
-                rating_avg=Avg("review__rating", filter=Q(review__user__gender=True))
-            ).order_by("-rating_avg")
-            products_like = products.annotate(
-                like_cnt=Count("like_user", filter=Q(like_user__gender=True))
-            ).order_by("-like_cnt")
-            products_review = products.annotate(
-                review_cnt=Count("review", filter=Q(review__user__gender=True))
-            ).order_by("-review_cnt")
-        elif gender == "False":
-            products_rating = products.annotate(
-                rating_avg=Avg("review__rating", filter=Q(review__user__gender=False))
-            ).order_by("-rating_avg")
-            products_like = products.annotate(
-                like_cnt=Count("like_user", filter=Q(like_user__gender=False))
-            ).order_by("-like_cnt")
-            products_review = products.annotate(
-                review_cnt=Count("review", filter=Q(review__user__gender=False))
-            ).order_by("-review_cnt")
-        if sort_type == "rating":
-            products = products_rating.annotate(
-                rating_avg=Avg("review__rating")
-            ).order_by("-rating_avg")
-        elif sort_type == "like":
-            products = products_like.annotate(like_cnt=Count("like_user")).order_by(
-                "-like_cnt"
-            )
-        elif sort_type == "review_cnt":
-            products = products_review.annotate(review_cnt=Count("review")).order_by(
-                "-review_cnt"
-            )
-        product_list = []
-        for a in products[:20]:
-            image = str(a.productimages_set.all()[0].images)
-            product_list.append([image, a.title, a.price, a.pk])
-        context = {
-            "products": product_list,
-        }
-        return JsonResponse(context)
-    else:
-        context = {
-            "products": Product.objects.annotate(like_cnt=Count("like_user")).order_by(
-                "-like_cnt"
-            )[:20],
-            "reviews": Review.objects.filter(user__gender=True),
-        }
-        return render(request, "articles/product_rank.html", context)
+    products = Product.objects.filter(Q(price__gte=0)&Q(price__lte=20000)).annotate(wish_cnt=Count("like_user", filter=Q(like_user__age__in=list(range(16))))).order_by('-wish_cnt')[:20]
+    context = {
+        "products": products,
+    }
+    return render(request, "articles/product_rank.html", context)
 
+def product_rank_redirect(request):
+    query_dict = {
+        '1': list(range(16)),
+        '2': [0, 1],
+        '3': [2, 3],
+        '4': [4, 5, 6],
+        '5': list(range(7, 16)),
+        'max20000': [0, 20000],
+        'max50000': [20000, 50000],
+        'max10000000': [50000, 10000000],
+        'all': [True, False],
+        'True': [True],
+        'False': [False],
+    }
+    age = request.GET.get("age")
+    gender = request.GET.get("gender")
+    typeof = request.GET.get("sort")
+    price = request.GET.get("price")
+    products = Product.objects.filter(Q(price__gte=query_dict[price][0])&Q(price__lte=query_dict[price][1]))
+    if typeof == 'wish':
+        products = products.annotate(wish_cnt=Count("like_user", filter=Q(like_user__gender__in=query_dict[gender]) & Q(like_user__age__in=query_dict[age]))).order_by('-wish_cnt')[:20]
+    elif typeof == 'rating':
+        products = products.annotate(rating_avg=Avg("review__rating", filter=Q(review__user__gender__in=query_dict[gender]) & Q(review__user__age__in=query_dict[age]))).order_by('-rating_avg')[:20]
+    elif typeof == 'review':
+        products = products.annotate(review_cnt=Count("review", filter=Q(review__user__gender__in=query_dict[gender]) & Q(review__user__age__in=query_dict[age]))).order_by('-review_cnt')[:20]
+    product_list = []
+    for a in range(len(products)):
+        image = str(products[a].productimages_set.all()[0].images)
+        forloop = a + 1
+        product_list.append([
+            image, #0
+            products[a].title, #1
+            products[a].price, #2
+            products[a].pk, #3
+            forloop, #4
+            products[a].brand, #5
+            ])
+    context = {
+        'products':product_list,
+    }
+    return JsonResponse(context)
+    
 
 def search(request):
     products = None
@@ -360,14 +352,18 @@ def search(request):
 @login_required
 def like(request, product_pk):
     product = get_object_or_404(Product, pk=product_pk)
-    if request.user in product.like_user.all():
-        product.like_user.remove(request.user)
-        is_liked = False
+    if request.user.is_authenticated:
+        if request.user in product.like_user.all():
+            product.like_user.remove(request.user)
+            is_liked = False
+        else:
+            product.like_user.add(request.user)
+            is_liked = True
+        context = {"isLiked": is_liked, "likeCount": product.like_user.count()}
+        return JsonResponse(context)
     else:
-        product.like_user.add(request.user)
-        is_liked = True
-    context = {"isLiked": is_liked, "likeCount": product.like_user.count()}
-    return JsonResponse(context)
+        messages.error(request, '로그인 후 이용하실 수 있습니다.')
+        return redirect('articles:product_detail', product_pk)
 
 
 @login_required
@@ -437,13 +433,13 @@ def community_create(request):
         images = request.FILES.getlist("images")
         if community_form.is_valid() and community_images_form.is_valid():
             community = community_form.save(commit=False)
+            community.user = request.user
             community.save()
             if images:
                 for image in images:
                     image_instance = CommunityImages(community=community, images=image)
                     image_instance.save()
-
-            messages.success(request, "글 생성 완료")
+            messages.success(request, "등록되었습니다.")
             return redirect('articles:community_index')
 
     else:
@@ -464,14 +460,16 @@ def community_update(request, community_pk):
         images = request.FILES.getlist("images")
         if community_form.is_valid() and community_images_form.is_valid():
             community = community_form.save(commit=False)
+            community.user = request.user
             if images:
                 for image in images:
                     image_instance = CommunityImages(community=community, images=image)
                     image_instance.save()
             community.save()
-
-            messages.success(request, "글 수정 완료")
-            return redirect('articles:community_detail', community_pk)
+            messages.success(request, "수정되었습니다.")
+        else:
+            messages.error(request, '유효하지 않은 양식입니다.')
+        return redirect('articles:community_detail', community_pk)
 
     else:
         community_form = CommunityForm(instance=community)
@@ -486,34 +484,77 @@ def community_update(request, community_pk):
 def community_delete(request, community_pk):
     community = Community.objects.get(pk=community_pk)
     community.delete()
+    messages.success(request, '삭제되었습니다.')
     return redirect('articles:community_index')
 
 
 def community_detail(request, community_pk):
     community = Community.objects.get(pk=community_pk)
-
-    # community_comment_form = CommunityCommentForm()
+    community_comment_form = CommunityCommentForm()
     context = {
          'community': community,
-    #    'comments': community.comment_set.all(),
-    #    'community_comment_form': community_comment_form,
+         'comments': community.communitycomment_set.all(),
+         'community_comment_form': community_comment_form,
+
     }
     return render(request, 'articles/community_detail.html', context)
 
 
-# @login_required
-# def community_comment_create(request, community_pk):
-#     community = get_object_or_404(Community, pk=community_pk)
-#     community_comment_form = CommunityCommentForm(request.POST)
+@login_required
+def community_comment_create(request, community_pk):
+    print(request.POST)
+    community = get_object_or_404(Community, pk=community_pk)
+    community_comment_form = CommunityCommentForm(request.POST)
+    if community_comment_form.is_valid():
+        comment = community_comment_form.save(commit=False)
+        comment.community = community
+        comment.user = request.user
+        comment.save()
+        context = {
+            'userImg': comment.user.image.url,
+            'content': comment.content,
+            'userName': comment.user.username
+        }
+        return JsonResponse(context)
 
-#     if community_comment_form.is_valid():
-#         comment = community_comment_form.save(commit=False)
-#         comment.community = community
-#         comment.user = request.user
-#         comment.save()
-#         context = {
-#             'content': comment.content,
-#             'userName': comment.user.username
-#         }
-#         return JsonResponse(context)
 
+def md_jsm(request):
+    context = {
+        "one": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "two": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "three": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "four": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "five": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "six": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "seven": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "eight": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+    }
+    return render(request, "articles/md_jsm.html", context)
+
+
+def md_kbw(request):
+    context = {
+        "one": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "two": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "three": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "four": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "five": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "six": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "seven": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "eight": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+    }
+    return render(request, "articles/md_kbw.html", context)
+
+
+def md_kkh(request):
+    context = {
+        "one": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "two": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "three": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "four": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "five": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "six": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "seven": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
+        "eight": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+    }
+    return render(request, "articles/md_kkh.html", context)

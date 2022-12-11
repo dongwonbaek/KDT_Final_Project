@@ -8,21 +8,56 @@
 {% block title %} | 위시리스트{% endblock title %}
 {% block style %}{% endblock style %}
 {% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <div class="signup-wrapper">
   <h1>이런 선물을 받고 싶어요</h1>
   <span>최근 1년간 추가한 상품 내역이 제공됩니다.</span>
   <span></span>
   <hr>
-  <div class="text-center">
-  {% if user.like_product.all %}
-    {% for product in user.like_product.all %}
-    <a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a>
-  {% endfor %}
-  {% else %}
-  관심상품 내역이 없습니다.
-  {% endif %}
-  </div>
-  <hr>
 </div>
+{% if user.like_product.all %}
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    {% for product in user.like_product.all %}
+    <div class="swiper-slide mb-5 d-flex flex-column align-items-center">
+      <img class="review-image" src="{{ product.productimages_set.all.0.images }}">
+      <div class="word"><a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a></div>
+    </div>
+    {% endfor %}
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+{% else %}
+<div class="text-center">관심상품 내역이 없습니다.</div>
+{% endif %}
 {% endblock content %}
-{% block script %}{% endblock script %}
+{% block script %}
+
+<script>
+  const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    slidesPerView: 3,
+    loop: true,
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+  });</script>
+{% endblock script %}

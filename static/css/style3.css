@@ -5,7 +5,7 @@
 }
 
 .pen {
-  border: 1px solid #ccc;
+  border: 1px solid #297372;
   border-radius: 10px;
   font-size: 1.5rem;
   padding: 0 10px 0 12px;
@@ -15,6 +15,11 @@
   color: white;
   background-color: #297372;
   text-decoration: none;
+}
+
+.commu_hr {
+  background-color: #FB5957;
+  height: 0.1rem;
 }
 
 .commu_table {
@@ -43,4 +48,47 @@
 
 .commu_view {
   width: 10rem;
+}
+
+/* community_form(create) */
+
+.commu_c {
+  margin-top: 13rem;
+}
+
+.commu_form {
+  background-color: white;
+  border-radius: 5px;
+  padding: 3rem;
+}
+
+.commu_write {
+  text-align: center;
+  font-weight: bold;
+  color: #FB5957;
+  width: 10rem;
+}
+
+.commu_btn {
+  color: white;
+  background-color: #FB5957;
+  border: 0;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.commu_detail_main {
+  width: 1000px;
+  margin: auto;
+}
+
+.commu_detail_hr {
+  background-color: #297372;
+  height: 0.1rem;
+}
+
+.commu_pf_img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
 }

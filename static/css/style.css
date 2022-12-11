@@ -26,19 +26,19 @@
   --main-mintygreen: #297372;
   --main-white: #FFF;
   --main-black: #000;
-  --header-font: 'Jeju Gothic', sans-serif;
+  --header-font: 'NanumSquareExtraBold', sans-serif;
   --body-font: 'YiSunShinDotumM';
 }
 
 body {
   position: relative;
-  font-family: 'YiSunShinDotumM';
+  font-family: 'NanumSquareAcb';
   padding-top: 180px;
   font-size: 130%;
 }
 
 footer {
-  position: absolute;
+  position: relative;
   right: 0;
   left: 0;
   top: 100%;
@@ -51,9 +51,9 @@ footer {
   color: var(--main-white);
 }
 
-main {
+/* main {
   height: calc(100% - 80px - 150px);
-}
+} */
 
 .pos-btn {
   width: fit-content;
@@ -327,7 +327,7 @@ header ul li:hover #submenu,
 .delete-button2 {
   top: 0;
   width: 130px;
-  height: 25px;
+  height: 30px;
   margin-top: 1rem;
   border-style: none;
   border-radius: 10px;
@@ -614,10 +614,15 @@ header .menu ul>li>a {
   background-color: var(--main-mintygreen);
 }
 
+/* MD 추천 */
 .reco-per-member {
-  display: flex;
-  justify-content: center;
   margin: 200px 0;
+}
+
+.md p {
+  color: #bbb;
+  font-size: 18px;
+  margin: 0;
 }
 
 .div.slick-slide.slick-current.slick-active {
@@ -726,6 +731,18 @@ header .menu ul>li>a {
 
 
 /*------어카운츠 디테일------*/
+.follow-title {
+  background-color: var(--main-mintygreen);
+  height: fit-content;
+  color: white;
+}
+
+.follower-title {
+  background-color: var(--main-bluegreen);
+  height: fit-content;
+  color: white;
+}
+
 .detail_body {
   margin: 211px auto 0;
   width: 500px;
@@ -739,6 +756,7 @@ header .menu ul>li>a {
 .profile {
   width: 200px;
   border-radius: 80%;
+  border: solid 1px;
 }
 
 .delete-button {
@@ -759,8 +777,8 @@ header .menu ul>li>a {
   background-color: #82a5d9;
 }
 
-.profile-username {
-  margin-top: 50px;
+.profile-text {
+  color: var(--main-mintygreen)
 }
 
 .profile-margin {
@@ -838,7 +856,6 @@ header .menu ul>li>a {
 
 .detail-rw {
   width: 500px;
-  background-color: #fff6f6;
 }
 
 .detail-sub {
@@ -914,4 +931,24 @@ header .menu ul>li>a {
   border: 1px solid;
   background-color: rgb(245, 245, 245);
   border-color: rgb(175, 175, 175);
+}
+
+.shadow {
+  color: white;
+  font-size: 4rem;
+  font-weight: 100;
+  margin: 0 0 0 10px;
+}
+
+.text-border {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #003B41;
+}
+
+/*위시리스트*/
+.word {
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
