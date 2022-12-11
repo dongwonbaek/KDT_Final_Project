@@ -32,7 +32,6 @@ body {
 
 footer {
   position: relative;
-  transform: translateY(-100%);
   right: 0;
   bottom: 0;
   left: 0;
@@ -45,9 +44,9 @@ footer {
   color: var(--main-white);
 }
 
-main {
-  /* height: calc(100% - 80px - 150px); */
-}
+/* main {
+  height: calc(100% - 80px - 150px);
+} */
 
 .pos-btn {
   width: fit-content;
