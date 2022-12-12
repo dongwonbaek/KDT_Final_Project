@@ -3,8 +3,6 @@ name: EB_Deploy
 on:
   push:
     branches: [master]
-		# 예시
-		# branches: [main]
 
 jobs: 
   deploy: 
