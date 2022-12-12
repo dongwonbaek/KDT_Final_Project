@@ -28,7 +28,7 @@
     {% for community in communities %}
     <tr class="text-center">
       <td>{{ community.id }}</td>
-      <td class="text-start">
+      <td class="text-start text-center">
         <a href="{% url 'articles:community_detail' community.pk %}">{{ community.title }}</a>
       </td>
       <td>{{ community.user.nickname }}</td>
