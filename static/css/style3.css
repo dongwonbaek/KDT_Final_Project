@@ -94,7 +94,7 @@
   width: 40px;
   border-radius: 50%;
 }
-
+ 
 /* community_detail */
 
 .big_img {
@@ -105,4 +105,13 @@
 .big_img img {
   object-fit: cover;
   object-position: center;
+
+}
+
+.bi-heart-fill{
+  color:crimson;
+}
+
+.bi-heart{
+  color:crimson;
 }

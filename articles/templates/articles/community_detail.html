@@ -24,28 +24,23 @@
       <p class="my-1">{{ community.created_at|date:'Y.m.d H:i' }}</p>
     </div>
     
-      <ul class="">
-      <li class="">
-        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"></a>
-        <ul class="dropdown-menu">
-          <li class="my-2">
-            <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_update' community.pk %}">
-              <div class="fs-0 fa-solid p-1"> 글 수정하기</div>
-            </a>
-          </li>
-          <li>
-            <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_index' %}">
-              <div class="fs-0 fa-solid p-1">커뮤니티 메인</div>
-            </a>
-          </li>
-        </ul>
-      </li>
+    <ul>
+      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"></a>
+      <ul class="dropdown-menu">
+        <li class="my-2">
+          <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_update' community.pk %}">
+            <div class="fs-0 fa-solid p-1"> 글 수정하기</div>
+          </a>
+        </li>
+        <li>
+          <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_index' %}">
+            <div class="fs-0 fa-solid p-1">커뮤니티 메인</div>
+          </a>
+        </li>
+      </ul>
     </ul>
     
-
-
   </section>
-
 </div>
 
 
@@ -86,16 +81,6 @@
 </div>
 
 
-</div>
-<div class="commu_detail_main">
-  <section class="d-flex justify-content-between">
-    <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_index' %}">
-      <div class="fs-0 fa-solid p-1">커뮤니티 메인</div>
-    </a>
-    <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_update' community.pk %}">
-      <div class="fs-0 fa-solid p-1"><i class="fa-solid fa-pen"> 글 수정하기</i></div>
-    </a>
-  </section>
 </div>
 
 
