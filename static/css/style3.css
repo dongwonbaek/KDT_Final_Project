@@ -6,9 +6,10 @@
 
 .pen {
   border: 1px solid #297372;
-  border-radius: 10px;
-  font-size: 1.5rem;
-  padding: 0 10px 0 12px;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 0 6px 0 8px;
+  height: 40px;
 }
 
 .pen:hover {
