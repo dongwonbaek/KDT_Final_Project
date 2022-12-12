@@ -600,14 +600,14 @@ def md_jsm(request):
 
 def md_kbw(request):
     context = {
-        "one": Product.objects.get(title='[2타입/4색상] 에이블팩토리 허그미 윈터 슈즈 털슬리퍼 겨울 실내화 슬리퍼'),
+        "one": Product.objects.get(title='[55%할인/홀리데이/추가증정]캐스키드슨 크리스마스 어드벤트 캘린더(24종)(+쇼핑백)'),
         "two": Product.objects.get(title='[15%할인][홀리데이][선물포장] 향기보습 핸드크림 & 립밤 기프트 세트'),
         "three": Product.objects.get(title='NEW "겨울 핫템" 카카오프렌즈 얼굴형 손난로 보조배터리 5000mAh'),
         "four": Product.objects.get(title='불멍 캠핑 화로 난로 불무드 에탄올램프 (에탄올+캔들라이터 증정)'),
         "five": Product.objects.get(title='[따뜻한 선물] "따듯한 치즈덕이쥬" 부들 포근 치즈덕 극세사 담요 (톡별)'),
-        "six": Product.objects.get(title='완도전복죽'),
+        "six": Product.objects.get(title='[조카선물/크리스마스선물] 오즈초미니 아동 양털 어그부츠'),
         "seven": Product.objects.get(title='"오늘도 따뜻할 거예요" 히트템 핫팩 30매+메세지박스+손소독제 5개입 (톡별) (heattem)'),
-        "eight": Product.objects.get(title='"매일 예쁘고 포근해" 수면 파자마 상하의 16종 택1/남녀커플 상품 추가'),
+        "eight": Product.objects.get(title='"크리스마스 케이크" 스타벅스 부드러운 고구마 생크림 케이크 (+무료음료쿠폰)'),
     }
     return render(request, "articles/md_kbw.html", context)
 
