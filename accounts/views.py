@@ -9,6 +9,7 @@ from django.contrib import messages
 from django.http import JsonResponse
 from django.core.paginator import Paginator
 from datetime import datetime
+
 # Create your views here.
 
 
@@ -25,15 +26,15 @@ def signup(request):
             birth_date = datetime.strptime(datetime_string, datetime_format)
             age_range = (datetime.today().year - birth_date.year) // 10
             if age_range < 0 or age_range > 15:
-                messages.error(request, '유효한 생년월일이 아닙니다.')
-                return redirect('articles:index')
+                messages.error(request, "유효한 생년월일이 아닙니다.")
+                return redirect("articles:index")
             user.age = age_range
             user.save()
             auth_login(
                 request, user, backend="django.contrib.auth.backends.ModelBackend"
             )
-        else: 
-            messages.error(request, '유효하지 않은 정보입니다.')
+        else:
+            messages.error(request, "유효하지 않은 정보입니다.")
         return redirect("articles:index")
     else:
         form = SignupForm()
@@ -61,7 +62,7 @@ def login(request):
         }
         return render(request, "accounts/login.html", context)
     else:
-        return redirect("accounts:index")
+        return redirect("articles:index")
 
 
 @login_required
@@ -77,7 +78,7 @@ def update(request):
             form = UpdateForm(request.POST, request.FILES, instance=request.user)
             if form.is_valid():
                 form.save()
-                messages.success(request, '수정되었습니다.')
+                messages.success(request, "수정되었습니다.")
             return redirect("articles:detail", request.user.pk)
         else:
             form = UpdateForm(instance=request.user)
@@ -86,8 +87,8 @@ def update(request):
         }
         return render(request, "accounts/update.html", context)
     else:
-        messages.warning(request, '로그인 후 이용할 수 있습니다.')
-        return redirect('articles:login')
+        messages.warning(request, "로그인 후 이용할 수 있습니다.")
+        return redirect("accounts:login")
 
 
 @login_required
@@ -95,7 +96,7 @@ def delete(request):
     if request.method == "POST":
         request.user.delete()
         auth_logout(request)
-        messages.success(request, '성공적으로 탈퇴되었습니다.')
+        messages.success(request, "성공적으로 탈퇴되었습니다.")
     return redirect("articles:index")
 
 
@@ -107,7 +108,7 @@ def password(request):
             if form.is_valid():
                 form.save()
                 update_session_auth_hash(request, form.user)
-                messages.success(request, '변경되었습니다.')
+                messages.success(request, "변경되었습니다.")
             return redirect("accounts:update")
         else:
             form = PasswordChangeForm(request.user)
@@ -116,9 +117,8 @@ def password(request):
         }
         return render(request, "accounts/password.html", context)
     else:
-        messages.warning(request, '로그인 후 이용할 수 있습니다.')
-        return redirect('articles:login')
-
+        messages.warning(request, "로그인 후 이용할 수 있습니다.")
+        return redirect("accounts:login")
 
 
 def detail(request, user_pk):
@@ -154,9 +154,8 @@ def follow(request, user_pk):
             messages.error(request, "자신은 팔로우할 수 없습니다.")
         return redirect("accounts:detail", user_pk)
     else:
-        messages.warning(request, '로그인 후 이용할 수 있습니다.')
-        return redirect('articles:login')
-
+        messages.warning(request, "로그인 후 이용할 수 있습니다.")
+        return redirect("accounts:login")
 
 
 def block(request, user_pk):
@@ -176,9 +175,9 @@ def block(request, user_pk):
         else:
             messages.error(request, "자신은 차단할 수 없습니다.")
         return redirect("accounts:detail", user_pk)
-    else:   
-        messages.warning(request, '로그인 후 이용할 수 있습니다.')
-        return redirect('articles:login')
+    else:
+        messages.warning(request, "로그인 후 이용할 수 있습니다.")
+        return redirect("accounts:login")
 
 
 def wishlist(request, user_pk):
