@@ -494,11 +494,12 @@ def community_detail(request, community_pk):
     community = get_object_or_404(Community, pk=community_pk)
     community_comment_form = CommunityCommentForm()
     context = {
-         'community': community,
-         'comments': community.communitycomment_set.all(),
-         'community_comment_form': community_comment_form,
-
+        'community': community,
+        'comments': community.communitycomment_set.all(),
+        'community_comment_form': community_comment_form,
     }
+    community.hits += 1
+    community.save()
     return render(request, 'articles/community_detail.html', context)
 
 
