@@ -104,6 +104,8 @@ class Community(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_community')
+    hits = models.PositiveIntegerField(default=0)
+    
 
 class CommunityImages(models.Model):
     community = models.ForeignKey("Community", on_delete=models.CASCADE)

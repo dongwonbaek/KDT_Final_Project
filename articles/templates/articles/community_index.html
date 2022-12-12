@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% include 'community_detail' %}
 
 {% load static %}
 {% load widget_tweaks %}
@@ -35,8 +36,9 @@
       </td>
       <td>{{ community.user.nickname }}</td>
       <td>{{ community.created_at.date }}</td>
-      <td>2</td>
+      <td>{{ community.hits }}</td>
       <td>{{ community.like_users.count }}</td>
+
     </tr>
     {% endfor %}
   </table>
