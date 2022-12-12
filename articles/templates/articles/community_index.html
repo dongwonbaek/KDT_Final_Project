@@ -6,9 +6,9 @@
 {% load imagekit %}
 
 {% block content %}
-<div class="commu container">
+<section class="wrapper container">
   <section class="d-flex justify-content-between">
-    <div class="fs-1">커뮤니티</div>
+    <h3>커뮤니티</h3>
     <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_create' %}">
       <i class="fa-solid fa-pen"> 글쓰기</i>
     </a>
@@ -38,6 +38,6 @@
     </tr>
     {% endfor %}
   </table>
-</div>
+</section>
 {% endblock content %}
 {% block script %}{% endblock script %}

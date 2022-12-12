@@ -1,0 +1,244 @@
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+<!--로그인 모달 -->
+<div class="modal fade" id="로그인" tabindex="-1" aria-labelledby="로그인Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="d-flex justify-content-end">
+        <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="signup-wrapper">
+        <h1 class="text-center">로그인</h1>
+        <form action="{% url 'accounts:login' %}" method="POST" class="d-flex flex-column align-items-center">
+          {% csrf_token %}
+          <label for="email">이메일</label>
+          <input class='signup-style1' id='email' type="email" name='username'>
+          <label for="password">비밀번호</label>
+          <input class='signup-style1' id='password' type="password" name='password'>
+          <button class="login-button my-2" button_type='submit' content='로그인'>로그인</button>
+        </form>
+        <!--소셜 로그인 그룹-->
+        <div class="d-flex justify-content-center my-0">
+          <form action="/accounts/google/login/" method="POST">
+            {% csrf_token %}
+            <button class="btn btn-link my-0 my-sm-0 py-0" style="color : #FFFFFF" type="submit"
+              onclick="document.getElementById('test').submit();"><img src="{% static 'img/google.png' %}" alt="구글"
+                style="height:35px;"></button>
+          </form>
+          <form class="mx-1" action="/accounts/kakao/login/" method="POST">
+            {% csrf_token %}
+            <button class="btn btn-link my-0 my-sm-0 py-0" style="color : #FFFFFF" type="submit"
+              onclick="document.getElementById('test').submit();"><img src="{% static 'img/kakao.png' %}" alt="카카오"
+                style="height:35px;"></button>
+          </form>
+          <form action="/accounts/naver/login/" method="POST">
+            {% csrf_token %}
+            <button class="btn btn-link my-0 my-sm-0 py-0" style="color : #FFFFFF" type="submit"
+              onclick="document.getElementById('test').submit();"><img src="{% static 'img/naver.png' %}" alt="네이버"
+                style="height:35px;"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--회원가입 모달-->
+<div class="modal fade" id="회원가입" tabindex="-1" aria-labelledby="회원가입Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class='d-flex justify-content-end'>
+        <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="signup-wrapper">
+        <h1 class="text-center">회원가입</h1>
+        <form action="{% url 'accounts:signup' %}" method="POST" enctype='multipart/form-data'>
+          {% csrf_token %}
+          <div class="d-flex flex-column align-items-center">
+            <label for="username">이메일</label>
+            <input class='signup-style1' type="email" name='username' id='username'>
+          </div>
+          <div class="d-flex flex-column align-items-center">
+            <label for="nickname">닉네임</label>
+            <input class='signup-style1' type="text" name='nickname' id='nickname'>
+          </div>
+          <div class="d-flex flex-column align-items-center">
+            <label for="password1">비밀번호</label>
+            <input class='signup-style1' type="password" name='password1' id='password1'>
+          </div>
+          <div class="d-flex flex-column align-items-center">
+            <label for="password2">비밀번호 확인</label>
+            <input class='signup-style1' type="password" name='password2' id='password2'>
+          </div>
+          <div class="d-flex flex-column align-items-center">
+            <label for="image">프로필 사진</label>
+            <input class='signup-style2' type="file" name='image' id='image'>
+          </div>
+          <label>남</label><input type="radio" name='gender' value='true'>
+          <label>여</label><input type="radio" name='gender' value='false'>
+          <div class='d-flex flex-column align-items-center'>
+            <label for="birth_date">생년월일</label>
+            <input class='form-control signup-style2' type="date" name='birth_date' id='birth_date'>
+          </div>
+          <button class="login-button" button_type='submit' content='회원가입'>회원 가입</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--nav 시작-->
+<header style="z-index: 10; position: relative;">
+  <!-- 네브바 상단 로고 -->
+  <div id="navbar" class="nav-upper">
+    <a href="{% url 'articles:index' %}"><img class="text-center" src="{% static 'img/logo/logo_animated.gif' %}"></a>
+  </div>
+  <!-- 네브바 하단 메뉴 -->
+  <div id="navbar-example2" class="nav-lower container-fluid">
+    <a href="{% url 'articles:index' %}" class="fadeInLogo brand-logo animated slideInUp">
+      <img src="{% static 'img/base/fadeinlogo.png' %}">
+    </a>
+    <ul class="nav nav-pills ">
+      <li class="nav-item">
+        <a class="nav-link nav-link-fade" href="{% url 'articles:product_rank' %}">랭킹</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-fade" href="">카테고리</a>
+        <div id="submenu">
+          <ul class="category-submenu">
+            {% for category in categories %}
+            <li>
+              <a class="nav-link" href="{% url 'articles:product_list' category.0 %}">
+                <img src="../../../static/img/base/category{{ category.0 }}.png">{{ category.1 }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-fade" href="{% url 'articles:community_index' %}">커뮤니티</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-fade" href="{% url 'articles:review_index' %}">리뷰</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-fade" href="#scrollspyHeading2">Q&A</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-fade" href="{% url 'articles:search' %}"><i class="bi bi-search"></i></a>
+      </li>
+    </ul>
+    <ul class="nav-end">
+      {% if request.user.is_authenticated %}
+      <li class="nav-item mx-4"><i class="bi bi-bell"></i></li>
+      <li class="nav-pf">
+        <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          {% if request.user.image %}
+            <img src="{{ request.user.image.url }}" class="nav-pf-img" alt="profile-image">
+          {% else %}
+            <img src="{% static 'img/no-avatar.jpg' %}" class="nav-pf-img" alt="no-avatar">
+          {% endif %}
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            {% if request.user.image %}
+              <img src="{{ request.user.image.url }}" alt="profile-image">
+            {% else %}
+              <img src="{% static 'img/no-avatar.jpg' %}" alt="no-avatar">
+            {% endif %}
+            <span class="nav-pf-nick">{{ request.user.nickname }}</span> 님
+          </li>
+          <li>
+            <a class="dropdown-item" href="{% url 'accounts:detail' request.user.pk %}">
+              <i class="bi bi-person-lines-fill me-3"></i>마이페이지
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="{% url 'accounts:wishlist' request.user.pk %}">
+              <i class="bi bi-bag-heart me-3"></i>위시리스트
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="{% url 'accounts:update' %}">
+              <i class="bi bi-pencil-fill me-3"></i>프로필수정
+            </a>
+          </li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li>
+            <a class="dropdown-item" href="{% url 'accounts:logout' %}">
+              <i class="bi bi-box-arrow-right me-3"></i>로그아웃
+            </a>
+          </li>
+        </ul>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <!--로그인 모달 트리거-->
+        <button type="button" class="pos-btn nav-login-btn" data-bs-toggle="modal" data-bs-whatever="로그인"
+          data-bs-target="#로그인">로그인</button>
+      </li>
+      <li>
+        <!--회원가입 모달 트리거-->
+        <button type="button" class="pos-btn nav-login-btn" data-bs-toggle="modal" data-bs-whatever="회원가입"
+          data-bs-target="#회원가입">회원가입</button>
+        {% endif %}
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script>
+  //scrollpy
+  $(window).scroll(function () {
+    if ($(document).scrollTop() >= 80) {
+      $('#navbar').addClass('affix');
+      $('#navbar-example2').addClass('topon');
+      console.log("OK");
+    } else {
+      $('#navbar').removeClass('affix');
+      $('#navbar-example2').removeClass('topon');
+    }
+  });
+
+  // FADE IN SMALL LOGO AND FAB ON SCROLL
+  $(window).scroll(function () {
+    var scrollPosition = $(this).scrollTop();
+    var $fadeInLogo = $('.fadeInLogo');
+    var $growInFab = $('.halfway-fab');
+    if (scrollPosition > 128) {
+      // Fade in logo & bring in FAB
+      $fadeInLogo.fadeIn(200);
+      $growInFab.removeClass("scale-out");
+    } else {
+      // Fade out logo & remove FAB
+      $fadeInLogo.fadeOut(200);
+      $growInFab.addClass("scale-out");
+    }
+  });
+</script>
+<script>
+  // 로그인 회원가입 모달 
+  var 로그인 = document.getElementById('로그인')
+  로그인.addEventListener('show.bs.modal', event => {
+    var button = event.relatedTarget
+    var recipient = button.getAttribute('data-bs-whatever')
+    var modalTitle = 로그인.querySelector('.modal-title')
+    var modalBodyInput = 로그인.querySelector('.modal-body input')
+    modalTitle.textContent = `New message to ${recipient}`
+    modalBodyInput.value = recipient
+
+  })
+
+  var 회원가입 = document.getElementById('회원가입')
+  회원가입.addEventListener('show.bs.modal', event => {
+    var button = event.relatedTarget
+    var recipient = button.getAttribute('data-bs-whatever')
+    var modalTitle = 회원가입.querySelector('.modal-title')
+    var modalBodyInput = 회원가입.querySelector('.modal-body input')
+    modalTitle.textContent = `New message to ${recipient}`
+    modalBodyInput.value = recipient
+  })
+</script>
