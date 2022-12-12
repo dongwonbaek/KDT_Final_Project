@@ -422,7 +422,9 @@ def review_sad(request, review_pk):
 
 def community_index(request):
     communities = Community.objects.order_by("-pk")
-    context = {"communities": communities}
+    context = {
+        "communities": communities,
+        }
     return render(request, "articles/community_index.html", context)
 
 
@@ -453,7 +455,7 @@ def community_create(request):
 
 
 def community_update(request, community_pk):
-    community = Community.objects.get(pk=community_pk)
+    community = get_object_or_404(Community, pk=community_pk)
     if request.method == "POST":
         community_form = CommunityForm(request.POST, request.FILES, instance=community)
         community_images_form = CommunityImagesForm(request.POST, request.FILES)
@@ -482,14 +484,14 @@ def community_update(request, community_pk):
 
 
 def community_delete(request, community_pk):
-    community = Community.objects.get(pk=community_pk)
+    community = get_object_or_404(Community, pk=community_pk)
     community.delete()
     messages.success(request, '삭제되었습니다.')
     return redirect('articles:community_index')
 
 
 def community_detail(request, community_pk):
-    community = Community.objects.get(pk=community_pk)
+    community = get_object_or_404(Community, pk=community_pk)
     community_comment_form = CommunityCommentForm()
     context = {
          'community': community,
@@ -534,14 +536,14 @@ def md_jsm(request):
 
 def md_kbw(request):
     context = {
-        "one": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
-        "two": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
-        "three": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
-        "four": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
-        "five": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
-        "six": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
-        "seven": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
-        "eight": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "one": Product.objects.get(title='[2타입/4색상] 에이블팩토리 허그미 윈터 슈즈 털슬리퍼 겨울 실내화 슬리퍼'),
+        "two": Product.objects.get(title='[15%할인][홀리데이][선물포장] 향기보습 핸드크림 & 립밤 기프트 세트'),
+        "three": Product.objects.get(title='NEW "겨울 핫템" 카카오프렌즈 얼굴형 손난로 보조배터리 5000mAh'),
+        "four": Product.objects.get(title='불멍 캠핑 화로 난로 불무드 에탄올램프 (에탄올+캔들라이터 증정)'),
+        "five": Product.objects.get(title='[따뜻한 선물] "따듯한 치즈덕이쥬" 부들 포근 치즈덕 극세사 담요 (톡별)'),
+        "six": Product.objects.get(title='완도전복죽'),
+        "seven": Product.objects.get(title='"오늘도 따뜻할 거예요" 히트템 핫팩 30매+메세지박스+손소독제 5개입 (톡별) (heattem)'),
+        "eight": Product.objects.get(title='"매일 예쁘고 포근해" 수면 파자마 상하의 16종 택1/남녀커플 상품 추가'),
     }
     return render(request, "articles/md_kbw.html", context)
 
