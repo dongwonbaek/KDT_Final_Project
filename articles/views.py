@@ -520,6 +520,21 @@ def community_comment_create(request, community_pk):
         return JsonResponse(context)
 
 
+def community_like(request, community_pk):
+    community = get_object_or_404(Community, pk=community_pk)
+    if request.user in community.like_users.all():
+        community.like_users.remove(request.user)
+        is_liked = False
+    else:
+        community.like_users.add(request.user)
+        is_liked = True
+    context = {
+        'isLiked': is_liked,
+        'likeCount': community.like_users.count()
+        }
+    return JsonResponse(context)
+
+
 def md_jsm(request):
     context = {
         "one": Product.objects.get(title='크리스마스 에디션 덴마크 데니쉬 버터쿠키 454g'),
