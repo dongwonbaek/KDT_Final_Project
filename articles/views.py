@@ -520,14 +520,14 @@ def community_comment_create(request, community_pk):
 
 def md_jsm(request):
     context = {
-        "one": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
-        "two": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
-        "three": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
-        "four": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
-        "five": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
-        "six": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
-        "seven": Product.objects.get(title='최고 인기 선물 밀크앤허니 호두파이'),
-        "eight": Product.objects.get(title='쫀득쫀득, 달콤하게 사르르 녹는 소프트 초콜릿'),
+        "one": Product.objects.get(title='크리스마스 에디션 덴마크 데니쉬 버터쿠키 454g'),
+        "two": Product.objects.get(title='[크리스마스 홀리데이] 홍콩직수입 제니베이커리 4믹스 쿠키(S) 320g'),
+        "three": Product.objects.get(title='떠먹는 바닐라 슈크림 + 아메리카노 (R) 2잔'),
+        "four": Product.objects.get(title="'제주 유기농 녹차로 만든' 오설록 그린티 롤케이크"),
+        "five": Product.objects.get(title='파베 수제 생초콜릿 (밀크/다크)'),
+        "six": Product.objects.get(title='[크리스마스 특가선물] 허쉬 초콜릿칩 쿠키 456g / 대형통'),
+        "seven": Product.objects.get(title='오트밀크로 만든 카카올라 생초콜릿 5종 & 유기농우유로 만든 꼬르지엘모 생초콜릿 5종'),
+        "eight": Product.objects.get(title='"너에게는 내가 최고의 보약" 크리스마스 초콜릿 과자 패키지(톡별)'),
     }
     return render(request, "articles/md_jsm.html", context)
 
