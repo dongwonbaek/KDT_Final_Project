@@ -30,6 +30,7 @@ urlpatterns = [
     path("<int:community_pk>/community_delete/", views.community_delete, name='community_delete'),
     path("<int:community_pk>/community_detail/", views.community_detail, name='community_detail'),
     path("<int:community_pk>/community_comment_create/", views.community_comment_create, name='community_comment_create'),
+    path('<int:community_pk>/community_like/', views.community_like, name='community_like'),
     path("md_jsm/", views.md_jsm, name='md_jsm'),
     path("md_kbw/", views.md_kbw, name='md_kbw'),
     path("md_kkh/", views.md_kkh, name='md_kkh'),

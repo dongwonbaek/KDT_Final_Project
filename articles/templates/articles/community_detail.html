@@ -50,6 +50,19 @@
       <p class='my-1 mx-3'>{{ community.title }}</p>
     </div>
     <p class="my-1">{{ community.created_at|date:'y-m-d l' }}</p>
+
+
+<div>
+  {% if request.user.is_authenticated %}
+    {% if request.user in community.like_users.all %}
+        <i id="like-btn" data-community-id="{{ community.pk }}" class="bi bi-heart-fill"></i>
+    {% else %}
+        <i id="like-btn" data-community-id="{{ community.pk }}" class="bi bi-heart"></i> 
+    {% endif %}
+  {% endif %}
+  <span id="like-count">{{ community.like_users.count }}</span>
+</div>
+
   </section>
   <p>{{ community.content|safe }}</p>
   <hr class="commu_detail_hr">
@@ -149,4 +162,31 @@
     })
   })
 </script>
+
+
+<script>
+  // 좋아요
+  const likeBtn = document.querySelector('#like-btn')
+  likeBtn.addEventListener('click', function (event) {
+      console.log(event.target.dataset)
+      axios({
+          method: 'get',
+          url: `/${event.target.dataset.communityId}/community_like/`
+      })
+      .then(response => {
+          console.log(response)
+          console.log(response.data)
+          if (response.data.isLiked === true) {
+              event.target.classList.add('bi-heart-fill')
+              event.target.classList.remove('bi-heart')
+          } else {
+              event.target.classList.add('bi-heart')
+              event.target.classList.remove('bi-heart-fill')
+          }
+          const likeCount = document.querySelector('#like-count')
+          likeCount.innerText = response.data.likeCount
+      })
+  })
+</script>
+
 {% endblock script %}
