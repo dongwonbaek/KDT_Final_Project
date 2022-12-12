@@ -5,6 +5,7 @@
 }
 
 .pen {
+  color: #297372;
   border: 1px solid #297372;
   border-radius: 5px;
   font-size: 20px;
@@ -92,4 +93,16 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
+}
+
+/* community_detail */
+
+.big_img {
+  height: 30rem;
+  width: 50rem;
+}
+
+.big_img img {
+  object-fit: cover;
+  object-position: center;
 }
