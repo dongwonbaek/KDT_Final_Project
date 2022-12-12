@@ -328,13 +328,17 @@ footer .footer-text {
   bottom: 30px;
   position: fixed;
   right: 20px;
-  z-index: 999;
+  z-index: 5;
   cursor: pointer;
 }
 
 #pagescroll p {
   margin: 0;
-  padding: 0;
+
+}
+
+#pagescroll img {
+  width: 55px;
 }
 
 /* 공유 아이콘 */
