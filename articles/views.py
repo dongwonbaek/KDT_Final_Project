@@ -474,7 +474,7 @@ def community_index(request):
         }
     return render(request, "articles/community_index.html", context)
 
-
+@login_required
 def community_create(request):
     if request.method == "POST":
         community_form = CommunityForm(request.POST, request.FILES)
@@ -500,7 +500,7 @@ def community_create(request):
     }
     return render(request, "articles/community_form.html", context)
 
-
+@login_required
 def community_update(request, community_pk):
     community = get_object_or_404(Community, pk=community_pk)
     if request.method == "POST":
@@ -529,7 +529,7 @@ def community_update(request, community_pk):
     }
     return render(request, "articles/community_form.html", context)
 
-
+@login_required
 def community_delete(request, community_pk):
     community = get_object_or_404(Community, pk=community_pk)
     community.delete()
