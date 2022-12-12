@@ -330,14 +330,17 @@ body {
   left: 27%;
 }
 
-.FloatingAd {
+.popup_ad {
+  display: none;
   display: flex;
   align-items: center;
   position: fixed;
   right: 20px;
-  bottom: 60px;
+  bottom: 100px;
   width: 14.5rem;
-  height: auto;
+  height: fit-content;
+  margin: 0;
+  padding: 0;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(242, 242, 242, 0.75);
@@ -345,23 +348,119 @@ body {
   border: 1px solid rgba(209, 213, 219, 0.3);
 }
 
-.FloatingAd .btn-close {
+.popup_ad .btn-close {
+  display: inline;
   position: relative;
-  right: -260px;
-  top: -60px;
+  right: -285px;
+  top: -90px;
 }
 
-.FloatingAd img {
-  display: inline-block;
-  position: relative;
-  left: 140px;
-  bottom: 40px;
+.popup_ad img {
   height: 150px;
   width: auto;
+  margin-left: 50px;
 }
 
-.FloatingAd a {
+.popup_ad a {
   display: block;
+}
+
+/* popup_ad 버튼 */
+.ad-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.btn_today_close {
+  border: none;
+  font-size: 13px;
+  color: grey;
+  outline: 0 0 1px 0 solid gray;
+}
+
+.cta {
+  display: flex;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 22x;
+  color: white;
+  background: var(--main-bluegreen);
+  transition: 1s;
+  box-shadow: 6px 6px 0 var(--main-scarlet);
+  transform: skewX(-15deg);
+
+}
+
+.cta:focus {
+  outline: none;
+}
+
+.cta:hover {
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 var(--main-salmon);
+}
+
+.cta span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 0px;
+}
+
+.cta:hover span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 10px;
+}
+
+.popup_ad span {
+  transform: skewX(15deg)
+}
+
+.popup_ad span:nth-child(2) {
+  width: 20px;
+  margin-left: 30px;
+  position: relative;
+  top: 12%;
+}
+
+/**************SVG****************/
+path.one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+path.two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.cta:hover path.three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover path.one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover path.two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+
+/* SVG animations */
+@keyframes color_anim {
+  0% {
+    fill: white;
+  }
+
+  50% {
+    fill: var(--main-salmon);
+  }
+
+  100% {
+    fill: white;
+  }
 }
 
 /*------로그인, 회원가입------*/

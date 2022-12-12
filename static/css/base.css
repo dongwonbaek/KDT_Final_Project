@@ -226,6 +226,8 @@ footer {
   width: 100%;
   background-color: var(--main-mintygreen);
   color: var(--main-white);
+  max-width: inherit;
+  overflow: hidden;
 }
 
 /* 푸터에 전구반짝이 */
