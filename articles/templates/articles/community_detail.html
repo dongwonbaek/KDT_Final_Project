@@ -10,16 +10,46 @@
 {% block content %}
 
 <br><br><br><br><br>
-<div class="commu_detail_main">
-  <section class="d-flex justify-content-between">
-    <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_index' %}">
-      <div class="fs-0 fa-solid p-1">커뮤니티 메인</div>
-    </a>
-    <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_update' community.pk %}">
-      <div class="fs-0 fa-solid p-1"><i class="fa-solid fa-pen"> 글 수정하기</i></div>
-    </a>
+
+<div class="commu_detail_main my-2">
+  <h1  class='display-4'>{{ community.title }}</h1>
+  <section class="d-flex justify-content-between my-2">
+    <div class="d-flex">
+      {% if community.user.image %}
+      <img src="{{ community.user.image.url }}" class="commu_pf_img" alt="유저 이미지">
+      {% else %}
+      <img src="{% static 'img/no-avatar.jpg' %}" class="commu_pf_img" alt="유저 대체이미지">
+      {% endif %} 
+      <p class='my-1 mx-3'>{{ community.user.nickname }}</p>
+      <p class="my-1">{{ community.created_at|date:'Y.m.d H:i' }}</p>
+    </div>
+    
+      <ul class="">
+      <li class="">
+        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"></a>
+        <ul class="dropdown-menu">
+          <li class="my-2">
+            <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_update' community.pk %}">
+              <div class="fs-0 fa-solid p-1"> 글 수정하기</div>
+            </a>
+          </li>
+          <li>
+            <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_index' %}">
+              <div class="fs-0 fa-solid p-1">커뮤니티 메인</div>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    
+
+
   </section>
+
 </div>
+
+
+
 
 <div class="slideshow-container w-40 my-2">
   {% for i in community.communityimages_set.all %}
@@ -34,22 +64,10 @@
   {% for i in community.communityimages_set.all %}
     <span class="dot" onclick="currentSlide({{forloop.counter}})"></span>
   {% endfor %}
-  </div>
 </div>
 
-
-<br>
-<div class="commu_detail_main my-2">
-  <section class="d-flex justify-content-between my-2">
-    <div class="d-flex">
-      {% if community.user.image %}
-      <img src="{{ community.user.image.url }}" class="commu_pf_img" alt="유저 이미지">
-      {% else %}
-      <img src="{% static 'img/no-avatar.jpg' %}" class="commu_pf_img" alt="유저 대체이미지">
-      {% endif %} 
-      <p class='my-1 mx-3'>{{ community.title }}</p>
-    </div>
-    <p class="my-1">{{ community.created_at|date:'y-m-d l' }}</p>
+<p>{{ community.content|safe }}</p>
+<hr class="commu_detail_hr">
 
 
 <div>
@@ -63,10 +81,22 @@
   <span id="like-count">{{ community.like_users.count }}</span>
 </div>
 
-  </section>
-  <p>{{ community.content|safe }}</p>
-  <hr class="commu_detail_hr">
+
 </div>
+<div class="commu_detail_main">
+  <section class="d-flex justify-content-between">
+    <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_index' %}">
+      <div class="fs-0 fa-solid p-1">커뮤니티 메인</div>
+    </a>
+    <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_update' community.pk %}">
+      <div class="fs-0 fa-solid p-1"><i class="fa-solid fa-pen"> 글 수정하기</i></div>
+    </a>
+  </section>
+</div>
+
+
+
+<br>
 
 
 <div class="commu_detail_main">
