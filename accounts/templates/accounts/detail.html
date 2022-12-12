@@ -260,7 +260,7 @@
       <div class="container">
         <div class="row">
           {% for product in user.like_product.all %}
-          <div class="col-4">
+          <div class="col-6 col-md-4 d-flex justify-content-center">
             <div class="d-flex flex-column align-items-center detail-sub">
               <div><img class="review-image" src="{{ product.productimages_set.all.0.images }}">
               </div>
