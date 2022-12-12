@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% include 'community_detail' %}
 
 {% load static %}
 {% load widget_tweaks %}
@@ -28,12 +29,12 @@
     {% for community in communities %}
     <tr class="text-center">
       <td>{{ community.id }}</td>
-      <td class="text-start">
+      <td class="text-start text-center">
         <a href="{% url 'articles:community_detail' community.pk %}">{{ community.title }}</a>
       </td>
-      <td>익명의 장성민</td>
+      <td>{{ community.user.nickname }}</td>
       <td>{{ community.created_at.date }}</td>
-      <td>2</td>
+      <td>{{ community.hits }}</td>
       <td>1</td>
     </tr>
     {% endfor %}
