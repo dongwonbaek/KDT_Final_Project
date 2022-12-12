@@ -103,6 +103,8 @@ class Community(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    hits = models.PositiveIntegerField(default=0)
+    
 
 class CommunityImages(models.Model):
     community = models.ForeignKey("Community", on_delete=models.CASCADE)
