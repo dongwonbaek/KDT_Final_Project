@@ -153,11 +153,49 @@ def product_delete(request, product_pk):
 
 
 def review_index(request):
-    reviews = Review.objects.order_by("-pk")
+    reviews = Review.objects.order_by("-pk")[:12]
+    reviews_all = Review.objects.order_by("-pk")
+    page = int(request.GET.get("page", 1) or 1)
+    limit = 12
+
+    offset = limit * (page - 1)
+    if offset == 0:
+        context = {
+            'reviews': reviews,
+        }
+        return render(request, 'articles/review_index.html', context)
+    end = offset + limit
+    review_Data = reviews_all[offset:end]
+    datalist = []
+    for a in review_Data:
+        if a.image:
+            review_image = a.image.url
+        else:
+            review_image = '/static/img/dummy.png'
+        if a.user.image:
+            user_image = a.user.image.url
+        else:
+            user_image = '/static/img/no-avatar.jpg'
+        datalist.append([
+            a.pk, #0
+            a.title, #1
+            a.content, #2
+            a.product.pk, #3
+            a.product.title, #4
+            a.user.pk, #5
+            a.user.nickname, #6
+            review_image, #7
+            user_image, #8
+            a.rating, #9
+            a.created_at.year, #10
+            a.created_at.month, #11
+            a.created_at.day, #12
+        ])
+
     context = {
-        "reviews": reviews,
+        'reviewData': datalist,
     }
-    return render(request, "articles/review_index.html", context)
+    return JsonResponse(context)
 
 
 @login_required
