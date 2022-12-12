@@ -47,21 +47,25 @@
 
 
 <div class="slideshow-container w-40 my-2">
-  {% for i in community.communityimages_set.all %}
-  <div class="mySlides">
-    <div class="numbertext">{{ forloop.counter }}</div>
-    <img src="{{ i.images.url }}" style="width:100%" alt="커뮤니티 이미지">
+  <div class="d-flex justify-content-start">
+    <div>
+      {% for i in community.communityimages_set.all %}
+      <div class="big_img mySlides">
+        <div class="numbertext">{{ forloop.counter }}</div>
+        <img class="w-100 h-100" src="{{ i.images.url }}" alt="커뮤니티 이미지">
+      </div>
+      {% endfor %}
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      <div class="d-flex justify-content-center my-2">
+        {% for i in community.communityimages_set.all %}
+        <span class="dot" onclick="currentSlide({{forloop.counter}})"></span>
+        {% endfor %}
+      </div>
+    </div>
   </div>
-  {% endfor %}
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  <div class="d-flex justify-content-center my-2">
-  {% for i in community.communityimages_set.all %}
-    <span class="dot" onclick="currentSlide({{forloop.counter}})"></span>
-  {% endfor %}
-</div>
 
-<p>{{ community.content|safe }}</p>
+<p >{{ community.content|safe }}</p>
 <hr class="commu_detail_hr">
 
 
@@ -89,8 +93,10 @@
   <form id="comment-form" data-community-id="{{ community.pk }}">
     {% csrf_token %}
     {% bootstrap_form community_comment_form layout='inline' %}
-    <div class="d-flex justify-content-end my-3">
-      <input type="submit" value="댓글 작성" class="btn btn-outline-dark btn-sm text-decoration-none fs-5">
+    <div class="d-flex justify-content-end mt-3">
+      <div class="pen d-flex flex-column justify-content-center">
+        <div type="submit" class=" fa-solid fa-pen my-3"> 댓글 작성</div>
+      </div>
     </div>
   </form>
   <br>
