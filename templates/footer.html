@@ -1,4 +1,6 @@
 {% load static %}
+{% load social_share %}
+
 <!--위아래버튼-->
 <div id="pagescroll">
   <p>
@@ -37,10 +39,10 @@
     </div>
     <div>
       <ul class="social-icons">
-        <li><a class="facebook" href="#"><i class="bi bi-facebook"></i></a></li>
-        <li><a class="twitter" href="#"><i class="bi bi-twitter"></i></a></li>
-        <li><a class="dribbble" href="#"><i class="bi bi-dribbble"></i></a></li>
-        <li><a class="linkedin" href="#"><i class="bi bi-linkedin"></i></a></li>   
+        <li><a class="facebook" href="#"><i class="bi bi-facebook"></i>{% post_to_facebook post.get_absolute_url "Facebook" %}</a></li>
+        <li><a class="twitter" href="#"><i class="bi bi-twitter"></i>{% post_to_twitter "New Song: {{object.title}}. Check it out!" get_absolute_url "Post to Twitter" %}</a></li>
+        <li><a class="google" href="#"><i class="bi bi-google"></i>{% post_to_gplus get_absolute_url "Post to Google+!" %}</a></li>
+        <li><a class="linkedin" href="#"><i class="bi bi-linkedin"></i>{% post_to_linkedin get_absolute_url %}</a></li>   
       </ul>
     </div>
     </div>
