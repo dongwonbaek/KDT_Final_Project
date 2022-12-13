@@ -117,7 +117,10 @@
           </div>
           <div class="my-2">
             {% if request.user == comment.user %}
-              <a href="{% url 'articles:community_comment_delete' community.pk %}" class='btn btn-sm btn-outline-danger'>삭제</a>
+              <form action="{% url 'articles:community_comment_delete' comment.pk %}" method="POST" class="my-0">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-outline-danger mx-2" value="삭제">
+              </form>
             {% endif %} 
           </div>
           </div>
