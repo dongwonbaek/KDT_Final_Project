@@ -73,6 +73,7 @@ def index(request):
 
 
 def product_list(request, category_pk):
+    request.session['recent_category'] = category_pk
     context = {
         "products": Product.objects.filter(category=category_pk)
         .annotate(review_avg=Avg("review__rating"))
