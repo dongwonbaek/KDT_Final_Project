@@ -91,34 +91,7 @@
         </a>
       </div>
       {% endfor %}
-      {% comment %} <div class="col">
-        <a href="https://event.multicampus.com/multicampusmain" target="_blank">
-          <img src="{% static 'img/index/ad-multiit1.png' %}">
-          멀티잇
-        </a>
-      </div> {% endcomment %}
     </div>
-    <!--index-category-->
-    {% comment %} <div class="personalized-category text-center">
-      <h2>
-        <span>ODJ AI</span>의 추천</h2>
-      <ul>
-        {% if request.user.is_authenticated %}
-          {% for i in "x"|rjust:"15" %}
-            <li>
-              <a href="{% url 'articles:product_list' 1 %}">유저 선호순</a>
-            </li>
-          {% endfor %}
-        {% else %}
-          {% for i in "x"|rjust:"15" %}
-            <li>
-              <a href="{% url 'articles:product_list' 1 %}">걍 카테고리나열</a>
-            </li>
-          {% endfor %}
-        {% endif %}
-      </ul>
-    </div>
-    <!--personalized-category--> {% endcomment %}
     <div class="index-ranking my-5">
       <h2 class="text-center">지금 인기있는 선물이에요🎈</h2>
       <ul class="ranking-more row row-cols-4 expandible">
@@ -148,7 +121,6 @@
       <div><img src="https://picsum.photos/300/200?random=5"></div>
       <div><img src="https://picsum.photos/300/200?random=6"></div>
     </div>
-
     <div style='margin-top:10rem;' class="row">
       <h2 class="fw-bold mx-1">
         <span>이런 선물은 어때요?</span>
