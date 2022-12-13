@@ -917,9 +917,6 @@ path.two {
 .accounts-wrapper label:has(+ div) {
   font-size: 18px;
   margin-top: 40px;
-  position: relative;
-  text-align: left;
-  left: 20px;
 }
 
 .login-field {
@@ -934,11 +931,11 @@ path.two {
 
 .focus-effect {
   display: block;
-  width: 25rem;
-  height: 2.5rem;
-  font-size: .9375rem;
+  width: 400px;
+  height: 40px;
+  font-size: 15px;
   line-height: 1.5;
-  color: var(--main-black);
+  color: #022125;
   background-color: var(--main-lightpink);
   background-clip: padding-box;
   border: var(--main-lightpink);
@@ -1070,7 +1067,6 @@ path.two {
   background: white 20%;
 }
 
-/* --------또는 가로줄-------- */
 .hr-sect {
   display: flex;
   flex-basis: 100%;
