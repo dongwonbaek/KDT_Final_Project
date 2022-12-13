@@ -1013,9 +1013,10 @@ path.two {
 }
 
 .login-button {
-  width: 25rem;
-  height: 2.5rem;
-  margin: 1.875rem 0;
+  color: white;
+  background-color: var(--main-salmon);
+  border: 0;
+  padding: 6px 15px;
 }
 
 #saveId {
@@ -1065,21 +1066,35 @@ path.two {
 
 }
 
+.signup-style1 {
+  background-color: var(--main-lightpink);
+}
+
 .signup-style2 {
+  padding: 0;
   width: 300px;
   height: 30px;
   border-style: none;
   border-radius: 5px;
-  background-color: #c4c4c4;
+  background-color: var(--main-lightpink);
 }
 
 .signup-wrapper {
   text-align: center;
-  margin: 110px auto;
-  padding: 30px 10px;
-  width: 420px;
+  margin: auto;
   height: fit-content;
-  border: solid 3px var(--main-salmon);
+  padding-bottom: 30px;
+  width: 300px;
+  border-radius: 5px;
+  background: white 20%;
+}
+
+.signup-wrapper2 {
+  text-align: center;
+  margin: auto;
+  height: fit-content;
+  padding-bottom: 30px;
+  width: 300px;
   border-radius: 5px;
   background: white 20%;
 }
