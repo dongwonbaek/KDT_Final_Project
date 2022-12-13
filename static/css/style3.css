@@ -94,7 +94,7 @@
   width: 40px;
   border-radius: 50%;
 }
- 
+
 /* community_detail */
 
 .big_img {
@@ -105,4 +105,22 @@
 .big_img img {
   object-fit: cover;
   object-position: center;
+}
+
+.bi-heart-fill{
+  color:crimson;
+}
+
+.bi-heart{
+  color:crimson;
+}
+
+.detail_drop {
+  color: white;
+  background-color: #297372;
+}
+
+/* 기본 스타일 초기화 */
+input { 
+  all: unset;
 }

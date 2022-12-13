@@ -5,8 +5,11 @@
 {% load django_bootstrap5 %}
 {% load imagekit %}
 
-{% block title %}{% endblock title %}
-{% block style %}{% endblock style %}
+{% block style %}
+<!-- MDB -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet"/>
+{% endblock style %}
+
 {% block content %}
 
 <br><br><br><br><br>
@@ -23,27 +26,31 @@
       <p class='my-1 mx-3'>{{ community.user.nickname }}</p>
       <p class="my-1">{{ community.created_at|date:'Y.m.d H:i' }}</p>
     </div>
-    
-    <ul>
-      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"></a>
-      <ul class="dropdown-menu">
-        <li class="my-2">
-          <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_update' community.pk %}">
-            <div class="fs-0 fa-solid p-1"> 글 수정하기</div>
+    <!-- dropdown -->
+    <div class="dropdown">
+      <button class="detail_drop btn dropdown-toggle" type="button" id="dropdownMenu2" data-mdb-toggle="dropdown" aria-expanded="false">
+        Menu
+      </button>
+      <ul style="width: 12rem; height: 9.5rem;" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <li>
+          <a href="{% url 'articles:community_index' %}">
+            <button class="dropdown-item" type="button">커뮤니티 메인</button>
           </a>
         </li>
         <li>
-          <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_index' %}">
-            <div class="fs-0 fa-solid p-1">커뮤니티 메인</div>
+          <a href="{% url 'articles:community_update' community.pk %}">
+            <button class="dropdown-item" type="button">글 수정</button>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'articles:community_delete' community.pk %}">
+            <button class="dropdown-item" type="button">글 삭제</button>
           </a>
         </li>
       </ul>
-    </ul>
-    
+    </div>
   </section>
 </div>
-
-
 
 
 <div class="slideshow-container w-40 my-2">
@@ -65,9 +72,8 @@
     </div>
   </div>
 
-<p >{{ community.content|safe }}</p>
-<hr class="commu_detail_hr">
-
+  <p >{{ community.content|safe }}</p>
+  <hr class="commu_detail_hr">
 
 <div>
   {% if request.user.is_authenticated %}
@@ -76,17 +82,11 @@
     {% else %}
         <i id="like-btn" data-community-id="{{ community.pk }}" class="bi bi-heart text-danger"></i> 
     {% endif %}
-  {% endif %}
-  <span id="like-count">{{ community.like_users.count }}</span>
+    <span id="like-count">{{ community.like_users.count }}</span>
+  </div>
 </div>
-
-
-</div>
-
-
 
 <br>
-
 
 <div class="commu_detail_main">
   {% if request.user.is_authenticated %}
@@ -95,7 +95,7 @@
     {% bootstrap_form community_comment_form layout='inline' %}
     <div class="d-flex justify-content-end mt-3">
       <div class="pen d-flex flex-column justify-content-center">
-        <div type="submit" class=" fa-solid fa-pen my-3"> 댓글 작성</div>
+        <input class="fa-solid fa-pen my-3" type="submit" value="댓글 작성"></input>
       </div>
     </div>
   </form>
@@ -118,9 +118,8 @@
   </div>
 </div>
 
-
-
 {% endblock content %}
+
 {% block script %}
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
@@ -210,4 +209,6 @@
   })
 </script>
 
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
 {% endblock script %}
