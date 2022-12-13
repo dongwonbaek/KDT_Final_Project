@@ -66,7 +66,6 @@ INSTALLED_APPS = [
     "django_bootstrap5",
     "django_cleanup.apps.CleanupConfig",
     "django_extensions",
-    "django_social_share",
     "corsheaders",
     "widget_tweaks",
     "imagekit",

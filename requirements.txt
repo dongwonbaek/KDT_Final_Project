@@ -23,7 +23,6 @@ django-cors-headers==3.13.0
 django-extensions==3.2.1
 django-imagekit==4.1.0
 django-js-asset==2.0.0
-django-social-share==2.3.0
 django-storages==1.13.1
 django-widget-tweaks==1.4.12
 djangorestframework==3.14.0

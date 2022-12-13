@@ -30,15 +30,21 @@
   --body-font: 'YiSunShinDotumM';
 }
 
-.content-wrapper {
-  padding: 13.1875rem 3rem 8rem;
-}
-
 body {
   position: relative;
   font-family: 'NanumSquareAcb';
   padding-top: 180px;
   font-size: 130%;
+}
+
+.content-wrapper {
+  padding: 13.1875rem 3rem 8rem;
+}
+
+@media only screen and (max-: 600px) {
+  .navbar-lower {
+    height: 49px;
+  }
 }
 
 .pos-btn {
@@ -478,12 +484,8 @@ footer .footer-text {
   background-color: #00aced
 }
 
-.social-icons a.linkedin:hover {
-  background-color: #007bb6
-}
-
-.social-icons a.dribbble:hover {
-  background-color: #e34346
+.social-icons a.kakao:hover {
+  background-color: #ffec00
 }
 
 @media (max-width:767px) {
