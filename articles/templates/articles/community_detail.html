@@ -72,9 +72,9 @@
 <div>
   {% if request.user.is_authenticated %}
     {% if request.user in community.like_users.all %}
-        <i id="like-btn" data-community-id="{{ community.pk }}" class="bi bi-heart-fill"></i>
+        <i id="like-btn" data-community-id="{{ community.pk }}" class="bi bi-heart-fill text-danger"></i>
     {% else %}
-        <i id="like-btn" data-community-id="{{ community.pk }}" class="bi bi-heart"></i> 
+        <i id="like-btn" data-community-id="{{ community.pk }}" class="bi bi-heart text-danger"></i> 
     {% endif %}
   {% endif %}
   <span id="like-count">{{ community.like_users.count }}</span>
