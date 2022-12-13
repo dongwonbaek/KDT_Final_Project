@@ -960,3 +960,9 @@ header .menu ul>li>a {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/* 메이페이지 툴팁 */
+.custom-tooltip {
+  --bs-tooltip-bg: #003B41;
+  --bs-tooltip-arrow-height: 1rem;
+}

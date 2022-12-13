@@ -19,6 +19,25 @@ import random
 
 
 def index(request):
+    recent_category = request.session.get('recent_category')
+    if request.user.is_authenticated:
+        if recent_category:
+            recommend_products = Product.objects.filter(category=recent_category).annotate(
+                score=Count("like_user", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age))*
+                Avg("review__rating", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age))*2
+                ).order_by('score')[:10]
+            
+        else:
+            recommend_products = Product.objects.annotate(
+                score=Count("like_user", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age))*
+                Avg("review__rating", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age))*2
+                ).order_by('score')[:10]
+    else:
+        if recent_category:
+            recommend_products = Product.objects.filter(category=recent_category).annotate(score=Count("like_user")*Avg("review__rating")*2).order_by('score')[:10]
+        else:
+            recommend_products = Product.objects.annotate(score=Count("like_user")*Avg("review__rating")*2).order_by('score')[:10]
+
     gender_products = Product.objects.annotate(
         wish_men_cnt=Count(
             "like_user", filter=Q(like_user__gender=True) & Q(like_user__age=2)
@@ -48,6 +67,7 @@ def index(request):
     context = {
         "gender_products": gender_products,
         "categories": Product.category_choice,
+        "recommend_products": recommend_products,
     }
     return render(request, "articles/index.html", context)
 
@@ -123,6 +143,7 @@ def product_detail(request, product_pk):
                 rating_list.append(round((rating_count / total) * 100))
             else:
                 rating_list.append(0)
+    request.session['recent_category'] = product.category
     context = {
         "product": product,
         "rating_avg": rating_avg,
