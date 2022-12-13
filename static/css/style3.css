@@ -94,7 +94,7 @@
   width: 40px;
   border-radius: 50%;
 }
- 
+
 /* community_detail */
 
 .big_img {
@@ -114,4 +114,9 @@
 
 .bi-heart{
   color:crimson;
+}
+
+.detail_drop {
+  color: white;
+  background-color: #297372;
 }

@@ -218,7 +218,7 @@ footer {
   top: 0px;
 }
 
-.nav-link {
+.nav-linkk {
   height: 90px;
   font-weight: 600;
   font-size: 16px;
@@ -231,7 +231,7 @@ footer {
   opacity: 0.75;
 }
 
-.nav-link:hover {
+.nav-linkk:hover {
   opacity: 1;
   text-decoration: none;
   color: #003B41;

@@ -96,17 +96,17 @@
     <a href="{% url 'articles:index' %}" class="fadeInLogo brand-logo animated slideInUp">
       <img src="{% static 'img/base/fadeinlogo.png' %}">
     </a>
-    <ul class="nav nav-pills ">
+    <ul class="nav nav-pills">
       <li class="nav-item">
-        <a class="nav-link nav-link-fade" href="{% url 'articles:product_rank' %}">랭킹</a>
+        <a class="nav-linkk nav-link-fade" href="{% url 'articles:product_rank' %}">랭킹</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-link-fade" href="">카테고리</a>
+        <a class="nav-linkk nav-link-fade" href="">카테고리</a>
         <div id="submenu">
           <ul class="category-submenu">
             {% for category in categories %}
             <li>
-              <a class="nav-link" href="{% url 'articles:product_list' category.0 %}">
+              <a class="nav-linkk" href="{% url 'articles:product_list' category.0 %}">
                 <img src="../../../static/img/base/category{{ category.0 }}.png">{{ category.1 }}</a>
             </li>
             {% endfor %}
@@ -114,16 +114,16 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-link-fade" href="{% url 'articles:community_index' %}">커뮤니티</a>
+        <a class="nav-linkk nav-link-fade" href="{% url 'articles:community_index' %}">커뮤니티</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-link-fade" href="{% url 'articles:review_index' %}">리뷰</a>
+        <a class="nav-linkk nav-link-fade" href="{% url 'articles:review_index' %}">리뷰</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-link-fade" href="#scrollspyHeading2">Q&A</a>
+        <a class="nav-linkk nav-link-fade" href="#scrollspyHeading2">Q&A</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-link-fade" href="{% url 'articles:search' %}"><i class="bi bi-search"></i></a>
+        <a class="nav-linkk nav-link-fade" href="{% url 'articles:search' %}"><i class="bi bi-search"></i></a>
       </li>
     </ul>
     <ul class="nav-end">
