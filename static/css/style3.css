@@ -120,3 +120,8 @@
   color: white;
   background-color: #297372;
 }
+
+/* 기본 스타일 초기화 */
+input { 
+  all: unset;
+}

@@ -72,28 +72,22 @@
     </div>
   </div>
 
-<p >{{ community.content|safe }}</p>
-<hr class="commu_detail_hr">
+  <p >{{ community.content|safe }}</p>
+  <hr class="commu_detail_hr">
 
-
-<div>
-  {% if request.user.is_authenticated %}
-    {% if request.user in community.like_users.all %}
-        <i id="like-btn" data-community-id="{{ community.pk }}" class="bi bi-heart-fill"></i>
-    {% else %}
-        <i id="like-btn" data-community-id="{{ community.pk }}" class="bi bi-heart"></i> 
+  <div>
+    {% if request.user.is_authenticated %}
+      {% if request.user in community.like_users.all %}
+          <i id="like-btn" data-community-id="{{ community.pk }}" class="bi bi-heart-fill"></i>
+      {% else %}
+          <i id="like-btn" data-community-id="{{ community.pk }}" class="bi bi-heart"></i> 
+      {% endif %}
     {% endif %}
-  {% endif %}
-  <span id="like-count">{{ community.like_users.count }}</span>
+    <span id="like-count">{{ community.like_users.count }}</span>
+  </div>
 </div>
-
-
-</div>
-
-
 
 <br>
-
 
 <div class="commu_detail_main">
   {% if request.user.is_authenticated %}
@@ -102,7 +96,7 @@
     {% bootstrap_form community_comment_form layout='inline' %}
     <div class="d-flex justify-content-end mt-3">
       <div class="pen d-flex flex-column justify-content-center">
-        <div type="submit" class=" fa-solid fa-pen my-3"> 댓글 작성</div>
+        <input class="fa-solid fa-pen my-3" type="submit" value="댓글 작성"></input>
       </div>
     </div>
   </form>
