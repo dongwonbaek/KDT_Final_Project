@@ -23,20 +23,22 @@ def index(request):
     if request.user.is_authenticated:
         if recent_category:
             recommend_products = Product.objects.filter(category=recent_category).annotate(
-                score=Count("like_user", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age))*
-                Avg("review__rating", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age))*2
-                ).order_by('score')[:10]
-            
+                score=Count("like_user", filter=Q(like_user__gender=request.user.gender) & Q(like_user__age=request.user.age), distinct=True)*
+                Avg("review__rating", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age), distinct=True)*2+
+                Count("review", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age), distinct=True)
+                ).order_by('-score')[:10]
+            print(recommend_products[0].score)
         else:
             recommend_products = Product.objects.annotate(
-                score=Count("like_user", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age))*
-                Avg("review__rating", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age))*2
-                ).order_by('score')[:10]
+                score=Count("like_user", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age), distinct=True)*
+                Avg("review__rating", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age), distinct=True)*2+
+                Count("review", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age), distinct=True)
+                ).order_by('-score')[:10]
     else:
         if recent_category:
-            recommend_products = Product.objects.filter(category=recent_category).annotate(score=Count("like_user")*Avg("review__rating")*2).order_by('score')[:10]
+            recommend_products = Product.objects.filter(category=recent_category).annotate(score=Count("like_user", distinct=True)*Avg("review__rating", distinct=True)*2+Count("review", distinct=True)).order_by('-score')[:10]
         else:
-            recommend_products = Product.objects.annotate(score=Count("like_user")*Avg("review__rating")*2).order_by('score')[:10]
+            recommend_products = Product.objects.annotate(score=Count("like_user", distinct=True)*Avg("review__rating", distinct=True)*2+Count("review", distinct=True)).order_by('-score')[:10]
 
     gender_products = Product.objects.annotate(
         wish_men_cnt=Count(
@@ -613,7 +615,6 @@ def community_detail(request, community_pk):
 
 @login_required
 def community_comment_create(request, community_pk):
-    print(request.POST)
     community = get_object_or_404(Community, pk=community_pk)
     community_comment_form = CommunityCommentForm(request.POST)
     if community_comment_form.is_valid():
@@ -627,6 +628,18 @@ def community_comment_create(request, community_pk):
             "userName": comment.user.username,
         }
         return JsonResponse(context)
+
+
+@login_required
+def community_comment_delete(request, comment_pk, community_pk):
+    comment = get_object_or_404(CommunityComment, pk=comment_pk)
+    # if request.user == comment.user:
+    #     comment.delete()
+    # else:
+    #     messages.error(request, "본인 댓글만 삭제할 수 있습니다.")    
+    comment.delete()
+    return redirect("articles:community_detail", community_community.pk)
+
 
 
 def community_like(request, community_pk):

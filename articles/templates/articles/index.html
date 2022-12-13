@@ -211,10 +211,10 @@
         </a>
       </div>
     </div>
-
+    <!--reco-per-member 끝-->
     <div id="page" class="youtube-list row">
       <div class="small-11 small-centered">
-        <h2 class="text-center">추천 유튜브<i class="bi-youtube text-danger"></i></h2>
+        <h2 class="text-center"><i class="bi-youtube text-danger"></i> 아직 고민된다면 영상을 참고해보세요</h2>
         <div class="slider slider-single">
           <div><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7Y3N_FJxbP4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           <div><iframe width="560" height="315" src="https://www.youtube.com/embed/VJvfPBCnpsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
@@ -243,26 +243,44 @@
     </div>
   </section>
   {% if request.user.is_authenticated == False %}
-  <section id="ad-box" class="card alert FloatingAd">
+  <section id="ad-box" class="card alert popup_ad" name="popup1">
     <div class="card-body">
-      <h4 class="card-title">🎊오픈 기념🎊</h4>
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      <h6 class="card-subtitle mb-2 text-muted">스탬프 2배 이벤트</h6>
-      <p class="card-text">단 이틀만 오다주 가입 가능!😉 지금 바로 가입하세요🎉 </p>
+      <h4 class="text-center m-0">🎊배포 기념 이벤트🎊</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="bi bi-x-lg"></i></button>
       <img src="{% static 'img/index/santa.png' %}">
-      <a href="{% url 'accounts:signup' %}" class="card-link pos-btn">가입하러 가기</a>
+      <h6 class="card-subtitle mb-2 text-muted">더도 말고 덜도 말고</h6>
+      <p class="card-text small">따~악 삼일 동안만 가능한 오다주 가입!<br>지금이 아니면 기회가 없어요😉 </p>
+      <!-- animated button-->
+      <div class="ad-wrapper">
+        <a class="cta" href="{% url 'accounts:signup' %}">
+          <span>가입하러 가기</span>
+          <span>
+            <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <path class="one" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                <path class="two" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                <path class="three" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z" fill="#FFFFFF"></path>
+              </g>
+            </svg>
+          </span> 
+        </a>
+      </div>
+      <div class="btn_wrap text-center">
+        <input type="checkbox" name="today_close1">
+        <span class="btn_today_close">오늘 하루 보지 않기</span>
+      </div>
     </div>
   </section>
   {% endif %}
 {% endblock content %}
 
 {% block script %}
+  <!--AD carousel-->
   <script>
-    // AD carousel
     $('.multiple-items').slick({infinite: true, slidesToShow: 2, slidesToScroll: 2, dots: true});
   </script>
+  <!--랭킹 더보기 접기-->
   <script>
-    //랭킹 더보기 접기
     $('ul.expandible').each(function(){
       var $ul = $(this),
           $lis = $ul.find('li:gt(7)'),
@@ -283,8 +301,8 @@
     });
   </script>
   <script src="{% static 'js/snowflake.js' %}"></script>
+  <!--유튜브 sync carousel-->
   <script>
-    // 유튜브 sync carousel
     $('.slider-single').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -349,8 +367,8 @@
       $('.slider-single').slick('slickGoTo', goToSingleSlide);
     });
   </script>
+  <!--선택한 친구 위시리스트로 이동, 친구선택 모달. 현재 선택한 사람-->
   <script>
-    // 선택한 친구 위시리스트로 이동
     const selectMine = document.querySelector('#select-mine')
     const selectFollowers = document.querySelectorAll('#select-follower')
     const selectBtn = document.querySelector('#select-btn')
@@ -368,6 +386,81 @@
       document.getElementById('result').innerText = 
         event.target.value;
     }
+  </script>
+  <!--플로팅광고 오늘 다시 보지 않기-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // 팝업창에 주어진 이름을 변수로 던져 저장된 쿠키가 있는지 확인 
+      var popup1 = getCookie('popup1');
+
+      // 변수가 없을경우 팝업 출력 
+      if (!popup1) {
+          popUpAction('popup1');
+      }
+  });
+
+  // 쿠키 가져오기 
+  function getCookie(name) {
+      var nameOfCookie = name + "=";
+      var x = 0;
+      while (x <= document.cookie.length) {
+          var y = (x + nameOfCookie.length);
+
+          if (document.cookie.substring(x, y) == nameOfCookie) {
+              if ((endOfCookie = document.cookie.indexOf(";", y)) == -1)
+                  endOfCookie = document.cookie.length;
+              return unescape(document.cookie.substring(y, endOfCookie));
+          }
+
+          x = document.cookie.indexOf(" ", x) + 1;
+
+          if (x == 0) break;
+      }
+
+      return "";
+  } // 24시간 기준 쿠키 설정하기 
+
+  // expiredays 후의 클릭한 시간까지 쿠키 설정 
+  function setCookie24(name, value, expiredays) {
+      var todayDate = new Date();
+
+      todayDate.setDate(todayDate.getDate() + expiredays);
+
+      document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+  }
+
+  // 00:00 시 기준 쿠키 설정하기 // expiredays 의 새벽 00:00:00 까지 쿠키 설정 
+  function setCookie00(name, value, expiredays) {
+      var todayDate = new Date(); todayDate = new Date(parseInt(todayDate.getTime() / 86400000) * 86400000 + 54000000);
+
+      if (todayDate > new Date()) {
+          expiredays = expiredays - 1;
+      }
+
+      todayDate.setDate(todayDate.getDate() + expiredays);
+
+      document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+  }
+
+  // 팝업출력
+  function popUpAction(name) {
+      // name으로 해당 팝업창 열기 
+      $("div[name=" + name + "]").fadeIn();
+  }
+
+  // 닫기버튼 클릭 이벤트 
+  $('.btn_close').click(function () {
+      $(this).parent('.popup_ad').fadeOut();
+
+      // 오늘하루 보지않기 체크 확인 
+      if ($("input:checkbox[name=today_close1]").is(":checked") == true) {
+          setCookie00('popup1', "done", 1);
+      }
+
+      // name으로 해당 팝업창 닫기 
+      $(this).parent("div[name=" + name + "]").fadeOut();
+  }) 
   </script>
   <script>
     let items = document.querySelectorAll('.carousel .carousel-item')
