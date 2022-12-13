@@ -24,7 +24,7 @@
     </div>
     <label for="nickname">닉네임</label>
     <div class="login-field">
-      {% render_field form.username class="focus-effect" placeholder=" 2 ~ 8자 " type="text" name="nickname" %}
+      {% render_field form.nickname class="focus-effect" placeholder=" 2 ~ 8자 " type="text" name="nickname" %}
       <span class="focus-border">
         <i></i>
       </span>
@@ -59,13 +59,13 @@
         <label class="form-check-label" for="inlineRadio1">남</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name='gender' id="inlineRadio2" vvalue='false'>
+        <input class="form-check-input" type="radio" name='gender' id="inlineRadio2" value='false'>
         <label class="form-check-label" for="inlineRadio2">여</label>
       </div>
     </div>
     <label for="birth_date">생년월일</label>
     <div class="login-field">
-      {% render_field form.gender class="focus-effect" type="date" name='birth_date' id='birth_date' %}
+      {% render_field form.birth_date class="focus-effect" type="date" name='birth_date' id='birth_date' %}
       <span class="focus-border">
         <i></i>
       </span>
