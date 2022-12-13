@@ -1,4 +1,5 @@
 {% load static %}
+
 <!--위아래버튼-->
 <div id="pagescroll">
   <p>
@@ -37,10 +38,9 @@
     </div>
     <div>
       <ul class="social-icons">
-        <li><a class="facebook" href="#"><i class="bi bi-facebook"></i></a></li>
-        <li><a class="twitter" href="#"><i class="bi bi-twitter"></i></a></li>
-        <li><a class="dribbble" href="#"><i class="bi bi-dribbble"></i></a></li>
-        <li><a class="linkedin" href="#"><i class="bi bi-linkedin"></i></a></li>   
+        <li><a class="facebook" href="javascript:shareFacebook();"><i class="bi bi-facebook"></i></a></li>
+        <li><a class="twitter" href="javascript:shareTwitter();"><i class="bi bi-twitter"></i></a></li>
+        <li id="shareKt"><a class="kakao" href="javascript:shareKakao();"><i class="bi bi-chat-fill"></i></a></li>
       </ul>
     </div>
     </div>
@@ -59,4 +59,32 @@
 
     });
   }); 
+</script>
+<script>
+  // 트위터 공유
+  function shareTwitter() {
+    var sendText = "ODJ."; // 전달할 텍스트
+    var sendUrl = "http://odjbean-env.eba-pmqftqpj.ap-northeast-2.elasticbeanstalk.com/"; // 전달할 URL
+    window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
+}
+
+  // 페북 공유 
+  function shareFacebook() {
+    var sendUrl = "http://odjbean-env.eba-pmqftqpj.ap-northeast-2.elasticbeanstalk.com/"; // 전달할 URL
+    window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
+  }
+</script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script>
+  function shareKakao() {
+    Kakao.init('eee904ef21be3ab5a0ebbcdc8594675f');
+
+    Kakao.Share.sendCustom({
+      templateId: ${837726},
+      templateArgs: {
+        title: 'ODJ',
+        description: 'ODJ와 함께 12월 최고의 산타가 되어보세요.',
+      },
+    });
+  }
 </script>
