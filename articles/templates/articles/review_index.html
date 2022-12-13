@@ -38,7 +38,7 @@
               {% else %}
                 <img src="{% static 'img/dummy.png' %}" alt="dummy" style="height: 5rem;" class='rounded'>
               {% endif %}
-              <a class='d-flex align-items-end' href="{% url 'accounts:detail' user.pk %}">
+              <a class='d-flex align-items-end' href="{% url 'accounts:detail' review.user.pk %}">
                 {% if review.user.image %}
                   <img src="{{ review.user.image.url }}" alt="profile_image" class='rounded-circle' style='height: 1.5rem;'>
                 {% else %}
