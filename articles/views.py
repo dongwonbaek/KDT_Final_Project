@@ -630,15 +630,15 @@ def community_comment_create(request, community_pk):
 
 
 @login_required
-def community_comment_delete(request, comment_pk, community_pk):
-    comment = get_object_or_404(CommunityComment, pk=comment_pk)
+def community_comment_delete(request, comment_pk):
+    # comment = get_object_or_404(CommunityComment, pk=comment_pk)
     # if request.user == comment.user:
     #     comment.delete()
     # else:
-    #     messages.error(request, "본인 댓글만 삭제할 수 있습니다.")    
+    #     messages.error(request, "본인 댓글만 삭제할 수 있습니다.")
+    comment = CommunityComment.objects.get(pk=comment_pk)
     comment.delete()
-    return redirect("articles:community_detail", community_community.pk)
-
+    return redirect("articles:community_detail", comment.community.pk)
 
 
 def community_like(request, community_pk):
