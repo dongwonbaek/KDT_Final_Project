@@ -11,13 +11,12 @@
 {% block style %}{% endblock style %}
 {% block content %}
 
-<section class="container login-wrapper">
-  <img class="text-center" src="{% static 'img/logo/logo_login.png' %}">
+<section class="container accounts-wrapper">
   <form action="{% url 'accounts:login' %}" method="POST" onsubmit="return frm_check();">
     {% csrf_token %}
     <label for="email">아이디</label>
     <div class="login-field">
-      {% render_field form.username class="focus-effect" placeholder="이메일을 입력하세요" type="text" name="email" id="logId" %}
+      {% render_field form.username class="focus-effect" placeholder="이메일을 입력하세요" type="email" name="email" id="logId" %}
       <span class="focus-border">
         <i></i>
       </span>

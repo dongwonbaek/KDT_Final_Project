@@ -15,9 +15,17 @@ class SignupForm(UserCreationForm):
     class Meta:
         model = get_user_model()
         fields = (
+            "username",
+            "email",
+            "password1",
+            "password2",
             "nickname",
             "image",
             "gender",
+        )
+        CHOICES = [("1", "남성"), ("2", "여성")]
+        gender = forms.BooleanField(
+            label="성별", widget=forms.RadioSelect(choices=CHOICES)
         )
 
         widgets = {

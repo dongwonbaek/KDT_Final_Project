@@ -4,42 +4,106 @@
 {% load widget_tweaks %}
 {% load django_bootstrap5 %}
 {% load imagekit %}
+{% load socialaccount %}
+{% providers_media_js %}
 
-{% block title %}{% endblock title %}
+{% block title %} | 로그인{% endblock title %}
 {% block style %}{% endblock style %}
 {% block content %}
-<div class="signup-wrapper">
+
+<section class="container accounts-wrapper">
   <h1 class="text-center">회원가입</h1>
   <form action="" method="POST" enctype='multipart/form-data'>
     {% csrf_token %}
-    <div class="d-flex flex-column align-items-center">
-      <label for="username">이메일</label>
-      <input class='signup-style1' type="email" name='username' id='username'>
+
+    <label for="username">아이디</label>
+    <div class="login-field">
+      {% render_field form.username class="focus-effect" placeholder="이메일을 입력하세요" type="username" name="username" %}
+      <span class="focus-border">
+        <i></i>
+      </span>
     </div>
-    <div class="d-flex flex-column align-items-center">
-      <label for="nickname">닉네임</label>
-      <input class='signup-style1' type="text" name='nickname' id='nickname'>
+
+    <label for="nickname">닉네임</label>
+    <div class="login-field">
+      {% render_field form.username class="focus-effect" placeholder=" 2 ~ 8자 " type="text" name="nickname" %}
+      <span class="focus-border">
+        <i></i>
+      </span>
     </div>
-    <div class="d-flex flex-column align-items-center">
-      <label for="password1">비밀번호</label>
-      <input class='signup-style1' type="password" name='password1' id='password1'>
+
+    <label for="password">비밀번호</label>
+    <div class="login-field">
+      {% render_field form.password1 class="focus-effect" placeholder="비밀번호를 입력하세요" type="password" name='password1' id='password1' autocomplete="true" %}
+      <span class="focus-border">
+        <i></i>
+      </span>
     </div>
-    <div class="d-flex flex-column align-items-center">
-      <label for="password2">비밀번호 확인</label>
-      <input class='signup-style1' type="password" name='password2' id='password2'>
+    <p id='message1'>❗ Caps Lock이 켜져 있습니다.</p>
+
+    <label for="password">비밀번호 확인</label>
+    <div class="login-field">
+      {% render_field form.password2 class="focus-effect" placeholder="비밀번호를 한 번 더 입력해주세요." type="password" name='password2' id='password2' autocomplete="false" %}
+      <span class="focus-border">
+        <i></i>
+      </span>
     </div>
-    <div class="d-flex flex-column align-items-center">
-      <label for="image">프로필 사진</label>
-      <input class='signup-style2' type="file" name='image' id='image'>
+    <p id='message2'>❗ Caps Lock이 켜져 있습니다.</p>
+
+    <label for="image">프로필 사진</label>
+    <div class="login-field">
+      {% render_field form.image class="focus-effect" type="file" name="image" %}
+      <span class="focus-border">
+        <i></i>
+      </span>
     </div>
-    <label>남</label><input type="radio" name='gender' value='true'>
-    <label>여</label><input type="radio" name='gender' value='false'>
-    <div class='d-flex flex-column align-items-center'>
-      <label for="birth_date">생년월일</label>
-      <input class='form-control signup-style2' type="date" name='birth_date' id='birth_date'>
+
+    <label for="gender">성별</label>
+    <div class="login-field">
+      {% render_field form.gender class="focus-effect" type="checkbox" name="gender" %}
+      <span class="focus-border">
+        <i></i>
+      </span>
     </div>
-    <button class="login-button" button_type='submit' content='회원가입'>회원 가입</button>
+
+    <label for="birth_date">생년월일</label>
+    <div class="login-field">
+      {% render_field form.gender class="focus-effect" type="date" name='birth_date' id='birth_date' %}
+      <span class="focus-border">
+        <i></i>
+      </span>
+    </div>
+
+    <button class="pos-btn login-button" type='submit' content='회원가입' id="checkKey">회원 가입</button>
   </form>
-</div>
+</section>
 {% endblock content %}
-{% block script %}{% endblock script %}
+
+{% block script %}
+
+<!--캡스락 경고-->
+<script>
+  var input1 = document.getElementById("password1");
+  var text1 = document.getElementById("message1");
+  input1.addEventListener("keyup", function(event) {
+  
+  if (event.getModifierState("CapsLock")) {
+      text1.style.display = "block";
+    } else {
+      text1.style.display = "none"
+    }
+  });
+  
+  var input2 = document.getElementById("password2");
+  var text2 = document.getElementById("message2");
+  
+  input2.addEventListener("keyup", function(event) {
+  
+  if (event.getModifierState("CapsLock")) {
+      text2.style.display = "block";
+    } else {
+      text2.style.display = "none"
+    }
+  });
+  </script>
+{% endblock script %}

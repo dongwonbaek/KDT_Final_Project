@@ -374,7 +374,7 @@ footer {
 }
 
 footer .footer-content img {
-  height: 100px;
+  height: 4.5rem;
   object-fit: contain;
 }
 
@@ -896,26 +896,28 @@ path.two {
 }
 
 /*------로그인, 회원가입------*/
-.login-wrapper:not(.hr-sect) {
+.accounts-wrapper:not(.hr-sect) {
   width: 31.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding: 8rem 0 5.4rem 0;
 }
 
-.login-wrapper img {
-  height: 10.75rem;
+.accounts-wrapper img {
+  height: 7rem;
+  object-fit: contain;
   width: auto;
 }
 
-.login-wrapper form {
+.accounts-wrapper form {
   display: flex;
   flex-direction: column;
   align-items: baseline;
 }
 
-.login-wrapper label:has(+ div) {
+.accounts-wrapper label:has(+ div) {
   font-size: 18px;
   margin-top: 40px;
 }
@@ -1025,7 +1027,21 @@ path.two {
   height: 20px;
 }
 
-.login-wrapper p {
+#message1 {
+  display: none;
+  font-size: 15px;
+  color: red;
+  height: 20px;
+}
+
+#message2 {
+  display: none;
+  font-size: 15px;
+  color: red;
+  height: 20px;
+}
+
+.accounts-wrapper p {
   font-size: 15px;
 
 }
