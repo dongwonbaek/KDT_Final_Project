@@ -5,18 +5,54 @@
 {% load django_bootstrap5 %}
 {% load imagekit %}
 
-{% block title %}{% endblock title %}
+{% block title %} | 프로필 수정{% endblock title %}
 {% block style %}{% endblock style %}
+
 {% block content %}
-<div class="signup-wrapper">
-  <h1>프로필 업데이트</h1>
-  <form action="" method="POST" enctype='multipart/form-data'>
+<section class="container accounts-wrapper">
+  <h1 class="text-center">프로필 수정</h1>
+  <form action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <div><label for="image">프로필</label></div>
-    <input class='signup-style1' id='image' type="file" name='image'>
-    <button class="login-button" type='submit' content='수정'>수정</button>
+    <label for="email">아이디</label>
+    <div class="login-field">
+      <input type="email" name="email" value="{{ user.username }}" maxlength="254" class="focus-effect" aria-label="Disabled input example" disabled readonly id="id_email">
+      <span class="focus-border">
+        <i></i>
+      </span>
+    </div>
+
+    <label for="password">비밀번호</label>
+    <div class="login-field">
+      <a class="focus-effect" href="{% url 'accounts:password' %}">변경 페이지 바로가기 <i class="bi bi-arrow-right-circle-fill"></i></a>
+      <span class="focus-border">
+        <i></i>
+      </span>
+    </div>
+
+    <label for="image">프로필 사진</label>
+    <div class="login-field">
+      {% render_field form.image type="file" class="focus-effect" name="image" %}
+      <span class="focus-border">
+        <i></i>
+      </span>
+    </div>
+    
+    <label for="gender">성별</label>
+    <div class="login-field">
+      <p class="focus-effect" name="gender">
+        {% if user.gender == True %}
+        남자
+        {% else %}
+        여자
+        {% endif %}</p>
+      <span class="focus-border">
+        <i></i>
+      </span>
+    </div>
+    
+    <input class="login-button neg-btn" type="submit" value="저장">
   </form>
-  <a href="{% url 'accounts:password' %}"><button class="login-button" type='submit' content='수정'>비밀번호 변경</button></a>
-</div>
+</section>
 {% endblock content %}
+
 {% block script %}{% endblock script %}

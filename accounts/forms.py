@@ -1,7 +1,5 @@
 from bootstrap_datepicker_plus.widgets import (
     DatePickerInput,
-    TimePickerInput,
-    DateTimePickerInput,
     MonthPickerInput,
     YearPickerInput,
 )
@@ -9,6 +7,12 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth import get_user_model
+
+
+GENDER_CHOICE = [
+    "여성",
+    "남성",
+]
 
 
 class SignupForm(UserCreationForm):
@@ -23,9 +27,8 @@ class SignupForm(UserCreationForm):
             "image",
             "gender",
         )
-        CHOICES = [("1", "남성"), ("2", "여성")]
         gender = forms.BooleanField(
-            label="성별", widget=forms.RadioSelect(choices=CHOICES)
+            label="성별", widget=forms.RadioSelect(choices=GENDER_CHOICE)
         )
 
         widgets = {
@@ -38,4 +41,9 @@ class UpdateForm(UserChangeForm):
 
     class Meta:
         model = get_user_model()
-        fields = ("image",)
+        fields = (
+            "email",
+            "nickname",
+            "gender",
+            "image",
+        )

@@ -7,49 +7,50 @@
 {% load humanize %}
 
 {% block content %}
-<form role="search" class="s_form d-flex" action="{% url 'articles:search' %}" method='GET'>
-  <!-- 카테고리 선택 -->
-  <select name="field" class="select border rounded-2" aria-label="default select example">
-    <option value="all">모두</option>
-    {% for i in categories %}
-    <option value="{{ i.0 }}">{{ i.1 }}</option>
-    {% endfor %}
-  </select>
-  <!-- 검색어 입력 -->
-  <div class="search">
-    <input class="s_input w-100 h-100" name="q" type="search" placeholder="검색어를 입력해주세요" aria-label="Search">
-    <button class="btnClear" type="reset">
-      <img src="https://img.icons8.com/ios/512/cancel.png" alt="">
-    </button>
-    <button class="btnSearch" type="submit">
-      <i class="bi bi-search"></i>
-    </button>
-  </div>
-</form>
-
-<section class="container container_z">
-  <!-- 안내 문구 -->
-  <p class="my-5">{{ query }} 검색결과</p>
-  <!-- 상품 목록 -->
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 my-5" >
-    {% for product in products %}
-    <a href="{% url 'articles:product_detail' product.pk %}">
-      <div class="col d-flex justify-content-center mb-5">
-        <div class="card">
-          <div class="card-img">
-            <img class="w-100 h-100 rounded" src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
-          </div>
-          <div>
-            <div>{{ product.title }}</div>
-            <p class='text-secondary fs-6 m-0'>{{ product.brand }}</p>
-            <div class="fs-5 mt-2">
-              <span class="fw-bold text-dark">{{ product.price|intcomma }}원</span>
+<section class="container content-wrapper">
+  <form role="search" class="s_form d-flex" action="{% url 'articles:search' %}" method='GET'>
+    <!-- 카테고리 선택 -->
+    <select name="field" class="select border rounded-2" aria-label="default select example">
+      <option value="all">모두</option>
+      {% for i in categories %}
+      <option value="{{ i.0 }}">{{ i.1 }}</option>
+      {% endfor %}
+    </select>
+    <!-- 검색어 입력 -->
+    <div class="search">
+      <input class="s_input w-100 h-100" name="q" type="search" placeholder="검색어를 입력해주세요" aria-label="Search">
+      <button class="btnClear" type="reset">
+        <img src="https://img.icons8.com/ios/512/cancel.png" alt="">
+      </button>
+      <button class="btnSearch" type="submit">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </form>
+  <div class="container_z">
+    <!-- 안내 문구 -->
+    <p class="my-5">{{ query }} 검색결과</p>
+    <!-- 상품 목록 -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 my-5" >
+      {% for product in products %}
+      <a href="{% url 'articles:product_detail' product.pk %}">
+        <div class="col d-flex justify-content-center mb-5">
+          <div class="card">
+            <div class="card-img">
+              <img class="w-100 h-100 rounded" src="{{ product.productimages_set.all.0.images }}" alt="product.productimages_set.all.0.images">
+            </div>
+            <div>
+              <div>{{ product.title }}</div>
+              <p class='text-secondary fs-6 m-0'>{{ product.brand }}</p>
+              <div class="fs-5 mt-2">
+                <span class="fw-bold text-dark">{{ product.price|intcomma }}원</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </a>
-    {% endfor %}
+      </a>
+      {% endfor %}
+    </div>
   </div>
 </section>
 {% endblock content %}

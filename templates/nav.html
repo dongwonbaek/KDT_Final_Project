@@ -102,15 +102,15 @@
     </a>
     <ul class="nav nav-pills">
       <li class="nav-item">
-        <a class="nav-linkk nav-link-fade" href="{% url 'articles:product_rank' %}">랭킹</a>
+        <a class="myNavLink nav-link-fade" href="{% url 'articles:product_rank' %}">랭킹</a>
       </li>
       <li class="nav-item">
-        <a class="nav-linkk nav-link-fade" href="">카테고리</a>
+        <a class="myNavLink nav-link-fade" href="">카테고리</a>
         <div id="submenu">
           <ul class="category-submenu">
             {% for category in categories %}
             <li>
-              <a class="nav-linkk" href="{% url 'articles:product_list' category.0 %}">
+              <a class="myNavLink" href="{% url 'articles:product_list' category.0 %}">
                 <img src="../../../static/img/base/category{{ category.0 }}.png">{{ category.1 }}</a>
             </li>
             {% endfor %}
@@ -118,37 +118,33 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-linkk nav-link-fade" href="{% url 'articles:community_index' %}">커뮤니티</a>
+        <a class="myNavLink nav-link-fade" href="{% url 'articles:community_index' %}">커뮤니티</a>
       </li>
       <li class="nav-item">
-        <a class="nav-linkk nav-link-fade" href="{% url 'articles:review_index' %}">리뷰</a>
+        <a class="myNavLink nav-link-fade" href="{% url 'articles:review_index' %}">리뷰</a>
       </li>
       <li class="nav-item">
-        <a class="nav-linkk nav-link-fade" href="#scrollspyHeading2">Q&A</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-linkk nav-link-fade" href="{% url 'articles:search' %}"><i class="bi bi-search"></i></a>
+        <a class="myNavLink nav-link-fade" href="{% url 'articles:search' %}"><i class="bi bi-search"></i></a>
       </li>
     </ul>
     <ul class="nav-end">
       {% if request.user.is_authenticated %}
-      <li class="nav-item mx-4"><i class="bi bi-bell"></i></li>
       <li class="nav-pf">
         <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
           {% if request.user.image %}
-            <img src="{{ request.user.image.url }}" class="nav-pf-img" alt="profile-image">
+            <div class="nav-pf-img" style="background-image:url({{ request.user.image.url }});"></div>
           {% else %}
-            <img src="{% static 'img/no-avatar.jpg' %}" class="nav-pf-img" alt="no-avatar">
+            <div class="nav-pf-img" style="background-image:url('/static/img/no-avatar.jpg');"></div>
           {% endif %}
         </button>
         <ul class="dropdown-menu">
           <li>
             {% if request.user.image %}
-              <img src="{{ request.user.image.url }}" alt="profile-image">
+              <div class="dd-pf-img" style="background-image:url({{ request.user.image.url }});"></div>
             {% else %}
-              <img src="{% static 'img/no-avatar.jpg' %}" alt="no-avatar">
+              <div class="dd-pf-img" style="background-image:url('/static/img/no-avatar.jpg');"></div>
             {% endif %}
-            <span class="nav-pf-nick">{{ request.user.nickname }}</span> 님
+            <p><span class="nav-pf-nick">{{ request.user.nickname }}</span> 님</p>
           </li>
           <li>
             <a class="dropdown-item" href="{% url 'accounts:detail' request.user.pk %}">
