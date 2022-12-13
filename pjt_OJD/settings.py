@@ -47,9 +47,9 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # DEBUG = True
 
 ALLOWED_HOSTS = [
-    "127.0.0.1", 
+    "127.0.0.1",
     "localhost",
-    "odjbean-env.eba-pmqftqpj.ap-northeast-2.elasticbeanstalk.com"
+    "odjbean-env.eba-pmqftqpj.ap-northeast-2.elasticbeanstalk.com",
 ]
 
 
@@ -229,17 +229,17 @@ MESSAGE_TAGS = {
 
 # aws
 DEBUG = os.getenv("DEBUG") == "True"
-if DEBUG: 
+if DEBUG:
     MEDIA_URL = "/media/"
     MEDIA_ROOT = BASE_DIR / "media"
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
         }
     }
 
-else:   
+else:
     # DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
     DEFAULT_FILE_STORAGE = "pjt_OJD.storages.MediaStorage"
 
@@ -255,10 +255,10 @@ else:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
-            "NAME": os.getenv("DATABASE_NAME"), # .env 파일에 value 작성
+            "NAME": os.getenv("DATABASE_NAME"),  # .env 파일에 value 작성
             "USER": "postgres",
-            "PASSWORD": os.getenv("DATABASE_PASSWORD"), # .env 파일에 value 작성
-            "HOST": os.getenv("DATABASE_HOST"), # .env 파일에 value 작성
+            "PASSWORD": os.getenv("DATABASE_PASSWORD"),  # .env 파일에 value 작성
+            "HOST": os.getenv("DATABASE_HOST"),  # .env 파일에 value 작성
             "PORT": "5432",
         }
     }
