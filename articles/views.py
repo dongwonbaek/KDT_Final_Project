@@ -19,6 +19,25 @@ import random
 
 
 def index(request):
+    recent_category = request.session.get('recent_category')
+    if request.user.is_authenticated:
+        if recent_category:
+            recommend_products = Product.objects.filter(category=recent_category).annotate(
+                score=Count("like_user", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age))*
+                Avg("review__rating", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age))*2
+                ).order_by('score')[:10]
+            
+        else:
+            recommend_products = Product.objects.annotate(
+                score=Count("like_user", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age))*
+                Avg("review__rating", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age))*2
+                ).order_by('score')[:10]
+    else:
+        if recent_category:
+            recommend_products = Product.objects.filter(category=recent_category).annotate(score=Count("like_user")*Avg("review__rating")*2).order_by('score')[:10]
+        else:
+            recommend_products = Product.objects.annotate(score=Count("like_user")*Avg("review__rating")*2).order_by('score')[:10]
+
     gender_products = Product.objects.annotate(
         wish_men_cnt=Count(
             "like_user", filter=Q(like_user__gender=True) & Q(like_user__age=2)
@@ -48,11 +67,13 @@ def index(request):
     context = {
         "gender_products": gender_products,
         "categories": Product.category_choice,
+        "recommend_products": recommend_products,
     }
     return render(request, "articles/index.html", context)
 
 
 def product_list(request, category_pk):
+    request.session['recent_category'] = category_pk
     context = {
         "products": Product.objects.filter(category=category_pk)
         .annotate(review_avg=Avg("review__rating"))
@@ -123,6 +144,7 @@ def product_detail(request, product_pk):
                 rating_list.append(round((rating_count / total) * 100))
             else:
                 rating_list.append(0)
+    request.session['recent_category'] = product.category
     context = {
         "product": product,
         "rating_avg": rating_avg,
@@ -171,11 +193,49 @@ def product_delete(request, product_pk):
 
 
 def review_index(request):
-    reviews = Review.objects.order_by("-pk")
+    reviews = Review.objects.order_by("-pk")[:12]
+    reviews_all = Review.objects.order_by("-pk")
+    page = int(request.GET.get("page", 1) or 1)
+    limit = 12
+
+    offset = limit * (page - 1)
+    if offset == 0:
+        context = {
+            'reviews': reviews,
+        }
+        return render(request, 'articles/review_index.html', context)
+    end = offset + limit
+    review_Data = reviews_all[offset:end]
+    datalist = []
+    for a in review_Data:
+        if a.image:
+            review_image = a.image.url
+        else:
+            review_image = '/static/img/dummy.png'
+        if a.user.image:
+            user_image = a.user.image.url
+        else:
+            user_image = '/static/img/no-avatar.jpg'
+        datalist.append([
+            a.pk, #0
+            a.title, #1
+            a.content, #2
+            a.product.pk, #3
+            a.product.title, #4
+            a.user.pk, #5
+            a.user.nickname, #6
+            review_image, #7
+            user_image, #8
+            a.rating, #9
+            a.created_at.year, #10
+            a.created_at.month, #11
+            a.created_at.day, #12
+        ])
+
     context = {
-        "reviews": reviews,
+        'reviewData': datalist,
     }
-    return render(request, "articles/review_index.html", context)
+    return JsonResponse(context)
 
 
 @login_required

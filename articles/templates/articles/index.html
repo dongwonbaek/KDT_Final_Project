@@ -12,7 +12,7 @@
 {% block content %}
   <!-- 친구 목록 Modal -->
   <div class="modal fade select-friend-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">친구 선택</h1>
@@ -131,7 +131,7 @@
                   <span class='mb-3 fs-4 fw-bold text-white'>{{ forloop.counter }}</span>
                 </div>
               </div>
-              <div>{{ product.title }}</div>
+              <div class='two-line-ellipsis'>{{ product.title }}</div>
               <p class='text-secondary m-0' style='font-size:.8rem;'>{{ product.brand }}</p>
               <p class='text-dark m-0'>{{ product.price|intcomma }}원</p>
             </a>
@@ -148,6 +148,42 @@
       <div><img src="https://picsum.photos/300/200?random=5"></div>
       <div><img src="https://picsum.photos/300/200?random=6"></div>
     </div>
+
+    <div style='margin-top:10rem;' class="row">
+      <h2 class="fw-bold mx-1">
+        <span>이런 선물은 어때요?</span>
+        <i class="bi bi-question-circle fs-5 text-secondary me-2" data-bs-custom-class="custom-tooltip" data-bs-toggle="tooltip" data-bs-title="오다주 AI가 사용자와 비슷한 유형의 선물들을 추천합니다."></i>
+      </h2>
+      <div class="justify-content-center">
+        <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            {% for product in recommend_products %}
+              <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
+                <div class='col-3'>
+                  <div class='mx-2 border-0'>
+                    <div class="d-flex align-items-center justify-content-center">
+                      <a href="{% url 'articles:product_detail' product.pk %}">
+                        <img class='rounded w-100 mb-1' src="{{ product.productimages_set.all.0.images }}" alt="{{ product.productimages.all.0.images }}">
+                        <p class='m-0 two-line-ellipsis'>{{ product.title }}</p>
+                        <p class='m-0 text-secondary' style='font-size:.8rem;'>{{ product.brand }}</p>
+                        <p class='m-0 text-dark'>{{ product.price|intcomma }}원</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <a class="carousel-control-prev bg-transparent" href="#recipeCarousel" role="button" data-bs-slide="prev">
+            <span style="width:1.5rem;" class="carousel-control-prev-icon bg-dark rounded" aria-hidden="true"></span>
+          </a>
+          <a class="carousel-control-next bg-transparent" href="#recipeCarousel" role="button" data-bs-slide="next">
+            <span style="width:1.5rem;" class="carousel-control-next-icon bg-dark rounded" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- MD 추천 -->
     <div class="reco-per-member row row-cols-3">
       <!-- 병우 -->
@@ -332,5 +368,25 @@
       document.getElementById('result').innerText = 
         event.target.value;
     }
+  </script>
+  <script>
+    let items = document.querySelectorAll('.carousel .carousel-item')
+    items.forEach((el) => {
+      const minPerSlide = 4
+      let next = el.nextElementSibling
+      for (var i = 1; i < minPerSlide; i++) {
+        if (!next) {
+          // wrap carousel by using first child
+          next = items[0]
+        }
+        let cloneChild = next.cloneNode(true)
+        el.appendChild(cloneChild.children[0])
+        next = next.nextElementSibling
+      }
+    })
+  </script>
+  <script>
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
   </script>
 {% endblock script %}
