@@ -79,14 +79,17 @@
   padding: 8px;
 }
 
-.commu_detail_main {
-  width: 1000px;
-  margin: auto;
-}
-
 .commu_detail_hr {
   background-color: #297372;
   height: 0.1rem;
+}
+
+/* community_detail */
+
+.commu_container {
+  width: 1000px;
+  margin: auto;
+  margin-top: 10rem;
 }
 
 .commu_pf_img {
@@ -94,8 +97,6 @@
   width: 40px;
   border-radius: 50%;
 }
-
-/* community_detail */
 
 .big_img {
   height: 30rem;
@@ -127,12 +128,6 @@ input {
 }
 
 /* 이미지 슬라이드 */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
 .mySlides {
   display: none;
 }
