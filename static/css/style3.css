@@ -105,13 +105,4 @@
 .big_img img {
   object-fit: cover;
   object-position: center;
-
-}
-
-.bi-heart-fill{
-  color:crimson;
-}
-
-.bi-heart{
-  color:crimson;
 }
