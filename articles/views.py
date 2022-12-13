@@ -27,7 +27,6 @@ def index(request):
                 Avg("review__rating", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age), distinct=True)*2+
                 Count("review", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age), distinct=True)
                 ).order_by('-score')[:10]
-            print(recommend_products[0].score)
         else:
             recommend_products = Product.objects.annotate(
                 score=Count("like_user", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age), distinct=True)*
