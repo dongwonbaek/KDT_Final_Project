@@ -106,7 +106,8 @@
         <!-- 댓글 현황 -->
         <div id="comments">
           {% for comment in comments %}
-          <div class="d-flex">
+          <div class="d-flex justify-content-between">
+            <div class="d-flex">
             {% if comment.user.image %}
             <img src="{{ comment.user.image.url }}" class="commu_pf_img mx-2 my-2" alt="유저 이미지">
             {% else %}
@@ -114,11 +115,14 @@
             {% endif %}
             <p> {{ comment.content }}</p>
           </div>
+          <div class="my-2">
+            {% if request.user == comment.user %}
+              <a href="{% url 'articles:community_comment_delete' community.pk %}" class='btn btn-sm btn-outline-danger'>삭제</a>
+            {% endif %} 
+          </div>
+          </div>
           <hr class="commu_detail_hr">
           
-          {% if request.user == comment.user %}
-            <a href="{% url 'articles:community_comment_delete' community.pk %}" class='btn btn-sm btn-outline-danger'>삭제</a>
-          {% endif %}
           
           {% endfor %}
         </div>
