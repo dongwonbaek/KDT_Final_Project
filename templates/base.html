@@ -54,7 +54,6 @@
   <!-- reset style-->
   <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <link rel="stylesheet" href="{% static 'css/base.css' %}">
   <link rel="stylesheet" href="{% static 'css/style2.css' %}">
   <link rel="stylesheet" href="{% static 'css/style3.css' %}">
   {% block style %}{% endblock style %}
@@ -79,9 +78,8 @@
       </div>    
     {% endfor %}
   {% endif %}
-  <main>
-    {% block content %}{% endblock content %}
-  </main>
+
+  {% block content %}{% endblock content %}
 
   <!-- footer -->
   {% include "footer.html" %}

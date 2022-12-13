@@ -5,8 +5,8 @@
   color: white;
   background-color: #297372;
   font-size: 1.5rem;
-  height: 18rem;
-  padding: 5rem 8rem 3rem 8rem;
+  height: 20rem;
+  padding: 8rem 3rem 8rem;
 }
 
 .opa {
@@ -91,22 +91,20 @@
 .buy:hover {
   color: white;
   text-decoration: none;
-  background-image: linear-gradient(
-    to right,
-    #e7484f,
-    #e7484f 16.65%,
-    #f68b1d 16.65%,
-    #f68b1d 33.3%,
-    #fced00 33.3%,
-    #fced00 49.95%,
-    #009e4f 49.95%,
-    #009e4f 66.6%,
-    #00aac3 66.6%,
-    #00aac3 83.25%,
-    #732982 83.25%,
-    #732982 100%,
-    #e7484f 100%
-  );
+  background-image: linear-gradient(to right,
+      #e7484f,
+      #e7484f 16.65%,
+      #f68b1d 16.65%,
+      #f68b1d 33.3%,
+      #fced00 33.3%,
+      #fced00 49.95%,
+      #009e4f 49.95%,
+      #009e4f 66.6%,
+      #00aac3 66.6%,
+      #00aac3 83.25%,
+      #732982 83.25%,
+      #732982 100%,
+      #e7484f 100%);
   animation: slidebg 2s linear infinite;
 }
 
@@ -194,7 +192,7 @@
   padding: 8px 20px;
 }
 
-.emoji-count{
+.emoji-count {
   color: #F28080;
 }
 
@@ -240,7 +238,7 @@
   right: 3rem;
   top: 35%;
   transform: translateY(-50%);
-  width: 1.2rem; 
+  width: 1.2rem;
   height: 1.2rem;
 }
 
@@ -249,7 +247,7 @@ input::-webkit-search-decoration,
 input::-webkit-search-cancel-button,
 input::-webkit-search-results-button,
 input::-webkit-search-results-decoration {
-  display:none;
+  display: none;
 }
 
 .slideshow-container {
@@ -366,23 +364,22 @@ input::-webkit-search-results-decoration {
   padding: 8px;
 }
 
-.review_btn:hover, .commu_btn:hover {
-  background-image: linear-gradient(
-    to right,
-    #e7484f,
-    #e7484f 16.65%,
-    #f68b1d 16.65%,
-    #f68b1d 33.3%,
-    #fced00 33.3%,
-    #fced00 49.95%,
-    #009e4f 49.95%,
-    #009e4f 66.6%,
-    #00aac3 66.6%,
-    #00aac3 83.25%,
-    #732982 83.25%,
-    #732982 100%,
-    #e7484f 100%
-  );
+.review_btn:hover,
+.commu_btn:hover {
+  background-image: linear-gradient(to right,
+      #e7484f,
+      #e7484f 16.65%,
+      #f68b1d 16.65%,
+      #f68b1d 33.3%,
+      #fced00 33.3%,
+      #fced00 49.95%,
+      #009e4f 49.95%,
+      #009e4f 66.6%,
+      #00aac3 66.6%,
+      #00aac3 83.25%,
+      #732982 83.25%,
+      #732982 100%,
+      #e7484f 100%);
   animation: slidebg2 2s linear infinite;
 }
 
