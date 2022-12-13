@@ -79,7 +79,7 @@ def update(request):
             if form.is_valid():
                 form.save()
                 messages.success(request, "수정되었습니다.")
-            return redirect("articles:detail", request.user.pk)
+            return redirect("accounts:detail", request.user.pk)
         else:
             form = UpdateForm(instance=request.user)
         context = {

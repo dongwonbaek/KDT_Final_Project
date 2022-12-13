@@ -12,7 +12,7 @@
 {% block content %}
   <!-- 친구 목록 Modal -->
   <div class="modal fade select-friend-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">친구 선택</h1>
@@ -131,7 +131,7 @@
                   <span class='mb-3 fs-4 fw-bold text-white'>{{ forloop.counter }}</span>
                 </div>
               </div>
-              <div>{{ product.title }}</div>
+              <div class='two-line-ellipsis'>{{ product.title }}</div>
               <p class='text-secondary m-0' style='font-size:.8rem;'>{{ product.brand }}</p>
               <p class='text-dark m-0'>{{ product.price|intcomma }}원</p>
             </a>
