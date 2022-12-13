@@ -6,39 +6,43 @@
 {% load imagekit %}
 
 {% block title %} | 위시리스트{% endblock title %}
-{% block style %}{% endblock style %}
-{% block content %}
+{% block style %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<div class="signup-wrapper">
-  <h1>{{ user.nickname }} 님은 이런 선물을 받고 싶어해요.</h1>
-  <span>{{ user.nickname }} 님이 최근 1년간 추가한 상품 내역이 제공됩니다.</span>
-  <span></span>
-  <hr>
-</div>
-{% if user.like_product.all %}
-<div class="swiper">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    {% for product in user.like_product.all %}
-    <div class="swiper-slide mb-5 d-flex flex-column align-items-center">
-      <img class="review-image" src="{{ product.productimages_set.all.0.images }}">
-      <div class="word"><a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a></div>
-    </div>
-    {% endfor %}
-  </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
+{% endblock style %}
 
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-</div>
-{% else %}
-<div class="text-center">관심상품 내역이 없습니다.</div>
-{% endif %}
-{% endblock content %}
+{% block content %}
+  <section class="content-wrapper">
+    <div class="signup-wrapper">
+      <h1>{{ user.nickname }} 님은 이런 선물을 받고 싶어해요.</h1>
+      <span>{{ user.nickname }} 님이 최근 1년간 추가한 상품 내역이 제공됩니다.</span>
+      <span></span>
+      <hr>
+    </div>
+    {% if user.like_product.all %}
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        {% for product in user.like_product.all %}
+        <div class="swiper-slide mb-5 d-flex flex-column align-items-center">
+          <img class="review-image" src="{{ product.productimages_set.all.0.images }}">
+          <div class="word"><a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a></div>
+        </div>
+        {% endfor %}
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    {% else %}
+    <div class="text-center">관심상품 내역이 없습니다.</div>
+    {% endif %}
+  </section>
+{% endblock content %}            
 {% block script %}
 
 <script>

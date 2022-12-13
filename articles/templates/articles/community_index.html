@@ -7,18 +7,16 @@
 {% load imagekit %}
 
 {% block content %}
-<section class="wrapper container">
-  <section class="d-flex justify-content-between">
-    <div class="fs-1">커뮤니티</div>
+<section class="containe content-wrapper">
+  <div class="d-flex justify-content-between">
+    <h1>커뮤니티</h1>
     <div class="d-flex flex-column justify-content-end">
       <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_create' %}">
         <i class="fa-solid fa-pen"> 글쓰기</i>
       </a>
     </div>
-  </section>
-
+  </div>
   <hr class="commu_hr">
-
   <table class="commu_table">
     <tr class="text-center">
       <td class="commu_num">번호</td>
@@ -38,7 +36,6 @@
       <td>{{ community.created_at.date }}</td>
       <td>{{ community.hits }}</td>
       <td>{{ community.like_users.count }}</td>
-
     </tr>
     {% endfor %}
   </table>
