@@ -1,27 +1,51 @@
+{% load static %}
+<!--위아래버튼-->
 <div id="pagescroll">
   <p>
     <a id="scrollup" href="#" >
-      <img src="//www.luvreparis.co.kr/design/luvre/img/up.png">
+      <img src="{% static 'img/base/scroll_up.png' %}">
     </a>
   </p>
   <p>
     <a id="scrolldown" href="#">
-      <img src="//www.luvreparis.co.kr/design/luvre/img/btn_down.png">
+      <img src="{% static 'img/base/scroll_down.png' %}">
     </a>
   </p>
 </div>
+
+<!--푸터-->
 <footer>
+  <!--트리전구-->
   <ul id="wire" class="">
     {% for i in "x"|rjust:"36" %}
     <li></li>
     {% endfor %}
   </ul>
-  🎁 © {% now 'Y' %} 오다주웠다. 희동 & 건희 & 동원 & 병우 & 다솔 & 성민 🎁
+  <!--푸터 컨텐츠-->
+  <div class="container footer-content">
+    <img src="{% static 'img/LOGO/logo_login.png' %}" alt="footer-logo">
+    <div class="footer-text">
+      <p>Copyright © {% now 'Y' %} All Rights Reserved by <a href="https://github.com/min486/Project_OJD">ODJ.</a></p>
+      <ul class="d-flex">
+        <li><a href="https://github.com/Gkhy">권건희</a></li>
+        <li><a href="https://github.com/solightnsalt">김다솔</a></li>
+        <li><a href="https://github.com/BuildEnough">김병우</a></li>
+        <li><a href="https://github.com/kimheekimhee">김희동</a></li>
+        <li><a href="https://github.com/dongwonbaek">백동원</a></li>
+        <li><a href="https://github.com/min486">장성민</a></li>
+      </ul>
+    </div>
+    <div>
+      <ul class="social-icons">
+        <li><a class="facebook" href="#"><i class="bi bi-facebook"></i></a></li>
+        <li><a class="twitter" href="#"><i class="bi bi-twitter"></i></a></li>
+        <li><a class="dribbble" href="#"><i class="bi bi-dribbble"></i></a></li>
+        <li><a class="linkedin" href="#"><i class="bi bi-linkedin"></i></a></li>   
+      </ul>
+    </div>
+    </div>
+  </div>
 </footer>
-<script>
-  var tagName = $(findparent).parent().prop('tagName');
-  console.log(tagName);
-</script>
 <script>
   // 맨아래로
   var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();

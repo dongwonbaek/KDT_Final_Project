@@ -11,57 +11,62 @@
 {% block style %}{% endblock style %}
 {% block content %}
 
-<section class="container signup-wrapper">
-  <h2 class="text-center">로그인</h2>
-  <form action="{% url 'accounts:login' %}" method="POST" class="d-flex flex-column align-items-center" onsubmit="return frm_check();">
+<section class="container accounts-wrapper">
+  <form action="{% url 'accounts:login' %}" method="POST" onsubmit="return frm_check();">
     {% csrf_token %}
     <label for="email">아이디</label>
-    {% render_field form.username class="user-input" placeholder="이메일을 입력하세요" type="text" name="email" id="logId" %}
+    <div class="login-field">
+      {% render_field form.username class="focus-effect" placeholder="이메일을 입력하세요" type="email" name="email" id="logId" %}
+      <span class="focus-border">
+        <i></i>
+      </span>
+    </div>
     <label for="password">비밀번호</label>
-    {% render_field form.password class="user-input" placeholder="비밀번호를 입력하세요" type="password" name="password" autocomplete="false" id="key" %}
-    <div id="keyShow">SHOW</div>    
-    <span class="input-wrap">
-      <input type="checkbox" name="saveId" id="saveId" style="cursor: hand; cursor: pointer">
-      <label for="saveId">
-        <span></span></label>
-      아이디 저장
-    </span>
-    <button class="pos-btn my-2" type='submit' content='로그인' id="checkKey">로그인</button>
-    <p class="text-center mt-5">회원이 아니신가요?
-      <a class="to-signup" href="{% url 'accounts:signup' %}">
-        <b>회원가입<i class="bi bi-person-fill-add"></i>
-        </b>
-      </a>
-    </p>
+    <div class="login-field">
+      {% render_field form.password class="user-input focus-effect" placeholder="비밀번호를 입력하세요" type="password" name="password" autocomplete="false" id="key" onkeyup="checkCapsLock(event)" %}
+      <span class="focus-border">
+        <i></i>
+      </span>
+      <div id="keyShow">SHOW</div> 
+    </div>
+    <div id='message'></div>
+    <div class="input-wrap">
+      <input type="checkbox" name="saveId" id="saveId" style="cursor: pointer; accent-color: ">
+      <label for="saveId">아이디 저장</label>
+    </div>
+    <button class="pos-btn login-button" type='submit' content='로그인' id="checkKey">로그인</button>
   </form>
-  <p>또는</p>
-  <p>SNS계정으로 간편 로그인/회원가입</p>
-  <!--소셜 로그인 버튼 모음-->
+  <p class="text-center">아직 회원이 아니신가요?
+    <a class="text-decoration-none" href="{% url 'accounts:signup' %}"><b>회원가입</b></a>
+  </p>
+  <div class="hr-sect">또는</div>
+  <p>SNS계정으로 간편 로그인 / 회원가입</p>
+  <!--소셜 로그인-->
   <div class="d-flex justify-content-center my-0">
     <form action="/accounts/google/login/" method="post">
       {% csrf_token %}
       <button class="btn btn-link my-2 my-sm-0 py-1" style="color : #FFFFFF" type="submit"
         onclick="document.getElementById('test').submit();"><img src="{% static 'img/google.png' %}" alt="구글"
-          style="height:35px;"></button>
+          style="height:55px;"></button>
     </form>
     <form class="mx-1" action="/accounts/kakao/login/" method="post">
       {% csrf_token %}
       <button class="btn btn-link my-2 my-sm-0 py-1" style="color : #FFFFFF" type="submit"
         onclick="document.getElementById('test').submit();"><img src="{% static 'img/kakao.png' %}" alt="카카오"
-          style="height:35px;"></button>
+          style="height:55px;"></button>
     </form>
     <form action="/accounts/naver/login/" method="post">
       {% csrf_token %}
       <button class="btn my-2 my-sm-0 btn-l py-1" style="color : #FFFFFF" type="submit"
         onclick="document.getElementById('test').submit();"><img src="{% static 'img/naver.png' %}" alt="네이버"
-          style="height:35px;"></button>
+          style="height:55px;"></button>
     </form>
-  </div>
+  </div><!--소셜 로그인 끝--> 
 </section>
 {% endblock content %}
 {% block script %}
+<!--아이디 저장-->
 <script>
-  //아이디 기억하기 
   $(function () {
     fnInit();
   });
@@ -127,8 +132,8 @@
     }
   }
 </script>
+<!--비밀번호 보이기-->
 <script>
-  // 비밀번호 보이기
   $("#key").on("keyup", function(event) {
     if (event.keyCode === 13) {
       event.preventDefault();
@@ -152,18 +157,16 @@
     }
   });
 </script>
+<!--캡스락 경고-->
 <script>
-// JavaScript for label effects only
-$(window).load(function(){
-  $(".col-3 input").val("");
-  
-  $(".input-effect input").focusout(function(){
-    if($(this).val() != ""){
-      $(this).addClass("has-content");
-    }else{
-      $(this).removeClass("has-content");
+  function checkCapsLock(event)  {
+    if (event.getModifierState("CapsLock")) {
+      document.getElementById("message").innerHTML 
+        = "<i class='bi bi-exclamation-octagon'></i>" + "&nbspCaps Lock이 켜져 있습니다."
+    }else {
+      document.getElementById("message").innerText 
+        = ""
     }
-  })
-});
+  }
 </script>
 {% endblock script %}
