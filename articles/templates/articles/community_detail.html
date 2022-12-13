@@ -115,6 +115,11 @@
     <p> {{ comment.content }}</p>
   </div>
   <hr class="commu_detail_hr">
+
+  {% if request.user == comment.user %}
+    <a href="{% url 'articles:community_comment_delete' community.pk %}" class='btn btn-sm btn-outline-danger'>삭제</a>
+  {% endif %}
+
   {% endfor %}
   </div>
 </div>
