@@ -228,7 +228,8 @@ MESSAGE_TAGS = {
 # }
 
 # aws
-DEBUG = os.getenv("DEBUG") == "True"
+# DEBUG = os.getenv("DEBUG") == "True"
+DEBUG = "False"
 if DEBUG: 
     MEDIA_URL = "/media/"
     MEDIA_ROOT = BASE_DIR / "media"
