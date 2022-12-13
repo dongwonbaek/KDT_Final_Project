@@ -568,6 +568,7 @@ footer .footer-text {
 
 .select-friend-modal .to-friend {
   min-height: 200px;
+  max-height: 300px;
   overflow-y: scroll;
 }
 
@@ -1200,6 +1201,8 @@ path.two {
 
 .detail-sub {
   width: 200px;
+  overflow: hidden;
+
 }
 
 .detail-sub>h4 {
@@ -1222,11 +1225,13 @@ path.two {
   max-width: 75%;
 }
 
-.ellipsis-100 {
-  white-space: nowrap;
+.two-line-ellipsis {
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 /*패스워드 */
@@ -1291,4 +1296,10 @@ path.two {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* 메이페이지 툴팁 */
+.custom-tooltip {
+  --bs-tooltip-bg: #003B41;
+  --bs-tooltip-arrow-height: 1rem;
 }

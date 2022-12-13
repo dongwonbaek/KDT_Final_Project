@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% include 'community_detail' %}
 
 {% load static %}
 {% load widget_tweaks %}
@@ -8,10 +9,12 @@
 {% block content %}
 <section class="wrapper container">
   <section class="d-flex justify-content-between">
-    <h3>커뮤니티</h3>
-    <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_create' %}">
-      <i class="fa-solid fa-pen"> 글쓰기</i>
-    </a>
+    <div class="fs-1">커뮤니티</div>
+    <div class="d-flex flex-column justify-content-end">
+      <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_create' %}">
+        <i class="fa-solid fa-pen"> 글쓰기</i>
+      </a>
+    </div>
   </section>
 
   <hr class="commu_hr">
@@ -28,13 +31,14 @@
     {% for community in communities %}
     <tr class="text-center">
       <td>{{ community.id }}</td>
-      <td class="text-start">
+      <td class="text-start text-center">
         <a href="{% url 'articles:community_detail' community.pk %}">{{ community.title }}</a>
       </td>
-      <td>익명의 장성민</td>
+      <td>{{ community.user.nickname }}</td>
       <td>{{ community.created_at.date }}</td>
-      <td>2</td>
-      <td>1</td>
+      <td>{{ community.hits }}</td>
+      <td>{{ community.like_users.count }}</td>
+
     </tr>
     {% endfor %}
   </table>

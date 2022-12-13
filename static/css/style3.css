@@ -5,10 +5,12 @@
 }
 
 .pen {
+  color: #297372;
   border: 1px solid #297372;
-  border-radius: 10px;
-  font-size: 1.5rem;
-  padding: 0 10px 0 12px;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 0 6px 0 8px;
+  height: 40px;
 }
 
 .pen:hover {
@@ -91,4 +93,16 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
+}
+ 
+/* community_detail */
+
+.big_img {
+  height: 30rem;
+  width: 50rem;
+}
+
+.big_img img {
+  object-fit: cover;
+  object-position: center;
 }

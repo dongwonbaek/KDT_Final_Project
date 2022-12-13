@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% load static %}
 {% load widget_tweaks %}
 {% load django_bootstrap5 %}
@@ -9,47 +8,156 @@
 {% block style %}{% endblock style %}
 {% block content %}
 
-
-<div class="text-center">
-    <h1>리뷰</h1>
+<div class="text-center" style='margin-top: 10rem;'>
+  <h1>최근 리뷰</h1>
 </div>
-
-{% for review in reviews %}
-
-<div
-class="container d-flex justify-content-between my-5"
-style="border: 0.5rem outset lightcoral; outline: 0.5rem outset lightblue; border-radius: 12px; outline-offset: 0.5rem;">
-
-    <img class="m-3" src="{{ review.image.url }}" alt="review.image" style="border: 0.5rem ridge ivory;">
-
-    <div class="m-5">
-        <div class="my-2">
-            <p>{{ review.title }}</p>
-        </div>
-        <div class="my-2">
-            <p>{{ review.content }}</p>
-        </div>
-        <div class="stars">
-            {% for i in "x"|rjust:"5" %}
-            {% if review.rating >= forloop.counter %}
-                <i class="fas fa-star"></i>
-            {% else %}
-                <i class="fas fa-star eee"></i>
-            {% endif %}
-            {% endfor %}
-        </div>
-        <div>
-            <a href="{% url 'accounts:detail' user.pk %}">{{ review.user.nickname }}</a>
-        </div>
-    </div>
-    <div class="my-5" style="display: flex; align-items: center;">
-        <a href="{% url 'articles:product_detail' review.product.pk %}">{{ review.product.title }}</a>
-    </div>
+<div class="container">
+  <div class="row" id='review-box'>
+    {% for review in reviews %}
+      <div class="col-4">
+        <a class='text-dark' href="{% url 'articles:product_detail' review.product.pk %}">
+          <div class="mt-5 p-3" style="border: 3px outset lightcoral; outline: 3px outset lightblue; border-radius: 12px; outline-offset: 3px;">
+            <div class='d-flex justify-content-between'>
+              <span>{{ review.title }}</span>
+              <span class='text-end'>
+                <em style='font-size: .8rem;' class='text-secondary'>{{ review.created_at.date }}</em>
+              </span>           
+            </div>
+            <span class="stars d-flex mb-1">
+              {% for i in "x"|rjust:"5" %}
+                {% if review.rating >= forloop.counter %}
+                  <i class="fas fa-star fs-6"></i>
+                {% else %}
+                  <i class="fas fa-star eee fs-6"></i>
+                {% endif %}
+              {% endfor %}
+            </span>
+            <div class="d-flex justify-content-between">
+              {% if review.image %}
+                <img src="{{ review.image.url }}" alt="review.image" style="height: 5rem;" class='rounded'>
+              {% else %}
+                <img src="{% static 'img/dummy.png' %}" alt="dummy" style="height: 5rem;" class='rounded'>
+              {% endif %}
+              <a class='d-flex align-items-end' href="{% url 'accounts:detail' user.pk %}">
+                {% if review.user.image %}
+                  <img src="{{ review.user.image.url }}" alt="profile_image" class='rounded-circle' style='height: 1.5rem;'>
+                {% else %}
+                  <img src="{% static 'img/no-avatar.jpg' %}" alt="no-avatar" class='rounded-circle border border-secondary' style='height: 1.5rem;'>
+                {% endif %}
+                <span class='text-dark fs-6 text-align-center'>{{ review.user.nickname }}</span>
+              </a>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  <p style='margin-top: 100px;' id='sentinel'></p>
 </div>
-
-{% endfor %}
-
-
 
 {% endblock content %}
-{% block script %}{% endblock script %}
+{% block script %}
+<script>
+function addNewContent() {
+  axios({
+    method: 'get',
+    url: '/review_index/',
+    params: { 
+      page: page
+    }
+
+  }).then(response => {
+    let dataList = response.data.reviewData
+    console.log(dataList)
+    for (let i = 0; i < dataList.length; i++) {
+      let rowData = dataList[i];
+      const reviewBox = document.querySelector('#review-box')
+      let div1 = document.createElement('div')
+      div1.classList.add('col-4')
+      let a1 = document.createElement('a')
+      a1.setAttribute('href', `/${rowData[3]}/product_detail/`)
+      a1.classList.add('text-dark')
+      let div2 = document.createElement('div')
+      div2.classList.add('mt-5', 'p-3')
+      div2.setAttribute('style', 'border: 3px outset lightcoral; outline: 3px outset lightblue; border-radius: 12px; outline-offset: 3px;')
+      let div3 = document.createElement('div')
+      div3.classList.add('d-flex', 'justify-content-between')
+      let span1 = document.createElement('span')
+      span1.innerText = rowData[1]
+      let span2 = document.createElement('span')
+      span2.classList.add('text-end')
+      let em1 = document.createElement('em')
+      em1.setAttribute('style', 'font-size: .8rem;')
+      em1.classList.add('text-secondary')
+      em1.innerText = `${rowData[10]}년 ${rowData[11]}월 ${rowData[12]}일`
+      span2.append(em1)
+      div3.append(span1, span2)
+      let span3 = document.createElement('span')
+      span3.classList.add('stars', 'd-flex', 'mb-1')
+      let i1 = document.createElement('i')
+      i1.classList.add('fas', 'fa-star', 'fs-6')
+      let i2 = document.createElement('i')
+      i2.classList.add('fas', 'fa-star', 'eee', 'fs-6')
+      for (let j = 0; j < 5; j++) {
+        if (rowData[9] > j) {
+          span3.append(i1)
+        } else {
+          span3.append(i2)
+        }
+      }
+      let div4 = document.createElement('div')
+      div4.classList.add('d-flex', 'justify-content-between')
+      let img1 = document.createElement('img')
+      img1.setAttribute('src', `${rowData[7]}`)
+      img1.setAttribute('alt', `${rowData[7]}`)
+      img1.setAttribute('style', 'height: 5rem;')
+      img1.classList.add('rounded')
+      div4.append(img1)
+      let a2 = document.createElement('a')
+      a2.setAttribute('href', `/accounts/${rowData[5]}/detail/`)
+      a2.classList.add('d-flex', 'align-items-end')
+      let img2 = document.createElement('img')
+      img2.setAttribute('src', `${rowData[8]}`)
+      img2.setAttribute('alt', `${rowData[8]}`)
+      img2.setAttribute('style', 'height: 1.5rem;')
+      img2.classList.add('rounded-circle', 'border', 'border-secondary')
+      a2.append(img2)
+      let span4 = document.createElement('span')
+      span4.classList.add('text-dark', 'fs-6', 'text-align-center')
+      span4.innerText = rowData[6]
+      a2.append(span4)
+      div4.append(a2)
+      div2.append(div3, span3, div4)
+      a1.append(div2)
+      div1.append(a1)
+      reviewBox.append(div1)
+    }
+    if (dataList.length === 12) {
+      observer.observe(sentinel)
+    }
+  })
+
+}
+
+const sentinel = document.querySelector("#sentinel")
+
+const option = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 1,
+}
+
+let page = 1;
+const callback = (entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      page++;
+      addNewContent()
+    }
+  })
+}
+
+const observer = new IntersectionObserver(callback, option)
+observer.observe(sentinel)
+</script>
+{% endblock script %}

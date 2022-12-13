@@ -60,9 +60,9 @@
               <p class='position-absolute top-0 shadow-none shadow text-border'>{{ forloop.counter }}</p>
             </div>
             <div>
-              <div>{{ product.title }} </div>
+              <div class='two-line-ellipsis'>{{ product.title }} </div>
               <div class="text-secondary fs-6">{{ product.brand }}</div>
-              <div class="fs-5">
+              <div class="fs-5 mt-2">
                 <span class="fw-bold text-dark">{{ product.price|intcomma }}원</span>
               </div>
             </div>
@@ -100,6 +100,7 @@
       div3.append(img1, p1)
       let div4 = document.createElement('div')
       let div5 = document.createElement('div')
+      div5.classList.add('two-line-ellipsis')
       div5.innerText = product[1]
       let div6 = document.createElement('div')
       div6.classList.add('text-secondary', 'fs-6')
