@@ -38,6 +38,7 @@ body {
 }
 
 .content-wrapper {
+  min-height: 100%;
   padding: 13.1875rem 3rem 8rem;
 }
 
@@ -913,15 +914,12 @@ path.two {
   width: auto;
 }
 
-.accounts-wrapper form {
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-}
-
 .accounts-wrapper label:has(+ div) {
   font-size: 18px;
   margin-top: 40px;
+  position: relative;
+  text-align: left;
+  left: 20px;
 }
 
 .login-field {
@@ -1004,6 +1002,11 @@ path.two {
   width: 25rem;
   height: 2.5rem;
   margin: 1.875rem 0;
+}
+
+#saveId {
+  cursor: pointer;
+  accent-color: var(--main-mintygreen);
 }
 
 /* 비번 보기 */

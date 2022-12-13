@@ -9,6 +9,7 @@
 {% block style %}{% endblock style %}
 
 {% block content %}
+<section class="container content-wrapper">
 <div class="signup-wrapper d-flex flex-column align-items-center">
   <div class="d-flex">
     {% if user.image %}
@@ -272,6 +273,7 @@
         </div>
       </div>
     </div>
+  </section>
 
 
     {% endblock content %}
