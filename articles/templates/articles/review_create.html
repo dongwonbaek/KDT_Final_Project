@@ -8,8 +8,7 @@
 {% block title %}{% endblock title %}
 {% block style %}
 <style>
-  body {
-    height: auto;
+  .content-wrapper {
     background-image: url(/static/img/background.jpg);
     background-repeat : no-repeat;
     background-size : cover;
@@ -19,19 +18,21 @@
 {% endblock style %}
 
 {% block content %}
-<div class="review_c">
-  <div class="d-flex justify-content-center">
-    <form class="review_form" action="" method="POST" enctype="multipart/form-data">
+  <section class="content-wrapper">
+    <div class="review_c">
       <div class="d-flex justify-content-center">
-        <h2 class="review_write mb-5">후기 작성</h2>
+        <form class="review_form" action="" method="POST" enctype="multipart/form-data">
+          <div class="d-flex justify-content-center">
+            <h2 class="review_write mb-5">후기 작성</h2>
+          </div>
+          {% csrf_token %}
+          {% bootstrap_form review_form %}
+          <div class="text-center mt-5">
+            <input class="review_btn px-5" type="submit" value="작성 완료">
+          </div>
+        </form>
       </div>
-      {% csrf_token %}
-      {% bootstrap_form review_form %}
-      <div class="text-center mt-5">
-        <input class="review_btn px-5" type="submit" value="작성 완료">
-      </div>
-    </form>
-  </div>
-</div>
+    </div>
+  </section>
 {% endblock content %}
 {% block script %}{% endblock script %}
