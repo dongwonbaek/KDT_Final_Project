@@ -17,7 +17,7 @@
           <input class='signup-style1' id='email' type="email" name='username'>
           <label for="password">비밀번호</label>
           <input class='signup-style1' id='password' type="password" name='password'>
-          <button class="login-button my-2" button_type='submit' content='로그인'>로그인</button>
+          <button class="login-button my-4" button_type='submit' content='로그인'>로그인</button>
         </form>
         <!--소셜 로그인-->
         <div class="d-flex justify-content-center my-0">
@@ -49,11 +49,11 @@
 <!--회원가입 모달-->
 <div class="modal fade" id="회원가입" tabindex="-1" aria-labelledby="회원가입Label" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div style="height: 42rem;" class="modal-content">
       <div class='d-flex justify-content-end'>
         <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="signup-wrapper">
+      <div class="signup-wrapper2">
         <h1 class="text-center">회원가입</h1>
         <form action="{% url 'accounts:signup' %}" method="POST" enctype='multipart/form-data'>
           {% csrf_token %}
@@ -61,7 +61,7 @@
             <label for="username">이메일</label>
             <input class='signup-style1' type="email" name='username' id='username'>
           </div>
-          <div class="d-flex flex-column align-items-center">
+          <div class="d-flex flex-column align-items-center my-1">
             <label for="nickname">닉네임</label>
             <input class='signup-style1' type="text" name='nickname' id='nickname'>
           </div>
@@ -69,21 +69,21 @@
             <label for="password1">비밀번호</label>
             <input class='signup-style1' type="password" name='password1' id='password1'>
           </div>
-          <div class="d-flex flex-column align-items-center">
+          <div class="d-flex flex-column align-items-center my-1">
             <label for="password2">비밀번호 확인</label>
             <input class='signup-style1' type="password" name='password2' id='password2'>
           </div>
-          <div class="d-flex flex-column align-items-center">
+          <div class="d-flex flex-column align-items-center mb-1">
             <label for="image">프로필 사진</label>
             <input class='signup-style2' type="file" name='image' id='image'>
           </div>
           <label>남</label><input type="radio" name='gender' value='true'>
           <label>여</label><input type="radio" name='gender' value='false'>
-          <div class='d-flex flex-column align-items-center'>
+          <div class='d-flex flex-column align-items-center mt-1'>
             <label for="birth_date">생년월일</label>
             <input class='form-control signup-style2' type="date" name='birth_date' id='birth_date'>
           </div>
-          <button class="login-button" button_type='submit' content='회원가입'>회원 가입</button>
+          <button class="login-button mt-4" button_type='submit' content='회원가입'>회원 가입</button>
         </form>
       </div>
     </div>
