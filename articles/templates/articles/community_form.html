@@ -5,7 +5,7 @@
 {% load django_bootstrap5 %}
 {% load imagekit %}
 
-{% block title %} | 커뮤니티{% endblock title %}
+{% block title %} | 새 글 쓰기{% endblock title %}
 {% block style %}
 <style>
   .content-wrapper {
@@ -20,37 +20,22 @@
 
 {% block content %}
   <section class="content-wrapper">
-    <div class="commu_c">
-      <div class="d-flex justify-content-center">
-        <form class="commu_form" action="" method="POST" enctype="multipart/form-data">
-          <div class="d-flex justify-content-center">
-            <h2 class="commu_write mb-5">글쓰기</h2>
-          </div>
-          {% csrf_token %}
-          {{ community_form.media }}
-          <div class="d-flex justify-content-center mb-5">
-            제목 :&nbsp;{% render_field community_form.title placeholder="제목을 입력해주세요" %}
-          </div>
-          <div>
-            {% render_field community_form.content class="btn btn-block"  placeholder="" %}
-          </div>
-          <div class="mt-3 mb-5">
-            {% bootstrap_form community_images_form %}
-          </div>
-          <div class="text-center">
-            {% if request.resolver_match.url_name == 'community_update' %}
-            <div>
-              <input class="commu_btn px-5" type="submit" value="글 수정">
-            </div>
-            {% else %}
-            <div>
-              <input class="commu_btn px-5" type="submit" value="작성 완료">
-            </div>
-            {% endif %}
-          </div>
-        </form>
-      </div>
-    </div>
+    <div class="container commu-form-wrapper">
+      <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ community_form.media }}
+        <label for="title" class="form-label">제목</label>
+        {% render_field community_form.title class="commu-input form-control mb-5" placeholder="글제목을 입력해주세요" %}
+        {% render_field community_form.content %}
+        <label for="images" class="form-label">사진 첨부</label>
+        {% render_field community_images_form.images class="commu-input form-control" %}
+        {% if request.resolver_match.url_name == 'community_update' %}
+          <input class="commu_btn px-5" type="submit" value="글 수정">
+        {% else %}
+          <input class="commu_btn px-5" type="submit" value="작성 완료">
+        {% endif %}
+      </form>
+    </div><!--commu-form-wrapper-->
   </section>
 {% endblock content %}
 

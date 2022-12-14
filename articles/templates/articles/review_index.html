@@ -4,21 +4,22 @@
 {% load django_bootstrap5 %}
 {% load imagekit %}
 
-{% block title %}{% endblock title %}
+{% block title %} | 리뷰 모아보기{% endblock title %}
 {% block style %}{% endblock style %}
-{% block content %}
 
-<div class="text-center" style='margin-top: 10rem;'>
-  <h1>최근 리뷰</h1>
-</div>
-<div class="container">
-  <div class="row" id='review-box'>
-    {% for review in reviews %}
-      <div class="col-4">
-        <a class='text-dark' href="{% url 'articles:product_detail' review.product.pk %}">
-          <div class="mt-5 p-3" style="border: 3px outset lightcoral; outline: 3px outset lightblue; border-radius: 12px; outline-offset: 3px;">
-            <div class='d-flex justify-content-between'>
-              <span class='card-ellipsis'>{{ review.title }}</span>
+{% block content %}
+  <section class="content-wrapper">
+    <div class="text-center">
+      <h1>최근 리뷰</h1>
+    </div>
+    <div class="container">
+      <div class="row" id='review-box'>
+        {% for review in reviews %}
+          <div class="col-4">
+            <a class='text-dark' href="{% url 'articles:product_detail' review.product.pk %}">
+              <div class="mt-5 p-3" style="border: 3px outset lightcoral; outline: 3px outset lightblue; border-radius: 12px; outline-offset: 3px;">
+                <div class='d-flex justify-content-between'>
+                  <span class='card-ellipsis'>{{ review.title }}</span>
               <span class='text-end'>
                 <em style='font-size: .8rem;' class='text-secondary'>{{ review.created_at.date }}</em>
               </span>           
@@ -48,13 +49,11 @@
               </a>
             </div>
           </div>
-        </a>
+        {% endfor %}
       </div>
-    {% endfor %}
-  </div>
-  <p style='margin-top: 100px;' id='sentinel'></p>
-</div>
-
+      <p style='margin-top: 100px;' id='sentinel'></p>
+    </div>
+  </section>
 {% endblock content %}
 {% block script %}
 <script>

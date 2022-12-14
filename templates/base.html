@@ -16,17 +16,17 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="apple-mobile-web-app-title" content="ODJ">
+  <meta name="apple-mobile-web-app-title" content="ODJ:오다주웠다">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="ODJ가 당신을 센스 만점으로 만들어 드립니다">
 
-  <meta property="og:title" content="네이버">
+  <meta property="og:title" content="ODJ:오다주웠다">
   <meta property="og:url" content="http://odjbean-env.eba-pmqftqpj.ap-northeast-2.elasticbeanstalk.com/">
   <meta property="og:image" content="{% static 'img/LOGO/logo-nomi2.png' %}">
   <meta property="og:description" content="ODJ가 당신을 센스 만점으로 만들어 드립니다">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="">
+  <meta name="twitter:title" content="ODJ:오다주웠다">
   <meta name="twitter:url" content="http://odjbean-env.eba-pmqftqpj.ap-northeast-2.elasticbeanstalk.com/">
   <meta name="twitter:image" content="{% static 'img/LOGO/logo-nomi2.png' %}">
   <meta name="twitter:description" content="ODJ가 당신을 센스 만점으로 만들어 드립니다.">
@@ -41,6 +41,8 @@
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <!-- Add the slick-theme.css if you want default styling -->
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <!--스와이프-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
   <!-- Bootstrap Icon v1.10.2 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <!-- font-awesome -->
@@ -54,7 +56,6 @@
   <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/style2.css' %}">
-  <link rel="stylesheet" href="{% static 'css/style3.css' %}">
 
 </head>
 
@@ -89,6 +90,8 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <!--slick-carousel@1.8.1-->
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!--swiper-->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script>
     const toastLiveExample = document.getElementById('liveToast')
     if (toastLiveExample) {

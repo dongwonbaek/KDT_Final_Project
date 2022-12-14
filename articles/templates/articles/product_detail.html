@@ -210,6 +210,7 @@
       <button class="tab-button" data-tab-section="tab-section-1">상품설명</button>
       <button class="tab-button" data-tab-section="tab-section-2">선물후기 ({{ product.review_set.all.count }})</button>
     </div>
+    <!--탭1. 상품 정보-->
     <div id="tab-section-1" class="tab-section text-center">
       {% if product.productcontentimages_set.all.0 %}
         {% for images in product.productcontentimages_set.all %}
@@ -219,6 +220,7 @@
         <img class='w-100' src="{{ product.productimages_set.all.0.images }}" alt="{{ product.productimages_set.all.0.images }}">
       {% endif %}
     </div>
+    <!--탭2. 후기-->
     <div id="tab-section-2" class="tab-section w-100" hidden>
       <div class="d-flex justify-content-between p-4">
         <div class="fs-3">{{ product.review_set.all.count }}개의 후기가 있어요</div>

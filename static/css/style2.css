@@ -142,7 +142,9 @@
   padding-top: 1rem;
 }
 
-#tab-section-1 {
+#tab-section-1,
+#tab-section-2 {
+  min-height: 500px;
   padding: 3rem 2rem;
 }
 
