@@ -43,7 +43,7 @@
                 <div class="form-check">
                   <input id="select-follower" data-follower-id="{{ follower.pk }}"class="form-check-input" type="radio" value="{{ follower.username }}" name="towhom[1][]" onclick='getFriend(event)'>
                   {% if follower.image %}
-                  <img src="{{ follower.image }}" class="select-friend-img">
+                  <img src="{{ follower.image.url }}" class="select-friend-img">
                   {% else %}
                   <img src="{% static 'img/no-avatar.jpg' %}" class="select-friend-img">
                   {% endif %}
