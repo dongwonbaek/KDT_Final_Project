@@ -74,17 +74,29 @@
     window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
   }
 </script>
-<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>
+  Kakao.init('a0214dd9435b790dce94381c4abdc8f7'); 
   function shareKakao() {
-    Kakao.init('eee904ef21be3ab5a0ebbcdc8594675f');
-
-    Kakao.Share.sendCustom({
-      templateId: ${837726},
-      templateArgs: {
-        title: 'ODJ',
-        description: 'ODJ와 함께 12월 최고의 산타가 되어보세요.',
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: 'ODJ가 선물 추천해드릴게요!🎉',
+        description: 'ODJ와 함께 12월 최고의 산타가 되어보세요!',
+        imageUrl: 'http://odjbean-env.eba-pmqftqpj.ap-northeast-2.elasticbeanstalk.com/static/img/LOGO/logo_animated.gif',
+        link: {
+          webUrl: 'http://odjbean-env.eba-pmqftqpj.ap-northeast-2.elasticbeanstalk.com/',
+        },
       },
-    });
+      buttons: [
+        {
+          title: '웹으로 보기',
+          link: {
+            webUrl: 'http://odjbean-env.eba-pmqftqpj.ap-northeast-2.elasticbeanstalk.com/',
+          },
+        },
+      ],
+      installTalk: true,
+    })
   }
 </script>

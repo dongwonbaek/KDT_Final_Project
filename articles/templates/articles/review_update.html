@@ -8,35 +8,35 @@
 {% block title %}{% endblock title %}
 {% block style %}
 <style>
-	body {
-		height: auto;
-		background-image: url(/static/img/background.jpg);
-		background-repeat : no-repeat;
-		background-size : cover;
-		background-position: center;
-	}
+  .content-wrapper {
+    background-image: url(/static/img/background.jpg);
+    background-repeat : no-repeat;
+    background-size : cover;
+    background-position: center;
+  }
 </style>
 {% endblock style %}
 	
 {% block content %}
-<div class="review_c">
-	<div class="d-flex justify-content-center">
-		<div class="review_form">
-			<form action="" method="POST" enctype="multipart/form-data">
-				<div class="d-flex justify-content-center">
-					<h2 class="review_write mb-5">후기 수정</h2>
-				</div>
-				{% csrf_token %}
-				{% bootstrap_form review_form %}
-				<div class="d-flex justify-content-center mt-5">
-					<input class="review_btn px-5" type="submit" value="수정">
-					<!-- 삭제모달 버튼 -->
-					<button type="button" class="review_btn px-5 mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-						삭제
-					</button>
-				</div>
-
-				<!-- 삭제모달 -->
+<section class="content-wrapper">
+	<div class="review_c">
+		<div class="d-flex justify-content-center">
+			<div class="review_form">
+				<form action="" method="POST" enctype="multipart/form-data">
+					<div class="d-flex justify-content-center">
+						<h2 class="review_write mb-5">후기 수정</h2>
+					</div>
+					{% csrf_token %}
+					{% bootstrap_form review_form %}
+					<div class="d-flex justify-content-center mt-5">
+						<input class="review_btn px-5" type="submit" value="수정">
+						<!-- 삭제모달 버튼 -->
+						<button type="button" class="review_btn px-5 mx-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+							삭제
+						</button>
+					</div>
+					<!-- 삭제모달 -->
+				</form>
 				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -53,9 +53,9 @@
 						</div>
 					</div>
 				</div>
-			</form>
+			</div>
 		</div>
 	</div>
-</div>
+</section>
 {% endblock content %}
 {% block script %}{% endblock script %}
