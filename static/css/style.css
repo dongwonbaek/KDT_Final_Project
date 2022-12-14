@@ -1474,6 +1474,10 @@ path.two {
 
 /* community_form(create) */
 
+.form_container {
+  padding: 15rem 0;
+}
+
 .commu-form-wrapper {
   display: flex;
   flex-direction: column;
@@ -1482,6 +1486,7 @@ path.two {
   background-color: white;
   border-radius: 5px;
   padding: 3rem;
+  width: 58rem;
 }
 
 .commu_write {

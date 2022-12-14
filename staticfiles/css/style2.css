@@ -1,5 +1,4 @@
 /* product_list */
-
 /* 상단 배너 */
 .banner {
   color: white;
@@ -253,10 +252,6 @@ input::-webkit-search-results-decoration {
 }
 
 /* review_create */
-
-.review_c {
-  margin-top: 13rem;
-}
 
 .review_form {
   background-color: white;

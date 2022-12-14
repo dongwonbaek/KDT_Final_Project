@@ -1,4 +1,4 @@
-:root {
+git:root {
   --main-bluegreen: #003B41;
   --main-scarlet: #FB5957;
   --main-lightpink: #FEEAEB;
@@ -85,10 +85,15 @@
   cursor: default;
 }
 
-.uname-verified {
-  margin: 0 0 0 .25em;
-  width: 25px;
-  cursor: default;
+h3.username-dev+span {
+  font-size: 15px;
+  color: gray;
+}
+
+.user-info-detail span {
+  margin: 0 40px 30px 0;
+  font-size: 18px;
+  color: rgb(79, 79, 79);
 }
 
 .verified {
@@ -170,15 +175,16 @@
 
 .ufo-bar-fff {
   margin: .25em .5em 0 0;
-  color: var(--dark);
+  color: var(--main-black);
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
+  font-size: 17px;
 }
 
 .ufo-bar-fff span {
-  color: var(--dark);
-  font-weight: 600;
+  color: var(--main-bluegreen);
+  font-weight: 700;
 }
 
 .ufo-bar-fff-active {
@@ -265,8 +271,9 @@
 }
 
 /* Button 2 */
-.button2,
+.user-info-btn,
 .btn-secondary2 {
+  width: fit-content;
   margin: 0 .4em;
   position: relative;
   cursor: pointer;
@@ -274,9 +281,9 @@
   letter-spacing: .1em;
   text-align: center;
   font-weight: 300;
-  color: var(--bc);
-  font-size: var(--button-small);
-  background: var(--gradient2);
+  color: var(--main-white);
+  font-size: 15px;
+  background: linear-gradient(45deg, var(--main-salmon) 0%, var(--main-lightpink) 100%);
   background-size: 1100%;
   border-radius: 50px;
   border: none;
@@ -286,19 +293,19 @@
   transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), background-position 3s cubic-bezier(.455, .03, .515, .955), -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275);
 }
 
-.button2 {
+.user-info-btn {
   transition: bottom .3s cubic-bezier(.175, .885, .32, 1.275), background-position 3s cubic-bezier(.455, .03, .515, .955), -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275);
   transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), bottom .3s cubic-bezier(.175, .885, .32, 1.275), background-position 3s cubic-bezier(.455, .03, .515, .955);
   transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), bottom .3s cubic-bezier(.175, .885, .32, 1.275), background-position 3s cubic-bezier(.455, .03, .515, .955), -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275);
 }
 
-.button2,
-.button2 .btn-secondary2 {
+.user-info-btn,
+.user-info-btn .btn-secondary2 {
   background-position: 0 50%;
   bottom: 0;
 }
 
-.button2 .btn-secondary2 {
+.user-info-btn .btn-secondary2 {
   left: 0;
   width: 90%;
   position: absolute;
@@ -311,17 +318,36 @@
   transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), filter .3s cubic-bezier(.175, .885, .32, 1.275), bottom .3s cubic-bezier(.175, .885, .32, 1.275), background-position 3s cubic-bezier(.455, .03, .515, .955), -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275), -webkit-filter .3s cubic-bezier(.175, .885, .32, 1.275);
 }
 
-.button2:focus,
-.button2:hover {
+.user-info-btn:focus,
+.user-info-btn:hover {
   transform: scale3d(1.1, 1.1, 1);
   background-position: 100% 50%;
   outline: none;
   bottom: 2px;
 }
 
-.button2:focus .btn-secondary2,
-.button2:hover .btn-secondary2 {
+.user-info-btn:focus .btn-secondary2,
+.user-info-btn:hover .btn-secondary2 {
   background-position: 100% 50%;
   filter: blur(25px);
   bottom: -5px;
+}
+
+.user-detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-quit-btn {
+  position: relative;
+  left: 40%;
+  background: none;
+  border: none;
+  text-align: center;
+  color: grey;
+  font-weight: 700;
+  text-decoration: underline;
+  font-size: 15px;
+  margin: 50px 0 20px 0;
 }
