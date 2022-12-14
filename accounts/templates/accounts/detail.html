@@ -26,7 +26,7 @@
 		<div class="ufo-bar-col2">
 			<div class="ufo-bar-col2-inner">
 				<div class="user-icon-wrapper">
-					{% if request.user.image %}
+					{% if user.image %}
 						<img class="user-icon" src="{{ user.image.url }}">
 					{% else %}
 						<img class="user-icon" src="{% static 'img/no-avatar.jpg' %}" alt="no-avatar">
@@ -44,16 +44,15 @@
 							<span>{{ user.username }}</span>
 						</div>
 						<div class="user-info-detail">
-							<span>{{ user.age }} 세</span>
-							<span>{% if user.gender == True %}남{% else %}여{% endif %}</span>
-							<span><i class="fa-solid fa-cake-candles"></i>{{ user.birth_date | date:'n월 j일' }}</ㅐ>	
+							<span class='fs-4 fw-bold'>{% if user.gender == True %}<i class="bi bi-gender-male" style='color: blue;'></i>{% else %}<i class="bi bi-gender-female" style='color: hotpink;'></i>{% endif %}</span>
+							<span><i class="fa-solid fa-cake-candles"></i>{{ user.birth_date | date:'n월 j일' }}</span>	
 						</div>
 					</div>
 					<!--팔로우 모달 트리거-->
 					<div>
 						<a class="ufo-bar-fff" data-bs-toggle="modal" data-bs-target="#exampleModal">
-							팔로우<span id='followings' class="me-5"> {{user.following.count}}</span> 
-							팔로워<span id='followers'> {{ user.followers.count}}</span>
+							팔로우<span id='followings' class="me-5"> {{ user.following.count }}</span> 
+							팔로워<span id='followers'> {{ user.followers.count }}</span>
 						</a>
 					</div>
 					<!-- 팔로우 모달 -->
@@ -68,33 +67,43 @@
 									<div class="row">
 										<!--팔로우-->
 										<div class="col-6">
-											<h5 class="follow-title">팔로우</h5>
-											{% if request.user.following.all == 0 %}
-												<div>팔로우 중인 친구가 없어요.</div>
-											{% else %}
-												{% for followinguser in request.user.following.all %}
-													<div>
-														<a href="{% url 'accounts:detail' followinguser.pk %}">
-															<img class="user-image" src="{{ followinguser.image.url }}">{{ followinguser.nickname }}
-														</a>
-													</div>
-												{% endfor %}
-											{% endif %}
+											<h5 class="follow-title text-center">팔로우</h5>
+											{% for followinguser in user.following.all %}
+												<div>
+													<a href="{% url 'accounts:detail' followinguser.pk %}">
+														{% if followinguser.image %}
+															<img class="user-image" src="{{ followinguser.image.url }}" alt="{{ followinguser.image }}">
+														{% else %}
+															<img class="user-image" src="{% static 'img/no-avatar.jpg' %}" alt="no-avatar">
+														{% endif %}
+														{{ followinguser.nickname }}
+													</a>
+												</div>
+											{% empty %}
+												<div>
+													아직 팔로우가 없습니다.
+												</div>
+											{% endfor %}
 										</div>
 										<!--팔로워-->
 										<div class="col-6">
-											<h5 class="follower-title">팔로워</h5>
-											{% if request.user.followers.all == 0  %}
-												<div>아직 팔로워가 없어요.</div>
-											{% else %}
-												{% for followeruser in request.user.followers.all %}
-													<div>
-														<a href="{% url 'accounts:detail' followeruser.pk %}">
-															<img class="user-image" src="{{ followeruser.image.url }}">{{followeruser.nickname }}
-														</a>
-													</div>
-												{% endfor %}
-											{% endif %}
+											<h5 class="follower-title text-center">팔로워</h5>
+											{% for followeruser in user.followers.all %}
+												<div>
+													<a href="{% url 'accounts:detail' followeruser.pk %}">
+														{% if followeruser.image %}
+															<img class="user-image" src="{{ followeruser.image.url }}" alt="{{ followeruser.image }}">
+														{% else %}
+															<img class="user-image" src="{% static 'img/no-avatar.jpg' %}" alt="no-avatar">
+														{% endif %}
+														{{ followeruser.nickname }}
+													</a>
+												</div>
+											{% empty %}
+												<div>
+													아직 팔로워가 없습니다.
+												</div>
+											{% endfor %}
 										</div>
 									</div>	
 								</div>	
@@ -107,62 +116,62 @@
 		</div>
 		<!--내 정보 일 때 버튼 모음-->
 		{% if request.user == user %}
-		<div class="ufo-bar-col4">
-			<div class="ufo-bar-col4-inner">
-				<a href="{% url 'accounts:update' %}" class="user-info-btn">프로필수정</a>
-				<button type="button" class="user-info-btn" data-bs-toggle="modal" data-bs-target="#blockModal">차단목록</button>
-				
-			</div>
-		</div>
-		<!-- 차단목록 모달 -->
-		<div class="modal fade" id="blockModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					{% for user in request.user.blocking.all %}
-					<div class="modal-body">
-						{% if user.image %}
-						<img class="user-image" src="{{ user.image.url }}">
-						<a href="{% url 'accounts:detail' user.pk %}">{{user.nickname}}</a>
-						{% else %}
-						<a class="profile-margin" href="{% url 'accounts:detail' user.pk %}">{{user.nickname}}</a>
-						{% endif %}
-					</div>
-					{% endfor %}
+			<div class="ufo-bar-col4">
+				<div class="ufo-bar-col4-inner">
+					<a href="{% url 'accounts:update' %}" class="user-info-btn">프로필수정</a>
+					<button type="button" class="user-info-btn" data-bs-toggle="modal" data-bs-target="#blockModal">차단목록</button>
 				</div>
 			</div>
-		</div>
-		<!-- 차단목록 모달 끝-->
-		<div class="ufo-bar-col5">
-		</div>
+			<!-- 차단목록 모달 -->
+			<div class="modal fade" id="blockModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h3 class='m-0'>차단 목록</h3>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							{% for blockuser in user.blocking.all %}
+								<div class='m-2'>
+									{% if blockuser.image %}
+										<img class="user-image" src="{{ blockuser.image.url }}" alt="{{ blockuser.image }}">
+									{% else %}
+										<img class="user-image" src="{% static 'img/no-avatar.jpg' %}" alt="no-avatar">
+									{% endif %}
+									<a class="profile-margin" href="{% url 'accounts:detail' blockuser.pk %}">{{ blockuser.nickname }}</a>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 차단목록 모달 끝-->
+			<div class="ufo-bar-col5"></div>
 		{% else %}
 		<!--다른 회원 정보 일 때 버튼 모음-->
-		<div class="ufo-bar-col4">
-			<div class="ufo-bar-col4-inner">
-			{% if request.user in user.followers.all %}
-				<button class='follow-button' id='follow-btn' data-user-id="{{ user.pk }}">팔로우 취소</button>
-			{% else %}
-				<button class='follow-button' id='follow-btn' data-user-id="{{ user.pk }}">팔로우</button>
-			{% endif %}
-			{% if request.user in user.blockers.all %}
-				<button class="delete-button" id='block-btn' data-user-id="{{ user.pk }}">차단 해제</button>
-			{% else %}
-				<button class="delete-button" id='block-btn' data-user-id="{{ user.pk }}">차단</button>
-			{% endif %}
-			</div>
-		</div>		
+			<div class="ufo-bar-col4">
+				<div class="ufo-bar-col4-inner">
+				{% if request.user in user.followers.all %}
+					<button class='follow-button me-2' id='follow-btn' data-user-id="{{ user.pk }}">팔로우 취소</button>
+				{% else %}
+					<button class='follow-button me-2' id='follow-btn' data-user-id="{{ user.pk }}">팔로우</button>
+				{% endif %}
+				{% if request.user in user.blockers.all %}
+					<button class="delete-button" id='block-btn' data-user-id="{{ user.pk }}">차단 해제</button>
+				{% else %}
+					<button class="delete-button" id='block-btn' data-user-id="{{ user.pk }}">차단</button>
+				{% endif %}
+				</div>
+			</div>		
 		{% endif %}
-		<div class="ufo-bar-col5">
-		</div>
+		<div class="ufo-bar-col5"></div>
 	</div>
 	<!--프로필 아래 탭 메뉴-->	
 	<section id="tap-move" class="user-detail-wrapper container">
 		<div class="tap-nav w-100 ">
 			<button class="tab-button" data-tab-section="tab-section-1">작성한 글</button>
 			<button class="tab-button" data-tab-section="tab-section-2">작성한 후기</button>
-			<button class="tab-button" data-tab-section="tab-section-3">위시리스트({{user.like_product.all.count }})</button>
+			<button class="tab-button" data-tab-section="tab-section-3">위시리스트({{ user.like_product.all.count }})</button>
 		</div>
 		<!--1. 작성한 글-->
 		<div id="tab-section-1" class="tab-section w-100 tab-section w-100 d-flex flex-column align-items-center" hidden>
@@ -284,9 +293,9 @@
 									<img class="review-image" src="{{ product.productimages_set.all.0.images }}">
 								</div>
 								<div>
-									<a href="{% url 'articles:product_detail' product.pk %}">{{product.title}}</a>
+									<a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a>
 								</div>
-								<h4>{{product.price}} 원</h4>
+								<h4>{{ product.price }} 원</h4>
 							</div>
 						</div>
 					{% endfor %}
