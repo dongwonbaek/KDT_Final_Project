@@ -1415,6 +1415,7 @@ path.two {
 #pf-tab-section-3 {
   min-height: 500px;
   padding: 3rem 2rem;
+  width: 100%;
 }
 
 .tab-wrapper {

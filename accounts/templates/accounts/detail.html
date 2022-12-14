@@ -111,7 +111,6 @@
 			<div class="ufo-bar-col4-inner">
 				<a href="{% url 'accounts:update' %}" class="user-info-btn">프로필수정</a>
 				<button type="button" class="user-info-btn" data-bs-toggle="modal" data-bs-target="#blockModal">차단목록</button>
-				
 			</div>
 		</div>
 		<!-- 차단목록 모달 -->
@@ -157,14 +156,12 @@
 		<div class="ufo-bar-col5">
 		</div>
 	</div>
-	<!--프로필 아래 탭 메뉴-->	
+	<!--프로필 아래-->	
+	<!--1. 작성한 글-->
 	<section id="pf-tap-move" class="user-detail-wrapper container">
 		<div class="pf-tap-nav w-100 ">
-			<button class="pf-tab-button" data-tab-section="pf-tab-section-1">작성한 글</button>
-			<button class="pf-tab-button" data-tab-section="pf-tab-section-2">작성한 후기</button>
-			<button class="pf-tab-button" data-tab-section="pf-tab-section-3">위시리스트({{user.like_product.all.count }})</button>
+			<button class="pf-tab-button"><i class="fa-solid fa-pen-to-square"></i> 작성한 글</button>
 		</div>
-		<!--1. 작성한 글-->
 		<div id="pf-tab-section-1" class="pf-tab-section">
 			<h5 class="text-center">커뮤니티에 {{ user.community_set.count }}개의 글을 작성했습니다.</h5>
 			<div class="tab-content-wrapper">
@@ -229,8 +226,13 @@
 				<!-- 페이징처리 끝 -->
 			</div>
 		</div>
-		<!--2. 작성 후기-->
-		<div id="pf-tab-section-2" class="pf-tab-section" hidden >
+	</section>
+	<!--2. 작성 후기-->
+	<section id="pf-tap-move" class="user-detail-wrapper container">
+		<div class="pf-tap-nav w-100 ">
+			<button class="pf-tab-button"><i class="fa-regular fa-comment"></i> 작성한 후기</button>
+		</div>
+		<div id="pf-tab-section-2" class="pf-tab-section">
 			<h5 class="text-center"> {{ user.review_set.count }}개의 후기를 작성했습니다.</h5>
 			<div class="tab-content-wrapper">
 				{% for review in paginated_review_list %}
@@ -328,8 +330,13 @@
 				<!--페이지네이션 끝-->
 			</div>
 		</div>
-		<!--3. 위시리스트 paginated_wishlist-->
-		<div id="pf-tab-section-3" class="pf-tab-section" hidden>
+	</section>
+	<!--3. 위시리스트 paginated_wishlist-->
+	<section id="pf-tap-move" class="user-detail-wrapper container">
+		<div class="pf-tap-nav w-100 ">
+			<button class="pf-tab-button"><i class="fa-solid fa-bag-shopping"></i> 위시리스트</button>
+		</div>
+		<div id="pf-tab-section-3" class="pf-tab-section">
 			<h5 class="text-center"> {{ user.like_product.count }}개의 아이템이 담겨있어요.</h5>
 			<div class="tab-content-wrapper">
 				<div class="row row-cols-4 row-cols-md-2 g-4">
@@ -456,7 +463,7 @@
 			})
 		})
 	</script>
-	<!-- 상품설명, 후기 탭 전환 스크립트 -->
+	{% comment %} <!-- 상품설명, 후기 탭 전환 스크립트 -->
 	<script>
 		const $nav = document.querySelector('#pf-tap-move')
 		const $sections = document.querySelectorAll('.pf-tab-section');
@@ -473,7 +480,7 @@
 				}
 			});
 		});
-	</script>
+	</script> {% endcomment %}
 	<!--swiper cdn base.html-->
 	<script>
 		const swiper = new Swiper('.swiper', {
