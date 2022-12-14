@@ -25,7 +25,7 @@ class User(AbstractUser):
     blocking = models.ManyToManyField(
         "self", symmetrical=False, related_name="blockers"
     )
-    age = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(15)])
+    age = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(15)], null=True)
 
     # user image 없을 시 오류 방지
     @property

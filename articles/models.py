@@ -39,24 +39,12 @@ class Product(models.Model):
 
 class ProductImages(models.Model):
     product = models.ForeignKey("Product", on_delete=models.CASCADE)
-    images = ProcessedImageField(
-        upload_to="images/",
-        blank=True,
-        processors=[Thumbnail(400, 300)],
-        format="JPEG",
-        options={"quality": 80},
-    )
+    images = models.CharField(max_length=300)
 
 
 class ProductContentImages(models.Model):
     product = models.ForeignKey("Product", on_delete=models.CASCADE)
-    images = ProcessedImageField(
-        upload_to="images/",
-        blank=True,
-        processors=[Thumbnail(400, 300)],
-        format="JPEG",
-        options={"quality": 80},
-    )
+    images = models.CharField(max_length=300)
 
 
 class Review(models.Model):

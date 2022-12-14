@@ -106,7 +106,8 @@
         <!-- 댓글 현황 -->
         <div id="comments">
           {% for comment in comments %}
-          <div class="d-flex">
+          <div class="d-flex justify-content-between">
+            <div class="d-flex">
             {% if comment.user.image %}
             <img src="{{ comment.user.image.url }}" class="commu_pf_img mx-2 my-2" alt="유저 이미지">
             {% else %}
@@ -114,11 +115,17 @@
             {% endif %}
             <p> {{ comment.content }}</p>
           </div>
+          <div class="my-2">
+            {% if request.user == comment.user %}
+              <form action="{% url 'articles:community_comment_delete' comment.pk %}" method="POST" class="my-0">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-outline-danger mx-2" value="삭제">
+              </form>
+            {% endif %} 
+          </div>
+          </div>
           <hr class="commu_detail_hr">
           
-          {% if request.user == comment.user %}
-            <a href="{% url 'articles:community_comment_delete' community.pk %}" class='btn btn-sm btn-outline-danger'>삭제</a>
-          {% endif %}
           
           {% endfor %}
         </div>
@@ -174,10 +181,6 @@
     .then(response => {
       console.log(response.data)
       const comments = document.querySelector('#comments')
-      // const p = document.createElement('p')
-      // p.innerText = `${response.data.userName} | ${response.data.content}`
-      // const hr = document.createElement('hr')
-      // comments.append(p, hr)
       comments.insertAdjacentHTML('beforeend', `
       <div class="d-flex">
         <img src="${ response.data.userImg }" class="commu_pf_img mx-2 my-2">

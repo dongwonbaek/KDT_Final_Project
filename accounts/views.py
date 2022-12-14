@@ -21,11 +21,7 @@ def signup(request):
             user = form.save(commit=False)
             user.username = request.POST.get("username")
             user.email = request.POST.get("username")
-            user.birth_date = request.POST.get("birth_date")
-            datetime_string = request.POST.get("birth_date")
-            datetime_format = "%Y-%m-%d"
-            birth_date = datetime.strptime(datetime_string, datetime_format)
-            age_range = (datetime.today().year - birth_date.year) // 10
+            age_range = (datetime.today().year - user.birth_date.year) // 10
             if age_range < 0 or age_range > 15:
                 messages.error(request, "유효한 생년월일이 아닙니다.")
                 return redirect("articles:index")

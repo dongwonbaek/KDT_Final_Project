@@ -1,8 +1,3 @@
-from bootstrap_datepicker_plus.widgets import (
-    DatePickerInput,
-    MonthPickerInput,
-    YearPickerInput,
-)
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import UserChangeForm
@@ -20,11 +15,8 @@ class SignupForm(UserCreationForm):
             "nickname",
             "image",
             "gender",
+            "birth_date",
         )
-
-        widgets = {
-            "birth_date": DatePickerInput(),
-        }
 
 
 class UpdateForm(UserChangeForm):

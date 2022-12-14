@@ -3,6 +3,7 @@
 {% providers_media_js %}
 
 <!--로그인 모달 -->
+{% if not request.user.is_authenticated %}
 <div class="modal fade" id="로그인" tabindex="-1" aria-labelledby="로그인Label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -17,7 +18,7 @@
           <input class='signup-style1' id='email' type="email" name='username'>
           <label for="password">비밀번호</label>
           <input class='signup-style1' id='password' type="password" name='password'>
-          <button class="login-button my-2" button_type='submit' content='로그인'>로그인</button>
+          <button class="login-button my-4" button_type='submit' content='로그인'>로그인</button>
         </form>
         <!--소셜 로그인-->
         <div class="d-flex justify-content-center my-0">
@@ -49,51 +50,87 @@
 <!--회원가입 모달-->
 <div class="modal fade" id="회원가입" tabindex="-1" aria-labelledby="회원가입Label" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div style="height: 42rem;" class="modal-content">
       <div class='d-flex justify-content-end'>
-        <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close pt-3 pe-3" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="signup-wrapper">
-        <h1 class="text-center">회원가입</h1>
+      <div class="signup-wrapper2">
+        <h1 class="text-center mb-3">회원가입</h1>
         <form action="{% url 'accounts:signup' %}" method="POST" enctype='multipart/form-data'>
           {% csrf_token %}
-          <div class="d-flex flex-column align-items-center">
-            <label for="username">이메일</label>
-            <input class='signup-style1' type="email" name='username' id='username'>
+          <label for="username">아이디</label>
+          <div class="login-field">
+            <input class="focus-effect w-100 p-0 mb-2" placeholder="이메일을 입력하세요" type="username" name="username">
+            <span class="focus-border w-100">
+              <i></i>
+            </span>
           </div>
-          <div class="d-flex flex-column align-items-center">
-            <label for="nickname">닉네임</label>
-            <input class='signup-style1' type="text" name='nickname' id='nickname'>
+          <label for="nickname">닉네임</label>
+          <div class="login-field">
+            <input class="focus-effect w-100 p-0 mb-2" placeholder="2 ~ 8자 " type="text" name="nickname">
+            <span class="focus-border">
+              <i></i>
+            </span>
           </div>
-          <div class="d-flex flex-column align-items-center">
-            <label for="password1">비밀번호</label>
-            <input class='signup-style1' type="password" name='password1' id='password1'>
+          <label for="password">비밀번호</label>
+          <div class="login-field">
+            <input class="focus-effect w-100 p-0 mb-2" placeholder="비밀번호를 입력하세요" type="password" name='password1' id='password1' autocomplete="true">
+            <span class="focus-border">
+              <i></i>
+            </span>
           </div>
-          <div class="d-flex flex-column align-items-center">
-            <label for="password2">비밀번호 확인</label>
-            <input class='signup-style1' type="password" name='password2' id='password2'>
+          <p id='message1'>❗ Caps Lock이 켜져 있습니다.</p>
+          <label for="password">비밀번호 확인</label>
+          <div class="login-field">
+            <input class="focus-effect w-100 p-0 mb-2" placeholder="비밀번호를 한 번 더 입력해주세요." type="password" name='password2' id='password2' autocomplete="false">
+            <span class="focus-border">
+              <i></i>
+            </span>
           </div>
-          <div class="d-flex flex-column align-items-center">
-            <label for="image">프로필 사진</label>
-            <input class='signup-style2' type="file" name='image' id='image'>
+          <p id='message2'>❗ Caps Lock이 켜져 있습니다.</p>
+          <label for="image">프로필 사진</label>
+          <div class="login-field">
+            <input class="focus-effect w-100 p-0 h-100 mb-2" type="file" name="image">
+            <span class="focus-border">
+              <i></i>
+            </span>
           </div>
-          <label>남</label><input type="radio" name='gender' value='true'>
-          <label>여</label><input type="radio" name='gender' value='false'>
-          <div class='d-flex flex-column align-items-center'>
-            <label for="birth_date">생년월일</label>
-            <input class='form-control signup-style2' type="date" name='birth_date' id='birth_date'>
+          <div class="d-flex mt-3 justify-content-between">
+            <div>
+              <label for="gender">성별</label>
+              <div class="login-field">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name='gender' id="inlineRadio1" value='true'>
+                  <label class="form-check-label" for="inlineRadio1">남</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name='gender' id="inlineRadio2" value='false'>
+                  <label class="form-check-label" for="inlineRadio2">여</label>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label for="birth_date">생년월일</label>
+              <div class="login-field">
+                <input style='min-heigh:1.5rem;' class="focus-effect w-100 p-0 d-flex justify-content-center align-items-center" type="date" name='birth_date' id='birth_date'>
+                <span class="focus-border">
+                  <i></i>
+                </span>
+              </div>
+            </div>
           </div>
-          <button class="login-button" button_type='submit' content='회원가입'>회원 가입</button>
+          <button class="pos-btn login-button mt-4" type='submit' content='회원가입' id="checkKey">회원 가입</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+{% endif %}
 <!--nav 시작-->
 <header style="z-index: 10; position: relative;">
   <!-- 네브바 상단 로고 -->
   <div id="navbar" class="nav-upper">
-    <a href="{% url 'articles:index' %}"><img class="text-center" src="{% static 'img/logo/logo_animated.gif' %}"></a>
+    <a href="{% url 'articles:index' %}"><img class="text-center" src="{% static 'img/LOGO/logo_animated.gif' %}"></a>
   </div>
   <!-- 네브바 하단 메뉴 -->
   <div id="navbar-example2" class="nav-lower container-fluid">
@@ -180,9 +217,10 @@
       <li>
         <!--회원가입 모달 트리거-->
         <button type="button" class="pos-btn nav-login-btn" data-bs-toggle="modal" data-bs-whatever="회원가입"
-          data-bs-target="#회원가입">회원가입</button>
-        {% endif %}
+          data-bs-target="#회원가입">회원가입
+        </button>
       </li>
+      {% endif %}
     </ul>
   </div>
 </header>
