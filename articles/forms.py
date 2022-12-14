@@ -29,7 +29,7 @@ class ReviewForm(forms.ModelForm):
             "title": '제목',
             "content": '내용',
             "image": '이미지',
-            "rating": '평점',
+            "rating": '평점(1 ~ 5 사이 값을 입력해주세요)',
         }
 
 
