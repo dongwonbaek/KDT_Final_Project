@@ -8,7 +8,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class User(AbstractUser):
-    nickname = models.CharField(max_length=20, unique=False)
+    nickname = models.CharField(max_length=10, unique=True)
     image = ProcessedImageField(
         upload_to="images/",
         null=True,
@@ -25,7 +25,9 @@ class User(AbstractUser):
     blocking = models.ManyToManyField(
         "self", symmetrical=False, related_name="blockers"
     )
-    age = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(15)], null=True)
+    age = models.IntegerField(
+        validators=[MinValueValidator(0), MaxValueValidator(15)], null=True
+    )
 
     # user image 없을 시 오류 방지
     @property

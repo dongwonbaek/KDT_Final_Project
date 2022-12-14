@@ -24,7 +24,7 @@
           {% else %}
           <img src="{% static 'img/no-avatar.jpg' %}" class="commu_pf_img" alt="유저 대체이미지">
           {% endif %} 
-          <p class='my-1 mx-3'>{{ community.user.nickname }}</p>
+          <p class='my-1 mx-3'><a href="{% url 'accounts:detail' community.user.pk %}">{{ community.user.nickname }}</a></p>
           <p class="my-1">{{ community.created_at|date:'Y.m.d H:i' }}</p>
         </div>
         <!-- menu (dropdown) -->
@@ -38,20 +38,26 @@
                 <button class="dropdown-item" type="button">커뮤니티 메인</button>
               </a>
             </li>
+            {% if request.user == community.user %}
             <li>
-              {% if request.user == community.user %}
               <a href="{% url 'articles:community_update' community.pk %}">
                 <button class="dropdown-item" type="button">글 수정</button>
               </a>
-              {% endif %}
             </li>
             <li>
               {% if request.user == community.user %}
               <a href="{% url 'articles:community_delete' community.pk %}">
                 <button class="dropdown-item" type="button">글 삭제</button>
               </a>
-              {% endif %}
             </li>
+            {% else %}
+            <li>
+              {% if request.user != community.user %}
+              <a href="{% url 'accounts:detail' community.user.pk %}">
+                <button class="dropdown-item" type="button">작성자 정보</button>
+              </a>
+            </li>
+            {% endif %}
           </ul>
         </div>
       </section>
