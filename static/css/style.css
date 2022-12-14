@@ -1,3 +1,9 @@
+/*~-*-~*~*ODJ*~*~*~-*~*\
+──────▄▀▄─────▄▀▄──────
+─────▄█░░▀▀▀▀▀░░█▄─────
+─▄▄──█░░░░░░░░░░░█──▄▄─
+█▄▄█─█░░▀░░┬░░▀░░█─█▄▄█
+\*-~*~-*-*-~*~-*-*-~*~*/
 @font-face {
   font-family: 'YiSunShinDotumM';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/YiSunShinDotumM.woff') format('woff');
@@ -263,7 +269,7 @@ header ul li:hover #submenu,
   outline: 2px solid var(--main-salmon);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
 }
 
 .dropdown-menu.dropdown-menu {
@@ -298,7 +304,7 @@ ul.dropdown-menu>li:first-child {
   outline: 2px solid var(--main-salmon);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
 }
 
 header .menu ul>li>a {
@@ -310,6 +316,7 @@ header .menu ul>li>a {
 footer {
   position: relative;
   padding-top: 80px;
+  margin-top: 100px;
   font-size: 14px;
   height: fit-content;
   width: 100%;
@@ -437,6 +444,10 @@ footer .footer-text {
 
 #pagescroll img {
   width: 55px;
+}
+
+#pagescroll a:hover {
+  transform: scale(1.1, 1.1);
 }
 
 /* 공유 아이콘 */
@@ -1105,6 +1116,8 @@ path.two {
   margin: 0px 16px;
 }
 
+/*--------------------- accounts:detail--------------------- */
+
 /*------어카운츠 디테일------*/
 .follow-title {
   background-color: var(--main-mintygreen);
@@ -1336,4 +1349,214 @@ path.two {
 .custom-tooltip {
   --bs-tooltip-bg: #003B41;
   --bs-tooltip-arrow-height: 1rem;
+}
+
+
+/* ----------------------------community - style 3---------------------------- */
+/* community_index */
+
+.commu {
+  margin-top: 10rem;
+}
+
+.pen {
+  color: #297372;
+  border: 1px solid #297372;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 0 6px 0 8px;
+  height: 40px;
+}
+
+.pen:hover {
+  color: white;
+  background-color: #297372;
+  text-decoration: none;
+}
+
+.commu_hr {
+  background-color: #FB5957;
+  height: 0.1rem;
+}
+
+.commu_table {
+  table-layout: fixed;
+  word-break: break-all;
+  height: auto;
+  border-collapse: separate;
+  border-spacing: 0 1rem;
+}
+
+.commu_num {
+  width: 10rem;
+}
+
+.commu_title {
+  width: 28rem;
+}
+
+.commu_name {
+  width: 13rem;
+}
+
+.commu_date {
+  width: 13rem;
+}
+
+.commu_view {
+  width: 10rem;
+}
+
+/* community_form(create) */
+
+.commu_c {
+  margin-top: 13rem;
+}
+
+.commu_form {
+  background-color: white;
+  border-radius: 5px;
+  padding: 3rem;
+}
+
+.commu_write {
+  text-align: center;
+  font-weight: bold;
+  color: #FB5957;
+  width: 10rem;
+}
+
+.commu_btn {
+  color: white;
+  background-color: #FB5957;
+  border: 0;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.commu_detail_hr {
+  background-color: #297372;
+  height: 0.1rem;
+}
+
+/* community_detail */
+
+.commu_container {
+  width: 1000px;
+  margin: auto;
+  margin-top: 10rem;
+}
+
+.commu_pf_img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.big_img {
+  height: 30rem;
+  width: 50rem;
+}
+
+.big_img img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.bi-heart-fill {
+  color: crimson;
+}
+
+.bi-heart {
+  color: crimson;
+}
+
+/* dropdown */
+.detail_drop {
+  color: white;
+  background-color: #297372;
+}
+
+/* 기본 스타일 초기화 */
+input {
+  all: unset;
+}
+
+/* 이미지 슬라이드 */
+.mySlides {
+  display: none;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: white;
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.activate,
+.dot:hover {
+  background-color: #717171;
+}
+
+.fade2 {
+  animation-name: fade;
+  animation-duration: 10000s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1
+  }
+
+  to {
+    opacity: 1
+  }
 }

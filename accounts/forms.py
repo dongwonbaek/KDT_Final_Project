@@ -9,12 +9,6 @@ from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth import get_user_model
 
 
-GENDER_CHOICE = [
-    "여성",
-    "남성",
-]
-
-
 class SignupForm(UserCreationForm):
     class Meta:
         model = get_user_model()
@@ -26,9 +20,6 @@ class SignupForm(UserCreationForm):
             "nickname",
             "image",
             "gender",
-        )
-        gender = forms.BooleanField(
-            label="성별", widget=forms.RadioSelect(choices=GENDER_CHOICE)
         )
 
         widgets = {
