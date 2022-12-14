@@ -45,14 +45,12 @@
               </a>
             </li>
             <li>
-              {% if request.user == community.user %}
               <a href="{% url 'articles:community_delete' community.pk %}">
                 <button class="dropdown-item" type="button">글 삭제</button>
               </a>
             </li>
             {% else %}
             <li>
-              {% if request.user != community.user %}
               <a href="{% url 'accounts:detail' community.user.pk %}">
                 <button class="dropdown-item" type="button">작성자 정보</button>
               </a>
