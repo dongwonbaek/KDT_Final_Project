@@ -1449,11 +1449,11 @@ path.two {
 }
 
 .commu_num {
-  width: 10rem;
+  width: 7rem;
 }
 
 .commu_title {
-  width: 28rem;
+  width: 25rem;
 }
 
 .commu_name {
@@ -1465,7 +1465,11 @@ path.two {
 }
 
 .commu_view {
-  width: 10rem;
+  width: 7rem;
+}
+
+.commu_like {
+  width: 7rem;
 }
 
 /* community_form(create) */
@@ -1532,11 +1536,6 @@ path.two {
 .detail_drop {
   color: white;
   background-color: #297372;
-}
-
-/* 기본 스타일 초기화 */
-input {
-  all: unset;
 }
 
 /* 이미지 슬라이드 */
