@@ -30,3 +30,17 @@ class UpdateForm(UserChangeForm):
             "gender",
             "image",
         )
+        widgets = {
+            "email": forms.TextInput(
+                attrs={
+                    "class": "focus-effect form-control-plaintext",
+                    "help_text": "ID는 수정할 수 없습니다.",
+                },
+            ),
+            "nickname": forms.TextInput(
+                attrs={
+                    "class": "focus-effect",
+                    "help_text": "변경할 닉네임을 입력해주세요.",
+                },
+            ),
+        }

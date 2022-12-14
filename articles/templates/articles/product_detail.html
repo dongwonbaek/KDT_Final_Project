@@ -206,7 +206,7 @@
 
   <!-- 탭 이동 -->
   <section id="tap-move" class="d-flex flex-column align-items-center">
-    <div class="tap-nav w-100">
+    <div class="tap-nav w-100" id="tab-nav">
       <button class="tab-button" data-tab-section="tab-section-1">상품설명</button>
       <button class="tab-button" data-tab-section="tab-section-2">선물후기 ({{ product.review_set.all.count }})</button>
     </div>
@@ -704,4 +704,15 @@ for (let commentForm of commentForms) {
   }
   
   </script>
+
+  {% comment %} <script>
+    $(window).scroll(function () {
+      if ($(document).scrollTop() <= 166) {
+        $('#tab-nav').addClass('tab-nav-fix');
+        console.log("OK");
+      } else {
+        $('#tab-nav').removeClass('tab-nav-fix');
+      }
+    });
+  </script> {% endcomment %}
 {% endblock script %}

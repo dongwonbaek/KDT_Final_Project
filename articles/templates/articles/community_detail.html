@@ -12,130 +12,124 @@
 {% endblock style %}
 
 {% block content %}
-  <section class="content-wrapper">
-    <div class="commu_container">
-      <div class="my-2">
-        <!-- title -->
-        <h1 class='display-6'>{{ community.title }}</h1>
-        <!-- 상단 (정보 / menu) -->
-        <section class="d-flex justify-content-between my-2">
-          <div class="d-flex">
-            {% if community.user.image %}
-            <img src="{{ community.user.image.url }}" class="commu_pf_img" alt="유저 이미지">
-            {% else %}
-            <img src="{% static 'img/no-avatar.jpg' %}" class="commu_pf_img" alt="유저 대체이미지">
-            {% endif %} 
-            <p class='my-1 mx-3'>{{ community.user.nickname }}</p>
-            <p class="my-1">{{ community.created_at|date:'Y.m.d H:i' }}</p>
-          </div>
-          <!-- menu (dropdown) -->
-          <div class="dropdown">
-            <button class="detail_drop btn dropdown-toggle" type="button" id="dropdownMenu2" data-mdb-toggle="dropdown" aria-expanded="false">
-              Menu
-            </button>
-            <ul style="width: 12rem; height: 9.5rem;" class="dropdown-menu" aria-labelledby="dropdownMenu2">
-              <li>
-                <a href="{% url 'articles:community_index' %}">
-                  <button class="dropdown-item" type="button">커뮤니티 메인</button>
-                </a>
-              </li>
-              <li>
-                {% if request.user == community.user %}
-                <a href="{% url 'articles:community_update' community.pk %}">
-                  <button class="dropdown-item" type="button">글 수정</button>
-                </a>
-                {% endif %}
-              </li>
-              <li>
-                {% if request.user == community.user %}
-                <a href="{% url 'articles:community_delete' community.pk %}">
-                  <button class="dropdown-item" type="button">글 삭제</button>
-                </a>
-                {% endif %}
-              </li>
-            </ul>
-          </div>
-        </section>
-      </div>
-      <hr class="commu_detail_hr">
-      <!-- 이미지 (슬라이드) -->
-      <div class="my-5">
-        <div class="d-flex justify-content-start">
-          <div style="position: relative;">
-            {% for i in community.communityimages_set.all %}
-            <div class="big_img mySlides">
-              <div class="numbertext">{{ forloop.counter }}</div>
-              <img class="w-100 h-100" src="{{ i.images.url }}" alt="커뮤니티 이미지">
-            </div>
-            {% endfor %}
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            <div class="d-flex justify-content-center my-2">
-              {% for i in community.communityimages_set.all %}
-              <span class="dot" onclick="currentSlide({{forloop.counter}})"></span>
-              {% endfor %}
-            </div>
-          </div>
+  <div class="commu_container">
+    <div class="my-2">
+      <!-- title -->
+      <h1 class='display-6'>{{ community.title }}</h1>
+      <!-- 상단 (정보 / menu) -->
+      <section class="d-flex justify-content-between my-2">
+        <div class="d-flex">
+          {% if community.user.image %}
+          <img src="{{ community.user.image.url }}" class="commu_pf_img" alt="유저 이미지">
+          {% else %}
+          <img src="{% static 'img/no-avatar.jpg' %}" class="commu_pf_img" alt="유저 대체이미지">
+          {% endif %} 
+          <p class='my-1 mx-3'>{{ community.user.nickname }}</p>
+          <p class="my-1">{{ community.created_at|date:'Y.m.d H:i' }}</p>
         </div>
-        <!-- 글 내용 -->
-        <p>{{ community.content|safe }}</p>
-        <!-- 좋아요 -->
-        <div class="mt-5">
-          {% if request.user.is_authenticated %}
-            {% if request.user in community.like_users.all %}
-                <i id="like-btn" data-community-id="{{ community.pk }}" class="bi bi-heart-fill text-danger"></i>
-            {% else %}
-                <i id="like-btn" data-community-id="{{ community.pk }}" class="bi bi-heart text-danger"></i> 
-            {% endif %}
-          {% endif %}
-          <span id="like-count">{{ community.like_users.count }}</span>
+        <!-- menu (dropdown) -->
+        <div class="dropdown">
+          <button class="detail_drop btn dropdown-toggle" type="button" id="dropdownMenu2" data-mdb-toggle="dropdown" aria-expanded="false">
+            Menu
+          </button>
+          <ul style="width: 12rem; height: 9.5rem;" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li>
+              <a href="{% url 'articles:community_index' %}">
+                <button class="dropdown-item" type="button">커뮤니티 메인</button>
+              </a>
+            </li>
+            <li>
+              {% if request.user == community.user %}
+              <a href="{% url 'articles:community_update' community.pk %}">
+                <button class="dropdown-item" type="button">글 수정</button>
+              </a>
+              {% endif %}
+            </li>
+            <li>
+              {% if request.user == community.user %}
+              <a href="{% url 'articles:community_delete' community.pk %}">
+                <button class="dropdown-item" type="button">글 삭제</button>
+              </a>
+              {% endif %}
+            </li>
+          </ul>
         </div>
-        <hr class="commu_detail_hr">
-      </div>
-      <!-- 댓글 작성 -->
-      <div>
-        {% if request.user.is_authenticated %}
-        <form id="comment-form" data-community-id="{{ community.pk }}">
-          {% csrf_token %}
-          {% bootstrap_form community_comment_form layout='inline' %}
-          <div class="d-flex justify-content-end mt-3">
-            <div class="pen d-flex flex-column justify-content-center">
-              <input class="fa-solid fa-pen my-3" type="submit" value="댓글 작성"></input>
-            </div>
+      </section>
+    </div>
+    <hr class="commu_hr_2">
+    <!-- 이미지 (슬라이드) -->
+    <div class="my-5">
+      <div class="d-flex justify-content-start mb-3">
+        <div style="position: relative;">
+          {% for i in community.communityimages_set.all %}
+          <div class="big_img mySlides">
+            <div class="numbertext">{{ forloop.counter }}</div>
+            <img class="w-100 h-100" src="{{ i.images.url }}" alt="커뮤니티 이미지">
           </div>
-        </form>
-        <br>
-        {% endif %}
-        <hr class="commu_detail_hr">
-        <!-- 댓글 현황 -->
-        <div id="comments">
-          {% for comment in comments %}
-          <div class="d-flex justify-content-between">
-            <div class="d-flex">
-            {% if comment.user.image %}
-            <img src="{{ comment.user.image.url }}" class="commu_pf_img mx-2 my-2" alt="유저 이미지">
-            {% else %}
-            <img src="{% static 'img/no-avatar.jpg' %}" class="commu_pf_img text" alt="유저 대체이미지">
-            {% endif %}
-            <p> {{ comment.content }}</p>
-          </div>
-          <div class="my-2">
-            {% if request.user == comment.user %}
-              <form action="{% url 'articles:community_comment_delete' comment.pk %}" method="POST" class="my-0">
-                {% csrf_token %}
-                <input type="submit" class="btn btn-outline-danger mx-2" value="삭제">
-              </form>
-            {% endif %} 
-          </div>
-          </div>
-          <hr class="commu_detail_hr">
-          
-          
           {% endfor %}
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          <div class="d-flex justify-content-center my-2">
+            {% for i in community.communityimages_set.all %}
+            <span class="dot" onclick="currentSlide({{forloop.counter}})"></span>
+            {% endfor %}
+          </div>
         </div>
+      </div>
+      <!-- 글 내용 -->
+      <p>{{ community.content|safe }}</p>
+      <!-- 좋아요 -->
+      <div class="mt-5">
+        {% if request.user.is_authenticated %}
+          {% if request.user in community.like_users.all %}
+              <i id="like-btn" data-community-id="{{ community.pk }}" class="bi bi-heart-fill text-danger"></i>
+          {% else %}
+              <i id="like-btn" data-community-id="{{ community.pk }}" class="bi bi-heart text-danger"></i> 
+          {% endif %}
+        {% endif %}
+        <span id="like-count">{{ community.like_users.count }}</span>
+      </div>
+      <hr class="commu_hr_2">
+    </div>
+    <!-- 댓글 작성 -->
+    <div>
+      {% if request.user.is_authenticated %}
+      <form id="comment-form" data-community-id="{{ community.pk }}">
+        {% csrf_token %}
+        {% bootstrap_form community_comment_form layout='inline' %}
+        <div class="d-flex justify-content-end mt-3">
+          <input class="detail_write my-3" type="submit" value="댓글 작성"></input>
+        </div>
+      </form>
+      <br>
+      {% endif %}
+      <hr class="commu_hr_2">
+      <!-- 댓글 현황 -->
+      <div id="comments">
+        {% for comment in comments %}
+        <div class="d-flex justify-content-between">
+          <div class="d-flex">
+          {% if comment.user.image %}
+          <img src="{{ comment.user.image.url }}" class="commu_pf_img mx-2 my-2" alt="유저 이미지">
+          {% else %}
+          {% comment %} <img src="{% static 'img/no-avatar.jpg' %}" class="commu_pf_img text" alt="유저 대체이미지"> {% endcomment %}
+          {% endif %}
+          <p> {{ comment.content }}</p>
+        </div>
+        <div class="my-2">
+          {% if request.user == comment.user %}
+            <form action="{% url 'articles:community_comment_delete' comment.pk %}" method="POST" class="my-0">
+              {% csrf_token %}
+              <input type="submit" class="btn btn-outline-danger mx-2" value="삭제">
+            </form>
+          {% endif %} 
+        </div>
+        </div>
+        <hr class="commu_hr_2">
+        {% endfor %}
       </div>
     </div>
-  </section>  
+  </div>
 {% endblock content %}
 
 {% block script %}

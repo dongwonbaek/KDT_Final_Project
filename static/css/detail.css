@@ -96,45 +96,11 @@ h3.username-dev+span {
   color: rgb(79, 79, 79);
 }
 
-.verified {
-  width: 100%;
-  color: var(--black);
-  background-color: var(--white);
-  font-family: var(--font-slim);
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  font-weight: 900;
-  text-align: center;
-  border-radius: 5px;
-  font-size: 1em;
-  padding: .25em;
-  position: absolute;
-  pointer-events: none;
-  top: 150%;
-  left: 0;
-  opacity: 0;
-  transition: all .5s cubic-bezier(.175, .885, .32, 1.275);
-}
-
-.verified::before {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  transform: rotateZ(-90deg);
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  border-left: 12px solid var(--white);
-  position: absolute;
-  top: -15px;
-  left: 50%;
-}
-
 .user-info-bar {
   width: 100%;
   display: grid;
   padding: .75em 0 1em 0;
-  background-color: var(--bc);
+  background-color: white;
   grid-template-columns: 1fr 10% 35% 20% 1fr;
   grid-template-rows: auto;
   grid-template-areas:
@@ -165,7 +131,7 @@ h3.username-dev+span {
 }
 
 .ufo-bar-bio {
-  color: var(--gray);
+  color: gray;
 }
 
 .ufo-bar-col3-inner {
@@ -189,7 +155,7 @@ h3.username-dev+span {
 
 .ufo-bar-fff-active {
   margin: .25em .5em;
-  color: var(--primary);
+  color: var(--main-mintygreen);
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
@@ -212,8 +178,8 @@ h3.username-dev+span {
 .user-info-bar2 {
   width: 100%;
   display: grid;
-  color: var(--white);
-  background-color: var(--bc);
+  color: white;
+  background-color: var(--main-bluegreen);
   grid-template-columns: 1fr 16.25% 16.25% 16.25% 16.25% 1fr;
   grid-template-rows: auto;
   grid-template-areas:
@@ -226,23 +192,23 @@ h3.username-dev+span {
 }
 
 .ufo-bar2-block {
-  border-bottom: 3px solid var(--bc);
+  border-bottom: 3px solid var(--main-bluegreen);
   cursor: pointer;
 }
 
 .ufo-bar2-block span {
   margin: 0 .3em;
-  color: var(--dark);
+  color: black;
 }
 
 .ufo-bar2-block h3 {
-  color: var(--white);
+  color: white;
   font-weight: 500;
 }
 
 .ufo-bar2-block:after {
   content: "";
-  background: var(--gradient);
+  background: linear-gradient(45deg, var(--main-salmon) 0%, var(--main-lightpink) 100%);
   background-size: 700%;
   display: block;
   height: 3px;

@@ -4,6 +4,7 @@
 {% load widget_tweaks %}
 {% load django_bootstrap5 %}
 {% load imagekit %}
+{% load humanize %}
 
 {% block title %} | {{ user.nickname }}님의 정보{% endblock title %}
 {% block style %}
@@ -166,24 +167,85 @@
 		{% endif %}
 		<div class="ufo-bar-col5"></div>
 	</div>
-	<!--프로필 아래 탭 메뉴-->	
-	<section id="tap-move" class="user-detail-wrapper container">
-		<div class="tap-nav w-100 ">
-			<button class="tab-button" data-tab-section="tab-section-1">작성한 글</button>
-			<button class="tab-button" data-tab-section="tab-section-2">작성한 후기</button>
-			<button class="tab-button" data-tab-section="tab-section-3">위시리스트({{ user.like_product.all.count }})</button>
+	<!--프로필 아래-->	
+	<!--1. 작성한 글-->
+	<section id="pf-tap-move" class="user-detail-wrapper container">
+		<div class="pf-tap-nav w-100 ">
+			<button class="pf-tab-button"><i class="fa-solid fa-pen-to-square"></i> 작성한 글</button>
 		</div>
-		<!--1. 작성한 글-->
-		<div id="tab-section-1" class="tab-section w-100 tab-section w-100 d-flex flex-column align-items-center" hidden>
+		<div id="pf-tab-section-1" class="pf-tab-section">
 			<h5 class="text-center">커뮤니티에 {{ user.community_set.count }}개의 글을 작성했습니다.</h5>
-			
-		</div>
-		<!--2. 작성 후기-->
-		<div id="tab-section-2" class="tab-section p-0">
-			<div class="wish-review">
-				<h3 class="text-center">남긴 후기</h3>
+			<div class="tab-content-wrapper">
+				<table class="table table-hover">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">제목</th>
+								<th scope="col">작성일</th>
+								<th scope="col">내용</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for post in paginated_post_list %}
+							<tr class="table-active">
+								<th>{{ forloop.counter }}</th>
+								<td scope="row"><a href="{% url 'articles:community_detail' post.pk %}">{{ post.title }}</a></td>
+								<td>{{ post.created_at }}</td>
+								<td>{{ post.content|striptags }}</td>
+							</tr>
+							{% endfor %}
+						</body>
+					</table>
+				</div>
+				<!-- 작성글 페이징처리 시작 -->
+				<div class="board-pagination">
+					<ul class="pagination">
+						<!-- 이전페이지 -->
+						{% if paginated_post_list.has_previous %}
+						<li class="page-item">
+							<a class="page-link" tabindex="-1" href="?page={{ paginated_post_list.previous_page_number }}">&laquo;</a>
+						</li>
+						{% else %}
+						<li class="page-item disabled">
+							<a class="page-link" href="#">&laquo;</a>
+						</li>
+						{% endif %}
+						<!-- 페이지리스트 -->
+						{% for page_number in paginated_post_list.paginator.page_range %}
+						{% if page_number == paginated_post_list.number %}
+						<li class="page-item activate" aria-current="page">
+							<a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+						</li>
+						{% else %}
+						<li class="page-item">
+							<a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+						</li>
+						{% endif %}
+						{% endfor %}
+						<!-- 다음페이지 -->
+						{% if paginated_post_list.has_next %}
+						<li class="page-item">
+							<a class="page-link" href="?page={{paginated_post_list.next_page_number }}">&raquo;</a>
+						</li>
+						{% else %}
+						<li class="page-item disabled">
+							<a class="page-link" tabindex="-1" href="#">&raquo;</a>
+						</li>
+						{% endif %}
+					</ul>
+				</div>
+				<!-- 페이징처리 끝 -->
 			</div>
-			<div class="d-flex flex-column align-items-center mt-1">
+		</div>
+	</section>
+	<!--2. 작성 후기-->
+	<section id="pf-tap-move" class="user-detail-wrapper container">
+		<div class="pf-tap-nav w-100 ">
+			<button class="pf-tab-button"><i class="fa-regular fa-comment"></i> 작성한 후기</button>
+		</div>
+		<div id="pf-tab-section-2" class="pf-tab-section">
+			<h5 class="text-center"> {{ user.review_set.count }}개의 후기를 작성했습니다.</h5>
+			<div class="tab-content-wrapper">
 				{% for review in paginated_review_list %}
 				<div class="d-flex justify-content-between detail-rw">
 					<div>
@@ -279,28 +341,67 @@
 				<!--페이지네이션 끝-->
 			</div>
 		</div>
-		<!--3. 위시리스트-->
-		<div id="tab-section-3" class="tab-section w-100 tab-section w-100 d-flex flex-column align-items-center" hidden>
-			<div class="wish-review">
-				<h3 class="text-center">위시 리스트</h3>
-			</div>
-			<div class="d-flex mt-1">
-				<div class="row">
-					{% for product in user.like_product.all %}
-						<div class="col-6 col-md-4 d-flex justify-content-center">
-							<div class="d-flex flex-column align-items-center detail-sub">
-								<div>
-									<img class="review-image" src="{{ product.productimages_set.all.0.images }}">
-								</div>
-								<div>
-									<a href="{% url 'articles:product_detail' product.pk %}">{{ product.title }}</a>
-								</div>
-								<h4>{{ product.price }} 원</h4>
+	</section>
+	<!--3. 위시리스트 paginated_wishlist-->
+	<section id="pf-tap-move" class="user-detail-wrapper container">
+		<div class="pf-tap-nav w-100 ">
+			<button class="pf-tab-button"><i class="fa-solid fa-bag-shopping"></i> 위시리스트</button>
+		</div>
+		<div id="pf-tab-section-3" class="pf-tab-section">
+			<h5 class="text-center"> {{ user.like_product.count }}개의 아이템이 담겨있어요.</h5>
+			<div class="tab-content-wrapper">
+				<div class="row row-cols-4 row-cols-md-2 g-4">
+					{% for item in paginated_wishlist %}
+					<div class="col">
+						<div class="card">
+							<img src="{{ item.productimages_set.all.0.images }}" class="card-img-top" alt="review-image">
+							<div class="card-body">
+								<h5 class="card-title">{{ item.title }} </h5>
+								<p class="card-text">{{ item.price|intcomma }} 원</p>
 							</div>
 						</div>
-					{% endfor %}
 					</div>
+					{% endfor %}
 				</div>
+				<!--카드덱 끝-->
+				<!-- 후기 페이지네이션 시작-->
+				<div class="board-pagination">
+					<ul class="pagination">
+						<!-- 이전페이지 -->
+						{% if paginated_wishlist.has_previous %}
+						<li class="page-item">
+							<a class="page-link" tabindex="-1" href="?page={{ paginated_wishlist.previous_page_number }}">&laquo;</a>
+						</li>
+						{% else %}
+						<li class="page-item disabled">
+							<a class="page-link" href="#">&laquo;</a>
+						</li>
+						{% endif %}
+						<!-- 페이지리스트 -->
+						{% for page_number in paginated_wishlist.paginator.page_range %}
+						{% if page_number == paginated_wishlist.number %}
+						<li class="page-item activate" aria-current="page">
+							<a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+						</li>
+						{% else %}
+						<li class="page-item">
+							<a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+						</li>
+						{% endif %}
+						{% endfor %}
+						<!-- 다음페이지 -->
+						{% if paginated_wishlist.has_next %}
+						<li class="page-item">
+							<a class="page-link" href="?page={{paginated_wishlist.next_page_number }}">&raquo;</a>
+						</li>
+						{% else %}
+						<li class="page-item disabled">
+							<a class="page-link" tabindex="-1" href="#">&raquo;</a>
+						</li>
+						{% endif %}
+					</ul>
+				</div>
+				<!--페이지네이션 끝-->
 			</div>
 		</div>
 	</section>
@@ -373,12 +474,12 @@
 			})
 		})
 	</script>
-	<!-- 상품설명, 후기 탭 전환 스크립트 -->
+	{% comment %} <!-- 상품설명, 후기 탭 전환 스크립트 -->
 	<script>
-		const $nav = document.querySelector('#tap-move')
-		const $sections = document.querySelectorAll('.tab-section');
+		const $nav = document.querySelector('#pf-tap-move')
+		const $sections = document.querySelectorAll('.pf-tab-section');
 		$nav.addEventListener('click', (e) => {
-			if (!e.target.classList.contains('tab-button')) {
+			if (!e.target.classList.contains('pf-tab-button')) {
 				return;
 			}
 			const focusedTabId = e.target.dataset.tabSection;
@@ -390,7 +491,7 @@
 				}
 			});
 		});
-	</script>
+	</script> {% endcomment %}
 	<!--swiper cdn base.html-->
 	<script>
 		const swiper = new Swiper('.swiper', {
