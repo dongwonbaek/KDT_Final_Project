@@ -43,15 +43,16 @@
 							<h3 class="username-dev">{{ user.nickname }}</h3>
 							<span>{{ user.username }}</span>
 						</div>
-						<div>
+						<div class="user-info-detail">
+							<span>{{ user.age }} 세</span>
 							<span>{% if user.gender == True %}남{% else %}여{% endif %}</span>
-							<span>{{ user.birth_date | date:'Y년 n월 j일 생' }}</span>	
+							<span><i class="fa-solid fa-cake-candles"></i>{{ user.birth_date | date:'n월 j일' }}</ㅐ>	
 						</div>
 					</div>
 					<!--팔로우 모달 트리거-->
 					<div>
 						<a class="ufo-bar-fff" data-bs-toggle="modal" data-bs-target="#exampleModal">
-							팔로우<span id='followings'> {{user.following.count}}</span> 
+							팔로우<span id='followings' class="me-5"> {{user.following.count}}</span> 
 							팔로워<span id='followers'> {{ user.followers.count}}</span>
 						</a>
 					</div>
@@ -68,27 +69,35 @@
 										<!--팔로우-->
 										<div class="col-6">
 											<h5 class="follow-title">팔로우</h5>
-											{% for followinguser in request.user.following.all %}
-												<div>
-													<a href="{% url 'accounts:detail' followinguser.pk %}">
-														<img class="user-image" src="{{ followinguser.image.url }}">{{ followinguser.nickname }}
-													</a>
-												</div>
-											{% endfor %}
+											{% if request.user.following.all == 0 %}
+												<div>팔로우 중인 친구가 없어요.</div>
+											{% else %}
+												{% for followinguser in request.user.following.all %}
+													<div>
+														<a href="{% url 'accounts:detail' followinguser.pk %}">
+															<img class="user-image" src="{{ followinguser.image.url }}">{{ followinguser.nickname }}
+														</a>
+													</div>
+												{% endfor %}
+											{% endif %}
 										</div>
 										<!--팔로워-->
 										<div class="col-6">
 											<h5 class="follower-title">팔로워</h5>
-											{% for followeruser in request.user.followers.all %}
-											<div>
-												<a href="{% url 'accounts:detail' followeruser.pk %}">
-													<img class="user-image" src="{{ followeruser.image.url }}">{{followeruser.nickname }}
-												</a>
-											</div>
-											{% endfor %}
+											{% if request.user.followers.all == 0  %}
+												<div>아직 팔로워가 없어요.</div>
+											{% else %}
+												{% for followeruser in request.user.followers.all %}
+													<div>
+														<a href="{% url 'accounts:detail' followeruser.pk %}">
+															<img class="user-image" src="{{ followeruser.image.url }}">{{followeruser.nickname }}
+														</a>
+													</div>
+												{% endfor %}
+											{% endif %}
 										</div>
-									</div>
-								</div><!--modal-body-->
+									</div>	
+								</div>	
 							</div>
 						</div>
 					</div>
@@ -100,11 +109,9 @@
 		{% if request.user == user %}
 		<div class="ufo-bar-col4">
 			<div class="ufo-bar-col4-inner">
-				<a href="{% url 'accounts:update' %}" class="button2 btn-primary2">프로필 수정<div class="btn-secondary2"></div></a>
-				<button type="button" class="block-button" data-bs-toggle="modal" data-bs-target="#blockModal">차단 목록</button>
-				<button type="button" class="delete-button profile-text" data-bs-toggle="modal" data-bs-target="#deleteUser">
-					회원탈퇴
-				</button>
+				<a href="{% url 'accounts:update' %}" class="user-info-btn">프로필수정</a>
+				<button type="button" class="user-info-btn" data-bs-toggle="modal" data-bs-target="#blockModal">차단목록</button>
+				
 			</div>
 		</div>
 		<!-- 차단목록 모달 -->
@@ -128,26 +135,6 @@
 			</div>
 		</div>
 		<!-- 차단목록 모달 끝-->
-		<!-- 회원탈퇴 모달 -->
-		<div class="modal fade" id="deleteUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						정말 탈퇴하시겠습니까? 관련된 모든 정보가 삭제됩니다.
-					</div>
-					<div class="modal-footer">
-						<form action="{% url 'accounts:delete' %}" method="POST">
-							{% csrf_token %}
-							<input class='delete-button2' type="submit" value='네'>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 회원탈퇴 모달 끝 -->
 		<div class="ufo-bar-col5">
 		</div>
 		{% else %}
@@ -170,44 +157,20 @@
 		<div class="ufo-bar-col5">
 		</div>
 	</div>
-	<!--프로필 아래 탭 메뉴-->
-	<div class="user-info-bar2">
-		<div class="ufo-bar2-col1">
-		</div>
-		<div id="ufo-home" class="ufo-bar2-col2 ufo-bar2-block">
-			<div class="ufo-bar2-col2-inner flexbox">
-				<span><i class="uil uil-trophy"></i></span>
-				<h3>프로필</h3>
-			</div>
-		</div>
-		<div id="ufo-videos" class="ufo-bar2-col3 ufo-bar2-block">
-			<div class="ufo-bar2-col3-inner flexbox">
-				<span><i class="uil uil-star"></i></span>
-				<h3>위시리스트</h3>
-			</div>
-		</div>
-		<div id="ufo-images" class="ufo-bar2-col4 ufo-bar2-block">
-			<div class="ufo-bar2-col4-inner flexbox">
-				<span><i class="uil uil-comment-alt"></i></span>
-				<h3>작성한 후기</h3>
-			</div>
-		</div>
-		<div id="ufo-about" class="ufo-bar2-col6 ufo-bar2-block">
-			<div class="ufo-bar2-col6-inner flexbox">
-				<span><i class="uil uil-user"></i></span>
-				<h3>작성한 글</h3>
-			</div>
-		</div>
-		<div class="ufo-bar2-col7">
-		</div>
-	</div>
-	<section id="tap-move" class="container d-flex flex-column align-items-center">
+	<!--프로필 아래 탭 메뉴-->	
+	<section id="tap-move" class="user-detail-wrapper container">
 		<div class="tap-nav w-100 ">
-			<button class="tab-button" data-tab-section="tab-section-1">남긴 후기</button>
-			<button class="tab-button" data-tab-section="tab-section-2">위시리스트({{user.like_product.all.count }})</button>
+			<button class="tab-button" data-tab-section="tab-section-1">작성한 글</button>
+			<button class="tab-button" data-tab-section="tab-section-2">작성한 후기</button>
+			<button class="tab-button" data-tab-section="tab-section-3">위시리스트({{user.like_product.all.count }})</button>
 		</div>
-		<!--1. 작성 후기-->
-		<div id="tab-section-1" class="tab-section p-0">
+		<!--1. 작성한 글-->
+		<div id="tab-section-1" class="tab-section w-100 tab-section w-100 d-flex flex-column align-items-center" hidden>
+			<h5 class="text-center">커뮤니티에 {{ user.community_set.count }}개의 글을 작성했습니다.</h5>
+			
+		</div>
+		<!--2. 작성 후기-->
+		<div id="tab-section-2" class="tab-section p-0">
 			<div class="wish-review">
 				<h3 class="text-center">남긴 후기</h3>
 			</div>
@@ -307,8 +270,8 @@
 				<!--페이지네이션 끝-->
 			</div>
 		</div>
-		<!--2. 위시리스트-->
-		<div id="tab-section-2" class="tab-section w-100 tab-section w-100 d-flex flex-column align-items-center" hidden>
+		<!--3. 위시리스트-->
+		<div id="tab-section-3" class="tab-section w-100 tab-section w-100 d-flex flex-column align-items-center" hidden>
 			<div class="wish-review">
 				<h3 class="text-center">위시 리스트</h3>
 			</div>
@@ -332,6 +295,32 @@
 			</div>
 		</div>
 	</section>
+	{% if request.user == user %}
+	<button type="button" class="user-quit-btn container" data-bs-toggle="modal" data-bs-target="#deleteUser">
+		회원탈퇴
+	</button>
+	<!-- 회원탈퇴 모달 -->
+	<div class="modal fade" id="deleteUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">안내</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					정말 탈퇴하시겠습니까? 관련된 모든 정보가 삭제됩니다.
+				</div>
+				<div class="modal-footer">
+					<form action="{% url 'accounts:delete' %}" method="POST">
+						{% csrf_token %}
+						<input class='neg-btn' type="submit" value='회원 탈퇴'>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 회원탈퇴 모달 끝 -->
+	{% endif %}
 </main>	
 {% endblock content %}
 	
