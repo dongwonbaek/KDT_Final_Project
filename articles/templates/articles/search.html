@@ -7,7 +7,7 @@
 {% load humanize %}
 
 {% block content %}
-<section class="container content-wrapper">
+<section class="container" style="min-height: calc(100% - 180px); margin-top: 300px;">
   <form role="search" class="s_form d-flex" action="{% url 'articles:search' %}" method='GET'>
     <!-- 카테고리 선택 -->
     <select name="field" class="select border rounded-2" aria-label="default select example">
