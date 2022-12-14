@@ -19,37 +19,35 @@
             <a class='text-dark' href="{% url 'articles:product_detail' review.product.pk %}">
               <div class="mt-5 p-3" style="border: 3px outset lightcoral; outline: 3px outset lightblue; border-radius: 12px; outline-offset: 3px;">
                 <div class='d-flex justify-content-between'>
-                  <span>{{ review.title }}</span>
-                  <span class='text-end'>
-                    <em style='font-size: .8rem;' class='text-secondary'>{{ review.created_at.date }}</em>
-                  </span>           
-                </div>
-                <span class="stars d-flex mb-1">
-                  {% for i in "x"|rjust:"5" %}
-                    {% if review.rating >= forloop.counter %}
-                      <i class="fas fa-star fs-6"></i>
-                    {% else %}
-                      <i class="fas fa-star eee fs-6"></i>
-                    {% endif %}
-                  {% endfor %}
-                </span>
-                <div class="d-flex justify-content-between">
-                  {% if review.image %}
-                    <img src="{{ review.image.url }}" alt="review.image" style="height: 5rem;" class='rounded'>
-                  {% else %}
-                    <img src="{% static 'img/dummy.png' %}" alt="dummy" style="height: 5rem;" class='rounded'>
-                  {% endif %}
-                  <a class='d-flex align-items-end' href="{% url 'accounts:detail' user.pk %}">
-                    {% if review.user.image %}
-                      <img src="{{ review.user.image.url }}" alt="profile_image" class='rounded-circle' style='height: 1.5rem;'>
-                    {% else %}
-                      <img src="{% static 'img/no-avatar.jpg' %}" alt="no-avatar" class='rounded-circle border border-secondary' style='height: 1.5rem;'>
-                    {% endif %}
-                    <span class='text-dark fs-6 text-align-center'>{{ review.user.nickname }}</span>
-                  </a>
-                </div>
-              </div>
-            </a>
+                  <span class='card-ellipsis'>{{ review.title }}</span>
+              <span class='text-end'>
+                <em style='font-size: .8rem;' class='text-secondary'>{{ review.created_at.date }}</em>
+              </span>           
+            </div>
+            <span class="stars d-flex mb-1">
+              {% for i in "x"|rjust:"5" %}
+                {% if review.rating >= forloop.counter %}
+                  <i class="fas fa-star fs-6"></i>
+                {% else %}
+                  <i class="fas fa-star eee fs-6"></i>
+                {% endif %}
+              {% endfor %}
+            </span>
+            <div class="d-flex justify-content-between">
+              {% if review.image %}
+                <img src="{{ review.image.url }}" alt="review.image" style="height: 5rem;" class='rounded'>
+              {% else %}
+                <img src="{% static 'img/dummy.png' %}" alt="dummy" style="height: 5rem;" class='rounded'>
+              {% endif %}
+              <a class='d-flex align-items-end' href="{% url 'accounts:detail' review.user.pk %}">
+                {% if review.user.image %}
+                  <img src="{{ review.user.image.url }}" alt="profile_image" class='rounded-circle' style='height: 1.5rem;'>
+                {% else %}
+                  <img src="{% static 'img/no-avatar.jpg' %}" alt="no-avatar" class='rounded-circle border border-secondary' style='height: 1.5rem;'>
+                {% endif %}
+                <span class='text-dark fs-6 text-align-center'>{{ review.user.nickname }}</span>
+              </a>
+            </div>
           </div>
         {% endfor %}
       </div>
@@ -95,14 +93,14 @@ function addNewContent() {
       div3.append(span1, span2)
       let span3 = document.createElement('span')
       span3.classList.add('stars', 'd-flex', 'mb-1')
-      let i1 = document.createElement('i')
-      i1.classList.add('fas', 'fa-star', 'fs-6')
-      let i2 = document.createElement('i')
-      i2.classList.add('fas', 'fa-star', 'eee', 'fs-6')
       for (let j = 0; j < 5; j++) {
         if (rowData[9] > j) {
+          let i1 = document.createElement('i')
+          i1.classList.add('fas', 'fa-star', 'fs-6')
           span3.append(i1)
         } else {
+          let i2 = document.createElement('i')
+          i2.classList.add('fas', 'fa-star', 'eee', 'fs-6')
           span3.append(i2)
         }
       }
