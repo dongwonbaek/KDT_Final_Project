@@ -1352,3 +1352,18 @@ path.two {
   --bs-tooltip-bg: #003B41;
   --bs-tooltip-arrow-height: 1rem;
 }
+
+/* 랭킹페이지 커스텀버튼 */
+.custom-btn {
+  --bs-btn-color: #003B41;
+  --bs-btn-bg: white;
+  --bs-btn-border-color: #003B41;
+  --bs-btn-border-radius: .5rem;
+  --bs-btn-hover-color: white;
+  --bs-btn-hover-bg: #003B41;
+  --bs-btn-hover-border-color: #003B41;
+  --bs-btn-focus-shadow-rgb: #003B41;
+  --bs-btn-active-color: white;
+  --bs-btn-active-bg: #003B41;
+  --bs-btn-active-border-color: #003B41;
+}
