@@ -1538,11 +1538,6 @@ path.two {
   background-color: #297372;
 }
 
-/* 기본 스타일 초기화 */
-input {
-  all: unset;
-}
-
 /* 이미지 슬라이드 */
 .mySlides {
   display: none;
