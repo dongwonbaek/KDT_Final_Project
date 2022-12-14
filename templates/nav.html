@@ -12,14 +12,35 @@
       </div>
       <div class="signup-wrapper">
         <h1 class="text-center">로그인</h1>
-        <form action="{% url 'accounts:login' %}" method="POST" class="d-flex flex-column align-items-center">
+        <form action="{% url 'accounts:login' %}" method="POST" onsubmit="return frm_check();">
           {% csrf_token %}
-          <label for="email">이메일</label>
-          <input class='signup-style1' id='email' type="email" name='username'>
+          <label for="username">아이디</label>
+          <div class="login-field">
+            <input class="focus-effect w-100 p-0 mb-2" placeholder="이메일을 입력하세요" type="username" name="username" id="logId1">
+            <span class="focus-border w-100">
+              <i></i>
+            </span>
+          </div>
           <label for="password">비밀번호</label>
-          <input class='signup-style1' id='password' type="password" name='password'>
-          <button class="login-button my-4" button_type='submit' content='로그인'>로그인</button>
+          <div class="login-field">
+            <input class="focus-effect w-100 p-0 mb-2" placeholder="비밀번호를 입력하세요" type="password" name='password' id="key1" onkeyup="checkCapsLock(event)">
+            <span class="focus-border">
+              <i></i>
+            </span>
+            <div id="keyShow1">SHOW</div> 
+          </div>
+          <div id='message1'></div>
+          <div class="input-wrap">
+            <input type="checkbox" name="saveId1" id="saveId1">
+            <label for="saveId1">아이디 저장</label>
+          </div>
+          <button class="pos-btn login-button" type='submit' content='로그인' id="checkKey">로그인</button>
         </form>
+        <p class="text-center">아직 회원이 아니신가요?
+          <a class="text-decoration-none" href="{% url 'accounts:signup' %}"><b>회원가입</b></a>
+        </p>
+        <div class="hr-sect">또는</div>
+        <p>SNS계정으로 간편 로그인 / 회원가입</p>
         <!--소셜 로그인-->
         <div class="d-flex justify-content-center my-0">
           <form action="/accounts/google/login/" method="POST">
@@ -277,4 +298,108 @@
     modalTitle.textContent = `New message to ${recipient}`
     modalBodyInput.value = recipient
   })
+</script>
+<!--아이디 저장-->
+<script>
+  $(function () {
+    fnInit();
+  });
+
+  function frm_check() {
+    saveid();
+  }
+  
+  function fnInit() {
+    var cookieid = getCookie("saveid1");
+    console.log(cookieid);
+    if (cookieid != "") {
+      $("input:checkbox[id='saveId1']").prop("checked", true);
+      $('#logId1').val(cookieid);
+    }
+  }
+
+  function setCookie(name, value, expiredays) {
+    var todayDate = new Date();
+    todayDate.setTime(todayDate.getTime() + 0);
+    if (todayDate > expiredays) {
+      document.cookie = name + "=" + escape(value) + "; path=/; expires=" + expiredays + ";";
+    } else if (todayDate < expiredays) {
+      todayDate.setDate(todayDate.getDate() + expiredays);
+      document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+    }
+    console.log(document.cookie);
+  }
+
+  function getCookie(Name) {
+    var search = Name + "=";
+    console.log("search : " + search);
+    if (document.cookie.length > 0) { // 쿠키가 설정되어 있다면
+      offset = document
+        .cookie
+        .indexOf(search);
+      console.log("offset : " + offset);
+      if (offset != -1) { // 쿠키가 존재하면
+        offset += search.length;
+        // set index of beginning of value
+        end = document
+          .cookie
+          .indexOf(";", offset);
+        console.log("end : " + end);
+        // 쿠키 값의 마지막 위치 인덱스 번호 설정
+        if (end == -1) 
+          end = document.cookie.length;
+        console.log("end위치  : " + end);
+        return unescape(document.cookie.substring(offset, end));
+      }
+    }
+    return "";
+  }
+
+  function saveid() {
+    var expdate = new Date();
+    if ($("#saveId1").is(":checked")) {
+      expdate.setTime(expdate.getTime() + 1000 * 3600 * 24 * 30);
+      setCookie("saveid1", $("#logId1").val(), expdate);
+    } else {
+      expdate.setTime(expdate.getTime() - 1000 * 3600 * 24 * 30);
+      setCookie("saveid1", $("#logId1").val(), expdate);
+    }
+  }
+</script>
+<!--비밀번호 보이기-->
+<script>
+  $("#key1").on("keyup", function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      $("#checkKey1").triggerHandler("click");
+    } else {
+      if (this.value) {
+        $("#keyShow1").css("display", "inline-block");
+      } else {
+        $("#keyShow1").hide();
+      }
+    }
+  }).focus();
+  
+  $("#keyShow1").on("click", function() {
+    if ($("#key1").attr("type") == "password") {
+      $("#key1").attr("type", "text");
+      $($(this)).text("H I D E");
+    } else {
+      $("#key1").attr("type", "password");
+      $($(this)).text("SHOW");
+    }
+  });
+</script>
+<!--캡스락 경고-->
+<script>
+  function checkCapsLock(event)  {
+    if (event.getModifierState("CapsLock")) {
+      document.getElementById("message1").innerHTML 
+        = "<i class='bi bi-exclamation-octagon'></i>" + "&nbspCaps Lock이 켜져 있습니다."
+    }else {
+      document.getElementById("message1").innerText 
+        = ""
+    }
+  }
 </script>

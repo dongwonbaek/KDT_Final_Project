@@ -1032,9 +1032,11 @@ path.two {
   background-color: var(--main-salmon);
   border: 0;
   padding: 6px 15px;
+  margin-top: .625rem;
 }
 
-#saveId {
+#saveId,
+#saveId1 {
   cursor: pointer;
   accent-color: var(--main-mintygreen);
 }
@@ -1050,20 +1052,25 @@ path.two {
   color: grey;
 }
 
+#keyShow1 {
+  position: absolute;
+  display: none;
+  margin-left: 100px;
+  margin-top: -35px;
+  font-size: 9px;
+  cursor: pointer;
+  color: grey;
+}
+
+
 .input-wrap label {
   font-size: 14px;
 }
 
 /* 캡스락경고 */
-#message {
-  display: inline-block;
-  font-size: 15px;
-  color: red;
-  height: 20px;
-}
-
+#message,
 #message1 {
-  display: none;
+  display: inline-block;
   font-size: 15px;
   color: red;
   height: 20px;
@@ -1076,9 +1083,9 @@ path.two {
   height: 20px;
 }
 
-.accounts-wrapper p {
+.accounts-wrapper p,
+.signup-wrapper p {
   font-size: 15px;
-
 }
 
 .signup-style1 {
