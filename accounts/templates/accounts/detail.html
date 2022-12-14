@@ -131,7 +131,7 @@
 							<h3 class='m-0'>차단 목록</h3>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
-						<div class="modal-body">
+						<div class="modal-body" style="min-height: 100px;">
 							{% for blockuser in user.blocking.all %}
 								<div class='m-2'>
 									{% if blockuser.image %}
@@ -141,6 +141,10 @@
 									{% endif %}
 									<a class="profile-margin" href="{% url 'accounts:detail' blockuser.pk %}">{{ blockuser.nickname }}</a>
 								</div>
+								{% empty %}
+									<div>
+										차단한 유저가 없습니다.
+									</div>
 							{% endfor %}
 						</div>
 					</div>
@@ -176,7 +180,8 @@
 		<div id="pf-tab-section-1" class="pf-tab-section">
 			<h5 class="text-center">커뮤니티에 {{ user.community_set.count }}개의 글을 작성했습니다.</h5>
 			<div class="tab-content-wrapper">
-				<table class="table table-hover">
+				<div class="tab-content">
+					<table class="table table-hover">
 						<thead>
 							<tr>
 								<th scope="col">#</th>
@@ -191,10 +196,10 @@
 								<th>{{ forloop.counter }}</th>
 								<td scope="row"><a href="{% url 'articles:community_detail' post.pk %}">{{ post.title }}</a></td>
 								<td>{{ post.created_at }}</td>
-								<td>{{ post.content|striptags }}</td>
+								<td class="text-truncate">{{ post.content|striptags }}</td>
 							</tr>
 							{% endfor %}
-						</body>
+						</tbody>
 					</table>
 				</div>
 				<!-- 작성글 페이징처리 시작 -->
@@ -246,61 +251,63 @@
 		<div id="pf-tab-section-2" class="pf-tab-section">
 			<h5 class="text-center"> {{ user.review_set.count }}개의 후기를 작성했습니다.</h5>
 			<div class="tab-content-wrapper">
-				{% for review in paginated_review_list %}
-				<div class="d-flex justify-content-between detail-rw">
-					<div>
-						<h2><a href="{% url 'articles:product_detail' review.product.pk %}">{{ review.title }}</a></h2>
-						<div class="stars d-flex">
-							{% if review.rating == 0 %}
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-							{% elif review.rating == 1 %}
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-							{% elif review.rating == 2 %}
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-							{% elif review.rating == 3 %}
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star"></i>
-								<i class="bi bi-star"></i>
-							{% elif review.rating == 4 %}
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star"></i>
+				<div class="tab-content">
+					{% for review in paginated_review_list %}
+					<div class="detail-rw">
+						<div>
+							{% if review.image %}
+								<img class="review-image" src="{{ review.image.url }}" alt="review.image">
 							{% else %}
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
+								<img class="review-image" src="{% static 'img/dummy.jpg' %}" alt="dummy">
 							{% endif %}
 						</div>
-						<!--별점 끝-->
-						<div>{{ review.content }}</div>
+						<div>
+							<h2><a href="{% url 'articles:product_detail' review.product.pk %}">{{ review.title }}</a></h2>
+							<div class="stars d-flex">
+								{% if review.rating == 0 %}
+									<i class="bi bi-star"></i>
+									<i class="bi bi-star"></i>
+									<i class="bi bi-star"></i>
+									<i class="bi bi-star"></i>
+									<i class="bi bi-star"></i>
+								{% elif review.rating == 1 %}
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star"></i>
+									<i class="bi bi-star"></i>
+									<i class="bi bi-star"></i>
+									<i class="bi bi-star"></i>
+								{% elif review.rating == 2 %}
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star"></i>
+									<i class="bi bi-star"></i>
+									<i class="bi bi-star"></i>
+								{% elif review.rating == 3 %}
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star"></i>
+									<i class="bi bi-star"></i>
+								{% elif review.rating == 4 %}
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star"></i>
+								{% else %}
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+								{% endif %}
+							</div>
+							<!--별점 끝-->
+							<div>{{ review.content }}</div>
+						</div>
 					</div>
-					<div>
-						{% if review.image %}
-							<img class="review-image" src="{{ review.image.url }}" alt="review.image">
-						{% else %}
-							<img class="review-image" src="{% static 'img/dummy.jpg' %}" alt="dummy">
-						{% endif %}
-					</div>
+					{% endfor %}
 				</div>
-				{% endfor %}
 				<!-- 후기 페이지네이션 시작-->
 				<div class="board-pagination">
 					<ul class="pagination">
@@ -350,18 +357,20 @@
 		<div id="pf-tab-section-3" class="pf-tab-section">
 			<h5 class="text-center"> {{ user.like_product.count }}개의 아이템이 담겨있어요.</h5>
 			<div class="tab-content-wrapper">
-				<div class="row row-cols-4 row-cols-md-2 g-4">
-					{% for item in paginated_wishlist %}
-					<div class="col">
-						<div class="card">
-							<img src="{{ item.productimages_set.all.0.images }}" class="card-img-top" alt="review-image">
-							<div class="card-body">
-								<h5 class="card-title">{{ item.title }} </h5>
-								<p class="card-text">{{ item.price|intcomma }} 원</p>
+				<div class="tab-content">
+					<div class="row row-cols-1 row-cols-md-3">
+						{% for item in paginated_wishlist %}
+						<div class="col">
+							<div class="card">
+								<img src="{{ item.productimages_set.all.0.images }}" class="card-img-top" alt="review-image">
+								<div class="card-body">
+									<h5 class="card-title">{{ item.title }} </h5>
+									<p class="card-text">{{ item.price|intcomma }} 원</p>
+								</div>
 							</div>
 						</div>
+						{% endfor %}
 					</div>
-					{% endfor %}
 				</div>
 				<!--카드덱 끝-->
 				<!-- 후기 페이지네이션 시작-->

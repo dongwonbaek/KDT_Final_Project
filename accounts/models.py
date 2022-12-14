@@ -34,4 +34,4 @@ class User(AbstractUser):
     def get_photo_url(self):
         if self.image:
             return self.image.url
-        return None
+        return "../static/images/no-avatar.jpg"

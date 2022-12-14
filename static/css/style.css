@@ -1052,6 +1052,7 @@ path.two {
   color: grey;
 }
 
+/* 위치 달라서 중첩 안 함 */
 #keyShow1 {
   position: absolute;
   display: none;
@@ -1069,15 +1070,12 @@ path.two {
 
 /* 캡스락경고 */
 #message,
-#message1 {
-  display: inline-block;
-  font-size: 15px;
-  color: red;
-  height: 20px;
-}
 
-#message2 {
-  display: none;
+#message3,
+#message4,
+#message5,
+#message6 {
+  display: inline-block;
   font-size: 15px;
   color: red;
   height: 20px;
@@ -1111,14 +1109,18 @@ path.two {
   background: white 20%;
 }
 
-.signup-wrapper2 {
+.signup-modal {
   text-align: center;
-  margin: auto;
+  margin: 20px auto;
   height: fit-content;
   padding-bottom: 30px;
   width: 300px;
   border-radius: 5px;
   background: white 20%;
+}
+
+.signup-modal label {
+  font-size: 18px;
 }
 
 .hr-sect {
@@ -1269,7 +1271,14 @@ path.two {
 }
 
 .detail-rw {
-  width: 500px;
+  display: flex;
+  align-items: center;
+  width: 60%;
+  padding: 10px 20px;
+}
+
+.detail-rw .review-image {
+  margin-right: 30px;
 }
 
 .detail-sub {
@@ -1435,8 +1444,32 @@ path.two {
   padding: .9375rem;
 }
 
-/* 
-
 .tab-content-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tab-content {
   min-height: 450px;
-} */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after,
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  color: var(--main-bluegreen);
+}
+
+.active>.page-link,
+.page-link.active {
+  border-color: var(--main-bluegreen);
+}
+
+.modal-content {
+  box-shadow: 4px -4px 20px 20px rgba(44, 31, 31, 0.243), -4px 4px 20px 20px rgb(62 68 100 / 34%);
+}
