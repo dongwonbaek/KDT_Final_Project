@@ -8,7 +8,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class User(AbstractUser):
-    nickname = models.CharField(max_length=10, unique=True)
+    nickname = models.CharField(max_length=20, unique=True)
     image = ProcessedImageField(
         upload_to="images/",
         null=True,

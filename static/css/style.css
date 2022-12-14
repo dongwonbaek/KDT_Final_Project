@@ -793,17 +793,16 @@ footer .footer-text {
   left: 27%;
 }
 
-.popup_ad {
+/* 비회원 메인 팝업광고 */
+.main_notice_pop {
   display: none;
-  display: flex;
-  align-items: center;
   position: fixed;
   right: 20px;
   bottom: 100px;
-  width: 14.5rem;
+  width: 18.75rem;
   height: fit-content;
   margin: 0;
-  padding: 0;
+  padding: 15px 10px;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(242, 242, 242, 0.75);
@@ -811,24 +810,26 @@ footer .footer-text {
   border: 1px solid rgba(209, 213, 219, 0.3);
 }
 
-.popup_ad .btn-close {
-  display: inline;
-  position: relative;
-  right: -98%;
-  top: -90px;
+.pop-content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
-.popup_ad img {
+.main_notice_pop .btn_close {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  z-index: 1;
+}
+
+.main_notice_pop img {
   height: 150px;
   width: auto;
-  margin-left: 50px;
+  object-fit: contain;
 }
 
-.popup_ad a {
-  display: block;
-}
-
-/* popup_ad 버튼 */
+/* main_notice_pop 버튼 */
 .ad-wrapper {
   display: flex;
   justify-content: center;
@@ -841,6 +842,8 @@ footer .footer-text {
   font-size: 13px;
   color: grey;
   outline: 0 0 1px 0 solid gray;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .cta {
@@ -875,11 +878,11 @@ footer .footer-text {
   margin-right: 10px;
 }
 
-.popup_ad span {
+.main_notice_pop span {
   transform: skewX(15deg)
 }
 
-.popup_ad span:nth-child(2) {
+.main_notice_pop span:nth-child(2) {
   width: 20px;
   margin-left: 30px;
   position: relative;
