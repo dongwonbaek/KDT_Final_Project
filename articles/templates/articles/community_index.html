@@ -8,37 +8,75 @@
 
 {% block content %}
 <section class="containe content-wrapper">
-  <div class="d-flex justify-content-between">
+  <div class="write-btn-wrapper">
     <h1>커뮤니티</h1>
-    <div class="d-flex flex-column justify-content-end">
-      <a class="pen d-flex flex-column justify-content-center" href="{% url 'articles:community_create' %}">
-        <i class="fa-solid fa-pen"> 글쓰기</i>
-      </a>
-    </div>
+    <a class="write-btn" href="{% url 'articles:community_create' %}"><span><i class="fa-solid fa-pen"></i> 글쓰기</span></a>
   </div>
   <hr class="commu_hr">
-  <table class="commu_table">
-    <tr class="text-center">
-      <td class="commu_num">번호</td>
-      <td class="commu_title">제목</td>
-      <td class="commu_name">작성자</td>
-      <td class="commu_date">작성일</td>
-      <td class="commu_view">조회</td>
-      <td class="commu_like">좋아요</td>
-    </tr>
-    {% for community in communities %}
-    <tr class="text-center">
-      <td>{{ community.id }}</td>
-      <td class="text-start text-center">
-        <a href="{% url 'articles:community_detail' community.pk %}">{{ community.title }}</a>
-      </td>
-      <td>{{ community.user.nickname }}</td>
-      <td>{{ community.created_at.date }}</td>
-      <td>{{ community.hits }}</td>
-      <td>{{ community.like_users.count }}</td>
-    </tr>
+  <div class="table-wrapper">
+    <table class="commu_table">
+      <tr class="text-center">
+        <td class="commu_num">번호</td>
+        <td class="commu_title">제목</td>
+        <td class="commu_name">작성자</td>
+        <td class="commu_date">작성일</td>
+        <td class="commu_view"><i class="bi bi-eye"></i></td>
+        <td class="commu_like"><i class="bi bi-star"></i></td>
+      </tr>
+      {% for community in communities %}
+      <tr class="text-center">
+        <td>{{ community.id }}</td>
+        <td class="text-start text-center">
+          <a href="{% url 'articles:community_detail' community.pk %}">{{ community.title }}</a>
+        </td>
+        <td>{{ community.user.nickname }}</td>
+        <td>{{ community.created_at.date }}</td>
+        <td>{{ community.hits }}</td>
+        <td>{{ community.like_users.count }}</td>
+      </tr>
+      {% endfor %}
+    </table>  
+  </div>
+  <!-- 페이징처리 시작 -->
+  <ul class="pagination justify-content-center py-4">
+    <!-- 이전페이지 -->
+    {% if communities.has_previous %}
+      <li class="page-item d-flex flex-row">
+        <a class="page-link" href="?page=1/"><i class="fa-solid fa-backward-step"></i></a>
+        <a class="page-link" href="?page={{ communities.previous_page_number }}"><i class="fa-solid fa-chevron-left"></i></a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" tabindex="-1" aria-disabled="true" href="#"><i class="fa-solid fa-chevron-left"></i></a>
+      </li>
+    {% endif %}
+    <!-- 페이지리스트 -->
+    {% for page_number in communities.paginator.page_range %}
+      {% if page_number >= communities.number|add:-2 and page_number <= communities.number|add:2 %}
+        {% if page_number == communities.number %}  
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+          </li>
+        {% else %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+          </li>
+        {% endif %}
+      {% endif %}
     {% endfor %}
-  </table>
+    <!-- 다음페이지 -->
+    {% if communities.has_next %}
+      <li class="page-item d-flex flex-row">
+        <a class="page-link" href="?page={{ communities.next_page_number }}"><i class="fa-solid fa-chevron-right"></i></a>
+        <a class="page-link" href="?page={{ communities.paginator.num_pages }}"><i class="fa-solid fa-forward-step"></i></a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <a class="page-link" tabindex="-1" aria-disabled="true" href="#"><i class="fa-solid fa-chevron-right"></i></a>
+      </li>
+    {% endif %}
+  </ul>
+  <!-- 페이징처리 끝 -->
 </section>
 {% endblock content %}
 {% block script %}{% endblock script %}
