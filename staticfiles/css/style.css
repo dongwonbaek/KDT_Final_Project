@@ -1280,10 +1280,17 @@ path.two {
 }
 
 .card-ellipsis {
-  white-space: wrap;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 75%;
+}
+
+.review-card-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60%;
 }
 
 .two-line-ellipsis {
