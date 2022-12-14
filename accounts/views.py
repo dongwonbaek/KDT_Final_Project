@@ -73,9 +73,12 @@ def update(request):
     if request.user.is_authenticated:
         if request.method == "POST":
             form = UpdateForm(request.POST, request.FILES, instance=request.user)
+            print(form)
             if form.is_valid():
                 form.save()
                 messages.success(request, "수정되었습니다.")
+            else:
+                messages.warning(request, '유효하지 않은 양식입니다.')
             return redirect("accounts:detail", request.user.pk)
         else:
             form = UpdateForm(instance=request.user)
