@@ -60,7 +60,9 @@
               </em>
               <div class="my-2 d-flex justify-content-end">
                 <div class="circle me-2 d-flex justify-content-center align-items-center">
-                  <i class="fas fa-arrow-up-from-bracket fs-4"></i>
+                  <a href="#" onclick="clip(); return false;">
+                    <i class="fas fa-arrow-up-from-bracket fs-4 text-secondary"></i>
+                  </a>
                 </div>
                 {% if request.user.is_authenticated %}
                 <div id='like-box' class="heart d-flex flex-column justify-content-center align-items-center p-2 rounded-circle" style='height: 3.5rem; width:3.5rem;'>
@@ -683,4 +685,21 @@ for (let commentForm of commentForms) {
   })
 </script>
 
+<!-- 공유버튼 현재 URL 복사 -->
+<script type="text/javascript">
+
+  function clip(){
+  
+    var url = '';
+    var textarea = document.createElement("textarea");
+    document.body.appendChild(textarea);
+    url = window.document.location.href;
+    textarea.value = url;
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+    alert("URL이 복사되었습니다.")
+  }
+  
+  </script>
 {% endblock script %}
