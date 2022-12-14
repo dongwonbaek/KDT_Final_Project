@@ -40,14 +40,18 @@
                 </a>
               </li>
               <li>
+                {% if request.user == community.user %}
                 <a href="{% url 'articles:community_update' community.pk %}">
                   <button class="dropdown-item" type="button">글 수정</button>
                 </a>
+                {% endif %}
               </li>
               <li>
+                {% if request.user == community.user %}
                 <a href="{% url 'articles:community_delete' community.pk %}">
                   <button class="dropdown-item" type="button">글 삭제</button>
                 </a>
+                {% endif %}
               </li>
             </ul>
           </div>
