@@ -24,10 +24,8 @@
             나에게
             <div class="form-check">
               <input id='select-mine' data-user-id="{{ request.user.pk }}" class="form-check-input" type="radio" id="flexCheckDefault" value="{{ user }}" name="towhom[1][]" onclick='getFriend(event)'>
-              <label class="form-check-label" for="flexCheckDefault"></label>
-                <img src="{{ user.get_photo_url }}" class="select-friend-img">
-                {{ user.nickname }}
-              </label>
+              <img src="{{ user.get_photo_url }}" class="select-friend-img">
+              <label class="form-check-label" for="flexCheckDefault">{{ user.nickname }}</label>
             </div>
           </div>
           <!--나-->
@@ -38,10 +36,8 @@
               {% for follower in request.user.following.all %}
                 <div class="form-check">
                   <input id="select-follower" data-follower-id="{{ follower.pk }}"class="form-check-input" type="radio" value="{{ follower.username }}" name="towhom[1][]" onclick='getFriend(event)'>
-                  <label class="form-check-label" for="flexCheckDefault">
-                    <img src="{{ follower.get_photo_url }}" class="select-friend-img">
-                    {{ follower.nickname }}
-                  </label>
+                  <img src="{{ follower.get_photo_url }}" class="select-friend-img">
+                  <label class="form-check-label" for="flexCheckDefault"> {{ follower.nickname }}</label>
                 </div>
               {% endfor %}
             {% else %}
