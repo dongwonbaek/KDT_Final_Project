@@ -71,11 +71,11 @@
 <!--회원가입 모달-->
 <div class="modal fade" id="회원가입" tabindex="-1" aria-labelledby="회원가입Label" aria-hidden="true">
   <div class="modal-dialog">
-    <div style="height: 42rem;" class="modal-content">
+    <div class="modal-content">
       <div class='d-flex justify-content-end'>
         <button type="button" class="btn-close pt-3 pe-3" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="signup-wrapper2">
+      <div class="signup-modal">
         <h1 class="text-center mb-3">회원가입</h1>
         <form action="{% url 'accounts:signup' %}" method="POST" enctype='multipart/form-data'>
           {% csrf_token %}
@@ -100,7 +100,6 @@
               <i></i>
             </span>
           </div>
-          <p id='message1'>❗ Caps Lock이 켜져 있습니다.</p>
           <label for="password">비밀번호 확인</label>
           <div class="login-field">
             <input class="focus-effect w-100 p-0 mb-2" placeholder="비밀번호를 한 번 더 입력해주세요." type="password" name='password2' id='password2' autocomplete="false">
@@ -108,7 +107,6 @@
               <i></i>
             </span>
           </div>
-          <p id='message2'>❗ Caps Lock이 켜져 있습니다.</p>
           <label for="image">프로필 사진</label>
           <div class="login-field">
             <input class="focus-effect w-100 p-0 h-100 mb-2" type="file" name="image">

@@ -36,7 +36,6 @@
         <i></i>
       </span>
     </div>
-    <p id='message1'>❗ Caps Lock이 켜져 있습니다.</p>
     <label for="password">비밀번호 확인</label>
     <div class="login-field">
       {% render_field form.password2 class="focus-effect" placeholder="비밀번호를 한 번 더 입력해주세요." type="password" name='password2' id='password2' %}
@@ -44,7 +43,6 @@
         <i></i>
       </span>
     </div>
-    <p id='message2'>❗ Caps Lock이 켜져 있습니다.</p>
     <label for="image">프로필 사진</label>
     <div class="login-field">
       {% render_field form.image class="focus-effect" type="file" name="image" %}
@@ -76,30 +74,4 @@
 {% endblock content %}
 
 {% block script %}
-
-<!--캡스락 경고-->
-<script>
-  var input1 = document.getElementById("password1");
-  var text1 = document.getElementById("message1");
-  input1.addEventListener("keyup", function(event) {
-  
-  if (event.getModifierState("CapsLock")) {
-      text1.style.display = "block";
-    } else {
-      text1.style.display = "none"
-    }
-  });
-  
-  var input2 = document.getElementById("password2");
-  var text2 = document.getElementById("message2");
-  
-  input2.addEventListener("keyup", function(event) {
-  
-  if (event.getModifierState("CapsLock")) {
-      text2.style.display = "block";
-    } else {
-      text2.style.display = "none"
-    }
-  });
-  </script>
 {% endblock script %}
