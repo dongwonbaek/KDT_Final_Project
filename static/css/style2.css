@@ -1,4 +1,5 @@
 /* product_list */
+
 /* 상단 배너 */
 .banner {
   color: white;
@@ -124,12 +125,17 @@
 #tap-move {
   border: solid 1px #ddd;
   margin-top: 5rem;
+  margin-bottom: 9.375rem;
 }
 
 .tap-nav {
   border-bottom: solid 1px #ddd;
   padding-left: 3rem;
 }
+
+/* .tab-nav-fix {
+
+} */
 
 .tab-button {
   color: black;

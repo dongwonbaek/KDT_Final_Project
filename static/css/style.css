@@ -319,7 +319,7 @@ footer {
   font-size: 14px;
   height: fit-content;
   width: 100%;
-  background-color: var(--main-mintygreen);
+  background-color: var(--main-bluegreen);
   color: var(--main-white);
   max-width: inherit;
   overflow: hidden;
@@ -927,6 +927,7 @@ path.two {
 
 /*------로그인, 회원가입------*/
 .accounts-wrapper:not(.hr-sect) {
+  min-height: 100%;
   width: 31.25rem;
   display: flex;
   flex-direction: column;
@@ -1387,3 +1388,43 @@ path.two {
   --bs-btn-active-bg: #003B41;
   --bs-btn-active-border-color: #003B41;
 }
+
+/* 프로필 탭 이동 */
+#pf-tap-move {
+  border: solid 1px #ddd;
+  margin-top: 5rem;
+}
+
+.pf-tap-nav {
+  border-bottom: solid 1px #ddd;
+  padding-left: 3rem;
+}
+
+.pf-tab-button {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  border: 0;
+  width: 10rem;
+  height: 5rem;
+  padding-top: 1rem;
+}
+
+#pf-tab-section-1,
+#pf-tab-section-2,
+#pf-tab-section-3 {
+  min-height: 500px;
+  padding: 3rem 2rem;
+}
+
+.tab-wrapper {
+  width: 100%;
+  min-height: 31.25rem;
+  padding: .9375rem;
+}
+
+/* 
+
+.tab-content-wrapper {
+  min-height: 450px;
+} */

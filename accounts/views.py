@@ -73,9 +73,12 @@ def update(request):
     if request.user.is_authenticated:
         if request.method == "POST":
             form = UpdateForm(request.POST, request.FILES, instance=request.user)
+            print(form)
             if form.is_valid():
                 form.save()
                 messages.success(request, "수정되었습니다.")
+            else:
+                messages.warning(request, '유효하지 않은 양식입니다.')
             return redirect("accounts:detail", request.user.pk)
         else:
             form = UpdateForm(instance=request.user)
@@ -120,13 +123,27 @@ def password(request):
 
 def detail(request, user_pk):
     user = get_object_or_404(get_user_model(), pk=user_pk)
+
+    posts = user.community_set.all().order_by("-id")
+    posts_page = request.GET.get("page", "1")  # GET 방식으로 정보를 받아오는 데이터
+    posts_paginator = Paginator(posts, "3")  # Paginator(분할될 객체, 페이지 당 담길 객체수)
+    paginated_posts = posts_paginator.get_page(posts_page)
+
     review_list = user.review_set.all().order_by("-id")  # 데이터 역순 정렬
     page = request.GET.get("page", "1")  # GET 방식으로 정보를 받아오는 데이터
     paginator = Paginator(review_list, "2")  # Paginator(분할될 객체, 페이지 당 담길 객체수)
     paginated_review_list = paginator.get_page(page)  # 페이지 번호를 받아 해당 페이지를 리턴
+
+    wishlist = user.like_product.all().order_by("-id")
+    wishlist_page = request.GET.get("page", "1")  # GET 방식으로 정보를 받아오는 데이터
+    wishlist_paginator = Paginator(wishlist, "4")  # Paginator(분할될 객체, 페이지 당 담길 객체수)
+    paginated_wishlist = wishlist_paginator.get_page(wishlist_page)
+
     context = {
         "user": user,
+        "paginated_post_list": paginated_posts,
         "paginated_review_list": paginated_review_list,
+        "paginated_wishlist": paginated_wishlist,
     }
     return render(request, "accounts/detail.html", context)
 
