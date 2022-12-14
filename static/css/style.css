@@ -1466,7 +1466,7 @@ path.two {
 .commu-form-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: ;
+  justify-content: center;
   height: fit-content;
   background-color: white;
   border-radius: 5px;
