@@ -18,7 +18,7 @@
         <a class='text-dark' href="{% url 'articles:product_detail' review.product.pk %}">
           <div class="mt-5 p-3" style="border: 3px outset lightcoral; outline: 3px outset lightblue; border-radius: 12px; outline-offset: 3px;">
             <div class='d-flex justify-content-between'>
-              <span class='card-ellipsis'>{{ review.title }}</span>
+              <span class='review-card-ellipsis'>{{ review.title }}</span>
               <span class='text-end'>
                 <em style='font-size: .8rem;' class='text-secondary'>{{ review.created_at.date }}</em>
               </span>           
@@ -83,6 +83,7 @@ function addNewContent() {
       let div3 = document.createElement('div')
       div3.classList.add('d-flex', 'justify-content-between')
       let span1 = document.createElement('span')
+      span1.classList.add('review-card-ellipsis')
       span1.innerText = rowData[1]
       let span2 = document.createElement('span')
       span2.classList.add('text-end')
