@@ -115,7 +115,7 @@
             {% if comment.user.image %}
             <img src="{{ comment.user.image.url }}" class="commu_pf_img mx-2 my-2" alt="유저 이미지">
             {% else %}
-            <img src="{% static 'img/no-avatar.jpg' %}" class="commu_pf_img text" alt="유저 대체이미지">
+            {% comment %} <img src="{% static 'img/no-avatar.jpg' %}" class="commu_pf_img text" alt="유저 대체이미지"> {% endcomment %}
             {% endif %}
             <p> {{ comment.content }}</p>
           </div>
