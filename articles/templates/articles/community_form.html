@@ -8,7 +8,7 @@
 {% block title %} | 새 글 쓰기{% endblock title %}
 {% block style %}
 <style>
-  .content-wrapper {
+  .form_container {
     height: auto;
     background-image: url(/static/img/background.jpg);
     background-repeat : no-repeat;
@@ -19,21 +19,27 @@
 {% endblock style %}
 
 {% block content %}
-  <section class="content-wrapper">
-    <div class="container commu-form-wrapper">
+  <section class="form_container d-flex justify-content-center">
+    <div class="commu-form-wrapper">
       <form action="" method="POST" enctype="multipart/form-data">
+        <div class="d-flex justify-content-center">
+          <h2 class="review_write mb-5">글쓰기</h2>
+        </div>
         {% csrf_token %}
         {{ community_form.media }}
         <label for="title" class="form-label">제목</label>
-        {% render_field community_form.title class="commu-input form-control mb-5" placeholder="글제목을 입력해주세요" %}
+        {% render_field community_form.title class="commu-input form-control" placeholder="글제목을 입력해주세요" %}
+        <label for="title" class="form-label mt-3">내용</label>
         {% render_field community_form.content %}
-        <label for="images" class="form-label">사진 첨부</label>
+        <label for="images" class="form-label mt-3">사진 첨부</label>
         {% render_field community_images_form.images class="commu-input form-control" %}
-        {% if request.resolver_match.url_name == 'community_update' %}
+        <div class="d-flex justify-content-center mt-5">
+          {% if request.resolver_match.url_name == 'community_update' %}
           <input class="commu_btn px-5" type="submit" value="글 수정">
-        {% else %}
+          {% else %}
           <input class="commu_btn px-5" type="submit" value="작성 완료">
-        {% endif %}
+          {% endif %}
+        </div>
       </form>
     </div><!--commu-form-wrapper-->
   </section>
