@@ -1,0 +1,327 @@
+:root {
+  --main-bluegreen: #003B41;
+  --main-scarlet: #FB5957;
+  --main-lightpink: #FEEAEB;
+  --main-salmon: #F28080;
+  --main-mintygreen: #297372;
+  --main-white: #FFF;
+  --main-black: #000;
+  /* Gradients */
+  --gradient: linear-gradient(45deg, rgba(148, 194, 227, 1) 0%, rgba(72, 136, 181, 1) 100%);
+  --gradient2: linear-gradient(45deg, rgba(148, 194, 227, 1) 0%, rgba(72, 136, 181, 1) 100%);
+  /* Sizes */
+  --heading: 3.4rem;
+  --heading-medium: 2rem;
+  --paragraph: 1.1rem;
+  --button-large: 1.6rem;
+  --button-small: 1.2rem;
+  --button-smallest: 1rem;
+  /* Fonts */
+  --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-secondary: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-slim: "Roboto";
+}
+
+/* Global Classes */
+.flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* User Profile */
+.user-header-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.user-icon-wrapper {
+  width: 100%;
+  position: absolute;
+  z-index: 12;
+}
+
+.user-icon {
+  width: 100%;
+  display: block;
+  border-radius: 50%;
+  border: 5px solid var(--main-white);
+  background-color: var(--main-white);
+  z-index: 12;
+}
+
+.user-header-inner {
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.user-header-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, .15);
+  z-index: 6;
+}
+
+.user-header {
+  width: 100%;
+  height: 100%;
+}
+
+.username-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.username-dev {
+  margin: 0;
+  display: inline-block;
+  color: var(--main-bluegreen);
+  font-size: 2em;
+  font-weight: 700;
+  cursor: default;
+}
+
+.uname-verified {
+  margin: 0 0 0 .25em;
+  width: 25px;
+  cursor: default;
+}
+
+.verified {
+  width: 100%;
+  color: var(--black);
+  background-color: var(--white);
+  font-family: var(--font-slim);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-weight: 900;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 1em;
+  padding: .25em;
+  position: absolute;
+  pointer-events: none;
+  top: 150%;
+  left: 0;
+  opacity: 0;
+  transition: all .5s cubic-bezier(.175, .885, .32, 1.275);
+}
+
+.verified::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  transform: rotateZ(-90deg);
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid var(--white);
+  position: absolute;
+  top: -15px;
+  left: 50%;
+}
+
+.user-info-bar {
+  width: 100%;
+  display: grid;
+  padding: .75em 0 1em 0;
+  background-color: var(--bc);
+  grid-template-columns: 1fr 10% 35% 20% 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ".ufo-bar-col1 .ufo-bar-col2 .ufo-bar-col3 .ufo-bar-col4 .ufo-bar-col5";
+}
+
+.ufo-bar-col2-inner {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.ufo-bar-col3-inner {
+  display: flex;
+  padding: .5em 0;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.username-wrapper-outer {
+  display: flex;
+  margin: 0 0 0 1.5em;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ufo-bar-bio {
+  color: var(--gray);
+}
+
+.ufo-bar-col3-inner {
+  width: 100%;
+  height: 100%;
+}
+
+.ufo-bar-fff {
+  margin: .25em .5em 0 0;
+  color: var(--dark);
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ufo-bar-fff span {
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.ufo-bar-fff-active {
+  margin: .25em .5em;
+  color: var(--primary);
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ufo-bar-fff-active span {
+  font-weight: 600;
+}
+
+.ufo-bar-col4-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* .ufo-bar-col5 {} */
+
+.user-info-bar2 {
+  width: 100%;
+  display: grid;
+  color: var(--white);
+  background-color: var(--bc);
+  grid-template-columns: 1fr 16.25% 16.25% 16.25% 16.25% 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ".ufo-bar2-col1 .ufo-bar2-col2 .ufo-bar2-col3 .ufo-bar2-col4 .ufo-bar2-col6 .ufo-bar2-col7";
+}
+
+.ufo-bar2-block-active {
+  position: relative;
+  cursor: default;
+}
+
+.ufo-bar2-block {
+  border-bottom: 3px solid var(--bc);
+  cursor: pointer;
+}
+
+.ufo-bar2-block span {
+  margin: 0 .3em;
+  color: var(--dark);
+}
+
+.ufo-bar2-block h3 {
+  color: var(--white);
+  font-weight: 500;
+}
+
+.ufo-bar2-block:after {
+  content: "";
+  background: var(--gradient);
+  background-size: 700%;
+  display: block;
+  height: 3px;
+  width: 100%;
+  bottom: 0;
+}
+
+.ufo-bar2-col2-inner {
+  width: 100%;
+}
+
+.ufo-bar2-col3-inner {
+  width: 100%;
+}
+
+.ufo-bar2-col4-inner {
+  width: 100%;
+}
+
+.ufo-bar2-col5-inner {
+  width: 100%;
+}
+
+.ufo-bar2-col6-inner {
+  width: 100%;
+}
+
+/* Button 2 */
+.button2,
+.btn-secondary2 {
+  margin: 0 .4em;
+  position: relative;
+  cursor: pointer;
+  padding: .9em 1em;
+  letter-spacing: .1em;
+  text-align: center;
+  font-weight: 300;
+  color: var(--bc);
+  font-size: var(--button-small);
+  background: var(--gradient2);
+  background-size: 1100%;
+  border-radius: 50px;
+  border: none;
+  transform: scaleX(1);
+  transition: background-position 3s cubic-bezier(.455, .03, .515, .955), -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275);
+  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), background-position 3s cubic-bezier(.455, .03, .515, .955);
+  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), background-position 3s cubic-bezier(.455, .03, .515, .955), -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+
+.button2 {
+  transition: bottom .3s cubic-bezier(.175, .885, .32, 1.275), background-position 3s cubic-bezier(.455, .03, .515, .955), -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275);
+  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), bottom .3s cubic-bezier(.175, .885, .32, 1.275), background-position 3s cubic-bezier(.455, .03, .515, .955);
+  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), bottom .3s cubic-bezier(.175, .885, .32, 1.275), background-position 3s cubic-bezier(.455, .03, .515, .955), -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+
+.button2,
+.button2 .btn-secondary2 {
+  background-position: 0 50%;
+  bottom: 0;
+}
+
+.button2 .btn-secondary2 {
+  left: 0;
+  width: 90%;
+  position: absolute;
+  filter: blur(16px);
+  opacity: .9;
+  z-index: -1;
+  transform: scale3d(.9, .9, 1);
+  transition: bottom .3s cubic-bezier(.175, .885, .32, 1.275), background-position 3s cubic-bezier(.455, .03, .515, .955), -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275), -webkit-filter .3s cubic-bezier(.175, .885, .32, 1.275);
+  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), filter .3s cubic-bezier(.175, .885, .32, 1.275), bottom .3s cubic-bezier(.175, .885, .32, 1.275), background-position 3s cubic-bezier(.455, .03, .515, .955);
+  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), filter .3s cubic-bezier(.175, .885, .32, 1.275), bottom .3s cubic-bezier(.175, .885, .32, 1.275), background-position 3s cubic-bezier(.455, .03, .515, .955), -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275), -webkit-filter .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+
+.button2:focus,
+.button2:hover {
+  transform: scale3d(1.1, 1.1, 1);
+  background-position: 100% 50%;
+  outline: none;
+  bottom: 2px;
+}
+
+.button2:focus .btn-secondary2,
+.button2:hover .btn-secondary2 {
+  background-position: 100% 50%;
+  filter: blur(25px);
+  bottom: -5px;
+}
