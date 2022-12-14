@@ -17,7 +17,7 @@
     {% csrf_token %}
     <label for="username">아이디</label>
     <div class="login-field">
-      {% render_field form.username class="focus-effect" placeholder="이메일을 입력하세요" type="username" name="username" %}
+      {% render_field form.username class="focus-effect" placeholder="이메일을 입력하세요" type="email" name="username" %}
       <span class="focus-border">
         <i></i>
       </span>
@@ -31,7 +31,7 @@
     </div>
     <label for="password">비밀번호</label>
     <div class="login-field">
-      {% render_field form.password1 class="focus-effect" placeholder="비밀번호를 입력하세요" type="password" name='password1' id='password1' autocomplete="true" %}
+      {% render_field form.password1 class="focus-effect" placeholder="비밀번호를 입력하세요" type="password" name='password1' id='password1' %}
       <span class="focus-border">
         <i></i>
       </span>
@@ -39,7 +39,7 @@
     <p id='message1'>❗ Caps Lock이 켜져 있습니다.</p>
     <label for="password">비밀번호 확인</label>
     <div class="login-field">
-      {% render_field form.password2 class="focus-effect" placeholder="비밀번호를 한 번 더 입력해주세요." type="password" name='password2' id='password2' autocomplete="false" %}
+      {% render_field form.password2 class="focus-effect" placeholder="비밀번호를 한 번 더 입력해주세요." type="password" name='password2' id='password2' %}
       <span class="focus-border">
         <i></i>
       </span>
@@ -55,11 +55,11 @@
     <label for="gender">성별</label>
     <div class="login-field">
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name='gender' id="inlineRadio1" value='true'>
+        <input class="form-check-input" type="radio" name='gender' id="gender" value='true'>
         <label class="form-check-label" for="inlineRadio1">남</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name='gender' id="inlineRadio2" value='false'>
+        <input class="form-check-input" type="radio" name='gender' id="gender" value='false'>
         <label class="form-check-label" for="inlineRadio2">여</label>
       </div>
     </div>

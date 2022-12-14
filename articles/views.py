@@ -11,7 +11,7 @@ from .forms import (
     CommunityCommentForm,
 )
 from django.contrib.auth.decorators import login_required
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import JsonResponse
 from django.db.models import Q, F, Avg, Count, Subquery, OuterRef, Sum
 from django.http import JsonResponse
@@ -19,25 +19,75 @@ import random
 
 
 def index(request):
-    recent_category = request.session.get('recent_category')
+    recent_category = request.session.get("recent_category")
     if request.user.is_authenticated:
         if recent_category:
-            recommend_products = Product.objects.filter(category=recent_category).annotate(
-                score=Count("like_user", filter=Q(like_user__gender=request.user.gender) & Q(like_user__age=request.user.age), distinct=True)*
-                Avg("review__rating", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age), distinct=True)*2+
-                Count("review", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age), distinct=True)
-                ).order_by('-score')[:10]
+            recommend_products = (
+                Product.objects.filter(category=recent_category)
+                .annotate(
+                    score=Count(
+                        "like_user",
+                        filter=Q(like_user__gender=request.user.gender)
+                        & Q(like_user__age=request.user.age),
+                        distinct=True,
+                    )
+                    * Avg(
+                        "review__rating",
+                        filter=Q(like_user__gender=request.user.gender)
+                        & Q(like_user__age=request.user.age),
+                        distinct=True,
+                    )
+                    * 2
+                    + Count(
+                        "review",
+                        filter=Q(like_user__gender=request.user.gender)
+                        & Q(like_user__age=request.user.age),
+                        distinct=True,
+                    )
+                )
+                .order_by("-score")[:10]
+            )
         else:
             recommend_products = Product.objects.annotate(
-                score=Count("like_user", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age), distinct=True)*
-                Avg("review__rating", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age), distinct=True)*2+
-                Count("review", filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age), distinct=True)
-                ).order_by('-score')[:10]
+                score=Count(
+                    "like_user",
+                    filter=Q(like_user__gender=request.user.gender)
+                    & Q(like_user__age=request.user.age),
+                    distinct=True,
+                )
+                * Avg(
+                    "review__rating",
+                    filter=Q(like_user__gender=request.user.gender)
+                    & Q(like_user__age=request.user.age),
+                    distinct=True,
+                )
+                * 2
+                + Count(
+                    "review",
+                    filter=Q(like_user__gender=request.user.gender)
+                    & Q(like_user__age=request.user.age),
+                    distinct=True,
+                )
+            ).order_by("-score")[:10]
     else:
         if recent_category:
-            recommend_products = Product.objects.filter(category=recent_category).annotate(score=Count("like_user", distinct=True)*Avg("review__rating", distinct=True)*2+Count("review", distinct=True)).order_by('-score')[:10]
+            recommend_products = (
+                Product.objects.filter(category=recent_category)
+                .annotate(
+                    score=Count("like_user", distinct=True)
+                    * Avg("review__rating", distinct=True)
+                    * 2
+                    + Count("review", distinct=True)
+                )
+                .order_by("-score")[:10]
+            )
         else:
-            recommend_products = Product.objects.annotate(score=Count("like_user", distinct=True)*Avg("review__rating", distinct=True)*2+Count("review", distinct=True)).order_by('-score')[:10]
+            recommend_products = Product.objects.annotate(
+                score=Count("like_user", distinct=True)
+                * Avg("review__rating", distinct=True)
+                * 2
+                + Count("review", distinct=True)
+            ).order_by("-score")[:10]
 
     gender_products = Product.objects.annotate(
         wish_men_cnt=Count(
@@ -74,7 +124,7 @@ def index(request):
 
 
 def product_list(request, category_pk):
-    request.session['recent_category'] = category_pk
+    request.session["recent_category"] = category_pk
     context = {
         "products": Product.objects.filter(category=category_pk)
         .annotate(review_avg=Avg("review__rating"))
@@ -145,7 +195,7 @@ def product_detail(request, product_pk):
                 rating_list.append(round((rating_count / total) * 100))
             else:
                 rating_list.append(0)
-    request.session['recent_category'] = product.category
+    request.session["recent_category"] = product.category
     context = {
         "product": product,
         "rating_avg": rating_avg,
@@ -202,9 +252,9 @@ def review_index(request):
     offset = limit * (page - 1)
     if offset == 0:
         context = {
-            'reviews': reviews,
+            "reviews": reviews,
         }
-        return render(request, 'articles/review_index.html', context)
+        return render(request, "articles/review_index.html", context)
     end = offset + limit
     review_Data = reviews_all[offset:end]
     datalist = []
@@ -212,29 +262,31 @@ def review_index(request):
         if a.image:
             review_image = a.image.url
         else:
-            review_image = '/static/img/dummy.png'
+            review_image = "/static/img/dummy.png"
         if a.user.image:
             user_image = a.user.image.url
         else:
-            user_image = '/static/img/no-avatar.jpg'
-        datalist.append([
-            a.pk, #0
-            a.title, #1
-            a.content, #2
-            a.product.pk, #3
-            a.product.title, #4
-            a.user.pk, #5
-            a.user.nickname, #6
-            review_image, #7
-            user_image, #8
-            a.rating, #9
-            a.created_at.year, #10
-            a.created_at.month, #11
-            a.created_at.day, #12
-        ])
+            user_image = "/static/img/no-avatar.jpg"
+        datalist.append(
+            [
+                a.pk,  # 0
+                a.title,  # 1
+                a.content,  # 2
+                a.product.pk,  # 3
+                a.product.title,  # 4
+                a.user.pk,  # 5
+                a.user.nickname,  # 6
+                review_image,  # 7
+                user_image,  # 8
+                a.rating,  # 9
+                a.created_at.year,  # 10
+                a.created_at.month,  # 11
+                a.created_at.day,  # 12
+            ]
+        )
 
     context = {
-        'reviewData': datalist,
+        "reviewData": datalist,
     }
     return JsonResponse(context)
 
@@ -530,10 +582,22 @@ def review_sad(request, review_pk):
 
 def community_index(request):
     communities = Community.objects.order_by("-pk")
+    page = request.GET.get("page")
+    paginator = Paginator(communities, 10)
+    try:
+        page_obj = paginator.get_page(page)
+    except PageNotAnInteger:
+        page = 1
+        page_obj = paginator.page(page)
+    except EmptyPage:
+        page = paginator.num_pages
+        page_obj = paginator.page(page)
+
     context = {
-        "communities": communities,
-        }
+        "communities": page_obj,
+    }
     return render(request, "articles/community_index.html", context)
+
 
 @login_required
 def community_create(request):
@@ -560,6 +624,7 @@ def community_create(request):
         "community_images_form": community_images_form,
     }
     return render(request, "articles/community_form.html", context)
+
 
 @login_required
 def community_update(request, community_pk):
@@ -590,6 +655,7 @@ def community_update(request, community_pk):
     }
     return render(request, "articles/community_form.html", context)
 
+
 @login_required
 def community_delete(request, community_pk):
     community = get_object_or_404(Community, pk=community_pk)
@@ -602,14 +668,13 @@ def community_detail(request, community_pk):
     community = get_object_or_404(Community, pk=community_pk)
     community_comment_form = CommunityCommentForm()
     context = {
-        'community': community,
-        'comments': community.communitycomment_set.all(),
-        'community_comment_form': community_comment_form,
+        "community": community,
+        "comments": community.communitycomment_set.all(),
+        "community_comment_form": community_comment_form,
     }
     community.hits += 1
     community.save()
-    return render(request, 'articles/community_detail.html', context)
-
+    return render(request, "articles/community_detail.html", context)
 
 
 @login_required
@@ -647,22 +712,21 @@ def community_like(request, community_pk):
     else:
         community.like_users.add(request.user)
         is_liked = True
-    context = {
-        'isLiked': is_liked,
-        'likeCount': community.like_users.count()
-        }
+    context = {"isLiked": is_liked, "likeCount": community.like_users.count()}
     return JsonResponse(context)
 
 
 def md_jsm(request):
     context = {
-        "one": Product.objects.get(title='크리스마스 에디션 덴마크 데니쉬 버터쿠키 454g'),
-        "two": Product.objects.get(title='[크리스마스 홀리데이] 홍콩직수입 제니베이커리 4믹스 쿠키(S) 320g'),
-        "three": Product.objects.get(title='떠먹는 바닐라 슈크림 + 아메리카노 (R) 2잔'),
+        "one": Product.objects.get(title="크리스마스 에디션 덴마크 데니쉬 버터쿠키 454g"),
+        "two": Product.objects.get(title="[크리스마스 홀리데이] 홍콩직수입 제니베이커리 4믹스 쿠키(S) 320g"),
+        "three": Product.objects.get(title="떠먹는 바닐라 슈크림 + 아메리카노 (R) 2잔"),
         "four": Product.objects.get(title="'제주 유기농 녹차로 만든' 오설록 그린티 롤케이크"),
-        "five": Product.objects.get(title='파베 수제 생초콜릿 (밀크/다크)'),
-        "six": Product.objects.get(title='[크리스마스 특가선물] 허쉬 초콜릿칩 쿠키 456g / 대형통'),
-        "seven": Product.objects.get(title='오트밀크로 만든 카카올라 생초콜릿 5종 & 유기농우유로 만든 꼬르지엘모 생초콜릿 5종'),
+        "five": Product.objects.get(title="파베 수제 생초콜릿 (밀크/다크)"),
+        "six": Product.objects.get(title="[크리스마스 특가선물] 허쉬 초콜릿칩 쿠키 456g / 대형통"),
+        "seven": Product.objects.get(
+            title="오트밀크로 만든 카카올라 생초콜릿 5종 & 유기농우유로 만든 꼬르지엘모 생초콜릿 5종"
+        ),
         "eight": Product.objects.get(title='"너에게는 내가 최고의 보약" 크리스마스 초콜릿 과자 패키지(톡별)'),
     }
     return render(request, "articles/md_jsm.html", context)
@@ -670,14 +734,20 @@ def md_jsm(request):
 
 def md_kbw(request):
     context = {
-        "one": Product.objects.get(title='[55%할인/홀리데이/추가증정]캐스키드슨 크리스마스 어드벤트 캘린더(24종)(+쇼핑백)'),
-        "two": Product.objects.get(title='[15%할인][홀리데이][선물포장] 향기보습 핸드크림 & 립밤 기프트 세트'),
+        "one": Product.objects.get(
+            title="[55%할인/홀리데이/추가증정]캐스키드슨 크리스마스 어드벤트 캘린더(24종)(+쇼핑백)"
+        ),
+        "two": Product.objects.get(title="[15%할인][홀리데이][선물포장] 향기보습 핸드크림 & 립밤 기프트 세트"),
         "three": Product.objects.get(title='NEW "겨울 핫템" 카카오프렌즈 얼굴형 손난로 보조배터리 5000mAh'),
-        "four": Product.objects.get(title='불멍 캠핑 화로 난로 불무드 에탄올램프 (에탄올+캔들라이터 증정)'),
+        "four": Product.objects.get(title="불멍 캠핑 화로 난로 불무드 에탄올램프 (에탄올+캔들라이터 증정)"),
         "five": Product.objects.get(title='[따뜻한 선물] "따듯한 치즈덕이쥬" 부들 포근 치즈덕 극세사 담요 (톡별)'),
-        "six": Product.objects.get(title='[조카선물/크리스마스선물] 오즈초미니 아동 양털 어그부츠'),
-        "seven": Product.objects.get(title='"오늘도 따뜻할 거예요" 히트템 핫팩 30매+메세지박스+손소독제 5개입 (톡별) (heattem)'),
-        "eight": Product.objects.get(title='"크리스마스 케이크" 스타벅스 부드러운 고구마 생크림 케이크 (+무료음료쿠폰)'),
+        "six": Product.objects.get(title="[조카선물/크리스마스선물] 오즈초미니 아동 양털 어그부츠"),
+        "seven": Product.objects.get(
+            title='"오늘도 따뜻할 거예요" 히트템 핫팩 30매+메세지박스+손소독제 5개입 (톡별) (heattem)'
+        ),
+        "eight": Product.objects.get(
+            title='"크리스마스 케이크" 스타벅스 부드러운 고구마 생크림 케이크 (+무료음료쿠폰)'
+        ),
     }
     return render(request, "articles/md_kbw.html", context)
 

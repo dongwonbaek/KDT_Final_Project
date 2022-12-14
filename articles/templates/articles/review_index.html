@@ -4,57 +4,58 @@
 {% load django_bootstrap5 %}
 {% load imagekit %}
 
-{% block title %}{% endblock title %}
+{% block title %} | 리뷰 모아보기{% endblock title %}
 {% block style %}{% endblock style %}
+
+
 {% block content %}
-
-<div class="text-center" style='margin-top: 10rem;'>
-  <h1>최근 리뷰</h1>
-</div>
-<div class="container">
-  <div class="row" id='review-box'>
-    {% for review in reviews %}
-      <div class="col-4">
-        <a class='text-dark' href="{% url 'articles:product_detail' review.product.pk %}">
-          <div class="mt-5 p-3" style="border: 3px outset lightcoral; outline: 3px outset lightblue; border-radius: 12px; outline-offset: 3px;">
-            <div class='d-flex justify-content-between'>
-              <span class='review-card-ellipsis'>{{ review.title }}</span>
-              <span class='text-end'>
-                <em style='font-size: .8rem;' class='text-secondary'>{{ review.created_at.date }}</em>
-              </span>           
-            </div>
-            <span class="stars d-flex mb-1">
-              {% for i in "x"|rjust:"5" %}
-                {% if review.rating >= forloop.counter %}
-                  <i class="fas fa-star fs-6"></i>
+  <section class="content-wrapper">
+    <div class="text-center">
+      <h1>최근 리뷰</h1>
+    </div>
+    <div class="container">
+      <div class="row" id='review-box'>
+        {% for review in reviews %}
+          <div class="col-4">
+            <a class='text-dark' href="{% url 'articles:product_detail' review.product.pk %}">
+              <div class="mt-5 p-3" style="border: 3px outset lightcoral; outline: 3px outset lightblue; border-radius: 12px; outline-offset: 3px;">
+                <div class='d-flex justify-content-between'>
+                  <span class='review-card-ellipsis'>{{ review.title }}</span>
+                <span class='text-end'>
+                  <em style='font-size: .8rem;' class='text-secondary'>{{ review.created_at.date }}</em>
+                </span>           
+              </div>
+              <span class="stars d-flex mb-1">
+                {% for i in "x"|rjust:"5" %}
+                  {% if review.rating >= forloop.counter %}
+                    <i class="fas fa-star fs-6"></i>
+                  {% else %}
+                    <i class="fas fa-star eee fs-6"></i>
+                  {% endif %}
+                {% endfor %}
+              </span>
+              <div class="d-flex justify-content-between">
+                {% if review.image %}
+                  <img src="{{ review.image.url }}" alt="review.image" style="height: 5rem;" class='rounded'>
                 {% else %}
-                  <i class="fas fa-star eee fs-6"></i>
+                  <img src="{% static 'img/dummy.png' %}" alt="dummy" style="height: 5rem;" class='rounded'>
                 {% endif %}
-              {% endfor %}
-            </span>
-            <div class="d-flex justify-content-between">
-              {% if review.image %}
-                <img src="{{ review.image.url }}" alt="review.image" style="height: 5rem;" class='rounded'>
-              {% else %}
-                <img src="{% static 'img/dummy.png' %}" alt="dummy" style="height: 5rem;" class='rounded'>
-              {% endif %}
-              <a class='d-flex align-items-end' href="{% url 'accounts:detail' review.user.pk %}">
-                {% if review.user.image %}
-                  <img src="{{ review.user.image.url }}" alt="profile_image" class='rounded-circle' style='height: 1.5rem;'>
-                {% else %}
-                  <img src="{% static 'img/no-avatar.jpg' %}" alt="no-avatar" class='rounded-circle border border-secondary' style='height: 1.5rem;'>
-                {% endif %}
-                <span class='text-dark fs-6 text-align-center'>{{ review.user.nickname }}</span>
-              </a>
-            </div>
+                <a class='d-flex align-items-end' href="{% url 'accounts:detail' review.user.pk %}">
+                  {% if review.user.image %}
+                    <img src="{{ review.user.image.url }}" alt="profile_image" class='rounded-circle' style='height: 1.5rem;'>
+                  {% else %}
+                    <img src="{% static 'img/no-avatar.jpg' %}" alt="no-avatar" class='rounded-circle border border-secondary' style='height: 1.5rem;'>
+                  {% endif %}
+                  <span class='text-dark fs-6 text-align-center'>{{ review.user.nickname }}</span>
+                </a>
+              </div>
+            </a>
           </div>
-        </a>
+        {% endfor %}
       </div>
-    {% endfor %}
-  </div>
-  <p style='margin-top: 100px;' id='sentinel'></p>
-</div>
-
+      <p style='margin-top: 100px;' id='sentinel'></p>
+    </div>
+  </section>
 {% endblock content %}
 {% block script %}
 <script>
