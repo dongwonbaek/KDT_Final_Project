@@ -1032,9 +1032,11 @@ path.two {
   background-color: var(--main-salmon);
   border: 0;
   padding: 6px 15px;
+  margin-top: .625rem;
 }
 
-#saveId {
+#saveId,
+#saveId1 {
   cursor: pointer;
   accent-color: var(--main-mintygreen);
 }
@@ -1050,35 +1052,38 @@ path.two {
   color: grey;
 }
 
+/* 위치 달라서 중첩 안 함 */
+#keyShow1 {
+  position: absolute;
+  display: none;
+  margin-left: 100px;
+  margin-top: -35px;
+  font-size: 9px;
+  cursor: pointer;
+  color: grey;
+}
+
+
 .input-wrap label {
   font-size: 14px;
 }
 
 /* 캡스락경고 */
-#message {
+#message,
+
+#message3,
+#message4,
+#message5,
+#message6 {
   display: inline-block;
   font-size: 15px;
   color: red;
   height: 20px;
 }
 
-#message1 {
-  display: none;
+.accounts-wrapper p,
+.signup-wrapper p {
   font-size: 15px;
-  color: red;
-  height: 20px;
-}
-
-#message2 {
-  display: none;
-  font-size: 15px;
-  color: red;
-  height: 20px;
-}
-
-.accounts-wrapper p {
-  font-size: 15px;
-
 }
 
 .signup-style1 {
@@ -1104,14 +1109,18 @@ path.two {
   background: white 20%;
 }
 
-.signup-wrapper2 {
+.signup-modal {
   text-align: center;
-  margin: auto;
+  margin: 20px auto;
   height: fit-content;
   padding-bottom: 30px;
   width: 300px;
   border-radius: 5px;
   background: white 20%;
+}
+
+.signup-modal label {
+  font-size: 18px;
 }
 
 .hr-sect {
@@ -1262,7 +1271,14 @@ path.two {
 }
 
 .detail-rw {
-  width: 500px;
+  display: flex;
+  align-items: center;
+  width: 60%;
+  padding: 10px 20px;
+}
+
+.detail-rw .review-image {
+  margin-right: 30px;
 }
 
 .detail-sub {
@@ -1428,8 +1444,32 @@ path.two {
   padding: .9375rem;
 }
 
-/* 
-
 .tab-content-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tab-content {
   min-height: 450px;
-} */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after,
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  color: var(--main-bluegreen);
+}
+
+.active>.page-link,
+.page-link.active {
+  border-color: var(--main-bluegreen);
+}
+
+.modal-content {
+  box-shadow: 4px -4px 20px 20px rgba(44, 31, 31, 0.243), -4px 4px 20px 20px rgb(62 68 100 / 34%);
+}

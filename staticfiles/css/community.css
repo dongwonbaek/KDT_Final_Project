@@ -52,6 +52,11 @@
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
 
+.django-ckeditor-widget {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
 
 .commu {
   margin-top: 10rem;
