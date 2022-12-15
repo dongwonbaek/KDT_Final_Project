@@ -23,24 +23,24 @@ def index(request):
     if request.user.is_authenticated:
         if recent_category:
             recommend_products = Product.objects.filter(category=recent_category).annotate(score=
-            Count("like_user",filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age),distinct=True)* 10 +
-            Avg("review__rating",filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age),distinct=True)* 2 + 
+            Count("like_user",filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age),distinct=True)* 2 +
+            Avg("review__rating",filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age),distinct=True)* 10 + 
             Count("review",filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age),distinct=True)).order_by("-score")[:10]
         else:
             recommend_products = Product.objects.annotate(score=
-            Count("like_user",filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age),distinct=True)* 10 +
-            Avg("review__rating",filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age),distinct=True)* 2 +
+            Count("like_user",filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age),distinct=True)* 2 +
+            Avg("review__rating",filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age),distinct=True)* 10 +
             Count("review",filter=Q(like_user__gender=request.user.gender)&Q(like_user__age=request.user.age),distinct=True)).order_by("-score")[:10]
     else:
         if recent_category:
             recommend_products = Product.objects.filter(category=recent_category).annotate(score=
-            Count("like_user", distinct=True)* 10 +
-            Avg("review__rating", distinct=True)* 2 + 
+            Count("like_user", distinct=True)* 2 +
+            Avg("review__rating", distinct=True)* 10 + 
             Count("review", distinct=True)).order_by("-score")[:10]
         else:
             recommend_products = Product.objects.annotate(score=
-            Count("like_user", distinct=True)* 10 +
-            Avg("review__rating", distinct=True)* 2 + 
+            Count("like_user", distinct=True)* 2 +
+            Avg("review__rating", distinct=True)* 10 + 
             Count("review", distinct=True)).order_by("-score")[:10]
 
     gender_products = Product.objects.annotate(
