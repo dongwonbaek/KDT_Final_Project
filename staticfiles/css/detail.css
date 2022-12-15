@@ -85,6 +85,11 @@ git:root {
   cursor: default;
 }
 
+.username-dev i.bi {
+  transform: rotate(45deg);
+
+}
+
 h3.username-dev+span {
   font-size: 15px;
   color: gray;
