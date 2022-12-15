@@ -43,32 +43,7 @@ def index(request):
             Avg("review__rating", distinct=True)* 10 + 
             Count("review", distinct=True)).order_by("-score")[:10]
 
-    gender_products = Product.objects.annotate(
-        wish_men_cnt=Count(
-            "like_user", filter=Q(like_user__gender=True) & Q(like_user__age=2)
-        ),
-        wish_women_cnt=Count("like_user", filter=Q(like_user__gender=False)),
-        wish_cnt=Count("like_user"),
-    )
-    if request.user.is_authenticated:
-        if request.user.gender:
-            gender_products = Product.objects.annotate(
-                wish_men_cnt=Count(
-                    "like_user",
-                    filter=Q(like_user__gender=True)
-                    & Q(like_user__age=request.user.age),
-                )
-            ).order_by("-wish_men_cnt")[:20]
-        else:
-            gender_products = Product.objects.annotate(
-                wish_women_cnt=Count(
-                    "like_user",
-                    filter=Q(like_user__gender=False)
-                    & Q(like_user__age=request.user.age),
-                )
-            ).order_by("-wish_women_cnt")[:20]
-    else:
-        gender_products = gender_products.order_by("-wish_cnt")[:20]
+    gender_products = Product.objects.annotate(wish_cnt=Count("like_user")).order_by("-wish_cnt")[:20]
     context = {
         "gender_products": gender_products,
         "categories": Product.category_choice,
